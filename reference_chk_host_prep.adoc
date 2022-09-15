@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_host_prep.html 
+keywords: ontap select, pre-installation checklist, host preparation 
+summary: Vorbereiten aller Hypervisor-Hosts, auf denen ein ONTAP Select-Node bereitgestellt wird Bewerten Sie die Implementierungsumgebung bei der Vorbereitung der Hosts sorgfältig, um sicherzustellen, dass die Hosts ordnungsgemäß konfiguriert sind und bereit sind, die Implementierung eines ONTAP Select Clusters zu unterstützen. 
+---
+= Checkliste zur Host-Konfiguration und -Vorbereitung
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vorbereiten aller Hypervisor-Hosts, auf denen ein ONTAP Select-Node bereitgestellt wird Bewerten Sie die Implementierungsumgebung bei der Vorbereitung der Hosts sorgfältig, um sicherzustellen, dass die Hosts ordnungsgemäß konfiguriert sind und bereit sind, die Implementierung eines ONTAP Select Clusters zu unterstützen.
+
+
+NOTE: Das ONTAP Select Deploy-Administrationsprogramm führt nicht die erforderliche Netzwerk- und Storage-Konfiguration der Hypervisor-Hosts aus. Sie müssen jeden Host manuell vorbereiten, bevor Sie ein ONTAP Select Cluster bereitstellen.
+
+
+
+== Allgemeine Hypervisor-Vorbereitung
+
+Sie müssen die Hypervisor-Hosts vorbereiten.
+
+Jeder Host muss mit folgenden Komponenten konfiguriert sein:
+
+* Einen vorinstallierten und unterstützten Hypervisor
+* Eine VMware vSphere Lizenz
+
+
+Außerdem muss derselbe vCenter Server in der Lage sein, alle Hosts zu managen, auf denen ein ONTAP Select Node im Cluster bereitgestellt wird.
+
+Darüber hinaus sollten Sie sicherstellen, dass die Firewall-Ports so konfiguriert sind, dass sie den Zugriff auf vSphere zulassen. Diese Ports müssen offen sein, um die Verbindung mit seriellen Ports zu den virtuellen ONTAP Select-Maschinen zu unterstützen.
+
+VMware ermöglicht standardmäßig den Zugriff auf folgende Ports:
+
+* Port 22 und Ports 1024 – 65535 (eingehender Verkehr)
+* Anschlüsse 0 bis 65535 (ausgehender Datenverkehr)
+
+
+NetApp empfiehlt, die folgenden Firewall-Ports zu öffnen, um den Zugriff auf vSphere zu ermöglichen:
+
+* Ports 7200 bis 7400 (ein- und ausgehender Datenverkehr)
+
+
+Sie sollten auch mit den erforderlichen vCenter-Rechten vertraut sein. Siehe link:reference_plan_ots_vcenter.html["VMware vCenter Server"] Finden Sie weitere Informationen.
+
+
+
+== Vorbereitung des ONTAP Select Cluster-Netzwerks
+
+ONTAP Select kann als Cluster mit mehreren Nodes oder als Single-Node-Cluster implementiert werden. In vielen Fällen ist ein Cluster mit mehreren Nodes aufgrund der zusätzlichen Storage-Kapazität und der HA-Funktion vorzuziehen.
+
+
+
+=== Darstellung der ONTAP Select Netzwerke und Nodes
+
+Die folgenden Abbildungen zeigen die Netzwerke, die mit einem Single-Node-Cluster und einem Cluster mit vier Nodes verwendet werden.
+
+
+
+==== Single-Node-Cluster mit einem Netzwerk
+
+Die folgende Abbildung zeigt einen Single-Node-Cluster. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_01.jpg["Single-Node-Cluster mit einem Netzwerk"]
+
+
+
+==== Cluster mit vier Nodes für zwei Netzwerke
+
+Die folgende Abbildung zeigt einen Cluster mit vier Nodes. Das interne Netzwerk ermöglicht die Kommunikation zwischen den Knoten zur Unterstützung der ONTAP-Cluster-Netzwerkdienste. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_02.jpg["Cluster mit vier Nodes für zwei Netzwerke"]
+
+
+
+==== Single Node innerhalb eines Clusters mit vier Nodes
+
+Die folgende Abbildung zeigt die typische Netzwerkkonfiguration für eine einzelne ONTAP Select Virtual Machine innerhalb eines Clusters mit vier Nodes. Es gibt zwei separate Netzwerke: ONTAP-intern und ONTAP-extern.
+
+image:CHK_03.jpg["Single Node innerhalb eines Clusters mit vier Nodes"]
+
+
+
+=== VSwitch-Konfiguration auf einem Hypervisor-Host
+
+Der vSwitch ist die Hypervisor-Kernkomponente, die zur Unterstützung der Konnektivität der internen und externen Netzwerke verwendet wird. Bei der Konfiguration jedes Hypervisor-vSwitch sollten Sie mehrere Aspekte berücksichtigen.
+
+
+
+==== VSwitch-Konfiguration für einen Host mit zwei physischen Ports (2x10 GB)
+
+Wenn jeder Host zwei 10-GB-Ports enthält, sollten Sie den vSwitch wie folgt konfigurieren:
+
+* Konfigurieren Sie einen vSwitch und weisen Sie dem vSwitch beide Ports zu. Erstellen Sie mithilfe der beiden Ports ein NIC-Team.
+* Legen Sie die Lastausgleichsrichtlinie auf „Weiterleiten basierend auf der ursprünglichen virtuellen Port-ID“ fest.
+* Markieren Sie beide Adapter als „aktiv“.
+* Setzen Sie die Einstellung „Failback“ auf „Ja“.image:CHK_04.jpg["VSwitch-Eigenschaften)"]
+* Konfigurieren Sie den vSwitch zur Verwendung von Jumbo Frames (9000 MTU).
+* Konfigurieren Sie eine Portgruppe auf dem vSwitch für den internen Verkehr (ONTAP-intern):
++
+** Die Portgruppe ist virtuellen ONTAP Select Netzwerkadaptern e0c-e0g zugewiesen, die für das Cluster, HA Interconnect und Datenverkehr zur Spiegelung verwendet werden.
+** Die Portgruppe sollte sich in einem nicht routingfähigen VLAN befinden, da dieses Netzwerk voraussichtlich privat sein wird. Sie sollten das entsprechende VLAN-Tag der Portgruppe hinzufügen, um dies zu berücksichtigen.
+** Die Einstellungen für Load Balancing, Failback und Failover Order der Portgruppe sollten mit dem vSwitch übereinstimmen.
+
+
+* Konfigurieren Sie eine Port-Gruppe auf dem vSwitch für den externen Verkehr (ONTAP-extern):
++
+** Die Port-Gruppe ist virtuellen ONTAP Select Netzwerkadaptern e0a-e0c, die für Daten- und Management-Datenverkehr verwendet werden.
+** Die Portgruppe kann sich auf einem routingfähigen VLAN befinden. Je nach Netzwerkumgebung sollten Sie außerdem ein entsprechendes VLAN-Tag hinzufügen oder die Portgruppe für VLAN-Trunking konfigurieren.
+** Die Einstellungen für Load-Balancing, Failback und Failover-Reihenfolge der Portgruppe sollten mit vSwitch übereinstimmen.
+
+
+
+
+Die oben genannte vSwitch-Konfiguration gilt für einen Host mit 2x10-GB-Ports in einer typischen Netzwerkumgebung.

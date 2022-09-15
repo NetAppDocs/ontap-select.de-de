@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: concept_terminology.html 
+keywords: terminology, key concepts, concepts 
+summary: Wenn Sie mit dem Erkunden von ONTAP Select und der Planung einer Implementierung beginnen, ist es hilfreich, sich zunächst mit den Terminologie und den Schlüsselkonzepten vertraut zu machen. 
+---
+= Terminologie und Schlüsselkonzepte
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie mit dem Erkunden von ONTAP Select und der Planung einer Implementierung beginnen, ist es hilfreich, sich zunächst mit den Terminologie und den Schlüsselkonzepten vertraut zu machen.
+
+ONTAP Select Deploy:: ONTAP Select Deploy ist das Administrationsdienstprogramm, das Sie zum Implementieren von ONTAP Select Clustern verwenden. Das Deploy-Dienstprogramm wird auf einer dedizierten virtuellen Linux-Maschine ausgeführt. Sie können über die Web-Benutzeroberfläche, die CLI-Management-Shell und DIE REST-API auf das Deploy-Dienstprogramm zugreifen.
+Hypervisor-Host oder ONTAP Select-Node:: Ein _Hypervisor-Host_ ist die zentrale Hardware-Plattform, die eine ONTAP Select Virtual Machine hostet. Wenn eine ONTAP Select Virtual Machine auf einem Hypervisor-Host implementiert und aktiv ist, gilt dies als „_ONTAP Select Node_“.
+ONTAP Select Cluster:: Sie können ein ONTAP Select Cluster_ erstellen, das aus einem, zwei, vier, sechs oder acht Nodes besteht. Cluster mit mehreren Nodes enthalten immer ein oder mehrere HA-Paare. Ein Cluster mit vier Nodes besteht beispielsweise aus zwei HA-Paaren. Ein Single Node Cluster bietet keine HA-Funktion.
+Vorbereitung der Hypervisor-Hostumgebung:: Bevor Sie das Deploy Administration Utility zum Implementieren eines ONTAP Select Clusters verwenden, müssen Sie die Hypervisor-Hosts, auf denen ONTAP Select ausgeführt wird, vorbereiten, einschließlich Storage- und Netzwerkumgebungen. Diese Host-Vorkonfiguration wird basierend auf den aktuellen Anforderungen und Einschränkungen außerhalb des ONTAP Select Produkts durchgeführt.
+Evaluierungen und Implementierungen in der Produktion:: Jeder ONTAP Select Node wird entweder mit einer _Evaluation Lizenz_ oder einer _gekauften Lizenz_ ausgeführt. Mit einer Evaluierungslizenz können Sie ONTAP Select testen, bevor Sie es in einer Produktionsumgebung implementieren. Die Evaluierungslizenz wird automatisch generiert und angewendet. Wenn Sie ein Cluster in einer Produktionsumgebung implementieren, müssen Sie eine Lizenz erwerben. Dabei müssen Sie folgende Auswahl haben:
++
+--
+* Lizenzmodell
+* Storage-Kapazität
+* Plattform-Lizenzangebot
+
+
+--
+Lizenzmodell für Kapazitätsstufen:: Ursprünglich ist das Lizenzmodell für Kapazitätsebenen bei der Storage-Lizenzierung für eine ONTAP Select-Implementierung die Option. Das Modell basiert auf dem ONTAP-Modell, das zusammen mit NetApp AFF und FAS eingesetzt wird. Für jeden Node ist eine separate Lizenz erforderlich. Die Storage-Kapazität ist auf den Node gesperrt und unbefristet (keine Verlängerung erforderlich).
+Lizenzmodell für Kapazitäts-Pools:: Das Lizenzmodell für Kapazitäts-Pools wurde mit ONTAP Select 9.5 unter Verwendung von Deploy 2.10 eingeführt. Für jeden Storage-Kapazitäts-Pool ist eine separate Lizenz erforderlich. Die Capacity Pool-Lizenz ist an eine License Manager-Instanz gesperrt (bei der es sich um eine Deploy-Instanz handelt) und muss basierend auf den Kaufbedingungen erneuert werden. Sie können eine beliebige Anzahl an Kapazitäts-Pools in Ihrem Unternehmen lizenzieren und verwenden. Da die Kapazitäts-Pools jedoch von den ONTAP Select-Nodes gemeinsam genutzt werden, werden in der Regel weniger Lizenzen benötigt als die Kapazitätsebenen lizenziert.
+Lizenzmanager:: Der License Manager ist eine Softwarekomponente, die die Lizenzierung von Kapazitätspools unterstützt. Es ist derzeit Teil des Deploy Administration Utility. LM vermietet Storage an die ONTAP Select Nodes über die verwalteten Shared Pools. Die _License Lock ID_ ist eine numerische Zeichenfolge, die jede LM-Instanz eindeutig identifiziert, und daher jede Deploy-Instanz. Sie müssen die Seriennummer des Kapazitäts-Pools und LLID verwenden, um eine Lizenzdatei zu erstellen.
+Plattform-Lizenzangebote:: Es sind drei Lizenzangebote verfügbar, die die Größenfunktionen der ONTAP Select Virtual Machine beim Kauf einer Lizenz bestimmen:
++
+--
+* Standard
+* Premium
+* Premium XL
+
+
+--
+
+
+Weitere Informationen finden Sie in den beiden Abschnitten _Plan_ und _License_.
+
+Storage-Pools oder Datastores:: Ein ONTAP Select _Storage-Pool_ ist ein logischer Daten-Container, der dazu entwickelt wurde, den zugrunde liegenden physischen Storage zu abstrahieren und zu verbergen. Ein Storage-Pool ist unabhängig vom Hypervisor. Bei der Implementierung auf einem ESXi Hypervisor-Host ist der ONTAP Select Storage Pool gleichbedeutend mit dem VMware _Datastore_.
+Cluster-MTU:: Die Cluster-MTU ist eine Funktion zur Konfiguration der MTU-Größe, die im internen Netzwerk von ONTAP Select-Clustern verwendet wird. Das Deploy Administration Utility passt die MTU-Größe bei der Konfiguration der HA-Paare an Ihre Netzwerkumgebung an. Sie können den Wert auch manuell einstellen.
+ONTAP Select vNAS:: Die ONTAP Select vNAS Lösung ermöglicht einem ONTAP Select Node den Zugriff auf VMware Datastores im externen Storage. Bei ONTAP Select vNAS wird kein lokaler RAID-Controller mehr benötigt. Die RAID-Funktion wird vorausgesetzt, dass sie vom Remote Storage bereitgestellt wird. ONTAP Select vNAS kann auf folgende Weise konfiguriert werden:
++
+--
+* VMware vSAN
+* Generisches externes Speicher-Array
+
+
+--
+
+
+In beiden Fällen muss der externe Storage vor der Erstellung eines ONTAP Select Clusters konfiguriert oder die Storage-Kapazität eines vorhandenen Node erweitert werden.
+
+Erneutes Hosting von Nodes:: Wenn Sie einen Cluster implementieren, der externen Storage verwendet, der über die ONTAP Select vNAS Lösung verfügbar ist (entweder VMware vSAN oder ein generisches externes Storage-Array), können die ESXi Virtual Machine, die den ONTAP Select-Node hostet, durch Aktionen verschoben werden, die folgende VMware Funktionen nutzen:
++
+--
+* VMotion
+* Hochverfügbarkeit
+* Distributed Resource Scheduler (DRS)
++
+Das ONTAP Select Deploy Tool erkennt die Verschiebung der Virtual Machine im Rahmen der Ausführung eines Vorgangs auf dem Cluster, z. B.:
+
+* Das Cluster ist online
+* Das Cluster ist offline
+* Storage kommt hinzu
++
+Wenn eine Virtual Machine verschoben wird, aktualisiert das Deploy-Dienstprogramm seine interne Datenbank und konfiguriert den neuen ESXi-Host. Alle auf dem ONTAP Select-Node ausgeführten Aktionen werden erst dann blockiert, wenn die Verschiebung der Virtual Machine und die Aktualisierung der Implementierung abgeschlossen sind.
+
+
+
+--
+Mediatordienst:: Das ONTAP Select Deploy Tool umfasst einen Mediator-Service, der eine Verbindung zu den Nodes in den aktiven Clustern mit zwei Nodes herstellt. Dieser Service überwacht jedes HA-Paar und unterstützt das Managen von Ausfällen.
+
+
+
+CAUTION: Wenn Sie über ein oder mehrere aktive Cluster mit zwei Nodes verfügen, muss die ONTAP Select Deploy Virtual Machine, die die Cluster verwaltet, jederzeit ausgeführt werden. Wenn die Virtual Machine zum Implementieren angehalten wird, ist der Mediator-Service nicht verfügbar und die HA-Funktion geht bei den Clustern mit zwei Nodes verloren.
+
+MetroCluster SDS:: MetroCluster SDS ist eine Funktion, die eine zusätzliche Konfigurationsoption für die Implementierung eines ONTAP Select-Clusters mit zwei Nodes bietet. Im Gegensatz zu einer typischen Implementierung von Remote-Standorten mit zwei Nodes können die MetroCluster-SDS-Nodes über eine viel größere Entfernung voneinander getrennt werden. Diese physische Trennung ermöglicht zusätzliche Anwendungsfälle wie Disaster Recovery. Sie müssen über eine Premium-Lizenz oder höher verfügen, um MetroCluster SDS verwenden zu können. Zudem muss das Netzwerk zwischen den Nodes eine Mindestlatenzanforderung unterstützen.
+Anmeldeinformationsspeicher:: Der Anmeldeinformationsspeicher ist eine sichere Datenbank mit Kontoanmeldeinformationen. Es wird in erster Linie verwendet, um Hypervisor-Hosts im Rahmen der Erstellung eines neuen Clusters zu registrieren. Weitere Informationen finden Sie im Abschnitt „_Plan_“.
+Storage-Effizienz:: ONTAP Select bietet Storage-Effizienz-Optionen, die den auf FAS und AFF Arrays vorhandenen Optionen für Storage-Effizienz ähnlich sind. ONTAP Select mit Direct-Attached Storage (das) SSDs (mit einer Premium-Lizenz) ähneln begrifflich dem AFF Array. Konfigurationen, die das mit HDDs und alle vNAS Konfigurationen verwenden, sollten als ähnlich wie ein FAS Array betrachtet werden. Der Hauptunterschied zwischen den beiden Konfigurationen besteht darin, dass ONTAP Select mit das SSDs die Inline-Deduplizierung auf Aggregatebene und die Hintergrund-Deduplizierung auf Aggregatebene unterstützt. Die verbleibenden Storage-Effizienz-Optionen sind für beide Konfigurationen verfügbar.
++
+--
+Die vNAS Standardkonfigurationen ermöglichen eine Schreiboptimierungsfunktion, die als Single Instance Data Logging (SIDL) bekannt ist. In ONTAP Select 9.6 und neueren Versionen sind die ONTAP Storage-Effizienzfunktionen im Hintergrund für SIDL aktiviert. Weitere Informationen finden Sie im Abschnitt „_Deep Dive_“.
+
+--
+Cluster-Aktualisierung:: Nach dem Erstellen eines Clusters können Sie mithilfe von ONTAP- oder Hypervisor-Administrationstools Änderungen an der Cluster- oder VM-Konfiguration außerhalb des Deploy Utility vornehmen. Sie können auch eine Virtual Machine migrieren, die Konfigurationsänderungen verursacht. Wenn diese Änderungen auftreten, wird das Deploy Utility nicht automatisch aktualisiert und kann mit dem Status des Clusters nicht synchronisiert werden. Sie können die Cluster-Aktualisierungsfunktion verwenden, um die Konfigurationsdatenbank für die Implementierung zu aktualisieren. Eine Cluster-Aktualisierung ist über die Deploy Web User Interface, CLI Management Shell und REST API verfügbar.
+Software-RAID:: Beim Einsatz von Direct-Attached Storage (das) wird die RAID-Funktionalität traditionell über einen lokalen Hardware-RAID-Controller bereitgestellt. Stattdessen können Sie einen Node zur Verwendung von _Software RAID_ konfigurieren, wobei der ONTAP Select Node die RAID-Funktion bietet. Wenn Sie Software-RAID verwenden, wird kein Hardware-RAID-Controller mehr benötigt.
+ONTAP Select Image-Installation:: Ab ONTAP Select Deploy 2.8 enthält das Deploy Administration Utility nur eine einzige Version von ONTAP Select. Die enthaltene Version ist die aktuellste, die zum Zeitpunkt der Veröffentlichung zur Verfügung steht. Beispiel: Deploy 2.8 enthält ONTAP Select 9.4. Mit der Funktion zur Installation von ONTAP Select Images können Sie frühere Versionen von ONTAP Select zu Ihrer Instanz des Deploy Utility hinzufügen. Diese können bei der Bereitstellung eines ONTAP Select Clusters verwendet werden. Siehe link:task_cli_deploy_image_add.html["Fügen Sie ONTAP Select-Images hinzu, um weitere Informationen zu erhalten"].
+
+
+
+NOTE: Sie sollten nur ein ONTAP Select-Image mit einer Version hinzufügen, die vor der Originalversion liegt, die in Ihrer Instanz von Deploy enthalten ist. Das Hinzufügen von neueren Versionen von ONTAP Select, sobald sie verfügbar werden, wird nicht unterstützt.
+
+Verwalten eines ONTAP Select-Clusters nach der Implementierung:: Nachdem Sie ein ONTAP Select-Cluster implementiert haben, können Sie das Cluster wie ein hardwarebasiertes ONTAP-Cluster konfigurieren. Sie können beispielsweise ein ONTAP Select Cluster mit System Manager oder der Standard-Befehlszeilenschnittstelle von ONTAP konfigurieren.
+
+
+link:task_cli_deploy_image_add.html["Hinzufügen eines ONTAP Select Images zur Implementierung"]

@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_evaluation.html 
+keywords: license, licensing, evaluation, upgrade license 
+summary: Wenn Sie ONTAP Select vor der Kaufentscheidung bewerten möchten, können Sie eine Evaluierungslizenz verwenden. Die Evaluierungslizenz ist im ONTAP Select Deploy-Administrationsprogramm enthalten und wird automatisch auf jeden ONTAP Select-Node im Rahmen der Evaluierungsimplementierung angewendet. 
+---
+= Evaluierungslizenzen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie ONTAP Select vor der Kaufentscheidung bewerten möchten, können Sie eine Evaluierungslizenz verwenden. Die Evaluierungslizenz ist im ONTAP Select Deploy-Administrationsprogramm enthalten und wird automatisch auf jeden ONTAP Select-Node im Rahmen der Evaluierungsimplementierung angewendet.
+
+
+
+== Merkmale der Lizenzierung
+
+Die ONTAP Select Evaluierungslizenz weist folgende Merkmale auf:
+
+* Es ist keine Produktionslizenz mit Storage-Kapazität erforderlich
+* Die Seriennummer des Nodes besteht aus zwanzig Ziffern und wird von ONTAP Select Deploy automatisch generiert
++
+(Sie erwerben sie nicht direkt von NetApp.)
+
+* Der von der Lizenz bereitgestellte Evaluierungszeitraum kann bis zu 90 Tage dauern
+* Der von jedem Node zugewiesene maximale Storage entspricht der jeweils vorhandenen Produktionslizenz
+
+
+
+
+== Upgrade auf eine Produktionslizenz
+
+Sie können ein ONTAP Select Evaluation Cluster auf eine Produktionslizenz aktualisieren. Sie sollten die folgenden Einschränkungen beachten:
+
+* Sie müssen das Dienstprogramm „Deploy Administration“ verwenden, um die Lizenzaktualisierung durchzuführen
+* Lizenzaktualisierung wird nur mit ONTAP Select 9.5P1 unter Einsatz von Deploy 2.11 oder höher unterstützt
+* Es kann eine Lizenz für Kapazitäts-Tiers verwendet werden, jedoch wird die Lizenzierung von Kapazitäts-Pools nicht unterstützt
+* Jeder Node muss über ausreichend Storage verfügen, um die erforderliche Mindestmenge für eine Produktionslizenz basierend auf der Cluster-Größe zu unterstützen
+
+
+link:task_adm_licenses.html["Konvertieren einer Evaluierungslizenz in eine Produktionslizenz"] Finden Sie weitere Informationen.

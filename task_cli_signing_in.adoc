@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: task_cli_signing_in.html 
+keywords: administer, administering, cli, deploy, sign in, signing in 
+summary: Sie müssen sich mit SSH bei der Management-Shell bereitstellen anmelden. Nach der Anmeldung können Sie CLI-Befehle eingeben, um einen ONTAP Select Cluster zu erstellen und die entsprechenden Administrationsverfahren durchzuführen. 
+---
+= Melden Sie sich für die Implementierung über SSH an
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie müssen sich mit SSH bei der Management-Shell bereitstellen anmelden. Nach der Anmeldung können Sie CLI-Befehle eingeben, um einen ONTAP Select Cluster zu erstellen und die entsprechenden Administrationsverfahren durchzuführen.
+
+Sie müssen über das aktuelle Kennwort für das Administratorkonto für die Bereitstellung verfügen. Wenn Sie sich zum ersten Mal anmelden und vCenter zur Installation der virtuellen Maschine bereitstellen verwendet haben, sollten Sie das Passwort während der Installation verwenden.
+
+.Schritte
+. Melden Sie sich mit dem Administratorkonto und der Management-IP-Adresse der virtuellen Maschine bereitstellen an, z. B.:
++
+`ssh admin@<10.235.82.22>`
+
+. Wenn Sie sich zum ersten Mal anmelden und die Bereitstellung nicht mit dem in vCenter verfügbaren Assistenten installiert haben, geben Sie bei der entsprechenden Aufforderung die folgenden Konfigurationsdaten an:
++
+** Neues Kennwort für das Administratorkonto (erforderlich)
+** Firmenname (erforderlich)
+** Proxy-URL (optional)
+
+
+. Geben Sie *?* ein, und drücken Sie *Enter*, um eine Liste der verfügbaren Management Shell-Befehle anzuzeigen.
+

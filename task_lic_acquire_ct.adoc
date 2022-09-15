@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: task_lic_acquire_ct.html 
+keywords: license, licensing, acquire, capacity tiers 
+summary: Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP Select Node eine Lizenzdatei anfordern. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt. 
+---
+= Erwerb einer Lizenz für Kapazitätsstufen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP Select Node eine Lizenzdatei anfordern. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt.
+
+Sie müssen dem Node von NetApp die neunstellige Lizenzseriennummer zugewiesen haben. Bevor Sie versuchen, eine Lizenzdatei zu erwerben, sollten Sie mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten.
+
+Diese Aufgabe muss für jeden ONTAP Select Node durchgeführt werden, der eine Lizenz für Kapazitätsstufen benötigt.
+
+.Schritte
+. Greifen Sie über einen Webbrowser auf die ONTAP Select-Lizenzwebsite zu:
++
+`https://register.netapp.com/register/getlicensefile`
+
+. Mit Ihren NetApp Anmeldedaten anmelden
+. Wählen Sie auf der Seite *Lizenzgenerator* das gewünschte Lizenzangebot aus dem Dropdown-Feld aus.
+. Füllen Sie die verbleibenden Felder auf derselben Seite aus, einschließlich *Product Serial #*, der Seriennummer für den ONTAP Select-Knoten.
+. Klicken Sie Auf *Absenden*.
+. Nachdem die Anforderung validiert wurde, wählen Sie die Liefermethode für die Lizenz aus.
++
+Sie können entweder auf *Download Lizenz* oder *E-Mail-Lizenz* klicken.
+
+. Bestätigen Sie, dass Sie die Lizenzdatei basierend auf Ihrer ausgewählten Bereitstellungsmethode erhalten haben.
+
+
+Sie müssen die Lizenzdatei auf das Deploy Administration Utility hochladen, bevor sie auf einen ONTAP Select Node angewendet werden kann.

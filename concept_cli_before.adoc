@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: concept_cli_before.html 
+keywords: administer, administering, cli, before you begin 
+summary: Sie können über SSH auf die Management Shell bereitstellen zugreifen. Nach der Anmeldung können Sie verschiedene Verwaltungsverfahren durchführen. 
+---
+= Bevor Sie beginnen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können über SSH auf die Management Shell bereitstellen zugreifen. Nach der Anmeldung können Sie verschiedene Verwaltungsverfahren durchführen.
+
+Im Allgemeinen lassen sich die Verfahren, die Sie mithilfe der CLI durchführen können, in eine von drei Kategorien einteilen.
+
+Implementieren eines ONTAP Select-Clusters:: Single Node und Multi-Node-Cluster können implementiert werden.
+Führen Sie eine Prozedur mit einem vorhandenen ONTAP Select Cluster durch:: Die Verwaltungsverfahren sind in verschiedenen Kategorien organisiert, wie _Security_ und _Clusters_.
+Führen Sie ein Verfahren für das Dienstprogramm „Bereitstellen“ durch:: Für die Bereitstellung gibt es verschiedene Verfahren (z. B. Ändern des Administratorkennworts).
+

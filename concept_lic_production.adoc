@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_production.html 
+keywords: license, licensing, production, purchased, standard, premium, premium xl 
+summary: Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet ist, können Sie die für eine Implementierung in einer Produktionsumgebung erforderlichen Lizenzen erwerben. Es müssen entweder die Kapazitäts-Tiers oder das Lizenzmodell für Kapazitäts-Pools als auch die Storage-Kapazität für jede Implementierung ausgewählt werden. 
+---
+= Erworbene Lizenzen für Produktionsimplementierungen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet ist, können Sie die für eine Implementierung in einer Produktionsumgebung erforderlichen Lizenzen erwerben. Es müssen entweder die Kapazitäts-Tiers oder das Lizenzmodell für Kapazitäts-Pools als auch die Storage-Kapazität für jede Implementierung ausgewählt werden.
+
+
+
+== Gemeinsame Lizenzierungsmerkmale
+
+Die Lizenzierungsmodelle _Capacity Tiers_ und _Capacity Pools_ sind in vielerlei Hinsicht sehr unterschiedlich. Die beiden Lizenzmodelle haben jedoch verschiedene gemeinsame Merkmale:
+
+* Bei der Implementierung von ONTAP Select in einer Produktionsumgebung müssen Sie mindestens eine Lizenz erwerben.
+* Die Speicherkapazität einer Lizenz wird in Schritten von 1 TB zugewiesen.
+* Die Speicherkapazität identifiziert die Rohkapazität und entspricht der zulässigen Gesamtgröße der für die ONTAP Select Virtual Machine verfügbaren Datenfestplatten.
+* Es werden alle Angebote für Plattformlizenzen unterstützt (Standard, Premium, Premium XL).
+* Wenden Sie sich bei dem Erwerb der erforderlichen Lizenzen an Ihr NetApp Account Team oder Ihren Partner.
+* Sie müssen die Lizenzdateien in das Deploy Administration Utility hochladen, das dann die Lizenzen basierend auf dem Lizenzmodell anwendet.
+* Nach der Installation und anwenden einer Lizenz können Sie weitere Kapazitäten hinzufügen, indem Sie sich an Ihr NetApp Account Team oder Ihren Partner wenden, um eine aktualisierte Lizenz zu beschaffen.
+* Beide Nodes in einem HA-Paar müssen den gleichen Storage und die gleiche Lizenzkapazität aufweisen.
+* Ein ONTAP Select-Node, der ursprünglich mit einer erworbenen Lizenz implementiert wird, kann nicht in eine Evaluierungslizenz umgewandelt werden.
+
+
+
+
+== Lizenzmodell für Kapazitätsstufen
+
+Es gibt verschiedene Merkmale, die auf das Lizenzmodell für Kapazitätsstufen zugeschnitten sind. Hierzu zählen:
+
+* Für jeden ONTAP Select Node müssen Sie eine Lizenz erwerben.
+* Sie können mindestens 1 TB kaufen.
+* Jede Lizenz für Kapazitätsstufen verfügt über eine Storage-Kapazität und ist an einen spezifischen Node gebunden.
+* Für jeden ONTAP Select Node wird von NetApp eine neunstellige Lizenzseriennummer generiert.
+* Der einem Node zugewiesene Storage ist unbefristet (keine Verlängerung erforderlich).
+* Die Node-Seriennummer ist neun Ziffern und entspricht der Lizenz-Seriennummer.
+* Sie können die Lizenzdatei während der Cluster-Bereitstellung oder innerhalb von 30 Tagen nach dem Erstellen eines Clusters anwenden.
+
+
+
+
+== Lizenzmodell für Kapazitäts-Pools
+
+Es gibt verschiedene Merkmale, die nur beim Lizenzmodell für Kapazitäts-Pools gelten:
+
+* Sie müssen eine Lizenz für jeden Pool mit gemeinsam genutzter Kapazität erwerben.
+* Sie können mindestens 2 TB kaufen.
+* Jede Lizenz für den Kapazitäts-Pool verfügt über eine Speicherkapazität und ist für eine bestimmte License Manager-Instanz gesperrt.
+* Für jeden Kapazitäts-Pool wird von NetApp eine neunstellige Lizenzseriennummer generiert.
+* Der einem Kapazitäts-Pool zugewiesene Storage ist nur für einen bestimmten Zeitraum gültig, der auf dem Kauf basiert (Erneuerung erforderlich).
+* Die Seriennummer des Knotens ist 20 Ziffern und wird vom License Manager auf Grundlage der Seriennummer der Kapazität-Pool-Lizenz generiert.
+* Jeder Node verpachtet automatisch die Storage-Kapazität seiner lokalen Datenaggregate aus einem gemeinsamen Kapazitäts-Pool.
+
+
+Weitere Informationen zum Lizenzmodell für Kapazitätspools finden Sie im Lizenzmodell _Capacity Pools_.

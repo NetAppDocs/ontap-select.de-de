@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_vcenter.html 
+keywords: plan, planning, vmware vcenter, vcenter server, vcenter 
+summary: In Bezug auf VMware vCenter gibt es einige Planungsanforderungen, die Sie in Betracht ziehen sollten. 
+---
+= VMware vCenter Server
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie müssen ein vCenter-Serverkonto definieren und es einer Rolle zuweisen, die die erforderlichen Administratorrechte enthält.
+
+
+NOTE: Außerdem benötigen Sie den vollständig qualifizierten Domänennamen oder die IP-Adresse des vCenter Servers, der die ESXi Hypervisor-Hosts verwaltet, auf denen ONTAP Select bereitgestellt wird.
+
+
+
+== Administratorrechte
+
+Im Folgenden werden die minimalen administrativen Berechtigungen aufgeführt, die zum Erstellen und Managen eines ONTAP Select Clusters erforderlich sind.
+
+
+
+=== Datenspeicher
+
+* Weisen Sie Speicherplatz zu
+* Datenspeicher durchsuchen
+* Dateivorgänge auf niedriger Ebene
+* Die Dateien der virtuellen Maschine aktualisieren
+* Die Metadaten der Virtual Machine werden aktualisiert
+
+
+
+
+=== Host
+
+Konfiguration::
++
+--
+* Netzwerkkonfiguration
+* Systemmanagement
+
+
+--
+Lokaler Betrieb::
++
+--
+* Virtuelle Maschine erstellen
+* Virtuelle Maschine löschen
+* Virtuelle Maschine neu konfigurieren
+
+
+--
+
+
+
+
+=== Netzwerk
+
+* Netzwerk zuweisen
+
+
+
+
+=== Virtual Machine
+
+Konfiguration:: Alle Berechtigungen in der Kategorie.
+Interaktion:: Alle Berechtigungen in der Kategorie.
+Inventar:: Alle Berechtigungen in der Kategorie.
+Bereitstellung:: Alle Berechtigungen in der Kategorie.
+
+
+
+
+=== VApp
+
+Alle Berechtigungen in der Kategorie.

@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: task_cli_connectivity.html 
+keywords: administer, administering, cli, connectivity, network connectivity, network checker 
+summary: Sie können die Netzwerkkonnektivität zwischen zwei oder mehr ONTAP Select Nodes im internen Cluster-Netzwerk testen. Sie führen diesen Test in der Regel vor der Implementierung eines Cluster mit mehreren Nodes aus, um Probleme zu erkennen, die den Vorgang möglicherweise zum Ausfall führen. 
+---
+= Bestätigung der Netzwerkverbindung zwischen den ONTAP Select-Nodes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die Netzwerkkonnektivität zwischen zwei oder mehr ONTAP Select Nodes im internen Cluster-Netzwerk testen. Sie führen diesen Test in der Regel vor der Implementierung eines Cluster mit mehreren Nodes aus, um Probleme zu erkennen, die den Vorgang möglicherweise zum Ausfall führen.
+
+Alle ONTAP Select-Nodes im Test müssen konfiguriert und eingeschaltet sein.
+
+Jedes Mal, wenn Sie einen Test starten, wird eine neue Prozessdurchlauf im Hintergrund erstellt und einer eindeutigen Laufkennung zugewiesen. Es kann jeweils nur ein Durchlauf aktiv sein.
+
+Der Test verfügt über zwei Modi, die den Betrieb steuern:
+
+* Quick This Mode führt einen grundlegenden unterbrechungsfreien Test durch. ES wird ein PING-Test durchgeführt, zusammen mit einem Test der MTU-Größe des Netzwerks und des vSwitch.
+* Erweitert dieser Modus führt einen umfassenderen Test über alle redundanten Netzwerkpfade durch. Wenn Sie dies auf einem aktiven ONTAP Select Cluster ausführen, kann die Performance des Clusters beeinträchtigt werden.
+
+
+
+NOTE: Es wird empfohlen, vor dem Erstellen eines Clusters mit mehreren Nodes immer einen schnellen Test durchzuführen. Nachdem der Schnelltest erfolgreich abgeschlossen wurde, können Sie optional einen erweiterten Test basierend auf Ihren Produktionsanforderungen durchführen.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der CLI des Bereitstellungsdienstprogramms an.
+. Zeigen Sie die aktuellen Läufe des Netzwerk-Konnektivitätsprüfers an und vergewissern Sie sich, dass keine Läufe aktiv sind:
++
+`network connectivity-check show`
+
+. Starten Sie den Network Connectivity Checker, und notieren Sie die Run-ID in der Befehlsausgabe:
++
+`network connectivity-check start -host-names HOSTNAMES -vswitch-type VSWITCH_TYPE-mode MODE`
+
++
+Beispiel
+
++
+[listing]
+----
+network connectivity-check start -host-names 10.234.81.14
+10.234.81.15 -vswitch-type StandardVSwitch -mode quick
+----
+. Überwachen Sie den Fortschritt des Netzwerk-Konnektivitätsprüfers anhand der Laufkennung:
++
+`network connectivity-check show -run-id RUN_ID`
+
+
+
+Der Netzwerk-Konnektivitätsprüfer bereinigt normalerweise, indem alle temporären Ports und IP-Adressen entfernt werden, die der ONTAP-internen Portgruppe hinzugefügt wurden. Wenn die Konnektivitätsprüfung jedoch die temporären Ports nicht entfernt, müssen Sie einen manuellen Bereinigungsvorgang durchführen, indem Sie den CLI-Befehl mit der Option neu starten `-mode cleanup`. Wenn Sie die temporären Ports nicht aus der ONTAP-internen Portgruppe entfernen, wird die virtuelle ONTAP Select-Maschine möglicherweise nicht erfolgreich erstellt.

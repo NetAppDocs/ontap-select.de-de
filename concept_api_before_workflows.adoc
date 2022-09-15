@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_workflows.html 
+keywords: rest api, deploy rest api, rest, workflows, before you begin 
+summary: Sie sollten sich auf die Überprüfung und Nutzung der Workflow-Prozesse vorbereiten. 
+---
+= Vor Verwendung der API-Workflows
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie sollten sich auf die Überprüfung und Nutzung der Workflow-Prozesse vorbereiten.
+
+
+
+== Allgemeines zu den in den Workflows verwendeten API-Aufrufen
+
+Die Seite mit der ONTAP Select Online-Dokumentation enthält die Details zu jedem REST-API-Aufruf. Anstatt diese Details hier zu wiederholen, enthält jeder API-Aufruf, der in den Workflow-Samples verwendet wird, nur die Informationen, die Sie benötigen, um den Anruf auf der Dokumentationsseite zu finden. Nach dem Auffinden eines bestimmten API-Aufrufs können Sie die vollständigen Details des Anrufs überprüfen, einschließlich der Eingabeparameter, Ausgabeformate, HTTP-Statuscodes und des Aufruftyps.
+
+Für jeden API-Aufruf in einem Workflow sind folgende Informationen enthalten, um den Anruf auf der Dokumentationsseite zu finden:
+
+* Kategorie die API-Aufrufe sind auf der Dokumentationsseite in funktional bezogene Bereiche oder Kategorien unterteilt. Um einen bestimmten API-Aufruf zu finden, blättern Sie zum unteren Seitenrand und klicken Sie auf die entsprechende API-Kategorie.
+* HTTP-Verb das HTTP-Verb identifiziert die Aktion, die für eine Ressource durchgeführt wird. Jeder API-Aufruf wird über ein einziges HTTP-Verb ausgeführt.
+* Pfad der Pfad bestimmt die spezifische Ressource, für die die Aktion im Rahmen der Durchführung eines Anrufs gilt. Der Pfadstring wird an die Core-URL angehängt, um die vollständige URL zur Identifizierung der Ressource zu bilden.
+
+
+
+
+== Bauen einer URL für einen direkten Zugriff auf die REST-API
+
+Zusätzlich zur Seite mit der ONTAP Select-Dokumentation können Sie auch über eine Programmiersprache wie Python auf die REST-API zur Bereitstellung zugreifen. In diesem Fall unterscheidet sich die Core-URL etwas von der URL, die beim Zugriff auf die Seite mit der Online-Dokumentation verwendet wird. Wenn Sie direkt auf die API zugreifen, müssen Sie /API an die Domäne und den Port String anhängen. Beispiel:
+`\http://deploy.mycompany.com/api`

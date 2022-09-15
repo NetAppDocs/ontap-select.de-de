@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_architecture.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, architecture 
+summary: Das Plug-in zur Implementierung von vCenter ist eng in ONTAP Select Deploy und VMware vCenter integriert. Es gibt zwei Pfade zum Zugriff auf die Deploy Administration Utility über das Plug-in über die vSphere Schnittstelle. 
+---
+= Plug-in-Architektur
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Das Plug-in zur Implementierung von vCenter ist eng in ONTAP Select Deploy und VMware vCenter integriert. Es gibt zwei Pfade zum Zugriff auf die Deploy Administration Utility über das Plug-in über die vSphere Schnittstelle.
+
+image:plugin_architecture.png["Darstellung der Architektur des Deploy vCenter Plug-ins"]

@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: concept_api_async_proc.html 
+keywords: rest api, deploy rest api, rest, asynchronous processing, job object 
+summary: Einige der API-Aufrufe für die Bereitstellung, insbesondere solche, die eine Ressource erstellen oder ändern, können länger dauern als andere Anrufe. ONTAP Select implementieren verarbeitet diese langen Anforderungen asynchron. 
+---
+= Asynchrone Verarbeitung mit dem Job-Objekt
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Einige der API-Aufrufe für die Bereitstellung, insbesondere solche, die eine Ressource erstellen oder ändern, können länger dauern als andere Anrufe. ONTAP Select implementieren verarbeitet diese langen Anforderungen asynchron.
+
+
+
+== Asynchrone Anforderungen, die mit Job Object beschrieben werden
+
+Nach einem API-Aufruf, der asynchron ausgeführt wird, weist der HTTP-Antwortcode 202 darauf hin, dass die Anforderung erfolgreich validiert und akzeptiert, aber noch nicht abgeschlossen wurde. Die Anforderung wird als Hintergrundaufgabe verarbeitet, die nach der ersten HTTP-Antwort auf den Client weiter ausgeführt wird. Die Antwort umfasst das Job-Objekt, das die Anfrage einschließlich der eindeutigen Kennung anverankert.
+
+
+NOTE: Mithilfe der Seite ONTAP Select Deploy Online-Dokumentation können Sie ermitteln, welche API-Aufrufe asynchron funktionieren.
+
+
+
+== Abfragen des mit einer API-Anforderung verknüpften Jobobjekts
+
+Das in der HTTP-Antwort zurückgegebene Job-Objekt enthält mehrere Eigenschaften. Sie können die Statuseigenschaft abfragen, um festzustellen, ob die Anfrage erfolgreich abgeschlossen wurde. Ein Job-Objekt kann einen der folgenden Status haben:
+
+* Warteschlange
+* Wird Ausgeführt
+* Erfolg
+* Ausfall
+
+
+Es gibt zwei Verfahren, die Sie beim Abfragen eines Jobobjekts verwenden können, um einen Terminalstatus für die Aufgabe zu erkennen: Erfolg oder Fehler:
+
+* Standardabfrage Aktuelle Jobstatus wird sofort zurückgegeben
+* Der Job-Status für eine lange Abfrage wird nur zurückgegeben, wenn eine der folgenden Aktionen durchgeführt wird:
++
+** Status hat sich vor kurzem geändert als der Datumswert, der auf der Abfrage angegeben wurde
+** Timeout-Wert abgelaufen (1 bis 120 Sekunden)
+
+
+
+
+Standardabfrage und langes Abfragen verwenden denselben API-Aufruf, um ein Auftragsobjekt abzufragen. Eine lange Abfrageanforderung umfasst jedoch zwei Abfrageparameter: `poll_timeout` Und `last_modified`.
+
+
+TIP: Sie sollten immer Long Polling verwenden, um die Arbeitslast auf der virtuellen Maschine bereitstellen zu reduzieren.
+
+
+
+== Allgemeines Verfahren für die Ausgabe einer asynchronen Anfrage
+
+Sie können den folgenden grundlegenden Vorgang verwenden, um einen asynchronen API-Aufruf abzuschließen:
+
+. Geben Sie den asynchronen API-Aufruf aus.
+. Sie erhalten eine HTTP-Antwort 202, die darauf hinweist, dass die Anfrage erfolgreich angenommen wurde.
+. Extrahieren Sie die Kennung für das Job-Objekt aus dem Antwortkörper.
+. Führen Sie in einer Schleife in jedem Zyklus die folgenden Schritte aus:
++
+.. Den aktuellen Status des Jobs mit einer langen Umfrage abrufen
+.. Wenn sich der Job in einem nicht-Terminal-Status befindet (Warteschlange, wird ausgeführt), führen Sie die Schleife erneut aus.
+
+
+. Beenden Sie, wenn der Job einen Terminalstatus erreicht (Erfolg, Fehler).
+

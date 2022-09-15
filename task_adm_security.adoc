@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: task_adm_security.html 
+keywords: administer, administering, web, security 
+summary: Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung verschiedene Aufgaben ausführen. 
+---
+= Sicherheit
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung verschiedene Aufgaben ausführen.
+
+
+
+== Ändern des Administratorkennworts für die Bereitstellung
+
+Sie können das Kennwort für das Administratorkonto für virtuelle Maschinen bereitstellen über die Webbenutzeroberfläche nach Bedarf ändern.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie auf das Figurensymbol oben rechts auf der Seite und wählen Sie *Passwort ändern*.
+. Geben Sie das aktuelle und das neue Passwort wie aufgefordert an und klicken Sie auf *Absenden*.
+
+
+
+
+== Hinzufügen eines Management-Server-Kontos
+
+Sie können ein Management-Server-Konto zur Datenbank zum Bereitstellen von Anmeldeinformationen hinzufügen.
+
+Sie sollten mit den Typen von Zugangsdaten und der Art der Nutzung durch ONTAP Select Deploy vertraut sein.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+. Klicken Sie auf *Management Server* und dann auf *vCenter hinzufügen*.
+. Geben Sie die folgenden Informationen ein und klicken Sie auf *Hinzufügen*.
++
+[cols="30,70"]
+|===
+| In diesem Feld … | Gehen Sie wie folgt vor … 
+
+
+| Name/IP-Adresse | Geben Sie den Domain-Namen oder die IP-Adresse des vCenter Servers ein. 
+
+
+| Benutzername | Geben Sie den Benutzernamen für das Konto ein, um auf vCenter zuzugreifen. 
+
+
+| Passwort | Geben Sie das Kennwort für den zugeordneten Benutzernamen ein. 
+|===
+. Optional können Sie das Deploy vCenter Plug-in registrieren (installieren).
+. Nachdem der neue Verwaltungsserver hinzugefügt wurde, können Sie optional auf klicken image:icon_kebab.gif["Optionen"] Und wählen Sie eine der folgenden Optionen aus:
++
+** Anmeldedaten aktualisieren
+** Als Plug-in registrieren
+** Verifizieren der Anmeldedaten
+** Entfernen Sie den Verwaltungsserver
+
+
+

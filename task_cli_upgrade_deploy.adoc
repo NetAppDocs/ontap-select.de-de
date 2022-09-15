@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: task_cli_upgrade_deploy.html 
+keywords: administer, administering, cli, deploy, upgrade deploy 
+summary: Sie können ein vorhandenes Deploy Utility Virtual Machine direkt über die Befehlszeilenschnittstelle aktualisieren. 
+---
+= Aktualisieren einer Deploy-Instanz
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können ein vorhandenes Deploy Utility Virtual Machine direkt über die Befehlszeilenschnittstelle aktualisieren.
+
+
+
+== Bevor Sie beginnen
+
+Stellen Sie sicher, dass Deploy nicht zur Durchführung anderer Aufgaben während des Upgrades verwendet wird. In den aktuellen Versionshinweisen finden Sie Informationen und Einschränkungen zum Upgrade des Deploy-Dienstprogramms.
+
+
+
+== Das Upgrade-Paket wird heruntergeladen
+
+Um mit dem Upgrade-Prozess zu beginnen, müssen Sie die entsprechende Upgrade-Datei für die Implementierung von Virtual Machines von der NetApp Support Site herunterladen. Das Aktualisierungspaket ist als eine einzige komprimierte Datei formatiert.
+
+.Schritte
+. Greifen Sie über einen Webbrowser auf die NetApp Support-Website zu und klicken Sie auf *Support Quick Links*.
+. Klicken Sie unter *Top Tasks* auf *Software herunterladen* und melden Sie sich an.
+. Klicken Sie auf *Produkt finden*.
+. Scrollen Sie nach unten und klicken Sie auf *ONTAP Select Deploy Upgrade*.
+. Wählen Sie die gewünschte Version des Aktualisierungspakets aus.
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA) durch und klicken Sie auf *Akzeptieren und fortfahren*.
+. Wählen Sie das entsprechende Paket aus, und laden Sie es herunter. Gehen Sie dabei auf alle Eingabeaufforderungen für Ihre Umgebung ein.
+
+
+link:https://mysupport.netapp.com["NetApp Support"^]
+
+
+
+== Hochladen des Pakets auf die virtuelle Maschine bereitstellen
+
+Nach dem Erwerb des Aktualisierungspakets müssen Sie die Datei auf die virtuelle Maschine bereitstellen hochladen.
+
+Die Upgrade-Datei muss auf Ihrer lokalen Arbeitsstation verfügbar sein. Sie müssen außerdem das Kennwort für das Administratorbenutzerkonto besitzen.
+
+Diese Aufgabe beschreibt eine Methode zum Hochladen der Datei auf die virtuelle Maschine bereitstellen. Möglicherweise gibt es weitere für Ihre Umgebung geeignetere Optionen.
+
+.Schritte
+. Verwenden Sie in einer Command Shell auf Ihrer lokalen Arbeitsstation das sftp-Dienstprogramm, um die Image-Datei auf die virtuelle Maschine bereitstellen hochzuladen.
++
+Beispiel
+
++
+....
+sftp admin@10.234.81.101 (provide password when prompted)
+put ONTAPdeploy2.12_upgrade.tar.gz
+exit
+....
+
+
+Die Upgrade-Datei wird im Home-Verzeichnis des Admin-Benutzers gespeichert.
+
+
+
+== Anwenden des Aktualisierungspakets
+
+Nachdem die Upgrade-Datei auf die virtuelle Maschine bereitstellen hochgeladen wurde, können Sie das Upgrade anwenden.
+
+Sie müssen wissen, in welchem Verzeichnis die Upgrade-Datei in der virtuellen Maschine Deploy Utility gespeichert wurde. Stellen Sie außerdem sicher, dass die Implementierung während des Upgrades nicht für andere Aufgaben verwendet wird.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Führen Sie das Upgrade mithilfe des entsprechenden Verzeichnispfads und Dateinamens durch:
++
+`deploy upgrade -package-path FILEPATH`
+
++
+Beispiel
+
++
+....
+deploy upgrade -package-path /home/admin/
+ONTAPdeploy2.12_upgrade.tar.gz
+....
+
+
+Nach Abschluss des Aktualisierungsvorgangs werden Sie aufgefordert, ein Backup der Konfiguration virtueller Maschinen bereitzustellen. Sie sollten auch den Browser-Cache löschen, um die neu erstellten Bereitstellungs-Seiten anzeigen zu können.

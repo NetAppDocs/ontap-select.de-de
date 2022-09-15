@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: concept_api_understanding_scripts.html 
+keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
+summary: Mit den Python-Beispielskripten können Sie mehrere verschiedene Aufgaben ausführen. Sie sollten die Skripte verstehen, bevor Sie sie in einer Live-Deploy-Instanz verwenden. 
+---
+= Allgemeines zu den Python-Skripten
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit den Python-Beispielskripten können Sie mehrere verschiedene Aufgaben ausführen. Sie sollten die Skripte verstehen, bevor Sie sie in einer Live-Deploy-Instanz verwenden.
+
+
+
+== Gemeinsame Designeigenschaften
+
+Die Skripte wurden mit folgenden gemeinsamen Merkmalen entworfen:
+
+* Ausführen von der Befehlszeilenschnittstelle an einem Client-Rechner Sie können die Python-Skripte von jedem ordnungsgemäß konfigurierten Client-Rechner ausführen. Weitere Informationen finden Sie unter _before you begin_.
+* Akzeptieren von CLI-Eingabeparametern jedes Skript wird über die CLI gesteuert.
+* Eingabedatei lesen jedes Skript liest eine Eingabedatei basierend auf seinem Zweck. Wenn Sie ein Cluster erstellen oder löschen, müssen Sie eine JSON-Konfigurationsdatei angeben. Beim Hinzufügen einer Node-Lizenz müssen Sie eine gültige Lizenzdatei angeben.
+* Verwenden Sie ein gemeinsames Supportmodul das gängige Supportmodul _Deploy_Requests.py_ enthält eine einzige Klasse. Sie wird von jedem der Skripte importiert und verwendet.
+
+
+
+
+== Erstellen eines Clusters
+
+Sie können mithilfe des Skripts Cluster.py einen ONTAP Select Cluster erstellen. Auf der Grundlage der CLI-Parameter und der Inhalte der JSON-Eingabedatei können Sie das Skript in Ihre Bereitstellungsumgebung wie folgt ändern:
+
+
+NOTE: Ab ONTAP Select 9.10.1 wird der KVM-Hypervisor nicht mehr unterstützt, wenn ein neues ONTAP Select-Cluster bereitgestellt wird. Sie können KVM weiterhin mit einer früheren unterstützten Version verwenden.
+
+* Hypervisor, den Sie je nach Implementierungsversion auf ESXI oder KVM implementieren können. Bei der Implementierung in ESXi wird der Hypervisor durch vCenter gemanagt oder es kann ein Standalone-Host sein.
+* Cluster-Größe – Sie können ein Single-Node oder Cluster mit mehreren Nodes implementieren.
+* Evaluierungslizenz oder Produktionslizenz – Sie können ein Cluster mit einer Evaluierung oder erworbenen Lizenz für die Produktion implementieren.
+
+
+Die CLI-Eingabeparameter für das Skript umfassen:
+
+* Hostname oder IP-Adresse des Deploy-Servers
+* Passwort für das Admin-Benutzerkonto
+* Name der JSON-Konfigurationsdatei
+* Ausführliche Flag für Nachrichtenausgabe
+
+
+
+
+== Hinzufügen einer Node-Lizenz
+
+Wenn Sie sich für die Bereitstellung eines Produktionsclusters entscheiden, müssen Sie für jeden Knoten eine Lizenz hinzufügen, indem Sie das Skript _add_license.py_ verwenden. Sie können die Lizenz vor oder nach dem Implementieren des Clusters hinzufügen.
+
+Die CLI-Eingabeparameter für das Skript umfassen:
+
+* Hostname oder IP-Adresse des Deploy-Servers
+* Passwort für das Admin-Benutzerkonto
+* Name der Lizenzdatei
+* ONTAP-Benutzername mit Berechtigungen zum Hinzufügen der Lizenz
+* Kennwort für den ONTAP-Benutzer
+
+
+
+
+== Löschen eines Clusters
+
+Sie können einen vorhandenen ONTAP Select-Cluster mithilfe des Skripts _delete_Cluster.py_ löschen.
+
+Die CLI-Eingabeparameter für das Skript umfassen:
+
+* Hostname oder IP-Adresse des Deploy-Servers
+* Passwort für das Admin-Benutzerkonto
+* Name der JSON-Konfigurationsdatei
+

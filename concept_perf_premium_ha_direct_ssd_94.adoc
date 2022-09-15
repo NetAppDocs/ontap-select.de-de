@@ -1,0 +1,132 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_premium_ha_direct_ssd_94.html 
+keywords: ontap select, performance 
+summary: 'Performance-Information für ONTAP Select 9.4 Performance: Premium HA Direct-Attached SSD Storage' 
+---
+= Performance von ONTAP Select 9.4: Premium-HA-Direct-Attached SSD-Storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Performance von ONTAP Select 9.4 mit Premium-SSD-Storage mit Direct-Attached HA
+
+
+
+== Referenzplattform
+
+ONTAP Select 9.4 Hardware (Premium) (pro Node):
+
+* CISCO UCS C240 M4S2:
++
+** Intel Xeon CPU E5-2697 mit 2,60 GHz
+** 2 x Buchsen; 14 x CPUs pro Socket
+** 56 x logische CPUs (HT aktiviert)
+** 256 GB RAM
+** VMware ESXi 6.5
+** Laufwerke pro Host: 24 x 371A NetApp 960 GB SSD
+
+
+
+
+Client-Hardware:
+
+* 4 x NFSv3 IBM 3550m4 Clients
+
+
+Konfigurationsinformationen:
+
+* 1,500 MTU für Datenpfad zwischen Clients und Select Cluster
+* Keine Funktionen für mehr Storage-Effizienz (Komprimierung, Deduplizierung, Snapshot Kopien, SnapMirror usw.)
+
+
+In der folgenden Tabelle ist der gemessene Durchsatz gegen Lese-/Schreib-Workloads auf einem HA-Paar ONTAP Select Premium Nodes aufgeführt. Die Leistungsmessungen wurden mit dem Load-Generating-Tool SIO durchgeführt.
+
+*Performance-Ergebnisse für einen einzelnen Knoten (Teil einer mittelgroßen Instanz mit vier Nodes) ONTAP Select 9.4 Cluster auf das (SSD)*
+
+[cols="6*"]
+|===
+| Beschreibung | Sequenzielles Lesen 64KiB | Sequenzieller Schreibzugriff 64KiB | Zufälliges Lesen 8 KiB | Zufälliger Schreibvorgang: 8 KiB | Zufällige WR/ RD (50/50) 8 KiB 
+
+
+| ONTAP 9.4 Select Medium Instanz mit das (SSD) | 1045MBps 16,712 IOPS | 251 MB/s 4016 IOPS | 492 MB/s 62,912 IOPS | 141 MB/s 18,048 IOPS | 218 MB/s 27,840 IOPS 
+|===
+
+
+=== 64 KB sequenzieller Lesezugriff
+
+Details
+
+* SIO Direct I/O aktiviert
+* 2 Daten-NIC
+* 1 x Daten-Aggregat (2 TB)
+* 64 Volumes; 64 SIO-Prozesse/Threads
+* 32 Volumes pro Node (insgesamt 64)
+* 1 x SIO-Prozesse pro Volume; 1 x SIO-Thread pro Datei
+* 1 x Dateien pro Volume; Dateien sind jeweils 12000 MB
+
+
+
+
+=== 64 KB sequenzieller Schreibvorgang
+
+Details
+
+* SIO Direct I/O aktiviert
+* 2 Daten-NIC
+* 1 x Daten-Aggregat (2 TB):
+* 64 Volumes; 128 SIO-Prozesse/Threads
+* 32 Volumes pro Node (insgesamt 64)
+* 2 x SIO-Prozesse pro Volume; 1 x SIO-Thread pro Datei
+* 2 x Dateien pro Volume; Dateien sind jeweils 30720 MB
+
+
+
+
+=== 8 KB zufälliger Lesezugriff
+
+Details
+
+* SIO Direct I/O aktiviert
+* 2 Daten-NIC
+* 1 x Daten-Aggregat (2 TB):
+* 64 Volumes; 64 SIO-Prozesse/Threads
+* 32 Volumes pro Node (insgesamt 64)
+* 1 x SIO-Prozesse pro Volume; 8 x SIO-Thread pro Datei
+* 1 x Dateien pro Volume; Dateien sind jeweils 12228 MB
+
+
+
+
+=== 8 KB zufälliger Schreibvorgang
+
+Details
+
+* SIO Direct I/O aktiviert
+* 2 Daten-NIC
+* 1 x Daten-Aggregat (2 TB)
+* 64 Volumes; 64 SIO-Prozesse/Threads
+* 32 Volumes pro Node (insgesamt 64)
+* 1 x SIO-Prozesse pro Volume; 8 x SIO-Thread pro Datei
+* 1 x Dateien pro Volume; Dateien sind jeweils 8192 MB
+
+
+
+
+== 8 KB zufällig 50 % schreiben 50 % Lesen
+
+Details
+
+* SIO Direct I/O aktiviert
+* 2 Daten-NIC
+* 1 x Daten-Aggregat (2 TB)
+* 64 Volumes; 64 SIO-Prozesse/Threads
+* 32 Volumes pro Node (insgesamt 64)
+* 1 x SIO-Prozesse pro Volume; 20 x SIO-Thread pro Datei
+* 1 x Dateien pro Volume; Dateien sind jeweils 12228 MB
+

@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task_api_understanding_call.html 
+keywords: rest api, deploy rest api, rest, understanding, executing 
+summary: Die Details aller API-Aufrufe werden dokumentiert und in einem gemeinsamen Format auf der Webseite für die Online-Dokumentation von ONTAP Select Deploy angezeigt. Anhand eines einzelnen API-Anrufs können Sie auf die Details aller API-Aufrufe zugreifen und diese interpretieren. 
+---
+= Allgemeines zum und Ausführen eines API-Aufrufs
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die Details aller API-Aufrufe werden dokumentiert und in einem gemeinsamen Format auf der Webseite für die Online-Dokumentation von ONTAP Select Deploy angezeigt. Anhand eines einzelnen API-Anrufs können Sie auf die Details aller API-Aufrufe zugreifen und diese interpretieren.
+
+Sie müssen auf der Webseite für die Online-Dokumentation von ONTAP Select Deploy angemeldet sein. Beim Erstellen des Clusters müssen Sie dem ONTAP Select-Cluster die eindeutige ID zuweisen.
+
+Sie können die Konfigurationsinformationen, die ein ONTAP Select Cluster beschreiben, mit seiner eindeutigen Kennung abrufen. In diesem Beispiel werden alle als kostengünstig klassifizierten Felder zurückgegeben. Als Best Practice sollten Sie jedoch nur die speziellen Felder anfordern, die erforderlich sind.
+
+.Schritte
+. Scrollen Sie auf der Hauptseite nach unten und klicken Sie auf *Cluster*.
+. Klicken Sie auf *GET /Clusters/{Cluster_id}*, um die Details des API-Aufrufs anzuzeigen, der zur Rückgabe von Informationen über ein ONTAP Select-Cluster verwendet wird.
+

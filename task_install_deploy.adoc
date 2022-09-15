@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: task_install_deploy.html 
+keywords: install, installing, ontap select deploy, deploy administration utility, deploy utility 
+summary: Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das Dienstprogramm zum Erstellen eines ONTAP Select-Clusters verwenden. 
+---
+= Installieren von ONTAP Select Deploy
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das Dienstprogramm zum Erstellen eines ONTAP Select-Clusters verwenden.
+
+
+
+== Das Virtual Machine Image wird heruntergeladen
+
+Das ONTAP Select Paket können Sie auf der NetApp Support-Webseite herunterladen.
+
+Das ONTAP Select Deploy-Verwaltungsdienstprogramm ist als virtuelle Maschine auf der Grundlage des Standards Open Virtualization Format (OVF) verpackt. Die einzelne komprimierte Datei verfügt über das Suffix `ova`.
+
+.Schritte
+. Greifen Sie über einen Webbrowser auf die NetApp Support-Website zu und klicken Sie auf *Support Quick Links*.
+. Klicken Sie unter *Top Tasks* auf *Software herunterladen* und melden Sie sich an.
+. Klicken Sie auf *Produkt finden*.
+. Scrollen Sie nach unten und klicken Sie auf *ONTAP Select*.
+. Wählen Sie die gewünschte Version des Pakets aus.
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA) durch und klicken Sie auf *Akzeptieren und fortfahren*.
+. Wählen Sie das entsprechende Paket aus, und laden Sie es herunter, um alle Aufforderungen bei Bedarf zu beantworten.
+
+
+
+
+== Bereitstellung der virtuellen Maschine
+
+Sie müssen die ONTAP Select Deploy Virtual Machine mit dem OVF Virtual Machine Image installieren und starten. Im Rahmen der Installation müssen Sie die Netzwerkschnittstelle so konfigurieren, dass DHCP oder eine statische IP-Konfiguration verwendet wird.
+
+Sie müssen die Bereitstellung der virtuellen ONTAP Select Deploy-Maschine vorbereiten:
+
+* Aktivieren Sie die OVF-Funktion in Ihrem Browser, indem Sie das VMware Client Integration Plugin installieren oder eine ähnliche Konfiguration nach Bedarf durchführen
+* DHCP in der VMware-Umgebung aktiviert, wenn Sie der virtuellen Maschine bereitstellen dynamisch eine IP-Adresse zuweisen
+
+
+Sie müssen über die Konfigurationsinformationen verfügen, die beim Erstellen der virtuellen Maschine verwendet werden sollen, einschließlich des Namens der virtuellen Maschine, des externen Netzwerks und des Host-Namens. Wenn Sie eine statische Netzwerkkonfiguration definieren, benötigen Sie die folgenden zusätzlichen Informationen:
+
+* IP-Adresse der virtuellen Maschine bereitstellen
+* Netzmaske
+* IP-Adresse des Gateways (Router)
+* IP-Adresse des primären DNS-Servers
+* IP-Adresse des zweiten DNS-Servers
+* DNS-Suchdomänen
+
+
+Wenn Sie vSphere verwenden, enthält der Assistent zur Bereitstellung der OVF-Vorlage ein Formular, das alle Informationen zur Bereitstellungskonfiguration einschließlich der Netzwerkkonfiguration enthält. Wenn Sie dieses Formular jedoch nicht verwenden möchten, können Sie das Netzwerk stattdessen über die Konsole der virtuellen Maschine bereitstellen konfigurieren.
+
+.Schritte
+. Greifen Sie auf den vSphere-Client zu und melden Sie sich an.
+. Navigieren Sie zum entsprechenden Speicherort in der Hierarchie, und wählen Sie *OVF-Vorlage bereitstellen* aus.
+. Wählen Sie die OVA-Datei aus, und schließen Sie den Assistenten zur Bereitstellung der OVF-Vorlage aus. Wählen Sie dabei die für Ihre Umgebung geeigneten Optionen aus.
++
+Sie müssen das Passwort für das Administratorkonto definieren. Sie müssen dieses Passwort angeben, wenn Sie sich beim Dienstprogramm Deploy anmelden.
+
+. Wählen Sie nach der Bereitstellung der virtuellen Maschine die neue virtuelle Maschine aus, und schalten Sie sie ein, wenn sie nicht bereits basierend auf Ihrer Eingabe im Bereitstellungsassistenten eingeschaltet ist.
+. Bei Bedarf können Sie das Netzwerk bereitstellen über die Virtual Machine-Konsole konfigurieren:
++
+.. Klicken Sie auf die Registerkarte *Konsole*, um auf die Setup-Shell des ESXi-Hosts zuzugreifen und den Einschalungsprozess zu überwachen.
+.. Warten Sie auf die folgende Eingabeaufforderung:
++
+Hostname:
+
+.. Geben Sie den Hostnamen ein und drücken Sie *Enter*.
+.. Warten Sie auf die folgende Eingabeaufforderung:
++
+Geben Sie dem Admin-Benutzer ein Passwort ein:
+
+.. Geben Sie das Passwort ein und drücken Sie *Enter*.
+.. Warten Sie auf die folgende Eingabeaufforderung:
++
+DHCP zum Festlegen von Netzwerkinformationen verwenden? [n]:
+
+.. Geben Sie *n* ein, um eine statische IP-Konfiguration zu definieren, oder um DHCP zu verwenden, und drücken Sie *Enter*.
+.. Wenn Sie eine statische Konfiguration auswählen, geben Sie bei Bedarf alle Informationen zur Netzwerkkonfiguration ein.
+
+
+
+
+
+
+== Melden Sie sich bei der Webschnittstelle „Bereitstellen“ an
+
+Melden Sie sich an der Web-Benutzeroberfläche an, um zu bestätigen, dass das Dienstprogramm zum Bereitstellen verfügbar ist und die Erstkonfiguration durchführen.
+
+.Schritte
+. Rufen Sie im Browser das Dienstprogramm Deploy unter Verwendung der IP-Adresse oder des Domain-Namens auf:
++
+`\https://<ip_address>/`
+
+. Geben Sie den Administrator-Kontonamen und das Kennwort ein, und melden Sie sich an.
+. Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, überprüfen Sie die Voraussetzungen und klicken Sie zum Fortfahren auf *OK*.
+. Wenn Sie sich zum ersten Mal anmelden und die Bereitstellung nicht mit dem in vCenter verfügbaren Assistenten installiert haben, geben Sie bei der entsprechenden Aufforderung die folgenden Konfigurationsdaten an:
++
+** Neues Kennwort für das Administratorkonto (erforderlich)
+** AutoSupport (optional)
+** VCenter Server mit Account-Anmeldedaten (optional)
+
+
+
+
+link:task_cli_signing_in.html["Melden Sie sich für die Implementierung über SSH an"]

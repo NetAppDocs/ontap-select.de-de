@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_adm_resize.html 
+keywords: administer, administering, web, resizing nodes, resizing 
+summary: Nach der Bereitstellung eines ONTAP Select Clusters können Sie mithilfe des Deploy Administration Utility den Typ der Hypervisor-Instanz der Nodes aktualisieren. 
+---
+= Ändern der Größe der ONTAP Select-Cluster-Nodes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nach der Bereitstellung eines ONTAP Select Clusters können Sie mithilfe des Deploy Administration Utility den Typ der Hypervisor-Instanz der Nodes aktualisieren.
+
+
+NOTE: Sie können die Größe der Cluster-Nodes nur dann vornehmen, wenn das Lizenzmodell für Kapazitätsstufen verwendet wird. Die Größe von ONTAP Select-Nodes mit einer Lizenz für Kapazitäts-Pools kann nicht geändert werden.
+
+Der Cluster muss den Status „Online“ aufweisen.
+
+In dieser Aufgabe wird beschrieben, wie die Webbenutzeroberfläche bereitstellen verwendet wird. Sie können auch die CLI Deploy verwenden, um die Größe der Instanz zu ändern. Unabhängig davon, welche Schnittstelle Sie verwenden, kann die Zeit für die Größenänderung-Operation erheblich variieren, basierend auf mehreren Faktoren und kann eine längere Zeit in Anspruch nehmen. Sie können die Größe eines Node nur größer anpassen.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus der Liste aus.
+. Klicken Sie auf der Seite Cluster Details auf das Zahnradsymbol rechts auf der Seite und wählen Sie *Instanzgröße* aus.
+. Wählen Sie den *Instanztyp* aus und geben Sie die ONTAP-Zugangsdaten ein, und klicken Sie dann auf *Ändern*.
+
+
+Sie müssen warten, bis die Größe abgeschlossen ist.

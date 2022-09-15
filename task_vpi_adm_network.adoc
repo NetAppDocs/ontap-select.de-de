@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_network.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, network, networking 
+summary: Es gibt mehrere Aspekte des Netzwerks, die Sie erkunden und anzeigen können. 
+---
+= Netzwerk-Verbindung wird bestätigt
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es gibt mehrere Aspekte des Netzwerks, die Sie erkunden und anzeigen können.
+
+
+
+== Netzwerk-Verbindung wird bestätigt
+
+Sie können die Netzwerkkonnektivität zwischen zwei oder mehr ONTAP Select Nodes im internen Cluster-Netzwerk testen. Sie sollten diesen Test in der Regel vor der Implementierung eines Cluster mit mehreren Nodes durchführen, um Probleme zu erkennen, die zum Ausfall des Vorgangs führen können. Sie können den Verbindungstest auch ausführen, nachdem ein Cluster bereitgestellt und online geschaltet wurde.
+
+Jedes Mal, wenn Sie den Test starten, wird ein neuer Prozess im Hintergrund erstellt und einer eindeutigen Laufkennung zugewiesen. Es kann jeweils nur ein Durchlauf aktiv sein.
+
+Der Test wird immer im Quick Mode ausgeführt, der einen grundlegenden unterbrechungsfreien Test durchführt. ES wird ein PING-Test durchgeführt, zusammen mit einem Test der MTU-Größe des Netzwerks und des vSwitch.
+
+.Schritte
+. Klicken Sie im Fenster *Globale Inventarlisten* auf *ONTAP Select bereitstellen*.
+. Klicken Sie auf die Registerkarte *Administration*.
+. Erweitern Sie die Option *Network* und klicken Sie auf *Connectivity Checker*.
+. Klicken Sie auf *Neu ausführen*, um den Test zu starten.
+. Klicken Sie optional auf *Filtern* und erstellen Sie einen Filter, um die angezeigten Testdetails einzuschränken.
+
+
+
+
+== Anzeigen des Status des Mediatordienstes
+
+Jedes ONTAP Select Cluster mit zwei Nodes wird durch den Mediator Service überwacht, der das Management der HA-Funktion unterstützt, die von den Nodes gemeinsam verwendet wird. Sie können den Status des Mediator-Service für jedes der im Deploy-Administration Utility definierten Cluster mit zwei Nodes anzeigen.
+
+Sie können die Konfiguration jedes Mediators anzeigen, einschließlich:
+
+* Aktueller Status
+* Zwei ONTAP Select-Knoten
+* ISCSI-Ziel, an dem die HA-Kontrollinformationen gespeichert werden
+
+
+.Schritte
+. Klicken Sie im Fenster *Globale Inventarlisten* auf *ONTAP Select bereitstellen*.
+. Klicken Sie auf die Registerkarte *Administration*.
+. Erweitern Sie die Option *Mediator* und klicken Sie auf *Status*.
+. Klicken Sie optional auf *Filterung* und erstellen Sie einen Filter, um Ihre Ansicht der vom Mediator-Service überwachten Cluster mit zwei Knoten anzupassen.
+

@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_cp_benefits.html 
+keywords: license, licensing, capacity pools, benefits 
+summary: Beim Einsatz des Lizenzmodells der Kapazitäts-Pools anstelle des Lizenzmodells der Kapazitäts-Tiers ergeben sich verschiedene Vorteile. 
+---
+= Zusammenfassung der Vorteile
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Beim Einsatz des Lizenzmodells der Kapazitäts-Pools anstelle des Lizenzmodells der Kapazitäts-Tiers ergeben sich verschiedene Vorteile.
+
+
+
+== Effizientere Nutzung der Storage-Kapazität
+
+Bei der Nutzung der Kapazitätsebenen-Lizenzierung weisen Sie jedem Node eine feste Storage-Kapazität zu. Ungenutzter Speicherplatz kann nicht mit den anderen Nodes gemeinsam genutzt werden und wird effektiv verschwendet. Bei der Lizenzierung von Kapazitäts-Pools verbraucht jeder Node basierend auf der Größe der Datenaggregate nur die Kapazität, die er benötigt.
+
+Da die Kapazität in einem zentralen Pool verankert ist, können sie auch von vielen Nodes in Ihrem Unternehmen verwendet werden.
+
+
+
+== Erheblich geringerer administrativer Aufwand und damit niedrigere Kosten
+
+Wenn Sie Lizenzen für die Kapazitätsschicht nutzen, müssen Sie für jeden Node eine Lizenz erwerben und installieren. Bei der Nutzung von Kapazitäts-Pools gibt es für jeden gemeinsam genutzten Pool eine Lizenz. Dies reduziert den administrativen Overhead erheblich und senkt die Kosten.
+
+
+
+== Verbesserte Nutzungsmetriken
+
+Die Webbenutzeroberfläche bereitstellen bietet erweiterte Informationen zur Nutzung der Kapazitätspools. In einem Kapazitäts-Pool kann schnell ermittelt werden, wie viel Storage genutzt und verfügbar ist. Hierbei werden die Nodes aus einem Pool genutzt und aus welchen Pools ein Cluster seine Kapazität zuweist.

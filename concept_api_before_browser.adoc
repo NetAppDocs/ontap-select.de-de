@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_browser.html 
+keywords: rest api, deploy rest api, rest, access browser, before you begin 
+summary: Es gibt einige Dinge, die Sie beachten sollten, bevor Sie die Bereitstellung Online-Dokumentation Seite. 
+---
+= Bevor Sie mit einem Browser auf die API zugreifen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es gibt einige Dinge, die Sie beachten sollten, bevor Sie die Bereitstellung Online-Dokumentation Seite.
+
+
+
+== Implementierungsplan
+
+Wenn Sie im Rahmen der Durchführung spezifischer Bereitstellungs- oder Verwaltungsaufgaben API-Aufrufe ausgeben möchten, sollten Sie die Erstellung eines Bereitstellungsplans in Betracht ziehen. Diese Pläne können formell oder informell sein und im Allgemeinen Ihre Ziele und die zu verwendenden API-Aufrufe enthalten. Weitere Informationen finden Sie unter Workflow-Prozesse mithilfe der REST-API implementieren.
+
+
+
+== JSON-Beispiele und Parameterdefinitionen
+
+Jeder API-Aufruf wird auf der Dokumentationsseite in einem konsistenten Format beschrieben. Der Inhalt umfasst Implementierungsnotizen, Abfrageparameter und HTTP-Statuscodes. Außerdem können Sie wie folgt Details über den JSON anzeigen, der mit den API-Anfragen und Antworten verwendet wird:
+
+* Beispielwert Wenn Sie bei einem API-Aufruf auf „_example Value_“ klicken, wird eine typische JSON-Struktur für den Aufruf angezeigt. Sie können das Beispiel je nach Bedarf ändern und als Eingabe für Ihre Anforderung verwenden.
+* Modell Wenn Sie auf _Model_ klicken, wird eine vollständige Liste der JSON-Parameter mit einer Beschreibung für jeden Parameter angezeigt.
+
+
+
+
+== Vorsicht beim Ausgeben von API-Aufrufen
+
+Alle API-Vorgänge, die Sie mithilfe der Dokumentationsseite „Bereitstellen“ ausführen, sind Live-Vorgänge. Sie sollten darauf achten, dass Sie Konfigurationen oder andere Daten nicht versehentlich erstellen, aktualisieren oder löschen.

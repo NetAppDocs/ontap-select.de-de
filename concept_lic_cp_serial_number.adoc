@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_cp_serial_number.html 
+keywords: license, licensing, capacity pools, node serial numbers 
+summary: Beim Lizenzmodell für Kapazitätsstufen entspricht die neunstellige Node-Seriennummer der Lizenz, die dem Node zugewiesen wurde. Die Nodes, die das Lizenzierungsmodell für Kapazitäts-Pools verwenden, haben jedoch ein anderes Format. 
+---
+= Seriennummern der Nodes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Beim Lizenzmodell für Kapazitätsstufen entspricht die neunstellige Node-Seriennummer der Lizenz, die dem Node zugewiesen wurde. Die Nodes, die das Lizenzierungsmodell für Kapazitäts-Pools verwenden, haben jedoch ein anderes Format.
+
+Die Seriennummer eines Knotens mit der Lizenzierung von Kapazitäts-Pools weist das folgende Format auf:
+
+`999 ppppppppp nnnnnnnn`
+
+
+NOTE: Leerzeichen wurden aus Gründen der Klarheit hinzugefügt, sind aber nicht Teil der tatsächlichen Seriennummer.
+
+Jeder Abschnitt der Seriennummer des Node wird in der folgenden Tabelle von links nach rechts beschrieben.
+
+[cols="15,85"]
+|===
+| Abschnitt | Beschreibung 
+
+
+| '999' | Konstanter dreistelliger Wert reserviert von NetApp. 
+
+
+| Pppppppppppppppppppppppp | Variable neunstellige Lizenzseriennummer, die dem Kapazitäts-Pool von NetApp zugewiesen ist 
+
+
+| Nnnnnnnnnnnnnn | Variable achtstelliger Wert, der vom License Manager für jeden Node mit dem Kapazitäts-Pool generiert wird 
+|===
+
+NOTE: Achtung: Beim Eröffnen eines Falls mit NetApp Support, der einen Node mit einer Kapazitäts-Pool-Lizenz verwendet, können Sie keine vollständige 20-stellige Node-Seriennummer angeben. Stattdessen müssen Sie die neunstellige Seriennummer der Kapazitätspool-Lizenz angeben. Sie können die Lizenzseriennummer von der Node-Seriennummer wie oben dargestellt ableiten. Überspringen Sie die ersten drei Ziffern der Knotenseriennummer ('999') und extrahieren Sie die nächsten neun Ziffern (ppppppppppppppppppppp).

@@ -1,0 +1,180 @@
+---
+sidebar: sidebar 
+permalink: concept_stor_concepts_chars.html 
+keywords: ontap select, storage concepts 
+summary: Erkennung von allgemeinen Storage-Konzepten, die sich für die ONTAP Select Umgebung gelten, bevor Sie die spezifischen Storage-Komponenten untersuchen. 
+---
+= Storage: Allgemeine Konzepte und Eigenschaften
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Erkennung von allgemeinen Storage-Konzepten, die sich für die ONTAP Select Umgebung gelten, bevor Sie die spezifischen Storage-Komponenten untersuchen.
+
+
+
+== Phasen der Storage-Konfiguration
+
+Zu den Hauptkonfigurationsphasen des ONTAP Select Host-Storage gehören:
+
+* Voraussetzungen für die Vorimplementierung
++
+** Stellen Sie sicher, dass jeder Hypervisor-Host konfiguriert ist und bereit für eine ONTAP Select-Implementierung ist.
+** Die Konfiguration umfasst die physischen Laufwerke, RAID Controller und Gruppen, LUNs sowie die zugehörige Netzwerkvorbereitung.
+** Diese Konfiguration erfolgt außerhalb von ONTAP Select.
+
+
+* Konfiguration mit dem Hypervisor Administrator Utility
++
+** Sie können bestimmte Storage-Aspekte mit dem Hypervisor-Administrationsprogramm (z. B. vSphere in einer VMware-Umgebung) konfigurieren.
+** Diese Konfiguration erfolgt außerhalb von ONTAP Select.
+
+
+* Konfiguration mit dem ONTAP Select Deploy Administration Utility
++
+** Mithilfe des Deploy Administration Utility können Sie die zentralen logischen Storage-Konstrukte konfigurieren.
+** Dies erfolgt entweder explizit über CLI-Befehle oder automatisch durch das Dienstprogramm im Rahmen einer Bereitstellung.
+
+
+* Konfiguration nach der Implementierung
++
+** Nachdem eine ONTAP Select-Bereitstellung abgeschlossen ist, können Sie das Cluster mithilfe der ONTAP CLI oder des System Manager konfigurieren.
+** Diese Konfiguration erfolgt außerhalb von ONTAP Select Deploy.
+
+
+
+
+
+
+== Gemanagter oder nicht gemanagter Storage
+
+Storage, auf den ONTAP Select direkt zugegriffen wird und der direkt gesteuert wird, wird gemanagt. Jeder andere Storage auf demselben Hypervisor-Host wird nicht gemanagt.
+
+
+
+=== Homogener physischer Storage
+
+Alle physischen Laufwerke, die den von ONTAP Select gemanagten Storage enthalten, müssen homogen sein. Das heißt, die gesamte Hardware muss in Bezug auf die folgenden Eigenschaften identisch sein:
+
+* TYP (SAS, NL-SAS, SATA, SSD)
+* Geschwindigkeit (U/min)
+
+
+
+
+== Darstellung der lokalen Storage-Umgebung
+
+Jeder Hypervisor-Host enthält lokale Festplatten und weitere logische Storage-Komponenten, die von ONTAP Select verwendet werden können. Diese Speicherkomponenten sind von der physischen Festplatte in einer vielschichtigen Struktur angeordnet.
+
+image:ST_01.jpg["Lokale Storage-Umgebung aus"]
+
+
+
+=== Eigenschaften der lokalen Speicherkomponenten
+
+Es gibt verschiedene Konzepte, die für die in einer ONTAP Select-Umgebung verwendeten lokalen Storage-Komponenten gelten. Sie sollten mit diesen Konzepten vertraut sein, bevor Sie sich für eine ONTAP Select-Implementierung vorbereiten. Diese Konzepte werden nach Kategorie geordnet: RAID-Gruppen und LUNs, Storage-Pools und virtuelle Festplatten.
+
+
+
+==== Gruppieren physischer Laufwerke in RAID-Gruppen und LUNs
+
+Ein oder mehrere physische Laufwerke können lokal an den Hostserver angeschlossen und ONTAP Select zur Verfügung gestellt werden. Die physischen Laufwerke werden RAID-Gruppen zugewiesen, die dann dem Hypervisor-Host-Betriebssystem als eine oder mehrere LUNs angezeigt werden. Jede LUN wird dem Hypervisor-Host-Betriebssystem als physische Festplatte dargestellt.
+
+Beim Konfigurieren eines ONTAP Select-Hosts sollten Sie Folgendes beachten:
+
+* Der Zugriff auf den gesamten gemanagten Storage muss über einen einzelnen RAID-Controller erfolgen
+* Je nach Anbieter unterstützt jeder RAID-Controller eine maximale Anzahl an Laufwerken pro RAID-Gruppe
+
+
+
+
+==== Eine oder mehrere RAID-Gruppen
+
+Jeder ONTAP Select-Host muss über einen einzelnen RAID-Controller verfügen. Sie sollten eine einzelne RAID-Gruppe für ONTAP Select erstellen. In bestimmten Situationen könnten Sie jedoch erwägen, mehr als eine RAID-Gruppe zu erstellen. Siehe link:reference_plan_best_practices.html["Zusammenfassung der Best Practices"].
+
+
+
+=== Überlegungen zum Storage-Pool
+
+Bei der Vorbereitung der Implementierung von ONTAP Select gibt es verschiedene Probleme in Bezug auf die Storage Pools, die Sie bei der Vorbereitung beachten sollten.
+
+
+NOTE: In einer VMware Umgebung ist ein Storage-Pool gleichbedeutend mit einem VMware Datastore.
+
+
+
+==== Storage-Pools und LUNs
+
+Jede LUN wird auf dem Hypervisor-Host als lokale Festplatte angezeigt und kann Teil eines Speicherpools sein. Jeder Speicherpool ist mit einem Dateisystem formatiert, das das Hypervisor-Host-Betriebssystem verwenden kann.
+
+Sie müssen sicherstellen, dass die Speicherpools im Rahmen einer ONTAP Select-Implementierung ordnungsgemäß erstellt werden. Sie können mit dem Hypervisor-Administrationstool einen Speicherpool erstellen. Mit VMware können Sie beispielsweise den vSphere Client verwenden, um einen Speicherpool zu erstellen. Anschließend wird der Speicherpool an das Administrationsprogramm ONTAP Select Deploy übergeben.
+
+
+
+=== Verwalten der virtuellen Laufwerke
+
+Bei der Vorbereitung der Bereitstellung von ONTAP Select sind einige Probleme im Zusammenhang mit virtuellen Festplatten zu vermeiden.
+
+
+
+==== Virtuelle Festplatten und Dateisysteme
+
+Der virtuellen ONTAP Select-Maschine sind mehrere virtuelle Laufwerke zugewiesen. Jedes virtuelle Laufwerk ist eine Datei in einem Storage-Pool und wird vom Hypervisor verwaltet. Von ONTAP Select werden mehrere Arten von Festplatten verwendet, in erster Linie System-Disks und Datendisks.
+
+Bei virtuellen Laufwerken sollten Sie auch Folgendes beachten:
+
+* Der Speicherpool muss verfügbar sein, bevor die virtuellen Laufwerke erstellt werden können.
+* Die virtuellen Laufwerke können nicht erstellt werden, bevor die virtuelle Maschine erstellt wird.
+* Zum Erstellen aller virtuellen Laufwerke (d. h., ein Administrator darf niemals eine virtuelle Festplatte außerhalb des Bereitstellungs-Dienstprogramms erstellen) muss das ONTAP Select Deploy Administration Utility verwendet werden.
+
+
+
+
+==== Konfigurieren der virtuellen Laufwerke
+
+Die virtuellen Laufwerke werden von ONTAP Select verwaltet. Sie werden automatisch erstellt, wenn Sie mithilfe des Deploy Administration Utility ein Cluster erstellen.
+
+
+
+== Darstellung der externen Speicherumgebung
+
+Die ONTAP Select vNAS Lösung ermöglicht ONTAP Select die Nutzung von Datastores auf einem Storage, der sich außerhalb des Hypervisor-Hosts befindet. Auf die Datastores kann über das Netzwerk über VMware vSAN oder direkt in einem externen Storage-Array zugegriffen werden.
+
+ONTAP Select können so konfiguriert werden, dass folgende Typen von VMware ESXi Netzwerkspeichern verwendet werden, die sich außerhalb des Hypervisor-Hosts befinden:
+
+* VSAN (virtuelles SAN)
+* VMFS
+* NFS
+
+
+
+
+=== VSAN Datastores
+
+Jeder ESXi-Host kann einen oder mehrere lokale VMFS-Datastores haben. Normalerweise sind diese Datenspeicher nur für den lokalen Host zugänglich. Mit VMware vSAN kann jeder der Hosts in einem ESXi Cluster alle Datastores im Cluster so nutzen, als wären sie lokal. Die folgende Abbildung zeigt, wie vSAN einen Pool von Datastores erstellt, der von den Hosts im ESXi Cluster gemeinsam genutzt wird.
+
+image:ST_02.jpg["ESXi Cluster"]
+
+
+
+=== VMFS Datastore auf externem Speicher-Array
+
+Sie können einen VMFS-Datenspeicher auf einem externen Storage Array erstellen. Auf den Storage wird über eines von mehreren verschiedenen Netzwerkprotokollen zugegriffen. Die folgende Abbildung zeigt einen VMFS-Datenspeicher auf einem externen Speicher-Array, auf das über das iSCSI-Protokoll zugegriffen wird.
+
+
+NOTE: ONTAP Select unterstützt alle im VMware Storage/SAN Compatibility Guide beschriebenen externen Storage Arrays, einschließlich iSCSI, Fibre Channel und Fibre Channel over Ethernet.
+
+image:ST_03.jpg["ESXi Hypervisor-Host"]
+
+
+
+=== NFS-Datenspeicher auf externem Storage Array
+
+Sie können einen NFS-Datenspeicher auf einem externen Storage Array erstellen. Auf den Storage wird über das NFS-Netzwerkprotokoll zugegriffen. Die folgende Abbildung zeigt einen NFS-Datenspeicher auf externen Storage, auf den über die NFS Server Appliance zugegriffen wird.
+
+image:ST_04.jpg["ESXi Hypervisor-Host"]

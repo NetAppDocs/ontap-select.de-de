@@ -1,0 +1,354 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_cluster.html 
+keywords: administer, administering, cli, create cluster, deploy cluster 
+summary: Über die mit dem ONTAP Select Deploy Administration Utility bereitgestellte Befehlszeilenschnittstelle können Sie ein Single Node oder Multi-Node ONTAP Select Cluster erstellen. 
+---
+= Implementieren eines ONTAP Select-Clusters mithilfe der CLI
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Über die mit dem ONTAP Select Deploy Administration Utility bereitgestellte Befehlszeilenschnittstelle können Sie ein Single Node oder Multi-Node ONTAP Select Cluster erstellen.
+
+
+
+== Bevor Sie beginnen
+
+Bevor Sie ein ONTAP Select Cluster auf ESXi erstellen, sollten Sie die erforderliche Vorbereitung verstehen.
+
+
+
+=== Das Hinzufügen von Speicher zum ONTAP Select-Node wird vorbereitet
+
+Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie mindestens einen Speicherpool an jedem Knoten für die Systemdaten sowie die Root- und Datenaggregate erstellen. Sie müssen den Speicherpool als Teil des Konfigurationsens des ONTAP Select-Node anbinden.
+
+Wenn Sie Software-RAID verwenden, müssen Sie einen Speicherpool für die Systemdaten erstellen und sicherstellen, dass die SSD-Laufwerke für das Root- und die Datenaggregate verfügbar sind. Sie müssen den Speicherpool und die Festplatten als Teil der Konfiguration des ONTAP Select-Node anbinden.
+
+
+
+=== Verfügbare ONTAP Select-Versionen
+
+Das Deploy Administration Utility enthält eine einzige Version von ONTAP Select. Wenn Sie Cluster mit einer früheren Version von ONTAP Select implementieren möchten, müssen Sie zuerst das ONTAP Select-Image der Deploy-Instanz hinzufügen. Siehe link:task_adm_deploy_image_add.html["Hinzufügen eines ONTAP Select Images zur Implementierung"] Finden Sie weitere Informationen.
+
+
+
+=== Lizenzieren von ONTAP Select für eine Implementierung in Produktionsumgebungen
+
+Bevor Sie ein ONTAP Select Cluster in einer Produktionsumgebung implementieren, müssen Sie eine Storage-Kapazitätslizenz erwerben und die zugehörige Lizenzdatei herunterladen. Sie können den Storage an jedem Node über das Modell _Capacity Tiers_ lizenzieren oder mithilfe des _Capacity Pools_-Modells einen Shared Pool lizenzieren.
+
+
+
+== Hochladen und Registrieren einer Lizenzdatei
+
+Nachdem Sie eine Lizenzdatei mit Speicherkapazität erworben haben, müssen Sie die Datei mit der Lizenz auf die virtuelle Maschine bereitstellen und registrieren.
+
+
+NOTE: Wenn Sie nur einen Cluster zur Evaluierung implementieren, können Sie diesen Schritt überspringen.
+
+Sie müssen das Passwort für das Admin-Benutzerkonto besitzen.
+
+.Schritte
+. Verwenden Sie in einer Command Shell auf Ihrer lokalen Arbeitsstation das sftp-Dienstprogramm, um die Lizenzdatei auf die virtuelle Maschine bereitstellen hochzuladen.
++
+Beispiel
+
++
+....
+sftp admin@10.234.81.101 (provide password when prompted)
+put NLF-320000nnn.txt
+exit
+....
+. Melden Sie sich über SSH bei der CLI des Deploy Utility mit dem Administratorkonto an.
+. Registrieren Sie die Lizenz:
++
+`license add -file-name FILENAME`
+
++
+Geben Sie bei der entsprechenden Aufforderung das Kennwort für das Administratorkonto an.
+
+. Zeigen Sie die Lizenzen im System an, um zu bestätigen, dass die Lizenz ordnungsgemäß hinzugefügt wurde:
++
+`license show`
+
+
+
+
+
+== Hinzufügen der ESXi-Hypervisor-Hosts
+
+Sie müssen jeden Hypervisor-Host registrieren, auf dem ein ONTAP Select-Node ausgeführt wird. In diesem Rahmen authentifiziert das Deploy-Administration-Utility entweder auf dem vCenter-Server, der den Host verwaltet, oder direkt auf dem ESXi-Standalone-Host.
+
+Bevor Sie einen von vCenter verwalteten Host registrieren, müssen Sie ein Management-Server-Konto für den vCenter-Server hinzufügen. Wenn der Host nicht von vCenter gemanagt wird, können Sie die Hostanmeldeinformationen im Rahmen der Registrierung des Hosts angeben. Verwenden Sie dieses Verfahren, um jeden Host hinzuzufügen.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Wenn der Host von einem vCenter-Server gemanagt wird, fügen Sie die Anmeldeinformationen für das vCenter-Konto hinzu:
++
+`credential add -hostname <FQDN|IP> -type vcenter -username VCENTER_USERNAME`
+
++
+Beispiel
+
++
+....
+credential add -hostname vc.select.company-demo.com -type vcenter -username administrator@vsphere.local
+....
+. Registrieren des Hosts:
++
+** Registrieren eines eigenständigen Hosts, der nicht von vCenter gemanagt wird:
+`host register -name <FQDN|IP> -hypervisor-type ESX -username ESX_USERNAME`
+** Registrieren eines von vCenter gemanagten Hosts:
+`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN| IP>`
++
+Beispiel
+
++
+....
+host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.company-demo.com
+....
+
+
+. Zeigen Sie den Status des Hosts an und bestätigen Sie, dass er authentisch ist.
++
+`host show -name <FQDN|IP> -detailed`
+
++
+Beispiel
+
++
+....
+host show -name 10.234.81.14 -detailed
+....
+
+
+
+
+== Erstellen und Konfigurieren eines ONTAP Select-Clusters
+
+Sie müssen den ONTAP Select-Cluster erstellen und dann konfigurieren. Nach der Konfiguration des Clusters können Sie die einzelnen Nodes konfigurieren.
+
+Sie müssen festlegen, wie viele Nodes das Cluster enthält und über die zugehörigen Konfigurationsinformationen verfügen.
+
+Wenn Sie ein ONTAP Select-Cluster erstellen, generiert das Deploy-Dienstprogramm basierend auf dem von Ihnen angegeben Cluster-Namen und der Anzahl der Nodes automatisch die Node-Namen. Die Implementierung generiert auch die eindeutige Node-IDs.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Erstellen des Clusters:
++
+`cluster create -name CLUSTERNAME -node-count NODES`
+
++
+Beispiel
+
++
+....
+cluster create -name test-cluster -node-count 1
+....
+. Konfigurieren des Clusters:
++
+`cluster modify -name CLUSTERNAME -mgmt-ip IP_ADDRESS -netmask NETMASK -gateway IP_ADDRESS -dns-servers <FQDN|IP>_LIST -dns-domains DOMAIN_LIST`
+
++
+Beispiel
+
++
+....
+cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
+-gateway 10.234.81.1 -dns-servers 10.221.220.10 -dnsdomains select.company-demo.com
+....
+. Anzeigen der Konfiguration und des Status des Clusters:
++
+`cluster show -name CLUSTERNAME -detailed`
+
+
+
+
+
+== Konfigurieren eines ONTAP Select-Node
+
+Sie müssen jeden der Nodes im ONTAP Select-Cluster konfigurieren.
+
+Sie müssen über die Konfigurationsinformationen für den Node verfügen. Die Lizenzdatei für die Kapazitätsschicht sollte hochgeladen und im Deploy Utility installiert werden.
+
+Sie sollten diese Vorgehensweise zum Konfigurieren der einzelnen Knoten verwenden. Auf den Node in diesem Beispiel wird eine Lizenz für das Kapazitätstier angewendet.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Legen Sie die Namen fest, die den Cluster-Nodes zugewiesen sind:
++
+`node show -cluster-name CLUSTERNAME`
+
+. Wählen Sie den Knoten aus und führen Sie eine Basiskonfiguration durch:
+`node modify -name NODENAME -cluster-name CLUSTERNAME -host-name <FQDN|IP> -license-serial-number NUMBER -instance-type TYPE -passthrough-disks false`
++
+Beispiel
+
++
+....
+node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.81.14
+-license-serial-number 320000nnnn -instance-type small -passthrough-disks false
+....
++
+Die RAID-Konfiguration für den Knoten wird mit dem Parameter _Passthrough-Disks_ angezeigt. Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, muss dieser Wert FALSE sein. Wenn Sie Software-RAID verwenden, muss dieser Wert wahr sein.
+
++
+Für den ONTAP Select-Node wird eine Lizenz für Kapazitätsstufen verwendet.
+
+. Zeigen Sie die am Host verfügbare Netzwerkkonfiguration an:
++
+`host network show -host-name <FQDN|IP> -detailed`
+
++
+Beispiel
+
++
+....
+host network show -host-name 10.234.81.14 -detailed
+....
+. Netzwerkkonfiguration für den Node durchführen:
++
+`node modify -name NODENAME -cluster-name CLUSTERNAME -mgmt-ip IP -management-networks NETWORK_NAME -data-networks NETWORK_NAME -internal-network NETWORK_NAME`
+
++
+Wenn Sie ein Single-Node-Cluster bereitstellen, benötigen Sie kein internes Netzwerk und sollten -internes Netzwerk entfernen.
+
++
+Beispiel
+
++
+....
+node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.21
+-management-networks sDOT_Network -data-networks sDOT_Network
+....
+. Anzeigen der Konfiguration des Knotens:
++
+`node show -name NODENAME -cluster-name CLUSTERNAME -detailed`
+
++
+Beispiel
+
++
+....
+node show -name test-cluster-01 -cluster-name test-cluster -detailed
+....
+
+
+
+
+== Anbindung von Storage an die ONTAP Select-Nodes
+
+Sie müssen den von jedem Node im ONTAP Select-Cluster verwendeten Storage konfigurieren. Jedem Node muss immer mindestens ein Storage-Pool zugewiesen werden. Bei der Verwendung von Software-RAID muss jedem Knoten auch mindestens ein Laufwerk zugewiesen werden.
+
+Sie müssen den Speicherpool mit VMware vSphere erstellen. Wenn Sie Software-RAID verwenden, benötigen Sie auch mindestens ein verfügbares Laufwerk.
+
+Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie die Schritte 1 bis 4 ausführen. Bei der Verwendung von Software-RAID müssen Sie die Schritte 1 bis 6 ausführen.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit den Anmeldedaten des Administratorkontos an.
+. Anzeigen der am Host verfügbaren Speicherpools:
++
+`host storage pool show -host-name <FQDN|IP>`
+
++
+Beispiel
+
++
+[listing]
+----
+host storage pool show -host-name 10.234.81.14
+----
++
+Über VMware vSphere erhalten Sie auch die verfügbaren Storage-Pools.
+
+. Schließen Sie einen verfügbaren Speicherpool an den ONTAP Select-Node an:
++
+`node storage pool attach -name POOLNAME -cluster-name CLUSTERNAME -node-name NODENAME -capacity-limit LIMIT`
+
++
+Wenn Sie den Parameter "-Capacity-Limit" angeben, geben Sie den Wert als GB oder TB an.
+
++
+Beispiel
+
++
+[listing]
+----
+node storage pool attach -name sDOT-02 -cluster-name test-cluster -
+node-name test-cluster-01 -capacity-limit 500GB
+----
+. Anzeigen der mit dem Node verbundenen Speicherpools:
++
+`node storage pool show -cluster-name CLUSTERNAME -node-name NODENAME`
+
++
+Beispiel
+
++
+[listing]
+----
+node storage pool show -cluster-name test-cluster -node-name testcluster-01
+----
+. Wenn Sie Software-RAID verwenden, verbinden Sie das verfügbare Laufwerk oder die verfügbaren Laufwerke:
++
+`node storage disk attach -node-name NODENAME -cluster-name CLUSTERNAME -disks LIST_OF_DRIVES`
+
++
+Beispiel
+
++
+[listing]
+----
+node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000:66:00.0 0000:67:00.0 0000:68:00.0
+----
+. Wenn Sie Software-RAID verwenden, zeigen Sie die mit dem Node verbundenen Festplatten an:
++
+`node storage disk show -node-name NODENAME -cluster-name CLUSTERNAME`
+
++
+Beispiel
+
++
+[listing]
+----
+node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
+----
+
+
+
+
+== Implementieren eines ONTAP Select-Clusters
+
+Nachdem das Cluster und die Nodes konfiguriert wurden, können Sie das Cluster implementieren.
+
+Vor der Bereitstellung eines Multi-Node-Clusters sollten Sie den Netzwerkverbindungsprüfer ausführen, um die Verbindung zwischen den Clusterknoten im internen Netzwerk zu bestätigen.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Implementierung des ONTAP Select-Clusters:
++
+`cluster deploy -name CLUSTERNAME`
+
++
+Beispiel
+
++
+[listing]
+----
+cluster deploy -name test-cluster
+----
++
+Geben Sie das Kennwort ein, das für das ONTAP-Administratorkonto verwendet werden soll, wenn Sie dazu aufgefordert werden.
+
+. Anzeigen des Status des Clusters, um zu bestimmen, wann es erfolgreich implementiert wurde:
++
+`cluster show -name CLUSTERNAME`
+
+
+
+Sie sollten die Konfigurationsdaten der ONTAP Select Deploy-Lösung sichern.

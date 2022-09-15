@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: concept_adm_upgrading_nodes.html 
+keywords: administer, administering, web, upgrading nodes 
+summary: Nachdem Sie ein ONTAP Select Cluster implementiert haben, können Sie mithilfe des standardmäßigen ONTAP Software-Upgrades das ONTAP Image jedes Nodes nach Bedarf aktualisieren. 
+---
+= Aktualisieren der ONTAP Select-Knoten
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nach der Bereitstellung eines ONTAP Select Clusters können Sie das ONTAP-Image bei jedem Node im Cluster nach Bedarf aktualisieren.
+
+
+CAUTION: Das Deploy Administration Utility ist nicht zum Durchführen von Upgrades vorhandener ONTAP Select-Nodes möglich. Das Deploy-Tool kann nur verwendet werden, um neue ONTAP Select-Cluster zu erstellen.
+
+
+
+== Allgemeines Verfahren
+
+Auf hoher Ebene sollten Sie die folgenden Schritte verwenden, um einen vorhandenen ONTAP Select Node zu aktualisieren.
+
+. Navigieren Sie zu der Download-Seite auf der NetApp Support Site.
++
+https://mysupport.netapp.com/site/downloads["NetApp Support-Downloads"^]
+
+. Klicken Sie auf *ONTAP Select Knoten-Upgrade*.
+. Wählen Sie das entsprechende Upgrade-Image aus, und laden Sie es herunter, um alle Aufforderungen bei Bedarf zu beantworten.
+. Weitere Informationen und erforderliche Verfahren vor dem Upgrade eines ONTAP Select-Knotens sind in den Versionshinweisen zu finden. Sie können die Versionshinweise für Ihre ONTAP Select-Version auf der Produktbibliotheksseite aufrufen.
++
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["ONTAP Select Produktbibliothek"^]
+
+. Aktualisieren Sie den ONTAP Select-Knoten mithilfe der standardmäßigen ONTAP-Upgrade-Verfahren für die ONTAP Select-Upgrade-Datei.
++
+https://docs.netapp.com/us-en/ontap/["ONTAP 9-Dokumentation"^]
+
+
+
+
+
+== Zurücksetzen eines ONTAP Select-Node
+
+Sie können einen ONTAP Select Node nicht auf eine Version vor der ursprünglich installierten Version zurücksetzen. Beispiel:
+
+ONTAP Select 9.4 ist zunächst installiert:: Sie können den Node auf Version 9.5 aktualisieren und bei Bedarf zurück auf Version 9.4 wechseln.
+ONTAP Select 9.5 ist zunächst installiert:: Sie können nicht auf Version 9.4 zurücksetzen, da diese Version vor der ursprünglich installierten Version liegt.
+
+
+
+
+== Über den VMXNET3-Netzwerktreiber
+
+Ab ONTAP Select 9.5 mit Deploy 2.10 ist VMXNET3 der Standardnetzwerktreiber, der bei neuen Cluster-Implementierungen auf VMware ESXi enthalten ist. Wenn Sie einen vorhandenen ONTAP Select-Knoten auf Version 9.5 aktualisieren, wird der Netzwerktreiber nicht automatisch aktualisiert. Sie müssen manuell ein Upgrade auf VMXNET3 durchführen. Wenden Sie sich an den NetApp Support, um Hilfe beim Upgrade zu erhalten.

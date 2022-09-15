@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_data_mgmt_separation.html 
+keywords: ontap select, traffic separation 
+summary: Isolieren Sie Datenverkehr und Management-Datenverkehr in separate Layer-2-Netzwerke. 
+---
+= Trennung des Daten- und Management-Datenverkehrs
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Isolieren Sie Datenverkehr und Management-Datenverkehr in separate Layer-2-Netzwerke.
+
+Der externe ONTAP Select-Netzwerkverkehr wird als Daten (CIFS, NFS und iSCSI), Management- und Replizierungs-Datenverkehr (SnapMirror) definiert. In einem ONTAP Cluster verwendet jeder Traffic-Stil eine separate logische Schnittstelle, die auf einem virtuellen Netzwerk-Port gehostet werden muss. In der Konfiguration mit mehreren Nodes von ONTAP Select werden diese als Ports e0a und e0b/e0g bezeichnet. Für die Konfiguration mit einem Node werden diese als e0a und e0b/e0c bezeichnet, während die restlichen Ports für interne Cluster Services reserviert sind.
+
+NetApp empfiehlt, den Datenverkehr und den Management-Datenverkehr in separate Layer-2-Netzwerke zu isolieren. In der ONTAP Select Umgebung wird dies mithilfe von VLAN-Tags durchgeführt. Dies kann erreicht werden, indem dem Netzwerkadapter 1 (Port e0a) eine VLAN-getaggte Port-Gruppe für den Management-Datenverkehr zugewiesen wird. Dann können Sie den Ports e0b und e0c (Cluster mit einem Node) und e0g (Cluster mit mehreren Nodes) eine oder mehrere separate Port-Gruppe(n) für den Datenverkehr zuweisen.
+
+Wenn die oben in diesem Dokument beschriebene VST-Lösung nicht ausreichend ist, ist es möglicherweise erforderlich, dass sowohl Daten- als auch Management LIFs auf demselben virtuellen Port zugewiesen werden. Verwenden Sie dazu einen Prozess namens VGT, in dem VLAN-Tagging von der VM durchgeführt wird.
+
+
+NOTE: Die Trennung von Daten- und Managementnetzwerk über VGT ist bei Verwendung des ONTAP Deploy-Dienstprogramms nicht verfügbar. Dieser Prozess muss nach Abschluss der Cluster-Einrichtung durchgeführt werden.
+
+Bei der Nutzung von VGT- und 2-Node-Clustern ist eine zusätzliche Einschränkung zu achten. In Cluster-Konfigurationen mit zwei Nodes wird die Node-Management-IP-Adresse verwendet, um Verbindung zum Mediator herzustellen, bevor ONTAP vollständig verfügbar ist. Daher wird nur EST und VST Tagging auf der Port-Gruppe unterstützt, die der Node-Management-LIF (Port e0a) zugeordnet ist. Wenn sowohl das Management als auch der Datenverkehr dieselbe Portgruppe nutzen, werden für das gesamte Cluster mit zwei Nodes nur EST/VST unterstützt.
+
+Beide Konfigurationsoptionen, VST und VGT, werden unterstützt. Die folgende Abbildung zeigt das erste Szenario, VST, in dem der Datenverkehr auf der vSwitch-Ebene über die zugewiesene Portgruppe getaggt wird. In dieser Konfiguration werden dem ONTAP-Port e0a Cluster- und Node-Management-LIFs zugewiesen und über die zugewiesene Port-Gruppe mit der VLAN-ID 10 gekennzeichnet. Daten-LIFs werden Port e0b und entweder e0c oder e0g zugewiesen und der angegebenen VLAN-ID 20 über eine zweite Port-Gruppe. Die Cluster-Ports verwenden eine dritte Portgruppe und sind auf VLAN-ID 30.
+
+*Daten- und Management-Trennung mit VST*
+
+image:DDN_04.jpg["Trennung von Daten und Management mit VST"]
+
+Die folgende Abbildung zeigt das zweite Szenario, VGT, in dem der Datenverkehr von der ONTAP-VM über VLAN-Ports gekennzeichnet wird, die in separate Broadcast-Domänen platziert werden. In diesem Beispiel werden die virtuellen Ports e0a-10/e0b-10/(e0c oder e0g)-10 und e0a-20/e0b-20 auf die VM-Ports e0a und e0b platziert. Mit dieser Konfiguration kann das Netzwerk-Tagging direkt in ONTAP statt auf vSwitch Ebene durchgeführt werden. Auf diesen virtuellen Ports werden Management und Daten-LIFs platziert, was eine weitere Layer-2-Unterteilung innerhalb eines einzelnen VM Ports ermöglicht. Das Cluster-VLAN (VLAN-ID 30) ist immer noch an der Portgruppe markiert.
+
+*Hinweise:*
+
+* Diese Art der Konfiguration ist besonders bei der Verwendung mehrerer IPspaces wünschenswert. Wenn eine weitere logische Isolation und Mandantenfähigkeit gewünscht werden, gruppieren Sie VLAN-Ports in separate benutzerdefinierte IPspaces.
+* Zur Unterstützung von VGT müssen die ESXi/ESX-Hostnetzwerkadapter mit den Trunk-Ports des physischen Switches verbunden sein. Für die mit dem virtuellen Switch verbundenen Portgruppen muss die VLAN-ID auf 4095 festgelegt sein, damit das Trunking auf der Portgruppe aktiviert werden kann.
+
+
+*Daten- und Management-Trennung mit VGT*
+
+image:DDN_05.jpg["Trennung von Daten und Management mit VGT"]

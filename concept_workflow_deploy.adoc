@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: concept_workflow_deploy.html 
+keywords: plan, planning, cluster deployment workflow, deployment workflow, workflow, deployment steps 
+summary: Es gibt einen Workflow-Prozess, mit dem Sie ein ONTAP Select Cluster implementieren können. 
+---
+= Installations- und Implementierungs-Workflow für ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit dem folgenden Workflow können Sie ein ONTAP Select Cluster implementieren und verwalten.
+
+image:deploy_workflow2.png["Beschreibt den gesamten Workflow, der zur Implementierung eines ONTAP Select Clusters erforderlich ist"]

@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_dep_general.html 
+keywords: plan, planning, ontap select deploy, general requirements 
+summary: Bei der Planung der Installation des ONTAP Select Deploy Administration Utility sollten Sie verschiedene allgemeine Anforderungen berücksichtigen. 
+---
+= ONTAP Select allgemeine Anforderungen bereitstellen und planen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bei der Planung der Installation des ONTAP Select Deploy Administration Utility sollten Sie verschiedene allgemeine Anforderungen berücksichtigen.
+
+
+
+== Paarung des Dienstprogramms „Bereitstellen“ mit den ONTAP Select-Clustern
+
+Beim Pairing einer Instanz des Dienstprogramms „Bereitstellen“ mit den ONTAP Select-Clustern stehen Ihnen verschiedene Optionen zur Verfügung.
+
+
+NOTE: In allen Implementierungsszenarien können ein einzelnes ONTAP Select-Cluster und die Nodes im Cluster nur von einer Instanz des Deploy-Administration Utility gemanagt werden. Ein Cluster kann nicht von zwei oder mehr verschiedenen Instanzen des Deploy Utility gemanagt werden.
+
+Sie können jedes ONTAP Select Cluster mit einer dedizierten Instanz des Deploy Utility implementieren und managen. Mit dieser 1:1-Konfiguration besteht eine klare Trennung zwischen den einzelnen Kombinationen von Utility-to-Cluster. Diese Konfiguration bietet ein hohes Maß an Isolation bei kleineren Ausfall-Domains.
+
+Sie können mehrere ONTAP Select Cluster in Ihrem Unternehmen mithilfe einer einzigen Instanz des Deploy Utility implementieren und managen. Bei dieser 1:n-Konfiguration werden alle Verarbeitungs- und Konfigurationsdaten über dieselbe Instanz des Deploy Utility gemanagt.
+
+
+NOTE: Eine Instanz des Deploy Utility kann bis zu 400 ONTAP Select Nodes oder 100 Cluster verwalten.
+
+
+
+== Authentifizierung mithilfe des Anmeldeinformationsspeichers
+
+Der ONTAP Select Deploy Anmeldeinformationsspeicher ist eine Datenbank mit Kontoinformationen. Bei der Clustererstellung und -Verwaltung erfolgt die Hostauthentifizierung mithilfe der Kontoanmeldeinformationen. Sie sollten wissen, wie der Anmeldeinformationsspeicher bei der Planung einer ONTAP Select-Bereitstellung verwendet wird.
+
+
+NOTE: Die Kontoinformationen werden mithilfe des AES-Verschlüsselungsalgorithmus und des SHA-256-Hashing-Algorithmus sicher in der Datenbank gespeichert.
+
+Folgende Typen von Anmeldeinformationen werden unterstützt:
+
+* Host wird zur Authentifizierung eines Hypervisor-Hosts bei der Bereitstellung eines ONTAP Select-Knotens direkt in VMware ESXi verwendet
+* VCenter wird zur Authentifizierung eines vCenter-Servers im Rahmen der Bereitstellung eines ONTAP Select-Knotens bei ESXi verwendet, wenn der Host von VMware vCenter gemanagt wird
+
+
+Der Anmeldeinformationsspeicher wird intern aufgerufen, wenn er normale administrative Aufgaben mithilfe von Deploy ausführt, z. B. Hinzufügen eines Hypervisor-Hosts. Sie können den Anmeldeinformationsspeicher auch direkt über die Webbenutzeroberfläche bereitstellen und über die CLI verwalten.

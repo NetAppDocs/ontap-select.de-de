@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept_stor_capacity_inc.html 
+keywords: ontap select, deploy, increase storage 
+summary: Mit ONTAP Deployment können Sie für jeden Node in einem ONTAP Select Cluster zusätzlichen Storage hinzufügen und lizenzieren. 
+---
+= Erhöhung der Storage-Kapazität
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit ONTAP Deployment können Sie für jeden Node in einem ONTAP Select Cluster zusätzlichen Storage hinzufügen und lizenzieren.
+
+Die Storage-zusätzliche Funktionalität beim Implementieren von ONTAP bietet die einzige Möglichkeit, den zu verwaltenden Storage zu erhöhen. Zudem wird nicht das direkte Ändern der ONTAP Select VM unterstützt. Die folgende Abbildung zeigt das „+“-Symbol, das den Speicher-Add-Assistenten initiiert.
+
+image:ST_05.jpg["Details zu Clustern und Nodes"]
+
+Folgende Überlegungen sind für den Erfolg des kapazitätserweitere Betriebs von Bedeutung. Zum Hinzufügen von Kapazität ist eine vorhandene Lizenz erforderlich, um den gesamten Speicherplatz (vorhanden plus neu) abzudecken. Ein Speichervorgang, durch den der Node seine lizenzierte Kapazität überschreitet, schlägt fehl. Zuerst sollte eine neue Lizenz mit ausreichender Kapazität installiert werden.
+
+Wenn die zusätzliche Kapazität zu einem vorhandenen ONTAP Select Aggregat hinzugefügt wird, sollte der neue Storage Pool (Datenspeicher) ein Performance-Profil aufweisen, das der des vorhandenen Speicherpools (Datenspeicher) ähnelt. Beachten Sie, dass es nicht möglich ist, einen ONTAP Select-Node ohne SSD-Storage hinzuzufügen, der mit einer All Flash FAS ähnlichen Persönlichkeit (Flash-fähig) installiert ist. Auch die Kombination von das und externem Storage wird nicht unterstützt.
+
+Wenn einem System lokaler Attached Storage hinzugefügt wird, um zusätzliche lokale (das) Speicherpools zu ermöglichen, müssen Sie eine zusätzliche RAID-Gruppe und LUN (oder LUNs) aufbauen. Wie bei FAS Systemen sollte auch unbedingt sichergestellt werden, dass die neue RAID-Gruppen-Leistung der ursprünglichen RAID-Gruppe ähnlich ist, wenn Sie neuen Platz zum gleichen Aggregat hinzufügen. Wenn Sie ein neues Aggregat erstellen, könnte das neue RAID-Gruppen-Layout anders sein, wenn die Auswirkungen auf die Leistung des neuen Aggregats gut verstanden werden.
+
+Der neue Speicherplatz kann diesem Datastore auch dann hinzugefügt werden, wenn die Gesamtgröße des Datenspeichers die von ESX unterstützte maximale Datastore-Größe nicht überschreitet. Das Hinzufügen einer DatenspeicherErweiterung zum Datastore, in dem bereits ONTAP Select installiert ist, kann dynamisch durchgeführt werden und hat keine Auswirkungen auf die Vorgänge des ONTAP Select-Node.
+
+Wenn der ONTAP Select Node Teil eines HA-Paars ist, sollten einige zusätzliche Probleme berücksichtigt werden.
+
+In einem HA-Paar enthält jeder Node eine gespiegelte Kopie der Daten seines Partners. Zum Hinzufügen von Speicherplatz zu Node 1 muss seinem Partner, Node 2, eine identische Menge an Speicherplatz hinzugefügt werden, sodass alle Daten von Node 1 auf Node 2 repliziert werden. In anderen Worten: Der Speicherplatz, der Node 2 im Rahmen des Capacity-Add-Vorgangs für Node 1 hinzugefügt wurde, ist auf Node 2 nicht sichtbar oder kann nicht darauf zugegriffen werden. Der Speicherplatz wird Node 2 hinzugefügt, sodass Node 1-Daten bei einem HA-Ereignis vollständig geschützt sind.
+
+Dabei wird die Performance zusätzlich in Betracht gezogen. Die Daten auf Node 1 werden synchron auf Node 2 repliziert. Daher muss die Performance des neuen Speicherplatzes (Datastore) auf Node 1 der Performance des neuen Speicherplatzes (Datastore) auf Node 2 entsprechen. Mit anderen Worten: Das Hinzufügen von Speicherplatz auf beiden Nodes, die Verwendung unterschiedlicher Laufwerktechnologien oder anderer RAID-Gruppengrößen kann zu Performance-Problemen führen. Dies liegt am RAID-SyncMirror-Vorgang, bei dem eine Kopie der Daten auf dem Partner-Node gespeichert wird.
+
+Um die vom Benutzer zugängliche Kapazität auf beiden Nodes in einem HA-Paar zu erhöhen, müssen zwei Storage-Add-Vorgänge durchgeführt werden – einen für jeden Node. Jeder Storage-Add-Vorgang erfordert auf beiden Nodes zusätzlichen Speicherplatz. Der gesamte erforderliche Speicherplatz pro Node entspricht dem auf Node 1 erforderlichen Speicherplatz und dem auf Node 2 erforderlichen Speicherplatz.
+
+Die initiale Einrichtung besteht mit zwei Nodes und jedem Node mit zwei Datastores mit einer Speicherkapazität von 30 TB pro Datenspeicher. ONTAP Deploy erstellt ein 2-Node-Cluster, bei dem jeder Node 10 TB Speicherplatz aus dem Datastore 1 verbraucht. ONTAP Deploy konfiguriert jeden Node mit 5 TB aktivem Speicherplatz pro Node.
+
+Die folgende Abbildung zeigt die Ergebnisse eines einzelnen Storage-Add-Vorgangs für Node 1. ONTAP Select nutzt auf jedem Node immer noch die gleiche Menge an Storage (15 TB). Node 1 verfügt jedoch über mehr aktiven Storage (10 TB) als Node 2 (5 TB). Beide Knoten sind vollständig geschützt, da jeder Knoten eine Kopie der Daten des anderen Knotens hostet. In Datenspeicher 1 bleibt zusätzlicher freier Speicherplatz verfügbar, und Datastore 2 ist weiterhin völlig frei.
+
+*Kapazitätsverteilung: Zuweisung und Freiraum nach einem einzigen Speicher-Add-Vorgang*
+
+image:ST_06.jpg["Kapazitätsverteilung: Zuweisung und Freiraum nach einem einzigen Vorgang für zusätzlichen Speicher"]
+
+Zwei zusätzliche Storage-Vorgänge auf Node 1 verbrauchen den Rest von Datastore 1 und einen Teil von Datastore 2 (unter Verwendung der Kapazitätsgrenze). Beim ersten Vorgang zum Hinzufügen von Speicher werden die 15 TB an freiem Speicherplatz im Datastore 1 verbraucht. Die folgende Abbildung zeigt das Ergebnis des zweiten Vorgangs zum Hinzufügen von Storage. An diesem Punkt verfügt der Node 1 über 50 TB aktive Daten, die gemanagt werden müssen, während Node 2 über die ursprünglichen 5 TB verfügt.
+
+*Kapazitätsverteilung: Zuweisung und freier Speicherplatz nach zwei zusätzlichen Speichereinfügungen für Knoten 1*
+
+image:ST_07.jpg["Kapazitätsverteilung: Zuweisung und freier Speicherplatz nach zwei zusätzlichen Speicheroperationen für Node 1"]
+
+Die maximale VMDK-Größe, die während Capacity-Add-Vorgängen verwendet wird, beträgt 16 TB. Die maximale VMDK-Größe, die während der Cluster-Erstellung verwendet wird, beträgt weiterhin 8 TB. ONTAP Deploy erstellt VMDKs mit der richtigen Größe je nach Konfiguration (ein Single-Node- oder Multi-Node-Cluster) und der zusätzlichen Kapazität. Die maximale Größe jeder VMDK sollte jedoch während des Cluster-Erstellungsvorgangs nicht mehr als 8 TB und während der Storage-Hinzufügungen 16 TB betragen.
+
+
+
+== Erhöhen der Kapazität für ONTAP Select mit Software-RAID
+
+Mit dem Storage-Add-Assistenten kann mithilfe von Software-RAID die zu verwaltende Kapazität für ONTAP Select-Nodes erhöht werden. Der Assistent stellt nur die verfügbaren das SDD-Laufwerke dar und können als RDMs zu der ONTAP Select-VM zugeordnet werden.
+
+Obwohl es möglich ist, die Kapazitätslizenz um ein einzelnes TB zu erhöhen, ist es bei der Arbeit mit Software-RAID nicht möglich, die Kapazität physisch um ein einzelnes TB zu erhöhen. Ähnlich wie beim Hinzufügen von Festplatten zu einem FAS oder AFF Array bestimmen bestimmte Faktoren die Mindestanzahl an Storage, die in einem Vorgang hinzugefügt werden kann.
+
+Beachten Sie, dass beim Hinzufügen von Speicher zu Node 1 in einem HA-Paar auch auf dem HA-Paar des Nodes (Node 2) eine identische Anzahl von Laufwerken verfügbar ist. Sowohl die lokalen Laufwerke als auch die Remote-Laufwerke werden von einem Speicher-Add-Vorgang auf Knoten 1 verwendet. Beispielsweise werden die Remote-Laufwerke verwendet, um sicherzustellen, dass der neue Storage auf Node 1 repliziert und auf Node 2 gesichert wird. Um lokal nutzbaren Storage auf Node 2 hinzuzufügen, müssen auf beiden Nodes ein separater Storage-Add-Vorgang sowie eine separate und gleiche Anzahl an Laufwerken verfügbar sein.
+
+ONTAP Select partitioniert alle neuen Laufwerke in ein Root-Verzeichnis, Daten und Datenpartitionen wie die bestehenden Laufwerke. Die Partitionierung erfolgt während der Erstellung eines neuen Aggregats oder bei der Erweiterung auf ein vorhandenes Aggregat. Die Größe des Root-Partition-Stripes auf jedem Datenträger ist so festgelegt, dass sie der bestehenden Root-Partitionsgröße auf den vorhandenen Festplatten entspricht. Daher kann jede der beiden gleichen Datenpartitionsgrößen als die Gesamtkapazität der Festplatte minus der durch zwei geteilt Root-Partitionsgröße berechnet werden. Die Stripe-Größe der Root-Partition ist variabel und wird wie folgt während des ersten Cluster-Setups berechnet. Der insgesamt erforderliche Root-Speicherplatz (68 GB für ein Single-Node Cluster und 136 GB für HA-Paare) wird über die ursprüngliche Anzahl an Festplatten abzüglich der freien und Paritätslaufwerke aufgeteilt. Die Stripe-Größe der Root-Partition ist bei allen Laufwerken, die dem System hinzugefügt werden, konstant.
+
+Wenn Sie ein neues Aggregat erstellen, variiert die Mindestanzahl der erforderlichen Laufwerke je nach RAID-Typ und ob der ONTAP Select Node Teil eines HA-Paars ist.
+
+Beim Hinzufügen von Storage zu einem vorhandenen Aggregat sind einige zusätzliche Überlegungen erforderlich. Es ist möglich, Laufwerke zu einer vorhandenen RAID-Gruppe hinzuzufügen, vorausgesetzt, dass die RAID-Gruppe sich nicht bereits im maximalen Limit befindet. Hier gelten auch die herkömmlichen FAS Best AFF Practices für das Hinzufügen von Spindeln zu vorhandenen RAID-Gruppen. Die Einrichtung eines Hot Spot der neuen Spindel ist potenziell bedenklich. Zudem können nur Laufwerke gleicher oder größerer Daten-Partitionen zu einer vorhandenen RAID-Gruppe hinzugefügt werden. Wie oben erläutert, ist die Größe der Datenpartition nicht identisch mit der RAW-Größe des Laufwerks. Wenn die hinzugefügten Datenpartitionen größer sind als die vorhandenen Partitionen, sind die neuen Laufwerke richtig groß. Das bedeutet, dass ein Teil der Kapazität jedes neuen Laufwerks nicht genutzt wird.
+
+Es ist auch möglich, die neuen Laufwerke zu verwenden, um eine neue RAID-Gruppe als Teil eines vorhandenen Aggregats zu erstellen. In diesem Fall sollte die RAID-Gruppengröße der vorhandenen RAID-Gruppen-Größe entsprechen.

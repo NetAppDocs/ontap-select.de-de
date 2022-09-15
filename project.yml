@@ -1,0 +1,323 @@
+---
+settings:
+  name: ONTAP Select
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: de-de,us-en,ja-jp,zh-cn,zh-tw,ko-kr,fr-fr
+sidebar:
+  entries:
+  - title: ONTAP Select Dokumentation
+    url: "/index.html"
+  - title: Versionshinweise
+    url: "/reference_release_notes.html"
+  - title: Konzepte
+    entries:
+    - title: Produktübersicht
+      url: "/concept_ots_overview.html"
+    - title: ONTAP Select Deploy
+      url: "/concept_ots_deploy.html"
+    - title: Business-Anwendungsfälle
+      entries:
+      - title: Geschäftsanforderungen und Verwendungsszenarien
+        url: "/concept_usecase_overview.html"
+      - title: Remote-Standorte und externe Niederlassungen
+        url: "/concept_usecase_robo.html"
+      - title: Private Cloud und Datacenter
+        url: "/concept_usecase_private_cloud.html"
+      - title: MetroCluster SDS
+        url: "/concept_usecase_mc_sds.html"
+    - title: Terminologie
+      url: "/concept_terminology.html"
+  - title: Planen
+    entries:
+    - title: Implementierungs-Workflow
+      url: "/concept_workflow_deploy.html"
+    - title: ONTAP Select
+      entries:
+      - title: Allgemeine Anforderungen
+        url: "/reference_plan_ots_general.html"
+      - title: Hypervisor und Hardware
+        url: "/reference_plan_ots_hardware.html"
+      - title: Storage und RAID
+        url: "/reference_plan_ots_storage.html"
+      - title: ONTAP Select vNAS
+        url: "/reference_plan_ots_vnas.html"
+      - title: Netzwerkbetrieb
+        url: "/reference_plan_ots_networking.html"
+      - title: Cluster mit zwei Nodes
+        url: "/reference_plan_ots_two_node.html"
+      - title: Remote-Standorte und externe Niederlassungen
+        url: "/reference_plan_ots_robo.html"
+      - title: MetroCluster SDS
+        url: "/reference_plan_ots_mcc_sds.html"
+      - title: VMware vCenter
+        url: "/reference_plan_ots_vcenter.html"
+      - title: VMware vCenter Plug-in
+        url: "/reference_plan_ots_plugin.html"
+    - title: ONTAP Select Deploy
+      entries:
+      - title: Allgemeine Anforderungen
+        url: "/reference_plan_dep_general.html"
+      - title: VMware Umgebung zu unterstützen
+        url: "/reference_plan_dep_vmware.html"
+    - title: Best Practices in sich vereint
+      url: "/reference_plan_best_practices.html"
+  - title: Lizenz
+    entries:
+    - title: Optionen
+      entries:
+      - title: Evaluierungslizenzen
+        url: "/concept_lic_evaluation.html"
+      - title: Produktionslizenzen
+        url: "/concept_lic_production.html"
+      - title: Plattform-Lizenzangebote
+        url: "/concept_lic_platforms.html"
+    - title: Lizenzmodell für Kapazitäts-Pools
+      entries:
+      - title: Operative Details
+        url: "/concept_lic_cp_operation.html"
+      - title: Seriennummern der Nodes
+        url: "/concept_lic_cp_serial_number.html"
+      - title: Einschränkungen
+        url: "/concept_lic_cp_restrictions.html"
+      - title: Kapazitäts-Pools und Kapazitäts-Tiers
+        url: "/concept_lic_cp_compare_ct.html"
+      - title: Zusammenfassung der Vorteile
+        url: "/concept_lic_cp_benefits.html"
+    - title: Kaufen
+      entries:
+      - title: Lizenzierungs-Workflow
+        url: "/concept_lic_workflow.html"
+      - title: Kapazitäts-Tiers
+        url: "/task_lic_acquire_ct.html"
+      - title: Kapazitäts-Pools
+        url: "/task_lic_acquire_cp.html"
+    - title: Funktionen der ONTAP
+      url: "/reference_lic_ontap_features.html"
+  - title: Installieren
+    entries:
+    - title: Checkliste zur Installationsvorbereitung
+      entries:
+      - title: Checkliste zur Hostvorbereitung
+        url: "/reference_chk_host_prep.html"
+      - title: Bereitstellung der erforderlichen Informationen über das Dienstprogramm
+        url: "/reference_chk_deploy_req_info.html"
+      - title: Erforderliche Informationen zu ONTAP Select
+        url: "/reference_chk_select_req_info.html"
+      - title: NVMe-Host-Konfiguration
+        url: "/task_chk_nvme_configure.html"
+    - title: Installieren Sie ONTAP Select Deploy
+      url: "/task_install_deploy.html"
+    - title: Implementieren eines Clusters
+      url: "/task_deploy_cluster.html"
+    - title: Erster Cluster-Status
+      url: "/reference_initial_state.html"
+  - title: Verwaltung
+    entries:
+    - title: Bevor Sie beginnen
+      url: "/concept_adm_before.html"
+    - title: Upgrade von Nodes
+      url: "/concept_adm_upgrading_nodes.html"
+    - title: Diagnose und Support
+      url: "/task_adm_support.html"
+    - title: Sicherheit
+      url: "/task_adm_security.html"
+    - title: Netzwerk-Konnektivität
+      url: "/task_adm_connectivity.html"
+    - title: Mediatoren
+      url: "/task_adm_mediators.html"
+    - title: Cluster
+      url: "/task_adm_clusters.html"
+    - title: Nodes und Hosts
+      entries:
+      - title: VM-Videokonsole
+        url: "/task_adm_video_console.html"
+      - title: Ändern der Größe der Cluster-Nodes
+        url: "/task_adm_resize.html"
+      - title: Austausch ausgefallener SW-RAID-Laufwerke
+        url: "/task_adm_replace_drives_swraid.html"
+      - title: Upgrade auf VMFS6
+        url: "/task_adm_upgrade_vmfs6.html"
+    - title: Lizenzen Zu Haben
+      url: "/task_adm_licenses.html"
+  - title: Im Detail
+    entries:
+    - title: Storage
+      entries:
+      - title: Allgemeine Konzepte und Eigenschaften
+        url: "/concept_stor_concepts_chars.html"
+      - title: Hardware-RAID-Services für lokalen Attached Storage
+        url: "/concept_stor_hwraid_local.html"
+      - title: Software-RAID-Services für lokalen Attached Storage
+        url: "/concept_stor_swraid_local.html"
+      - title: VSAN und externe Array-Konfigurationen
+        url: "/concept_stor_vsan_external.html"
+      - title: Erhöhung der Storage-Kapazität
+        url: "/concept_stor_capacity_inc.html"
+      - title: Support für Storage-Effizienz
+        url: "/concept_stor_eff_support.html"
+    - title: Netzwerkbetrieb
+      entries:
+      - title: Allgemeine Konzepte und Eigenschaften
+        url: "/concept_nw_concepts_chars.html"
+      - title: Single- und Multi-Node-Konfiguration
+        url: "/concept_nw_single_multi_node.html"
+      - title: Interne und externe Netzwerke
+        url: "/concept_nw_internal_external.html"
+      - title: Unterstützte Konfigurationen
+        url: "/concept_nw_supported_configs.html"
+      - title: Konfiguration von VMware vSphere vSwitch
+        url: "/concept_nw_vsphere_vswitch_config.html"
+      - title: Konfiguration physischer Switches
+        url: "/concept_nw_physical_switch_config.html"
+      - title: Trennung von Daten und Management
+        url: "/concept_nw_data_mgmt_separation.html"
+    - title: Architektur für Hochverfügbarkeit
+      entries:
+      - title: HA-Konfiguration
+        url: "/concept_ha_config.html"
+      - title: Synchrone Replizierung und gespiegelte Aggregate
+        url: "/concept_ha_mirroring.html"
+      - title: Weitere Hochverfügbarkeitsfunktionen
+        url: "/concept_ha_other.html"
+    - title: Leistung
+      entries:
+      - title: Allgemeine Überlegungen
+        url: "/concept_perf_general.html"
+      - title: 9.4 Premium-HA-Direct-Attached SSD-Storage
+        url: "/concept_perf_premium_ha_direct_ssd_94.html"
+      - title: 9.5 Premium-HA-Direct-Attached SSD-Storage
+        url: "/concept_perf_premium_ha_direct_ssd_95.html"
+      - title: 9.6 Premium-HA-Direct-Attached SSD-Storage
+        url: "/concept_perf_premium_ha_direct_ssd_96.html"
+  - title: Integration mit vCenter
+    entries:
+    - title: Erste Schritte
+      entries:
+      - title: Überblick
+        url: "/concept_vpi_overview.html"
+      - title: Der Netapp Architektur Sind
+        url: "/concept_vpi_architecture.html"
+      - title: Planung
+        url: "/concept_vpi_planning.html"
+    - title: Management des Plug-ins
+      entries:
+      - title: Bevor Sie beginnen
+        url: "/concept_vpi_manage_before.html"
+      - title: Installieren
+        url: "/task_vpi_install.html"
+      - title: Datenzugriff
+        url: "/task_vpi_access.html"
+      - title: Aktualisieren und entfernen Sie es
+        url: "/task_vpi_upgrade.html"
+    - title: Entfernen Sie das Plug-in manuell
+      url: "/task_vpi_manually_remove.html"
+    - title: Implementieren eines Clusters
+      url: "/task_vpi_deploy_cluster.html"
+    - title: Integration mit vCenter
+      url: "/concept_vpi_vcenter_integration.html"
+    - title: Verwaltung
+      entries:
+      - title: Diagnose und Support
+        url: "/task_vpi_adm_support.html"
+      - title: Netzwerkbetrieb
+        url: "/task_vpi_adm_network.html"
+      - title: Cluster
+        url: "/task_vpi_adm_clusters.html"
+      - title: Lizenzen Zu Haben
+        url: "/task_vpi_adm_licenses.html"
+    - title: Fehlerbehebung
+      url: "/reference_vpi_troubleshooting.html"
+  - title: Automatisierung mit REST
+    entries:
+    - title: Konzepte
+      entries:
+      - title: REST-Web-Services
+        url: "/concept_api_rest.html"
+      - title: Greifen Sie auf die Implementierungs-API zu
+        url: "/concept_api_how_access.html"
+      - title: Implementieren der API-Versionierung
+        url: "/concept_api_versions.html"
+      - title: Basisbetrieb
+        url: "/concept_api_operation.html"
+      - title: Anfrage- und Reaktionstransaktion
+        url: "/concept_api_transaction.html"
+      - title: Asynchrone Verarbeitung
+        url: "/concept_api_async_proc.html"
+    - title: Zugriff über einen Browser
+      entries:
+      - title: Bevor Sie beginnen
+        url: "/concept_api_before_browser.html"
+      - title: Öffnen Sie die Dokumentseite
+        url: "/task_api_access_doc_page.html"
+      - title: Allgemeines zu einem API-Aufruf
+        url: "/task_api_understanding_call.html"
+    - title: Workflow-Prozesse
+      entries:
+      - title: Bevor Sie beginnen
+        url: "/concept_api_before_workflows.html"
+      - title: Workflow 1 Erstellen eines Clusters
+        url: "/reference_api_workflow01.html"
+    - title: Zugang mit Python
+      entries:
+      - title: Bevor Sie beginnen
+        url: "/concept_api_before_python.html"
+      - title: Die Skripte verstehen
+        url: "/concept_api_understanding_scripts.html"
+    - title: Python-Codebeispiele
+      entries:
+      - title: Erstellen eines Clusters
+        url: "/reference_api_script_cc.html"
+      - title: JSON zum Erstellen eines Clusters
+        url: "/reference_api_json_cc.html"
+      - title: Fügen Sie eine Node-Lizenz hinzu
+        url: "/reference_api_script_anl.html"
+      - title: Löschen eines Clusters
+        url: "/reference_api_script_dc.html"
+      - title: Common Support-Modul
+        url: "/reference_api_script_common.html"
+      - title: Die Größe der Cluster-Nodes wird geändert
+        url: "/reference_api_script_resize.html"
+  - title: Automatisieren mit Ansible
+    url: "/concept_automate_ansible.html"
+  - title: Verwenden Sie die CLI
+    entries:
+    - title: Bevor Sie beginnen
+      url: "/concept_cli_before.html"
+    - title: Melden Sie sich über SSH an
+      url: "/task_cli_signing_in.html"
+    - title: Implementieren eines Clusters
+      url: "/task_cli_deploy_cluster.html"
+    - title: Sicherheit
+      url: "/task_cli_security.html"
+    - title: Netzwerk-Konnektivität
+      url: "/task_cli_connectivity.html"
+    - title: Cluster
+      url: "/task_cli_clusters.html"
+    - title: Nodes und Hosts
+      entries:
+      - title: ESXi auf 6.5 und höher aktualisieren
+        url: "/task_cli_upgrade_esxi65.html"
+    - title: Utility bereitstellen
+      entries:
+      - title: Aktualisieren einer Deploy-Instanz
+        url: "/task_cli_upgrade_deploy.html"
+      - title: Migrieren einer Deploy-Instanz
+        url: "/task_cli_migrate_deploy.html"
+      - title: Fügen Sie ONTAP Select-Bilder hinzu
+        url: "/task_cli_deploy_image_add.html"
+      - title: ONTAP Select-Bilder entfernen
+        url: "/task_cli_deploy_image_remove.html"
+      - title: Wiederherstellung in einem Cluster mit zwei Nodes
+        url: "/task_cli_deploy_recover_two_node.html"
+  - title: Häufig gestellte Fragen
+    url: "/reference_faq.html"
+  - title: Weitere Informationen
+    url: "/reference_additional_info.html"
+  - title: Frühere Versionen
+    url: "/reference_earlier_versions.html"
+  - title: Rechtliche Hinweise
+    url: "/reference_legal_notices.html"

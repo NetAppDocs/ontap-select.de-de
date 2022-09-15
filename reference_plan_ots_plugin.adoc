@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_plugin.html 
+keywords: plan, planning, vcenter plug-in, deploy plug-in 
+summary: Bei der Implementierung von ONTAP Select in einer VMware Umgebung können Sie das VMware vCenter Plug-in anstelle der Deploy Administration Utility verwenden. 
+---
+= VMware vCenter Plug-in
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bei der Implementierung von ONTAP Select in einer VMware Umgebung können Sie das VMware vCenter Plug-in anstelle der Deploy Administration Utility verwenden.
+
+Das VMware vCenter Plug-in ist im Deploy Administration Utility enthalten. Um das Plug-in verwenden zu können, müssen Sie das Dienstprogramm Deploy installieren und dann das Plug-in über die Benutzeroberfläche Deploy auf Ihrem vCenter Server installieren. Nach der Installation des Plug-ins können Sie ONTAP Select Cluster über die vSphere Web-Benutzeroberfläche implementieren und verwalten. Neben der Verwaltung des Plug-ins selbst (Installieren, Entfernen, Aktualisieren) entspricht die Funktionalität des Plug-ins der Benutzeroberfläche des Deploy Utility.
+
+Siehe link:concept_vpi_overview.html["Integration mit vCenter"] Abschnitt zu den Anforderungen und Einschränkungen sowie Informationen zur Installation und Verwendung des Plug-ins.

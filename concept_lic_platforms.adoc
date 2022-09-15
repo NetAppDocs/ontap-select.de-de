@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_platforms.html 
+keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
+summary: Sie können eine Lizenz für eine ONTAP Select Kapazitätsschicht oder den Kapazitäts-Pool auf einer der drei Kapazitätsebenen der Plattform erwerben. Diese Lizenzangebote bestimmen die Funktionen der Hosts, auf denen Sie ONTAP Select implementieren. 
+---
+= Die Plattform-Lizenzangebote verstehen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können eine Lizenz für eine ONTAP Select Kapazitätsschicht oder den Kapazitäts-Pool auf einer der drei Kapazitätsebenen der Plattform erwerben. Diese Lizenzangebote bestimmen die Funktionen der Hosts, auf denen Sie ONTAP Select implementieren.
+
+
+
+== Vorteile einer Plattformlizenz
+
+In einem bestimmten Lizenzangebot werden die Funktionen des Hypervisor-Hosts in zwei Bereichen festgelegt und eingeschränkt:
+
+* Instanztyp (CPU, Arbeitsspeicher)
+* Zusätzliche Funktionen
+
+
+Die Lizenzangebote sind in aufsteigender Reihenfolge von Funktionen von Standard bis Premium XL angeordnet. Im Allgemeinen gewährt Ihnen die von Ihnen gewählte Lizenzoption die Fähigkeiten dieser Ebene und aller niedrigeren Ebenen. Der Premium-Level bietet beispielsweise die Fähigkeiten von Premium und Standard.
+
+
+
+== Plattform-Lizenzangebote
+
+Es stehen drei Plattform-Lizenzangebote zur Verfügung.
+
+
+
+=== Standard
+
+Das Standardangebot umfasst folgende Funktionen:
+
+* Nur kleiner Instanztyp
+* Nur Festplattenlaufwerke (HDD)
+* Nur lokaler Hardware RAID-Controller
+* VNAS
+
+
+
+
+=== Premium
+
+Das Premium-Angebot umfasst folgende Funktionen:
+
+* Kleiner oder mittlerer Instanztyp
+* Festplattenlaufwerke (HDD) oder Solid State-Laufwerke (SSD)
+* Lokaler Hardware-RAID-Controller oder Software-RAID
+* VNAS
+* MetroCluster SDS
+
+
+
+
+=== Premium XL
+
+Das Premium XL-Angebot bietet folgende Funktionen:
+
+* Kleiner, mittlerer oder großer Instanztyp
+* Festplattenlaufwerke (HDD) oder Solid State-Laufwerke (SSD)
+* Lokaler Hardware-RAID-Controller oder Software-RAID.
+* VNAS
+* MetroCluster SDS
+
+
+
+NOTE: Der große Instanztyp (mit der Premium-XL-Lizenz) wird nur auf VMware ESXi unterstützt.

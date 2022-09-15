@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: task_cli_migrate_deploy.html 
+keywords: administer, administering, cli, deploy, deploy instance, migrate 
+summary: Sie können eine vorhandene Instanz des Dienstprogramms Deploy Administration mithilfe der Befehlszeilenschnittstelle auf eine neue virtuelle Maschine migrieren. 
+---
+= Migrieren einer Deploy-Instanz auf eine neue Virtual Machine
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können eine vorhandene Instanz des Dienstprogramms Deploy Administration mithilfe der Befehlszeilenschnittstelle auf eine neue virtuelle Maschine migrieren.
+
+Dieses Verfahren basiert auf der Erstellung einer neuen virtuellen Maschine, die die Konfigurationsdaten der ursprünglichen virtuellen Maschine verwendet. Auf den neuen und ursprünglichen Virtual Machines muss die gleiche Version und Freigabe des Deploy-Dienstprogramms ausgeführt werden. Sie können nicht zu einer anderen Version und Freigabe des Dienstprogramms „Bereitstellen“ migrieren.
+
+
+
+== Sichern der Konfigurationsdaten für die Bereitstellung
+
+Im Rahmen der Migration der virtuellen Maschine müssen Sie ein Backup der Bereitstellungskonfigurationsdaten erstellen. Sie sollten auch ein Backup erstellen, nachdem Sie ein ONTAP Select-Cluster bereitgestellt haben. Die Daten werden in einer einzigen verschlüsselten Datei gespeichert, die Sie auf Ihre lokale Arbeitsstation herunterladen können.
+
+Stellen Sie sicher, dass die Bereitstellung während des Backup-Vorgangs keine anderen Aufgaben ausführt.
+
+Die von Ihnen erstellte Sicherungsdatei erfasst alle Konfigurationsdaten von der virtuellen Maschine. Diese Daten beschreiben Aspekte Ihrer Implementierungsumgebung einschließlich der ONTAP Select Cluster.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Erstellen eines Backups der Bereitstellungskonfigurationsdaten, die in einem internen Verzeichnis auf dem Deploy-Server gespeichert sind:
++
+`deploy backup create`
+
+. Geben Sie bei Aufforderung ein Passwort für das Backup ein.
++
+Die Sicherungsdatei wird basierend auf dem Passwort verschlüsselt.
+
+. Anzeigen der verfügbaren Backups im System:
++
+`deploy backup show -detailed`
+
+. Wählen Sie Ihre Sicherungsdatei basierend auf dem Datum im Feld *erstellt* aus und notieren Sie den *Download URL*-Wert.
++
+Sie können über die URL auf die Sicherungsdatei zugreifen.
+
+. Laden Sie die Sicherungsdatei über einen Webbrowser oder ein Dienstprogramm wie Curl mit der URL auf Ihre lokale Workstation herunter.
+
+
+
+
+== Installieren einer neuen Instanz der virtuellen Maschine Bereitstellen
+
+Sie müssen eine neue Instanz der virtuellen Maschine bereitstellen erstellen, die Sie mit den Konfigurationsdaten der ursprünglichen virtuellen Maschine aktualisieren können.
+
+Sie müssen mit den Verfahren vertraut sein, die zum Herunterladen und Bereitstellen der ONTAP Select Deploy Virtual Machine in einer VMware Umgebung verwendet werden.
+
+Diese Aufgabe wird auf hoher Ebene beschrieben.
+
+.Schritte
+. Erstellen Sie eine neue Instanz der Deploy Virtual Machine:
++
+.. Laden Sie das Virtual Machine Image herunter.
+.. Implementieren Sie die Virtual Machine und konfigurieren Sie die Netzwerkschnittstelle.
+.. Greifen Sie über SSH auf das Dienstprogramm Deploy zu.
+
+
+
+
+link:task_install_deploy.html["Installieren von ONTAP Select Deploy"]
+
+
+
+== Wiederherstellen der Konfigurationsdaten auf der neuen virtuellen Maschine bereitstellen
+
+Sie müssen die Konfigurationsdaten von der ursprünglichen virtuellen Maschine des Bereitstellungsdienstprogramms auf der neuen virtuellen Maschine wiederherstellen. Die Daten befinden sich in einer einzigen Datei, die Sie von Ihrer lokalen Arbeitsstation hochladen müssen.
+
+Sie müssen über die Konfigurationsdaten aus einem vorherigen Backup verfügen. Die Daten sind in einer einzigen Datei enthalten und müssen auf Ihrer lokalen Arbeitsstation verfügbar sein.
+
+.Schritte
+. Verwenden Sie in einer Command Shell auf Ihrer lokalen Arbeitsstation das Dienstprogramm sftp, um die Sicherungsdatei auf die virtuelle Maschine bereitstellen hochzuladen.
++
+Beispiel
+
++
+....
+sftp admin@10.234.81.101 (provide password when prompted)
+put deploy_backup_20190601162151.tar.gz
+exit
+....
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Stellen Sie die Konfigurationsdaten wieder her.
++
+`deploy backup restore -path PATHNAME -filename FILENAME`
+
++
+Beispiel
+
++
+`deploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`
+
+

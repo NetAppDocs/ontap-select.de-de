@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_manage_before.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, manage, managing 
+summary: Vor der Installation und dem Management des vCenter Plug-ins zur Bereitstellung sind einige Schritte erforderlich. 
+---
+= Bevor Sie beginnen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vor der Installation und dem Management des vCenter Plug-ins zur Bereitstellung sind einige Schritte erforderlich.
+
+
+
+== Entscheiden, ob die Webbenutzeroberfläche bereitstellen oder die CLI verwendet werden soll
+
+In den meisten Fällen bietet die Deploy Web User Interface die bequemste Option zur Verwaltung des vCenter Plug-ins. Dies ist die in diesem Handbuch beschriebene Option. Sie können das Plug-in jedoch auch über die Befehlszeilenschnittstelle implementieren verwalten. Geben Sie für weitere Informationen an der Eingabeaufforderung CLI bereitstellen die folgenden Befehle ein:
+
+* `deploy plugin ?` (Unterbefehle umfassen: Installieren, entfernen, anzeigen und aktualisieren)
+* `deploy plugin-packages show`
+
+
+
+
+== Vorbereitung für alle Verwaltungsaufgaben
+
+Es gibt verschiedene Schritte, die Sie unabhängig von der Management-Aufgabe durchführen müssen. Die gemeinsame Vorbereitung umfasst:
+
+* Lesen Sie den Abschnitt erste Schritte, um sich mit dem Deploy vCenter Plug-in vertraut zu machen.
+* Sicherstellung, dass das ONTAP Select Deploy Administration Utility installiert ist und ausgeführt wird Weitere Informationen finden Sie im Installations- und Cluster-Implementierungs-Leitfaden für VMware.
+* Kontoanmeldeinformationen erfassen:
++
+** Administratorkonto bereitstellen
+** VCenter Server-Konten
+
+
+* Sicherstellung, dass das Deploy-Dienstprogramm Netzwerkzugriff auf Port 443 am vCenter-Server hat.
+
+
+Abhängig von der Management-Aufgabe kann es erforderlich sein, weitere Vorbereitungen zu richten.
+
+
+
+== Vorbereiten der vCenter-Serverkonten
+
+Bevor Sie das Plug-in Deploy installieren und verwenden, müssen Sie die vCenter-Konten mit den erforderlichen Berechtigungen erstellen. Sie können ein einzelnes Konto mit allen erforderlichen Berechtigungen erstellen oder mehrere Konten mit jeweils einer einzigen Berechtigung erstellen. Das folgende Beispiel verteilt die vCenter Berechtigungen auf drei separate Rollen, die dann den drei entsprechenden Konten zugewiesen werden können.
+
+
+
+=== Validieren des Endbenutzerzugriffs auf das Plug-in
+
+Sie benötigen ein Konto, um den Zugriff auf das Plug-in über vSphere zu validieren. Das Konto muss die folgende vCenter-Berechtigung haben: sessions.validate.session. Nachdem das Konto in vCenter erstellt wurde, müssen Sie es im Deploy Administration Utility definieren. Klicken Sie in der Webbenutzeroberfläche bereitstellen auf die Registerkarte Administration und dann auf Anmeldeinformationen, um den Standort und die Anmeldeinformationen des vCenter-Servers bereitzustellen.
+
+Dieses Konto wird auf folgende Arten verwendet:
+
+* Der benannte vCenter-Server wird als Installationsziel im Fenster Plug-in-Registrierung verfügbar.
+* Das Konto wird von Deploy verwendet, um Benutzeranfragen von vSphere zu validieren, um auf das Plug-in zuzugreifen, nachdem das Plug-in installiert wurde.
+
+
+
+
+=== Verwalten des Plug-ins
+
+In der Benutzeroberfläche Deploy Web können Sie das Plug-in installieren und anschließend aktualisieren oder entfernen. Jedes Mal, wenn Sie eine dieser Managementaktionen ausführen, werden Sie im Popup-Fenster zu einem vCenter Konto aufgefordert. Jede Managementaktionen wird über eine separate vCenter Berechtigung gesteuert.
+
+Um das Plug-in zu installieren, zu aktualisieren und zu entfernen, müssen Sie die folgenden Berechtigungen zuweisen:
+
+* Erweiterung
++
+** Verlängerung registrieren
+** Erweiterung aktualisieren
+** Erweiterung wird aufgehoben
+
+
+
+
+Sie können eine einzelne Rolle und ein einzelnes Konto mit allen drei Berechtigungen erstellen oder die Berechtigungen nach Bedarf auf mehrere Konten aufteilen.
+
+
+
+=== Zugriff auf das Plug-in
+
+Endbenutzer können über vSphere auf das Plug-in zugreifen. Sie müssen den Konten, die das Plug-in verwenden, die folgende Berechtigung zuweisen:
+
+* NetApp
++
+** ONTAP Select Deploy
++
+*** Verwalter
+
+
+
+
+

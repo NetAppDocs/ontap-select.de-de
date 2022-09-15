@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task_adm_replace_drives_swraid.html 
+keywords: administer, administering, web, software raid, replace drive 
+summary: 'Wenn ein Laufwerk mithilfe von Software-RAID ausfällt, verwendet ONTAP Select ein Ersatzlaufwerk (falls eines verfügbar ist) und startet den Neuerstellungsvorgang automatisch. Dies ähnelt der Funktionsweise von ONTAP auf FAS und AFF. Ist jedoch kein Spare-Laufwerk verfügbar, muss ein Laufwerk zum ONTAP Select-Node hinzugefügt werden.' 
+---
+= Austausch eines ausgefallenen Laufwerks bei Verwendung von SW-RAID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn ein Laufwerk, das Software-RAID verwendet, ausfällt, weist ONTAP Select ein Ersatzlaufwerk zu, wenn eines verfügbar ist, und startet den Neuerstellungsprozess automatisch. Das ähnelt der Funktionsweise von ONTAP mit FAS und AFF. Ist jedoch kein Spare-Laufwerk verfügbar, müssen Sie ein Laufwerk zum ONTAP Select-Node hinzufügen.
+
+
+NOTE: Sowohl das Entfernen des ausgefallenen Laufwerks als auch das Hinzufügen eines neuen Laufwerks (als Ersatzlaufwerk markiert) müssen über ONTAP Select Deploy durchgeführt werden. Das Anschließen eines Laufwerks an die ONTAP Select-VM mithilfe von vSphere wird nicht unterstützt.
+
+
+
+== Identifizieren Sie das ausgefallene Laufwerk
+
+Wenn ein Laufwerk ausfällt, müssen Sie die ONTAP-CLI verwenden, um die ausgefallene Festplatte zu identifizieren.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der ONTAP-CLI an.
+. Identifizieren Sie das fehlerhafte Festplattenlaufwerk.
++
+[listing]
+----
+<cluster name>::> storage disk show -container-type broken
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
+----
+
+
+
+
+== Entfernen Sie das ausgefallene Laufwerk
+
+Entfernen Sie die Festplatte, nachdem Sie das ausgefallene Laufwerk identifiziert haben.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche bereitstellen an.
+. Klicken Sie auf die Registerkarte *Cluster* und wählen Sie den entsprechenden Cluster aus.
++
+image:ST_22.jpg["Details zu den Nodes"]
+
+. Klicken Sie auf *+*, um die Speicheransicht zu erweitern.
++
+image:ST_23.jpg["Bearbeiten von Knoten-Speicher"]
+
+. Klicken Sie auf *Bearbeiten*, um Änderungen an den angeschlossenen Festplatten vorzunehmen und das ausgefallene Laufwerk zu deaktivieren.
++
+image:ST_24.jpg["Einzelheiten zur Storage-Festplatte"]
+
+. Geben Sie die Cluster-Anmeldeinformationen ein und klicken Sie auf *Storage bearbeiten*.
++
+image:ST_25.jpg["ONTAP Referenzen"]
+
+. Bestätigen Sie den Vorgang.
++
+image:ST_26.jpg["Warnung"]
+
+
+
+
+
+== Fügen Sie das neue Ersatzlaufwerk hinzu
+
+Nachdem Sie das ausgefallene Laufwerk entfernt haben, fügen Sie die Ersatzfestplatte hinzu.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche bereitstellen an.
+. Klicken Sie auf die Registerkarte *Cluster* und wählen Sie den entsprechenden Cluster aus.
++
+image:ST_27.jpg["HA-Paar"]
+
+. Klicken Sie auf *+*, um die Speicheransicht zu erweitern.
++
+image:ST_28.jpg["Bearbeiten von Knoten-Speicher"]
+
+. Klicken Sie auf *Bearbeiten* und bestätigen Sie, dass das neue Laufwerk verfügbar ist, und wählen Sie es aus.
++
+image:ST_29.jpg["Einzelheiten zur Storage-Festplatte"]
+
+. Geben Sie die Cluster-Anmeldeinformationen ein und klicken Sie auf *Storage bearbeiten*.
++
+image:ST_30.jpg["Einzelheiten zur Storage-Festplatte"]
+
+. Bestätigen Sie den Vorgang.
++
+image:ST_31.jpg["Einzelheiten zur Storage-Festplatte"]
+
+

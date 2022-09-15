@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: task_adm_support.html 
+keywords: administer, administering, web, diagnostics, support 
+summary: Im Rahmen der Administration von ONTAP Select können Sie verschiedene ähnliche Diagnose- und Support-Aufgaben ausführen. 
+---
+= Diagnose und Support
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Im Rahmen der Administration von ONTAP Select können Sie verschiedene ähnliche Diagnose- und Support-Aufgaben ausführen.
+
+
+
+== Konfigurieren des Bereitstellungssystems
+
+Sie sollten die grundlegenden Systemkonfigurationsparameter festlegen, die die Funktionsweise des Dienstprogramms „Bereitstellen“ beeinflussen.
+
+Die Konfigurationsdaten der Implementierung werden von AutoSupport verwendet.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+. Klicken Sie auf *Einstellungen & AutoSupport* und dann auf image:icon_pencil.gif["Bearbeiten"].
+. Geben Sie die für Ihre Umgebung geeigneten Konfigurationsdaten an und klicken Sie auf *Ändern*.
++
+Wenn Sie einen Proxyserver verwenden, können Sie die Proxy-URL wie folgt konfigurieren:
+`\http://USERNAME:PASSWORD@<FQDN|IP>:PORT`
+
++
+Beispiel
+`\http://user1:mypassword@proxy.company-demo.com:80`
+
+
+
+
+
+== Anzeigen der Ereignismeldungen von ONTAP Select Deploy
+
+Das Dienstprogramm ONTAP Select Deploy enthält eine Einrichtung zur Ereignisprotokollierung, die Informationen über die Aktivität des Systems bereitstellt. Sie sollten den Inhalt des Ereignisprotokolls anzeigen, um eventuelle Probleme zu beheben oder wenn Sie dazu vom Support geleitet werden.
+
+Sie können die Liste der Ereignismeldungen anhand verschiedener Merkmale filtern, darunter:
+
+* Status
+* Typ
+* Kategorie
+* Instanz
+* Zeit
+* Beschreibung
+
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+. Klicken Sie auf *Events & Jobs* und dann auf *Events*.
+. Klicken Sie optional auf *Filter* und erstellen Sie einen Filter, um die angezeigten Ereignismeldungen einzuschränken.
+
+
+
+
+== Aktivieren von AutoSupport
+
+Sie können die AutoSupport-Funktion bei Bedarf aktivieren und deaktivieren.
+
+AutoSupport ist das primäre Tool zur Fehlerbehebung, das von NetApp zur Unterstützung von ONTAP Select verwendet wird. Daher sollten Sie AutoSupport nur dann deaktivieren, wenn dies unbedingt erforderlich ist. Wenn Sie AutoSupport deaktivieren, werden Daten nach wie vor erfasst, aber nicht an NetApp übermittelt.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+. Klicken Sie auf *Einstellungen & AutoSupport* und dann auf image:icon_kebab.gif["Optionen"].
+. Aktivieren oder deaktivieren Sie die AutoSupport-Funktion nach Bedarf.
+
+
+
+
+== AutoSupport-Paket wird generiert und heruntergeladen
+
+Mit ONTAP Select kann ein AutoSupport-Paket generiert werden. Sie sollten ein Paket generieren, um Probleme zu debuggen oder wenn Sie dazu durch den Support geleitet werden.
+
+Sie können die folgenden AutoSupport Pakete unter Anleitung und Anleitung des NetApp Supports generieren:
+
+* Bereitstellen von Log-Dateien, die vom ONTAP Select Deploy Utility erstellt wurden
+* Fehlerbehebung und Debugging von Informationen zu den Hypervisor-Hosts und ONTAP Select-Nodes
+* Performance-Informationen zu den Hypervisor-Hosts und ONTAP Select-Nodes
+
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+. Klicken Sie auf *Einstellungen & AutoSupport* und dann auf image:icon_kebab.gif["Optionen"].
+. Klicken Sie Auf *Erzeugen*.
+. Wählen Sie den Typ aus und geben Sie eine Beschreibung für das Paket ein. Sie können optional eine Fallnummer angeben.
+. Klicken Sie Auf *Erzeugen*.
++
+Jedem AutoSupport-Paket wird eine eindeutige Sequenzkennnummer zugewiesen.
+
+. Wählen Sie optional unter *AutoSupport-Verlauf* das richtige Paket aus und klicken Sie auf das Download-Symbol, um die AutoSupport-Datei auf Ihrer lokalen Arbeitsstation zu speichern.
+

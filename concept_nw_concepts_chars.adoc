@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_concepts_chars.html 
+keywords: ontap select, networking concepts, cluster characteristics 
+summary: Machen Sie sich zunächst mit allgemeinen Netzwerkkonzepten vertraut, die für die ONTAP Select-Umgebung gelten. Informieren Sie sich anschließend über die spezifischen Merkmale und Optionen, die für Single-Node- und Multi-Node-Cluster verfügbar sind. 
+---
+= Vernetzung: Allgemeine Konzepte und Eigenschaften
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Machen Sie sich zunächst mit allgemeinen Netzwerkkonzepten vertraut, die für die ONTAP Select-Umgebung gelten. Informieren Sie sich anschließend über die spezifischen Merkmale und Optionen, die für Single-Node- und Multi-Node-Cluster verfügbar sind.
+
+
+
+== Physisches Networking
+
+Das physische Netzwerk unterstützt eine ONTAP Select-Cluster-Implementierung in erster Linie durch Bereitstellung der zugrunde liegenden Layer-2-Switching-Infrastruktur. Die Konfiguration des physischen Netzwerks umfasst sowohl den Hypervisor-Host als auch die breitere Switch-Netzwerkumgebung.
+
+
+
+=== Host-NIC-Optionen
+
+Jeder ONTAP Select-Hypervisor-Host muss entweder mit zwei oder vier physischen Ports konfiguriert sein. Die von Ihnen gewählte Konfiguration hängt von verschiedenen Faktoren ab, darunter:
+
+* Gibt an, ob das Cluster einen oder mehrere ONTAP Select-Hosts enthält
+* Welches Hypervisor-Betriebssystem wird verwendet
+* Wie der virtuelle Switch konfiguriert ist
+* Ob LACP mit den Links verwendet wird oder nicht
+
+
+
+
+=== Konfiguration physischer Switches
+
+Sie müssen sicherstellen, dass die Konfiguration der physischen Switches die ONTAP Select-Implementierung unterstützt. Die physischen Switches sind in die Hypervisor-basierten virtuellen Switches integriert. Die genaue Konfiguration hängt von mehreren Faktoren ab. Dabei sind die folgenden primären Überlegungen zu berücksichtigen:
+
+* Wie wird die Trennung zwischen den internen und externen Netzwerken gewährleistet?
+* Wahren Sie eine Trennung zwischen Daten- und Management-Netzwerken?
+* Wie wird die Schicht-2-VLANs konfiguriert?
+
+
+
+
+== Logische Netzwerke
+
+ONTAP Select verwendet zwei verschiedene logische Netzwerke und trennt den Datenverkehr nach Typ. Insbesondere kann der Traffic zwischen den Hosts innerhalb des Clusters sowie zu den Storage Clients und anderen Maschinen außerhalb des Clusters fließen. Die von den Hypervisoren gemanagten virtuellen Switches unterstützen das logische Netzwerk.
+
+
+
+=== Internes Netzwerk
+
+Bei einer Multi-Node-Cluster-Implementierung kommunizieren die einzelnen ONTAP Select-Knoten über ein isoliertes „internes“ Netzwerk. Dieses Netzwerk steht außerhalb der Nodes im ONTAP Select Cluster nicht zur Verfügung und ist auch nicht verfügbar.
+
+
+NOTE: Das interne Netzwerk ist nur für ein Cluster mit mehreren Nodes verfügbar.
+
+Das interne Netzwerk weist folgende Merkmale auf:
+
+* Wird zur Verarbeitung von ONTAP-Intra-Cluster-Datenverkehr verwendet, einschließlich:
++
+** Cluster
+** High Availability Interconnect (HA-IC)
+** RAID-Synchronspiegel (RSM)
+
+
+* Netzwerk mit einfacher Ebene und zwei auf einem VLAN basierend
+* Statische IP-Adressen werden von ONTAP Select zugewiesen:
++
+** Nur IPv4
+** DHCP wird nicht verwendet
+** Link-lokale Adresse
+
+
+* Die MTU-Größe beträgt standardmäßig 9000 Byte und kann innerhalb des Bereichs 7500-9000 (einschließlich) angepasst werden.
+
+
+
+
+=== Externes Netzwerk
+
+Das externe Netzwerk verarbeitet Datenverkehr zwischen den Knoten eines ONTAP Select Clusters und den externen Speicher-Clients sowie den anderen Maschinen. Das externe Netzwerk ist Teil jeder Cluster-Implementierung und weist folgende Merkmale auf:
+
+* Wird zur Verarbeitung von ONTAP-Datenverkehr verwendet, darunter:
++
+** Daten (NFS, CIFS, iSCSI)
+** Management (Cluster und Node, optional SVM)
+** Intercluster (optional)
+
+
+* Optionale Unterstützung von VLANs:
++
+** Datenportgruppe
+** Management-Port-Gruppe
+
+
+* IP-Adressen, die auf der Grundlage der Konfigurationsauswahl des Administrators zugewiesen werden:
++
+** IPv4 oder IPv6
+
+
+* Die MTU-Größe beträgt standardmäßig 1500 Byte (kann angepasst werden).
+
+
+Das externe Netzwerk ist mit Clustern aller Größen vorhanden.
+
+
+
+== Netzwerkumgebung für Virtual Machines
+
+Der Hypervisor-Host bietet mehrere Netzwerkfunktionen.
+
+ONTAP Select stützt sich auf die folgenden Funktionen, die über die Virtual Machine bereitgestellt werden:
+
+Ports für Virtual Machines:: Es stehen mehrere Ports zur Verwendung durch ONTAP Select zur Verfügung. Sie werden basierend auf mehreren Faktoren zugewiesen und verwendet, einschließlich der Größe des Clusters.
+Virtueller Switch:: Die virtuelle Switch-Software innerhalb der Hypervisor-Umgebung, ob vSwitch (VMware) oder Open vSwitch (KVM), verbindet die von der virtuellen Maschine freigesetzten Ports mit den physischen Ethernet NIC-Ports. Sie müssen je nach Ihrer Umgebung einen vSwitch für jeden ONTAP Select Host konfigurieren.
+

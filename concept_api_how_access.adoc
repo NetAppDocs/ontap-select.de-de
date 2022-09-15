@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: concept_api_how_access.html 
+keywords: rest api, deploy rest api, rest, access, accessing, how to access 
+summary: Aufgrund der inhärenten Flexibilität VON REST-Webservices ist der Zugriff auf die ONTAP Select Deploy API auf verschiedene Weise möglich. 
+---
+= So erhalten Sie Zugriff auf die Bereitstellungs-API
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Aufgrund der inhärenten Flexibilität VON REST-Webservices ist der Zugriff auf die ONTAP Select Deploy API auf verschiedene Weise möglich.
+
+
+
+== Implementieren Sie die native Benutzeroberfläche von Utility
+
+Der primäre Weg, um auf die API zuzugreifen, ist über die ONTAP Select Deploy Web-Benutzeroberfläche. Der Browser ruft die API auf und formatiert die Daten entsprechend dem Design der Benutzeroberfläche neu. Sie haben auch Zugriff auf die API über die Befehlszeilenschnittstelle von Deploy Utility.
+
+
+
+== ONTAP Select Seite zur Online-Dokumentation bereitstellen
+
+Die Seite ONTAP Select Online-Dokumentation bereitstellen stellt bei Verwendung eines Browsers einen alternativen Zugriffspunkt dar. Die Seite bietet nicht nur die Möglichkeit, einzelne API-Aufrufe direkt auszuführen, sondern enthält auch eine detaillierte Beschreibung der API, einschließlich Eingabeparameter und anderer Optionen für jeden Aufruf. Die API-Aufrufe sind in verschiedene funktionale Bereiche oder Kategorien gegliedert.
+
+
+
+== Benutzerdefiniertes Programm
+
+Die Bereitstellungs-API kann über eine von mehreren verschiedenen Programmiersprachen und Tools auf die Bereitstellungsschnittstelle zugegriffen werden. Beliebte Optionen sind Python, Java und Curl. Ein Programm, Skript oder Tool, das die API verwendet, fungiert als REST-Web-Services-Client. Mithilfe einer Programmiersprache lernen Sie die API besser kennen und erhalten die Möglichkeit, die ONTAP Select Implementierungen zu automatisieren.

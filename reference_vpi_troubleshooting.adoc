@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: reference_vpi_troubleshooting.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, troubleshooting 
+summary: Bei der Unterstützung des vCenter Plug-ins zur Bereitstellung sollten Sie sich der verfügbaren Fehlerbehebungstechniken und gängigen Fehler bewusst sein. 
+---
+= Fehlerbehebung
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bei der Unterstützung des vCenter Plug-ins zur Bereitstellung sollten Sie sich der verfügbaren Fehlerbehebungstechniken und gängigen Fehler bewusst sein.
+
+
+
+== Installations-, Deinstallations- und Aktualisierungsfehler
+
+Wenn während der Installation, Deinstallation oder eines Aktualisierungsvorgangs ein Fehler auftritt, gibt die API eine Fehlermeldung zurück, die auf der Bereitstellungsschnittstelle angezeigt wird, die zum Initiierung des Verfahrens verwendet wird (Webbenutzeroberfläche oder CLI).
+
+Zu den häufigsten Fehlern zählen:
+
+* Ungültige Zugangsdaten (Benutzername oder Passwort)
+* Für die Installation ist ein ungültiges oder fehlendes Plug-in angegeben
+* VCenter-Server ist offline oder nicht erreichbar
+
+
+Weitere Informationen zu einem Fehler finden Sie in den folgenden Protokollen:
+
+* Serverprotokoll bereitstellen
+* VCenter Server-Protokoll
+
+
+
+
+== Plug-in-Fehler in vCenter
+
+Wenn während einer Sitzung mit vCenter ein Fehler auftritt, wird eine Fehlermeldung angezeigt. Zu den häufigsten Fehlern zählen:
+
+* Fehler beim Laden des eingebetteten Inhalts in vCenter vom Server Bereitstellen, da das SSL-Zertifikat des Deploy-Servers im Browser nicht akzeptiert wurde.
+* Der Server Deploy kann die Sitzungs-ID für einen vCenter-Benutzer nicht autorisieren, der versucht, auf das Plug-in zum Bereitstellen von vCenter zuzugreifen. Die Sitzung läuft ab.
+* Unzureichende Berechtigungen für den Zugriff auf das Plug-in zur Bereitstellung von vCenter.
+* Der Server zum Bereitstellen ist offline oder nicht erreichbar.
+
+
+Weitere Informationen zu einem Fehler finden Sie in den folgenden Protokollen:
+
+* VCenter Server-Protokoll
+* Serverprotokoll bereitstellen
+

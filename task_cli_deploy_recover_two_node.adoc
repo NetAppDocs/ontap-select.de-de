@@ -1,0 +1,202 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_recover_two_node.html 
+keywords: administer, administering, cli, two node cluster, recover, recovering 
+summary: Wenn das Dienstprogramm ONTAP Select Deploy aus irgendeinem Grund ausfällt oder aus irgendeinem Grund nicht mehr verfügbar ist, können Sie ONTAP Select-Nodes und -Cluster nicht mehr verwalten. Zudem verlieren alle 2-Node-Cluster die HA-Funktion, da der bei der Bereitstellung enthaltene Mediator-Service nicht verfügbar ist. Wenn ein nicht behebbarer Fehler auftritt, müssen Sie die Deploy Utility-Instanz wiederherstellen, um administrative und HA-Funktionen wiederherzustellen. 
+---
+= Wiederherstellen des Deploy Utility für ein 2-Node-Cluster
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn das Dienstprogramm ONTAP Select Deploy aus irgendeinem Grund ausfällt oder aus irgendeinem Grund nicht mehr verfügbar ist, können Sie ONTAP Select-Nodes und -Cluster nicht mehr verwalten. Zudem verlieren alle 2-Node-Cluster die HA-Funktion, da der bei der Bereitstellung enthaltene Mediator-Service nicht verfügbar ist. Wenn ein nicht behebbarer Fehler auftritt, müssen Sie die Deploy Utility-Instanz wiederherstellen, um administrative und HA-Funktionen wiederherzustellen.
+
+
+
+== Bevor Sie beginnen
+
+Sie sollten sich vorbereiten, bevor Sie versuchen, eine Instanz des Dienstprogramms „Bereitstellen“ wiederherzustellen, um den Erfolg zu sichern.
+
+Sie sollten mit verschiedenen Verwaltungsverfahren vertraut sein und über die erforderlichen Informationen verfügen.
+
+Sie müssen in der Lage sein, eine neue Instanz des ONTAP Select Deploy Utility in Ihrer Hypervisor-Umgebung zu installieren.
+
+Sie müssen sich bei der ONTAP CLI des ONTAP Select Clusters anmelden können und die Shell-Schnittstelle verwenden.
+
+Sie müssen ermitteln, ob Sie ein Backup der Konfigurationsdaten aus der fehlgeschlagenen Deploy Utility-Instanz haben, die das ONTAP Select-2-Node-Cluster enthält. Möglicherweise verfügen Sie über ein Backup, das den Cluster nicht enthält.
+
+Abhängig vom verwendeten Wiederherstellungsverfahren sollten Sie in der Lage sein, ein Backup der Bereitstellungskonfigurationsdaten wiederherzustellen.
+
+Sie müssen die IP-Adresse der ursprünglichen virtuellen Bereitstellungsdienstprogramm kennen, die fehlgeschlagen ist.
+
+Sie müssen ermitteln, ob Kapazitäts-Pools oder die Lizenzierung von Kapazitäts-Tiers verwendet werden. Wenn Sie die Kapazitätspools-Lizenzierung verwenden, müssen Sie jede Lizenz für den Kapazitäts-Pool nach der Wiederherstellung oder Wiederherstellung der Deploy-Instanz neu installieren.
+
+Sie müssen entscheiden, welches Verfahren bei der Wiederherstellung einer Instanz des Dienstprogramms ONTAP Select Deploy verwendet werden soll. Ihre Entscheidung hängt davon ab, ob Sie ein Backup der Konfigurationsdaten aus dem ursprünglichen Dienstprogramm für fehlgeschlagene Bereitstellung haben, das das ONTAP Select-Cluster mit zwei Nodes enthält.
+
+[cols="35,65"]
+|===
+| Verfügen Sie über ein Bereitstellungs-Backup mit dem zwei-Node-Cluster? | Wiederherstellungsverfahren zu verwenden 
+
+
+| Ja. | Wiederherstellen einer Deploy Utility-Instanz mithilfe eines Konfigurations-Backups 
+
+
+| Nein | Neukonfigurieren und Wiederherstellen einer Deploy Utility-Instanz 
+|===
+
+
+== Wiederherstellen einer Deploy Utility-Instanz mithilfe eines Konfigurations-Backups
+
+Wenn Sie über ein Backup der fehlgeschlagenen Deploy Utility-Instanz verfügen, die das Cluster mit zwei Nodes enthält, können Sie die Konfigurationsdaten auf der neuen virtuellen Maschineninstanz implementieren wiederherstellen. Anschließend müssen Sie die Recovery durch eine zusätzliche Konfiguration der beiden Nodes im ONTAP Select Cluster abschließen.
+
+Sie müssen über ein Backup der Konfigurationsdaten der ursprünglichen fehlgeschlagenen virtuellen Maschine verfügen, die das Cluster mit zwei Knoten enthält. Sie müssen sich bei der ONTAP-CLI des Clusters mit zwei Nodes anmelden und die ONTAP-Namen der beiden Nodes kennen.
+
+Da das von Ihnen wiederhergestellte Konfigurations-Backup das Cluster mit zwei Nodes enthält, werden die iSCSI-Ziele und Mailboxen des Mediators auf der neuen Virtual Machine des Deploy Utility neu erstellt.
+
+.Schritte
+. Bereiten Sie eine neue Instanz des ONTAP Select Deploy-Dienstprogramms vor:
++
+.. Installieren Sie eine neue Virtual Machine für das Deploy Utility.
+.. Stellen Sie die Bereitstellungskonfiguration von einem früheren Backup auf der neuen virtuellen Maschine wieder her.
++
+Weitere Informationen zu den Installations- und Wiederherstellungsverfahren finden Sie in den zugehörigen Aufgaben.
+
+
+
+. Melden Sie sich bei der ONTAP Befehlszeilenschnittstelle des ONTAP Select Clusters mit zwei Nodes an.
+. Wechseln Sie in den erweiterten Berechtigungsmodus:
++
+`set adv`
+
+. Wenn sich die IP-Adresse der neuen Virtual Machine „Bereitstellen“ von der ursprünglichen Virtual Machine „Bereitstellen“ unterscheidet, müssen Sie die alten iSCSI-Ziele des Mediators entfernen und neue Ziele hinzufügen:
++
+....
+storage iscsi-initiator remove-target -node * -target-type mailbox
+
+storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+
+storage iscsi-initiator add-target -node <node2_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+....
++
+Der `<ip_address>` Parameter ist die IP-Adresse der neuen virtuellen Maschine bereitstellen.
+
++
+Mit diesen Befehlen können die ONTAP Select-Knoten die Mailbox-Platten auf der neuen Deploy Utility Virtual Machine erkennen.
+
+. Ermitteln Sie die Namen der Mediator-Festplatten:
++
+`disk show -container-type mediator`
+
+. Weisen Sie die Mailbox-Platten den beiden Knoten zu:
++
+....
+disk assign -disk <mediator-disk1-name> -owner <node1-name>
+disk assign -disk <mediator-disk2-name> -owner <node2-name>
+....
+. Vergewissern Sie sich, dass Storage-Failover aktiviert ist:
++
+`storage failover show`
+
+
+
+Wenn Sie die Lizenzierung der Kapazitäts-Pools verwenden, müssen Sie jede Lizenz für einen Kapazitäts-Pool neu installieren. Weitere Informationen finden Sie unter _Neuinstallation einer Capacity Pool Lizenz_.
+
+
+
+== Neukonfigurieren und Wiederherstellen einer Deploy Utility-Instanz
+
+Wenn Sie kein Backup der fehlgeschlagenen Dienstprogramminstanz zum Bereitstellen eines Clusters mit zwei Nodes haben, müssen Sie das iSCSI-Ziel und die Mailbox des Mediators auf der neuen Virtual Machine Deploy konfigurieren. Anschließend müssen Sie die Recovery durch eine zusätzliche Konfiguration der beiden Nodes im ONTAP Select Cluster abschließen.
+
+Sie müssen den Namen des Mediators-Ziels für die neue Deploy Utility-Instanz haben. Sie müssen sich bei der ONTAP-CLI des Clusters mit zwei Nodes anmelden und die ONTAP-Namen der beiden Nodes kennen.
+
+Sie können optional ein Konfigurationbackup auf der neuen Deploy Virtual Machine wiederherstellen, obwohl es das Cluster mit zwei Nodes nicht enthält. Da das Cluster mit zwei Nodes nicht mit dem Restore wiederhergestellt wird, müssen Sie das iSCSI-Ziel und die Mailbox des Mediators manuell zur neuen Utility-Instanz mithilfe der ONTAP Select Online-Dokumentation bei der Bereitstellung hinzufügen. Sie müssen sich beim Cluster mit zwei Nodes anmelden und die ONTAP-Namen der beiden Nodes kennen.
+
+
+NOTE: Ziel des Recovery-Verfahrens ist es, den Cluster mit zwei Nodes in einem ordnungsgemäßen Zustand wiederherzustellen, in dem normale HA Takeover- und Giveback-Vorgänge durchgeführt werden können.
+
+.Schritte
+. Bereiten Sie eine neue Instanz des ONTAP Select Deploy-Dienstprogramms vor:
++
+.. Installieren Sie eine neue Virtual Machine für das Deploy Utility.
+.. Stellen Sie optional die Bereitstellungskonfiguration aus einer früheren Sicherung auf der neuen virtuellen Maschine wieder her.
++
+Wenn Sie ein vorheriges Backup wiederherstellen, enthält die neue Deploy-Instanz nicht das Cluster mit zwei Nodes. Weitere Informationen zu den Installations- und Wiederherstellungsverfahren finden Sie im Abschnitt „Verwandte Informationen“.
+
+
+
+. Melden Sie sich bei der ONTAP Befehlszeilenschnittstelle des ONTAP Select Clusters mit zwei Nodes an.
+. Erweiterten privilegierten Modus aufrufen:
++
+`set adv`
+
+. Holen Sie sich den iSCSI-Zielnamen des Mediators:
++
+`storage iscsi-initiator show -target-type mailbox`
+
+. Greifen Sie auf die Webseite für die Online-Dokumentation auf der virtuellen Maschine des neuen Dienstprogramms bereitstellen zu, und melden Sie sich über das Administratorkonto an:
++
+`\http://<ip_address>/api/ui`
+
++
+Sie müssen die IP-Adresse Ihrer virtuellen Maschine bereitstellen verwenden.
+
+. Klicken Sie auf *Mediator* und dann auf *GET /Mediators*.
+. Klicken Sie auf *Probieren Sie es aus!*, um eine Liste der Mediatoren anzuzeigen, die von Deploy beibehalten wird.
++
+Notieren Sie die ID der gewünschten Mediatorinstanz.
+
+. Klicken Sie auf *Mediator* und dann auf *POST*.
+. Geben Sie den Wert für Mediator_ID an
+. Klicken Sie auf das *Modell* neben `iscsi_target` Und füllen Sie den Namenswert aus.
++
+Verwenden Sie den Zielnamen für den Parameter iqn_Name.
+
+. Klicken Sie auf *Probieren Sie es aus!*, um das Mediator iSCSI-Ziel zu erstellen.
++
+Wenn die Anfrage erfolgreich ist, erhalten Sie den HTTP-Statuscode 200.
+
+. Wenn sich die IP-Adresse der neuen Virtual Machine „Bereitstellen“ von der ursprünglichen Virtual Machine „Bereitstellen“ unterscheidet, müssen Sie die ONTAP CLI verwenden, um die alten iSCSI-Ziele des Mediators zu entfernen und neue Ziele hinzuzufügen:
++
+....
+storage iscsi-initiator remove-target -node * -target-type mailbox
+
+storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+
+storage iscsi-initiator add-target -node <node2_name> -label mediator-target-type mailbox -target-portal <ip_address> -target-name <target>
+....
++
+Der `<ip_address>` Parameter ist die IP-Adresse der neuen virtuellen Maschine bereitstellen.
+
+
+
+Mit diesen Befehlen können die ONTAP Select-Knoten die Mailbox-Platten auf der neuen Deploy Utility Virtual Machine erkennen.
+
+. Ermitteln Sie die Namen der Mediator-Festplatten:
++
+`disk show -container-type mediator`
+
+. Weisen Sie die Mailbox-Platten den beiden Knoten zu:
++
+....
+disk assign -disk <mediator-disk1-name> -owner <node1-name>
+
+disk assign -disk <mediator-disk2-name> -owner <node2-name>
+....
+. Vergewissern Sie sich, dass Storage-Failover aktiviert ist:
++
+`storage failover show`
+
+
+
+Wenn Sie die Lizenzierung der Kapazitäts-Pools verwenden, müssen Sie jede Lizenz für einen Kapazitäts-Pool neu installieren. Weitere Informationen finden Sie unter Neu installieren einer Capacity Pool-Lizenz.
+
+.Verwandte Informationen
+* link:task_install_deploy.html["Installieren von ONTAP Select Deploy"]
+* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Wiederherstellen der Konfigurationsdaten auf der neuen virtuellen Maschine bereitstellen"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Installieren einer Lizenz für den Kapazitäts-Pool"]
+

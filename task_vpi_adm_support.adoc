@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_support.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, diagnostics, support 
+summary: Im Rahmen der Administration von ONTAP Select können Sie verschiedene ähnliche Diagnose- und Support-Aufgaben ausführen. 
+---
+= Diagnose und Support
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Im Rahmen der Administration von ONTAP Select können Sie verschiedene ähnliche Diagnose- und Support-Aufgaben ausführen.
+
+
+
+== Anzeigen der Systemeinstellungen
+
+Sie können die Grundeinstellungen des Dienstprogramms Deploy Administration über das vCenter Plugin anzeigen.
+
+.Schritte
+. Klicken Sie im Fenster *Globale Inventarlisten* auf *ONTAP Select bereitstellen*.
+. Klicken Sie auf die Registerkarte *Administration*.
+. Erweitern Sie die Option *System* und klicken Sie auf *Einstellungen*.
+. Aktualisieren Sie die Systemkonfiguration nach Bedarf und klicken Sie auf *Speichern*.
+
+
+
+
+== Anzeigen von Ereignismeldungen
+
+Das Deploy Administration Utility enthält eine Event-Protokollierungsfunktion, die Informationen über die Aktivität des Systems liefert. Sie können den Inhalt des Ereignisprotokolls über das Deploy-Plug-in anzeigen, um Probleme zu beheben oder wenn Sie dazu vom Support aufgefordert werden.
+
+Sie können die Liste der Ereignismeldungen anhand verschiedener Merkmale filtern, darunter:
+
+* Kategorie
+* Typ
+* Ebene
+* Instanz
+
+
+.Schritte
+. Klicken Sie im Fenster *Globale Inventarlisten* auf *ONTAP Select bereitstellen*.
+. Klicken Sie auf die Registerkarte *Administration*.
+. Erweitern Sie die Option *Events* und klicken Sie auf *Bereitstellen*.
+. Klicken Sie optional auf Filtern und erstellen Sie einen Filter, um die angezeigten Ereignismeldungen einzuschränken.
+
+
+
+
+== Aktivieren von AutoSupport
+
+AutoSupport ist das primäre Tool zur Fehlerbehebung, das von NetApp zur Unterstützung von ONTAP Select verwendet wird. Sie können die AutoSupport-Funktion bei Bedarf aktivieren oder deaktivieren.
+
+Nach der Bereitstellung eines neuen Clusters sollten Sie sicherstellen, dass AutoSupport aktiviert ist. AutoSupport sollten Sie bei Bedarf nur deaktivieren. Wenn Sie AutoSupport deaktivieren, werden Daten nach wie vor erfasst, aber nicht an NetApp übermittelt.
+
+.Schritte
+. Klicken Sie im Fenster *Globale Inventarlisten* auf *ONTAP Select bereitstellen*.
+. Klicken Sie auf die Registerkarte *Administration*.
+. Erweitern Sie die Option *AutoSupport* und klicken Sie auf *Konfigurieren*
+. Aktivieren oder deaktivieren Sie AutoSupport nach Bedarf.
+
+
+
+
+== Erstellen eines AutoSupport-Pakets
+
+Das Deploy vCenter Plug-in umfasst die Möglichkeit, ein AutoSupport-Paket zu generieren. Sie sollten ein Paket generieren, um Fehler zu debuggen oder wenn Sie dazu vom Support geleitet werden.
+
+Sie können die folgenden AutoSupport-Pakete generieren:
+
+* Bereitstellen von Log-Dateien, die vom ONTAP Select Deploy Utility erstellt wurden
+* Fehlerbehebung und Debugging von Informationen zu den Hypervisor-Hosts und ONTAP Select-Nodes
+* Performance-Informationen zu den Hypervisor-Hosts und ONTAP Select-Nodes
+
+
+.Schritte
+. Klicken Sie im Fenster *Globale Inventarlisten* auf *ONTAP Select bereitstellen*.
+. Klicken Sie auf die Registerkarte *Administration*.
+. Erweitern Sie die Option *AutoSupport* und klicken Sie auf *Erstellen*.
+. Wählen Sie den Typ aus und geben Sie eine Beschreibung für das Paket ein oder geben Sie eine Case-Nummer ein und klicken Sie dann auf *AutoSupport generieren*.
+. Klicken Sie im linken Fensterbereich unter *AutoSupport* auf *Verlauf* und suchen Sie das Paket.
++
+Sie können bei Bedarf auf *Aktualisieren* klicken.
+
+
+
+Sie können das AutoSupport-Paket über die Benutzeroberfläche des nativen Deploy-Dienstprogramms auf Ihre Workstation herunterladen. Sie können das Paket nicht mit dem Deploy vCenter Plug-in herunterladen.

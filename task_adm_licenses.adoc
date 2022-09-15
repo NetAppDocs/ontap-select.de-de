@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: task_adm_licenses.html 
+keywords: administer, administering, web, licenses 
+summary: Bei der Administration der ONTAP Select-Lizenzen können Sie mehrere verwandte Aufgaben ausführen. 
+---
+= ONTAP Select-Lizenzen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bei der Administration der ONTAP Select-Lizenzen können Sie mehrere verwandte Aufgaben ausführen.
+
+
+
+== Management der Lizenzen für die Kapazitäts-Tiers
+
+Lizenzen für ONTAP Select Capacity Tiers können nach Bedarf hinzugefügt, bearbeitet und gelöscht werden.
+
+.Schritte
+. Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+. Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitätsstufe*.
+. Klicken Sie optional auf *Filter* und begrenzen Sie die angezeigten Lizenzen.
+. Wählen Sie optional eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"] Zum Verwalten einer vorhandenen Lizenz
+. Um eine neue Lizenz hinzuzufügen, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei auf Ihrer lokalen Workstation aus.
+
+
+
+
+== Management der Lizenzen für den Kapazitäts-Pool
+
+Sie können Lizenzen für den ONTAP Select Capacity Pool nach Bedarf hinzufügen, bearbeiten und löschen.
+
+.Schritte
+. Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+. Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitäts-Pools*.
+. Klicken Sie optional auf *Filter* und begrenzen Sie die angezeigten Lizenzen.
+. Wählen Sie optional eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"] Zum Verwalten einer vorhandenen Lizenz
+. Um eine neue Lizenz hinzuzufügen oder eine vorhandene Lizenz zu verlängern, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.
+. Um eine Liste der Kapazitäts-Pools anzuzeigen:
++
+.. Klicken Sie Auf *Zusammenfassung*.
+.. Wählen Sie einen Pool aus, und erweitern Sie ihn, um die aus dem Pool heraus leasen Cluster und Nodes anzuzeigen.
+.. Den aktuellen Status der Lizenz finden Sie unter *Lizenzinformationen*.
+.. Sie können die Dauer der für den Pool ausgegebenen Leasing-Verträge mit Ablauf des Leasing-Zeitraums ändern.
+
+
+. So zeigen Sie eine Liste der Cluster an:
++
+.. Klicken Sie Auf *Details*.
+.. Wählen Sie das Cluster aus und erweitern Sie es, um eine Storage-Auslastung zu sehen.
+
+
+
+
+
+
+== Installieren einer Lizenz für den Kapazitäts-Pool
+
+Jede Lizenz für den aktiven Kapazitätspool ist auf eine bestimmte License Manager-Instanz gesperrt, die in einer Instanz des Deploy Administration Utility enthalten ist. Wenn Sie eine Lizenz für den Kapazitäts-Pool verwenden und die Deploy-Instanz wiederherstellen oder wiederherstellen, ist die ursprüngliche Lizenz ungültig. Sie müssen eine neue Kapazitätslizenzdatei generieren und dann die Lizenz auf die neue Deploy-Instanz installieren.
+
+.Bevor Sie beginnen
+* Ermitteln Sie alle Kapazitätspool-Lizenzen, die von der ursprünglichen implementierten Instanz verwendet werden.
+* Wenn Sie ein Backup beim Erstellen der neuen Deploy-Instanz wiederherstellen, ermitteln Sie, ob das Backup aktuell und aktuell ist.
+* Suchen Sie die ONTAP Select Nodes, die kürzlich von der ursprünglichen Deploy-Instanz erstellt wurden (nur, wenn ein aktuelles Backup der ursprünglichen implementierten Instanz nicht in der neuen Deploy-Instanz wiederhergestellt wird).
+* Stellen Sie die Instanz zum Bereitstellen wieder her
+
+
+Auf hohem Niveau besteht diese Aufgabe aus drei Teilen. Sie müssen alle von der Deploy-Instanz verwendeten Capacity Pool-Lizenzen neu generieren und installieren. Nachdem alle Lizenzen auf der neuen Deploy-Instanz neu installiert wurden, können Sie bei Bedarf die Seriennummer zurücksetzen. Wenn sich die IP-Adresse für die Bereitstellung geändert hat, müssen Sie jeden ONTAP Select-Knoten, der eine Lizenz für den Kapazitätspools verwendet, aktualisieren.
+
+.Schritte
+. Wenden Sie sich an den NetApp Support und besitzen alle Capacity Pool-Lizenzen für die ursprüngliche Deploy-Instanz Unbounded und Unregistered.
+. Erwerben und Herunterladen einer neuen Lizenzdatei für jede der Capacity Pool-Lizenzen.
++
+Siehe link:task_lic_acquire_cp.html["Erwerb einer Lizenz für den Kapazitäts-Pool"] Finden Sie weitere Informationen.
+
+. Installieren Sie die Lizenzen für den Kapazitäts-Pool auf der neuen Deploy-Instanz:
++
+.. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+.. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
+.. Klicken Sie auf *Lizenzen* und dann auf *Kapazitäts-Pool*.
+.. Klicken Sie auf *Add* und dann auf *Upload License(s)*, um die Lizenzen auszuwählen und hochzuladen.
+
+
+. Wenn Sie die neue Deploy-Instanz erstellt haben, ohne ein Backup wiederherzustellen, oder Sie ein Backup verwendet haben, das nicht aktuell und aktuell war, müssen Sie die Seriennummer aktualisieren:
++
+.. Melden Sie sich über das Administratorkonto bei der Befehlszeilenschnittstelle von Deploy Utility an.
+.. Anzeigen der Seriennummer für einen Knoten, der kürzlich von der ursprünglichen Deploy-Instanz erstellt wurde:
++
+`node show -cluster-name CLUSTER_NAME -name NODE_NAME -detailed`
+
+.. Extrahieren Sie die letzten acht Ziffern aus der 20-stelligen Knotenseriennummer, um die letzte Seriennummer zu erhalten, die von der ursprünglichen Bereitstellungsinstanz verwendet wird.
+.. Fügen Sie der Seriennummer 20 hinzu, um die neue Seriennummer zu erstellen.
+.. Legen Sie die Seriennummer für die neue Deploy-Instanz fest:
++
+`license-manager modify -serial-sequence SEQ_NUMBER`
+
+
+
+. Wenn sich die der neuen Deploy-Instanz zugewiesene IP-Adresse von der IP-Adresse der ursprünglichen Deploy-Instanz unterscheidet, müssen Sie die IP-Adresse an jedem ONTAP Select-Knoten aktualisieren, der eine Capacity Pools-Lizenz verwendet:
++
+.. Melden Sie sich bei der ONTAP Befehlszeilenschnittstelle des ONTAP Select Node an.
+.. Wechseln Sie in den erweiterten Berechtigungsmodus:
++
+`set adv`
+
+.. Aktuelle Konfiguration anzeigen:
++
+`system license license-manager show`
+
+.. Legen Sie die vom Knoten verwendete IP-Adresse für License Manager (Deploy) fest:
++
+`system license license-manager modify -host NEW_IP_ADDRESS`
+
+
+
+
+
+
+
+== Konvertieren einer Evaluierungslizenz in eine Produktionslizenz
+
+Sie können ein ONTAP Select Evaluation-Cluster mithilfe des Deploy-Administration Utility eine Lizenz für Kapazitätsstufen in der Produktion verwenden.
+
+.Bevor Sie beginnen
+* Sie müssen ONTAP Select 9.5P1 mit Deploy 2.11 oder höher verwenden
+* Jeder Node muss über genügend Storage verfügen, um die für eine Produktionslizenz erforderlichen Mindestspeicheranforderungen zu unterstützen.
+* Für jeden Node im Evaluation-Cluster müssen Sie Lizenzen für Kapazitätsstufen besitzen.
+
+
+Die Durchführung einer Änderung der Cluster-Lizenz für ein Single-Node-Cluster ist von Unterbrechungen geprägt. Dies ist jedoch bei einem Multi-Node-Cluster nicht der Fall, da bei der Konvertierung jeder Node einzeln neu gebootet werden kann, um die Lizenz anzuwenden.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
+. Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus.
+. Klicken Sie oben auf der Seite Cluster-Details auf *Klicken Sie hier*, um die Cluster-Lizenz zu ändern.
++
+Sie können auch auf *Cluster Details* neben der Evaluierungslizenz klicken.
+
+. Wählen Sie für jeden Node eine verfügbare Produktionslizenz aus oder laden Sie bei Bedarf weitere Lizenzen hoch.
+. Geben Sie die ONTAP-Anmeldedaten ein und klicken Sie auf *Ändern*.
++
+Das Lizenz-Upgrade für den Cluster kann mehrere Minuten dauern. Lassen Sie den Vorgang abgeschlossen werden, bevor Sie die Seite verlassen oder andere Änderungen vornehmen.
+
+
+
+Die ursprünglich jedem Node für die Evaluierungsimplementierung zugewiesenen 20-stelligen Node-Seriennummern werden durch die neunstelligen Seriennummern der für das Upgrade verwendeten Produktionslizenzen ersetzt.

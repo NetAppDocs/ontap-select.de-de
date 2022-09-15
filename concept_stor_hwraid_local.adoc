@@ -1,0 +1,184 @@
+---
+sidebar: sidebar 
+permalink: concept_stor_hwraid_local.html 
+keywords: ontap select, hardware raid, performance boost, protection 
+summary: Wenn ein Hardware-RAID-Controller verfügbar ist, kann ONTAP Select RAID-Dienste sowohl für die Schreib-Performance als auch für den Schutz vor physischen Laufwerksausfällen auf den Hardware-Controller verschieben. Daher wird der RAID-Schutz für alle Nodes im ONTAP Select-Cluster vom lokal angeschlossenen RAID-Controller bereitgestellt; nicht jedoch über ONTAP Software-RAID. 
+---
+= Hardware-RAID-Services für lokalen Attached Storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn ein Hardware-RAID-Controller verfügbar ist, kann ONTAP Select RAID-Dienste sowohl für die Schreib-Performance als auch für den Schutz vor physischen Laufwerksausfällen auf den Hardware-Controller verschieben. Daher wird der RAID-Schutz für alle Nodes im ONTAP Select-Cluster vom lokal angeschlossenen RAID-Controller bereitgestellt; nicht jedoch über ONTAP Software-RAID.
+
+
+NOTE: ONTAP Select Datenaggregate sind für die Verwendung von RAID 0 konfiguriert, da der physische RAID Controller RAID Striping zu den zugrunde liegenden Laufwerken ermöglicht. Es werden keine anderen RAID Level unterstützt.
+
+
+
+== RAID-Controller-Konfiguration für lokalen angeschlossenen Speicher
+
+Alle lokal angeschlossenen Datenträger, die ONTAP Select mit Backing-Speicherung zur Verfügung stellen, müssen hinter einem RAID-Controller sitzen. Die meisten herkömmlichen Server verfügen über mehrere RAID-Controller-Optionen über verschiedene Preissegmente, jeweils mit unterschiedlichen Funktionen. Ziel ist es, so viele dieser Optionen wie möglich zu unterstützen, sofern sie bestimmte Mindestanforderungen an den Controller erfüllen.
+
+Der RAID-Controller, der die ONTAP Select-Festplatten verwaltet, muss folgende Anforderungen erfüllen:
+
+* Der Hardware-RAID-Controller muss über eine BBU (Battery Backup Unit) oder einen Flash-gestützten Schreib-Cache (FBWC) verfügen und einen Durchsatz von 12 GB/s unterstützen.
+* Der RAID-Controller muss einen Modus unterstützen, der mindestens einen oder zwei Festplattenausfälle (RAID 5 und RAID 6) bewältigen kann.
+* Der Laufwerkcache muss auf deaktiviert eingestellt sein.
+* Die Schreibrichtlinie muss für den Write-Back-Modus mit einem Fallback konfiguriert werden, um bei BBU- oder Flash-Ausfall durchzuschreiben.
+* Die I/O-Richtlinie für Lesevorgänge muss auf Cache gesetzt werden.
+
+
+Alle lokal angeschlossenen Festplatten, die ONTAP Select mit Stützspeicher bereitstellen, müssen in RAID-Gruppen mit RAID 5 oder RAID 6 platziert werden. Bei SAS-Laufwerken und SSDs können ONTAP durch die Verwendung von RAID-Gruppen von bis zu 24 Laufwerken die Vorteile nutzen, die durch die Verteilung eingehender Leseanforderungen auf eine höhere Anzahl an Festplatten erzielt werden. So führt dies zu einer deutlichen Steigerung der Performance. Mit SAS-/SSD-Konfigurationen wurden Performance-Tests für Einzel-LUN-Konfigurationen durchgeführt, anstatt mit mehreren LUNs. Es wurden keine signifikanten Unterschiede gefunden. Daher empfiehlt NetApp aus Gründen der Einfachheit die Erstellung der wenigsten LUNs, die für Ihre Konfigurationsanforderungen erforderlich sind.
+
+NL-SAS- und SATA-Laufwerke erfordern andere Best Practices. Aus Performance-Gründen ist die Mindestanzahl an Festplatten immer noch acht, die RAID-Gruppen-Größe sollte jedoch nicht größer als 12 Laufwerke sein. NetApp empfiehlt auch den Einsatz eines Ersatzes pro RAID-Gruppe, allerdings können globale Spares für alle RAID-Gruppen verwendet werden. Sie können zum Beispiel für alle drei RAID-Gruppen zwei Spares verwenden, wobei jede RAID-Gruppe aus acht bis 12 Laufwerken besteht.
+
+
+NOTE: Das maximale Ausmaß und die Datenspeichergröße älterer ESX Versionen beträgt 64 TB, was sich auf die Anzahl der erforderlichen LUNs zur Unterstützung der gesamten Rohkapazität dieser Laufwerke auswirken kann.
+
+
+
+== RAID-Modus
+
+Viele RAID Controller unterstützen bis zu drei Betriebsmodi, wobei jeder einen deutlichen Unterschied im Datenpfad wie bei Schreibanfragen darstellt. Die drei Modi sind:
+
+* Durchblättern. Alle eingehenden I/O-Anfragen werden in den RAID-Controller-Cache geschrieben und anschließend sofort auf die Festplatte geschrieben, bevor die Anforderung an den Host zurückbestätigt wird.
+* Handgelenkhund. Alle eingehenden I/O-Anfragen werden direkt auf die Festplatte geschrieben, um den RAID-Controller-Cache zu umgehen.
+* Zurückschreiben: Alle eingehenden I/O-Anfragen werden direkt in den Controller-Cache geschrieben und sofort an den Host bestätigt. Datenblöcke werden asynchron über den Controller auf die Festplatte übertragen.
+
+
+Der Schreibmodus bietet den kürzesten Datenpfad, wobei die E/A-Bestätigung sofort erfolgt, nachdem die Blöcke in den Cache gelangen. Dieser Modus bietet die niedrigste Latenz und den höchsten Durchsatz bei gemischten Lese-/Schreib-Workloads. Ohne eine BBU oder nichtflüchtige Flash-Technologie besteht bei Benutzern jedoch das Risiko eines Datenverlusts, wenn im System bei diesem Betrieb ein Stromausfall auftritt.
+
+Da für ONTAP Select eine Batterie oder Flash-Einheit erforderlich ist, können wir darauf vertrauen, dass im Cache gespeicherte Blöcke bei Ausfällen dieser Art auf die Festplatte übertragen werden. Aus diesem Grund ist es erforderlich, dass der RAID-Controller im Write-Back-Modus konfiguriert wird.
+
+
+
+== Gemeinsame lokale Festplatten zwischen ONTAP Select und OS
+
+Die häufigste Serverkonfiguration ist eine, bei der alle lokal angeschlossenen Spindeln hinter einem einzelnen RAID-Controller sitzen. Sie sollten mindestens zwei LUNs bereitstellen: Eine für den Hypervisor und eine für die ONTAP Select VM.
+
+Nehmen wir zum Beispiel einen HP DL380 g8 mit sechs internen Laufwerken und einem einzigen Smart Array P420i RAID-Controller. Alle internen Laufwerke werden von diesem RAID-Controller verwaltet, und es ist kein anderer Speicher auf dem System vorhanden.
+
+Die folgende Abbildung zeigt diesen Konfigurationsstil. In diesem Beispiel ist auf dem System kein anderer Storage vorhanden. Daher muss der Hypervisor Storage gemeinsam mit dem ONTAP Select-Node nutzen.
+
+*Server-LUN-Konfiguration mit nur RAID-verwalteten Spindeln*
+
+image:ST_08.jpg["Server-LUN-Konfiguration mit nur RAID-gemanagten Spindeln"]
+
+Wenn Sie die OS LUNs aus derselben RAID-Gruppe wie ONTAP Select bereitstellen, können das Hypervisor-Betriebssystem (und jede Client-VM, die auch von diesem Storage bereitgestellt wird) von RAID-Schutz profitieren. Diese Konfiguration verhindert, dass ein Ausfall eines einzelnen Laufwerks das gesamte System heruntergefahren.
+
+
+
+== Lokale Festplatten, die zwischen ONTAP Select und OS aufgeteilt sind
+
+Die andere mögliche Konfiguration der Server-Anbieter umfasst die Konfiguration des Systems mit mehreren RAID- oder Festplatten-Controllern. In dieser Konfiguration wird ein Festplattensatz von einem einzigen Festplattencontroller verwaltet, der möglicherweise RAID-Dienste anbietet oder nicht. Ein zweiter Festplattensatz wird von einem Hardware-RAID-Controller verwaltet, der RAID 5/6-Dienste anbieten kann.
+
+Bei diesem Konfigurationsstil sollten die Spindeln, die sich hinter dem RAID-Controller befinden, der RAID 5/6-Dienste bereitstellen kann, ausschließlich von der ONTAP Select-VM verwendet werden. Abhängig von der Gesamt-Storage-Kapazität, die gemanagt werden soll, sollten Sie die Festplattenspindeln in eine oder mehrere RAID-Gruppen und eine oder mehrere LUNs konfigurieren. Diese LUNs werden dann verwendet, um einen oder mehrere Datastores zu erstellen, wobei alle Datastores durch den RAID-Controller geschützt werden.
+
+Der erste Festplattensatz ist für das Hypervisor-Betriebssystem und jede Client-VM reserviert, die keinen ONTAP-Speicher nutzt, wie in der folgenden Abbildung dargestellt.
+
+*Server-LUN-Konfiguration auf gemischten RAID-/nicht-RAID-Systemen*
+
+image:ST_09.jpg["Server-LUN-Konfiguration auf einem gemischten RAID-/nicht-RAID-System"]
+
+
+
+== Mehrere LUNs
+
+In zwei Fällen müssen sich Konfigurationen mit einer RAID-Gruppe/einem Single-LUN ändern. Bei Verwendung von NL-SAS- oder SATA-Laufwerken darf die RAID-Gruppengröße 12 Laufwerke nicht überschreiten. Zudem kann eine einzelne LUN größer werden als die zugrunde liegenden Hypervisor-Storage-Beschränkungen. Dabei kann entweder das einzelne Filesystem die maximale Größe oder die maximale Größe des gesamten Storage-Pools aufweisen. Dann muss der zugrunde liegende physische Storage in mehrere LUNs aufgeteilt werden, um das Filesystem erfolgreich zu erstellen.
+
+
+
+== Einschränkungen des Filesystems von VMware vSphere Virtual Machine
+
+Die maximale Größe eines Datenspeichers auf einigen ESX-Versionen ist 64 TB.
+
+Wenn ein Server über mehr als 64 TB Storage verfügt, müssen möglicherweise mehrere LUNs bereitgestellt werden, jeder kleiner als 64 TB. Durch die Erstellung mehrerer RAID-Gruppen zur Verbesserung der RAID-Rebuilds für SATA/NL-SAS-Laufwerke werden auch mehrere LUNs bereitgestellt.
+
+Wenn mehrere LUNs erforderlich sind, sollte unbedingt sichergestellt werden, dass diese LUNs eine ähnliche und konsistente Performance aufweisen. Dies ist besonders wichtig, wenn alle LUNs in einem einzigen ONTAP Aggregat verwendet werden sollen. Wenn eine Teilmenge einer oder mehrerer LUNs ein deutlich anderes Performance-Profil hat, empfehlen wir dringend, diese LUNs in einem separaten ONTAP Aggregat zu isolieren.
+
+Mit mehreren Filesystem-Erweiterungen kann ein einzelner Datastore bis zur maximalen Größe des Datastores erstellt werden. Um die Kapazität einzuschränken, die eine ONTAP Select-Lizenz erfordert, stellen Sie sicher, dass Sie während der Cluster-Installation eine Kapazitäts-Cap angeben. Dank dieser Funktionalität kann ONTAP Select nur eine Teilmenge des Speicherplatzes in einem Datastore nutzen (und benötigt daher eine Lizenz für).
+
+Alternativ kann man mit der Erstellung eines einzelnen Datastores auf einer einzelnen LUN beginnen. Wenn zusätzlicher Speicherplatz eine größere ONTAP Select-Kapazitätslizenz benötigt wird, kann dieser Speicherplatz dem gleichen Datenspeicher bis zur maximalen Größe des Datastores hinzugefügt werden. Sobald die maximale Größe erreicht ist, können neue Datenspeicher erstellt und ONTAP Select hinzugefügt werden. Beide Arten von Vorgängen zur Kapazitätserweiterung werden unterstützt und können mithilfe der Storage-Add-Funktion von ONTAP Deploy erzielt werden. Jeder ONTAP Select Node kann so konfiguriert werden, dass er bis zu 400 TB Storage unterstützt. Die Bereitstellung von Kapazität aus mehreren Datenspeichern erfordert einen zweistufigen Prozess.
+
+Die erste Cluster-Erstellung kann verwendet werden, um einen ONTAP Select Cluster zu erstellen, der einen Teil oder den gesamten Speicherplatz im ersten Datastore verbraucht. Ein zweiter Schritt besteht darin, einen oder mehrere Kapazitätserweiterungen mithilfe zusätzlicher Datenspeicher durchzuführen, bis die gewünschte Gesamtkapazität erreicht ist. Diese Funktionalität wird im Abschnitt beschrieben link:concept_stor_capacity_inc.html["Erhöhung der Storage-Kapazität"].
+
+
+NOTE: Der Overhead von VMFS ist nicht null (siehe link:https://kb.vmware.com/s/article/1001618["VMware KB 1001618"]) Und der Versuch, den gesamten von einem Datenspeicher gemeldeten Speicherplatz frei zu nutzen, hat zu falschen Fehlern während der Cluster-Erstellung geführt.
+
+In jedem Datenspeicher bleibt ein Puffer von 2 % ungenutzt. Dieser Speicherplatz benötigt keine Kapazitätslizenz, da er nicht von ONTAP Select verwendet wird. ONTAP Deploy berechnet automatisch die genaue Anzahl der Gigabyte für den Puffer, solange kein Kapazitäts-Cap angegeben ist. Wenn eine Kapazitätsgrenze angegeben ist, wird diese Größe zuerst durchgesetzt. Wenn die Kapazität-Cap-Größe innerhalb der Puffergröße liegt, schlägt das Erstellen des Clusters mit einer Fehlermeldung fehl, in der der korrekte Parameter für die maximale Größe angegeben wird, der als Kapazitäts-Cap verwendet werden kann:
+
+[listing]
+----
+“InvalidPoolCapacitySize: Invalid capacity specified for storage pool “ontap-select-storage-pool”, Specified value: 34334204 GB. Available (after leaving 2% overhead space): 30948”
+----
+VMFS 6 wird sowohl für neue Installationen als auch als Ziel eines Storage vMotion Betriebs einer vorhandenen ONTAP Deploy oder ONTAP Select VM unterstützt.
+
+VMware unterstützt keine Upgrades ohne Datenmigration von VMFS 5 auf VMFS 6. Daher ist Storage vMotion der einzige Mechanismus, mit dem eine beliebige VM von einem VMFS 5 Datastore zu einem VMFS 6 Datastore übergehen kann. Die Unterstützung von Storage vMotion mit ONTAP Select und ONTAP Deploy wurde jedoch erweitert, um andere Szenarien zu abdeckt - neben dem speziellen Zweck der Umstellung von VMFS 5 auf VMFS 6.
+
+
+
+== Virtuelle ONTAP Select-Festplatten
+
+Im Kern stellt ONTAP Select ONTAP mit einer Reihe virtueller Festplatten vor, die von einem oder mehreren Storage-Pools bereitgestellt werden. ONTAP verfügt über eine Gruppe virtueller Festplatten, die als physische Festplatten behandelt werden. Der verbleibende Teil des Storage-Stacks wird vom Hypervisor abstrahiert. Die folgende Abbildung zeigt diese Beziehung detaillierter und unterstreicht die Beziehung zwischen dem physischen RAID-Controller, dem Hypervisor und der ONTAP Select VM.
+
+* RAID-Gruppen- und LUN-Konfiguration erfolgt innerhalb der RAID-Controller-Software des Servers. Diese Konfiguration ist nicht erforderlich, wenn VSAN oder externe Arrays verwendet werden.
+* Die Storage-Pool-Konfiguration wird im Hypervisor ausgeführt.
+* Virtuelle Festplatten werden von einzelnen VMs erstellt und sind Eigentum der jeweiligen VMs, in diesem Beispiel von ONTAP Select.
+
+
+*Zuordnung von virtuellem Datenträger zu physikalischem Datenträger*
+
+image:ST_12.jpg["Zuordnung des virtuellen Laufwerks zu einem physischen Laufwerk"]
+
+
+
+== Bereitstellung von virtuellen Festplatten
+
+Um eine effizientere Benutzererfahrung zu ermöglichen, stellt das Management Tool ONTAP Select, ONTAP Deploy, automatisch virtuelle Festplatten aus dem zugehörigen Speicherpool bereit und bindet sie an die ONTAP Select VM. Dieser Vorgang wird sowohl bei der Ersteinrichtung als auch beim Hinzufügen des Storage automatisch durchgeführt. Wenn der ONTAP Select-Node Teil eines HA-Paars ist, werden die virtuellen Festplatten automatisch einem lokalen und gespiegelten Storage-Pool zugewiesen.
+
+ONTAP Select unterteilt den zugrunde liegenden angefügten Storage in virtuelle Festplatten gleicher Größe, die jeweils 16 TB nicht überschreiten. Wenn der ONTAP Select Knoten Teil eines HA-Paars ist, werden mindestens zwei virtuelle Festplatten auf jedem Cluster Knoten erstellt und dem lokalen und gespiegelten Plex zugewiesen, der innerhalb eines gespiegelten Aggregats verwendet werden soll.
+
+Einem ONTAP Select kann beispielsweise ein Datastore oder eine LUN zugewiesen werden, der 31 TB beträgt (der nach Bereitstellung der VM verbleibende Speicherplatz und die System- und Root-Festplatten werden bereitgestellt). Dann werden vier ~7.75TB virtuelle Datenträger erstellt und dem entsprechenden ONTAP local and mirror Plex zugewiesen.
+
+
+NOTE: Das Hinzufügen von Kapazität zu einer ONTAP Select VM führt wahrscheinlich zu VMDKs unterschiedlicher Größen. Weitere Informationen finden Sie im Abschnitt link:concept_stor_capacity_inc.html["Erhöhung der Storage-Kapazität"]. Im Gegensatz zu FAS Systemen können VMDKs unterschiedlicher Größe im selben Aggregat vorhanden sein. ONTAP Select verwendet einen RAID 0 Stripe über diese VMDKs, der dazu führt, dass die gesamte Speicherplatzkapazität jeder VMDK unabhängig von ihrer Größe voll genutzt wird.
+
+
+
+== Virtualisierter NVRAM
+
+NetApp FAS Systeme verfügen üblicherweise über eine physische NVRAM-PCI-Karte, eine hochperformante Karte mit nichtflüchtigem Flash-Speicher. Diese Karte sorgt für einen deutlichen Leistungsschub bei Schreibvorgängen, indem ONTAP die Möglichkeit bietet, eingehende Schreibvorgänge sofort an den Client zu bestätigen. In einem Prozess, der als Destaging bezeichnet wird, kann die Verschiebung geänderter Datenblöcke wieder auf die langsameren Storage-Medien geplant werden.
+
+Herkömmliche Systeme sind in der Regel nicht mit dieser Art von Geräten ausgestattet. Daher wurde die Funktionalität dieser NVRAM-Karte virtualisiert und in eine Partition auf der Boot-Festplatte des ONTAP Select Systems platziert. Aus diesem Grund ist die Platzierung der virtuellen Systemfestplatte der Instanz extrem wichtig. Aus diesem Grund benötigt das Produkt auch einen physischen RAID-Controller mit einem stabilen Cache für lokale Attached Storage-Konfigurationen.
+
+NVRAM wird auf seiner eigenen VMDK platziert. Durch das Aufteilen des NVRAM in einer eigenen VMDK kann die ONTAP Select-VM den vNVMe-Treiber verwenden, um mit seiner NVRAM-VMDK zu kommunizieren. Voraussetzung ist zudem, dass die ONTAP Select VM Hardware-Version 13 verwendet, die mit ESX 6.5 und neueren Versionen kompatibel ist.
+
+
+
+== Wie der Datenpfad erläutert wird: NVRAM- und RAID-Controller
+
+Am besten kann die Interaktion zwischen der virtualisierten NVRAM-Systempartition und dem RAID-Controller hervorgehoben werden, indem der Datenpfad, der bei seinem Eintritt in das System durch eine Schreibanforderung übertragen wird, durchgeht.
+
+Eingehende Schreibanforderungen an die ONTAP Select-VM werden an die NVRAM-Partition der VM gerichtet. Auf der Virtualisierungsebene existiert diese Partition innerhalb einer ONTAP Select Systemfestplatte, einer VMDK, die mit der ONTAP Select VM verbunden ist. Auf der physischen Schicht werden diese Anforderungen im lokalen RAID Controller zwischengespeichert, z. B. alle Blockänderungen, die auf die zugrunde liegenden Spindeln ausgerichtet sind. Von hier aus wird der Schreibvorgang wieder an den Host bestätigt.
+
+An diesem physischen Punkt befindet sich der Block im RAID-Controller-Cache, und wartet auf die Festplatte. Der Block befindet sich logisch im NVRAM und wartet auf die Auslagerung auf die entsprechenden Benutzerdatenfestplatten.
+
+Da geänderte Blöcke automatisch im lokalen Cache des RAID Controllers gespeichert werden, werden eingehende Schreibvorgänge auf die NVRAM-Partition automatisch zwischengespeichert und regelmäßig auf physischen Speichermedien gespeichert. Dies sollte nicht verwirrt werden, wenn die NVRAM-Inhalte regelmäßig auf ONTAP-Festplatten bereinigt werden. Diese beiden Ereignisse sind nicht miteinander verwandt und treten zu unterschiedlichen Zeiten und Frequenzen auf.
+
+Die folgende Abbildung zeigt den I/O-Pfad, der ein eingehender Schreibvorgang erfordert. Es hebt den Unterschied zwischen der physikalischen Schicht (dargestellt durch den RAID-Controller-Cache und Festplatten) und der virtuellen Schicht (dargestellt durch die NVRAM-und virtuelle Daten-Laufwerke der VM) hervor.
+
+
+NOTE: Obwohl auf der NVRAM-VMDK geänderte Blöcke im lokalen RAID Controller-Cache zwischengespeichert werden, kennt der Cache nicht das VM-Konstrukt oder die zugehörigen virtuellen Festplatten. Alle geänderten Blöcke im System werden gespeichert, von denen NVRAM nur ein Teil ist. Dazu zählen auch Schreibanforderungen, die an den Hypervisor gebunden sind, wenn er über dieselben Backing-Spindeln bereitgestellt wird.
+
+*Eingehende Schreibvorgänge auf ONTAP Select VM*
+
+image:ST_13.jpg["Eingehende Schreibvorgänge auf die ONTAP Select VM"]
+
+
+NOTE: Die NVRAM-Partition ist auf einer eigenen VMDK getrennt. Diese VMDK wird mithilfe des vNVME-Treibers verbunden, der in ESX Versionen 6.5 oder höher verfügbar ist. Diese Änderung ist für ONTAP Select Installationen mit Software-RAID am wichtigsten, die keine Vorteile aus dem RAID-Controller-Cache ziehen.

@@ -1,0 +1,71 @@
+---
+bar: sidebar 
+permalink: reference_chk_deploy_req_info.html 
+keywords: ontap select, deploy, pre-installation, vmware 
+summary: Überprüfen Sie vor der Installation des Deploy Administration Utility in einer VMware-Umgebung die grundlegenden Anforderungen und bereiten Sie die erfolgreiche Bereitstellung vor. 
+---
+= Erforderliche Informationen für die Installation des Dienstprogramms bereitstellen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bevor Sie das Deploy Administration Utility in einer VMware-Umgebung installieren, überprüfen Sie die erforderlichen Konfigurationsinformationen und optionalen Informationen zur Netzwerkkonfiguration, um die erfolgreiche Bereitstellung vorzubereiten.
+
+
+
+== Erforderliche Konfigurationsinformationen
+
+Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTAP Select Deploy Administration Utility die erforderlichen Konfigurationsinformationen ermitteln.
+
+[cols="40,60"]
+|===
+| Erforderliche Informationen | Beschreibung 
+
+
+| Name der virtuellen Maschine bereitstellen | Kennung für die virtuelle Maschine. 
+
+
+| Name des ESXi-Hosts | Kennung für den VMware ESXi-Host, auf dem das Deploy-Dienstprogramm installiert ist. 
+
+
+| Name des Datenspeichers | Kennung für den VMware-Datenspeicher, der die Dateien der virtuellen Maschine enthält (ca. 40 GB erforderlich) 
+
+
+| Netzwerk für die virtuelle Maschine | Kennung für das Netzwerk, in dem die virtuelle Maschine bereitstellen verbunden ist. 
+|===
+
+
+== Optionale Informationen zu Netzwerkkonfiguration
+
+Die virtuelle Maschine bereitstellen wird standardmäßig mit DHCP konfiguriert. Bei Bedarf können Sie jedoch die Netzwerkschnittstelle für die virtuelle Maschine manuell konfigurieren.
+
+[cols="35,65"]
+|===
+| Netzwerkinformationen | Beschreibung 
+
+
+| Host-Name | Kennung des Host-Rechners. 
+
+
+| Host-IP-Adresse | Statische IPv4-Adresse des Hostcomputers. 
+
+
+| Subnetzmaske | Subnetzwerk-Maske, basierend auf dem Netzwerk ist die virtuelle Maschine ein Teil von. 
+
+
+| Gateway | Standard-Gateway oder -Router. 
+
+
+| Primärer DNS-Server | Primärer Domain Name Server: 
+
+
+| Sekundärer DNS-Server | Sekundärer Domain Name Server. 
+
+
+| Domänen durchsuchen | Liste der zu verwendenden Suchdomänen. 
+|===

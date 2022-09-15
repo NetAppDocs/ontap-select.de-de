@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_select_req_info.html 
+keywords: ontap select, pre-installation, vmware 
+summary: Bei der Vorbereitung der Implementierung eines ONTAP Select Clusters in einer VMware Umgebung erfassen Sie die für die Implementierung und Konfiguration des Clusters erforderlichen Informationen mithilfe des ONTAP Select Deploy Administration Utility. 
+---
+= Erforderliche Informationen für die ONTAP Select Installation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bei der Vorbereitung der Implementierung eines ONTAP Select Clusters in einer VMware Umgebung erfassen Sie die für die Implementierung und Konfiguration des Clusters erforderlichen Informationen mithilfe des ONTAP Select Deploy Administration Utility.
+
+Einige der von Ihnen erfassten Informationen gelten für das Cluster selbst, andere Informationen gelten für die einzelnen Nodes im Cluster.
+
+
+
+== Informationen auf Cluster-Ebene
+
+Sie müssen Informationen in Verbindung mit dem ONTAP Select Cluster erfassen.
+
+[cols="35,65"]
+|===
+| Cluster-Informationen | Beschreibung 
+
+
+| Der Name des Clusters | Eindeutige Kennung des Clusters 
+
+
+| Lizenzmodus | Evaluierung oder erworbene Lizenzierung. 
+
+
+| IP-Konfiguration für das Cluster | IP-Konfiguration für die Cluster und Nodes, einschließlich: * Management-IP-Adresse des Clusters * Subnetzmaske * Standard-Gateway 
+|===
+
+
+== Informationen auf Host-Ebene
+
+Sie müssen Informationen zu den einzelnen Nodes im ONTAP Select Cluster erfassen.
+
+[cols="35,65"]
+|===
+| Cluster-Informationen | Beschreibung 
+
+
+| Name des Hosts | Eindeutige Kennung des Hosts. 
+
+
+| Der Domain-Name des Hosts | Vollständig qualifizierter Domain-Name des Hosts. 
+
+
+| IP-Konfiguration für die Knoten | Management-IP-Adresse für jeden Node im Cluster. 
+
+
+| Spiegelknoten | Name des zugeordneten Node im HA-Paar (nur Cluster mit mehreren Nodes). 
+
+
+| Storage-Pool | Name des verwendeten Speicherpools. 
+
+
+| Storage-Festplatten | Liste von Festplatten bei Verwendung von Software-RAID. 
+
+
+| Seriennummer | Wenn Sie mit einer erworbenen Lizenz implementieren, stellt NetApp eine neunstellige Seriennummer bereit. 
+|===

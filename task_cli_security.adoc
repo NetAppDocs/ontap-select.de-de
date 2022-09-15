@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: task_cli_security.html 
+keywords: administer, administering, cli, security 
+summary: Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung verschiedene Aufgaben ausführen. 
+---
+= Sicherheit
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung verschiedene Aufgaben ausführen.
+
+
+
+= Ändern des Administratorkennworts für die Bereitstellung
+
+Sie können das Kennwort für das Administratorkonto für virtuelle Maschinen bereitstellen über die Befehlszeilenschnittstelle ändern.
+
+.Schritte
+. Melden Sie sich über das Administratorkonto bei der CLI des Bereitstellungsdienstprogramms an.
+. Ändern Sie das Passwort:
+`password modify`
+. Beantworten Sie alle Fragen, die Ihnen für Ihre Umgebung angemessen sind.
+

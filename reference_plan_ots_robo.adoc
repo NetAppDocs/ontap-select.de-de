@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_robo.html 
+keywords: plan, planning, remote and branch office, robo 
+summary: Sie können ONTAP Select in einer Remote-Zweigstelle/in einer Zweigstelle implementieren. Bei der Planung einer ROBO-Implementierung müssen Sie die Konfiguration auswählen, die Ihre Ziele unterstützt. 
+---
+= Implementierungen in Remote-Standorten und Zweigstellen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können ONTAP Select in einer Remote-Zweigstelle/in einer Zweigstelle implementieren. Bei der Planung einer ROBO-Implementierung müssen Sie die Konfiguration auswählen, die Ihre Ziele unterstützt.
+
+Bei der Implementierung von ONTAP Select in einer ROBO-Umgebung sind zwei Hauptkonfigurationen verfügbar:
+
+
+NOTE: Bei der Bereitstellung von ONTAP Select können Sie jede VMware vSphere Lizenz verwenden.
+
+Das ONTAP Select 2-Node-Cluster besteht aus einem HA-Paar und ist ideal für ROBO-Implementierungen.
+
+Ein ONTAP Select Single-Node-Cluster kann in einer ROBO-Umgebung implementiert werden. Während für einen einzelnen Node keine native HA-Funktion vorhanden ist, können Sie das Cluster auf eine der folgenden Arten implementieren, um Storage-Sicherung zu gewährleisten:
+
+* Externer Shared Storage unter Verwendung von VMware HA
+* VMware vSAN
+
+
+
+NOTE: Falls Sie vSAN verwenden, benötigen Sie eine VMware vSAN ROBO-Lizenz.
