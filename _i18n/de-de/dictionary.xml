@@ -406,11 +406,7 @@
   <block id="7436b418bed093768e360d32105591d2" category="doc">ONTAP Select-Dokumentation</block>
   <block id="8a7497698e274b257189171d812c4134" category="paragraph">NetApp ONTAP Select ist eine softwaredefinierte Storage-Appliance, die Sie auf einer Reihe Standard-Hardwaresystemen mit VMware ESXi Hypervisor implementieren können. Mit dieser Lösung erhalten Sie die nötige Flexibilität zum Aufbau einer flexiblen und skalierbaren Private-Cloud-Infrastruktur.</block>
   <block id="1fde0727b387439572ade83eecff4f68" category="section-title">Entdecken Sie, was neu ist</block>
-  <block id="71d4b54f0c3f31371ccbff3189f7515e" category="inline-link-macro">Die Neuheiten in ONTAP Select 9.11.1</block>
-  <block id="9c714c0377048955032a0d4ac05768a9" category="list-text"><block ref="9c714c0377048955032a0d4ac05768a9" category="inline-link-macro-rx"></block></block>
-  <block id="eb1d813ea715b64863d0af3529b1d443" category="admonition">Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren. Bei ONTAP Select 9.11.1 und neueren Versionen sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.</block>
   <block id="93c13bfba0d6bca47835d55338a89bcb" category="section-title">Navigieren Sie in der Produktdokumentation</block>
-  <block id="8db26cba39c72c35a0f54f9a465fa3a2" category="paragraph">ONTAP Select 9.11.1 kann auf VMware ESXi implementiert werden. Diese Seite enthält die Dokumentation zu ONTAP Select 9.11.1, 9.10.1, 9.9.1, 9.8 und 9.7 unter VMware ESXi sowie die Hypervisor-unabhängige Dokumentation (z. B. DIE REST-API).</block>
   <block id="f24c86f59b1831aca015361d668be674" category="paragraph">Die Versionshinweise sowie die Dokumentation für die KVM-Version des Produkts finden Sie in den vorherigen Versionen unter<block ref="39a2274ac9dcd1e1802780008f8c7665" category="inline-link-rx"></block>.</block>
   <block id="a753bf5f3b9313fdceb106b5c3e89d3f" category="section-title">Erfahren Sie mehr über NetApp und tauschen Sie sich mit anderen aus</block>
   <block id="3cd12697cda279c9c99b093a265c1ba8" category="inline-link-macro">Wo Sie Hilfe und weitere Informationen erhalten</block>
@@ -832,8 +828,6 @@
   <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Open Source</block>
   <block id="531245fe0415d5f672afee491f44b87a" category="paragraph">Der Notice-Datei enthält Informationen zu Copyright und Lizenzen anderer Hersteller, die in NetApp Software verwendet werden.</block>
-  <block id="1ff0d4093fc891e95ebf937fc719f313" category="inline-link-macro">Hinweis zu ONTAP Select 9.11.1</block>
-  <block id="b21133b863e352c7e380ae8974198a75" category="list-text"><block ref="b21133b863e352c7e380ae8974198a75" category="inline-link-macro-rx"></block></block>
   <block id="f33060d1d5fd62eca6bf1719621be78e" category="summary">Isolieren Sie Datenverkehr und Management-Datenverkehr in separate Layer-2-Netzwerke.</block>
   <block id="c32f292fb82b55bccdd68f8bac5b6017" category="paragraph">Der externe ONTAP Select-Netzwerkverkehr wird als Daten (CIFS, NFS und iSCSI), Management- und Replizierungs-Datenverkehr (SnapMirror) definiert. In einem ONTAP Cluster verwendet jeder Traffic-Stil eine separate logische Schnittstelle, die auf einem virtuellen Netzwerk-Port gehostet werden muss. In der Konfiguration mit mehreren Nodes von ONTAP Select werden diese als Ports e0a und e0b/e0g bezeichnet. Für die Konfiguration mit einem Node werden diese als e0a und e0b/e0c bezeichnet, während die restlichen Ports für interne Cluster Services reserviert sind.</block>
   <block id="30ef8e48c19263f94cf944627bca9094" category="paragraph">NetApp empfiehlt, den Datenverkehr und den Management-Datenverkehr in separate Layer-2-Netzwerke zu isolieren. In der ONTAP Select Umgebung wird dies mithilfe von VLAN-Tags durchgeführt. Dies kann erreicht werden, indem dem Netzwerkadapter 1 (Port e0a) eine VLAN-getaggte Port-Gruppe für den Management-Datenverkehr zugewiesen wird. Dann können Sie den Ports e0b und e0c (Cluster mit einem Node) und e0g (Cluster mit mehreren Nodes) eine oder mehrere separate Port-Gruppe(n) für den Datenverkehr zuweisen.</block>
@@ -1416,8 +1410,6 @@
   <block id="9fbbd5bdac28c04c1d8551e94ce3f619" category="doc">Versionshinweise zu ONTAP Select</block>
   <block id="12f423cf4aa4ff75a7ca9220c1c56cd8" category="paragraph">Die Versionshinweise für ONTAP Select liefern Release-spezifische Informationen, darunter neue Funktionen, unterstützte Konfigurationen, Upgrade-Hinweise, bekannte Probleme, Behebung von Problemen und bekannte Einschränkungen.</block>
   <block id="e1060dc2ca9dac04bf54c9156ff74480" category="admonition">Sie benötigen ein Konto, um sich bei der NetApp Support-Website anzumelden, damit die Versionshinweise genutzt werden können.</block>
-  <block id="91f528f33d4be79010000f66d8e7792c" category="inline-link">Versionshinweise zu ONTAP Select 9.11.1</block>
-  <block id="0f4660890a6410bffddf8509d2c29d15" category="paragraph">Sie können auf das zugreifen<block ref="192e9fbc4335e2d8900d363693ade117" category="inline-link-rx"></block> So zeigen Sie die Details zur aktuellen Version an.</block>
   <block id="a300be52ac6bc20637c7ea03e867e8d8" category="paragraph">Informationen zu den Versionshinweisen für frühere Versionen des Produkts finden Sie unter:</block>
   <block id="02dd0a4dcd3d8502f6760ef0dfd60781" category="inline-link">ONTAP Select Produktbibliothek</block>
   <block id="6eb890d444efcf0d812ec26da8b7d5a7" category="list-text"><block ref="2b4946d3110ff612e589949f26dbb8fd" category="inline-link-rx"></block></block>
@@ -2109,7 +2101,6 @@
   <block id="44c3d61a6cd78f834dce18458a846592" category="summary">Hier finden Sie Antworten auf gängige Fragen zu ONTAP Select.</block>
   <block id="af2a4d2810d86aa0169c117f82682f9a" category="doc">Häufig gestellte Fragen</block>
   <block id="79b30390c302fda3ec5ffb50b9c49328" category="paragraph">Hier finden Sie Antworten auf häufig gestellte Fragen zu ONTAP Select.</block>
-  <block id="fc3d5152aab5577142090d3fea55b1a1" category="admonition">Ab ONTAP Select 9.10.1 wird der KVM-Hypervisor beim Erstellen eines neuen Clusters nicht mehr unterstützt. Außerdem können Sie ab 9.11.1 keine vorhandenen ONTAP Select Cluster mehr auf KVM mehr verwalten. Die Fragen zu KVM sind nur auf frühere Versionen anwendbar, die KVM unterstützen.</block>
   <block id="0db377921f4ce762c62526131097968f" category="section-title">Allgemein</block>
   <block id="8d770a453153e5d358164ea9ef9bf0e8" category="paragraph">Es gibt einige allgemeine Fragen und Antworten.</block>
   <block id="e4589ea7e5e170e58bd51acf4be0ddc1" category="paragraph">ONTAP Select Deploy ist das Tool zum Erstellen von ONTAP Select Clustern. Derzeit ist ONTAP Select Deploy die einzige Methode, die zur Erstellung eines Produktions-Clusters verfügbar ist. ONTAP Select Deploy kann auch verwendet werden, um ein Evaluation Select Cluster zu erstellen, damit Kunden die tatsächlichen Schritte einer Produktionsimplementierung testen und dokumentieren können. Mit ONTAP Select Deploy kann ein Evaluation-Cluster auch mithilfe einer geeigneten Capacity-Tier-Lizenz in ein Produktions-Cluster umgewandelt werden, die ausreichend Kapazität bietet, um den während der Evaluierung belegten Speicherplatz zu decken.</block>
@@ -3116,19 +3107,6 @@
   <block id="9ec29eda5e10e645cd480c04aa307182" category="paragraph">HTTP ist statusfrei. Um eine Reihe verwandter Anforderungen und Antworten innerhalb einer Transaktion zuzuordnen, müssen zusätzliche Informationen in die HTTP-Header enthalten sein, die mit den Request/Response-Datenströmen übertragen werden.</block>
   <block id="bd4c8bbdccbcb7826a3bc4ae421c0604" category="section-title">JSON-Formatierung</block>
   <block id="468b57dfd1e1664618873551b4d6ab01" category="paragraph">Während Informationen auf verschiedene Weise zwischen Client und Server strukturiert und übertragen werden können, ist die beliebteste Option (und die bei der REST-API implementieren verwendete Option) JavaScript Object Notation (JSON). JSON ist ein Branchenstandard für die Darstellung einfacher Datenstrukturen im Klartext und wird zur Übertragung von Zustandsdaten zur Beschreibung der Ressourcen verwendet.</block>
-  <block id="27918c15d26a489a97622613b0f53097" category="summary">Die aktuelle Version von ONTAP Select enthält verschiedene neue und geänderte Funktionen.</block>
-  <block id="6536ba690a368bc5eb96e1579c795e23" category="doc">Was ist neu in ONTAP Select 9.10.1</block>
-  <block id="aacb1ad8ec74092a13074108a4e20c02" category="section-title">Verbesserte Unterstützung von VMware ESXi</block>
-  <block id="aa46a81eb495f6cb92e19c98c6d7383a" category="paragraph">ONTAP Select 9.11.1 bietet Unterstützung für VMware ESXi 7.0 U3C.</block>
-  <block id="5986999240906508e3084d84dd2552d8" category="section-title">Unterstützung für VMware NSX-T</block>
-  <block id="f25b903f1c04994aeb9659893008d29f" category="paragraph">ONTAP Select 9.10.1 ist für VMware NSX-T Version 3.1 qualifiziert. Bei Verwendung von NSX-T mit einem ONTAP Select Single-Node-Cluster, das mit einer OVA-Datei und dem ONTAP Select Deploy-Administrationsprogramm bereitgestellt wird, gibt es keine funktionalen Probleme oder Mängel.</block>
-  <block id="2274fb2127a3a8f7f5aa9544b4f66acd" category="paragraph">Wenn Sie jedoch NSX-T mit einem ONTAP Select Multi-Node-Cluster verwenden, sollten Sie die folgenden Anforderungen und Einschränkungen für ONTAP Select 9.11.1 beachten:</block>
-  <block id="97ba2ef50ca50de240503a53bf0d9347" category="list-text">Prüfung der Netzwerkkonnektivität</block>
-  <block id="9272e0dade1877b24e5ef4ad453f2c08" category="list-text">Der über die Bereitstellungs-CLI verfügbare Netzwerk-Konnektivitätsprüfer schlägt fehl, wenn er in einem NSX-T-basierten Netzwerk ausgeführt wird.</block>
-  <block id="51e3f7647537ef4a51cd74ad4edcb9c6" category="section-title">KVM-Hypervisor wird nicht mehr unterstützt</block>
-  <block id="cd89fb70ae3399d9a889b581a0f642f8" category="paragraph">Der KVM-Hypervisor wird nicht mehr unterstützt.</block>
-  <block id="ac55843b389d08df5493481d397627ff" category="paragraph">Ab den Versionen ONTAP Select 9.10.1 und höher waren Sie nicht mehr in der Lage, neue KVM-basierte Cluster zu erstellen oder KVM-basierte Hosts mithilfe des Deploy-Dienstprogramms hinzuzufügen. Außerdem unterstützt 9.10.1 die letzte Version die Managementfunktionen wie Online-Einführung mit vorhandenen KVM-Clustern und -Hosts.</block>
-  <block id="903c9574703487544d2aede2d7c2ccfd" category="paragraph">Ab ONTAP Select 9.11.1 und neueren Versionen sind alle Managementfunktionen nicht mehr für vorhandene KVM Cluster und Hosts verfügbar, mit Ausnahme der Funktionen „Offline nehmen“ und „Löschen“.</block>
   <block id="acd7d62c9b810f0d5861712e738fb732" category="summary">Wenn ein Laufwerk mithilfe von Software-RAID ausfällt, verwendet ONTAP Select ein Ersatzlaufwerk (falls eines verfügbar ist) und startet den Neuerstellungsvorgang automatisch. Dies ähnelt der Funktionsweise von ONTAP auf FAS und AFF. Ist jedoch kein Spare-Laufwerk verfügbar, muss ein Laufwerk zum ONTAP Select-Node hinzugefügt werden.</block>
   <block id="aeb7169d045185953deed3c0de3865f8" category="doc">Austausch eines ausgefallenen Laufwerks bei Verwendung von SW-RAID</block>
   <block id="6dec3523c85f378f79fcf83c82e21868" category="paragraph">Wenn ein Laufwerk, das Software-RAID verwendet, ausfällt, weist ONTAP Select ein Ersatzlaufwerk zu, wenn eines verfügbar ist, und startet den Neuerstellungsprozess automatisch. Das ähnelt der Funktionsweise von ONTAP mit FAS und AFF. Ist jedoch kein Spare-Laufwerk verfügbar, müssen Sie ein Laufwerk zum ONTAP Select-Node hinzufügen.</block>
@@ -3568,4 +3546,17 @@
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">Häufig gestellte Fragen</block>
   <block id="bf07f432276ee2fe7e55f9ea12c2ba5a" category="sidebar">Weitere Informationen</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">Frühere Versionen</block>
+  <block id="bc8028393dfe2dad42a885ee42952937" category="inline-link-macro">Neuerungen in dieser Version</block>
+  <block id="81f4b69f6b074a0894dc780d0c5fe22f" category="list-text"><block ref="81f4b69f6b074a0894dc780d0c5fe22f" category="inline-link-macro-rx"></block></block>
+  <block id="2648230546014b2ae69624070a44ec60" category="admonition">Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren. Bei ONTAP Select 9.11.1 und neueren Versionen sind alle Managementfunktionen für vorhandene KVM-Cluster und Hosts jetzt nicht mehr verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.</block>
+  <block id="14f3d38ecd199a3a7efaea74103df87f" category="paragraph">ONTAP Select 9.12.1 kann auf VMware ESXi implementiert werden. Diese Seite enthält die Dokumentation zu ONTAP Select 9.12.1, 9.11.1, 9.10.1, 9.9.1, 9.8 und 9.7, die auf VMware ESXi ausgeführt werden, sowie die Hypervisor-unabhängige Dokumentation (z. B. REST API).</block>
+  <block id="b3a281a86bd3818b168900985a901d99" category="inline-link-macro">Hinweis zu ONTAP Select 9.12.1</block>
+  <block id="ee6f7d910b278ad714ca5e935fc4ef34" category="list-text"><block ref="ee6f7d910b278ad714ca5e935fc4ef34" category="inline-link-macro-rx"></block></block>
+  <block id="f35dd9a9dbe889bc05b23cec8774b252" category="inline-link">Versionshinweise zu ONTAP Select 9.12.1</block>
+  <block id="b3075927414c52e4bd4c7e822453d175" category="paragraph">Sie können auf das zugreifen<block ref="3ec17b33e7ccb0ff402fc289d09bfa2b" category="inline-link-rx"></block> So zeigen Sie die Details zur aktuellen Version an.</block>
+  <block id="252f0e043f3f30bf9b9641c26a9f3d25" category="admonition">Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren. Bei ONTAP Select 9.11.1 und neueren Versionen sind alle Managementfunktionen für vorhandene KVM-Cluster und Hosts jetzt nicht mehr verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen. Die Fragen zu KVM sind nur auf frühere Versionen anwendbar, die KVM unterstützen.</block>
+  <block id="81884c993fa720d5bc8ac8f0f7c6dbda" category="summary">Die aktuelle Version umfasst keine neuen Funktionen oder Verbesserungen für ONTAP Select.</block>
+  <block id="afa5543a0b0f6f0ebaeb44f21a75df52" category="doc">Was ist neu in dieser Version</block>
+  <block id="626a7cbe056796bcb1c158b143866230" category="section-title">Versionshinweise zu ONTAP</block>
+  <block id="ee7c32e022645197b08ad79344b7cea5" category="paragraph">ONTAP Select profitiert von den meisten neuen Entwicklungen in der aktuellen Version des zentralen ONTAP Produkts. Siehe<block ref="13c0668cefb5d13050e1de01793dacbb" category="inline-link-rx"></block> Weitere Informationen zu neuen Funktionen oder Verbesserungen in den einzelnen Versionen von ONTAP 9.</block>
 </blocks>
