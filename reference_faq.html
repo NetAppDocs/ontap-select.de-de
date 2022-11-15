@@ -1,0 +1,3132 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head class="at-element-marker">
+  <title>Häufig gestellte Fragen</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Häufig gestellte Fragen" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/de-de/ontap-select/reference_faq.html" />
+	<meta property="og:description" content="Hier finden Sie Antworten auf gängige Fragen zu ONTAP Select." />
+  <meta property="og:image" content="https://docs.netapp.com/de-de/ontap-select/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Hier finden Sie Antworten auf gängige Fragen zu ONTAP Select.">
+  <meta name="keywords" content=" faq, frequently asked questions"><!-- Icons -->
+  <link rel="icon" href="/de-de/ontap-select/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/de-de/ontap-select/css/netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/de-de/ontap-select/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/de-de/ontap-select/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/de-de/ontap-select/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = consentId;
+      head.appendChild(onetrustScript);
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/de-de/ontap-select/js/na-search.js'></script><script src='/de-de/ontap-select/js/na-pagenav.js'></script><script src='/de-de/ontap-select/js/na-utility.js'></script>
+  <script src='/de-de/ontap-select/js/clouddocs.js'></script>
+  <script src='/de-de/ontap-select/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/de-de/ontap-select/js/toc.js'></script>
+  <script src='/de-de/ontap-select/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/de-de/ontap-select"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/de-de/ontap-select/js/custom-dropdown.js'></script>
+  <script src='/de-de/ontap-select/js/FileSaver.min.js'></script>
+  <script src='/de-de/ontap-select/js/jszip-utils.min.js'></script>
+  <script src='/de-de/ontap-select/js/jszip.min.js'></script>
+  <script src='/de-de/ontap-select/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/issues/new?body=Page%3A%20[Häufig gestellte Fragen](https://docs.netapp.com/de-de/ontap-select/reference_faq.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/de-de/ontap-select/images/discuss-sm.svg" alt="" class="github-icon" />Dokumentationsänderungen beantragen</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/blob/main/reference_faq.adoc" class="page-nav-contribute-link" role="button"><img src="/de-de/ontap-select/images/edit-sm.svg" alt="" class="github-icon" />In GitHub bearbeiten</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/de-de/ontap-select/images/article-sm.svg" alt="" class="github-icon" />Leitfaden für Beitragende</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">AUF DIESER SEITE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Produkt und Lösungen</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support und Schulung</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Kundenberichte</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/de-de/ontap-select/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/de-de/ontap-select/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/de-de/ontap-select/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/de-de/ontap-select/search.html"
+          data-type="widget" 
+          data-placeholder="Dokumentation durchsuchen"
+          data-no-results-found="Keine Ergebnisse für {query} gefunden"
+          data-did-you-mean="Nach {suggestion} suchen."
+          data-no-results-found-did-you-mean="Keine Ergebnisse für {query} gefunden. Meinten Sie {suggestion}?"
+          data-results-found="{hitCount} Ergebnisse gefunden"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/de-de/ontap-select/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">Deutsch</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/de-de/ontap-select/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/de-de/ontap-select/reference_faq.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/ontap-select/reference_faq.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/ontap-select/reference_faq.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/ontap-select/reference_faq.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/ontap-select/reference_faq.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/ontap-select/reference_faq.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/fr-fr/ontap-select/reference_faq.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li></ul>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/de-de/ontap-select/images/collapse.png" alt="Navigationsbereich reduzieren"></button>
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>verfügbare PDFs<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/de-de/ontap-select/pdfs/fullsite-sidebar/ONTAP_Select_Dokumentation.pdf" >
+          <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>PDF dieser Dokumentationsseite</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Konzepte.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Konzepte
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Business_Anwendungsfälle.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Business-Anwendungsfälle
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Planen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Planen
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/ONTAP_Select.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            ONTAP Select
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/ONTAP_Select_Deploy.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            ONTAP Select Deploy
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Lizenz.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Lizenz
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Optionen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Optionen
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Lizenzmodell_für_Kapazitäts_Pools.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Lizenzmodell für Kapazitäts-Pools
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Kaufen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Kaufen
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Installieren.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Installieren
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Checkliste_zur_Installationsvorbereitung.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Checkliste zur Installationsvorbereitung
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Verwaltung.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Verwaltung
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Nodes_und_Hosts.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Nodes und Hosts
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Im_Detail.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Im Detail
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Storage.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Storage
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Netzwerkbetrieb.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Netzwerkbetrieb
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Architektur_für_Hochverfügbarkeit.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Architektur für Hochverfügbarkeit
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Leistung.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Leistung
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Integration_mit_vCenter.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Integration mit vCenter
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Erste_Schritte.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Erste Schritte
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Management_des_Plug_ins.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Management des Plug-ins
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Verwaltung.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Verwaltung
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Automatisierung_mit_REST.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Automatisierung mit REST
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Konzepte.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Konzepte
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Zugriff_über_einen_Browser.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Zugriff über einen Browser
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Workflow_Prozesse.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Workflow-Prozesse
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Zugang_mit_Python.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Zugang mit Python
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Python_Codebeispiele.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Python-Codebeispiele
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Verwenden_Sie_die_CLI.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Verwenden Sie die CLI
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Nodes_und_Hosts.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Nodes und Hosts
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Utility_bereitstellen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf.png" alt="" width="16" height="16"/>
+            Utility bereitstellen
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/de-de/ontap-select/images/pdf-zip.png" alt="" width="16" height="16"/>
+      <pre>Sammlung separater PDF-Dokumente<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select Dokumentation"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/index.html">
+        ONTAP Select Dokumentation
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Versionshinweise"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_release_notes.html">
+        Versionshinweise
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konzepte"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Konzepte</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Produktübersicht"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_ots_overview.html">
+        Produktübersicht
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select Deploy"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_ots_deploy.html">
+        ONTAP Select Deploy
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Business-Anwendungsfälle"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Business-Anwendungsfälle</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Geschäftsanforderungen und Verwendungsszenarien"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_usecase_overview.html">
+        Geschäftsanforderungen und Verwendungsszenarien
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Remote-Standorte und externe Niederlassungen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_usecase_robo.html">
+        Remote-Standorte und externe Niederlassungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Private Cloud und Datacenter"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_usecase_private_cloud.html">
+        Private Cloud und Datacenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="MetroCluster SDS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_usecase_mc_sds.html">
+        MetroCluster SDS
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Terminologie"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_terminology.html">
+        Terminologie
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Planen"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Planen</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementierungs-Workflow"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_workflow_deploy.html">
+        Implementierungs-Workflow
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> ONTAP Select</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Anforderungen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_general.html">
+        Allgemeine Anforderungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Hypervisor und Hardware"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_hardware.html">
+        Hypervisor und Hardware
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage und RAID"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_storage.html">
+        Storage und RAID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select vNAS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_vnas.html">
+        ONTAP Select vNAS
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerkbetrieb"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_networking.html">
+        Netzwerkbetrieb
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster mit zwei Nodes"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_two_node.html">
+        Cluster mit zwei Nodes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Remote-Standorte und externe Niederlassungen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_robo.html">
+        Remote-Standorte und externe Niederlassungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="MetroCluster SDS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_mcc_sds.html">
+        MetroCluster SDS
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware vCenter"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_vcenter.html">
+        VMware vCenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware vCenter Plug-in"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_ots_plugin.html">
+        VMware vCenter Plug-in
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select Deploy"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> ONTAP Select Deploy</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Anforderungen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_dep_general.html">
+        Allgemeine Anforderungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware Umgebung zu unterstützen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_dep_vmware.html">
+        VMware Umgebung zu unterstützen
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Best Practices in sich vereint"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_plan_best_practices.html">
+        Best Practices in sich vereint
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenz"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Lizenz</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Optionen"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Optionen</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Evaluierungslizenzen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_evaluation.html">
+        Evaluierungslizenzen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Produktionslizenzen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_production.html">
+        Produktionslizenzen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Plattform-Lizenzangebote"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_platforms.html">
+        Plattform-Lizenzangebote
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenzmodell für Kapazitäts-Pools"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Lizenzmodell für Kapazitäts-Pools</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Operative Details"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_cp_operation.html">
+        Operative Details
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Seriennummern der Nodes"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_cp_serial_number.html">
+        Seriennummern der Nodes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Einschränkungen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_cp_restrictions.html">
+        Einschränkungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kapazitäts-Pools und Kapazitäts-Tiers"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_cp_compare_ct.html">
+        Kapazitäts-Pools und Kapazitäts-Tiers
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Zusammenfassung der Vorteile"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_cp_benefits.html">
+        Zusammenfassung der Vorteile
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kaufen"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Kaufen</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenzierungs-Workflow"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_lic_workflow.html">
+        Lizenzierungs-Workflow
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kapazitäts-Tiers"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_lic_acquire_ct.html">
+        Kapazitäts-Tiers
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kapazitäts-Pools"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_lic_acquire_cp.html">
+        Kapazitäts-Pools
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Funktionen der ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_lic_ontap_features.html">
+        Funktionen der ONTAP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installieren"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Installieren</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Checkliste zur Installationsvorbereitung"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Checkliste zur Installationsvorbereitung</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Checkliste zur Hostvorbereitung"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_chk_host_prep.html">
+        Checkliste zur Hostvorbereitung
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bereitstellung der erforderlichen Informationen über das Dienstprogramm"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_chk_deploy_req_info.html">
+        Bereitstellung der erforderlichen Informationen über das Dienstprogramm
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erforderliche Informationen zu ONTAP Select"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_chk_select_req_info.html">
+        Erforderliche Informationen zu ONTAP Select
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NVMe-Host-Konfiguration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_chk_nvme_configure.html">
+        NVMe-Host-Konfiguration
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installieren Sie ONTAP Select Deploy"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_install_deploy.html">
+        Installieren Sie ONTAP Select Deploy
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementieren eines Clusters"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_deploy_cluster.html">
+        Implementieren eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erster Cluster-Status"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_initial_state.html">
+        Erster Cluster-Status
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verwaltung"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Verwaltung</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_adm_before.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Upgrade von Nodes"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_adm_upgrading_nodes.html">
+        Upgrade von Nodes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Diagnose und Support"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_support.html">
+        Diagnose und Support
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sicherheit"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_security.html">
+        Sicherheit
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerk-Konnektivität"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_connectivity.html">
+        Netzwerk-Konnektivität
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mediatoren"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_mediators.html">
+        Mediatoren
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_clusters.html">
+        Cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Nodes und Hosts"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Nodes und Hosts</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VM-Videokonsole"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_video_console.html">
+        VM-Videokonsole
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ändern der Größe der Cluster-Nodes"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_resize.html">
+        Ändern der Größe der Cluster-Nodes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Austausch ausgefallener SW-RAID-Laufwerke"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_replace_drives_swraid.html">
+        Austausch ausgefallener SW-RAID-Laufwerke
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Upgrade auf VMFS6"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_upgrade_vmfs6.html">
+        Upgrade auf VMFS6
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenzen Zu Haben"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_adm_licenses.html">
+        Lizenzen Zu Haben
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Im Detail"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Im Detail</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Storage</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Konzepte und Eigenschaften"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_stor_concepts_chars.html">
+        Allgemeine Konzepte und Eigenschaften
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Hardware-RAID-Services für lokalen Attached Storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_stor_hwraid_local.html">
+        Hardware-RAID-Services für lokalen Attached Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Software-RAID-Services für lokalen Attached Storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_stor_swraid_local.html">
+        Software-RAID-Services für lokalen Attached Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VSAN und externe Array-Konfigurationen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_stor_vsan_external.html">
+        VSAN und externe Array-Konfigurationen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erhöhung der Storage-Kapazität"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_stor_capacity_inc.html">
+        Erhöhung der Storage-Kapazität
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Support für Storage-Effizienz"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_stor_eff_support.html">
+        Support für Storage-Effizienz
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerkbetrieb"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Netzwerkbetrieb</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Konzepte und Eigenschaften"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_nw_concepts_chars.html">
+        Allgemeine Konzepte und Eigenschaften
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Single- und Multi-Node-Konfiguration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_nw_single_multi_node.html">
+        Single- und Multi-Node-Konfiguration
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Interne und externe Netzwerke"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_nw_internal_external.html">
+        Interne und externe Netzwerke
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Unterstützte Konfigurationen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_nw_supported_configs.html">
+        Unterstützte Konfigurationen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konfiguration von VMware vSphere vSwitch"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_nw_vsphere_vswitch_config.html">
+        Konfiguration von VMware vSphere vSwitch
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konfiguration physischer Switches"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_nw_physical_switch_config.html">
+        Konfiguration physischer Switches
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Trennung von Daten und Management"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_nw_data_mgmt_separation.html">
+        Trennung von Daten und Management
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Architektur für Hochverfügbarkeit"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Architektur für Hochverfügbarkeit</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="HA-Konfiguration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_ha_config.html">
+        HA-Konfiguration
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Synchrone Replizierung und gespiegelte Aggregate"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_ha_mirroring.html">
+        Synchrone Replizierung und gespiegelte Aggregate
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Weitere Hochverfügbarkeitsfunktionen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_ha_other.html">
+        Weitere Hochverfügbarkeitsfunktionen
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Leistung"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Leistung</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Überlegungen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_perf_general.html">
+        Allgemeine Überlegungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="9.4 Premium-HA-Direct-Attached SSD-Storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_perf_premium_ha_direct_ssd_94.html">
+        9.4 Premium-HA-Direct-Attached SSD-Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="9.5 Premium-HA-Direct-Attached SSD-Storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_perf_premium_ha_direct_ssd_95.html">
+        9.5 Premium-HA-Direct-Attached SSD-Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="9.6 Premium-HA-Direct-Attached SSD-Storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_perf_premium_ha_direct_ssd_96.html">
+        9.6 Premium-HA-Direct-Attached SSD-Storage
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Integration mit vCenter"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Integration mit vCenter</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erste Schritte"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Erste Schritte</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Überblick"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_vpi_overview.html">
+        Überblick
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Der Netapp Architektur Sind"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_vpi_architecture.html">
+        Der Netapp Architektur Sind
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Planung"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_vpi_planning.html">
+        Planung
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Management des Plug-ins"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Management des Plug-ins</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_vpi_manage_before.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installieren"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_install.html">
+        Installieren
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Datenzugriff"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_access.html">
+        Datenzugriff
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aktualisieren und entfernen Sie es"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_upgrade.html">
+        Aktualisieren und entfernen Sie es
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Entfernen Sie das Plug-in manuell"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_manually_remove.html">
+        Entfernen Sie das Plug-in manuell
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementieren eines Clusters"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_deploy_cluster.html">
+        Implementieren eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Integration mit vCenter"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_vpi_vcenter_integration.html">
+        Integration mit vCenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verwaltung"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Verwaltung</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Diagnose und Support"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_adm_support.html">
+        Diagnose und Support
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerkbetrieb"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_adm_network.html">
+        Netzwerkbetrieb
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_adm_clusters.html">
+        Cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenzen Zu Haben"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_vpi_adm_licenses.html">
+        Lizenzen Zu Haben
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Fehlerbehebung"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_vpi_troubleshooting.html">
+        Fehlerbehebung
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automatisierung mit REST"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Automatisierung mit REST</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konzepte"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Konzepte</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="REST-Web-Services"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_rest.html">
+        REST-Web-Services
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Greifen Sie auf die Implementierungs-API zu"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_how_access.html">
+        Greifen Sie auf die Implementierungs-API zu
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementieren der API-Versionierung"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_versions.html">
+        Implementieren der API-Versionierung
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Basisbetrieb"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_operation.html">
+        Basisbetrieb
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Anfrage- und Reaktionstransaktion"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_transaction.html">
+        Anfrage- und Reaktionstransaktion
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Asynchrone Verarbeitung"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_async_proc.html">
+        Asynchrone Verarbeitung
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Zugriff über einen Browser"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Zugriff über einen Browser</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_before_browser.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Öffnen Sie die Dokumentseite"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_api_access_doc_page.html">
+        Öffnen Sie die Dokumentseite
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeines zu einem API-Aufruf"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_api_understanding_call.html">
+        Allgemeines zu einem API-Aufruf
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Workflow-Prozesse"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Workflow-Prozesse</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_before_workflows.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Workflow 1 Erstellen eines Clusters"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_api_workflow01.html">
+        Workflow 1 Erstellen eines Clusters
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Zugang mit Python"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Zugang mit Python</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_before_python.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Die Skripte verstehen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_api_understanding_scripts.html">
+        Die Skripte verstehen
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Python-Codebeispiele"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Python-Codebeispiele</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erstellen eines Clusters"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_api_script_cc.html">
+        Erstellen eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="JSON zum Erstellen eines Clusters"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_api_json_cc.html">
+        JSON zum Erstellen eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Fügen Sie eine Node-Lizenz hinzu"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_api_script_anl.html">
+        Fügen Sie eine Node-Lizenz hinzu
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Löschen eines Clusters"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_api_script_dc.html">
+        Löschen eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Common Support-Modul"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_api_script_common.html">
+        Common Support-Modul
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Die Größe der Cluster-Nodes wird geändert"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_api_script_resize.html">
+        Die Größe der Cluster-Nodes wird geändert
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automatisieren mit Ansible"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_automate_ansible.html">
+        Automatisieren mit Ansible
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verwenden Sie die CLI"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Verwenden Sie die CLI</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/concept_cli_before.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Melden Sie sich über SSH an"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_signing_in.html">
+        Melden Sie sich über SSH an
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementieren eines Clusters"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_deploy_cluster.html">
+        Implementieren eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sicherheit"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_security.html">
+        Sicherheit
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerk-Konnektivität"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_connectivity.html">
+        Netzwerk-Konnektivität
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_clusters.html">
+        Cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Nodes und Hosts"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Nodes und Hosts</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ESXi auf 6.5 und höher aktualisieren"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_upgrade_esxi65.html">
+        ESXi auf 6.5 und höher aktualisieren
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Utility bereitstellen"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Utility bereitstellen</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aktualisieren einer Deploy-Instanz"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_upgrade_deploy.html">
+        Aktualisieren einer Deploy-Instanz
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Migrieren einer Deploy-Instanz"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_migrate_deploy.html">
+        Migrieren einer Deploy-Instanz
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Fügen Sie ONTAP Select-Bilder hinzu"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_deploy_image_add.html">
+        Fügen Sie ONTAP Select-Bilder hinzu
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select-Bilder entfernen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_deploy_image_remove.html">
+        ONTAP Select-Bilder entfernen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Wiederherstellung in einem Cluster mit zwei Nodes"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/task_cli_deploy_recover_two_node.html">
+        Wiederherstellung in einem Cluster mit zwei Nodes
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Häufig gestellte Fragen"
+      data-li-level="1#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_faq.html">
+        Häufig gestellte Fragen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Weitere Informationen"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_additional_info.html">
+        Weitere Informationen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Frühere Versionen"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_earlier_versions.html">
+        Frühere Versionen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Rechtliche Hinweise"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/ontap-select/reference_legal_notices.html">
+        Rechtliche Hinweise
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/de-de/ontap-select/images/expand.png" alt="Navigationsbereich erweitern"></button>
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/de-de/ontap-select/">ONTAP&nbsp;Select</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/de-de/ontap-select/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> Die deutsche Sprachversion wurde als Serviceleistung für Sie durch maschinelle Übersetzung erstellt. Bei eventuellen Unstimmigkeiten hat die englische Sprachversion Vorrang. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Häufig gestellte Fragen</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-11-15 09:23:02 +0000">11/15/2022</time>
+    
+  
+
+<span>Beitragende
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Hier finden Sie Antworten auf häufig gestellte Fragen zu ONTAP Select.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Ab ONTAP Select 9.10.1 wird der KVM-Hypervisor beim Erstellen eines neuen Clusters nicht mehr unterstützt. Außerdem können Sie ab 9.11.1 keine vorhandenen ONTAP Select Cluster mehr auf KVM mehr verwalten. Die Fragen zu KVM sind nur auf frühere Versionen anwendbar, die KVM unterstützen.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="allgemein">Allgemein</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gibt einige allgemeine Fragen und Antworten.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select Deploy ist das Tool zum Erstellen von ONTAP Select Clustern. Derzeit ist ONTAP Select Deploy die einzige Methode, die zur Erstellung eines Produktions-Clusters verfügbar ist. ONTAP Select Deploy kann auch verwendet werden, um ein Evaluation Select Cluster zu erstellen, damit Kunden die tatsächlichen Schritte einer Produktionsimplementierung testen und dokumentieren können. Mit ONTAP Select Deploy kann ein Evaluation-Cluster auch mithilfe einer geeigneten Capacity-Tier-Lizenz in ein Produktions-Cluster umgewandelt werden, die ausreichend Kapazität bietet, um den während der Evaluierung belegten Speicherplatz zu decken.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select Deploy ist eine Virtual Machine, die ein Image von ONTAP Select enthält. Während der Cluster-Installation erzwingt ONTAP Select Deploy mehrere Prüfungen, um sicherzustellen, dass die Mindestanforderungen von ONTAP Select erfüllt werden. Die ONTAP Select-Cluster für die Implementierung von VMs und Select können separat aktualisiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Genau wie ONTAP auf FAS, sollten Performance-Daten mit dem perfstat Dienstprogramm erfasst werden. Hier ist ein Beispielbefehl:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>perfstat8 –i N,m -t &lt;sample time in minutes&gt; --verbose --nodes=&lt;filer IP&gt; --diag-passwd=abcxyz --mode="cluster-mode" &gt; &lt;name of output file&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Wie kann ich auf die Seite Swagger API for ONTAP Select Deploy zugreifen?</div>
+<div class="content">
+<pre>http://&lt;Deploy-IP-Address/api/ui</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Die API v3-Version ist nicht abwärtskompatibel mit der vorherigen Version der API. Ein neues API-Handbuch finden Sie auf <a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694">"Field Portal"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Nein Die ONTAP Select VM verwendet unabhängige persistente Laufwerke, die von VMware-basierten Snapshots ausgeschlossen sind. Die einzige unterstützte Methode zur Sicherung von ONTAP Select ist SnapMirror, SnapVault oder SVM DR (falls zutreffend).</p>
+</div>
+<div class="paragraph">
+<p>Kontakt <a href="mailto:ng-ses-ontap-select@netapp.com">"<a href="mailto:ng-ses-ontap-select@netapp.com">ng-ses-ontap-select@netapp.com</a>"</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lizenzen-installation-upgrades-und-rückkehr">Lizenzen, Installation, Upgrades und Rückkehr</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gibt mehrere Fragen und Antworten zu Lizenzen, Installation, Upgrades und Rücksetzen.</p>
+</div>
+<div class="paragraph">
+<p>Ja. Das ONTAP Select Deploy Tool kann separat vom ONTAP Select Cluster aktualisiert werden. Auf ähnliche Weise kann der Select-Cluster separat vom ONTAP Select Deploy Utility aktualisiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Ja, das Upgrade-Verfahren für einen Select-Cluster ist identisch mit dem Upgrade eines FAS-Clusters, obwohl die ONTAP Select-Upgrade-Binärdatei einen separaten Download von der ONTAP auf FAS Upgrade-Binärdatei darstellt.</p>
+</div>
+<div class="paragraph">
+<p>Ja, das Verfahren zur Zurücksetzen für ein ONTAP Select Cluster ist fast identisch mit dem Verfahren zur Zurücksetzen für ein FAS Cluster. Es gibt jedoch einige Unterschiede:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Nur aktualisierte Instanzen von ONTAP Select können zurückgesetzt werden. Dies ist nur bis zur ursprünglichen Installationsversion möglich. Neue Installationen können nicht auf eine ältere Code-Version zurückgesetzt werden, auch wenn ONTAP Select im Allgemeinen diese ältere Version unterstützt.</p>
+</li>
+<li>
+<p>Für ONTAP Select (KVM) und ONTAP Select (ESX) mit Software-RAID ist es nicht möglich, auf eine ältere Version zurückzusetzen, die kein Software-RAID unterstützt. Darüber hinaus verwendet eine neue Installation von ONTAP Select 9.5 oder höher auf ESX VMXNET3-Netzwerktreiber und, wenn möglich, den vNMVE-Treiber. Diese neuen Installationen können nicht auf vorherige Versionen von ONTAP Select zurückgesetzt werden.</p>
+</li>
+<li>
+<p>Wenn auch die ONTAP Select-VM auf eine große Instanz aktualisiert wurde (mit der Premium-XL-Lizenz), wird das Zurücksetzen auf eine ältere Version vor 9.6 nicht unterstützt, da die Funktion großer Instanzen in früheren Versionen nicht verfügbar ist.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ja.</p>
+</div>
+<div class="paragraph">
+<p>Änderungen an den folgenden ONTAP Select-Cluster-Eigenschaften werden von ONTAP Select Deploy mithilfe des Clusteraktualisierungsvorgangs erkannt, die über die GUI, CLI oder REST-API verfügbar sind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Netzwerkkonfiguration (IP-Adressen, DNS, NTP, Netmask und Gateway)</p>
+</li>
+<li>
+<p>ONTAP Select Cluster, Node-Name und Version</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Zusätzlich werden folgende ONTAP Select VM Änderungen erkannt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Name und Status der ONTAP Select-VM werden geändert (z. B. online oder offline).</p>
+</li>
+<li>
+<p>Änderungen an Host-Netzwerkname und Storage-Pool-Namen</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Das Ändern der IP-Adresse der ONTAP Select Deploy-VM wird nicht unterstützt.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Ein Upgrade auf ONTAP Select Deploy 2.6 ermöglicht die Unterstützung dieser Änderungen bei allen bereits bereitgestellten ONTAP Select Clustern, die in der ursprünglichen Konfiguration jedoch nicht geändert wurden. Mit anderen Worten: Wenn die oben erwähnten ONTAP Select-Cluster-Eigenschaften mit System Manager oder vCenter geändert wurden, kann das Upgrade auf ONTAP Select Deploy 2.6 diese Inkonsistenzen nicht beheben. Die Änderungen an den ONTAP Select-Eigenschaften müssen zuerst für die Implementierung von ONTAP Select zurückgesetzt werden, um ihre eindeutigen Metadaten zu jeder ONTAP Select VM hinzuzufügen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="storage">Storage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gibt mehrere Fragen und Antworten im Zusammenhang mit Storage.</p>
+</div>
+<div class="paragraph">
+<p>Ja. ONTAP Select Deployment kann entweder auf KVM oder ESX installiert werden. Beide Installationen können ONTAP Select Cluster auf einem Hypervisor erstellen.</p>
+</div>
+<div class="paragraph">
+<p>Wenn die ESX Hosts ordnungsgemäß lizenziert sind, müssen die ESX Hosts nicht von einem vCenter Server gemanagt werden. Wenn die Hosts jedoch von einem vCenter Server gemanagt werden, müssen Sie ONTAP Select Deploy konfigurieren, um diesen vCenter Server zu verwenden. Mit anderen Worten: Sie können ESX Hosts in der ONTAP Select-Bereitstellung nicht als Standalone-Konfiguration konfigurieren, wenn sie aktiv von einem vCenter Server gemanagt werden. Beachten Sie, dass die ONTAP Select Deploy VM auf vCenter basiert, um alle ONTAP Select VM-Migrationen zwischen ESXi Hosts aufgrund eines vMotion oder VMware HA-Ereignisses zu verfolgen.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select kann Server ohne Hardware-RAID-Controller verwenden. In diesem Fall wird die RAID-Funktion in der Software implementiert. Bei Software-RAID werden sowohl SSD- als auch NVMe-Laufwerke unterstützt. ONTAP Select-Boot- und Kernfestplatten müssen sich weiterhin innerhalb einer virtualisierten Partition (Storage-Pool oder Datenspeicher) befinden. ONTAP Select verwendet RD2 (Root-Daten-Partitionierung) für die Partitionierung der SSDs. Daher befindet sich die ONTAP Select Root-Partition auf denselben physischen Spindeln, die für die Datenaggregate verwendet werden. Das Root-Aggregat und die Boot- und Core-virtualisierten Festplatten werden jedoch nicht mit der Kapazitätslizenz gezählt.</p>
+</div>
+<div class="paragraph">
+<p>Alle auf All Flash FAS/FAS verfügbaren RAID-Methoden sind auch für ONTAP Select verfügbar. U. a. RAID 4, RAID DP und RAID-TEC. Die Mindestanzahl von SSDs variiert je nach Typ der ausgewählten RAID-Konfiguration. Best Practices erfordern das Vorhandensein von mindestens einem Ersatzteil. Die Spare- und Parity-Festplatten werden nicht auf die Kapazitätslizenz angerechnet.</p>
+</div>
+<div class="paragraph">
+<p>Software-RAID ist eine Schicht im ONTAP Software Stack. Software RAID bietet mehr Administrationskontrolle, da die physischen Laufwerke partitioniert und als Rohfestplatten innerhalb der ONTAP Select VM verfügbar sind. Während bei Hardware-RAID normalerweise eine einzelne große LUN zur Verfügung steht, die dann zur Erstellung von VMDISKs in ONTAP Select sichtbar ist. Software-RAID ist optional und kann anstelle von Hardware-RAID verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Für Software-RAID gelten folgende Anforderungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Unterstützt für ESX und KVM (vor ONTAP Select 9.10.1)</p>
+</li>
+<li>
+<p>Größe der unterstützten physischen Festplatten: 200 GB bis 32 TB</p>
+</li>
+<li>
+<p>Unterstützung nur auf das-Konfigurationen</p>
+</li>
+<li>
+<p>Unterstützung durch SSDs oder NVMe</p>
+</li>
+<li>
+<p>Erfordert eine Premium- oder Premium XL-ONTAP Select-Lizenz</p>
+</li>
+<li>
+<p>Der Hardware-RAID-Controller sollte abwesend oder deaktiviert sein, oder er sollte im SAS-HBA-Modus betrieben werden</p>
+</li>
+<li>
+<p>Ein LVM-Speicherpool oder Datastore, der auf einer dedizierten LUN basiert, muss für Systemfestplatten verwendet werden: Core Dump, Boot/NVRAM und Mediator.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Bei der Installation auf KVM müssen Sie eine einzige Verbindung und eine einzelne Bridge verwenden. Ein Host mit zwei oder vier physischen Ports sollte alle Ports in derselben Verbindung haben.</p>
+</div>
+<div class="paragraph">
+<p>Bei Verwendung eines Hardware-RAID-Controllers hat ONTAP Select keinerlei Einfluss auf die zugrunde liegenden Server-Probleme. Wenn der Server gemäß unseren Best Practices konfiguriert ist, sollte eine gewisse Menge an Redundanz vorhanden sein. Wir empfehlen RAID 5/6, um Laufwerksausfälle zu überleben. Bei Software-RAID-Konfigurationen sendet ONTAP Warnungen zu Festplattenausfällen und initiiert im Falle eines Ersatzlaufwerks die Neuerstellung des Laufwerks.</p>
+</div>
+<div class="paragraph">
+<p>Sie sollten mindestens zwei physische NICs verwenden, um einen einzelnen Fehlerpunkt auf der Netzwerkebene zu vermeiden. NetApp empfiehlt, dass Daten-, Mgmt- und interne Port-Gruppen NIC-Teaming und Verbindung mit zwei oder mehr Uplinks im Team oder Bond konfiguriert sind. Diese Konfiguration stellt sicher, dass der virtuelle Switch bei einem Uplink-Fehler den Datenverkehr vom ausgefallenen Uplink auf einen gesunden Uplink im NIC-Team verschiebt. Weitere Informationen zur empfohlenen Netzwerkkonfiguration finden Sie unter <a href="reference_plan_best_practices.html#networking">"Zusammenfassung der Best Practices: Networking"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Alle anderen Fehler werden von ONTAP HA im Fall eines Clusters mit zwei oder vier Nodes behoben. Wenn der Hypervisor-Server ersetzt werden muss und der ONTAP Select Cluster mit einem neuen Server rekonstituiert werden muss, wenden Sie sich an den technischen Support von NetApp.</p>
+</div>
+<div class="paragraph">
+<p>Alle Konfigurationen, einschließlich vSAN, unterstützen 400 TB Storage pro ONTAP Select Node.</p>
+</div>
+<div class="paragraph">
+<p>Wenn Sie eine Installation auf Datastores durchführen, die größer als die unterstützte Maximalgröße sind, müssen Sie während des Produkt-Setups Capacity Cap verwenden.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select Deploy enthält einen Workflow zum Hinzufügen von Storage, der die Kapazitätserweiterung auf einem ONTAP Select Node unterstützt. Sie können den zu managenden Storage erweitern, indem Sie den Speicherplatz aus demselben Datastore nutzen (sofern noch kein Platz verfügbar ist) oder Speicherplatz von einem separaten Datastore hinzufügen. Die Kombination von lokalen Datastores und Remote-Datastores im selben Aggregat wird nicht unterstützt.</p>
+</div>
+<div class="paragraph">
+<p>Storage Add unterstützt auch Software RAID. Bei Software-RAID müssen jedoch zusätzliche physische Laufwerke der ONTAP Select-VM hinzugefügt werden. Der Storage-Add ähnelt in diesem Fall dem Management eines FAS- oder AFF-Arrays. RAID-Gruppengrößen und Laufwerkgrößen müssen beim Hinzufügen von Storage zu einem ONTAP Select Node mithilfe von Software-RAID berücksichtigt werden.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select Deploy und ONTAP Select für ESX unterstützen die Konfiguration eines ONTAP Select Single-Node-Clusters mit einem vSAN oder einem externen Array-Typ für seinen Storage-Pool.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select Deploy and ONTAP Select for KVM unterstützt die Konfiguration eines ONTAP Select Single-Node-Clusters mithilfe eines logischen Shared Storage Pool-Typs in externen Arrays. Die Storage Pools können auf iSCSI oder FC/FCoE basieren. Andere Arten von Speicherpools werden nicht unterstützt.</p>
+</div>
+<div class="paragraph">
+<p>Multi-Node-HA-Cluster auf Shared Storage werden unterstützt.</p>
+</div>
+<div class="paragraph">
+<p>Cluster mit mehreren Nodes, die externen Storage (vNAS mit mehreren Nodes) verwenden, werden sowohl für ESX als auch für KVM unterstützt. Die Kombination von Hypervisoren in einem Cluster wird nicht unterstützt. Eine HA-Architektur auf Shared Storage impliziert noch, dass jeder Node in einem HA-Paar eine gespiegelte Kopie seiner Partnerdaten aufweist. Ein Cluster mit mehreren Nodes bietet jedoch die Vorteile eines unterbrechungsfreien Betriebs mit ONTAP im Gegensatz zu einem Cluster mit nur einem Node, das auf einer VMware HA oder KVM Live Motion basiert.</p>
+</div>
+<div class="paragraph">
+<p>Auch wenn durch ONTAP Select Deploy mehrere ONTAP Select VMs auf demselben Host unterstützt werden, können diese Instanzen während der Cluster-Erstellung nicht Teil desselben ONTAP Select Clusters werden. Für ESX Umgebungen empfiehlt NetApp die Erstellung von Regeln zur Affinität von VMs, damit bei VMware HA nicht versucht wird, mehrere ONTAP Select VMs von demselben ONTAP Select Cluster zu einem einzelnen ESX Host zu migrieren. Wenn die ONTAP Select Implementierung zudem erkennt, dass ein administrativer (vom Benutzer initiiertes) vMotion oder eine Live-Migration einer ONTAP Select VM zu einem Verstoß gegen unsere Best Practices führt, wie beispielsweise zwei ONTAP Select Nodes, die auf demselben physischen Host enden, ONTAP Select Deploy veröffentlicht eine Warnmeldung in der Bereitstellungs-GUI und im Protokoll. Die einzige Möglichkeit, wie ONTAP Select Implementierungen den ONTAP Select VM-Standort erkennen, ist das Ergebnis einer Cluster-Aktualisierung. Dies ist ein manueller Vorgang, den der Administrator zur Implementierung von ONTAP Select initiieren muss. In ONTAP Select Deploy gibt es keine Funktionen, die ein proaktives Monitoring ermöglichen. Die Warnmeldung wird nur über die Benutzeroberfläche oder das Protokoll der Bereitstellung sichtbar. Das heißt, diese Warnung kann nicht an eine zentrale Überwachungsinfrastruktur weitergeleitet werden.</p>
+</div>
+<div class="paragraph">
+<p>NSX-V VXLAN-Portgruppen werden unterstützt. Stellen Sie bei HA mit mehreren Nodes, einschließlich ONTAP MetroCluster SDS, sicher, dass Sie die MTU für das interne Netzwerk zwischen 7500 und 8900 (anstelle von 9000) konfigurieren, um den VXLAN Overhead zu bewältigen. Die interne Netzwerk-MTU kann für ONTAP Select-Implementierungen während der Cluster-Implementierung konfiguriert werden.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select VMs, die auf externen Array-Storage-Pools ausgeführt werden, unterstützen virsh Live-Migrationen.</p>
+</div>
+<div class="paragraph">
+<p>Nein, alle Versionen werden unterstützt, unabhängig davon, ob es sich um rein Flash-basierte externe Arrays- oder vSAN Konfigurationen handelt.</p>
+</div>
+<div class="paragraph">
+<p>Die Select VM übernimmt die vSAN Datastore-Storage-Richtlinie und es gibt keine Einschränkungen bei FTT/FTM-Einstellungen. Beachten Sie jedoch, dass abhängig von den FTT/FTM-Einstellungen die ONTAP Select-VM-Größe erheblich größer sein kann als die während des Setups konfigurierte Kapazität. ONTAP Select nutzt Thick-Eager und Zeroed VMDKs, die während der Einrichtung erstellt werden. Um zu vermeiden, dass andere VMs denselben gemeinsam genutzten Datenspeicher verwenden, ist es wichtig, genügend freie Kapazität im Datastore bereitzustellen, damit die echte Select VM-Größe gemäß den Select-Kapazitäten und FTT/FTM-Einstellungen berücksichtigt werden kann.</p>
+</div>
+<div class="paragraph">
+<p>Diverse ONTAP Select Nodes können auf demselben Host nur für vNAS Konfigurationen konfiguriert werden, sofern diese Nodes nicht Teil desselben ONTAP Select Clusters sind. Dies wird für das-Konfigurationen nicht unterstützt, da mehrere ONTAP Select-Nodes auf demselben physischen Host mit dem Zugriff auf den RAID-Controller konkurrieren können.</p>
+</div>
+<div class="paragraph">
+<p>Sie können für die Verbindung mit dem externen Netzwerk einen einzelnen 10GE-Port verwenden. NetApp empfiehlt jedoch, dies nur in eingeschränkten Umgebungen mit kleinem Formfaktor zu nutzen. Dies wird sowohl bei ESX als auch bei KVM unterstützt.</p>
+</div>
+<div class="paragraph">
+<p>Auf jedem Host, der an der Live-Migration teilnimmt, müssen Sie Open-Source-Komponenten CLVM und Pacemaker (PCs) installieren und ausführen. Dieser Vorgang muss auf dieselben Volume-Gruppen auf jedem Host zugreifen können.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vcenter">VCenter</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gibt mehrere Fragen und Antworten, die sich mit VMware vCenter befassen.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select Deploy nutzt die VMware VIX API zur Kommunikation mit dem vCenter und/oder dem ESX Host. Die VMware Dokumentation besagt, dass die erste Verbindung entweder zu einem vCenter Server oder einem ESX-Host mithilfe von HTTPS/SOAP am TCP-Port 443 erfolgt. Dies ist der Port für sicheres HTTP über TLS/SSL. Zweitens wird auf einem Socket am TCP-Port 902 eine Verbindung zum ESX-Host geöffnet. Die über diese Verbindung laufenden Daten werden mit SSL verschlüsselt. Außerdem kommt es bei der ONTAP Select zu Problemen mit der Implementierung A <code>PING</code> Befehl zur Überprüfung, ob ein ESX-Host an der von Ihnen angegebenen IP-Adresse antwortet.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP Select Deploy muss auch in der Lage sein, mit den ONTAP Select Knoten- und Cluster-Management-IP-Adressen zu kommunizieren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ping</p>
+</li>
+<li>
+<p>SSH (Port 22)</p>
+</li>
+<li>
+<p>SSL (Port 443)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ONTAP Select hostet die Cluster-Mailboxen für Cluster mit zwei Nodes. Jeder ONTAP Select-Node muss in der Lage sein, ONTAP Select-Bereitstellung über iSCSI zu erreichen (Port 3260).</p>
+</div>
+<div class="paragraph">
+<p>Bei Multinode-Clustern muss das interne Netzwerk vollständig geöffnet sein (keine NAT oder Firewalls).</p>
+</div>
+<div class="paragraph">
+<p>Die Liste der erforderlichen vCenter-Rechte finden Sie hier: <a href="reference_plan_ots_vcenter.html">"VMware vCenter Server"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Die Funktion ONTAP Select Deploy kann in den vCenter Server und in das ONTAP Select Deploy-Plug-in integriert werden. Bitte beachten Sie, dass das Plug-in nicht die ONTAP Select Implementierung ersetzt. ONTAP Select Deploy funktioniert im Hintergrund, und der vCenter Administrator kann einen Großteil der Implementierungsfunktionen von ONTAP Select mit dem Plug-in aufrufen. Einige Operationen zur ONTAP Select-Implementierung sind nur mit CLI verfügbar.</p>
+</div>
+<div class="paragraph">
+<p>Nur eine ONTAP Select VM kann sein Plug-in für einen bestimmten vCenter Server registrieren.</p>
+</div>
+<div class="paragraph">
+<p>Mithilfe des Plug-ins können vCenter Administratoren und IT-Generalisten ONTAP Select Cluster über die vCenter HTML5 GUI erstellen. Bitte beachten Sie, dass die Flash vCenter GUI nicht unterstützt wird.</p>
+</div>
+<div class="paragraph">
+<p>Zudem ermöglicht ONTAP Select die Implementierung der vCenter RBAC-Funktionen zur Authentifizierung. Benutzer, die über die vCenter Berechtigung zur Verwendung des ONTAP Select Deploy-Plug-ins verfügen, werden ihr vCenter Konto dem ONTAP Select Deploy-Admin-Benutzer zugeordnet. ONTAP Select Deploy protokolliert die Benutzer-ID jedes Vorgangs. Die folgende Datei kann als grundlegendes Audit-Protokoll verwendet werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nginx_access.log</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ha-und-cluster">HA und Cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gibt mehrere Fragen und Antworten, die sich mit HA-Paaren und Clustern befassen.</p>
+</div>
+<div class="paragraph">
+<p>Im Gegensatz zu Clustern mit vier Nodes, sechs Nodes und acht Nodes, in denen die ONTAP Select VM in erster Linie zum Erstellen des Clusters implementiert wird, ist ein Cluster mit zwei Nodes für das HA-Quorum kontinuierlich auf der ONTAP Select Deploy VM angewiesen. Wenn die ONTAP Select Deploy-VM nicht verfügbar ist, werden die Failover-Services deaktiviert.</p>
+</div>
+<div class="paragraph">
+<p>Bei MetroCluster SDS handelt es sich um eine kostengünstige Option zur synchronen Replizierung, die in der Kategorie der MetroCluster Business Continuity-Lösungen von NetApp fällt. Es ist nur mit ONTAP Select verfügbar, im Gegensatz zu NetApp MetroCluster auf FAS Hybrid Flash, AFF, NetApp Private Storage for Cloud und NetApp FlexArray Technologie.</p>
+</div>
+<div class="paragraph">
+<p>MetroCluster SDS bietet eine synchrone Replizierungslösung und ist unter NetApp MetroCluster Lösungen erhältlich. Die wichtigsten Unterschiede liegen jedoch in den unterstützten Distanzen (~10 km gegenüber 300 km) und der Konnektivität (nur IP-Netzwerke werden unterstützt statt FC und IP).</p>
+</div>
+<div class="paragraph">
+<p>Das Cluster mit zwei Nodes wird als Cluster definiert, bei dem sich beide Nodes im selben Datacenter befinden, maximal 300 Millionen voneinander. Im Allgemeinen verfügen beide Knoten über Uplinks mit demselben Netzwerk-Switch oder eine Reihe von Netzwerk-Switches, die über einen Inter-Switch-Link verbunden sind.</p>
+</div>
+<div class="paragraph">
+<p>Der MetroCluster SDS mit zwei Knoten wird als Cluster definiert, dessen Knoten physisch getrennt sind (verschiedene Räume, unterschiedliche Gebäude oder unterschiedliche Rechenzentren) und die Uplink-Verbindungen jedes Knotens sind mit separaten Netzwerk-Switches verbunden. Obwohl MetroCluster SDS keine dedizierte Hardware erfordert, sollte die Umgebung eine Reihe von Mindestanforderungen hinsichtlich Latenz (5 ms RTT und 5 ms Jitter für max. 10 ms) und physischer Entfernung (10 km) unterstützen.</p>
+</div>
+<div class="paragraph">
+<p>MetroCluster SDS ist eine Premiumfunktion und erfordert eine Premium- oder Premium-XL-Lizenz. Eine Premium-Lizenz unterstützt die Erstellung kleiner und mittlerer VMs sowie von HDD- und SSD-Medien. Alle diese Konfigurationen werden unterstützt.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP MetroCluster SDS unterstützt alle Arten von Storage-Konfigurationen (das und vNAS).</p>
+</div>
+<div class="paragraph">
+<p>Ja, Software-RAID wird mit SSD-Medien sowohl auf KVM als auch auf ESX unterstützt.</p>
+</div>
+<div class="paragraph">
+<p>Ja, obwohl eine Premium-Lizenz erforderlich ist, unterstützt diese Lizenz sowohl kleine als auch mittlere VMs sowie SSDs und rotierende Medien.</p>
+</div>
+<div class="paragraph">
+<p>Nein, nur Cluster mit zwei Nodes und einem Mediator können als MetroCluster SDS konfiguriert werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Anforderungen lauten wie folgt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Drei Datacenter (eines für den ONTAP Select Deploy Mediator und eines für jeden Node)</p>
+</li>
+<li>
+<p>5 ms RTT und 5 ms Jitter für max. 10 ms Gesamtlänge und max. 10 km Entfernung zwischen den ONTAP Select-Knoten.</p>
+</li>
+<li>
+<p>125 ms RTT und eine minimale Bandbreite von 5 MB/s zwischen dem ONTAP Select Deploy Mediator und jedem ONTAP Select Node.</p>
+</li>
+<li>
+<p>Eine Premium- oder Premium XL-Lizenz.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ONTAP Select VMs, die auf vSAN Datastores oder externen Array-Datastores (mit anderen Worten, vNAS Implementierungen) laufen, unterstützen vMotion, DRS und VMware HA-Funktionen.</p>
+</div>
+<div class="paragraph">
+<p>Storage vMotion wird für alle Konfigurationen unterstützt, einschließlich Single-Node- und ONTAP Select-Cluster mit mehreren Nodes und ONTAP Select Deploy-VM. Storage vMotion kann zur Migration der ONTAP Select oder der ONTAP Select verwendet werden, um VM zwischen verschiedenen VMFS-Versionen zu migrieren (z. B. VMFS 5 zu VMFS 6), ist jedoch nicht auf diesen Anwendungsfall beschränkt. Als Best Practice empfiehlt es sich, die VM vor dem Start eines Storage vMotion Betriebs herunterzufahren. ONTAP Select Deploy muss nach Abschluss des Vorgangs „Storage vMotion“ den folgenden Vorgang ausgeben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster refresh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beachten Sie bitte, dass ein Storage vMotion Vorgang zwischen verschiedenen Datastores nicht unterstützt wird. Das bedeutet, dass Storage vMotion Vorgänge zwischen NFS-Datastores und VMFS-Datastores nicht unterstützt werden. Im Allgemeinen werden Storage vMotion Vorgänge zwischen externen Datenspeichern und das-Datastores nicht unterstützt.</p>
+</div>
+<div class="paragraph">
+<p>Diese Konfigurationen werden nicht unterstützt. Der ONTAP Select hat keine Übersicht über den Status der physischen Netzwerk-Uplinks, die den Client-Datenverkehr übertragen. Daher verlässt sich ONTAP Select auf den HA-Herzschlag, um sicherzustellen, dass die VM gleichzeitig für Clients und ihren Peer verfügbar ist. Wenn eine physische Konnektivität verloren geht, führt der Ausfall des HA-Heartbeat zu einem automatischen Failover auf den anderen Node. Dies ist das gewünschte Verhalten.</p>
+</div>
+<div class="paragraph">
+<p>Eine Trennung des HA Traffic auf einer separaten physischen Infrastruktur kann dazu führen, dass eine Select VM in der Lage ist, mit seinem Peer zu kommunizieren, aber nicht mit seinen Kunden. So wird der automatische HA-Prozess verhindert und die Datenverfügbarkeit erreicht, bis ein manueller Failover aufgerufen wird.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mediatordienst">Mediatordienst</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gibt mehrere Fragen und Antworten, die sich mit dem Mediatordienst befassen.</p>
+</div>
+<div class="paragraph">
+<p>Ein Cluster mit zwei Nodes basiert kontinuierlich auf der ONTAP Select VM zur Bereitstellung als HA-Quorum. Eine ONTAP Select Deploy-VM, die an einer HA-Quorum-Verhandlung mit zwei Nodes beteiligt ist, wird als Mediator-VM bezeichnet.</p>
+</div>
+<div class="paragraph">
+<p>Ja. ONTAP Select-Implementierung als Mediator für ein HA-Paar mit zwei Nodes unterstützt eine WAN-Latenz von bis zu 500 ms RTT und erfordert eine minimale Bandbreite von 5 MB/s.</p>
+</div>
+<div class="paragraph">
+<p>Der Mediator-Datenverkehr ist iSCSI, stammt aus den ONTAP Select-Node-Management-IP-Adressen und wird auf der ONTAP Select Deploy-IP-Adresse beendet. Beachten Sie, dass Sie IPv6 nicht für die ONTAP Select-Node-Management-IP-Adresse verwenden können, wenn Sie ein Cluster mit zwei Nodes verwenden.</p>
+</div>
+<div class="paragraph">
+<p>Ja. Jede ONTAP Select-VM kann als gängiger Mediator-Service für bis zu 100 ONTAP Select-Cluster mit zwei Nodes verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Ja. Es ist möglich, einen anderen ONTAP Select Deploy VM zu verwenden, um den Mediator-Service zu hosten.</p>
+</div>
+<div class="paragraph">
+<p>In einem Stretch-HA-Implementierungsmodell wird nur ein Cluster mit zwei Nodes und einem Mediator unterstützt.</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Allgemeine Geschäftsbedingungen</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Richtlinie zu Datenschutz</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Richtlinie zu Cookies</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie-Einstellungen</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a target="_self" href="javascript:netapp_mailto()">Feedback zu dieser Seite senden</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/de-de/ontap-select/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/de-de/ontap-select/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/de-de/ontap-select/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/de-de/ontap-select/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/de-de/ontap-select/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/de-de/ontap-select/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/de-de/ontap-select/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/de-de/ontap-select/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/de-de/ontap-select/js/prism.js'></script>
+      <script type="text/javascript" src='/de-de/ontap-select/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/de-de/ontap-select/js/www-ntap.js'></script>
+    <script src='/de-de/ontap-select/js/tabbed-blocks.js'></script>
+    <script src='/de-de/ontap-select/js/sidebar.js'></script>
+  </body></html>
