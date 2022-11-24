@@ -16,9 +16,9 @@ summary: ONTAP Select bietet Storage-Effizienz-Optionen, die den auf FAS und AFF
 [role="lead"]
 ONTAP Select bietet Storage-Effizienz-Optionen, die den auf FAS und AFF Arrays vorhandenen Optionen für Storage-Effizienz ähnlich sind.
 
-Virtuelle ONTAP Select NAS-Implementierungen mit rein Flash-basiertem VSAN oder generischen Flash-Arrays sollten den Best Practices für ONTAP Select mit das-Storage anderer Hersteller folgen.
+Virtuelle ONTAP Select NAS-Implementierungen mit rein Flash-basiertem VSAN oder generischen Flash-Arrays sollten den Best Practices für ONTAP Select mit Direct-Attached Storage (das) anderer SSDs folgen.
 
-Bei neuen Installationen wird automatisch eine All Flash FAS Persönlichkeit aktiviert, sofern das-Storage mit SSD-Laufwerken und eine Premium-Lizenz vorhanden ist.
+Bei neuen Installationen wird automatisch eine All Flash FAS Persönlichkeit aktiviert, sofern Sie das-Storage mit SSD-Laufwerken und eine Premiumlizenz haben.
 
 Dank All Flash FAS Persönlichkeit werden die folgenden Inline-SE-Funktionen während der Installation automatisch aktiviert:
 
@@ -54,52 +54,52 @@ Cross Volume Inline Deduplication:      true
 Cross Volume Background Deduplication:  true
 ----
 
-NOTE: Für ONTAP Select Upgrades von 9.4 müssen Sie ONTAP Select 9.4 auf das SSD Storage mit einer Premium-Lizenz installieren. Außerdem muss das Kontrollkästchen *Storage-Effizienz* aktivieren bei der ersten Cluster-Installation mit ONTAP Deploy aktiviert sein. Wenn die Bedingungen noch nicht erfüllt sind, muss nach dem ONTAP Upgrade eine AFF-ähnliche Persönlichkeit erstellt werden, um ein Boot-Argument und einen Node-Neustart zu ermöglichen. Weitere Informationen erhalten Sie vom technischen Support.
+NOTE: Für ONTAP Select Upgrades von 9.6 und höher müssen Sie ONTAP Select auf das SSD Storage mit einer Premiumlizenz installieren. Außerdem müssen Sie während der ersten Cluster-Installation mit ONTAP Deploy das Kontrollkästchen *Storage-Effizienz* aktivieren* aktivieren. Wenn die Bedingungen noch nicht erfüllt sind, muss nach dem ONTAP Upgrade eine AFF-ähnliche Persönlichkeit erstellt werden, um ein Boot-Argument und einen Node-Neustart zu ermöglichen. Weitere Informationen erhalten Sie vom technischen Support.
 
-Die folgende Tabelle fasst die verschiedenen verfügbaren Storage-Effizienztechnologien zusammen, die standardmäßig aktiviert sind oder nicht standardmäßig aktiviert sind, jedoch empfohlen werden, abhängig von der ONTAP Select-Version und dem Medientyp.
+Die folgende Tabelle fasst die verschiedenen verfügbaren, standardmäßig aktivierten und nicht standardmäßig aktivierten Storage-Effizienztechnologien zusammen, jedoch empfohlen, je nach Medientyp und Softwarelizenz. Die Informationen in der folgenden Tabelle gelten für ONTAP Select 9.6 und neuere Versionen. Informationen zu vorherigen Versionen finden Sie im Abschnitt „_ONTAP Select Storage Efficiency Support_“ in https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
 
-[cols="6"]
+[cols="4"]
 |===
-| Funktionen der ONTAP Select | 9.6/9.5 Premium oder Premium XL^4^ (das SSD) | 9.4^1^/9.3^2^ Premium (das SSD) | 9.6 / 9.5 / 9.4^1^ / 9.3^2^ Alle Lizenzen (das-HDD) | 9.6 Alle Lizenzen (vNAS) | 9.5 / 9.4^1^ / 9.3^2^ Premium oder Standard (vNAS)^3^ 
+| Funktionen der ONTAP Select | DAS SSD (Premium oder Premium XL^1^) | DAS HDD (alle Lizenzen) | VNAS (alle Lizenzen) 
 
 
-| Inline-Zero-Erkennung | Ja (Standard) | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Nicht unterstützt 
+| Inline-Zero-Erkennung | Ja (Standard) | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert 
 
 
-| Inline-Deduplizierung von Volume | Ja (Standard) | Ja (empfohlen) aktiviert für Benutzer auf Volume-Basis | Nicht verfügbar | Nicht unterstützt | Nicht unterstützt 
+| Inline-Deduplizierung von Volume | Ja (Standard) | Nicht verfügbar | Nicht unterstützt 
 
 
-| 32.000 Inline-Komprimierung (sekundäre Komprimierung) | Ja, die Funktion ist für Benutzer pro Volume aktiviert. | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Nicht unterstützt | Nicht unterstützt 
+| 32.000 Inline-Komprimierung (sekundäre Komprimierung) | Ja, die Funktion ist für Benutzer pro Volume aktiviert. | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Nicht unterstützt 
 
 
-| 8 KB Inline-Komprimierung (anpassungsfähige Komprimierung) | Ja (Standard) | Ja (empfohlen) aktiviert für Benutzer auf Volume-Basis | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Nicht unterstützt | Nicht unterstützt 
+| 8 KB Inline-Komprimierung (anpassungsfähige Komprimierung) | Ja (Standard) | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Nicht unterstützt 
 
 
-| Hintergrund-Komprimierung | Nicht unterstützt | Nicht unterstützt | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Nicht unterstützt 
+| Hintergrund-Komprimierung | Nicht unterstützt | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert 
 
 
-| Komprimierungsscanner | Ja. | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Ja. | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Nicht unterstützt 
+| Komprimierungsscanner | Ja. | Ja. | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert 
 
 
-| Inline-Data-Compaction | Ja (Standard) | Ja (empfohlen) aktiviert für Benutzer auf Volume-Basis | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Nicht unterstützt | Nicht unterstützt 
+| Inline-Data-Compaction | Ja (Standard) | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Nicht unterstützt 
 
 
-| Verdichtescanner | Ja. | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Ja. | Nicht unterstützt | Nicht unterstützt 
+| Verdichtescanner | Ja. | Ja. | Nicht unterstützt 
 
 
-| Inline-Deduplizierung von Aggregaten | Ja (Standard) | Ja (empfohlen) Aktivierung durch Benutzer auf Volume-Basis mit Platzgarantie = keine) | K. A. | Nicht unterstützt | Nicht unterstützt 
+| Inline-Deduplizierung von Aggregaten | Ja (Standard) | K. A. | Nicht unterstützt 
 
 
-| Hintergrund-Deduplizierung des Volume | Ja (Standard) | Ja (empfohlen) | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert | Nicht unterstützt 
+| Hintergrund-Deduplizierung des Volume | Ja (Standard) | Ja, die Funktion ist für Benutzer pro Volume aktiviert | Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert 
 
 
-| Deduplizierung im Hintergrund eines Aggregats | Ja (Standard) | Ja (empfohlen) Aktivierung durch Benutzer auf Volume-Basis mit Platzgarantie = keine) | K. A. | Nicht unterstützt | Nicht unterstützt 
+| Deduplizierung im Hintergrund eines Aggregats | Ja (Standard) | K. A. | Nicht unterstützt 
 |===
-[Small]#^1^ONTAP Select 9.4 auf das SSDs (Premium-Lizenz erforderlich) ermöglicht die dedupliziert vorhandene Daten in einem Aggregat mithilfe von Volume-übergreifenden Scannern auf Aggregatebene. Dieser einmalige Vorgang wird manuell für Volumes durchgeführt, die vor 9.4 erstellt wurden.# [klein]#^2^ONTAP Select 9.3 auf das SSDs (erfordert eine Premium-Lizenz) unterstützt Hintergrund-Deduplizierung auf Aggregatebene. Diese Funktion muss jedoch nach der Erstellung des Aggregats aktiviert werden.# [klein]#^3^ONTAP Select 9.5 vNAS unterstützt standardmäßig keine Richtlinien zur Storage-Effizienz. Im vNAS Abschnitt finden Sie weitere Informationen zur Single Instance Data Logging (SIDL).# [small]#^4^ONTAP Select 9.6 unterstützt eine neue Lizenz (Premium XL) und eine neue VM-Größe (groß). Die große VM wird jedoch nur bei das-Konfigurationen unter Verwendung von Software-RAID unterstützt. Hardware-RAID und vNAS Konfigurationen werden von der großen ONTAP Select VM in der aktuellen Version nicht unterstützt.#
+[Small]#^1^ONTAP Select 9.6 unterstützt eine neue Lizenz (Premium XL) und eine neue VM-Größe (groß). Die große VM wird jedoch nur bei das-Konfigurationen unter Verwendung von Software-RAID unterstützt. Hardware-RAID und vNAS Konfigurationen werden von der großen ONTAP Select VM in Version 9.6 nicht unterstützt.#
 
-Warten Sie nach dem Upgrade auf ONTAP Select 9.5 oder höher auf den `system node upgrade-revert show` Befehl zeigt an, dass das Upgrade abgeschlossen wurde, bevor die Storage-Effizienzwerte für vorhandene Volumes überprüft wurden.
+Warten Sie nach dem Upgrade auf ONTAP Select 9.6 oder höher auf den `system node upgrade-revert show` Befehl zeigt an, dass das Upgrade abgeschlossen wurde, bevor die Storage-Effizienzwerte für vorhandene Volumes überprüft wurden.
 
-Auf einem System, das auf ONTAP Select 9.5 oder höher aktualisiert wird, verhält sich ein neues Volume, das auf einem vorhandenen Aggregat oder einem neu erstellten Aggregat erstellt wurde, mit dem Verhalten eines Volumes, das auf einer neuen Implementierung erstellt wurde. Für vorhandene Volumes, die dem ONTAP Select Code Upgrade unterzogen werden, liegen die meisten Storage-Effizienzrichtlinien wie für ein neu erstelltes Volume vor, wobei einige Variationen bestehen:
+Auf einem System, das auf ONTAP Select 9.6 oder höher aktualisiert wird, verhält sich ein neues Volume, das auf einem vorhandenen Aggregat oder einem neu erstellten Aggregat erstellt wurde, mit dem Verhalten eines Volumes, das auf einer neuen Implementierung erstellt wurde. Für vorhandene Volumes, die dem ONTAP Select Code Upgrade unterzogen werden, liegen die meisten Storage-Effizienzrichtlinien wie für ein neu erstelltes Volume vor, wobei einige Variationen bestehen:
 
 Szenario 1:: Wenn vor dem Upgrade keine Storage-Effizienzrichtlinien für ein Volume aktiviert wurden, gilt Folgendes:
 +
@@ -122,4 +122,4 @@ Szenario 2:: Wenn bereits vor dem Upgrade einige Storage-Effizienzen auf einem V
 --
 
 
-Storage-Effizienzfunktionen, die vor dem Upgrade aktiviert wurden, werden nach dem Upgrade auf ONTAP Select 9.5 oder höher beibehalten. Wenn vor dem Upgrade keine Storage-Effizienz aktiviert wurde, ist nach einem Upgrade keine Storage-Effizienz aktiviert.
+Storage-Effizienzfunktionen, die vor dem Upgrade aktiviert wurden, werden nach dem Upgrade auf ONTAP Select 9.6 oder höher beibehalten. Wenn vor dem Upgrade keine Storage-Effizienz aktiviert wurde, ist nach einem Upgrade keine Storage-Effizienz aktiviert.
