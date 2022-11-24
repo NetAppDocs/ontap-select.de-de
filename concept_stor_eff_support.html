@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:23:02 +0000">11/15/2022</time>
+    <time datetime="2022-11-24 07:43:48 +0000">11/24/2022</time>
     
   
 
@@ -2584,10 +2584,10 @@
 <p>ONTAP Select bietet Storage-Effizienz-Optionen, die den auf FAS und AFF Arrays vorhandenen Optionen für Storage-Effizienz ähnlich sind.</p>
 </div>
 <div class="paragraph">
-<p>Virtuelle ONTAP Select NAS-Implementierungen mit rein Flash-basiertem VSAN oder generischen Flash-Arrays sollten den Best Practices für ONTAP Select mit das-Storage anderer Hersteller folgen.</p>
+<p>Virtuelle ONTAP Select NAS-Implementierungen mit rein Flash-basiertem VSAN oder generischen Flash-Arrays sollten den Best Practices für ONTAP Select mit Direct-Attached Storage (das) anderer SSDs folgen.</p>
 </div>
 <div class="paragraph">
-<p>Bei neuen Installationen wird automatisch eine All Flash FAS Persönlichkeit aktiviert, sofern das-Storage mit SSD-Laufwerken und eine Premium-Lizenz vorhanden ist.</p>
+<p>Bei neuen Installationen wird automatisch eine All Flash FAS Persönlichkeit aktiviert, sofern Sie das-Storage mit SSD-Laufwerken und eine Premiumlizenz haben.</p>
 </div>
 <div class="paragraph">
 <p>Dank All Flash FAS Persönlichkeit werden die folgenden Inline-SE-Funktionen während der Installation automatisch aktiviert:</p>
@@ -2648,31 +2648,27 @@ Cross Volume Background Deduplication:  true</pre>
 <img src="/us-en/ontap-select/images/note.svg" alt="Anmerkung">
 </td>
 <td class="content">
-Für ONTAP Select Upgrades von 9.4 müssen Sie ONTAP Select 9.4 auf das SSD Storage mit einer Premium-Lizenz installieren. Außerdem muss das Kontrollkästchen <strong>Storage-Effizienz</strong> aktivieren bei der ersten Cluster-Installation mit ONTAP Deploy aktiviert sein. Wenn die Bedingungen noch nicht erfüllt sind, muss nach dem ONTAP Upgrade eine AFF-ähnliche Persönlichkeit erstellt werden, um ein Boot-Argument und einen Node-Neustart zu ermöglichen. Weitere Informationen erhalten Sie vom technischen Support.
+Für ONTAP Select Upgrades von 9.6 und höher müssen Sie ONTAP Select auf das SSD Storage mit einer Premiumlizenz installieren. Außerdem müssen Sie während der ersten Cluster-Installation mit ONTAP Deploy das Kontrollkästchen <strong>Storage-Effizienz</strong> aktivieren* aktivieren. Wenn die Bedingungen noch nicht erfüllt sind, muss nach dem ONTAP Upgrade eine AFF-ähnliche Persönlichkeit erstellt werden, um ein Boot-Argument und einen Node-Neustart zu ermöglichen. Weitere Informationen erhalten Sie vom technischen Support.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Die folgende Tabelle fasst die verschiedenen verfügbaren Storage-Effizienztechnologien zusammen, die standardmäßig aktiviert sind oder nicht standardmäßig aktiviert sind, jedoch empfohlen werden, abhängig von der ONTAP Select-Version und dem Medientyp.</p>
+<p>Die folgende Tabelle fasst die verschiedenen verfügbaren, standardmäßig aktivierten und nicht standardmäßig aktivierten Storage-Effizienztechnologien zusammen, jedoch empfohlen, je nach Medientyp und Softwarelizenz. Die Informationen in der folgenden Tabelle gelten für ONTAP Select 9.6 und neuere Versionen. Informationen zu vorherigen Versionen finden Sie im Abschnitt „<em>ONTAP Select Storage Efficiency Support</em>“ in <a href="https://www.netapp.com/media/10662-tr4517.pdf" target="_blank" rel="noopener">"TR-4517"</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.667%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Funktionen der ONTAP Select</th>
-<th class="tableblock halign-left valign-top">9.6/9.5 Premium oder Premium XL<sup>4</sup> (das SSD)</th>
-<th class="tableblock halign-left valign-top">9.4<sup>1</sup>/9.3<sup>2</sup> Premium (das SSD)</th>
-<th class="tableblock halign-left valign-top">9.6 / 9.5 / 9.4<sup>1</sup> / 9.3<sup>2</sup> Alle Lizenzen (das-HDD)</th>
-<th class="tableblock halign-left valign-top">9.6 Alle Lizenzen (vNAS)</th>
-<th class="tableblock halign-left valign-top">9.5 / 9.4<sup>1</sup> / 9.3<sup>2</sup> Premium oder Standard (vNAS)<sup>3</sup></th>
+<th class="tableblock halign-left valign-top">DAS SSD (Premium oder Premium XL<sup>1</sup>)</th>
+<th class="tableblock halign-left valign-top">DAS HDD (alle Lizenzen)</th>
+<th class="tableblock halign-left valign-top">VNAS (alle Lizenzen)</th>
 </tr>
 </thead>
 <tbody>
@@ -2681,99 +2677,77 @@ Für ONTAP Select Upgrades von 9.4 müssen Sie ONTAP Select 9.4 auf das SSD Stor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja (Standard)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inline-Deduplizierung von Volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja (Standard)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja (empfohlen) aktiviert für Benutzer auf Volume-Basis</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht verfügbar</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">32.000 Inline-Komprimierung (sekundäre Komprimierung)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer pro Volume aktiviert.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">8 KB Inline-Komprimierung (anpassungsfähige Komprimierung)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja (Standard)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja (empfohlen) aktiviert für Benutzer auf Volume-Basis</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer pro Volume aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hintergrund-Komprimierung</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer pro Volume aktiviert</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Komprimierungsscanner</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inline-Data-Compaction</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja (Standard)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja (empfohlen) aktiviert für Benutzer auf Volume-Basis</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer pro Volume aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Verdichtescanner</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inline-Deduplizierung von Aggregaten</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja (Standard)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja (empfohlen) Aktivierung durch Benutzer auf Volume-Basis mit Platzgarantie = keine)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">K. A.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hintergrund-Deduplizierung des Volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja (Standard)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja (empfohlen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer pro Volume aktiviert</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja, die Funktion ist für Benutzer auf Volume-Basis aktiviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Deduplizierung im Hintergrund eines Aggregats</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja (Standard)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ja (empfohlen) Aktivierung durch Benutzer auf Volume-Basis mit Platzgarantie = keine)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">K. A.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht unterstützt</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p><span class="Small"><sup>1</sup>ONTAP Select 9.4 auf das SSDs (Premium-Lizenz erforderlich) ermöglicht die dedupliziert vorhandene Daten in einem Aggregat mithilfe von Volume-übergreifenden Scannern auf Aggregatebene. Dieser einmalige Vorgang wird manuell für Volumes durchgeführt, die vor 9.4 erstellt wurden.</span> <span class="klein"><sup>2</sup>ONTAP Select 9.3 auf das SSDs (erfordert eine Premium-Lizenz) unterstützt Hintergrund-Deduplizierung auf Aggregatebene. Diese Funktion muss jedoch nach der Erstellung des Aggregats aktiviert werden.</span> <span class="klein"><sup>3</sup>ONTAP Select 9.5 vNAS unterstützt standardmäßig keine Richtlinien zur Storage-Effizienz. Im vNAS Abschnitt finden Sie weitere Informationen zur Single Instance Data Logging (SIDL).</span> <span class="small"><sup>4</sup>ONTAP Select 9.6 unterstützt eine neue Lizenz (Premium XL) und eine neue VM-Größe (groß). Die große VM wird jedoch nur bei das-Konfigurationen unter Verwendung von Software-RAID unterstützt. Hardware-RAID und vNAS Konfigurationen werden von der großen ONTAP Select VM in der aktuellen Version nicht unterstützt.</span></p>
+<p><span class="Small"><sup>1</sup>ONTAP Select 9.6 unterstützt eine neue Lizenz (Premium XL) und eine neue VM-Größe (groß). Die große VM wird jedoch nur bei das-Konfigurationen unter Verwendung von Software-RAID unterstützt. Hardware-RAID und vNAS Konfigurationen werden von der großen ONTAP Select VM in Version 9.6 nicht unterstützt.</span></p>
 </div>
 <div class="paragraph">
-<p>Warten Sie nach dem Upgrade auf ONTAP Select 9.5 oder höher auf den <code>system node upgrade-revert show</code> Befehl zeigt an, dass das Upgrade abgeschlossen wurde, bevor die Storage-Effizienzwerte für vorhandene Volumes überprüft wurden.</p>
+<p>Warten Sie nach dem Upgrade auf ONTAP Select 9.6 oder höher auf den <code>system node upgrade-revert show</code> Befehl zeigt an, dass das Upgrade abgeschlossen wurde, bevor die Storage-Effizienzwerte für vorhandene Volumes überprüft wurden.</p>
 </div>
 <div class="paragraph">
-<p>Auf einem System, das auf ONTAP Select 9.5 oder höher aktualisiert wird, verhält sich ein neues Volume, das auf einem vorhandenen Aggregat oder einem neu erstellten Aggregat erstellt wurde, mit dem Verhalten eines Volumes, das auf einer neuen Implementierung erstellt wurde. Für vorhandene Volumes, die dem ONTAP Select Code Upgrade unterzogen werden, liegen die meisten Storage-Effizienzrichtlinien wie für ein neu erstelltes Volume vor, wobei einige Variationen bestehen:</p>
+<p>Auf einem System, das auf ONTAP Select 9.6 oder höher aktualisiert wird, verhält sich ein neues Volume, das auf einem vorhandenen Aggregat oder einem neu erstellten Aggregat erstellt wurde, mit dem Verhalten eines Volumes, das auf einer neuen Implementierung erstellt wurde. Für vorhandene Volumes, die dem ONTAP Select Code Upgrade unterzogen werden, liegen die meisten Storage-Effizienzrichtlinien wie für ein neu erstelltes Volume vor, wobei einige Variationen bestehen:</p>
 </div>
 <div class="dlist">
 <dl>
@@ -2825,7 +2799,7 @@ Für ONTAP Select Upgrades von 9.4 müssen Sie ONTAP Select 9.4 auf das SSD Stor
 </dl>
 </div>
 <div class="paragraph">
-<p>Storage-Effizienzfunktionen, die vor dem Upgrade aktiviert wurden, werden nach dem Upgrade auf ONTAP Select 9.5 oder höher beibehalten. Wenn vor dem Upgrade keine Storage-Effizienz aktiviert wurde, ist nach einem Upgrade keine Storage-Effizienz aktiviert.</p>
+<p>Storage-Effizienzfunktionen, die vor dem Upgrade aktiviert wurden, werden nach dem Upgrade auf ONTAP Select 9.6 oder höher beibehalten. Wenn vor dem Upgrade keine Storage-Effizienz aktiviert wurde, ist nach einem Upgrade keine Storage-Effizienz aktiviert.</p>
 </div>
 
     </article>
