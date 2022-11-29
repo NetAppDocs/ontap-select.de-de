@@ -22,7 +22,7 @@ Für weitere Informationen zur ONTAP Select stehen Ihnen zusätzliche Ressourcen
 
 Die folgenden Produktseiten enthalten Links zu vielen verschiedenen ONTAP Select Ressourcen.
 
-* https://www.netapp.com/data-management/software-defined-storage-ontap-select/documentation["NetApp ONTAP Select Ressourcen"^]
+* https://www.netapp.com/data-management/ontap-select/documentation["NetApp ONTAP Select Ressourcen"^]
 * https://www.netapp.com/us/products/data-management-software/ontap-select-sds.aspx["Produktseite zum NetApp ONTAP Select"^]
 
 
