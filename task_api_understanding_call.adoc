@@ -16,8 +16,10 @@ summary: Die Details aller API-Aufrufe werden dokumentiert und in einem gemeinsa
 [role="lead"]
 Die Details aller API-Aufrufe werden dokumentiert und in einem gemeinsamen Format auf der Webseite für die Online-Dokumentation von ONTAP Select Deploy angezeigt. Anhand eines einzelnen API-Anrufs können Sie auf die Details aller API-Aufrufe zugreifen und diese interpretieren.
 
+.Bevor Sie beginnen
 Sie müssen auf der Webseite für die Online-Dokumentation von ONTAP Select Deploy angemeldet sein. Beim Erstellen des Clusters müssen Sie dem ONTAP Select-Cluster die eindeutige ID zuweisen.
 
+.Über diese Aufgabe
 Sie können die Konfigurationsinformationen, die ein ONTAP Select Cluster beschreiben, mit seiner eindeutigen Kennung abrufen. In diesem Beispiel werden alle als kostengünstig klassifizierten Felder zurückgegeben. Als Best Practice sollten Sie jedoch nur die speziellen Felder anfordern, die erforderlich sind.
 
 .Schritte

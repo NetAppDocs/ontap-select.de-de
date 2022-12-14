@@ -56,8 +56,10 @@ Wenn Sie ein ONTAP Select Image zu einer Instanz des Deploy Utility hinzufügen 
 
 Nach dem Erfassen des ONTAP Select Installations-Images müssen Sie die Datei auf die virtuelle Maschine bereitstellen hochladen.
 
+.Bevor Sie beginnen
 Die Installations-Image-Datei muss auf Ihrer lokalen Arbeitsstation verfügbar sein. Sie müssen außerdem über das Kennwort für das Administratorkonto bereitstellen verfügen.
 
+.Über diese Aufgabe
 Diese Aufgabe beschreibt eine Methode zum Hochladen der Datei auf die virtuelle Maschine bereitstellen. Möglicherweise gibt es weitere für Ihre Umgebung geeignetere Optionen.
 
 .Schritt
@@ -80,6 +82,7 @@ exit
 ....
 
 
+.Ergebnis
 Die Knoten-Installationsdatei wird im Home-Verzeichnis des Admin-Benutzers gespeichert.
 
 
@@ -88,6 +91,7 @@ Die Knoten-Installationsdatei wird im Home-Verzeichnis des Admin-Benutzers gespe
 
 Das ONTAP Select Installations-Image kann in das Verzeichnis Deploy Images hinzugefügt werden, damit es bei der Bereitstellung eines neuen Clusters verfügbar ist.
 
+.Bevor Sie beginnen
 Sie müssen wissen, in welchem Verzeichnis die Installations-Image-Datei in der virtuellen Maschine Deploy Utility abgelegt wurde. Es wird davon ausgegangen, dass sich die Datei im Home-Verzeichnis des Administrators befindet.
 
 .Schritte

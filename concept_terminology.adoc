@@ -102,4 +102,5 @@ NOTE: Sie sollten nur ein ONTAP Select-Image mit einer Version hinzufügen, die 
 Verwalten eines ONTAP Select-Clusters nach der Implementierung:: Nachdem Sie ein ONTAP Select-Cluster implementiert haben, können Sie das Cluster wie ein hardwarebasiertes ONTAP-Cluster konfigurieren. Sie können beispielsweise ein ONTAP Select Cluster mit System Manager oder der Standard-Befehlszeilenschnittstelle von ONTAP konfigurieren.
 
 
+.Verwandte Informationen
 link:task_cli_deploy_image_add.html["Hinzufügen eines ONTAP Select Images zur Implementierung"]

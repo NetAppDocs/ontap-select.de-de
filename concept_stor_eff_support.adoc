@@ -56,6 +56,7 @@ Cross Volume Background Deduplication:  true
 
 NOTE: Für ONTAP Select Upgrades von 9.6 und höher müssen Sie ONTAP Select auf das SSD Storage mit einer Premiumlizenz installieren. Außerdem müssen Sie während der ersten Cluster-Installation mit ONTAP Deploy das Kontrollkästchen *Storage-Effizienz* aktivieren* aktivieren. Wenn die Bedingungen noch nicht erfüllt sind, muss nach dem ONTAP Upgrade eine AFF-ähnliche Persönlichkeit erstellt werden, um ein Boot-Argument und einen Node-Neustart zu ermöglichen. Weitere Informationen erhalten Sie vom technischen Support.
 
+.ONTAP Select Storage-Effizienzfunktionen
 Die folgende Tabelle fasst die verschiedenen verfügbaren, standardmäßig aktivierten und nicht standardmäßig aktivierten Storage-Effizienztechnologien zusammen, jedoch empfohlen, je nach Medientyp und Softwarelizenz. Die Informationen in der folgenden Tabelle gelten für ONTAP Select 9.6 und neuere Versionen. Informationen zu vorherigen Versionen finden Sie im Abschnitt „_ONTAP Select Storage Efficiency Support_“ in https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
 
 [cols="4"]
@@ -97,6 +98,7 @@ Die folgende Tabelle fasst die verschiedenen verfügbaren, standardmäßig aktiv
 |===
 [Small]#^1^ONTAP Select 9.6 unterstützt eine neue Lizenz (Premium XL) und eine neue VM-Größe (groß). Die große VM wird jedoch nur bei das-Konfigurationen unter Verwendung von Software-RAID unterstützt. Hardware-RAID und vNAS Konfigurationen werden von der großen ONTAP Select VM in Version 9.6 nicht unterstützt.#
 
+.Hinweise zum Upgrade-Verhalten bei das SSD-Konfigurationen
 Warten Sie nach dem Upgrade auf ONTAP Select 9.6 oder höher auf den `system node upgrade-revert show` Befehl zeigt an, dass das Upgrade abgeschlossen wurde, bevor die Storage-Effizienzwerte für vorhandene Volumes überprüft wurden.
 
 Auf einem System, das auf ONTAP Select 9.6 oder höher aktualisiert wird, verhält sich ein neues Volume, das auf einem vorhandenen Aggregat oder einem neu erstellten Aggregat erstellt wurde, mit dem Verhalten eines Volumes, das auf einer neuen Implementierung erstellt wurde. Für vorhandene Volumes, die dem ONTAP Select Code Upgrade unterzogen werden, liegen die meisten Storage-Effizienzrichtlinien wie für ein neu erstelltes Volume vor, wobei einige Variationen bestehen:
@@ -122,4 +124,5 @@ Szenario 2:: Wenn bereits vor dem Upgrade einige Storage-Effizienzen auf einem V
 --
 
 
+.Hinweise zum Upgrade-Verhalten bei der das-HDD-Konfiguration
 Storage-Effizienzfunktionen, die vor dem Upgrade aktiviert wurden, werden nach dem Upgrade auf ONTAP Select 9.6 oder höher beibehalten. Wenn vor dem Upgrade keine Storage-Effizienz aktiviert wurde, ist nach einem Upgrade keine Storage-Effizienz aktiviert.

@@ -38,6 +38,7 @@ Um mit dem Upgrade-Prozess zu beginnen, müssen Sie die entsprechende Upgrade-Da
 . Wählen Sie das entsprechende Paket aus, und laden Sie es herunter. Gehen Sie dabei auf alle Eingabeaufforderungen für Ihre Umgebung ein.
 
 
+.Verwandte Informationen
 link:https://mysupport.netapp.com["NetApp Support"^]
 
 
@@ -46,8 +47,10 @@ link:https://mysupport.netapp.com["NetApp Support"^]
 
 Nach dem Erwerb des Aktualisierungspakets müssen Sie die Datei auf die virtuelle Maschine bereitstellen hochladen.
 
+.Bevor Sie beginnen
 Die Upgrade-Datei muss auf Ihrer lokalen Arbeitsstation verfügbar sein. Sie müssen außerdem das Kennwort für das Administratorbenutzerkonto besitzen.
 
+.Informationen zu diesen Aufgaben
 Diese Aufgabe beschreibt eine Methode zum Hochladen der Datei auf die virtuelle Maschine bereitstellen. Möglicherweise gibt es weitere für Ihre Umgebung geeignetere Optionen.
 
 .Schritte
@@ -63,6 +66,7 @@ exit
 ....
 
 
+.Ergebnis
 Die Upgrade-Datei wird im Home-Verzeichnis des Admin-Benutzers gespeichert.
 
 
@@ -71,6 +75,7 @@ Die Upgrade-Datei wird im Home-Verzeichnis des Admin-Benutzers gespeichert.
 
 Nachdem die Upgrade-Datei auf die virtuelle Maschine bereitstellen hochgeladen wurde, können Sie das Upgrade anwenden.
 
+.Bevor Sie beginnen
 Sie müssen wissen, in welchem Verzeichnis die Upgrade-Datei in der virtuellen Maschine Deploy Utility gespeichert wurde. Stellen Sie außerdem sicher, dass die Implementierung während des Upgrades nicht für andere Aufgaben verwendet wird.
 
 .Schritte
@@ -89,4 +94,5 @@ ONTAPdeploy2.12_upgrade.tar.gz
 ....
 
 
+.Nachdem Sie fertig sind
 Nach Abschluss des Aktualisierungsvorgangs werden Sie aufgefordert, ein Backup der Konfiguration virtueller Maschinen bereitzustellen. Sie sollten auch den Browser-Cache löschen, um die neu erstellten Bereitstellungs-Seiten anzeigen zu können.

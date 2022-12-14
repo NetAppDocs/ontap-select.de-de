@@ -16,6 +16,7 @@ summary: Sie können auf die Videokonsole der virtuellen ESXi-Maschine zugreifen
 [role="lead"]
 Sie können auf die Videokonsole der virtuellen ESXi-Maschine zugreifen, auf der ONTAP Select ausgeführt wird.
 
+.Über diese Aufgabe
 Sie müssen eventuell auf die Virtual Machine-Konsole zugreifen, um ein Problem zu beheben, oder wenn Sie dazu vom NetApp Support aufgefordert werden.
 
 .Schritte

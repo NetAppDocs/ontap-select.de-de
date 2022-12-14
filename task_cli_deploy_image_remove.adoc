@@ -19,6 +19,7 @@ Sie können ONTAP Select Images aus Ihrer Instanz des Deploy Administration Util
 
 CAUTION: Sie sollten keine ONTAP Select-Images entfernen, die von einem Cluster verwendet werden.
 
+.Über diese Aufgabe
 Ältere ONTAP Select Images, die derzeit von einem Cluster nicht verwendet werden, können entfernt oder für eine zukünftige Cluster-Implementierung geplant werden.
 
 .Schritte

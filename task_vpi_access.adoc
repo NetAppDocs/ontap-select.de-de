@@ -11,6 +11,7 @@ summary: Sie können über den vSphere Web-Client auf das Deploy vCenter Plug-in
 [role="lead"]
 Sie können über den vSphere Web-Client auf das Deploy vCenter Plug-in zugreifen.
 
+.Bevor Sie beginnen
 Das vCenter-Plug-in muss installiert sein. Darüber hinaus muss das vCenter-Konto, das Sie bei der Anmeldung bei vSphere verwenden, über die folgende Berechtigung verfügen:
 
 * NetApp
@@ -33,4 +34,5 @@ Durch das Auszeichnen und anschließend wieder zurück in werden die vCenter Kon
 . Klicken Sie Auf *Global Inventory Lists*.
 
 
+.Ergebnis
 Die Optionen *ONTAP Select Cluster* und *ONTAP Select Deploy* sind im Fenster auf der linken Seite verfügbar. Wenn sie nicht angezeigt werden, sollten Sie sich abzeichnen und sich dann wieder anmelden.

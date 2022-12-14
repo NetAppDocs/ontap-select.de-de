@@ -16,8 +16,10 @@ summary: Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP
 [role="lead"]
 Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP Select Node eine Lizenzdatei anfordern. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt.
 
+.Bevor Sie beginnen
 Sie müssen dem Node von NetApp die neunstellige Lizenzseriennummer zugewiesen haben. Bevor Sie versuchen, eine Lizenzdatei zu erwerben, sollten Sie mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten.
 
+.Über diese Aufgabe
 Diese Aufgabe muss für jeden ONTAP Select Node durchgeführt werden, der eine Lizenz für Kapazitätsstufen benötigt.
 
 .Schritte
@@ -36,4 +38,5 @@ Sie können entweder auf *Download Lizenz* oder *E-Mail-Lizenz* klicken.
 . Bestätigen Sie, dass Sie die Lizenzdatei basierend auf Ihrer ausgewählten Bereitstellungsmethode erhalten haben.
 
 
+.Nachdem Sie fertig sind
 Sie müssen die Lizenzdatei auf das Deploy Administration Utility hochladen, bevor sie auf einen ONTAP Select Node angewendet werden kann.

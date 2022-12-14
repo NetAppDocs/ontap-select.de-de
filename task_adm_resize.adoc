@@ -19,8 +19,10 @@ Nach der Bereitstellung eines ONTAP Select Clusters können Sie mithilfe des Dep
 
 NOTE: Sie können die Größe der Cluster-Nodes nur dann vornehmen, wenn das Lizenzmodell für Kapazitätsstufen verwendet wird. Die Größe von ONTAP Select-Nodes mit einer Lizenz für Kapazitäts-Pools kann nicht geändert werden.
 
+.Bevor Sie beginnen
 Der Cluster muss den Status „Online“ aufweisen.
 
+.Über diese Aufgabe
 In dieser Aufgabe wird beschrieben, wie die Webbenutzeroberfläche bereitstellen verwendet wird. Sie können auch die CLI Deploy verwenden, um die Größe der Instanz zu ändern. Unabhängig davon, welche Schnittstelle Sie verwenden, kann die Zeit für die Größenänderung-Operation erheblich variieren, basierend auf mehreren Faktoren und kann eine längere Zeit in Anspruch nehmen. Sie können die Größe eines Node nur größer anpassen.
 
 .Schritte
@@ -30,4 +32,5 @@ In dieser Aufgabe wird beschrieben, wie die Webbenutzeroberfläche bereitstellen
 . Wählen Sie den *Instanztyp* aus und geben Sie die ONTAP-Zugangsdaten ein, und klicken Sie dann auf *Ändern*.
 
 
+.Nachdem Sie fertig sind
 Sie müssen warten, bis die Größe abgeschlossen ist.

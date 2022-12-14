@@ -16,6 +16,7 @@ summary: Sie müssen sich mit SSH bei der Management-Shell bereitstellen anmelde
 [role="lead"]
 Sie müssen sich mit SSH bei der Management-Shell bereitstellen anmelden. Nach der Anmeldung können Sie CLI-Befehle eingeben, um einen ONTAP Select Cluster zu erstellen und die entsprechenden Administrationsverfahren durchzuführen.
 
+.Bevor Sie beginnen
 Sie müssen über das aktuelle Kennwort für das Administratorkonto für die Bereitstellung verfügen. Wenn Sie sich zum ersten Mal anmelden und vCenter zur Installation der virtuellen Maschine bereitstellen verwendet haben, sollten Sie das Passwort während der Installation verwenden.
 
 .Schritte

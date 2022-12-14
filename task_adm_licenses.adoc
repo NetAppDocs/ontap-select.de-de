@@ -73,6 +73,7 @@ Jede Lizenz für den aktiven Kapazitätspool ist auf eine bestimmte License Mana
 * Stellen Sie die Instanz zum Bereitstellen wieder her
 
 
+.Über diese Aufgabe
 Auf hohem Niveau besteht diese Aufgabe aus drei Teilen. Sie müssen alle von der Deploy-Instanz verwendeten Capacity Pool-Lizenzen neu generieren und installieren. Nachdem alle Lizenzen auf der neuen Deploy-Instanz neu installiert wurden, können Sie bei Bedarf die Seriennummer zurücksetzen. Wenn sich die IP-Adresse für die Bereitstellung geändert hat, müssen Sie jeden ONTAP Select-Knoten, der eine Lizenz für den Kapazitätspools verwendet, aktualisieren.
 
 .Schritte
@@ -135,6 +136,7 @@ Sie können ein ONTAP Select Evaluation-Cluster mithilfe des Deploy-Administrati
 * Für jeden Node im Evaluation-Cluster müssen Sie Lizenzen für Kapazitätsstufen besitzen.
 
 
+.Über diese Aufgabe
 Die Durchführung einer Änderung der Cluster-Lizenz für ein Single-Node-Cluster ist von Unterbrechungen geprägt. Dies ist jedoch bei einem Multi-Node-Cluster nicht der Fall, da bei der Konvertierung jeder Node einzeln neu gebootet werden kann, um die Lizenz anzuwenden.
 
 .Schritte
@@ -151,4 +153,5 @@ Das Lizenz-Upgrade für den Cluster kann mehrere Minuten dauern. Lassen Sie den 
 
 
 
+.Nachdem Sie fertig sind
 Die ursprünglich jedem Node für die Evaluierungsimplementierung zugewiesenen 20-stelligen Node-Seriennummern werden durch die neunstelligen Seriennummern der für das Upgrade verwendeten Produktionslizenzen ersetzt.

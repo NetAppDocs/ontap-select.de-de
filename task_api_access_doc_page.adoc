@@ -16,6 +16,7 @@ summary: Sie müssen auf die Seite ONTAP Select Deploy Online-Dokumentation zugr
 [role="lead"]
 Sie müssen auf die Seite ONTAP Select Deploy Online-Dokumentation zugreifen, um die API-Dokumentation anzuzeigen und einen API-Aufruf manuell zu tätigen.
 
+.Bevor Sie beginnen
 Sie müssen Folgendes haben:
 
 * IP-Adresse oder Domain-Name der virtuellen ONTAP Select Deploy-Maschine
@@ -30,4 +31,5 @@ Sie müssen Folgendes haben:
 . Melden Sie sich mit dem Benutzernamen und Passwort des Administrators an.
 
 
+.Ergebnis
 Die Webseite Dokumentation bereitstellen wird angezeigt, auf der die Anrufe nach Kategorie unten auf der Seite organisiert sind.

@@ -43,6 +43,7 @@ Sie können die ONTAP Select Deploy Web User Interface verwenden, um das Deploy 
 . Geben Sie die vCenter-Anmeldeinformationen ein, wenn Sie dazu aufgefordert werden.
 
 
+.Nachdem Sie fertig sind
 Wenn Sie das Plug-in entfernen, müssen Sie eine der folgenden Aufgaben ausführen, um die Entfernung vom vCenter-Server abzuschließen:
 
 * Starten Sie den vCenter Server neu

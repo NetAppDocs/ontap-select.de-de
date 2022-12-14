@@ -25,8 +25,10 @@ Beim Pairing einer Instanz des Dienstprogramms „Bereitstellen“ mit den ONTAP
 
 NOTE: In allen Implementierungsszenarien können ein einzelnes ONTAP Select-Cluster und die Nodes im Cluster nur von einer Instanz des Deploy-Administration Utility gemanagt werden. Ein Cluster kann nicht von zwei oder mehr verschiedenen Instanzen des Deploy Utility gemanagt werden.
 
+.Eine Instanz des Dienstprogramms für jedes ONTAP Select Cluster
 Sie können jedes ONTAP Select Cluster mit einer dedizierten Instanz des Deploy Utility implementieren und managen. Mit dieser 1:1-Konfiguration besteht eine klare Trennung zwischen den einzelnen Kombinationen von Utility-to-Cluster. Diese Konfiguration bietet ein hohes Maß an Isolation bei kleineren Ausfall-Domains.
 
+.Eine Instanz des Dienstprogramms für mehrere ONTAP Select Cluster
 Sie können mehrere ONTAP Select Cluster in Ihrem Unternehmen mithilfe einer einzigen Instanz des Deploy Utility implementieren und managen. Bei dieser 1:n-Konfiguration werden alle Verarbeitungs- und Konfigurationsdaten über dieselbe Instanz des Deploy Utility gemanagt.
 
 
@@ -41,10 +43,12 @@ Der ONTAP Select Deploy Anmeldeinformationsspeicher ist eine Datenbank mit Konto
 
 NOTE: Die Kontoinformationen werden mithilfe des AES-Verschlüsselungsalgorithmus und des SHA-256-Hashing-Algorithmus sicher in der Datenbank gespeichert.
 
+.Arten von Anmeldeinformationen
 Folgende Typen von Anmeldeinformationen werden unterstützt:
 
 * Host wird zur Authentifizierung eines Hypervisor-Hosts bei der Bereitstellung eines ONTAP Select-Knotens direkt in VMware ESXi verwendet
 * VCenter wird zur Authentifizierung eines vCenter-Servers im Rahmen der Bereitstellung eines ONTAP Select-Knotens bei ESXi verwendet, wenn der Host von VMware vCenter gemanagt wird
 
 
+.Datenzugriff
 Der Anmeldeinformationsspeicher wird intern aufgerufen, wenn er normale administrative Aufgaben mithilfe von Deploy ausführt, z. B. Hinzufügen eines Hypervisor-Hosts. Sie können den Anmeldeinformationsspeicher auch direkt über die Webbenutzeroberfläche bereitstellen und über die CLI verwalten.

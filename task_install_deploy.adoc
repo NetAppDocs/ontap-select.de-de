@@ -22,6 +22,7 @@ Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das
 
 Das ONTAP Select Paket können Sie auf der NetApp Support-Webseite herunterladen.
 
+.Über diese Aufgabe
 Das ONTAP Select Deploy-Verwaltungsdienstprogramm ist als virtuelle Maschine auf der Grundlage des Standards Open Virtualization Format (OVF) verpackt. Die einzelne komprimierte Datei verfügt über das Suffix `ova`.
 
 .Schritte
@@ -40,6 +41,7 @@ Das ONTAP Select Deploy-Verwaltungsdienstprogramm ist als virtuelle Maschine auf
 
 Sie müssen die ONTAP Select Deploy Virtual Machine mit dem OVF Virtual Machine Image installieren und starten. Im Rahmen der Installation müssen Sie die Netzwerkschnittstelle so konfigurieren, dass DHCP oder eine statische IP-Konfiguration verwendet wird.
 
+.Bevor Sie beginnen
 Sie müssen die Bereitstellung der virtuellen ONTAP Select Deploy-Maschine vorbereiten:
 
 * Aktivieren Sie die OVF-Funktion in Ihrem Browser, indem Sie das VMware Client Integration Plugin installieren oder eine ähnliche Konfiguration nach Bedarf durchführen
@@ -56,6 +58,7 @@ Sie müssen über die Konfigurationsinformationen verfügen, die beim Erstellen 
 * DNS-Suchdomänen
 
 
+.Über diese Aufgabe
 Wenn Sie vSphere verwenden, enthält der Assistent zur Bereitstellung der OVF-Vorlage ein Formular, das alle Informationen zur Bereitstellungskonfiguration einschließlich der Netzwerkkonfiguration enthält. Wenn Sie dieses Formular jedoch nicht verwenden möchten, können Sie das Netzwerk stattdessen über die Konsole der virtuellen Maschine bereitstellen konfigurieren.
 
 .Schritte
@@ -111,4 +114,5 @@ Melden Sie sich an der Web-Benutzeroberfläche an, um zu bestätigen, dass das D
 
 
 
+.Verwandte Informationen
 link:task_cli_signing_in.html["Melden Sie sich für die Implementierung über SSH an"]

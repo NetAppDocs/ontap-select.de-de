@@ -66,6 +66,7 @@ Wenn Sie ein Upgrade-Verfahren auswählen, bei dem das Deploy-Utility verwendet 
 
 Sie können das Deploy Administration Utility im Rahmen des Verfahrens zum Upgrade des VMware ESXi-Hypervisors verwenden, der ein ONTAP Select Single-Node-Cluster hostet.
 
+.Bevor Sie beginnen
 Sie müssen Version 2.5 oder höher bereitstellen.
 
 .Schritte
@@ -97,6 +98,7 @@ sdot-d200-011d true true
 ....
 
 
+.Nachdem Sie fertig sind
 Sie sollten einen Cluster-Aktualisierungsvorgang mit dem Deploy Administration Utility durchführen.
 
 
@@ -105,8 +107,10 @@ Sie sollten einen Cluster-Aktualisierungsvorgang mit dem Deploy Administration U
 
 Sie können das Deploy Administration Utility im Rahmen des Verfahrens zum Upgrade der VMware ESXi Hypervisoren verwenden, die ein ONTAP Select Multi-Node-Cluster hosten.
 
+.Bevor Sie beginnen
 Sie müssen Version 2.5 oder höher bereitstellen.
 
+.Über diese Aufgabe
 Sie müssen dieses Upgrade-Verfahren für jeden der Nodes im Cluster, jeweils einen Node, durchführen. Wenn das Cluster vier oder mehr Nodes enthält, sollten Sie die Nodes in jedem HA-Paar nacheinander aktualisieren, bevor Sie zum nächsten HA-Paar wechseln.
 
 .Schritte
@@ -147,6 +151,7 @@ sdot-d200-012d true true
 ....
 
 
+.Nachdem Sie fertig sind
 Sie müssen für jeden im ONTAP Select Cluster verwendeten Host das Upgrade durchführen. Nachdem alle ESXi-Hosts aktualisiert wurden, sollten Sie mithilfe des Deploy-Administration-Dienstprogramms eine Cluster-Aktualisierung durchführen.
 
 
@@ -181,6 +186,7 @@ Node Health Eligibility
 --------------------- ------- ------------
 sdot-d200-011d true true
 ....
+.Nachdem Sie fertig sind
 Sie sollten einen Cluster-Aktualisierungsvorgang mit dem Deploy Administration Utility durchführen.
 
 
@@ -189,6 +195,7 @@ Sie sollten einen Cluster-Aktualisierungsvorgang mit dem Deploy Administration U
 
 Die VMware ESXi Hypervisoren, die ein ONTAP Select Multi-Node Cluster hosten, können ohne mithilfe des Deploy Administration Utility aktualisiert werden.
 
+.Über diese Aufgabe
 Sie müssen dieses Upgrade-Verfahren für jeden der Nodes im Cluster, jeweils einen Node, durchführen. Wenn das Cluster vier oder mehr Nodes enthält, sollten Sie die Nodes in jedem HA-Paar nacheinander aktualisieren, bevor Sie zum nächsten HA-Paar wechseln.
 
 .Schritte
@@ -227,4 +234,5 @@ sdot-d200-012d true true
 ....
 
 
+.Nachdem Sie fertig sind
 Sie müssen für jeden im ONTAP Select Cluster verwendeten Host das Upgrade durchführen.

@@ -30,6 +30,7 @@ Das Plug-in Deploy vCenter wird im Administrationsprogramm ONTAP Select Deploy e
 
 
 
+.Über diese Aufgabe
 Es wird davon ausgegangen, dass der vCenter-Managementserver bereits zur Bereitstellung hinzugefügt wurde. Wenn der vCenter-Server nicht hinzugefügt wurde, lesen Sie link:task_adm_security.html["Hinzufügen eines Management-Server-Kontos"] Finden Sie weitere Informationen.
 
 .Schritte

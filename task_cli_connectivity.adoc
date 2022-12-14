@@ -16,8 +16,10 @@ summary: Sie können die Netzwerkkonnektivität zwischen zwei oder mehr ONTAP Se
 [role="lead"]
 Sie können die Netzwerkkonnektivität zwischen zwei oder mehr ONTAP Select Nodes im internen Cluster-Netzwerk testen. Sie führen diesen Test in der Regel vor der Implementierung eines Cluster mit mehreren Nodes aus, um Probleme zu erkennen, die den Vorgang möglicherweise zum Ausfall führen.
 
+.Bevor Sie beginnen
 Alle ONTAP Select-Nodes im Test müssen konfiguriert und eingeschaltet sein.
 
+.Über diese Aufgabe
 Jedes Mal, wenn Sie einen Test starten, wird eine neue Prozessdurchlauf im Hintergrund erstellt und einer eindeutigen Laufkennung zugewiesen. Es kann jeweils nur ein Durchlauf aktiv sein.
 
 Der Test verfügt über zwei Modi, die den Betrieb steuern:
@@ -54,4 +56,5 @@ network connectivity-check start -host-names 10.234.81.14
 
 
 
+.Nachdem Sie fertig sind
 Der Netzwerk-Konnektivitätsprüfer bereinigt normalerweise, indem alle temporären Ports und IP-Adressen entfernt werden, die der ONTAP-internen Portgruppe hinzugefügt wurden. Wenn die Konnektivitätsprüfung jedoch die temporären Ports nicht entfernt, müssen Sie einen manuellen Bereinigungsvorgang durchführen, indem Sie den CLI-Befehl mit der Option neu starten `-mode cleanup`. Wenn Sie die temporären Ports nicht aus der ONTAP-internen Portgruppe entfernen, wird die virtuelle ONTAP Select-Maschine möglicherweise nicht erfolgreich erstellt.

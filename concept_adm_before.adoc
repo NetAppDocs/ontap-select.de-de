@@ -22,10 +22,13 @@ Nach dem Erstellen eines ONTAP Select-Clusters können Sie die Implementierung d
 
 Im Allgemeinen lassen sich die Verfahren, die Sie mit der Weboberfläche Bereitstellen durchführen können, in eine von drei Kategorien einteilen.
 
+.Implementieren eines ONTAP Select-Clusters
 Single Node und Multi-Node-Cluster können implementiert werden. Siehe link:task_deploy_cluster.html["Implementieren eines ONTAP Select-Clusters"] Finden Sie weitere Informationen.
 
+.Führen Sie eine Prozedur mit einem vorhandenen ONTAP Select Cluster durch
 Die Verwaltungsverfahren sind in verschiedenen Kategorien organisiert, wie _Security_ und _Clusters_.
 
+.Führen Sie ein Verfahren für das Dienstprogramm „Bereitstellen“ durch
 Für die Bereitstellung gibt es verschiedene Verfahren (z. B. Ändern des Administratorkennworts).
 
 
@@ -43,6 +46,7 @@ NOTE: Sie können ONTAP Select auch mit der Befehlszeilenschnittstelle verwalten
 
 Nachdem ein ONTAP Select Cluster implementiert wurde, können Sie den Cluster wie ein hardwarebasiertes ONTAP System konfigurieren und managen. Beispielsweise können Sie mit OnCommand System Manager oder der ONTAP CLI das ONTAP Select-Cluster konfigurieren.
 
+.NetApp Client-Software
 Mit der folgenden unterstützten NetApp Client Software können Sie eine Verbindung zu ONTAP Select herstellen:
 
 * OnCommand System Manager
@@ -61,6 +65,7 @@ NOTE: Für die Nutzung von SnapCenter und den entsprechenden Plug-ins sind serve
 
 Alle anderen NetApp Client-Software, die nicht in der Liste enthalten ist, wird von ONTAP Select nicht unterstützt.
 
+.Mögliche Konfigurationsoptionen
 Beim Konfigurieren des Clusters stehen verschiedene Optionen zur Verfügung. Dazu zählen:
 
 * Erstellen der Netzwerkkonfiguration
@@ -68,6 +73,8 @@ Beim Konfigurieren des Clusters stehen verschiedene Optionen zur Verfügung. Daz
 * Erstellung der Storage Virtual Machines (SVMs)
 
 
+.Erworbene Lizenzen mit Storage-Kapazität
 Wenn Sie sich gegen die Installation der Lizenzdateien im Rahmen der Bereitstellung des ONTAP Select-Clusters entschieden haben, müssen Sie die Lizenzdateien erwerben und installieren, bevor der Gnadenzeitraum für Cluster abläuft, die mit einer erworbenen Lizenz ausgeführt werden.
 
+.Gespiegelte Aggregate
 Auf jedem ONTAP Select Node sind durch das Deploy Administration Utility Daten-Spare-Festplatten aus dem nutzbaren Datenspeicherplatz (z. B. Pool0 und Pool1) erstellt. Um Hochverfügbarkeit für Ihre Daten in einem Cluster mit mehreren Knoten zu implementieren, müssen Sie ein gespiegeltes Aggregat unter Verwendung dieser Ersatzteile erstellen.

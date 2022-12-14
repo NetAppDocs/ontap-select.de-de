@@ -18,10 +18,13 @@ MetroCluster SDS ist eine Konfigurationsoption beim Erstellen eines ONTAP Select
 
 Vor der Bereitstellung von MetroCluster SDS muss der sicherstellen, dass die folgenden Anforderungen erfüllt sind.
 
+.Lizenzierung
 Jeder Node muss über eine Premium- oder höhere ONTAP Select-Lizenz verfügen.
 
+.Hypervisor-Plattformen
 MetroCluster SDS kann in denselben VMware ESXi und KVM-Hypervisoren implementiert werden, wie es bei einem Cluster mit zwei Nodes in einer ROBO-Umgebung unterstützt wird. Beachten Sie, dass KVM von ONTAP Select 9.10.1 und neueren Versionen nicht mehr unterstützt wird.
 
+.Netzwerkkonfiguration
 Zwischen den teilnehmenden Standorten ist Layer 2-Konnektivität erforderlich. Sowohl 10 GbE als auch 1 GbE werden unterstützt, einschließlich der folgenden Konfigurationen:
 
 * 1 x 10 GbE
@@ -31,13 +34,17 @@ Zwischen den teilnehmenden Standorten ist Layer 2-Konnektivität erforderlich. S
 
 NOTE: Die Daten-Serving-Ports und Interconnect-Ports müssen mit dem gleichen ersten Switch verbunden sein.
 
+.Latenz zwischen den Nodes
 Das Netzwerk zwischen den beiden Knoten muss eine mittlere Latenz von 5 ms mit einem zusätzlichen periodischen Jitter von 5 ms unterstützen. Vor dem Bereitstellen des Clusters müssen Sie das Netzwerk mithilfe der in beschriebenen Prozedur testen link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Abschnitt.
 
+.Mediatordienst
 Wie bei allen ONTAP Select Clustern mit zwei Nodes befindet sich auf der Deploy Virtual Machine ein separater Mediator Service, der die Nodes überwacht und das Ausfallmanagement unterstützt. Dank der erweiterten Entfernung, die mit MetroCluster SDS verfügbar ist, werden drei unterschiedliche Standorte in der Netzwerktopologie geschaffen. Die Latenz auf dem Link zwischen dem Mediator und einem Node sollte für den Umlauf von maximal 125 ms betragen.
 
+.Storage
 Direct-Attached Storage (das) wird mit Festplatten und SSD-Festplatten unterstützt. Darüber hinaus wird vNAs unterstützt, einschließlich externer Storage-Arrays und vSAN in einer VMware Umgebung.
 
 
 NOTE: Mit MetroCluster SDS kann vSAN nicht in einer verteilten oder „Stretch“-Topologie verwendet werden.
 
+.Der Bereitstellung zugewiesene statische IP-Adresse
 Sie müssen dem Dienstprogramm Administration Deploy eine statische IP-Adresse zuweisen. Diese Anforderung gilt für alle Deploy-Instanzen, die ein oder mehrere ONTAP Select Cluster mit zwei Nodes managen.

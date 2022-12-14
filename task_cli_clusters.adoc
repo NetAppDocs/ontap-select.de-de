@@ -22,6 +22,7 @@ Es gibt verschiedene zugehörige Aufgaben, die Sie zum Verwalten eines ONTAP Sel
 
 Sie können ein ONTAP Select Cluster löschen, wenn es nicht mehr mithilfe der Befehlszeilenschnittstelle benötigt wird.
 
+.Über diese Aufgabe
 Der Cluster muss sich im Offlinezustand befinden.
 
 .Schritte

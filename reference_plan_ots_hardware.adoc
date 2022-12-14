@@ -74,11 +74,13 @@ Siehe https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Too
 
 Es gibt verschiedene allgemeine Hardwareanforderungen, die für alle Plattformen gelten, unabhängig vom Instanztyp oder Lizenzangebot des Nodes.
 
+.Prozessor
 Zu den unterstützten Mikroprozessoren gehören:
 
 * Intel Xeon Prozessoren für Server (siehe link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon Prozessoren,window=_blank"] Weitere Informationen)
 
 
+.Ethernet-Konfiguration
 Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der Cluster-Größe unterstützt.
 
 [cols="30,35,35"]

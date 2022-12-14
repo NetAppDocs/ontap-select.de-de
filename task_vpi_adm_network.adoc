@@ -22,6 +22,7 @@ Es gibt mehrere Aspekte des Netzwerks, die Sie erkunden und anzeigen können.
 
 Sie können die Netzwerkkonnektivität zwischen zwei oder mehr ONTAP Select Nodes im internen Cluster-Netzwerk testen. Sie sollten diesen Test in der Regel vor der Implementierung eines Cluster mit mehreren Nodes durchführen, um Probleme zu erkennen, die zum Ausfall des Vorgangs führen können. Sie können den Verbindungstest auch ausführen, nachdem ein Cluster bereitgestellt und online geschaltet wurde.
 
+.Über diese Aufgabe
 Jedes Mal, wenn Sie den Test starten, wird ein neuer Prozess im Hintergrund erstellt und einer eindeutigen Laufkennung zugewiesen. Es kann jeweils nur ein Durchlauf aktiv sein.
 
 Der Test wird immer im Quick Mode ausgeführt, der einen grundlegenden unterbrechungsfreien Test durchführt. ES wird ein PING-Test durchgeführt, zusammen mit einem Test der MTU-Größe des Netzwerks und des vSwitch.
@@ -40,6 +41,7 @@ Der Test wird immer im Quick Mode ausgeführt, der einen grundlegenden unterbrec
 
 Jedes ONTAP Select Cluster mit zwei Nodes wird durch den Mediator Service überwacht, der das Management der HA-Funktion unterstützt, die von den Nodes gemeinsam verwendet wird. Sie können den Status des Mediator-Service für jedes der im Deploy-Administration Utility definierten Cluster mit zwei Nodes anzeigen.
 
+.Über diese Aufgabe
 Sie können die Konfiguration jedes Mediators anzeigen, einschließlich:
 
 * Aktueller Status

@@ -34,6 +34,7 @@ Sie können das Kennwort für das Administratorkonto für virtuelle Maschinen be
 
 Sie können ein Management-Server-Konto zur Datenbank zum Bereitstellen von Anmeldeinformationen hinzufügen.
 
+.Bevor Sie beginnen
 Sie sollten mit den Typen von Zugangsdaten und der Art der Nutzung durch ONTAP Select Deploy vertraut sein.
 
 .Schritte

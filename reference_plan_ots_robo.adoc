@@ -21,8 +21,10 @@ Bei der Implementierung von ONTAP Select in einer ROBO-Umgebung sind zwei Hauptk
 
 NOTE: Bei der Bereitstellung von ONTAP Select können Sie jede VMware vSphere Lizenz verwenden.
 
+.ONTAP Select Cluster mit zwei Nodes und ONTAP HA
 Das ONTAP Select 2-Node-Cluster besteht aus einem HA-Paar und ist ideal für ROBO-Implementierungen.
 
+.ONTAP Select Single-Node Cluster mit VMware Unterstützung
 Ein ONTAP Select Single-Node-Cluster kann in einer ROBO-Umgebung implementiert werden. Während für einen einzelnen Node keine native HA-Funktion vorhanden ist, können Sie das Cluster auf eine der folgenden Arten implementieren, um Storage-Sicherung zu gewährleisten:
 
 * Externer Shared Storage unter Verwendung von VMware HA

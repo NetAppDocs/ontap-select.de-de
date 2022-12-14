@@ -122,6 +122,7 @@ Siehe link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Weitere Inform
 
 Sie müssen sicherstellen, dass Ihre Firewalls richtig konfiguriert sind, damit der Netzwerk-Traffic zwischen den verschiedenen Teilnehmern in einer ONTAP Select-Bereitstellungsumgebung fließen kann.
 
+.Teilnehmer
 Im Rahmen einer ONTAP Select-Implementierung gibt es mehrere Teilnehmer oder Einheiten, die den Netzwerkdatenverkehr austauschen. Diese werden eingeführt und dann in der Zusammenfassung der Anforderungen an den Netzwerkverkehr verwendet.
 
 * ONTAP Select Deploy Administration Utility einsetzen
@@ -132,6 +133,7 @@ Im Rahmen einer ONTAP Select-Implementierung gibt es mehrere Teilnehmer oder Ein
 * Admin WS Local Administration Workstation
 
 
+.Zusammenfassung der Anforderungen an den Netzwerkverkehr
 In der folgenden Tabelle werden die Anforderungen an den Netzwerk-Traffic für eine ONTAP Select-Implementierung beschrieben.
 
 [cols="20,45,35"]

@@ -77,8 +77,10 @@ Nach Bereitstellung eines Clusters:: Sie sollten die Konfigurationsdaten der ONT
 
 Über die ONTAP Select Deploy Web-Benutzeroberfläche können Sie ein Single-Node ONTAP Select Cluster implementieren.
 
+.Bevor Sie beginnen
 Siehe link:task_deploy_cluster.html#before-you-begin["Bevor Sie beginnen"] So bereiten Sie die Implementierung des Clusters vor. Die Implementierungsadministration muss installiert und zu Beginn konfiguriert sein (Passwort, AutoSupport, vCenter).
 
+.Über diese Aufgabe
 Für eine Implementierung in der Produktion wird ein ONTAP Select Cluster mit einem Node erstellt.
 
 .Schritte
@@ -128,4 +130,5 @@ TIP: Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen wir
 
 
 
+.Nachdem Sie fertig sind
 Sie sollten überprüfen, ob die ONTAP Select AutoSupport Funktion konfiguriert ist und die ONTAP Select Implementierungskonfigurationsdaten sichern.

@@ -22,6 +22,7 @@ Es gibt verschiedene zugehörige Aufgaben, die Sie zum Verwalten eines ONTAP Sel
 
 Nachdem Sie ein Cluster erstellt haben, können Sie ihn bei Bedarf offline und online verschieben.
 
+.Bevor Sie beginnen
 Nach dem Erstellen eines Clusters befindet es sich zunächst im Online-Status.
 
 .Schritte
@@ -43,6 +44,7 @@ Wenn die Offline-Option nicht verfügbar ist, befindet sich das Cluster bereits 
 
 Sie können ein ONTAP Select Cluster löschen, wenn er nicht mehr benötigt wird.
 
+.Bevor Sie beginnen
 Der Cluster muss sich im Offlinezustand befinden.
 
 .Schritte
@@ -77,6 +79,7 @@ Stabiler Cluster Status:: Das Cluster muss sich in einem stabilen Zustand befind
 Nach einer VM-Migration:: Nachdem eine virtuelle Maschine mit ONTAP Select migriert wurde, müssen Sie einen neuen Host mithilfe des Deploy Utility erstellen, bevor Sie eine Cluster-Aktualisierung durchführen.
 
 
+.Über diese Aufgabe
 Sie können eine Cluster-Aktualisierung durchführen, um die Konfigurationsdatenbank bereitstellen über die Webbenutzeroberfläche zu aktualisieren.
 
 
@@ -112,4 +115,5 @@ Cluster- und Node-Status:: Ein ONTAP Select Cluster oder Node kann einen Status 
 . Klicken Sie Auf *Aktualisieren*.
 
 
+.Nachdem Sie fertig sind
 Ist der Vorgang erfolgreich, wird das Feld _Letzte Aktualisierung_ aktualisiert. Sie sollten die Bereitstellungskonfigurationsdaten sichern, nachdem die Cluster-Aktualisierung abgeschlossen ist.

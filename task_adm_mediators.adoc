@@ -22,6 +22,7 @@ Jedes ONTAP Select Cluster mit zwei Nodes wird durch den Mediator Service überw
 
 Sie können den Status des Mediator-Service in Bezug auf jedes der zwei-Node-Cluster anzeigen, die beim ONTAP Select Deploy-Tool definiert wurden.
 
+.Über diese Aufgabe
 Sie können die Konfiguration jedes Mediators anzeigen, einschließlich des aktuellen Status, der beiden ONTAP Select-Nodes und des iSCSI-Ziels, an dem die HA-Steuerinformationen gespeichert werden. Bewegen Sie den Mauszeiger über die Objekte auf der Seite, um detaillierte Informationen anzuzeigen.
 
 .Schritte

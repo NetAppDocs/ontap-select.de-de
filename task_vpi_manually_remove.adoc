@@ -48,6 +48,7 @@ Das MOB ist eine VMware-Anwendung, mit der Sie die Objekte auf einem VMware vCen
 . Geben Sie den Namen der Erweiterung ein und klicken Sie auf *InvokeMethod*.
 
 
+.Ergebnis
 Das Plug-in wird aus der Liste der Erweiterungen entfernt.
 
 
@@ -56,6 +57,7 @@ Das Plug-in wird aus der Liste der Erweiterungen entfernt.
 
 Sie sollten das vSphere UI-Verzeichnis auf dem vCenter-Server untersuchen und das Deploy-Plugin entfernen, falls gefunden.
 
+.Bevor Sie beginnen
 Sie müssen das Passwort für das Root-Konto beim vCenter-Server besitzen. Sie sollten das Plug-in mit vSphere MOB entfernen.
 
 .Schritte
@@ -86,6 +88,7 @@ Sie müssen das Passwort für das Root-Konto beim vCenter-Server besitzen. Sie s
 
 
 
+.Nachdem Sie fertig sind
 Es kann einige Minuten dauern, bis das Implementierungs-Plug-in neu gestartet wurde und verfügbar ist.
 
 
@@ -94,6 +97,7 @@ Es kann einige Minuten dauern, bis das Implementierungs-Plug-in neu gestartet wu
 
 Sie sollten das vSphere Client-Verzeichnis auf dem vCenter-Server untersuchen und das Deploy-Plug-in entfernen, falls gefunden. Obwohl das Deploy-Plug-in nicht Flash verwendet, ist es eine Best Practice, dieses Verzeichnis als Teil des Plug-in-Entnahmeverfahrens zu untersuchen.
 
+.Bevor Sie beginnen
 Sie müssen das Passwort für das Root-Konto beim vCenter-Server besitzen. Sie sollten das Plug-in mit vSphere MOB entfernen und das Plug-in aus dem vSphere UI-Verzeichnis entfernen.
 
 .Schritte
@@ -124,4 +128,5 @@ Sie müssen das Passwort für das Root-Konto beim vCenter-Server besitzen. Sie s
 
 
 
+.Nachdem Sie fertig sind
 Es kann einige Minuten dauern, bis das Implementierungs-Plug-in neu gestartet wurde und verfügbar ist.

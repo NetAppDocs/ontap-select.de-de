@@ -16,16 +16,23 @@ summary: Im Folgenden sind die Einschränkungen aufgeführt, die bei der Verwend
 [role="lead"]
 Im Folgenden sind die Einschränkungen aufgeführt, die bei der Verwendung des Kapazitätspool-Lizenzmodells gelten.
 
+.Konsistentes Lizenzmodell pro Cluster
 Alle Nodes in einem einzelnen ONTAP Select Cluster müssen das gleiche Lizenzmodell verwenden, entweder Kapazitäts-Tiers oder Kapazitäts-Pools. Sie können die Lizenztypen für die Nodes nicht in einem einzelnen Cluster kombinieren.
 
+.Alle Nodes in einem Cluster verwenden dieselbe Lizenz-Manager-Instanz
 Alle Nodes mit einer Lizenz für den Kapazitäts-Pool in einem ONTAP Select-Cluster müssen dieselbe Lizenz-Manager-Instanz verwenden. Da es eine Instanz von License Manager in jeder Deploy-Instanz gibt, enthält diese Einschränkung eine Neuaufstellung der vorhandenen Anforderung, dass alle Nodes in einem Cluster von derselben Deploy-Instanz gemanagt werden müssen.
 
+.Ein Kapazitäts-Pool pro Node
 Jeder Node kann Storage aus einem genau einzigen Kapazitäts-Pool leasen. Ein Node kann mindestens zwei Pools nicht verwenden.
 
+.Derselbe Pool für Nodes in einem HA-Paar
 Beide Nodes in einem einzelnen HA-Paar müssen Storage aus dem gleichen Kapazitäts-Pool leasen. Verschiedene HA-Paare innerhalb desselben Clusters können jedoch Storage aus verschiedenen Pools leasen, die von demselben License Manager gemanagt werden.
 
+.Dauer der Storage-Lizenz
 Sie müssen beim Erwerb der Storage-Lizenz von NetApp eine Lizenzdauer auswählen. Beispielsweise könnte eine Lizenz für ein Jahr gültig sein.
 
+.Leasing-Dauer für das Datenaggregat
 Wenn ein ONTAP Select-Node ein Storage-Leasing für ein Datenaggregat anfordert, stellt der Lizenzmanager basierend auf der Konfiguration des Kapazitäts-Pools einen Leasing für eine bestimmte Dauer bereit. Sie können die Leasing-Dauer für jeden Pool zwischen einer Stunde und sieben Tagen konfigurieren. Die Standard-Leasing-Dauer beträgt 24 Stunden.
 
+.Der Bereitstellung zugewiesene statische IP-Adresse
 Wenn die Lizenzierung von Kapazitätspools verwendet wird, müssen Sie dem Dienstprogramm Administration implementieren eine statische IP-Adresse zuweisen.
