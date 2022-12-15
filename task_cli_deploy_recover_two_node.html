@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:23:02 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:02:56 +0000">12/14/2022</time>
     
   
 
@@ -2594,27 +2594,35 @@
 <p>Sie sollten sich vorbereiten, bevor Sie versuchen, eine Instanz des Dienstprogramms „Bereitstellen“ wiederherzustellen, um den Erfolg zu sichern.</p>
 </div>
 <div class="paragraph">
+<div class="title">Erforderliche Kenntnisse und Informationen</div>
 <p>Sie sollten mit verschiedenen Verwaltungsverfahren vertraut sein und über die erforderlichen Informationen verfügen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Installieren der virtuellen Maschine Bereitstellen</div>
 <p>Sie müssen in der Lage sein, eine neue Instanz des ONTAP Select Deploy Utility in Ihrer Hypervisor-Umgebung zu installieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">ONTAP Befehlszeilenschnittstelle</div>
 <p>Sie müssen sich bei der ONTAP CLI des ONTAP Select Clusters anmelden können und die Shell-Schnittstelle verwenden.</p>
 </div>
 <div class="paragraph">
+<div class="title">Verfügbarkeit von Deploy Utility Configuration Backup</div>
 <p>Sie müssen ermitteln, ob Sie ein Backup der Konfigurationsdaten aus der fehlgeschlagenen Deploy Utility-Instanz haben, die das ONTAP Select-2-Node-Cluster enthält. Möglicherweise verfügen Sie über ein Backup, das den Cluster nicht enthält.</p>
 </div>
 <div class="paragraph">
+<div class="title">Wiederherstellen eines Backups der Bereitstellungskonfiguration</div>
 <p>Abhängig vom verwendeten Wiederherstellungsverfahren sollten Sie in der Lage sein, ein Backup der Bereitstellungskonfigurationsdaten wiederherzustellen.</p>
 </div>
 <div class="paragraph">
+<div class="title">IP-Adresse der ursprünglichen virtuellen Maschine bereitstellen</div>
 <p>Sie müssen die IP-Adresse der ursprünglichen virtuellen Bereitstellungsdienstprogramm kennen, die fehlgeschlagen ist.</p>
 </div>
 <div class="paragraph">
+<div class="title">Lizenzierung der Storage-Kapazität</div>
 <p>Sie müssen ermitteln, ob Kapazitäts-Pools oder die Lizenzierung von Kapazitäts-Tiers verwendet werden. Wenn Sie die Kapazitätspools-Lizenzierung verwenden, müssen Sie jede Lizenz für den Kapazitäts-Pool nach der Wiederherstellung oder Wiederherstellung der Deploy-Instanz neu installieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">Entscheidung, welches Wiederherstellungsverfahren verwendet werden soll</div>
 <p>Sie müssen entscheiden, welches Verfahren bei der Wiederherstellung einer Instanz des Dienstprogramms ONTAP Select Deploy verwendet werden soll. Ihre Entscheidung hängt davon ab, ob Sie ein Backup der Konfigurationsdaten aus dem ursprünglichen Dienstprogramm für fehlgeschlagene Bereitstellung haben, das das ONTAP Select-Cluster mit zwei Nodes enthält.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2648,9 +2656,11 @@
 <p>Wenn Sie über ein Backup der fehlgeschlagenen Deploy Utility-Instanz verfügen, die das Cluster mit zwei Nodes enthält, können Sie die Konfigurationsdaten auf der neuen virtuellen Maschineninstanz implementieren wiederherstellen. Anschließend müssen Sie die Recovery durch eine zusätzliche Konfiguration der beiden Nodes im ONTAP Select Cluster abschließen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen über ein Backup der Konfigurationsdaten der ursprünglichen fehlgeschlagenen virtuellen Maschine verfügen, die das Cluster mit zwei Knoten enthält. Sie müssen sich bei der ONTAP-CLI des Clusters mit zwei Nodes anmelden und die ONTAP-Namen der beiden Nodes kennen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Da das von Ihnen wiederhergestellte Konfigurations-Backup das Cluster mit zwei Nodes enthält, werden die iSCSI-Ziele und Mailboxen des Mediators auf der neuen Virtual Machine des Deploy Utility neu erstellt.</p>
 </div>
 <div class="olist arabic">
@@ -2723,6 +2733,7 @@ disk assign -disk &lt;mediator-disk2-name&gt; -owner &lt;node2-name&gt;</pre>
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Nachdem Sie fertig sind</div>
 <p>Wenn Sie die Lizenzierung der Kapazitäts-Pools verwenden, müssen Sie jede Lizenz für einen Kapazitäts-Pool neu installieren. Weitere Informationen finden Sie unter <em>Neuinstallation einer Capacity Pool Lizenz</em>.</p>
 </div>
 </div>
@@ -2734,9 +2745,11 @@ disk assign -disk &lt;mediator-disk2-name&gt; -owner &lt;node2-name&gt;</pre>
 <p>Wenn Sie kein Backup der fehlgeschlagenen Dienstprogramminstanz zum Bereitstellen eines Clusters mit zwei Nodes haben, müssen Sie das iSCSI-Ziel und die Mailbox des Mediators auf der neuen Virtual Machine Deploy konfigurieren. Anschließend müssen Sie die Recovery durch eine zusätzliche Konfiguration der beiden Nodes im ONTAP Select Cluster abschließen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen den Namen des Mediators-Ziels für die neue Deploy Utility-Instanz haben. Sie müssen sich bei der ONTAP-CLI des Clusters mit zwei Nodes anmelden und die ONTAP-Namen der beiden Nodes kennen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Sie können optional ein Konfigurationbackup auf der neuen Deploy Virtual Machine wiederherstellen, obwohl es das Cluster mit zwei Nodes nicht enthält. Da das Cluster mit zwei Nodes nicht mit dem Restore wiederhergestellt wird, müssen Sie das iSCSI-Ziel und die Mailbox des Mediators manuell zur neuen Utility-Instanz mithilfe der ONTAP Select Online-Dokumentation bei der Bereitstellung hinzufügen. Sie müssen sich beim Cluster mit zwei Nodes anmelden und die ONTAP-Namen der beiden Nodes kennen.</p>
 </div>
 <div class="admonitionblock note">
@@ -2868,6 +2881,7 @@ disk assign -disk &lt;mediator-disk2-name&gt; -owner &lt;node2-name&gt;</pre>
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Nachdem Sie fertig sind</div>
 <p>Wenn Sie die Lizenzierung der Kapazitäts-Pools verwenden, müssen Sie jede Lizenz für einen Kapazitäts-Pool neu installieren. Weitere Informationen finden Sie unter Neu installieren einer Capacity Pool-Lizenz.</p>
 </div>
 <div class="ulist">

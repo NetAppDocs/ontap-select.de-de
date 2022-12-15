@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:23:02 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:02:56 +0000">12/14/2022</time>
     
   
 
@@ -2587,12 +2587,15 @@
 <p>Vor der Bereitstellung von MetroCluster SDS muss der sicherstellen, dass die folgenden Anforderungen erfüllt sind.</p>
 </div>
 <div class="paragraph">
+<div class="title">Lizenzierung</div>
 <p>Jeder Node muss über eine Premium- oder höhere ONTAP Select-Lizenz verfügen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Hypervisor-Plattformen</div>
 <p>MetroCluster SDS kann in denselben VMware ESXi und KVM-Hypervisoren implementiert werden, wie es bei einem Cluster mit zwei Nodes in einer ROBO-Umgebung unterstützt wird. Beachten Sie, dass KVM von ONTAP Select 9.10.1 und neueren Versionen nicht mehr unterstützt wird.</p>
 </div>
 <div class="paragraph">
+<div class="title">Netzwerkkonfiguration</div>
 <p>Zwischen den teilnehmenden Standorten ist Layer 2-Konnektivität erforderlich. Sowohl 10 GbE als auch 1 GbE werden unterstützt, einschließlich der folgenden Konfigurationen:</p>
 </div>
 <div class="ulist">
@@ -2618,12 +2621,15 @@ Die Daten-Serving-Ports und Interconnect-Ports müssen mit dem gleichen ersten S
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Latenz zwischen den Nodes</div>
 <p>Das Netzwerk zwischen den beiden Knoten muss eine mittlere Latenz von 5 ms mit einem zusätzlichen periodischen Jitter von 5 ms unterstützen. Vor dem Bereitstellen des Clusters müssen Sie das Netzwerk mithilfe der in beschriebenen Prozedur testen <a href="concept_nw_concepts_chars.html">"Deep-Dive-Networking"</a> Abschnitt.</p>
 </div>
 <div class="paragraph">
+<div class="title">Mediatordienst</div>
 <p>Wie bei allen ONTAP Select Clustern mit zwei Nodes befindet sich auf der Deploy Virtual Machine ein separater Mediator Service, der die Nodes überwacht und das Ausfallmanagement unterstützt. Dank der erweiterten Entfernung, die mit MetroCluster SDS verfügbar ist, werden drei unterschiedliche Standorte in der Netzwerktopologie geschaffen. Die Latenz auf dem Link zwischen dem Mediator und einem Node sollte für den Umlauf von maximal 125 ms betragen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Storage</div>
 <p>Direct-Attached Storage (das) wird mit Festplatten und SSD-Festplatten unterstützt. Darüber hinaus wird vNAs unterstützt, einschließlich externer Storage-Arrays und vSAN in einer VMware Umgebung.</p>
 </div>
 <div class="admonitionblock note">
@@ -2639,6 +2645,7 @@ Mit MetroCluster SDS kann vSAN nicht in einer verteilten oder „Stretch“-Topo
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Der Bereitstellung zugewiesene statische IP-Adresse</div>
 <p>Sie müssen dem Dienstprogramm Administration Deploy eine statische IP-Adresse zuweisen. Diese Anforderung gilt für alle Deploy-Instanzen, die ein oder mehrere ONTAP Select Cluster mit zwei Nodes managen.</p>
 </div>
 

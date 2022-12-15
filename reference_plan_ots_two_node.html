@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:23:02 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:02:56 +0000">12/14/2022</time>
     
   
 
@@ -2584,6 +2584,7 @@
 <p>Die Implementierung eines Clusters mit zwei Nodes und HA umfasst dieselbe Planung und Konfiguration, die auch bei anderen Cluster Node-Konfigurationen verwendet wird. Es gibt jedoch einige Unterschiede, die Sie beim Erstellen eines Clusters mit zwei Nodes beachten sollten.</p>
 </div>
 <div class="paragraph">
+<div class="title">Zielumgebung</div>
 <p>Das Cluster mit zwei Nodes besteht aus einem HA-Paar und wurde speziell für Implementierungen in Remote-Zweigstellen entwickelt.</p>
 </div>
 <div class="admonitionblock note">
@@ -2599,9 +2600,11 @@ Obwohl das System hauptsächlich für Remote-Umgebungen und Zweigstellen konzipi
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Lizenzierung</div>
 <p>Sie können ein 2-Node-Cluster mithilfe einer beliebigen VMware vSphere Lizenz implementieren. Die Lizenzen für VMware ROBO Standard und Advanced sind aber ideal für Implementierungen in Remote Offices und in Zweigstellen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Mediatordienst</div>
 <p>Wenn ein Cluster aus zwei Nodes besteht, ist es nicht möglich, das erforderliche Quorum zu erreichen, wenn ein Knoten ausfällt oder die Kommunikation verliert. Um diese Arten von Split-Brain-Situationen zu beheben, umfasst jede Instanz des Dienstprogramms ONTAP Select Deploy einen Mediator. Dieser Service stellt eine Verbindung zu jedem Node in den aktiven 2-Node-Clustern her, um die HA-Paare zu überwachen und Fehler beim Management zu unterstützen. Beim Mediator-Service werden die HA-Zustandsdaten zu einem dedizierten iSCSI-Ziel, das zu jedem Cluster mit zwei Nodes verbunden ist, erhalten.</p>
 </div>
 <div class="admonitionblock caution">
@@ -2617,12 +2620,15 @@ Wenn Sie über ein oder mehrere aktive Cluster mit zwei Nodes verfügen, muss di
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Standort des Clusters und des Mediators</div>
 <p>Da die Cluster mit zwei Nodes normalerweise in einer Remote- oder Zweigstelle bereitgestellt werden, können sie sich vom Datacenter des Unternehmens aus fernab befinden und das Deploy Utility bietet administrativen Support. Bei dieser Konfiguration fließt der Managementdatenverkehr zwischen dem Dienstprogramm Deploy und dem Cluster über das WAN. In den Versionshinweisen finden Sie weitere Informationen zu Einschränkungen und Einschränkungen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Sichern der Konfigurationsdaten für die Bereitstellung</div>
 <p>Es empfiehlt sich, ein Backup der Bereitstellungskonfigurationsdaten regelmäßig zu erstellen, auch nach dem Erstellen eines Clusters. Dies ist aufgrund der Mediator-Konfigurationsdaten, die im Backup enthalten sind, bei Clustern mit zwei Nodes besonders wichtig.</p>
 </div>
 <div class="paragraph">
+<div class="title">Der Bereitstellung zugewiesene statische IP-Adresse</div>
 <p>Sie müssen dem Dienstprogramm Administration Deploy eine statische IP-Adresse zuweisen. Diese Anforderung gilt für alle Deploy-Instanzen, die ein oder mehrere ONTAP Select Cluster mit zwei Nodes managen.</p>
 </div>
 

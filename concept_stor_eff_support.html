@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-24 07:43:48 +0000">11/24/2022</time>
+    <time datetime="2022-12-14 18:02:56 +0000">12/14/2022</time>
     
   
 
@@ -2654,6 +2654,7 @@ Für ONTAP Select Upgrades von 9.6 und höher müssen Sie ONTAP Select auf das S
 </table>
 </div>
 <div class="paragraph">
+<div class="title">ONTAP Select Storage-Effizienzfunktionen</div>
 <p>Die folgende Tabelle fasst die verschiedenen verfügbaren, standardmäßig aktivierten und nicht standardmäßig aktivierten Storage-Effizienztechnologien zusammen, jedoch empfohlen, je nach Medientyp und Softwarelizenz. Die Informationen in der folgenden Tabelle gelten für ONTAP Select 9.6 und neuere Versionen. Informationen zu vorherigen Versionen finden Sie im Abschnitt „<em>ONTAP Select Storage Efficiency Support</em>“ in <a href="https://www.netapp.com/media/10662-tr4517.pdf" target="_blank" rel="noopener">"TR-4517"</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2744,6 +2745,7 @@ Für ONTAP Select Upgrades von 9.6 und höher müssen Sie ONTAP Select auf das S
 <p><span class="Small"><sup>1</sup>ONTAP Select 9.6 unterstützt eine neue Lizenz (Premium XL) und eine neue VM-Größe (groß). Die große VM wird jedoch nur bei das-Konfigurationen unter Verwendung von Software-RAID unterstützt. Hardware-RAID und vNAS Konfigurationen werden von der großen ONTAP Select VM in Version 9.6 nicht unterstützt.</span></p>
 </div>
 <div class="paragraph">
+<div class="title">Hinweise zum Upgrade-Verhalten bei das SSD-Konfigurationen</div>
 <p>Warten Sie nach dem Upgrade auf ONTAP Select 9.6 oder höher auf den <code>system node upgrade-revert show</code> Befehl zeigt an, dass das Upgrade abgeschlossen wurde, bevor die Storage-Effizienzwerte für vorhandene Volumes überprüft wurden.</p>
 </div>
 <div class="paragraph">
@@ -2799,6 +2801,7 @@ Für ONTAP Select Upgrades von 9.6 und höher müssen Sie ONTAP Select auf das S
 </dl>
 </div>
 <div class="paragraph">
+<div class="title">Hinweise zum Upgrade-Verhalten bei der das-HDD-Konfiguration</div>
 <p>Storage-Effizienzfunktionen, die vor dem Upgrade aktiviert wurden, werden nach dem Upgrade auf ONTAP Select 9.6 oder höher beibehalten. Wenn vor dem Upgrade keine Storage-Effizienz aktiviert wurde, ist nach einem Upgrade keine Storage-Effizienz aktiviert.</p>
 </div>
 

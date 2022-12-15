@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:23:02 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:02:56 +0000">12/14/2022</time>
     
   
 
@@ -2635,6 +2635,7 @@ Wenn Sie nur einen Cluster zur Evaluierung implementieren, können Sie diesen Sc
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen das Passwort für das Admin-Benutzerkonto besitzen.</p>
 </div>
 <div class="olist arabic">
@@ -2682,6 +2683,7 @@ exit</pre>
 <p>Sie müssen jeden Hypervisor-Host registrieren, auf dem ein ONTAP Select-Node ausgeführt wird. In diesem Rahmen authentifiziert das Deploy-Administration-Utility entweder auf dem vCenter-Server, der den Host verwaltet, oder direkt auf dem ESXi-Standalone-Host.</p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Bevor Sie einen von vCenter verwalteten Host registrieren, müssen Sie ein Management-Server-Konto für den vCenter-Server hinzufügen. Wenn der Host nicht von vCenter gemanagt wird, können Sie die Hostanmeldeinformationen im Rahmen der Registrierung des Hosts angeben. Verwenden Sie dieses Verfahren, um jeden Host hinzuzufügen.</p>
 </div>
 <div class="olist arabic">
@@ -2752,9 +2754,11 @@ exit</pre>
 <p>Sie müssen den ONTAP Select-Cluster erstellen und dann konfigurieren. Nach der Konfiguration des Clusters können Sie die einzelnen Nodes konfigurieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen festlegen, wie viele Nodes das Cluster enthält und über die zugehörigen Konfigurationsinformationen verfügen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Wenn Sie ein ONTAP Select-Cluster erstellen, generiert das Deploy-Dienstprogramm basierend auf dem von Ihnen angegeben Cluster-Namen und der Anzahl der Nodes automatisch die Node-Namen. Die Implementierung generiert auch die eindeutige Node-IDs.</p>
 </div>
 <div class="olist arabic">
@@ -2809,9 +2813,11 @@ exit</pre>
 <p>Sie müssen jeden der Nodes im ONTAP Select-Cluster konfigurieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen über die Konfigurationsinformationen für den Node verfügen. Die Lizenzdatei für die Kapazitätsschicht sollte hochgeladen und im Deploy Utility installiert werden.</p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Sie sollten diese Vorgehensweise zum Konfigurieren der einzelnen Knoten verwenden. Auf den Node in diesem Beispiel wird eine Lizenz für das Kapazitätstier angewendet.</p>
 </div>
 <div class="olist arabic">
@@ -2902,9 +2908,11 @@ exit</pre>
 <p>Sie müssen den von jedem Node im ONTAP Select-Cluster verwendeten Storage konfigurieren. Jedem Node muss immer mindestens ein Storage-Pool zugewiesen werden. Bei der Verwendung von Software-RAID muss jedem Knoten auch mindestens ein Laufwerk zugewiesen werden.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Sie müssen den Speicherpool mit VMware vSphere erstellen. Wenn Sie Software-RAID verwenden, benötigen Sie auch mindestens ein verfügbares Laufwerk.</p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie die Schritte 1 bis 4 ausführen. Bei der Verwendung von Software-RAID müssen Sie die Schritte 1 bis 6 ausführen.</p>
 </div>
 <div class="olist arabic">
@@ -3001,6 +3009,7 @@ node-name test-cluster-01 -capacity-limit 500GB</pre>
 <p>Nachdem das Cluster und die Nodes konfiguriert wurden, können Sie das Cluster implementieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>Vor der Bereitstellung eines Multi-Node-Clusters sollten Sie den Netzwerkverbindungsprüfer ausführen, um die Verbindung zwischen den Clusterknoten im internen Netzwerk zu bestätigen.</p>
 </div>
 <div class="olist arabic">
@@ -3035,6 +3044,7 @@ node-name test-cluster-01 -capacity-limit 500GB</pre>
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Nachdem Sie fertig sind</div>
 <p>Sie sollten die Konfigurationsdaten der ONTAP Select Deploy-Lösung sichern.</p>
 </div>
 </div>
