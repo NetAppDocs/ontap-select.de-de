@@ -4,7 +4,7 @@ permalink: concept_perf_general.html
 keywords: ontap select, performance 
 summary: Die Leistung variiert je nach Hardwarekonfiguration. 
 ---
-= Allgemeine Überlegungen zur Performance
+= Leistung
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,9 +16,7 @@ summary: Die Leistung variiert je nach Hardwarekonfiguration.
 [role="lead"]
 Die Leistung variiert je nach Hardwarekonfiguration.
 
-Die in diesem Abschnitt beschriebenen Performance-Werte dienen als Schätzung der Performance eines ONTAP Select Clusters und stellen keine Performance-Garantie dar.
-
-Die Performance eines ONTAP Select Clusters kann aufgrund der Eigenschaften der zugrunde liegenden Hardware und der zugrunde liegenden Konfiguration erheblich variieren. Tatsächlich ist die spezifische Hardwarekonfiguration der größte Faktor für die Performance einer bestimmten ONTAP Select Instanz. Im Folgenden sind einige der Faktoren aufgeführt, die die Performance einer bestimmten ONTAP Select-Instanz beeinflussen:
+Die Performance eines ONTAP Select Clusters kann aufgrund der Eigenschaften der zugrunde liegenden Hardware und der zugrunde liegenden Konfiguration erheblich variieren. Die spezifische Hardwarekonfiguration ist der größte Faktor für die Performance einer bestimmten ONTAP Select Instanz. Im Folgenden sind einige der Faktoren aufgeführt, die die Performance einer bestimmten ONTAP Select-Instanz beeinflussen:
 
 * *Kernfrequenz*. Im Allgemeinen ist eine höhere Frequenz vorzuziehen.
 * * Einzelsteckdose im Vergleich zu Multisockel*. ONTAP Select verwendet keine Funktionen für mehrere Sockets, doch der Hypervisor-Overhead zur Unterstützung von Konfigurationen mit mehreren Sockets verursacht gewisse Abweichungen bei der gesamten Performance.
@@ -27,4 +25,4 @@ Die Performance eines ONTAP Select Clusters kann aufgrund der Eigenschaften der 
 * *Hypervisor-Version und Patch-Level*.
 
 
-Dieser Abschnitt enthält Leistungsvergleiche nur, wenn die Tests auf der exakt gleichen Prüfbank durchgeführt wurden, um die Auswirkungen einer bestimmten Funktion hervorzuheben. Im Allgemeinen dokumentieren wir die Hardwareumgebung und führen die auf dieser Plattform mögliche Konfiguration mit höchster Performance aus.
+Details zu den Performance-Tests für ONTAP Select 9.4, 9.5 und 9.6 finden Sie im Abschnitt „_ONTAP Select Performance_“ von https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
