@@ -34,9 +34,13 @@ Die Skripte wurden mit folgenden gemeinsamen Merkmalen entworfen:
 
 Sie können mithilfe des Skripts Cluster.py einen ONTAP Select Cluster erstellen. Auf der Grundlage der CLI-Parameter und der Inhalte der JSON-Eingabedatei können Sie das Skript in Ihre Bereitstellungsumgebung wie folgt ändern:
 
+[NOTE]
+====
+* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
+* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
 
-NOTE: Ab ONTAP Select 9.10.1 wird der KVM-Hypervisor nicht mehr unterstützt, wenn ein neues ONTAP Select-Cluster bereitgestellt wird. Sie können KVM weiterhin mit einer früheren unterstützten Version verwenden.
 
+====
 * Hypervisor, den Sie je nach Implementierungsversion auf ESXI oder KVM implementieren können. Bei der Implementierung in ESXi wird der Hypervisor durch vCenter gemanagt oder es kann ein Standalone-Host sein.
 * Cluster-Größe – Sie können ein Single-Node oder Cluster mit mehreren Nodes implementieren.
 * Evaluierungslizenz oder Produktionslizenz – Sie können ein Cluster mit einer Evaluierung oder erworbenen Lizenz für die Produktion implementieren.

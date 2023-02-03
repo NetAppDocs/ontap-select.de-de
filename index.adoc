@@ -22,9 +22,13 @@ NetApp ONTAP Select ist eine softwaredefinierte Storage-Appliance, die Sie auf e
 * link:reference_new_ots.html["Neuerungen in dieser Version"]
 
 
+[NOTE]
+====
+* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
+* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
 
-NOTE: Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren. Bei ONTAP Select 9.11.1 und neueren Versionen sind alle Managementfunktionen für vorhandene KVM-Cluster und Hosts jetzt nicht mehr verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
 
+====
 
 
 == Navigieren Sie in der Produktdokumentation

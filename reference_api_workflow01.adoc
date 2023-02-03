@@ -21,7 +21,15 @@ Der Workflow für die Cluster-Erstellung unterscheidet sich in folgenden Situati
 * Der ESXi-Host wird nicht von vCenter gemanagt (Standalone-Host)
 * Im Cluster werden mehrere Nodes oder Hosts verwendet
 * Das Cluster wird in einer Produktionsumgebung mit einer erworbenen Lizenz implementiert
-* Der KVM-Hypervisor wird anstelle von VMware ESXi verwendet (KVM wird nicht mehr unterstützt, wenn ein neuer Cluster mit ONTAP Select 9.10.1 und höher erstellt wird).
+* Statt VMware ESXi wird der KVM-Hypervisor verwendet
++
+[NOTE]
+====
+** Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
+** Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
+
+
+====
 
 
 
@@ -42,7 +50,7 @@ Curl::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step01 'https://10.21.191.150/api/security/credentials'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step01 'https://10.21.191.150/api/security/credentials'
 ----
 JSON-Eingabe (Schritt 01)::
 
@@ -85,7 +93,7 @@ Curl::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step02 'https://10.21.191.150/api/hosts'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step02 'https://10.21.191.150/api/hosts'
 ----
 JSON-Eingabe (Schritt 02)::
 
@@ -131,7 +139,7 @@ Curl:: Der Abfrageparameter Node_count sollte für ein Single-Node-Cluster auf 1
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
 ----
 JSON-Eingang (Schritt 03)::
 
@@ -170,7 +178,7 @@ Curl:: Sie müssen die Cluster-ID angeben.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
 ----
 JSON-Eingang (Schritt 04)::
 
@@ -211,7 +219,7 @@ Curl:: Sie müssen die Cluster-ID angeben.
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
 ----
 Verarbeitungsart:: Synchron
 Ausgabe::
@@ -241,7 +249,7 @@ Curl:: Sie müssen die Cluster-ID und die Node-ID angeben.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
 ----
 JSON-Eingabe (Schritt 06):: Sie müssen die Host-ID angeben, auf der der ONTAP Select-Knoten ausgeführt wird.
 
@@ -279,7 +287,7 @@ Curl:: Sie müssen die Cluster-ID und die Node-ID angeben.
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
 ----
 Verarbeitungsart:: Synchron
 Ausgabe::
@@ -312,7 +320,7 @@ Curl:: Sie müssen die Cluster-ID, die Node-ID und die Netzwerk-ID angeben.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
 ----
 JSON-Eingang (Schritt 08):: Sie müssen den Namen des Netzwerks angeben.
 
@@ -345,7 +353,7 @@ Curl:: Sie müssen die Cluster-ID, die Node-ID und die Netzwerk-ID angeben.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
 ----
 JSON-Eingabe (Schritt 09):: Die Poolkapazität beträgt 2 TB.
 
@@ -383,7 +391,7 @@ Curl:: Sie müssen die Cluster-ID angeben.
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
 ----
 JSON-Eingang (Schritt 10):: Sie müssen das Passwort für das ONTAP-Administratorkonto angeben.
 

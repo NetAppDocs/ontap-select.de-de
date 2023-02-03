@@ -46,7 +46,7 @@ Unabhängig vom Hypervisor:: ONTAP Select und das ONTAP Select Deploy-Administra
 
 
 
-NOTE: Ab ONTAP Select 9.10.1 wird der KVM-Hypervisor nicht mehr unterstützt, wenn ein neues Cluster bereitgestellt wird. Sie können KVM weiterhin mit einer früheren unterstützten Version verwenden.
+NOTE: Ab ONTAP Select 9.10.1 wird der KVM-Hypervisor nicht mehr unterstützt, wenn ein neuer Cluster bereitgestellt wird. Sie können KVM weiterhin mit einer früheren unterstützten Version verwenden.
 
 Weitere Details zu den unterstützten Plattformen finden Sie in den Hypervisor-spezifischen Planungsinformationen und den Versionshinweisen.
 

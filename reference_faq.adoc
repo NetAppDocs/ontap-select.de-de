@@ -16,9 +16,13 @@ summary: Hier finden Sie Antworten auf gängige Fragen zu ONTAP Select.
 [role="lead"]
 Hier finden Sie Antworten auf häufig gestellte Fragen zu ONTAP Select.
 
+[NOTE]
+====
+* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
+* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
 
-NOTE: Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren. Bei ONTAP Select 9.11.1 und neueren Versionen sind alle Managementfunktionen für vorhandene KVM-Cluster und Hosts jetzt nicht mehr verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen. Die Fragen zu KVM sind nur auf frühere Versionen anwendbar, die KVM unterstützen.
 
+====
 
 
 == Allgemein

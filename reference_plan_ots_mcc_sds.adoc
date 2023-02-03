@@ -22,8 +22,15 @@ Vor der Bereitstellung von MetroCluster SDS muss der sicherstellen, dass die fol
 Jeder Node muss über eine Premium- oder höhere ONTAP Select-Lizenz verfügen.
 
 .Hypervisor-Plattformen
-MetroCluster SDS kann in denselben VMware ESXi und KVM-Hypervisoren implementiert werden, wie es bei einem Cluster mit zwei Nodes in einer ROBO-Umgebung unterstützt wird. Beachten Sie, dass KVM von ONTAP Select 9.10.1 und neueren Versionen nicht mehr unterstützt wird.
+MetroCluster SDS kann in denselben VMware ESXi und KVM-Hypervisoren implementiert werden, wie es bei einem Cluster mit zwei Nodes in einer ROBO-Umgebung unterstützt wird.
 
+[NOTE]
+====
+* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
+* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
+
+
+====
 .Netzwerkkonfiguration
 Zwischen den teilnehmenden Standorten ist Layer 2-Konnektivität erforderlich. Sowohl 10 GbE als auch 1 GbE werden unterstützt, einschließlich der folgenden Konfigurationen:
 
