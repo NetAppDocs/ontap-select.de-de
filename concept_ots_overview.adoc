@@ -93,6 +93,7 @@ Mehrere ONTAP Funktionen werden von ONTAP Select nicht unterstützt. In den meis
 * ONTAP-Port-Eigenschaften, die die Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, Duplex und Flusskontrolle, ändern, werden nicht unterstützt.
 * Serviceprozessoren
 * NetApp Storage Encryption-Laufwerke
+* Autonomer Schutz durch Ransomware (ARP)
 
 
 .Verwandte Informationen

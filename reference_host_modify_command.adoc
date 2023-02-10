@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: reference_host_modify_command.html 
+keywords: host modify, command, syntax, host management server 
+summary: Mit dem Befehl Host modify können Sie einen Host-Verwaltungsserver mit dieser Instanz von ONTAP Select Deploy ändern. 
+---
+= Ändern Sie einen Hostverwaltungsserver
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können das verwenden `host modify` Befehl zum Ändern eines Host-Managementservers mit dieser Instanz von ONTAP Select Deploy.
+
+
+
+== Syntax
+
+`host modify [-help] [-foreground] -name _name_ -mgmt-server _management_server_ [-username _username_]`
+
+
+
+== Erforderliche Parameter
+
+[cols="35,65"]
+|===
+
+
+| Parameter | Beschreibung 
+
+
+ a| 
+`-name _name_`
+ a| 
+Die IP-Adresse oder der FQDN des Hosts, den Sie ändern möchten.
+
+
+
+ a| 
+`-mgmt-server _management_server_`
+ a| 
+Die IP-Adresse oder der FQDN des Hostverwaltungsservers, der auf den Host eingestellt werden soll. Geben Sie „-“ (Bindestrich) an, um die Einstellung des Verwaltungsservers vom Host zu aufheben. Die Anmeldeinformationen für diesen Verwaltungsserver müssen hinzugefügt werden, bevor dieser Host mit dem registriert wird  `credential add` Befehl.
+
+|===
+
+
+== Optionale Parameter
+
+[cols="35,65"]
+|===
+
+
+| Parameter | Beschreibung 
+
+
+ a| 
+`-help`
+ a| 
+Zeigt die Hilfemeldung an.
+
+
+
+ a| 
+`-foreground`
+ a| 
+Dieser Parameter steuert das Verhalten langjähriger Befehle. Wenn gesetzt, wird der Befehl im Vordergrund ausgeführt, und Ereignismeldungen im Zusammenhang mit dem Vorgang werden angezeigt, sobald sie auftreten.
+
+
+
+ a| 
+`-username _username_`
+ a| 
+Der Benutzername, der Zugriff auf diesen Host hat. Dies ist nur erforderlich, wenn der Host nicht von einem Management-Server gemanagt wird (d. h. ein von einem vCenter verwalteter ESX Host).
+
+|===

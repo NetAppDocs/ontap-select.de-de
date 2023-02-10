@@ -81,7 +81,7 @@ Geben Sie bei der entsprechenden Aufforderung das Kennwort für das Administrato
 
 
 
-== Hinzufügen der ESXi-Hypervisor-Hosts
+== Hinzufügen von ESXi-Hypervisor-Hosts
 
 Sie müssen jeden Hypervisor-Host registrieren, auf dem ein ONTAP Select-Node ausgeführt wird. In diesem Rahmen authentifiziert das Deploy-Administration-Utility entweder auf dem vCenter-Server, der den Host verwaltet, oder direkt auf dem ESXi-Standalone-Host.
 
@@ -106,7 +106,7 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 ** Registrieren eines eigenständigen Hosts, der nicht von vCenter gemanagt wird:
 `host register -name <FQDN|IP> -hypervisor-type ESX -username ESX_USERNAME`
 ** Registrieren eines von vCenter gemanagten Hosts:
-`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN| IP>`
+`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
 Beispiel
 

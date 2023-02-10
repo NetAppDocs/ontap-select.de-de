@@ -13,7 +13,11 @@ sidebar:
   - title: ONTAP Select Dokumentation
     url: "/index.html"
   - title: Versionshinweise
-    url: "/reference_release_notes.html"
+    entries:
+    - title: Versionshinweise zu ONTAP Select
+      url: "/reference_release_notes.html"
+    - title: Was ist neu
+      url: "/reference_new_ots.html"
   - title: Konzepte
     entries:
     - title: Produktübersicht
@@ -294,6 +298,8 @@ sidebar:
       entries:
       - title: ESXi auf 6.5 und höher aktualisieren
         url: "/task_cli_upgrade_esxi65.html"
+      - title: Ändern Sie einen Hostverwaltungsserver
+        url: "/reference_host_modify_command.html"
     - title: Utility bereitstellen
       entries:
       - title: Aktualisieren einer Deploy-Instanz
