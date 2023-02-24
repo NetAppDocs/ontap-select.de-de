@@ -98,7 +98,7 @@ Wenn jeder Host zwei 10-GB-Ports enthält, sollten Sie den vSwitch wie folgt kon
 
 * Konfigurieren Sie einen vSwitch und weisen Sie dem vSwitch beide Ports zu. Erstellen Sie mithilfe der beiden Ports ein NIC-Team.
 * Legen Sie die Lastausgleichsrichtlinie auf „Weiterleiten basierend auf der ursprünglichen virtuellen Port-ID“ fest.
-* Markieren Sie beide Adapter als „aktiv“.
+* Markieren Sie beide Adapter als „aktiv“ oder markieren Sie einen Adapter als „aktiv“ und den anderen als „Standby“.
 * Setzen Sie die Einstellung „Failback“ auf „Ja“.image:CHK_04.jpg["VSwitch-Eigenschaften)"]
 * Konfigurieren Sie den vSwitch zur Verwendung von Jumbo Frames (9000 MTU).
 * Konfigurieren Sie eine Portgruppe auf dem vSwitch für den internen Verkehr (ONTAP-intern):

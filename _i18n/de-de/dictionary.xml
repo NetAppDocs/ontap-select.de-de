@@ -256,7 +256,6 @@
   <block id="eda37297768fb66316ec0c97afd29213" category="paragraph">Wenn jeder Host zwei 10-GB-Ports enthält, sollten Sie den vSwitch wie folgt konfigurieren:</block>
   <block id="a86f2765e738940e7dd8fdf6da677fd5" category="list-text">Konfigurieren Sie einen vSwitch und weisen Sie dem vSwitch beide Ports zu. Erstellen Sie mithilfe der beiden Ports ein NIC-Team.</block>
   <block id="bfb9321c8431589faff7f47c47138df7" category="list-text">Legen Sie die Lastausgleichsrichtlinie auf „Weiterleiten basierend auf der ursprünglichen virtuellen Port-ID“ fest.</block>
-  <block id="4392037ca9aa84394b086d1268c59a3b" category="list-text">Markieren Sie beide Adapter als „aktiv“.</block>
   <block id="0cc1ebaa405436d568cee576cc2d2503" category="inline-image-macro">VSwitch-Eigenschaften)</block>
   <block id="fee017d680804978d6f31a0149d3356f" category="list-text">Setzen Sie die Einstellung „Failback“ auf „Ja“.<block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0bd1bd6c1c4f8c07bba0ee34ba53b4b3" category="list-text">Konfigurieren Sie den vSwitch zur Verwendung von Jumbo Frames (9000 MTU).</block>
@@ -1535,7 +1534,6 @@
   <block id="5bc075cee240a70af54270621d93765c" category="list-text">SnapVault</block>
   <block id="a701f5d044348085ee4f97fef6636845" category="list-text">FlexClone</block>
   <block id="82ef718f4ebe0c276814ee3d51e33361" category="list-text">SnapRestore</block>
-  <block id="c4b8c29f448328e82ce27062b5fd9c28" category="list-text">NetApp Volume Encryption</block>
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">Deduplizierung und Komprimierung</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">ONTAP Mandantenfähigkeit</block>
   <block id="1716834171e243de0f898a67621b6624" category="list-text">ONTAP S3</block>
@@ -3571,4 +3569,5 @@
   <block id="6766f7a2e53a40ab3efd050bec084512" category="paragraph">Der Benutzername, der Zugriff auf diesen Host hat. Dies ist nur erforderlich, wenn der Host nicht von einem Management-Server gemanagt wird (d. h. ein von einem vCenter verwalteter ESX Host).</block>
   <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">Autonomer Schutz durch Ransomware (ARP)</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Was ist neu</block>
+  <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">Markieren Sie beide Adapter als „aktiv“ oder markieren Sie einen Adapter als „aktiv“ und den anderen als „Standby“.</block>
 </blocks>
