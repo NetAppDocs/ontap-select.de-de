@@ -189,7 +189,11 @@ sidebar:
       - title: Weitere Hochverfügbarkeitsfunktionen
         url: "/concept_ha_other.html"
     - title: Leistung
-      url: "/concept_perf_general.html"
+      entries:
+      - title: Performance-Überblick
+        url: "/concept_perf_general.html"
+      - title: Performance von ONTAP Select 9.6
+        url: "/concept_perf_premium_ha_direct_ssd_96.html"
   - title: Integration mit vCenter
     entries:
     - title: Erste Schritte
