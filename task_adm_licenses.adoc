@@ -155,3 +155,9 @@ Das Lizenz-Upgrade für den Cluster kann mehrere Minuten dauern. Lassen Sie den 
 
 .Nachdem Sie fertig sind
 Die ursprünglich jedem Node für die Evaluierungsimplementierung zugewiesenen 20-stelligen Node-Seriennummern werden durch die neunstelligen Seriennummern der für das Upgrade verwendeten Produktionslizenzen ersetzt.
+
+
+
+== Verwalten einer abgelaufenen Capacity Pool-Lizenz
+
+Im Allgemeinen passiert nichts, wenn eine Lizenz abläuft. Sie können jedoch keine andere Lizenz installieren, da die Nodes der abgelaufenen Lizenz zugeordnet sind. Bis Sie die Lizenz erneuern, sollten Sie _Not_ alles tun, was das Aggregat offline bringen würde, wie zum Beispiel einen Neustart oder Failover-Vorgang. Es wird empfohlen, die Lizenzerneuerung zu beschleunigen.
