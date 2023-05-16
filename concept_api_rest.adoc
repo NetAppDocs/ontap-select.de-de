@@ -20,7 +20,7 @@ Representational State Transfer (REST) ist ein Stil für die Erstellung von vert
 
 == Architektur und klassische Einschränkungen
 
-REST wurde formell von Roy Fielding in seinem PhD artikuliert https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["Dissertation"] An der UC Irvine im Jahr 2000. Es definiert einen Architekturstil durch eine Reihe von Einschränkungen, die gemeinsam Web-basierte Anwendungen und die zugrunde liegenden Protokolle verbessert haben. Durch diese Einschränkungen wird eine RESTful Web Services-Applikation basierend auf einer Client-/Serverarchitektur mit einem statusfreien Kommunikationsprotokoll hergestellt.
+REST wurde formell von Roy Fielding in seinem PhD artikuliert https://["Dissertation"] An der UC Irvine im Jahr 2000. Es definiert einen Architekturstil durch eine Reihe von Einschränkungen, die gemeinsam Web-basierte Anwendungen und die zugrunde liegenden Protokolle verbessert haben. Durch diese Einschränkungen wird eine RESTful Web Services-Applikation basierend auf einer Client-/Serverarchitektur mit einem statusfreien Kommunikationsprotokoll hergestellt.
 
 
 

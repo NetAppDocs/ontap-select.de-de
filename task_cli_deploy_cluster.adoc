@@ -34,7 +34,7 @@ Wenn Sie Software-RAID verwenden, müssen Sie einen Speicherpool für die System
 
 === Verfügbare ONTAP Select-Versionen
 
-Das Deploy Administration Utility enthält eine einzige Version von ONTAP Select. Wenn Sie Cluster mit einer früheren Version von ONTAP Select implementieren möchten, müssen Sie zuerst das ONTAP Select-Image der Deploy-Instanz hinzufügen. Siehe link:task_adm_deploy_image_add.html["Hinzufügen eines ONTAP Select Images zur Implementierung"] Finden Sie weitere Informationen.
+Das Deploy Administration Utility enthält eine einzige Version von ONTAP Select. Wenn Sie Cluster mit einer früheren Version von ONTAP Select implementieren möchten, müssen Sie zuerst das ONTAP Select-Image der Deploy-Instanz hinzufügen. Siehe link:task_cli_deploy_image_add.html["Hinzufügen eines ONTAP Select Images zur Implementierung"] Finden Sie weitere Informationen.
 
 
 
