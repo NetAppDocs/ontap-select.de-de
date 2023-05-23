@@ -47,7 +47,7 @@ perfstat8 –i N,m -t <sample time in minutes> --verbose --nodes=<filer IP> --di
 http://<Deploy-IP-Address/api/ui
 ----
 
-NOTE: Die API v3-Version ist nicht abwärtskompatibel mit der vorherigen Version der API. Ein neues API-Handbuch finden Sie auf https://["Field Portal"].
+NOTE: Die API v3-Version ist nicht abwärtskompatibel mit der vorherigen Version der API. Ein neues API-Handbuch finden Sie auf https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694["Field Portal"].
 
 .Kann die ONTAP Select VM mit Snapshots von VMware oder anderen Drittanbietern gesichert werden?
 Nein Die ONTAP Select VM verwendet unabhängige persistente Laufwerke, die von VMware-basierten Snapshots ausgeschlossen sind. Die einzige unterstützte Methode zur Sicherung von ONTAP Select ist SnapMirror, SnapVault oder SVM DR (falls zutreffend).

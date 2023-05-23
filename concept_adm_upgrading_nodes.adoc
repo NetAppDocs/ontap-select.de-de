@@ -27,17 +27,17 @@ Auf hoher Ebene sollten Sie die folgenden Schritte verwenden, um einen vorhanden
 
 . Navigieren Sie zu der Download-Seite auf der NetApp Support Site.
 +
-https://["NetApp Support-Downloads"^]
+https://mysupport.netapp.com/site/downloads["NetApp Support-Downloads"^]
 
 . Klicken Sie auf *ONTAP Select Knoten-Upgrade*.
 . Wählen Sie das entsprechende Upgrade-Image aus, und laden Sie es herunter, um alle Aufforderungen bei Bedarf zu beantworten.
 . Weitere Informationen und erforderliche Verfahren vor dem Upgrade eines ONTAP Select-Knotens sind in den Versionshinweisen zu finden. Sie können die Versionshinweise für Ihre ONTAP Select-Version auf der Produktbibliotheksseite aufrufen.
 +
-https://["ONTAP Select Produktbibliothek"^]
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["ONTAP Select Produktbibliothek"^]
 
 . Aktualisieren Sie den ONTAP Select-Knoten mithilfe der standardmäßigen ONTAP-Upgrade-Verfahren für die ONTAP Select-Upgrade-Datei.
 +
-https://["ONTAP 9-Dokumentation"^]
+https://docs.netapp.com/us-en/ontap/["ONTAP 9-Dokumentation"^]
 
 
 
