@@ -23,6 +23,9 @@ Sie können ein vorhandenes Deploy Utility Virtual Machine direkt über die Befe
 Stellen Sie sicher, dass Deploy nicht zur Durchführung anderer Aufgaben während des Upgrades verwendet wird. In den aktuellen Versionshinweisen finden Sie Informationen und Einschränkungen zum Upgrade des Deploy-Dienstprogramms.
 
 
+NOTE: Wenn eine Instanz des ONTAP Select Deploy Administration Utility installiert ist, sollten Sie ein Upgrade auf die aktuelle Version in Betracht ziehen. Der ONTAP Select Node und die ONTAP Select Deploy Komponente werden unabhängig voneinander aktualisiert. Siehe link:concept_adm_upgrading_nodes.html["Aktualisieren der ONTAP Select-Knoten"^] Entnehmen.
+
+
 
 == Das Upgrade-Paket wird heruntergeladen
 
@@ -54,15 +57,13 @@ Die Upgrade-Datei muss auf Ihrer lokalen Arbeitsstation verfügbar sein. Sie mü
 Diese Aufgabe beschreibt eine Methode zum Hochladen der Datei auf die virtuelle Maschine bereitstellen. Möglicherweise gibt es weitere für Ihre Umgebung geeignetere Optionen.
 
 .Schritte
-. Verwenden Sie in einer Command Shell auf Ihrer lokalen Arbeitsstation das sftp-Dienstprogramm, um die Image-Datei auf die virtuelle Maschine bereitstellen hochzuladen.
+. Verwenden Sie in einer Befehlsshell auf Ihrer lokalen Workstation das Dienstprogramm scp, um die Image-Datei auf die virtuelle Maschine bereitzustellen.
 +
 Beispiel
 
 +
 ....
-sftp admin@10.234.81.101 (provide password when prompted)
-put ONTAPdeploy2.12_upgrade.tar.gz
-exit
+scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
 ....
 
 
@@ -89,8 +90,7 @@ Beispiel
 
 +
 ....
-deploy upgrade -package-path /home/admin/
-ONTAPdeploy2.12_upgrade.tar.gz
+deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 ....
 
 
