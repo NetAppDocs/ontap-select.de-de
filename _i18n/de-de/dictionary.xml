@@ -2412,7 +2412,6 @@
   <block id="87f55f3b9d86ff28fa332ac74ae68458" category="paragraph"><block ref="87f55f3b9d86ff28fa332ac74ae68458" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9f8405ace72665fee032686e586d5366" category="summary">Nach der Bereitstellung eines ONTAP Select Clusters können Sie mithilfe des Deploy Administration Utility den Typ der Hypervisor-Instanz der Nodes aktualisieren.</block>
   <block id="a81401e9911e6ba18e35f42e304aeafc" category="doc">Ändern der Größe der ONTAP Select-Cluster-Nodes</block>
-  <block id="da8c60eda9de027a78518654141ef28e" category="admonition">Sie können die Größe der Cluster-Nodes nur dann vornehmen, wenn das Lizenzmodell für Kapazitätsstufen verwendet wird. Die Größe von ONTAP Select-Nodes mit einer Lizenz für Kapazitäts-Pools kann nicht geändert werden.</block>
   <block id="c491351d31e9a04b74d8cf6b5f75e570" category="paragraph">Der Cluster muss den Status „Online“ aufweisen.</block>
   <block id="090def24fea0489fb8d3e01bab4bd447" category="paragraph">In dieser Aufgabe wird beschrieben, wie die Webbenutzeroberfläche bereitstellen verwendet wird. Sie können auch die CLI Deploy verwenden, um die Größe der Instanz zu ändern. Unabhängig davon, welche Schnittstelle Sie verwenden, kann die Zeit für die Größenänderung-Operation erheblich variieren, basierend auf mehreren Faktoren und kann eine längere Zeit in Anspruch nehmen. Sie können die Größe eines Node nur größer anpassen.</block>
   <block id="0a34214ca44126aa0cdfec7af4a58c66" category="list-text">Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus der Liste aus.</block>
@@ -3646,4 +3645,7 @@ Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfer
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">Manipulationssichere Snapshot Kopien</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM-Migration</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
+  <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">Sie können die Anpassung der Cluster-Nodes durchführen, wenn Sie das Lizenzmodell für die Kapazitäts-Tiers und das Lizenzmodell für die Kapazitäts-Pools verwenden.</block>
+  <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">DIE AKTUALISIERUNG DES OTS-Bereitstellungs-Clusters schlägt mit einem Fehler fehl</block>
+  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">Durch das Einschränken von Rollen und Berechtigungen für das ONTAP-Administratorkonto kann die Fähigkeit von ONTAP Select Deploy zum Verwalten des Clusters eingeschränkt werden. Weitere Informationen finden Sie im KB-Artikel <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>.</block>
 </blocks>

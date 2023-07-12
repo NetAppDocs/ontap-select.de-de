@@ -18,6 +18,9 @@ Sie sollten den anfänglichen Status eines Clusters beachten, nachdem es impleme
 
 Ein ONTAP Select Cluster weist nach dem Erstellen verschiedene Merkmale auf.
 
+
+NOTE: Durch das Einschränken von Rollen und Berechtigungen für das ONTAP-Administratorkonto kann die Fähigkeit von ONTAP Select Deploy zum Verwalten des Clusters eingeschränkt werden. Weitere Informationen finden Sie im KB-Artikel link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["DIE AKTUALISIERUNG DES OTS-Bereitstellungs-Clusters schlägt mit einem Fehler fehl"^].
+
 .LIFs
 Es sind zwei Arten von vom Kunden angegebenen LIFs zugewiesen:
 
