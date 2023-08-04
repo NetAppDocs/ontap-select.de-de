@@ -131,7 +131,10 @@ Nach dem Erstellen oder Implementieren eines Clusters sollten Sie die ONTAP Sele
 
 === Gespiegelte Aggregate
 
-Obwohl das gespiegelte Aggregat vorhanden ist, um eine aktuelle (RPO 0)-Kopie des primären Aggregats bereitzustellen, ist es wichtig, dass im primären Aggregat nicht wenig freier Speicherplatz verfügbar ist. Ein geringer Speicherplatz im primären Aggregat kann dazu führen, dass ONTAP die gemeinsame Kopie von NetApp Snapshot™, die als Basis für das Storage-Giveback verwendet wurde, löscht. Dies funktioniert wie entwickelt, um Client-Schreibvorgänge zu ermöglichen. Da eine gemeinsame Snapshot Kopie beim Failback fehlt, muss der ONTAP Select Node jedoch eine vollständige Baseline vom gespiegelten Aggregat durchführen. In einer Umgebung ohne Shared-Ressourcen kann dieser Vorgang viel Zeit in Anspruch nehmen. Eine gute Ausgangsbasis für das Monitoring der aggregierten Speicherplatzauslastung ist um bis zu 85 %.
+Obwohl das gespiegelte Aggregat vorhanden ist, um eine aktuelle (RPO 0)-Kopie des primären Aggregats bereitzustellen, ist es wichtig, dass im primären Aggregat nicht wenig freier Speicherplatz verfügbar ist. Eine Platzbedingung im primären Aggregat kann dazu führen, dass ONTAP die gemeinsame Snapshot Kopie löscht, die als Basis für das Storage-Giveback verwendet wurde. Dies funktioniert wie entwickelt, um Client-Schreibvorgänge zu ermöglichen. Da eine gemeinsame Snapshot Kopie beim Failback fehlt, muss der ONTAP Select Node jedoch eine vollständige Baseline vom gespiegelten Aggregat durchführen. In einer Umgebung ohne Shared-Ressourcen kann dieser Vorgang viel Zeit in Anspruch nehmen.
+
+
+NOTE: Es wird empfohlen, dass Sie für gespiegelte Aggregate mindestens 20 % freien Speicherplatz freihalten, um so optimale Storage Performance und Verfügbarkeit zu erzielen. Obwohl die Empfehlung 10 % für nicht gespiegelte Aggregate ist, können die zusätzlichen 10 % des Speicherplatzes vom Dateisystem verwendet werden, um inkrementelle Änderungen aufzunehmen. Inkrementelle Änderungen erhöhen die Speicherplatzauslastung für gespiegelte Aggregate aufgrund der Snapshot-basierten Architektur von ONTAP, die auf dem Copy-on-Write basiert. Die Nichteinhaltung dieser Best Practices kann sich negativ auf die Performance auswirken.
 
 
 

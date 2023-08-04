@@ -65,7 +65,7 @@ Das 2-Node-Cluster wird als Cluster definiert, für das sich beide Nodes im selb
 
 MetroCluster SDS mit zwei Nodes ist als Cluster definiert, für das Nodes physisch voneinander getrennt sind (unterschiedliche Räume, unterschiedliche Gebäude und verschiedene Datacenter), um mehr als 300 Millionen. Darüber hinaus sind die Uplink-Verbindungen jedes Knotens mit separaten Netzwerk-Switches verbunden. Für MetroCluster SDS ist keine dedizierte Hardware erforderlich. Die Umgebung sollte jedoch die Anforderungen an Latenz (maximal 5 ms für RTT und 5 ms für Jitter, insgesamt 10 ms) und physische Distanz (maximal 10 km) erfüllen.
 
-MetroCluster SDS ist eine Premium-Funktion und erfordert eine Premium-Lizenz. Die Premium-Lizenz unterstützt die Erstellung kleiner und mittlerer VMs sowie von HDD- und SSD-Medien.
+MetroCluster SDS ist eine Premiumfunktion und erfordert eine Premium-Lizenz oder eine Premium-XL-Lizenz. Die Premium-Lizenz unterstützt die Erstellung kleiner und mittlerer VMs sowie von HDD- und SSD-Medien. Darüber hinaus unterstützt die Premium XL Lizenz auch die Erstellung von NVMe-Laufwerken.
 
 
 NOTE: MetroCluster SDS wird sowohl von lokalem Attached Storage (das) als auch von Shared Storage (vNAS) unterstützt. Beachten Sie, dass vNAS Konfigurationen normalerweise eine höhere Latenz haben, da das Netzwerk zwischen der ONTAP Select VM und Shared Storage besteht. MetroCluster-SDS-Konfigurationen müssen unter Berücksichtigung der Shared-Storage-Latenz eine Latenz von maximal 10 ms zwischen den Nodes ermöglichen. In anderen Worten, es ist nicht ausreichend, die Latenz zwischen den Select VMs zu messen, da die gemeinsame Storage-Latenz für diese Konfigurationen nicht zu vernachlässigen ist.
