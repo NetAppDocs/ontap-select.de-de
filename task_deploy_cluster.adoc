@@ -55,7 +55,7 @@ Startseite „erste Schritte“:: Die erste Seite *erste Schritte mit ONTAP Sele
 +
 --
 * Fügen Sie Lizenzen hinzu
-* Fügen Sie dem Bestand Host hinzu
+* Hosts zur Bestandsaufnahme hinzufügen
 * Erstellen eines Clusters
 * Netzwerk-Vorabprüfung
 * Implementieren des Clusters
@@ -73,17 +73,23 @@ Nach Bereitstellung eines Clusters:: Sie sollten die Konfigurationsdaten der ONT
 
 
 
-== Erstellen eines Single-Node-Clusters
+== Erstellen eines Single-Node- oder Multi-Node-Clusters
 
-Über die ONTAP Select Deploy Web-Benutzeroberfläche können Sie ein Single-Node ONTAP Select Cluster implementieren.
+Sie können ein ONTAP Select Cluster mit einem Node oder mehreren Nodes über die Web-Benutzeroberfläche von ONTAP Select Deploy bereitstellen.
 
 .Bevor Sie beginnen
-Siehe link:task_deploy_cluster.html#before-you-begin["Bevor Sie beginnen"] So bereiten Sie die Implementierung des Clusters vor. Die Implementierungsadministration muss installiert und zu Beginn konfiguriert sein (Passwort, AutoSupport, vCenter).
+Siehe link:task_deploy_cluster.html#before-you-begin["Bevor Sie beginnen"] So bereiten Sie die Implementierung des Clusters vor. Die Deploy Administration muss installiert und zunächst konfiguriert sein (Passwort, AutoSupport und vCenter).
 
 .Über diese Aufgabe
-Für eine Implementierung in der Produktion wird ein ONTAP Select Cluster mit einem Node erstellt.
+Ein ONTAP Select-Cluster mit einem oder mehreren Nodes wird für eine produktive Implementierung erstellt.
 
 .Schritte
+Die folgenden Schritte hängen davon ab, ob Sie ein Single-Node-Cluster oder ein Multi-Node-Cluster erstellen möchten.
+
+[role="tabbed-block"]
+====
+.Single-Node-Cluster
+--
 . Melden Sie sich über die Webschnittstelle mit dem Administratorkonto (admin) beim Deploy Utility an.
 . Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, bestätigen Sie, dass Sie die Konfigurationsvoraussetzungen erfüllt haben, und klicken Sie auf *OK*.
 . Wenn die Startseite des *erste Schritte*-Clusters nicht angezeigt wird, klicken Sie auf image:icon_question_mark.gif["Fragezeichen"] Klicken Sie oben auf der Seite auf *erste Schritte*.
@@ -126,9 +132,61 @@ Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.
 
 +
 
-TIP: Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen wird, wird das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht registriert. In diesem Fall können Sie mit dem Passwort _change123_ auf die Managementoberfläche für das ONTAP Select-Cluster zugreifen.
+TIP: Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen werden kann, ist das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht registriert. In diesem Fall können Sie mit dem Passwort _change123_ auf die Managementoberfläche für das ONTAP Select-Cluster zugreifen.
 
 
 
+--
+.Multi-Node-Cluster
+--
+. Melden Sie sich über die Webschnittstelle mit dem Administratorkonto (admin) beim Deploy Utility an.
+. Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, bestätigen Sie, dass Sie die Konfigurationsvoraussetzungen erfüllt haben, und klicken Sie auf *OK*.
+. Wenn die Startseite des *erste Schritte*-Clusters nicht angezeigt wird, klicken Sie auf image:icon_question_mark.gif["Fragezeichen"] Klicken Sie oben auf der Seite auf *erste Schritte*.
+. Klicken Sie auf der Seite *erste Schritte* auf *Hochladen* und wählen Sie eine Lizenz auf Ihrer lokalen Workstation aus, und klicken Sie auf *Öffnen*, um die Lizenz hochzuladen. Wiederholen Sie den Vorgang, um eine zweite Lizenz hinzuzufügen.
+. Klicken Sie auf *Aktualisieren* und bestätigen Sie, dass die Lizenzen hinzugefügt wurden.
+. Klicken Sie auf *Weiter*, um zwei Hypervisor-Hosts hinzuzufügen, und klicken Sie dann auf *Hinzufügen*.
++
+Sie können die ESXi-Hosts direkt hinzufügen oder eine Verbindung zu einem vCenter-Server herstellen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.
+
+. Klicken Sie auf *Aktualisieren* und bestätigen Sie, dass der *Typ*-Wert für den Host *ESX* lautet.
++
+Alle von Ihnen eingegebenen Kontoanmeldeinformationen werden der Anmeldeinformationsdatenbank hinzugefügt.
+
+. Klicken Sie auf *Weiter*, um den Cluster-Erstellungsprozess zu starten.
+. Wählen Sie im Abschnitt *Cluster Details* *2 Node Cluster* für die *Cluster Größe* aus, geben Sie alle erforderlichen Informationen zur Beschreibung der Cluster ein und klicken Sie auf *done*.
+. Geben Sie unter *Node Setup* die Node-Management-IP-Adressen an und wählen Sie die Lizenzen für jeden Knoten aus. Sie können bei Bedarf eine neue Lizenz hochladen. Sie können bei Bedarf auch die Node-Namen ändern.
+. Geben Sie die Konfiguration *Hypervisor* und *Network* an.
++
+Es gibt drei Node-Konfigurationen, die die Größe der virtuellen Maschine und die verfügbaren Funktionen definieren. Diese Instanztypen werden von den Standard-, Premium- und Premium-XL-Angeboten der erworbenen Lizenz unterstützt. Die für die Nodes ausgewählte Lizenz muss mit dem Instanztyp übereinstimmen oder diesen überschreiten.
+
++
+Wählen Sie die Hypervisor-Hosts sowie die Management-, Daten- und internen Netzwerke aus.
+
+. Geben Sie die *Storage*-Konfiguration an und klicken Sie auf *Fertig*.
++
+Sie können die Laufwerke basierend auf Ihrer Plattformlizenz und Hostkonfiguration auswählen.
+
+. Überprüfen und bestätigen Sie die Konfiguration des Clusters.
++
+Sie können die Konfiguration ändern, indem Sie auf klicken image:icon_pencil.gif["Bearbeiten"] Im entsprechenden Abschnitt.
+
+. Klicken Sie auf *Weiter* und führen Sie die Netzwerkvorprüfung durch, indem Sie auf *Ausführen* klicken. Dadurch wird überprüft, ob das für den ONTAP-Cluster-Datenverkehr ausgewählte interne Netzwerk ordnungsgemäß funktioniert.
+. Klicken Sie auf *Weiter* und geben Sie das ONTAP-Administratorpasswort ein.
+. Klicken Sie auf *Cluster erstellen*, um den Cluster-Erstellungsprozess zu starten und klicken Sie dann im Popup-Fenster auf *OK*.
++
+Die Erstellung des Clusters kann bis zu 45 Minuten dauern.
+
+. Überwachen Sie den Cluster-Erstellungsprozess in mehreren Schritten, um zu bestätigen, dass das Cluster erfolgreich erstellt wurde.
++
+Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.
+
++
+
+TIP: Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen werden kann, ist das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht registriert. In diesem Fall können Sie mit dem Passwort _change123_ auf die Managementoberfläche für das ONTAP Select-Cluster zugreifen.
+
+
+
+--
+====
 .Nachdem Sie fertig sind
-Sie sollten überprüfen, ob die ONTAP Select AutoSupport Funktion konfiguriert ist und die ONTAP Select Implementierungskonfigurationsdaten sichern.
+Vergewissern Sie sich, dass die ONTAP Select AutoSupport-Funktion konfiguriert ist, und sichern Sie dann die Konfigurationsdaten von ONTAP Select Deploy.

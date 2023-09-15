@@ -437,7 +437,6 @@
   <block id="b87008505cc6fe630b46cc1e948e36f1" category="list-text">Startseite „erste Schritte“</block>
   <block id="8a8160f2e850747bb7fabd6819906b08" category="list-text">Die erste Seite *erste Schritte mit ONTAP Select Deploy* führt Sie durch den mehrstufigen Prozess zur Erstellung eines Clusters. Es gibt fünf Hauptschritte, darunter:</block>
   <block id="fb98e8390277794afc419e842f4bccd9" category="list-text">Fügen Sie Lizenzen hinzu</block>
-  <block id="d60f56bb9d55a941e09cc5c959de9a36" category="list-text">Fügen Sie dem Bestand Host hinzu</block>
   <block id="f1783cedf199ea90c1cf0ff538262716" category="list-text">Erstellen eines Clusters</block>
   <block id="7b8833fb04a6b84fadcfe679b52ce68b" category="list-text">Netzwerk-Vorabprüfung</block>
   <block id="caed535f5a1e318fff54ea6d8139100c" category="list-text">Implementieren des Clusters</block>
@@ -447,9 +446,6 @@
   <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">Nach Bereitstellung eines Clusters</block>
   <block id="a1b2fc65ee3382a95ecb29d66110e2ad" category="list-text">Sie sollten die Konfigurationsdaten der ONTAP Select Deploy-Lösung sichern.</block>
   <block id="1457153d67772d3f9c4bf60a210172dc" category="section-title">Erstellen eines Single-Node-Clusters</block>
-  <block id="3a4abd9eeeda413a4bf9956a7ec34228" category="paragraph">Über die ONTAP Select Deploy Web-Benutzeroberfläche können Sie ein Single-Node ONTAP Select Cluster implementieren.</block>
-  <block id="5f3026f83f6c32eec05d90d578a5e7ea" category="paragraph">Siehe <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> So bereiten Sie die Implementierung des Clusters vor. Die Implementierungsadministration muss installiert und zu Beginn konfiguriert sein (Passwort, AutoSupport, vCenter).</block>
-  <block id="25ba26f357a31d39960ce1746018e712" category="paragraph">Für eine Implementierung in der Produktion wird ein ONTAP Select Cluster mit einem Node erstellt.</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">Melden Sie sich über die Webschnittstelle mit dem Administratorkonto (admin) beim Deploy Utility an.</block>
   <block id="f419e9f320490f02ec41e0cead19dc2a" category="list-text">Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, bestätigen Sie, dass Sie die Konfigurationsvoraussetzungen erfüllt haben, und klicken Sie auf *OK*.</block>
   <block id="ba7cc5d6bb74cdd0aaa5fe5a9bc4b4d3" category="list-text">Wenn die Startseite des *erste Schritte*-Clusters nicht angezeigt wird, klicken Sie auf <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> Klicken Sie oben auf der Seite auf *erste Schritte*.</block>
@@ -474,8 +470,6 @@
   <block id="18c27fdda3b31de582a5c418705a0eab" category="paragraph">Es kann bis zu 30 Minuten dauern, bis der Cluster erstellt wurde.</block>
   <block id="aa28e7538205e834e26c77f5630f8893" category="list-text">Überwachen Sie den Cluster-Erstellungsprozess mit mehreren Schritten, um zu bestätigen, dass das Cluster erfolgreich erstellt wurde.</block>
   <block id="037cb8cf634438a48c4a376dd2eaecea" category="paragraph">Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.</block>
-  <block id="e1fdfbd988f463b21214e88021ddf580" category="admonition">Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen wird, wird das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht registriert. In diesem Fall können Sie mit dem Passwort _change123_ auf die Managementoberfläche für das ONTAP Select-Cluster zugreifen.</block>
-  <block id="d409594d71c1119a8e70a3f177e882c0" category="paragraph">Sie sollten überprüfen, ob die ONTAP Select AutoSupport Funktion konfiguriert ist und die ONTAP Select Implementierungskonfigurationsdaten sichern.</block>
   <block id="ce78ffc97df7b01d036f243f07839070" category="summary">Mit ONTAP Deployment können Sie für jeden Node in einem ONTAP Select Cluster zusätzlichen Storage hinzufügen und lizenzieren.</block>
   <block id="9d9a4fa3f8bc822652ce73f5ccc63a4e" category="paragraph">Die Storage-zusätzliche Funktionalität beim Implementieren von ONTAP bietet die einzige Möglichkeit, den zu verwaltenden Storage zu erhöhen. Zudem wird nicht das direkte Ändern der ONTAP Select VM unterstützt. Die folgende Abbildung zeigt das „+“-Symbol, das den Speicher-Add-Assistenten initiiert.</block>
   <block id="c3a3966f7642611a1f29ac32ece5424a" category="inline-image-macro">Details zu Clustern und Nodes</block>
@@ -3110,9 +3104,6 @@
   <block id="2e47d1812c96cee9e86c118c72c7c736" category="paragraph">Bei der Implementierung eines ONTAP Select-Clusters auf dem VMware ESXi Hypervisor können Sie die durch ONTAP Select bereitgestellte Software-RAID-Funktion anstelle eines lokalen Hardware-RAID-Controllers nutzen. Vor der Bereitstellung eines Clusters mithilfe von Software-RAID müssen verschiedene Anforderungen und Einschränkungen beachtet werden.</block>
   <block id="a1a264e616e24563d4b8f8b5795ea403" category="section-title">Allgemeine Anforderungen</block>
   <block id="724e52bc94bfb8a8a2ac7b6bc981655c" category="paragraph">Die Umgebung für eine Software-RAID-Implementierung auf VMware ESXi muss die folgenden zentralen Anforderungen erfüllen:</block>
-  <block id="935b367303b47c19b9b62a47057f5d6c" category="list-text">VMware ESXi-Version:</block>
-  <block id="0ac68f79bc5b55360d35600434d8da5f" category="list-text">ESXi 6.5 U2 (Build 8294253) oder höher</block>
-  <block id="69322b2256be20f40d4399494e6e5d1d" category="list-text">ESXi 6.7 GA (Build 8169922) oder höher</block>
   <block id="7d92dddf3cdeb831e5c777dcd6e3edb1" category="list-text">ONTAP Select 9.5 oder höher</block>
   <block id="cfc85f4f7df067874a4ebae923cfada5" category="list-text">ONTAP Select Implementierung 2.10 oder höher</block>
   <block id="2e5d3e181c7fbda932e522084a6325f4" category="list-text">Nur neue ONTAP Select Cluster</block>
@@ -3649,4 +3640,27 @@ Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfer
   <block id="95e5f2861efdf3db12f1838f4cf18a88" category="doc">Konfiguration von VMware vSphere vSwitch</block>
   <block id="ced1d13b7a0a78acdbaf6a002e0e0063" category="paragraph">Server-Anbieter wissen, dass Kunden verschiedene Anforderungen haben und verschiedene Möglichkeiten haben, ist entscheidend. Beim Erwerb eines physischen Servers stehen daher zahlreiche Optionen zur Verfügung, um die Netzwerkverbindung zu ermitteln. Die meisten Standardsysteme werden mit verschiedenen NIC-Optionen ausgeliefert, die Single-Port- und Multiport-Optionen in unterschiedlichen Variationen von Geschwindigkeit und Durchsatz bieten. Ab ONTAP Select 9.8 werden 25-GB/s- und 40-GB/s-NIC-Adapter mit VMware ESX unterstützt.</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">Konfiguration von VMware vSphere vSwitch</block>
+  <block id="8562cdbdbba76b21c630f16efd9cf0cd" category="list-text">Hosts zur Bestandsaufnahme hinzufügen</block>
+  <block id="747777855f9e01e88df9a2f37da41753" category="section-title">Erstellen eines Single-Node- oder Multi-Node-Clusters</block>
+  <block id="dd2d1f8e815a8070f320c0a14ed24f71" category="paragraph">Sie können ein ONTAP Select Cluster mit einem Node oder mehreren Nodes über die Web-Benutzeroberfläche von ONTAP Select Deploy bereitstellen.</block>
+  <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">Siehe <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> So bereiten Sie die Implementierung des Clusters vor. Die Deploy Administration muss installiert und zunächst konfiguriert sein (Passwort, AutoSupport und vCenter).</block>
+  <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">Ein ONTAP Select-Cluster mit einem oder mehreren Nodes wird für eine produktive Implementierung erstellt.</block>
+  <block id="688b22352a3e9f8c2d13a096f7e721fb" category="paragraph">Die folgenden Schritte hängen davon ab, ob Sie ein Single-Node-Cluster oder ein Multi-Node-Cluster erstellen möchten.</block>
+  <block id="d4f87fedecd0cb118e567859f3b4f8b0" category="admonition">Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen werden kann, ist das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht registriert. In diesem Fall können Sie mit dem Passwort _change123_ auf die Managementoberfläche für das ONTAP Select-Cluster zugreifen.</block>
+  <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">Multi-Node-Cluster</block>
+  <block id="1c9615c8466b4b5438d388b4200a58b4" category="list-text">Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, bestätigen Sie, dass Sie die Konfigurationsvoraussetzungen erfüllt haben, und klicken Sie auf *OK*.</block>
+  <block id="736cb4ef7019568859d8e044e044c906" category="list-text">Klicken Sie auf der Seite *erste Schritte* auf *Hochladen* und wählen Sie eine Lizenz auf Ihrer lokalen Workstation aus, und klicken Sie auf *Öffnen*, um die Lizenz hochzuladen. Wiederholen Sie den Vorgang, um eine zweite Lizenz hinzuzufügen.</block>
+  <block id="663e3ab8cb2a9c950e625cc8e58cc007" category="list-text">Klicken Sie auf *Aktualisieren* und bestätigen Sie, dass die Lizenzen hinzugefügt wurden.</block>
+  <block id="390100b77c52acdfcd83e4a92be2c51f" category="list-text">Klicken Sie auf *Weiter*, um zwei Hypervisor-Hosts hinzuzufügen, und klicken Sie dann auf *Hinzufügen*.</block>
+  <block id="a25302f443f60fa8f7aef0d5c122b11f" category="paragraph">Sie können die ESXi-Hosts direkt hinzufügen oder eine Verbindung zu einem vCenter-Server herstellen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.</block>
+  <block id="6c5e52865ab96c25cdda81fff9412d0f" category="list-text">Wählen Sie im Abschnitt *Cluster Details* *2 Node Cluster* für die *Cluster Größe* aus, geben Sie alle erforderlichen Informationen zur Beschreibung der Cluster ein und klicken Sie auf *done*.</block>
+  <block id="87f7f104547967da3e1d18965e33ecbe" category="list-text">Geben Sie unter *Node Setup* die Node-Management-IP-Adressen an und wählen Sie die Lizenzen für jeden Knoten aus. Sie können bei Bedarf eine neue Lizenz hochladen. Sie können bei Bedarf auch die Node-Namen ändern.</block>
+  <block id="c2ec94d47c341f2cb886dfa96e0ac4bb" category="paragraph">Es gibt drei Node-Konfigurationen, die die Größe der virtuellen Maschine und die verfügbaren Funktionen definieren. Diese Instanztypen werden von den Standard-, Premium- und Premium-XL-Angeboten der erworbenen Lizenz unterstützt. Die für die Nodes ausgewählte Lizenz muss mit dem Instanztyp übereinstimmen oder diesen überschreiten.</block>
+  <block id="5bcde1d421c75145a52950096b7fb58f" category="paragraph">Wählen Sie die Hypervisor-Hosts sowie die Management-, Daten- und internen Netzwerke aus.</block>
+  <block id="48c8bfc451162cecf207d3586032c355" category="list-text">Klicken Sie auf *Weiter* und führen Sie die Netzwerkvorprüfung durch, indem Sie auf *Ausführen* klicken. Dadurch wird überprüft, ob das für den ONTAP-Cluster-Datenverkehr ausgewählte interne Netzwerk ordnungsgemäß funktioniert.</block>
+  <block id="5ca1e08722935cc52d1e20fcea7b5428" category="paragraph">Die Erstellung des Clusters kann bis zu 45 Minuten dauern.</block>
+  <block id="8e8ec233d7d8b1670dc404b61b73a0b1" category="list-text">Überwachen Sie den Cluster-Erstellungsprozess in mehreren Schritten, um zu bestätigen, dass das Cluster erfolgreich erstellt wurde.</block>
+  <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">Vergewissern Sie sich, dass die ONTAP Select AutoSupport-Funktion konfiguriert ist, und sichern Sie dann die Konfigurationsdaten von ONTAP Select Deploy.</block>
+  <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">Informationen zur Unterstützung externer Speicher finden Sie unter <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>.</block>
+  <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7.0 GA (Build 15843807) oder höher</block>
 </blocks>

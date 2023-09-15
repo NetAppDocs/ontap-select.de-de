@@ -17,6 +17,9 @@ summary: Es gibt verschiedene Planungsprobleme im Zusammenhang mit ONTAP Select 
 Es gibt verschiedene Planungsprobleme im Zusammenhang mit ONTAP Select Host Storage, die Sie in Betracht ziehen sollten.
 
 
+NOTE: Informationen zur Unterstützung externer Speicher finden Sie unter link:reference_plan_ots_vnas.html["ONTAP Select vNAS Anforderungen"].
+
+
 
 == Anforderungen für Hardware-RAID-Controller
 
@@ -60,12 +63,7 @@ Bei der Implementierung eines ONTAP Select-Clusters auf dem VMware ESXi Hypervis
 
 Die Umgebung für eine Software-RAID-Implementierung auf VMware ESXi muss die folgenden zentralen Anforderungen erfüllen:
 
-* VMware ESXi-Version:
-+
-** ESXi 6.5 U2 (Build 8294253) oder höher
-** ESXi 6.7 GA (Build 8169922) oder höher
-
-
+* VMware ESXi 7.0 GA (Build 15843807) oder höher
 * ONTAP Select 9.5 oder höher
 * ONTAP Select Implementierung 2.10 oder höher
 * Nur neue ONTAP Select Cluster
