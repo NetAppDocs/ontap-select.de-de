@@ -50,5 +50,6 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 Der Notice-Datei enthält Informationen zu Copyright und Lizenzen anderer Hersteller, die in NetApp Software verwendet werden.
 
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2885796["Hinweis für ONTAP Select 9.13.1"^]
 * link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813["Hinweis zu ONTAP Select 9.12.1"^]
 

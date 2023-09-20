@@ -37,13 +37,16 @@ Um ein ONTAP Select Cluster zu implementieren, muss Ihr Unternehmen über eine g
 
 ONTAP Select kann auf folgenden Hypervisoren implementiert werden:
 
-* VMware ESXi 6.5 U2 (Build 8294253 oder höher)
-* VMware ESXi 6.7 GA (Build 8169922 oder höher), einschließlich 6.7 U1, U2 und U3
 * VMware ESXi 7.0 GA (Build 15843807 oder höher), einschließlich 7.0 U1, U2 und U3C
+* VMware ESXi 8.0 GA (Build 20513097)
+* VMware ESXi 8.0 U1 (Build 21495797)
 
 
 
 NOTE: NetApp unterstützt ONTAP Select auf den ermittelten Versionen von ESXi, solange VMware weiterhin dieselben Versionen unterstützt.
+
+
+NOTE: ESXi 6.5 GA und ESXi 6.7 GA erreichen das Ende der Verfügbarkeit. Wenn Sie ONTAP Select-Cluster mit diesen Versionen haben, müssen Sie auf die unterstützten Versionen gemäß aktualisieren https://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool (IMT)"^].
 
 
 

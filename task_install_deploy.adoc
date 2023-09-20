@@ -18,7 +18,7 @@ Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das
 
 
 
-== Das Virtual Machine Image wird heruntergeladen
+== Virtual Machine Image herunterladen
 
 Das ONTAP Select Paket können Sie auf der NetApp Support-Webseite herunterladen.
 
@@ -37,7 +37,51 @@ Das ONTAP Select Deploy-Verwaltungsdienstprogramm ist als virtuelle Maschine auf
 
 
 
-== Bereitstellung der virtuellen Maschine
+== Überprüfen Sie die ONTAP Select Deploy OVA-Signatur
+
+Überprüfen Sie vor der Installation des Installationspakets die OVA-Signatur (Open Virtualization Appliance) von ONTAP Select.
+
+.Bevor Sie beginnen
+Überprüfen Sie, ob Ihr System die folgenden Anforderungen erfüllt:
+
+* OpenSSL-Versionen 1.0.2 bis 3.0 zur grundlegenden Überprüfung
+* Öffentlicher Internetzugang für die Online Certificate Status Protocol (OCSP)-Überprüfung
+
+
+.Schritte
+. Beziehen Sie die folgenden Dateien auf der Seite zum Herunterladen des Produkts auf der NetApp Support-Website:
++
+[cols="2*"]
+|===
+| Datei | Beschreibung 
+
+
+| `ONTAP-Select-Deploy-Production.pub` | Der öffentliche Schlüssel, der zur Überprüfung der Signatur verwendet wird. 
+
+
+| `csc-prod-chain-ONTAP-Select-Deploy.pem` | Die Vertrauenskette der öffentlichen Zertifizierungsstelle. 
+
+
+| `csc-prod-ONTAP-Select-Deploy.pem` | Das Zertifikat, mit dem der Schlüssel generiert wird. 
+
+
+| `ONTAPdeploy.ova` | Die ausführbare Produktinstallation für ONTAP Select 9.13.1. 
+
+
+| `ONTAPdeploy.ova.sig` | Der SHA-256-Algorithmus wird gehasht und dann vom Remote Support Agent (RSA) unter Verwendung des signiert `csc-prod` Schlüssel und Signatur für den Installer. 
+|===
+. Überprüfen Sie das `ONTAPdeploy.ova.sig` Datei verwendet die zugehörigen Zertifikate und Validierungsbefehle.
+. Überprüfen Sie die Signatur mit folgendem Befehl:
++
+[listing]
+----
+openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTAPdeploy.ova.sig  ONTAPdeploy.ova
+----
+
+
+
+
+== Stellen Sie die virtuelle Maschine bereit
 
 Sie müssen die ONTAP Select Deploy Virtual Machine mit dem OVF Virtual Machine Image installieren und starten. Im Rahmen der Installation müssen Sie die Netzwerkschnittstelle so konfigurieren, dass DHCP oder eine statische IP-Konfiguration verwendet wird.
 

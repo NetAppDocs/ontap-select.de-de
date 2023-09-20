@@ -20,7 +20,7 @@ Die Versionshinweise für ONTAP Select liefern Release-spezifische Informationen
 NOTE: Sie benötigen ein Konto, um sich bei der NetApp Support-Website anzumelden, damit die Versionshinweise genutzt werden können.
 
 .Aktuelle Version von ONTAP Select
-Sie können auf das zugreifen https://library.netapp.com/ecm/ecm_download_file/ECMLP2884847["Versionshinweise zu ONTAP Select 9.12.1"^] So zeigen Sie die Details zur aktuellen Version an.
+Sie können auf das zugreifen https://library.netapp.com/ecm/ecm_download_file/ECMLP2885795["Versionshinweise zu ONTAP Select 9.13.1"^] So zeigen Sie die Details zur aktuellen Version an.
 
 .Frühere Versionen von ONTAP Select
 Informationen zu den Versionshinweisen für frühere Versionen des Produkts finden Sie unter:

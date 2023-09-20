@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_cli_upgrade_esxi65.html 
 keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
-summary: Wenn Sie ONTAP Select auf VMware ESXi ausführen, können Sie die ESXi-Software von einer früheren unterstützten Version auf ESXi 6.5 oder 6.7 aktualisieren. Vor dem Upgrade sollten Sie den Prozess verstehen und das entsprechende Upgrade-Verfahren auswählen. 
+summary: Wenn Sie ONTAP Select auf VMware ESXi ausführen, können Sie die ESXi-Software von einer älteren unterstützten Version auf ESXi 7.0 oder höher aktualisieren. Vor dem Upgrade sollten Sie den Prozess verstehen und das entsprechende Upgrade-Verfahren auswählen. 
 ---
-= Aktualisieren von VMware ESXi auf Version 6.5 und höher
+= Aktualisieren von VMware ESXi auf Version 7.0 oder höher
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Wenn Sie ONTAP Select auf VMware ESXi ausführen, können Sie die ESXi-
 
 
 [role="lead"]
-Wenn Sie ONTAP Select auf VMware ESXi ausführen, können Sie die ESXi-Software von einer früheren unterstützten Version auf ESXi 6.5 oder 6.7 aktualisieren. Vor dem Upgrade sollten Sie den Prozess verstehen und das entsprechende Upgrade-Verfahren auswählen.
+Wenn Sie ONTAP Select auf VMware ESXi ausführen, können Sie die ESXi-Software von einer älteren unterstützten Version auf ESXi 7.0 oder höher aktualisieren. Vor dem Upgrade sollten Sie den Prozess verstehen und das entsprechende Upgrade-Verfahren auswählen.
 
 
 
@@ -44,7 +44,7 @@ Es stehen mehrere Upgrade-Verfahren zur Verfügung. Sie sollten das zutreffende 
 
 TIP: Sie sollten ein Upgrade-Verfahren auswählen, das das Dienstprogramm Administration bereitstellen verwendet.
 
-Die Durchführung eines ESXi Upgrades mithilfe des Deploy Administration Utility ist die allgemeinere und robustere Option. Es kann jedoch vorkommen, dass die Bereitstellung nicht verfügbar ist oder nicht verwendet werden kann. Beispielsweise wird ein Upgrade auf ESXi 6.5 nicht mit älteren Versionen von ONTAP Select und dem Dienstprogramm zur Bereitstellung von Administration unterstützt.
+Die Durchführung eines ESXi Upgrades mithilfe des Deploy Administration Utility ist die allgemeinere und robustere Option. Es kann jedoch vorkommen, dass die Bereitstellung nicht verfügbar ist oder nicht verwendet werden kann. Beispielsweise wird das Upgrade auf ESXi 7.0 nicht mit früheren Versionen von ONTAP Select und dem Dienstprogramm „Deployment Administration“ unterstützt.
 
 Wenn Sie diese früheren Versionen verwenden und ein Upgrade versuchen, kann die virtuelle ONTAP Select-Maschine in einem Zustand belassen werden, in dem sie nicht gestartet werden kann. In diesem Fall müssen Sie ein Upgrade-Verfahren auswählen, das nicht Bereitstellung verwendet. Weitere Informationen finden Sie unter *1172198*.
 
@@ -76,7 +76,7 @@ Sie müssen Version 2.5 oder höher bereitstellen.
 Beispiel
 `node stop --cluster-name <CLUSTERNAME> --node-name <NODENAME>`
 
-. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 6.5 oder 6.7 mit dem von VMware bereitgestellten Verfahren.
+. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 7.0 oder höher mithilfe des von VMware bereitgestellten Verfahrens.
 +
 Weitere Informationen finden Sie unter _bevor Sie beginnen_.
 
@@ -120,7 +120,7 @@ Sie müssen dieses Upgrade-Verfahren für jeden der Nodes im Cluster, jeweils ei
 Beispiel
 `node stop --cluster-name <CLUSTERNAME> --node-name <NODENAME>`
 
-. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 6.5 oder 6.7 mit dem von VMware bereitgestellten Verfahren.
+. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 7.0 oder höher mithilfe des von VMware bereitgestellten Verfahrens.
 +
 Weitere Informationen finden Sie unter Vorbereiten des Upgrades von VMware ESXi.
 
@@ -163,7 +163,7 @@ Sie können einen VMware ESXi Hypervisor, der ein ONTAP Select Single-Node Clust
 .Schritte
 . Melden Sie sich bei der ONTAP Befehlszeilenschnittstelle an und beenden Sie den Knoten.
 . Vergewissern Sie sich mithilfe von VMware vSphere, dass die ONTAP Select Virtual Machine ausgeschaltet ist.
-. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 6.5 oder 6.7 mit dem von VMware bereitgestellten Verfahren.
+. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 7.0 oder höher mithilfe des von VMware bereitgestellten Verfahrens.
 +
 Weitere Informationen finden Sie unter Vorbereiten des Upgrades von VMware ESXi.
 
@@ -201,7 +201,7 @@ Sie müssen dieses Upgrade-Verfahren für jeden der Nodes im Cluster, jeweils ei
 .Schritte
 . Melden Sie sich bei der ONTAP Befehlszeilenschnittstelle an und beenden Sie den Knoten.
 . Vergewissern Sie sich mithilfe von VMware vSphere, dass die ONTAP Select Virtual Machine ausgeschaltet ist.
-. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 6.5 oder 6.7 mit dem von VMware bereitgestellten Verfahren.
+. Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 7.0 oder höher mithilfe des von VMware bereitgestellten Verfahrens.
 +
 Weitere Informationen finden Sie unter _bevor Sie beginnen_.
 

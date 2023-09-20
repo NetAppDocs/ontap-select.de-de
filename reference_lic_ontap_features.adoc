@@ -25,6 +25,7 @@ NOTE: ONTAP Funktionen mit hardwarespezifischen Abhängigkeiten werden in der Re
 
 Die folgenden Features sind bei ONTAP Select enthalten und standardmäßig lizenziert:
 
+* NVMe über TCP –
 * NFS
 * CIFS
 * ISCSI
