@@ -98,6 +98,7 @@ Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfer
 * Manipulationssichere Snapshot Kopien
 * SVM-Migration
 * VMware HCX
+* Disaster Recovery für Storage VM (SVM DR)
 
 
 .Verwandte Informationen
