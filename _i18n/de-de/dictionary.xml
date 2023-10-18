@@ -1996,7 +1996,6 @@
   <block id="aae4f232f5ffb9e9721fd019ba8b1efe" category="listing-title">Wie kann ich auf die Seite Swagger API for ONTAP Select Deploy zugreifen?</block>
   <block id="1b3537665f74d77bd14a7f35ea69a8f6" category="inline-link">Field Portal</block>
   <block id="fe31e162adece14e947931ec395b0f76" category="admonition">Die API v3-Version ist nicht abwärtskompatibel mit der vorherigen Version der API. Ein neues API-Handbuch finden Sie auf<block ref="8abbc2033805a13177ac70a4f745bc5f" category="inline-link-rx"></block>.</block>
-  <block id="8574c34cb89a7035153d7bb68d64bc11" category="paragraph">Nein Die ONTAP Select VM verwendet unabhängige persistente Laufwerke, die von VMware-basierten Snapshots ausgeschlossen sind. Die einzige unterstützte Methode zur Sicherung von ONTAP Select ist SnapMirror, SnapVault oder SVM DR (falls zutreffend).</block>
   <block id="e94690a6bd2e3a6afb833fa13d4537cf" category="inline-link-macro">ng-ses-ontap-select@netapp.com</block>
   <block id="0376d45a7aa4df2f496c766df2ba6138" category="paragraph">Kontakt <block ref="6ee1a7abfb73acadae70dd28dd795163" category="inline-link-macro-rx"></block>.</block>
   <block id="fd2592b5e30a41d0f087309f6ac783bb" category="section-title">Lizenzen, Installation, Upgrades und Rückkehr</block>
@@ -2122,7 +2121,6 @@
   <block id="7718fb3bf518427efc070f44f598bda4" category="section-title">ONTAP Funktionen werden in ONTAP Select nicht unterstützt</block>
   <block id="614a7784cfcb44e896f7945455f42f95" category="paragraph">Mehrere ONTAP Funktionen werden von ONTAP Select nicht unterstützt. In den meisten Fällen erfordern diese Funktionen eine spezielle Hardware, die in der virtualisierten ONTAP Select Umgebung nicht verfügbar ist.</block>
   <block id="e400270296a47b2c68bd6e799fac399d" category="list-text">Fibre Channel und Fibre Channel over Ethernet werden nicht unterstützt.</block>
-  <block id="d00e5e6179a113ecbf710d36aa88e4fd" category="list-text">Interface Groups Interface Groups Interface Groups (Schnittstellengruppen) werden nicht unterstützt.</block>
   <block id="4980ffa00c517c7cc63e35e9bb2badc8" category="list-text">Der Systemzustand überwacht das herkömmliche System-Monitoring, das bei einer hardwarebasierten ONTAP-Implementierung verwendet wird, bezieht sich auf die zugrunde liegenden Hardwarekomponenten. Aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung sind Zustandsüberwachung nicht aktiv.</block>
   <block id="00bbd977d1e0bcd12815512c500c80c0" category="list-text">NIC-Offload-Unterstützung aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung wird die NIC-Offload-Einrichtung nicht unterstützt.</block>
   <block id="ae17b3d1f56509708706e25dfd3adfc7" category="list-text">ONTAP-Port-Eigenschaften, die die Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, Duplex und Flusskontrolle, ändern, werden nicht unterstützt.</block>
@@ -3651,55 +3649,6 @@ Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfer
   <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">Vergewissern Sie sich, dass die ONTAP Select AutoSupport-Funktion konfiguriert ist, und sichern Sie dann die Konfigurationsdaten von ONTAP Select Deploy.</block>
   <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">Informationen zur Unterstützung externer Speicher finden Sie unter <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>.</block>
   <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7.0 GA (Build 15843807) oder höher</block>
-  <block id="8930a560533f598bac6dd3f7f9bfedb6" category="summary">Erweitern Sie ein vorhandenes Single-Node-Cluster in ein zwei-Node-Cluster, indem Sie beide Nodes als HA-Paar konfigurieren.</block>
-  <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="doc">Erweitern Sie das Cluster</block>
-  <block id="9ee92687843ac50c08d2dcb3c75ec679" category="paragraph">Ab ONTAP 9.13.1 können Sie ein vorhandenes Single-Node-Cluster zu einem Cluster mit zwei Nodes erweitern, indem Sie beide Nodes als HA-Paar konfigurieren. Die Erweiterung auf einen HA-Cluster mit zwei Nodes bietet eine Hochverfügbarkeit, die Sie vor den Auswirkungen einer Node-Unterbrechung der Fähigkeit eines Clusters zur Datenbereitstellung schützt.</block>
-  <block id="2e8a327b283fd50b16d1b5295d65b015" category="paragraph">Das Verfahren wird automatisiert und über ONTAP Select Deploy über die CLI oder die Webschnittstelle gestartet. Dies ist ein störendes Verfahren.</block>
-  <block id="0c76347c001891562a0f24f80b85e516" category="paragraph-title">Voraussetzungen für die Cluster-Erweiterung</block>
-  <block id="e0fd129ed78300784653b377b8198dbb" category="paragraph">Vergewissern Sie sich vor dem Initiieren der Cluster-Erweiterung, dass Sie die folgenden Voraussetzungen erfüllen:</block>
-  <block id="44a3770a41ceabe41ad75ce81596fa56" category="list-text">Der vorhandene Node ist eingeschaltet.</block>
-  <block id="1f82de86080fe46e8a75ac3507754123" category="list-text">Sie haben eine Cluster-Aktualisierung am vorhandenen Node erfolgreich durchgeführt.</block>
-  <block id="ecf4c2fcb52cc03a7c2d7b050f653f18" category="list-text">Die ESX-Hosts für die vorhandenen und neuen Nodes weisen dieselbe Konfiguration auf.</block>
-  <block id="e493ed3a4bfea3ebf118f361ad92ba47" category="list-text">Sie haben die Prüfung der Netzwerkkonnektivität zwischen den ESX-Hosts für die vorhandenen und die neuen Nodes erfolgreich ausgeführt.</block>
-  <block id="eb0f08fae2c41a7793a912980295a2e5" category="list-text">Um das Verfahren zur Cluster-Erweiterung ONTAP Select Deploy verwenden zu können, benötigen Sie eine Evaluierungslizenz (90 Tage) und eine Produktionslizenz (Capacity Tier oder Capacity Pool). Stellen Sie sicher, dass Sie die folgenden Lizenzierungsanforderungen erfüllen:</block>
-  <block id="d994644aa0b2bc896cb4e64956675a0d" category="list-text">Sie verfügen über die erforderliche Kapazitäts-Tier- oder Kapazitäts-Pool-Lizenz für den neuen Node.</block>
-  <block id="f704690c246db554ef6568a89bdff702" category="admonition">Bei einer Lizenz für einen Kapazitäts-Pool können Sie die nicht genutzte Kapazität in einem vorhandenen Pool verwenden. Bei Bedarf können Sie die Kapazität durch ein Upgrade der Lizenz erhöhen.</block>
-  <block id="305a476aa1b8f3372c65ac3346486cf2" category="list-text">Wenn beide Nodes über eine Kapazitäts-Pool-Lizenz verfügen, gehören sie zum gleichen Kapazitäts-Pool.</block>
-  <block id="62ab77cacb864affe5ac1c6e259a142c" category="list-text">Sie haben denselben Lizenztyp auf beide Nodes angewendet.</block>
-  <block id="cd43d984bcc3a4f711cfa1af282b7455" category="paragraph">Die Lizenzkosten für jeden Node (ob vorhanden oder neu) in einem Cluster mit zwei Nodes sind doppelt so hoch wie für ein Cluster mit einem Node:</block>
-  <block id="1b6b2c9a82282029d8cd12086bc16748" category="list-text">Für ein Single-Node-Cluster ist die vollständige Lizenz für Datenaggregate verfügbar. So kann ein Single Node mit einer 1-TB-Lizenz beispielsweise 1 TB Datenaggregate hosten.</block>
-  <block id="4fe400ca1b94c1aadc6481c02d68ee64" category="list-text">Bei einem Cluster mit zwei Nodes wird die Hälfte der Lizenzkapazität für die Datenaggregate auf jedem Node und die andere Hälfte von den gespiegelten Festplatten der Datenaggregate für den entsprechenden Partner-Node genutzt. Beispielsweise verfügen zwei Nodes mit einer 2-TB-Lizenz über jeweils 1 TB an Datenaggregaten, um eine insgesamt 2 TB verfügbare Gesamtkapazität für Datenaggregate bereitzustellen, und 2 TB zum Hosten der gespiegelten Festplatten der Aggregate.</block>
-  <block id="11f428ea307b5e86300719c1b6dc8fea" category="paragraph">Weitere Informationen zu Lizenzen finden Sie im <block ref="9575ba7bfcdc84cc585701a17575801c" category="inline-link-macro-rx"></block> Abschnitt.</block>
-  <block id="92ae53adefd2bce2616eabbc31ca99d6" category="list-text">Die mit den Nodes verbundenen Datastores erfüllen die folgenden Kriterien:</block>
-  <block id="ecfe3a20b4af8b63e0f7fd2223373048" category="list-text">Die Datastores auf dem vorhandenen Knoten müssen vom gleichen Typ sein, z. B. VMware Virtual Machine File System (VMFS)-5, VMFS-6 oder NFS.</block>
-  <block id="e8534479a8ab3e9f651571dccdd016b9" category="list-text">Der mit dem neuen Node verbundene Datastore muss denselben Typ wie der Standard-Datastore für den vorhandenen Node haben.</block>
-  <block id="d41741a2b7d1a4249520e3eedfa415d3" category="list-text">Der freie Speicherplatz für die Datastores auf dem vorhandenen Node muss mindestens dem belegten Speicherplatz auf dem Node entsprechen.</block>
-  <block id="9d430f9d9bdca636bf2bd34d0ca10048" category="list-text">Der freie Speicherplatz auf dem Datastore, der mit dem neuen Node verbunden ist, muss das Doppelte des insgesamt belegten Speicherplatzes auf dem vorhandenen Node sein.</block>
-  <block id="f509b7af47ddc6f61e01296750db0a94" category="list-text">Beide ONTAP Select-Nodes sind der gleiche Instanztyp.</block>
-  <block id="630e5660de352108f57840f67c4ce73b" category="paragraph-title">Hardware- und Softwareanforderungen</block>
-  <block id="1deab229dd7288feb521151130a73e51" category="paragraph">Die neuen und bestehenden Nodes müssen mehrere Hardware- und Softwareanforderungen erfüllen:</block>
-  <block id="ab12d295318edecf8e697f5aa1e28b04" category="list-text">Auf dem vorhandenen Single-Node-Cluster wird ONTAP 9.13.1 oder höher ausgeführt.</block>
-  <block id="571bab1b8c172b818850c083f2b7d219" category="list-text">Die ESX-Hosts für die vorhandenen und neuen Nodes erfüllen die folgenden Kriterien:</block>
-  <block id="b16daec5e991a4bdaff00495ee637ff3" category="list-text">Sie unterstützen vCenter Server 7.0 Update 3 oder höher. NetApp empfiehlt außerdem vCenter Server 7.0 oder höher.</block>
-  <block id="135e04137c0f3fc2a13414acc2f294fc" category="list-text">Sie verfügen über ein internes Netzwerk für Intercluster-Verbindung.</block>
-  <block id="3007f0b4c8fb013252aaf0d42faf5b5a" category="list-text">Der vorhandene und der neue Node sind Hardware-RAID-Typen.</block>
-  <block id="b1f291eee188a7c63f37b91bcf001a94" category="list-text">Für einen kleinen Instanztyp verfügt der Node über mindestens 16 GB RAM und vier CPUs. Für eine große Instanz verfügt der Node über maximal 128 GB RAM und 16 CPUs.</block>
-  <block id="8237ba6c0c380781f49dc22af5f26bcf" category="paragraph-title">Einschränkungen bei der Cluster-Erweiterung</block>
-  <block id="b5355429781ee9ef7d73aa9f8fe3d3b3" category="paragraph">Beachten Sie die folgenden Einschränkungen bei einer ONTAP Select-Cluster-Erweiterung:</block>
-  <block id="3f3b17881e2b6e6eadaf34fd18c031cc" category="list-text">Das Verfahren unterstützt nur die Erweiterung eines Single-Node-Clusters auf ein zwei-Node-Cluster.</block>
-  <block id="cb33ce1462fe7e5b557f6db4425ece2e" category="list-text">Die Erweiterung ist auf die Gesamtkapazität des 64-TB-Datenspeichers beschränkt. Die Speicherkapazität beträgt 32 TB und die verbleibenden 32 TB sind zusätzlicher Speicherplatz für Datenspiegelung.</block>
-  <block id="afa22359d4f3cf79284a0728560e7264" category="list-text">Cluster-Erweiterung wird nur für Hardware-RAID-Nodes und Cluster-Typen unterstützt. Die Erweiterung auf gemischte Software- und Hardware-RAID-Typen wird nicht unterstützt.</block>
-  <block id="27025ea85d4bc0d28bef7e51e8da61f3" category="inline-image-macro">Diagramm zur Cluster-Erweiterung von einem Node auf zwei Nodes</block>
-  <block id="3a42ded421b7b7328d29348b4f404e36" category="paragraph">In der folgenden Abbildung werden die Single Node-Konfiguration vor der Erweiterung und die HA-Paar-Konfiguration mit zwei Nodes nach der Erweiterung dargestellt.
-<block ref="6e6de549f8b72b049bce1f29ebacc7fc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="287742be1329b1bd7bf7d7fb169b2fa6" category="paragraph-title">Starten Sie das Verfahren zur Cluster-Erweiterung</block>
-  <block id="e3321a5f63313219081d62cede2f8ca2" category="paragraph">Führen Sie über die CLI die folgenden Befehle aus, um das Verfahren zur Cluster-Erweiterung mit ONTAP Select Deploy zu starten:</block>
-  <block id="e0f45ff72f2d7d91d9e112f7c7b7e686" category="list-text"><block ref="f0489c17dde991a8954f812ebbe2a6c0" prefix="" category="inline-code"></block></block>
-  <block id="31792351955ddd5711877797e67e90e6" category="list-text"><block ref="66866e8e2f0d236b0f23317b92e3498d" prefix="" category="inline-code"></block></block>
-  <block id="c2187f782201a45ff7b8db0effd6da3e" category="list-text"><block ref="091de9b7e3eb6abf6d66ba8e5e98d03f" prefix="" category="inline-code"></block></block>
-  <block id="8ae8ceb1e3c34f71654ecd45e3edd18b" category="list-text"><block ref="1e50fe28b3ba1196bf5c7e0d1f4aa881" prefix="" category="inline-code"></block></block>
-  <block id="cc85e5e33f89d779593267f90f3de591" category="list-text"><block ref="2437f2194443c2e0de2deac482449798" prefix="" category="inline-code"></block></block>
-  <block id="492625061ab08d886a40d6113d7d5261" category="paragraph">Geben Sie bei der entsprechenden Eingabeaufforderung Ihr ONTAP-Admin-Passwort ein.</block>
   <block id="dd4c12bfc49beb3edaea04166917c887" category="paragraph">ONTAP Select 9.13.1 kann auf VMware ESXi implementiert werden. Diese Website enthält die Dokumentation zu ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1, 9.9.1, 9.8 und 9.7 unter VMware ESXi sowie die Hypervisor-unabhängige Dokumentation (z. B. die REST-API).</block>
   <block id="015a51a212cad15ae88ab6926256ef36" category="inline-link-macro">Hinweis für ONTAP Select 9.13.1</block>
   <block id="e9deea859bf1ecf9513d6b6ff2f0d72b" category="list-text"><block ref="e9deea859bf1ecf9513d6b6ff2f0d72b" category="inline-link-macro-rx"></block></block>
@@ -3716,9 +3665,6 @@ Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfer
   <block id="f87065c0eaa86d23a9d0bc62defec91b" category="list-text">Aktualisieren Sie den Hypervisor-Host, auf dem ONTAP Select ausgeführt wird, auf ESXi 7.0 oder höher mithilfe des von VMware bereitgestellten Verfahrens.</block>
   <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1</block>
   <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1 enthält mehrere neue Funktionen und Verbesserungen.</block>
-  <block id="85c9296df6a3c9630ed684b4af8847a8" category="list-text">Cluster-Erweiterung</block>
-  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">Weitere Informationen .</block>
-  <block id="406ccb0f77a29335e34c2bfe9553fc82" category="list-text">ONTAP Select 9.13.1 führt eine Cluster-Erweiterung ein, die einen hochverfügbaren Schutz vor den Auswirkungen einer Node-Unterbrechung der Funktionen der Cluster zur Datenbereitstellung bietet. Ab ONTAP Select 9.13.1 können Sie ein Single-Node-Cluster zu einem Cluster mit zwei Nodes erweitern, indem Sie beide Nodes als HA-Paar konfigurieren. Das Verfahren wird automatisiert und über ONTAP Select Deploy über die CLI oder die Webschnittstelle gestartet. Um dieses Verfahren durchzuführen, müssen Sie bestimmte Hardware- und Softwareanforderungen erfüllen. <block ref="42332fd9348b1caa61a2a7319c6d2c9d" category="inline-link-macro-rx"></block>.</block>
   <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">Unterstützung für NVMe over TCP</block>
   <block id="db5f5d6e1e5a3e29724ce78258556ff1" category="list-text">Wenn Sie ein Upgrade auf ONTAP Select 9.13.1 durchführen, benötigen Sie die neue Lizenz zur Unterstützung von NVMe over TCP. Diese Lizenz ist automatisch enthalten, wenn Sie ONTAP Select zum ersten Mal ab Version 9.13.1 bereitstellen.</block>
   <block id="4d8daf3f51ebf7fefb4dfcf900e9b79d" category="list-text">Ab ONTAP 9.13.1 wird VMware ESXi 8.0 GA (Build 20513097) mit Hardwareversion 4 und höher unterstützt.</block>
@@ -3801,4 +3747,8 @@ Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfer
   <block id="ec2c1e6f88e6b7ce28d7e80767289832" category="list-text">Führen Sie die aus<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="4963c2f56ac00df8be35eec047756e7b" category="list-text">Der Administrator kann den öffentlichen Schlüssel löschen mit:<block ref="6edcef67fdbd494b424b5b6fe6ff3c33" prefix=" " category="inline-code"></block></block>
   <block id="306a97cf9f5c4fb1198deb28baf7cf94" category="list-text">Disaster Recovery für Storage VM (SVM DR)</block>
+  <block id="f7ee707e6ddfc29288dbbbdf8cecd146" category="list-text">Interface Groups
+Schnittstellengruppen werden nicht unterstützt.</block>
+  <block id="c38c45e0a73411d375d048ee41944853" category="list-text">SnapLock-Compliance</block>
+  <block id="b22e984a3a8e13089712aab13bd49e4f" category="paragraph">Nein Die ONTAP Select VM verwendet unabhängige persistente Laufwerke, die von VMware-basierten Snapshots ausgeschlossen sind. Die einzige unterstützte Methode zum Backup von ONTAP Select ist SnapMirror oder SnapVault.</block>
 </blocks>

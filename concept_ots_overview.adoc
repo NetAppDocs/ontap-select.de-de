@@ -85,20 +85,22 @@ Jeder Node in einem ONTAP Select Cluster wird automatisch zur Nutzung mehrerer O
 
 Mehrere ONTAP Funktionen werden von ONTAP Select nicht unterstützt. In den meisten Fällen erfordern diese Funktionen eine spezielle Hardware, die in der virtualisierten ONTAP Select Umgebung nicht verfügbar ist.
 
-* Fibre Channel und Fibre Channel over Ethernet werden nicht unterstützt.
-* Interface Groups Interface Groups Interface Groups (Schnittstellengruppen) werden nicht unterstützt.
-* Der Systemzustand überwacht das herkömmliche System-Monitoring, das bei einer hardwarebasierten ONTAP-Implementierung verwendet wird, bezieht sich auf die zugrunde liegenden Hardwarekomponenten. Aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung sind Zustandsüberwachung nicht aktiv.
-* NIC-Offload-Unterstützung aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung wird die NIC-Offload-Einrichtung nicht unterstützt.
+* Autonomer Schutz durch Ransomware (ARP)
 * Cluster-IPspace
 Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfernen von Ports, virtuellen LANs (VLANs) oder Link-Aggregationsgruppen, werden nicht unterstützt.
+* Fibre Channel und Fibre Channel over Ethernet werden nicht unterstützt.
+* Der Systemzustand überwacht das herkömmliche System-Monitoring, das bei einer hardwarebasierten ONTAP-Implementierung verwendet wird, bezieht sich auf die zugrunde liegenden Hardwarekomponenten. Aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung sind Zustandsüberwachung nicht aktiv.
+* Interface Groups
+Schnittstellengruppen werden nicht unterstützt.
+* NIC-Offload-Unterstützung aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung wird die NIC-Offload-Einrichtung nicht unterstützt.
+* NetApp Storage Encryption-Laufwerke
 * ONTAP-Port-Eigenschaften, die die Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, Duplex und Flusskontrolle, ändern, werden nicht unterstützt.
 * Serviceprozessoren
-* NetApp Storage Encryption-Laufwerke
-* Autonomer Schutz durch Ransomware (ARP)
-* Manipulationssichere Snapshot Kopien
 * SVM-Migration
-* VMware HCX
 * Disaster Recovery für Storage VM (SVM DR)
+* SnapLock-Compliance
+* Manipulationssichere Snapshot Kopien
+* VMware HCX
 
 
 .Verwandte Informationen
