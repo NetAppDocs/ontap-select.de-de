@@ -4,7 +4,7 @@ permalink: task_lic_acquire_cp.html
 keywords: license, licensing, acquire, capacity pools 
 summary: Sie müssen für jeden von den ONTAP Select-Nodes verwendeten Kapazitäts-Pool eine Lizenzdatei beschaffen. Die Lizenzdatei definiert die Speicherkapazität und den Ablauf des Pools. Sie ist für den License Manager gesperrt, indem sie eine Kombination aus der eindeutigen Lizenzseriennummer, die NetApp zugewiesen hat, und der mit der Deploy-Instanz verknüpften Lizenzsperre-ID verwenden. 
 ---
-= Erwerb einer Lizenz für den Kapazitäts-Pool
+= Erwerben einer Capacity Pool-Lizenz
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

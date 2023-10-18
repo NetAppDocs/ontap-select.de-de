@@ -18,7 +18,7 @@ Bei der Administration der ONTAP Select-Lizenzen können Sie mehrere verwandte A
 
 
 
-== Verwalten von Lizenzen
+== Lizenzen verwalten
 
 Lizenzen für ONTAP Select Capacity Tiers können nach Bedarf hinzugefügt, bearbeitet und gelöscht werden.
 

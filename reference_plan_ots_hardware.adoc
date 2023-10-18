@@ -50,7 +50,7 @@ NOTE: ESXi 6.5 GA und ESXi 6.7 GA erreichen das Ende der Verfügbarkeit. Wenn Si
 
 
 
-=== Upgrade auf VMware ESXi 6.5 U2 oder höher
+=== Führen Sie ein Upgrade auf VMware ESXi 6.5 U2 oder höher durch
 
 Wenn Sie ONTAP Select derzeit auf VMware ESXi 6.5 U1 bereitgestellt haben, sollten Sie so schnell wie möglich auf ESXi 6.5 U2 oder höher aktualisieren. Mit ESXi 6.5 U1 können Sie durch einen bekannten VMware-Fehler einem Ausfall einer Virtual Machine ausgesetzt werden.
 
@@ -90,7 +90,7 @@ Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der 
 |===
 
 
-| Clustergröße | Mindestanforderungen | Empfehlung 
+| Clustergröße | Mindestanforderungen | Empfohlene Anforderungen 
 
 
 | Single-Node-Cluster | 2 x 1 GbE | 2 x 10 GbE 
@@ -107,7 +107,7 @@ Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der 
 
 Auf der Grundlage des Node-Instanztyps bestehen weitere Hardwareanforderungen.
 
-Siehe link:concept_lic_platforms.html["Die Plattform-Lizenzangebote verstehen"] Finden Sie weitere Informationen.
+Siehe link:concept_lic_platforms.html["Verstehen Sie die Angebote für Plattformlizenzen"] Finden Sie weitere Informationen.
 
 .Klein
 * CPU-Cores sechs physische Kerne oder größer, mit vier reserviert für ONTAP Select.

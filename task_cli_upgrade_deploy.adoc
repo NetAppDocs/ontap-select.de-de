@@ -23,11 +23,11 @@ Sie können ein vorhandenes Deploy Utility Virtual Machine direkt über die Befe
 Stellen Sie sicher, dass Deploy nicht zur Durchführung anderer Aufgaben während des Upgrades verwendet wird. In den aktuellen Versionshinweisen finden Sie Informationen und Einschränkungen zum Upgrade des Deploy-Dienstprogramms.
 
 
-NOTE: Wenn eine Instanz des ONTAP Select Deploy Administration Utility installiert ist, sollten Sie ein Upgrade auf die aktuelle Version in Betracht ziehen. Der ONTAP Select Node und die ONTAP Select Deploy Komponente werden unabhängig voneinander aktualisiert. Siehe link:concept_adm_upgrading_nodes.html["Aktualisieren der ONTAP Select-Knoten"^] Entnehmen.
+NOTE: Wenn Sie eine ältere Instanz des ONTAP Select Deploy-Verwaltungsdienstprogramms installiert haben, sollten Sie auf die aktuelle Version aktualisieren. Der ONTAP Select Node und die ONTAP Select Deploy Komponente werden unabhängig voneinander aktualisiert. Siehe link:concept_adm_upgrading_nodes.html["Aktualisieren Sie die ONTAP Select-Nodes"^] Entnehmen.
 
 
 
-== Das Upgrade-Paket wird heruntergeladen
+== Upgrade-Paket herunterladen
 
 Um mit dem Upgrade-Prozess zu beginnen, müssen Sie die entsprechende Upgrade-Datei für die Implementierung von Virtual Machines von der NetApp Support Site herunterladen. Das Aktualisierungspaket ist als eine einzige komprimierte Datei formatiert.
 
@@ -46,7 +46,7 @@ link:https://mysupport.netapp.com["NetApp Support"^]
 
 
 
-== Hochladen des Pakets auf die virtuelle Maschine bereitstellen
+== Laden Sie das Paket auf die virtuelle Maschine bereitstellen hoch
 
 Nach dem Erwerb des Aktualisierungspakets müssen Sie die Datei auf die virtuelle Maschine bereitstellen hochladen.
 
@@ -72,7 +72,7 @@ Die Upgrade-Datei wird im Home-Verzeichnis des Admin-Benutzers gespeichert.
 
 
 
-== Anwenden des Aktualisierungspakets
+== Upgrade-Paket anwenden
 
 Nachdem die Upgrade-Datei auf die virtuelle Maschine bereitstellen hochgeladen wurde, können Sie das Upgrade anwenden.
 

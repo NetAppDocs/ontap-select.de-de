@@ -16,7 +16,7 @@ summary: Wählen Sie die beste Hardware aus, und konfigurieren Sie Ihr Netzwerk,
 [role="lead"]
 Wählen Sie die beste Hardware aus, und konfigurieren Sie Ihr Netzwerk, um die Leistung und Ausfallsicherheit zu optimieren.
 
-Server-Anbieter wissen, dass Kunden verschiedene Anforderungen haben und verschiedene Möglichkeiten haben, ist entscheidend. Beim Erwerb eines physischen Servers stehen daher zahlreiche Optionen zur Verfügung, um die Netzwerkverbindung zu ermitteln. Die meisten Standardsysteme werden mit verschiedenen NIC-Optionen ausgeliefert, die Single-Port- und Multiport-Optionen in unterschiedlichen Variationen von Geschwindigkeit und Durchsatz bieten. Ab ONTAP Select 9.8 werden 25-GB/s- und 40-GB/s-NIC-Adapter mit VMware ESX unterstützt.
+Server-Anbieter wissen, dass Kunden verschiedene Anforderungen haben und verschiedene Möglichkeiten haben, ist entscheidend. Beim Erwerb eines physischen Servers stehen daher zahlreiche Optionen zur Verfügung, um die Netzwerkverbindung zu ermitteln. Die meisten Standardsysteme werden mit verschiedenen NIC-Optionen ausgeliefert, die Single-Port- und Multiport-Optionen in unterschiedlichen Variationen von Geschwindigkeit und Durchsatz bieten. Dies umfasst die Unterstützung von 25-GB/s- und 40-GB/s-NIC-Adaptern mit VMware ESX.
 
 Da die Performance der ONTAP Select VM direkt an die Eigenschaften der zugrunde liegenden Hardware gebunden ist, führt ein höherer Durchsatz auf der VM durch Auswahl von NICs mit höherer Geschwindigkeit zu einem Cluster mit höherer Performance und einer insgesamt besseren Benutzererfahrung. Darüber hinaus können vier 10-Gbit-NICs oder zwei NICs mit höherer Geschwindigkeit (25/40 Gbit/s) verwendet werden, um ein leistungsstarkes Netzwerklayout zu erreichen. Es gibt weitere Konfigurationen, die ebenfalls unterstützt werden. Bei Clustern mit zwei Nodes werden 4 x 1-GB-Ports oder 1 x 10-GB-Ports unterstützt. Bei Single Node Clustern werden 2 x 1-GB-Ports unterstützt.
 
@@ -25,8 +25,6 @@ Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der 
 
 [cols="30,35,35"]
 |===
-
-
 | Clustergröße | Mindestanforderungen | Empfehlung 
 
 

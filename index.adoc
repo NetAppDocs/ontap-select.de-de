@@ -1,7 +1,8 @@
 ---
+layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-summary: Willkommen beim Dokumentationsportal für ONTAP Select. 
+summary: NetApp ONTAP Select ist eine softwaredefinierte Storage-Appliance, die Sie auf einer Reihe Standard-Hardwaresystemen mit VMware ESXi Hypervisor implementieren können. Mit dieser Lösung erhalten Sie die nötige Flexibilität zum Aufbau einer flexiblen und skalierbaren Private-Cloud-Infrastruktur. Diese Website enthält die Dokumentation für ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1 und 9.9.1. 
 ---
 = ONTAP Select-Dokumentation
 :hardbreaks:
@@ -11,35 +12,4 @@ summary: Willkommen beim Dokumentationsportal für ONTAP Select.
 :linkattrs: 
 :imagesdir: ./media/
 
-
-[role="lead"]
-NetApp ONTAP Select ist eine softwaredefinierte Storage-Appliance, die Sie auf einer Reihe Standard-Hardwaresystemen mit VMware ESXi Hypervisor implementieren können. Mit dieser Lösung erhalten Sie die nötige Flexibilität zum Aufbau einer flexiblen und skalierbaren Private-Cloud-Infrastruktur.
-
-
-
-== Entdecken Sie die Neuigkeiten
-
-* link:reference_new_ots.html["Neuerungen in dieser Version"]
-
-
-[NOTE]
-====
-* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
-* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
-
-
-====
-
-
-== Navigieren Sie in der Produktdokumentation
-
-ONTAP Select 9.13.1 kann auf VMware ESXi implementiert werden. Diese Website enthält die Dokumentation zu ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1, 9.9.1, 9.8 und 9.7 unter VMware ESXi sowie die Hypervisor-unabhängige Dokumentation (z. B. die REST-API).
-
-Die Versionshinweise sowie die Dokumentation für die KVM-Version des Produkts finden Sie in den vorherigen Versionen unter https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["ONTAP Select Produktbibliothek"^].
-
-
-
-== Erfahren Sie mehr über NetApp und tauschen Sie sich mit anderen aus
-
-* link:reference_additional_info.html["Wo Sie Hilfe und weitere Informationen erhalten"]
 

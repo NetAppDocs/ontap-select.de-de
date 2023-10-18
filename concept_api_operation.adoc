@@ -49,7 +49,7 @@ Es gibt zwei primäre Möglichkeiten, wie ein Server eine von einem Client empfa
 
 
 
-== Bestätigen des Abschlusses eines langen Jobs
+== Bestätigen Sie den Abschluss eines lang laufenden Jobs
 
 Im Allgemeinen wird jeder Vorgang, der viel Zeit in Anspruch nehmen kann, asynchron mittels einer Hintergrundaufgabe am Server verarbeitet. Mit DER REST-API „Bereitstellen“ wird jede Hintergrundaufgabe durch ein Jobobjekt verankert, das die Aufgabe verfolgt und Informationen liefert, z. B. den aktuellen Status. Ein Job-Objekt, einschließlich seiner eindeutigen Kennung, wird in der HTTP-Antwort zurückgegeben, nachdem eine Hintergrundaufgabe erstellt wurde.
 

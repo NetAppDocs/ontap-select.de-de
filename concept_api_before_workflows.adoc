@@ -18,7 +18,7 @@ Sie sollten sich auf die Überprüfung und Nutzung der Workflow-Prozesse vorbere
 
 
 
-== Allgemeines zu den in den Workflows verwendeten API-Aufrufen
+== Machen Sie sich mit den API-Aufrufen vertraut, die in den Workflows verwendet werden
 
 Die Seite mit der ONTAP Select Online-Dokumentation enthält die Details zu jedem REST-API-Aufruf. Anstatt diese Details hier zu wiederholen, enthält jeder API-Aufruf, der in den Workflow-Samples verwendet wird, nur die Informationen, die Sie benötigen, um den Anruf auf der Dokumentationsseite zu finden. Nach dem Auffinden eines bestimmten API-Aufrufs können Sie die vollständigen Details des Anrufs überprüfen, einschließlich der Eingabeparameter, Ausgabeformate, HTTP-Statuscodes und des Aufruftyps.
 
@@ -31,7 +31,7 @@ Für jeden API-Aufruf in einem Workflow sind folgende Informationen enthalten, u
 
 
 
-== Bauen einer URL für einen direkten Zugriff auf die REST-API
+== Erstellen Sie eine URL für den direkten Zugriff auf die REST-API
 
 Zusätzlich zur Seite mit der ONTAP Select-Dokumentation können Sie auch über eine Programmiersprache wie Python auf die REST-API zur Bereitstellung zugreifen. In diesem Fall unterscheidet sich die Core-URL etwas von der URL, die beim Zugriff auf die Seite mit der Online-Dokumentation verwendet wird. Wenn Sie direkt auf die API zugreifen, müssen Sie /API an die Domäne und den Port String anhängen. Beispiel:
 `\http://deploy.mycompany.com/api`

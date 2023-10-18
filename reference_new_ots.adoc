@@ -17,6 +17,13 @@ summary: Die aktuelle Version umfasst keine neuen Funktionen oder Verbesserungen
 [role="lead"]
 NetApp aktualisiert regelmäßig den ONTAP Select, um Ihnen neue Funktionen und Verbesserungen zu bieten.
 
+[NOTE]
+====
+* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
+* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
+
+
+====
 
 
 == ONTAP Select 9.13.1

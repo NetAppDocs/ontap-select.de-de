@@ -4,7 +4,7 @@ permalink: task_cli_deploy_cluster.html
 keywords: administer, administering, cli, create cluster, deploy cluster 
 summary: Über die mit dem ONTAP Select Deploy Administration Utility bereitgestellte Befehlszeilenschnittstelle können Sie ein Single Node oder Multi-Node ONTAP Select Cluster erstellen. 
 ---
-= Implementieren eines ONTAP Select-Clusters mithilfe der CLI
+= Implementieren Sie ein ONTAP Select-Cluster über die CLI
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ Bevor Sie ein ONTAP Select Cluster auf ESXi erstellen, sollten Sie die erforderl
 
 
 
-=== Das Hinzufügen von Speicher zum ONTAP Select-Node wird vorbereitet
+=== Bereiten Sie das Verbinden des Speichers mit dem ONTAP Select-Node vor
 
 Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie mindestens einen Speicherpool an jedem Knoten für die Systemdaten sowie die Root- und Datenaggregate erstellen. Sie müssen den Speicherpool als Teil des Konfigurationsens des ONTAP Select-Node anbinden.
 
@@ -34,17 +34,17 @@ Wenn Sie Software-RAID verwenden, müssen Sie einen Speicherpool für die System
 
 === Verfügbare ONTAP Select-Versionen
 
-Das Deploy Administration Utility enthält eine einzige Version von ONTAP Select. Wenn Sie Cluster mit einer früheren Version von ONTAP Select implementieren möchten, müssen Sie zuerst das ONTAP Select-Image der Deploy-Instanz hinzufügen. Siehe link:task_cli_deploy_image_add.html["Hinzufügen eines ONTAP Select Images zur Implementierung"] Finden Sie weitere Informationen.
+Das Deploy Administration Utility enthält eine einzige Version von ONTAP Select. Wenn Sie Cluster mit einer früheren Version von ONTAP Select implementieren möchten, müssen Sie zuerst das ONTAP Select-Image der Deploy-Instanz hinzufügen. Siehe link:task_cli_deploy_image_add.html["Fügen Sie ein ONTAP Select-Image zur Bereitstellung hinzu"] Finden Sie weitere Informationen.
 
 
 
-=== Lizenzieren von ONTAP Select für eine Implementierung in Produktionsumgebungen
+=== Lizenzieren Sie ONTAP Select für eine Produktionsbereitstellung
 
 Bevor Sie ein ONTAP Select Cluster in einer Produktionsumgebung implementieren, müssen Sie eine Storage-Kapazitätslizenz erwerben und die zugehörige Lizenzdatei herunterladen. Sie können den Storage an jedem Node über das Modell _Capacity Tiers_ lizenzieren oder mithilfe des _Capacity Pools_-Modells einen Shared Pool lizenzieren.
 
 
 
-== Hochladen und Registrieren einer Lizenzdatei
+== Laden Sie eine Lizenzdatei hoch und registrieren Sie sie
 
 Nachdem Sie eine Lizenzdatei mit Speicherkapazität erworben haben, müssen Sie die Datei mit der Lizenz auf die virtuelle Maschine bereitstellen und registrieren.
 
@@ -81,7 +81,7 @@ Geben Sie bei der entsprechenden Aufforderung das Kennwort für das Administrato
 
 
 
-== Hinzufügen von ESXi-Hypervisor-Hosts
+== Fügen Sie ESXi-Hypervisor-Hosts hinzu
 
 Sie müssen jeden Hypervisor-Host registrieren, auf dem ein ONTAP Select-Node ausgeführt wird. In diesem Rahmen authentifiziert das Deploy-Administration-Utility entweder auf dem vCenter-Server, der den Host verwaltet, oder direkt auf dem ESXi-Standalone-Host.
 
@@ -174,7 +174,7 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 
 
-== Konfigurieren eines ONTAP Select-Node
+== Konfigurieren Sie einen ONTAP Select-Knoten
 
 Sie müssen jeden der Nodes im ONTAP Select-Cluster konfigurieren.
 
@@ -247,7 +247,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
-== Anbindung von Storage an die ONTAP Select-Nodes
+== Storage-Anbindung an die ONTAP Select-Nodes
 
 Sie müssen den von jedem Node im ONTAP Select-Cluster verwendeten Storage konfigurieren. Jedem Node muss immer mindestens ein Storage-Pool zugewiesen werden. Bei der Verwendung von Software-RAID muss jedem Knoten auch mindestens ein Laufwerk zugewiesen werden.
 

@@ -34,7 +34,7 @@ CAUTION: Wenn Sie über ein oder mehrere aktive Cluster mit zwei Nodes verfügen
 .Standort des Clusters und des Mediators
 Da die Cluster mit zwei Nodes normalerweise in einer Remote- oder Zweigstelle bereitgestellt werden, können sie sich vom Datacenter des Unternehmens aus fernab befinden und das Deploy Utility bietet administrativen Support. Bei dieser Konfiguration fließt der Managementdatenverkehr zwischen dem Dienstprogramm Deploy und dem Cluster über das WAN. In den Versionshinweisen finden Sie weitere Informationen zu Einschränkungen und Einschränkungen.
 
-.Sichern der Konfigurationsdaten für die Bereitstellung
+.Sichern Sie die Konfigurationsdaten der Bereitstellung
 Es empfiehlt sich, ein Backup der Bereitstellungskonfigurationsdaten regelmäßig zu erstellen, auch nach dem Erstellen eines Clusters. Dies ist aufgrund der Mediator-Konfigurationsdaten, die im Backup enthalten sind, bei Clustern mit zwei Nodes besonders wichtig.
 
 .Der Bereitstellung zugewiesene statische IP-Adresse

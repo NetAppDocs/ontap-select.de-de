@@ -16,10 +16,6 @@ summary: Nach dem Erstellen eines ONTAP Select-Clusters können Sie die Implemen
 [role="lead"]
 Nach dem Erstellen eines ONTAP Select-Clusters können Sie die Implementierung durch Ausführen verschiedener Administrationsaufgaben unterstützen. Beachten Sie dabei einige allgemeine Überlegungen.
 
-
-
-== Bevor Sie beginnen
-
 Im Allgemeinen lassen sich die Verfahren, die Sie mit der Weboberfläche Bereitstellen durchführen können, in eine von drei Kategorien einteilen.
 
 .Implementieren eines ONTAP Select-Clusters
@@ -33,32 +29,31 @@ Für die Bereitstellung gibt es verschiedene Verfahren (z. B. Ändern des Admini
 
 
 
-== Administration von ONTAP Select
+== Verwaltung von ONTAP Select
 
-Zur Unterstützung der ONTAP Select stehen zahlreiche verschiedene administrative Verfahren zur Verfügung. Darüber hinaus gibt es Verfahren speziell für das Deploy Administration Utility. Die wichtigsten dieser Verfahren sind nachfolgend aufgeführt. Im Allgemeinen verwenden alle die Webbenutzeroberfläche Bereitstellen. Ein administrativer Prozess kann aus einer einzelnen Schritt-für-Schritt-Aufgabe oder einer Sequenz von mehreren Aufgaben bestehen.
+Zur Unterstützung der ONTAP Select stehen zahlreiche verschiedene administrative Verfahren zur Verfügung. Darüber hinaus gibt es Verfahren speziell für das Deploy Administration Utility. Die wichtigsten dieser Verfahren sind nachfolgend aufgeführt. Im Allgemeinen verwenden alle die Webbenutzeroberfläche Bereitstellen.
 
 
-NOTE: Sie können ONTAP Select auch mit der Befehlszeilenschnittstelle verwalten. Weitere Informationen finden Sie im Abschnitt „_Verwenden der CLI_“.
+NOTE: Das können Sie auch link:https://docs.netapp.com/us-en/ontap-select/task_cli_signing_in.html["Verwenden Sie die Befehlszeilenschnittstelle"] Für die Verwaltung von ONTAP Select.
 
 
 
 == Zusätzliche ONTAP-Konfiguration durchführen
 
-Nachdem ein ONTAP Select Cluster implementiert wurde, können Sie den Cluster wie ein hardwarebasiertes ONTAP System konfigurieren und managen. Beispielsweise können Sie mit OnCommand System Manager oder der ONTAP CLI das ONTAP Select-Cluster konfigurieren.
+Nachdem ein ONTAP Select Cluster implementiert wurde, können Sie den Cluster wie ein hardwarebasiertes ONTAP System konfigurieren und managen. Sie können beispielsweise ONTAP System Manager oder die ONTAP CLI verwenden, um den ONTAP Select Cluster zu konfigurieren.
 
 .NetApp Client-Software
 Mit der folgenden unterstützten NetApp Client Software können Sie eine Verbindung zu ONTAP Select herstellen:
 
-* OnCommand System Manager
-* OnCommand Unified Manager
-* OnCommand Performance Manager
+* ONTAP System Manager
+* Active IQ Unified Manager
 * OnCommand Insight
 * OnCommand Workflow-Automatisierung
 * SnapCenter
 * Virtual Storage Console für VMware vSphere
 
 
-Informationen zu den unterstützten Versionen der Client Software finden Sie im _NetApp Interoperability Matrix Tool_. Wenn die Client-Software ONTAP 9 unterstützt, wird dieselbe Version auch mit ONTAP Select unterstützt.
+Um die unterstützten Versionen der Client-Software zu identifizieren, lesen Sie die link:https://mysupport.netapp.com/matrix/["NetApp Interoperabilitäts-Matrix-Tool"^]. Wenn die Client-Software ONTAP 9 unterstützt, wird dieselbe Version auch mit ONTAP Select unterstützt.
 
 
 NOTE: Für die Nutzung von SnapCenter und den entsprechenden Plug-ins sind serverbasierte Lizenzen erforderlich. Storage-Systemlizenzen für SnapCenter Plug-ins werden derzeit nicht bei ONTAP Select unterstützt.
@@ -70,7 +65,7 @@ Beim Konfigurieren des Clusters stehen verschiedene Optionen zur Verfügung. Daz
 
 * Erstellen der Netzwerkkonfiguration
 * Aggregate auslegen
-* Erstellung der Storage Virtual Machines (SVMs)
+* Erstellung der Storage-VMs (SVMs)
 
 
 .Erworbene Lizenzen mit Storage-Kapazität

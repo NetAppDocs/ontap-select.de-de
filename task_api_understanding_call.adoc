@@ -4,7 +4,7 @@ permalink: task_api_understanding_call.html
 keywords: rest api, deploy rest api, rest, understanding, executing 
 summary: Die Details aller API-Aufrufe werden dokumentiert und in einem gemeinsamen Format auf der Webseite für die Online-Dokumentation von ONTAP Select Deploy angezeigt. Anhand eines einzelnen API-Anrufs können Sie auf die Details aller API-Aufrufe zugreifen und diese interpretieren. 
 ---
-= Allgemeines zum und Ausführen eines API-Aufrufs
+= API-Aufruf verstehen und ausführen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

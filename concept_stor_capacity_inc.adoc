@@ -54,7 +54,7 @@ Die maximale VMDK-Größe, die während Capacity-Add-Vorgängen verwendet wird, 
 
 
 
-== Erhöhen der Kapazität für ONTAP Select mit Software-RAID
+== Steigerung der Kapazität für ONTAP Select mit Software-RAID
 
 Mit dem Storage-Add-Assistenten kann mithilfe von Software-RAID die zu verwaltende Kapazität für ONTAP Select-Nodes erhöht werden. Der Assistent stellt nur die verfügbaren das SDD-Laufwerke dar und können als RDMs zu der ONTAP Select-VM zugeordnet werden.
 

@@ -4,7 +4,7 @@ permalink: task_cli_signing_in.html
 keywords: administer, administering, cli, deploy, sign in, signing in 
 summary: Sie müssen sich mit SSH bei der Management-Shell bereitstellen anmelden. Nach der Anmeldung können Sie CLI-Befehle eingeben, um einen ONTAP Select Cluster zu erstellen und die entsprechenden Administrationsverfahren durchzuführen. 
 ---
-= Melden Sie sich für die Implementierung über SSH an
+= Melden Sie sich an, um die Implementierung über SSH durchzuführen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

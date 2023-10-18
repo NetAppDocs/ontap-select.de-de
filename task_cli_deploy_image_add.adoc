@@ -4,7 +4,7 @@ permalink: task_cli_deploy_image_add.html
 keywords: administer, administering, cli, deploy, ontap select image, add 
 summary: Sie können ein ONTAP Select-Image zu Ihrer Instanz des Deploy Administration Utility hinzufügen. Nach der Installation des Images können Sie es bei der Implementierung eines ONTAP Select-Clusters verwenden. 
 ---
-= Hinzufügen eines ONTAP Select Images zur Implementierung
+= Fügen Sie ein ONTAP Select-Image zur Bereitstellung hinzu
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -35,7 +35,7 @@ NOTE: Sie sollten nur ein ONTAP Select-Image mit einer Version hinzufügen, die 
 
 
 
-== Herunterladen des Installations-Images
+== Laden Sie das Installations-Image herunter
 
 Wenn Sie ein ONTAP Select Image zu einer Instanz des Deploy Utility hinzufügen möchten, müssen Sie das Installations-Image von der NetApp Support Website herunterladen. Das ONTAP Select Installations-Image ist als einzelne komprimierte Datei formatiert.
 
@@ -52,7 +52,7 @@ Wenn Sie ein ONTAP Select Image zu einer Instanz des Deploy Utility hinzufügen 
 
 
 
-== Hochladen des Installations-Images zur Bereitstellung
+== Laden Sie das Installations-Image zur Bereitstellung hoch
 
 Nach dem Erfassen des ONTAP Select Installations-Images müssen Sie die Datei auf die virtuelle Maschine bereitstellen hochladen.
 
@@ -87,7 +87,7 @@ Die Knoten-Installationsdatei wird im Home-Verzeichnis des Admin-Benutzers gespe
 
 
 
-== Hinzufügen des Installations-Images
+== Fügen Sie das Installationsabbild hinzu
 
 Das ONTAP Select Installations-Image kann in das Verzeichnis Deploy Images hinzugefügt werden, damit es bei der Bereitstellung eines neuen Clusters verfügbar ist.
 
@@ -109,7 +109,7 @@ Beispiel
 
 
 
-== Anzeigen der verfügbaren Installationsabbilder
+== Zeigt die verfügbaren Installationsabbilder an
 
 Sie können die ONTAP Select-Images anzeigen, die bei der Bereitstellung eines neuen Clusters verfügbar sind.
 

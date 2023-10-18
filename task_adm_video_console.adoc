@@ -4,7 +4,7 @@ permalink: task_adm_video_console.html
 keywords: administer, administering, web, video console 
 summary: Sie können auf die Videokonsole der virtuellen ESXi-Maschine zugreifen, auf der ONTAP Select ausgeführt wird. 
 ---
-= Zugreifen auf die ONTAP Select-Videokonsole
+= Öffnen Sie die ONTAP Select-Videokonsole
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

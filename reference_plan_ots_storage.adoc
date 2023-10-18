@@ -64,14 +64,6 @@ Bei der Implementierung eines ONTAP Select-Clusters auf dem VMware ESXi Hypervis
 Die Umgebung für eine Software-RAID-Implementierung auf VMware ESXi muss die folgenden zentralen Anforderungen erfüllen:
 
 * VMware ESXi 7.0 GA (Build 15843807) oder höher
-* ONTAP Select 9.5 oder höher
-* ONTAP Select Implementierung 2.10 oder höher
-* Nur neue ONTAP Select Cluster
-
-
-
-NOTE: Sie müssen mithilfe des Deploy-Administration-Utility ein neues Cluster mit ONTAP Select 9.5 oder höher implementieren. Sie können kein Software-RAID mit einem vorhandenen Node verwenden, der von einer früheren Version auf ONTAP Select 9.5 aktualisiert wurde.
-
 * ONTAP Select Premium-Lizenz oder höher
 * Nur lokale SSD-Laufwerke
 * Trennung von Systemfestplatten vom Root-Laufwerk und Datenaggregaten
@@ -82,6 +74,7 @@ NOTE: Sie müssen mithilfe des Deploy-Administration-Utility ein neues Cluster m
 NOTE: Wenn ein Hardware-RAID-Controller vorhanden ist, lesen Sie den link:concept_stor_concepts_chars.html["Deep-Dive-Storage –"] Abschnitt für weitere Konfigurationsanforderungen.
 
 * VMware VMotion, HA und DRS werden nicht unterstützt
+* Sie können kein Software-RAID mit einem Knoten verwenden, der von ONTAP Select 9.4 oder früher aktualisiert wurde. In diesem Fall müssen Sie einen neuen Node für die Software-RAID-Bereitstellung erstellen.
 
 
 
@@ -100,14 +93,14 @@ Zur Trennung der Systemfestplatten vom Root- und Datenaggregate müssen Sie jede
 
 Bei der Planung einer ONTAP Select-Implementierung sollten Sie die Einschränkungen im Zusammenhang mit Storage-Zuweisung und -Nutzung kennen.
 
-Die wichtigsten Storage-Einschränkungen sind im Folgenden dargestellt. Weitere detaillierte Informationen finden Sie auch im _NetApp Interoperabilitäts-Matrix-Tool_.
+Die wichtigsten Storage-Einschränkungen sind im Folgenden dargestellt. Lesen Sie auch die link:https://mysupport.netapp.com/matrix/["NetApp Interoperabilitäts-Matrix-Tool"^] Finden Sie weitere Informationen.
 
 
-TIP: ONTAP Select setzt verschiedene Einschränkungen im Zusammenhang mit Storage-Zuweisung und -Nutzung durch. Bevor Sie ein ONTAP Select Cluster implementieren oder eine Lizenz erwerben, sollten Sie mit diesen Einschränkungen vertraut sein. Weitere Informationen finden Sie im Abschnitt „_Lizenz_“.
+TIP: ONTAP Select setzt verschiedene Einschränkungen im Zusammenhang mit Storage-Zuweisung und -Nutzung durch. Bevor Sie ein ONTAP Select Cluster implementieren oder eine Lizenz erwerben, sollten Sie mit diesen Einschränkungen vertraut sein. Siehe link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["Lizenz"] Weitere Informationen finden Sie in.
 
 
 
-=== Berechnung der Storage-Bruttokapazität
+=== Berechnen der Brutto-Storage-Kapazität
 
 Die ONTAP Select Storage-Kapazität entspricht der zulässigen Gesamtgröße der virtuellen Daten und Root-Festplatten, die an die ONTAP Select Virtual Machine angeschlossen sind. Dies sollten Sie bei der Zuweisung von Kapazität berücksichtigen.
 
@@ -163,7 +156,7 @@ Bei Verwendung von VMware vSAN kann ein Datastore größer als 64 TB sein. Sie k
 
 Folgende Empfehlungen sollten Sie bezüglich der Hypervisor-Core-Hardware berücksichtigen:
 
-* Alle Laufwerke in einem einzigen ONTAP Select Aggregat sollten den gleichen Typ sein. So sollten Sie beispielsweise keine HDD- und SSD-Laufwerke im selben Aggregat kombinieren.
+* Alle Laufwerke in einem einzigen ONTAP Select Aggregat sollten vom gleichen Typ sein. So sollten Sie beispielsweise keine HDD- und SSD-Laufwerke im selben Aggregat kombinieren.
 
 
 
@@ -199,10 +192,10 @@ NOTE: Software-RAID mit lokalen das-Laufwerken wird mit der Premium-Lizenz (nur 
 
 Software-RAID kann für die Verwendung von NVMe-SSD-Laufwerken konfiguriert werden. Ihre Umgebung muss die folgenden Anforderungen erfüllen:
 
-* ONTAP Select 9.7 oder höher mit dem zugehörigen Deploy-Administration-Utility
+* ONTAP Select 9.7 oder höher mit einem unterstützten Deployment-Verwaltungsprogramm
 * Lizenzangebot für Premium-XL-Plattformen oder eine 90-Tage-Evaluierungslizenz
 * VMware ESXi Version 6.7 oder höher
 * NVMe Geräte gemäß Spezifikation 1.0 oder höher
 
 
-Vor der Verwendung müssen Sie die NVMe-Laufwerke manuell konfigurieren. Siehe link:task_chk_nvme_configure.html["Konfigurieren eines Hosts für die Nutzung von NVMe-Laufwerken"] Finden Sie weitere Informationen.
+Vor der Verwendung müssen Sie die NVMe-Laufwerke manuell konfigurieren. Siehe link:task_chk_nvme_configure.html["Konfigurieren Sie einen Host für die Verwendung von NVMe-Laufwerken"] Finden Sie weitere Informationen.

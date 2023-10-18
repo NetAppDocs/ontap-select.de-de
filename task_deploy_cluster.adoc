@@ -19,7 +19,7 @@ summary: Über die im ONTAP Select Deploy Administration Utility bereitgestellte
 Wenn Sie ein ONTAP Select-Cluster mithilfe der Webschnittstelle Deploy Utility erstellen, werden Sie durch eine bestimmte Sequenz von Schritten geführt. Der genaue Prozess hängt davon ab, ob Sie ein Single-Node- oder ein Multi-Node-Cluster implementieren.
 
 
-TIP: Sie können ONTAP Select-Cluster auch mithilfe der CLI des Deploy Utility implementieren.
+TIP: Das können Sie auch link:https://docs.netapp.com/us-en/ontap-select/task_cli_deploy_cluster.html["Implementieren Sie ONTAP Select Cluster über die Deploy Utility CLI"].
 
 
 
@@ -49,8 +49,8 @@ Host-Vorbereitung:: Sie müssen die Hypervisor-Hosts vorbereiten, auf denen die 
 
 --
 Lizenzdateien:: Wenn Sie den Cluster in einer Produktionsumgebung implementieren möchten, müssen Sie die Storage-Lizenzdateien basierend auf Ihrem Lizenzmodell erwerben.
-Bereitstellung von Anmeldedaten für Installation und Konto:: Sie müssen das Dienstprogramm „Deploy Administration“ installieren und die Erstkonfiguration ausführen. Siehe link:task_install_deploy.html["Installieren von ONTAP Select Deploy"] Finden Sie weitere Informationen. Sie müssen über das Kennwort für das Deploy-Administratorkonto verfügen, das im Rahmen des Installationsprozesses konfiguriert wurde.
-Installieren älterer ONTAP Select Node Images:: Standardmäßig enthält das Deploy Administration Utility die aktuelle Version von ONTAP Select zum Zeitpunkt der Veröffentlichung. Wenn Sie Cluster mit einer früheren Version von ONTAP Select implementieren möchten, müssen Sie der implementierten Instanz das ONTAP Select-Image hinzufügen. Siehe link:task_cli_deploy_image_add.html["Hinzufügen eines ONTAP Select Images zur Implementierung"] Finden Sie weitere Informationen.
+Bereitstellung von Anmeldedaten für Installation und Konto:: Sie müssen das Dienstprogramm „Deploy Administration“ installieren und die Erstkonfiguration ausführen. Siehe link:task_install_deploy.html["Installieren Sie ONTAP Select Deploy"] Finden Sie weitere Informationen. Sie müssen über das Kennwort für das Deploy-Administratorkonto verfügen, das im Rahmen des Installationsprozesses konfiguriert wurde.
+Installieren älterer ONTAP Select Node Images:: Standardmäßig enthält das Deploy Administration Utility die aktuelle Version von ONTAP Select zum Zeitpunkt der Veröffentlichung. Wenn Sie Cluster mit einer früheren Version von ONTAP Select implementieren möchten, müssen Sie der implementierten Instanz das ONTAP Select-Image hinzufügen. Siehe link:task_cli_deploy_image_add.html["Fügen Sie ein ONTAP Select-Image zur Bereitstellung hinzu"] Finden Sie weitere Informationen.
 Startseite „erste Schritte“:: Die erste Seite *erste Schritte mit ONTAP Select Deploy* führt Sie durch den mehrstufigen Prozess zur Erstellung eines Clusters. Es gibt fünf Hauptschritte, darunter:
 +
 --
@@ -73,7 +73,7 @@ Nach Bereitstellung eines Clusters:: Sie sollten die Konfigurationsdaten der ONT
 
 
 
-== Erstellen eines Single-Node- oder Multi-Node-Clusters
+== Erstellen Sie ein Single-Node- oder Multi-Node-Cluster
 
 Sie können ein ONTAP Select Cluster mit einem Node oder mehreren Nodes über die Web-Benutzeroberfläche von ONTAP Select Deploy bereitstellen.
 

@@ -116,7 +116,7 @@ Sie müssen sicherstellen, dass die Speicherpools im Rahmen einer ONTAP Select-I
 
 
 
-=== Verwalten der virtuellen Laufwerke
+=== Verwalten Sie die virtuellen Laufwerke
 
 Bei der Vorbereitung der Bereitstellung von ONTAP Select sind einige Probleme im Zusammenhang mit virtuellen Festplatten zu vermeiden.
 
@@ -167,7 +167,7 @@ image:ST_02.jpg["ESXi Cluster"]
 Sie können einen VMFS-Datenspeicher auf einem externen Storage Array erstellen. Auf den Storage wird über eines von mehreren verschiedenen Netzwerkprotokollen zugegriffen. Die folgende Abbildung zeigt einen VMFS-Datenspeicher auf einem externen Speicher-Array, auf das über das iSCSI-Protokoll zugegriffen wird.
 
 
-NOTE: ONTAP Select unterstützt alle im VMware Storage/SAN Compatibility Guide beschriebenen externen Storage Arrays, einschließlich iSCSI, Fibre Channel und Fibre Channel over Ethernet.
+NOTE: ONTAP Select unterstützt alle externen Speicher-Arrays, die in der VMware Storage/SAN-Kompatibilitätsdokumentation beschrieben sind, einschließlich iSCSI, Fibre Channel und Fibre Channel over Ethernet.
 
 image:ST_03.jpg["ESXi Hypervisor-Host"]
 

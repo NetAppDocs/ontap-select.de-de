@@ -32,7 +32,7 @@ Es gibt verschiedene Möglichkeiten, die VMware Ressourcen anzuzeigen, die von e
 
 
 
-== Anzeigen der VMware-Ressourcen für ein Cluster über das Plug-in
+== Zeigen Sie die VMware-Ressourcen für einen Cluster über das Plug-in an
 
 Sie können über das Deploy-Plug-in die VMware Ressourcen anzeigen, die einem ONTAP Select Cluster zugewiesen sind.
 
@@ -46,7 +46,7 @@ Sie können über das Deploy-Plug-in die VMware Ressourcen anzeigen, die einem O
 
 
 
-== Anzeigen der ONTAP Select-Cluster über eine ESXi Virtual Machine
+== Zeigen Sie die ONTAP Select-Cluster über eine virtuelle ESXi-Maschine an
 
 Sie können das ONTAP Select-Cluster und die zugehörigen Clusterressourcen anzeigen, indem Sie auf eine VMware Virtual Machine zugreifen.
 
@@ -60,7 +60,7 @@ Sie können das ONTAP Select-Cluster und die zugehörigen Clusterressourcen anze
 
 
 
-== Erstellen eines Single-Node-Clusters auf einem ESXI-Host
+== Erstellen Sie ein Single-Node-Cluster auf einem ESXI-Host
 
 Sie können einen ESXI Hypervisor Host über die vSphere Schnittstelle auswählen und ein ONTAP Select Single-Node-Cluster implementieren.
 

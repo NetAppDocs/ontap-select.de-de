@@ -21,7 +21,7 @@ Verwenden Sie den VMDirectPath I/O-Pass-Through auf den NVMe Geräten und maximi
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Ihre Implementierungsumgebung die folgenden Mindestanforderungen erfüllt:
 
-* ONTAP Select 9.7 oder höher mit dem zugehörigen Deploy-Administration-Utility
+* ONTAP Select 9.7 oder höher mit einem unterstützten Deployment-Verwaltungsprogramm
 * Lizenzangebot für Premium-XL-Plattformen oder eine 90-Tage-Evaluierungslizenz
 * VMware ESXi Version 6.7 oder höher
 * NVMe Geräte gemäß Spezifikation 1.0 oder höher

@@ -45,7 +45,7 @@ Die folgenden Features sind bei ONTAP Select enthalten und standardmäßig lizen
 
 Sie müssen eine separate Lizenz für jede ONTAP-Funktion erwerben, die standardmäßig nicht aktiviert ist. Dazu gehören:
 
-* SnapLock Enterprise
+* SnapLock Enterprise (SnapLock-Compliance wird für ONTAP Select nicht unterstützt)
 * FabricPool
 * Datenverfügbarkeitsservice
 * FlexCache (kostenlos)

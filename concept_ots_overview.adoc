@@ -45,7 +45,7 @@ Ein ONTAP Select Cluster besteht aus einem, zwei, vier, sechs oder acht Nodes. J
 Das Deploy Administration Utility wird als separate virtuelle Linux-Maschine verpackt und installiert. Sie müssen das Dienstprogramm verwenden, um ONTAP Select-Cluster in einer Produktionsumgebung zu implementieren. Eine aktuelle Version des ONTAP Select Node Images wird mit dem Deploy Utility gebündelt.
 
 
-NOTE: Ab ONTAP Select 9.7 wird dem Deploy Administration Utility keine separate Versionsnummer mehr zugewiesen. Deploy hat die gleiche Versionsnummer wie die zugehörige ONTAP Select-Version. Jede Aktualisierung des Deploy Utility innerhalb einer bestimmten ONTAP Select Version hat jedoch eine eindeutige Build-Nummer.
+NOTE: Dem Dienstprogramm „Verwaltung bereitstellen“ ist keine separate Versionsnummer zugewiesen. Deploy hat die gleiche Versionsnummer wie die zugehörige ONTAP Select-Version. Jede Aktualisierung des Deploy Utility innerhalb einer bestimmten ONTAP Select Version hat jedoch eine eindeutige Build-Nummer.
 
 
 
@@ -57,7 +57,7 @@ image:ots_architecture.png["Zeigt einen ONTAP Select Cluster mit vier Nodes, der
 
 
 
-== Vergleich von ONTAP Select und ONTAP 9
+== Vergleichen Sie ONTAP Select und ONTAP 9
 
 Sowohl Hardware-basiertes ONTAP als auch ONTAP Select bieten Storage-Lösungen der Enterprise-Klasse. Da jedoch eine andere Entwicklung und Implementierung erforderlich ist, kann jede unterschiedliche geschäftliche Anforderungen und Nutzungsszenarien erfüllen. Vor der Planung einer ONTAP Select-Implementierung sollten Sie sich mit den großen Unterschieden zwischen den Plattformen vertraut machen.
 

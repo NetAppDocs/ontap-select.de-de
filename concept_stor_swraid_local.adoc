@@ -123,7 +123,7 @@ Wenn einer ONTAP Select VM mit Software-RAID Kapazität hinzugefügt wird, muss 
 
 
 
-== Zuordnen einer ONTAP Select-Festplatte zu der entsprechenden ESX-Festplatte
+== Ordnen Sie eine ONTAP Select-Festplatte der entsprechenden ESX-Festplatte zu
 
 ONTAP Select-Festplatten werden in der Regel als NET x.y. bezeichnet Sie können die Festplatten-UUID mit dem folgenden ONTAP-Befehl abrufen:
 

@@ -4,7 +4,7 @@ permalink: reference_api_workflow01.html
 keywords: rest api, deploy rest api, rest, workflow, create cluster, curl, json 
 summary: Sie können ein Single-Node ONTAP Select Cluster auf einem von vCenter verwalteten VMware ESXi Host implementieren. Der Cluster wird mit einer Evaluierungslizenz erstellt. 
 ---
-= Workflow 1: Erstellen eines Evaluierungs-Clusters mit nur einem Node auf ESXi
+= Workflow 1: Erstellen eines Single-Node-Evaluierungsclusters auf ESXi
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

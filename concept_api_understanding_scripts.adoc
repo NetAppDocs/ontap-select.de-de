@@ -4,7 +4,7 @@ permalink: concept_api_understanding_scripts.html
 keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
 summary: Mit den Python-Beispielskripten können Sie mehrere verschiedene Aufgaben ausführen. Sie sollten die Skripte verstehen, bevor Sie sie in einer Live-Deploy-Instanz verwenden. 
 ---
-= Allgemeines zu den Python-Skripten
+= Verstehen Sie die Python-Skripte
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -56,7 +56,7 @@ Die CLI-Eingabeparameter für das Skript umfassen:
 
 
 
-== Hinzufügen einer Node-Lizenz
+== Fügen Sie eine Node-Lizenz hinzu
 
 Wenn Sie sich für die Bereitstellung eines Produktionsclusters entscheiden, müssen Sie für jeden Knoten eine Lizenz hinzufügen, indem Sie das Skript _add_license.py_ verwenden. Sie können die Lizenz vor oder nach dem Implementieren des Clusters hinzufügen.
 

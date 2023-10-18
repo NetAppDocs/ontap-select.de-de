@@ -4,7 +4,7 @@ permalink: task_vpi_upgrade.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, upgrade, verify, remove 
 summary: Sie können die ONTAP Select Deploy Web User Interface verwenden, um das Deploy Plug-in vom vCenter Server zu aktualisieren oder zu entfernen. Sie können auch überprüfen, ob das Plug-in noch installiert ist. 
 ---
-= Überprüfen und Entfernen des vCenter Plug-ins zur Bereitstellung
+= Überprüfen und entfernen Sie das Deploy vCenter Plug-in
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

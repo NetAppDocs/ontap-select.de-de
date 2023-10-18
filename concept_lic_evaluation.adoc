@@ -38,9 +38,8 @@ Die ONTAP Select Evaluierungslizenz weist folgende Merkmale auf:
 Sie können ein ONTAP Select Evaluation Cluster auf eine Produktionslizenz aktualisieren. Sie sollten die folgenden Einschränkungen beachten:
 
 * Sie müssen das Dienstprogramm „Deploy Administration“ verwenden, um die Lizenzaktualisierung durchzuführen
-* Lizenzaktualisierung wird nur mit ONTAP Select 9.5P1 unter Einsatz von Deploy 2.11 oder höher unterstützt
 * Es kann eine Lizenz für Kapazitäts-Tiers verwendet werden, jedoch wird die Lizenzierung von Kapazitäts-Pools nicht unterstützt
 * Jeder Node muss über ausreichend Storage verfügen, um die erforderliche Mindestmenge für eine Produktionslizenz basierend auf der Cluster-Größe zu unterstützen
 
 
-link:task_adm_licenses.html["Konvertieren einer Evaluierungslizenz in eine Produktionslizenz"] Finden Sie weitere Informationen.
+Siehe link:task_adm_licenses.html["Umwandeln einer Evaluierungslizenz in eine Produktionslizenz"] Finden Sie weitere Informationen.

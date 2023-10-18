@@ -57,7 +57,7 @@ Cross Volume Background Deduplication:  true
 NOTE: Für ONTAP Select Upgrades von 9.6 und höher müssen Sie ONTAP Select auf das SSD Storage mit einer Premiumlizenz installieren. Außerdem müssen Sie während der ersten Cluster-Installation mit ONTAP Deploy das Kontrollkästchen *Storage-Effizienz* aktivieren* aktivieren. Wenn die Bedingungen noch nicht erfüllt sind, muss nach dem ONTAP Upgrade eine AFF-ähnliche Persönlichkeit erstellt werden, um ein Boot-Argument und einen Node-Neustart zu ermöglichen. Weitere Informationen erhalten Sie vom technischen Support.
 
 .ONTAP Select Storage-Effizienzfunktionen
-Die folgende Tabelle fasst die verschiedenen verfügbaren, standardmäßig aktivierten und nicht standardmäßig aktivierten Storage-Effizienztechnologien zusammen, jedoch empfohlen, je nach Medientyp und Softwarelizenz. Die Informationen in der folgenden Tabelle gelten für ONTAP Select 9.6 und neuere Versionen. Informationen zu vorherigen Versionen finden Sie im Abschnitt „_ONTAP Select Storage Efficiency Support_“ in https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
+Die folgende Tabelle fasst die verschiedenen verfügbaren, standardmäßig aktivierten und nicht standardmäßig aktivierten Storage-Effizienztechnologien zusammen, jedoch empfohlen, je nach Medientyp und Softwarelizenz.
 
 [cols="4"]
 |===
@@ -123,6 +123,3 @@ Szenario 2:: Wenn bereits vor dem Upgrade einige Storage-Effizienzen auf einem V
 
 --
 
-
-.Hinweise zum Upgrade-Verhalten bei der das-HDD-Konfiguration
-Storage-Effizienzfunktionen, die vor dem Upgrade aktiviert wurden, werden nach dem Upgrade auf ONTAP Select 9.6 oder höher beibehalten. Wenn vor dem Upgrade keine Storage-Effizienz aktiviert wurde, ist nach einem Upgrade keine Storage-Effizienz aktiviert.

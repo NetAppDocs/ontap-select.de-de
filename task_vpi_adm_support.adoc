@@ -18,7 +18,7 @@ Im Rahmen der Administration von ONTAP Select können Sie verschiedene ähnliche
 
 
 
-== Anzeigen der Systemeinstellungen
+== Zeigt die Systemeinstellungen an
 
 Sie können die Grundeinstellungen des Dienstprogramms Deploy Administration über das vCenter Plugin anzeigen.
 
@@ -31,7 +31,7 @@ Sie können die Grundeinstellungen des Dienstprogramms Deploy Administration üb
 
 
 
-== Anzeigen von Ereignismeldungen
+== Zeigt Ereignismeldungen an
 
 Das Deploy Administration Utility enthält eine Event-Protokollierungsfunktion, die Informationen über die Aktivität des Systems liefert. Sie können den Inhalt des Ereignisprotokolls über das Deploy-Plug-in anzeigen, um Probleme zu beheben oder wenn Sie dazu vom Support aufgefordert werden.
 
@@ -53,7 +53,7 @@ Sie können die Liste der Ereignismeldungen anhand verschiedener Merkmale filter
 
 
 
-== Aktivieren von AutoSupport
+== Aktivieren Sie AutoSupport
 
 AutoSupport ist das primäre Tool zur Fehlerbehebung, das von NetApp zur Unterstützung von ONTAP Select verwendet wird. Sie können die AutoSupport-Funktion bei Bedarf aktivieren oder deaktivieren.
 
@@ -69,7 +69,7 @@ Nach der Bereitstellung eines neuen Clusters sollten Sie sicherstellen, dass Aut
 
 
 
-== Erstellen eines AutoSupport-Pakets
+== Generieren Sie ein AutoSupport-Paket
 
 Das Deploy vCenter Plug-in umfasst die Möglichkeit, ein AutoSupport-Paket zu generieren. Sie sollten ein Paket generieren, um Fehler zu debuggen oder wenn Sie dazu vom Support geleitet werden.
 

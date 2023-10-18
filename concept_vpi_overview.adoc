@@ -92,13 +92,13 @@ Die ONTAP Select-Deploy-Option entspricht ungefähr den Registerkarten *Hypervis
 |===
 
 
-== Vergleich des vCenter Plug-ins mit der nativen Bereitstellungs-Benutzeroberfläche
+== Vergleichen Sie das vCenter Plug-in mit der nativen Deploy-Benutzeroberfläche
 
 Die Funktionen, die das vCenter Plug-in über vSphere bietet, entsprechen der nativen Implementierungsschnittstelle. Es gibt jedoch einige Funktionen, die nicht mit dem Plug-in geliefert werden und nur mit der Benutzeroberfläche Deploy verfügbar sind.
 
 
 
-=== Management des vCenter Plug-ins
+=== VCenter Plug-in managen und
 
 Sie können das vCenter Plug-in nicht mit dem vCenter Plug-in installieren, aktualisieren, entfernen oder überprüfen. Sie müssen diese Managementaufgaben über die native Benutzeroberfläche für die Bereitstellung ausführen.
 

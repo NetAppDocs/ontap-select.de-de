@@ -18,9 +18,9 @@ Vor der Installation und dem Management des vCenter Plug-ins zur Bereitstellung 
 
 
 
-== Entscheiden, ob die Webbenutzeroberfläche bereitstellen oder die CLI verwendet werden soll
+== Legen Sie fest, ob Sie die Webbenutzeroberfläche oder die CLI bereitstellen möchten
 
-In den meisten Fällen bietet die Deploy Web User Interface die bequemste Option zur Verwaltung des vCenter Plug-ins. Dies ist die in diesem Handbuch beschriebene Option. Sie können das Plug-in jedoch auch über die Befehlszeilenschnittstelle implementieren verwalten. Geben Sie für weitere Informationen an der Eingabeaufforderung CLI bereitstellen die folgenden Befehle ein:
+In den meisten Situationen bietet die Webbenutzeroberfläche bereitstellen die bequemste Option für die Verwaltung des vCenter-Plug-ins. Dies ist die in diesem Verfahren beschriebene Option. Sie können das Plug-in jedoch auch über die Befehlszeilenschnittstelle implementieren verwalten. Geben Sie für weitere Informationen an der Eingabeaufforderung CLI bereitstellen die folgenden Befehle ein:
 
 * `deploy plugin ?` (Unterbefehle umfassen: Installieren, entfernen, anzeigen und aktualisieren)
 * `deploy plugin-packages show`
@@ -33,7 +33,8 @@ In den meisten Fällen bietet die Deploy Web User Interface die bequemste Option
 Es gibt verschiedene Schritte, die Sie unabhängig von der Management-Aufgabe durchführen müssen. Die gemeinsame Vorbereitung umfasst:
 
 * Lesen Sie den Abschnitt erste Schritte, um sich mit dem Deploy vCenter Plug-in vertraut zu machen.
-* Sicherstellung, dass das ONTAP Select Deploy Administration Utility installiert ist und ausgeführt wird Weitere Informationen finden Sie im Installations- und Cluster-Implementierungs-Leitfaden für VMware.
+* Sicherstellung, dass das ONTAP Select Deploy Administration Utility installiert ist und ausgeführt wird
+Weitere Informationen finden Sie in der Dokumentation zur Installation und Clusterbereitstellung für VMware.
 * Kontoanmeldeinformationen erfassen:
 +
 ** Administratorkonto bereitstellen
@@ -47,13 +48,13 @@ Abhängig von der Management-Aufgabe kann es erforderlich sein, weitere Vorberei
 
 
 
-== Vorbereiten der vCenter-Serverkonten
+== Bereiten Sie die vCenter-Serverkonten vor
 
 Bevor Sie das Plug-in Deploy installieren und verwenden, müssen Sie die vCenter-Konten mit den erforderlichen Berechtigungen erstellen. Sie können ein einzelnes Konto mit allen erforderlichen Berechtigungen erstellen oder mehrere Konten mit jeweils einer einzigen Berechtigung erstellen. Das folgende Beispiel verteilt die vCenter Berechtigungen auf drei separate Rollen, die dann den drei entsprechenden Konten zugewiesen werden können.
 
 
 
-=== Validieren des Endbenutzerzugriffs auf das Plug-in
+=== Validieren Sie den Zugriff des Endbenutzers auf das Plug-in
 
 Sie benötigen ein Konto, um den Zugriff auf das Plug-in über vSphere zu validieren. Das Konto muss die folgende vCenter-Berechtigung haben: sessions.validate.session. Nachdem das Konto in vCenter erstellt wurde, müssen Sie es im Deploy Administration Utility definieren. Klicken Sie in der Webbenutzeroberfläche bereitstellen auf die Registerkarte Administration und dann auf Anmeldeinformationen, um den Standort und die Anmeldeinformationen des vCenter-Servers bereitzustellen.
 
@@ -65,7 +66,7 @@ Dieses Konto wird auf folgende Arten verwendet:
 
 
 
-=== Verwalten des Plug-ins
+=== Management des Plug-ins
 
 In der Benutzeroberfläche Deploy Web können Sie das Plug-in installieren und anschließend aktualisieren oder entfernen. Jedes Mal, wenn Sie eine dieser Managementaktionen ausführen, werden Sie im Popup-Fenster zu einem vCenter Konto aufgefordert. Jede Managementaktionen wird über eine separate vCenter Berechtigung gesteuert.
 
@@ -84,7 +85,7 @@ Sie können eine einzelne Rolle und ein einzelnes Konto mit allen drei Berechtig
 
 
 
-=== Zugriff auf das Plug-in
+=== Greifen Sie auf das Plug-in zu
 
 Endbenutzer können über vSphere auf das Plug-in zugreifen. Sie müssen den Konten, die das Plug-in verwenden, die folgende Berechtigung zuweisen:
 

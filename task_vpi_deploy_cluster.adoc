@@ -51,7 +51,7 @@ Neben der allgemeinen Vorbereitung sollten Sie sich vor der Bereitstellung eines
 
 
 
-== Hinzufügen eines Hypervisor-Hosts
+== Fügen Sie einen Hypervisor-Host hinzu
 
 Sie können Hypervisoren-Hosts zum Deploy-Dienstprogramm hinzufügen, auf dem die ONTAP Select-Nodes ausgeführt werden, bevor Sie ein Cluster implementieren. Falls erforderlich können Sie stattdessen die Hosts im Dialogfeld zur Cluster-Erstellung hinzufügen.
 
@@ -121,7 +121,7 @@ TIP: Wenn der Vorgang zum Erstellen des Clusters initiiert, aber nicht abgeschlo
 
 
 
-== Erstellen eines Multi-Node-Clusters
+== Erstellen Sie ein Cluster mit mehreren Nodes
 
 Das VMware vCenter Plug-in kann über den vSphere Web-Client verwendet werden, um ein ONTAP Select-Cluster aus mehreren Nodes zu implementieren.
 

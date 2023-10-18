@@ -99,7 +99,7 @@ TIP: Als Best Practice sollten Sie immer die gewünschten Felder identifizieren.
 
 
 
-=== Sortieren von Objekten im Ausgabungsset
+=== Objekte im Ausgabesatz sortieren
 
 Die Datensätze in einer Ressourcensammlung werden in der vom Objekt definierten Standardreihenfolge zurückgegeben. Sie können die Reihenfolge mit dem Abfrageparameter order_by mit dem Feldnamen und der Sortierrichtung wie folgt ändern:
 `order_by=<field name> asc|desc`
@@ -123,7 +123,7 @@ Sie können mehrere Anfragen zur Seite über die Ereignisse (oder jeden Objektty
 
 
 
-== Interpretation einer API-Antwort
+== Eine API-Antwort interpretieren
 
 Jede API-Anfrage generiert eine Antwort an den Client. Sie können die Antwort überprüfen, um festzustellen, ob sie erfolgreich war, und weitere Daten nach Bedarf abrufen.
 

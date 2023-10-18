@@ -29,10 +29,7 @@ NOTE: Weitere Informationen zur Konfiguration eines vSwitch auf einem Hypervisor
 
 == Upgrade auf VMXNET3
 
-Ab ONTAP Select 9.5 mit Deploy 2.10 ist VMXNET3 der Standardnetzwerktreiber, der bei neuen Cluster-Implementierungen auf VMware ESXi enthalten ist. Wenn Sie einen vorhandenen ONTAP Select-Knoten auf Version 9.5 oder höher aktualisieren, wird der Treiber nicht automatisch aktualisiert.
-
-
-NOTE: Ein Upgrade auf VMXNET3 ist derzeit nicht erforderlich. Wenn Sie jedoch den Treiber aktualisieren möchten, müssen Sie die Aktualisierung manuell durchführen. In diesem Fall wenden Sie sich an den NetApp Support, um Unterstützung zu erhalten.
+Ab ONTAP Select 9.5 mit Deploy 2.10 ist VMXNET3 der Standardnetzwerktreiber, der bei neuen Cluster-Implementierungen auf VMware ESXi enthalten ist. Wenn Sie einen älteren ONTAP Select-Knoten auf Version 9.5 oder höher aktualisieren, wird der Treiber nicht automatisch aktualisiert.
 
 
 

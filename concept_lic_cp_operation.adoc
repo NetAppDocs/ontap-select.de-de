@@ -20,7 +20,7 @@ Das Modell der Kapazitäts-Pools unterscheidet sich vom Modell der Kapazitäts-T
 
 == Lizenzmanager
 
-Der License Manager ist eine Softwarekomponente, die mit ONTAP Select 9.5 unter Verwendung von ONTAP Select Deploy 2.10 eingeführt wurde. LLM wird in jeder Instanz des Deploy-Administration-Utility als separater Prozess ausgeführt. Einige der von LM bereitgestellten Funktionen umfassen:
+Der License Manager wird in jeder Instanz des Dienstprogramms Deploy Administration als separater Prozess ausgeführt. Einige der von LM bereitgestellten Funktionen umfassen:
 
 * Erstellen Sie für jeden Node eine eindeutige 20-stellige Seriennummer, die auf der Seriennummer der Kapazitäts-Pool-Lizenz basiert
 * Erstellen Sie unter Berücksichtigung von Anforderungen der ONTAP Select Nodes Mietverträge für Kapazität aus den gemeinsamen Kapazitäts-Pools
@@ -68,7 +68,7 @@ Ein ONTAP Select Node muss bei jedem Erstellen, erweitern oder Ändern eines Dat
 
 
 
-== Rückgabe der Storage-Kapazität in einen Kapazitäts-Pool
+== Rückgabe der Speicherkapazität an einen Kapazitäts-Pool
 
 Die Speicherkapazität wird nach Bedarf aus einem Kapazitäts-Pool zugewiesen. Jede neue Anfrage kann den verfügbaren Speicher im Pool verringern. Die Storage-Kapazität wird in verschiedenen Situationen an den Pool zurückgegeben. Dies umfasst:
 

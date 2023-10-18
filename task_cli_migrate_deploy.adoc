@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: Sie können eine vorhandene Instanz des Dienstprogramms Deploy Administration mithilfe der Befehlszeilenschnittstelle auf eine neue virtuelle Maschine migrieren. 
 ---
-= Migrieren einer Deploy-Instanz auf eine neue Virtual Machine
+= Migrieren Sie eine Bereitstellungsinstanz auf eine neue virtuelle Maschine
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,7 +20,7 @@ Dieses Verfahren basiert auf der Erstellung einer neuen virtuellen Maschine, die
 
 
 
-== Sichern der Konfigurationsdaten für die Bereitstellung
+== Sichern Sie die Konfigurationsdaten der Bereitstellung
 
 Im Rahmen der Migration der virtuellen Maschine müssen Sie ein Backup der Bereitstellungskonfigurationsdaten erstellen. Sie sollten auch ein Backup erstellen, nachdem Sie ein ONTAP Select-Cluster bereitgestellt haben. Die Daten werden in einer einzigen verschlüsselten Datei gespeichert, die Sie auf Ihre lokale Arbeitsstation herunterladen können.
 
@@ -53,7 +53,7 @@ Sie können über die URL auf die Sicherungsdatei zugreifen.
 
 
 
-== Installieren einer neuen Instanz der virtuellen Maschine Bereitstellen
+== Installieren Sie eine neue Instanz der virtuellen Maschine bereitstellen
 
 Sie müssen eine neue Instanz der virtuellen Maschine bereitstellen erstellen, die Sie mit den Konfigurationsdaten der ursprünglichen virtuellen Maschine aktualisieren können.
 
@@ -74,11 +74,11 @@ Diese Aufgabe wird auf hoher Ebene beschrieben.
 
 
 .Verwandte Informationen
-link:task_install_deploy.html["Installieren von ONTAP Select Deploy"]
+link:task_install_deploy.html["Installieren Sie ONTAP Select Deploy"]
 
 
 
-== Wiederherstellen der Konfigurationsdaten auf der neuen virtuellen Maschine bereitstellen
+== Stellen Sie die Bereitstellungskonfigurationsdaten auf der neuen virtuellen Maschine wieder her
 
 Sie müssen die Konfigurationsdaten von der ursprünglichen virtuellen Maschine des Bereitstellungsdienstprogramms auf der neuen virtuellen Maschine wiederherstellen. Die Daten befinden sich in einer einzigen Datei, die Sie von Ihrer lokalen Arbeitsstation hochladen müssen.
 

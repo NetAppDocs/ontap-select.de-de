@@ -18,7 +18,7 @@ Es gibt verschiedene zugehörige Aufgaben, die Sie zum Verwalten eines ONTAP Sel
 
 
 
-== Löschen eines ONTAP Select-Clusters
+== Löschen Sie einen ONTAP Select-Cluster
 
 Sie können ein ONTAP Select Cluster löschen, wenn es nicht mehr mithilfe der Befehlszeilenschnittstelle benötigt wird.
 

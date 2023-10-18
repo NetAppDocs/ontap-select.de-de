@@ -18,7 +18,7 @@ Es gibt verschiedene zugehörige Aufgaben, die Sie zum Verwalten eines ONTAP Sel
 
 
 
-== Verschieben eines ONTAP Select Clusters in den Offline- und Online-Status
+== Verschieben Sie ein ONTAP Select Cluster in den Status „Offline“ und „Online“
 
 Nachdem Sie ein Cluster erstellt haben, können Sie dessen Status bei Bedarf in „Offline“ oder „Online“ ändern.
 

@@ -18,7 +18,7 @@ Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung verschiede
 
 
 
-= Ändern des Administratorkennworts für die Bereitstellung
+= Ändern Sie das Administratorkennwort für die Bereitstellung
 
 Sie können das Kennwort für das Administratorkonto für virtuelle Maschinen bereitstellen über die Befehlszeilenschnittstelle ändern.
 
