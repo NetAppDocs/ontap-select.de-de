@@ -32,17 +32,12 @@ NOTE: Wenn Sie eine ältere Instanz des ONTAP Select Deploy-Verwaltungsdienstpro
 Um mit dem Upgrade-Prozess zu beginnen, müssen Sie die entsprechende Upgrade-Datei für die Implementierung von Virtual Machines von der NetApp Support Site herunterladen. Das Aktualisierungspaket ist als eine einzige komprimierte Datei formatiert.
 
 .Schritte
-. Greifen Sie über einen Webbrowser auf die NetApp Support-Website zu und klicken Sie auf *Support Quick Links*.
-. Klicken Sie unter *Top Tasks* auf *Software herunterladen* und melden Sie sich an.
-. Klicken Sie auf *Produkt finden*.
-. Scrollen Sie nach unten und klicken Sie auf *ONTAP Select Deploy Upgrade*.
+. Auf das zugreifen link:https://mysupport.netapp.com/site/["NetApp Support Website"^] Verwenden Sie einen Web-Browser und wählen Sie *Downloads* aus dem Download-Menü.
+. Scrollen Sie nach unten und wählen Sie *ONTAP Select Deploy Upgrade* aus.
 . Wählen Sie die gewünschte Version des Aktualisierungspakets aus.
-. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA) durch und klicken Sie auf *Akzeptieren und fortfahren*.
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA), und wählen Sie *Accept & Continue* aus.
 . Wählen Sie das entsprechende Paket aus, und laden Sie es herunter. Gehen Sie dabei auf alle Eingabeaufforderungen für Ihre Umgebung ein.
 
-
-.Verwandte Informationen
-link:https://mysupport.netapp.com["NetApp Support"^]
 
 
 
@@ -95,4 +90,4 @@ deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 
 
 .Nachdem Sie fertig sind
-Nach Abschluss des Aktualisierungsvorgangs werden Sie aufgefordert, ein Backup der Konfiguration virtueller Maschinen bereitzustellen. Sie sollten auch den Browser-Cache löschen, um die neu erstellten Bereitstellungs-Seiten anzeigen zu können.
+Bevor das Upgrade abgeschlossen ist, werden Sie aufgefordert, ein Backup der Konfiguration der virtuellen Maschine bereitstellen zu erstellen. Außerdem sollten Sie den Browser-Cache löschen, damit Sie die neu erstellten Deploy-Seiten anzeigen können.
