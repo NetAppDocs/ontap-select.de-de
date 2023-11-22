@@ -116,7 +116,7 @@ Sie müssen sicherstellen, dass die Speicherpools im Rahmen einer ONTAP Select-I
 
 
 
-=== Verwalten Sie die virtuellen Laufwerke
+=== Verwalten Sie die virtuellen Laufwerke auf ESXi
 
 Bei der Vorbereitung der Bereitstellung von ONTAP Select sind einige Probleme im Zusammenhang mit virtuellen Festplatten zu vermeiden.
 
@@ -141,7 +141,7 @@ Die virtuellen Laufwerke werden von ONTAP Select verwaltet. Sie werden automatis
 
 
 
-== Darstellung der externen Speicherumgebung
+== Darstellung der externen Speicherumgebung auf ESXi
 
 Die ONTAP Select vNAS Lösung ermöglicht ONTAP Select die Nutzung von Datastores auf einem Storage, der sich außerhalb des Hypervisor-Hosts befindet. Auf die Datastores kann über das Netzwerk über VMware vSAN oder direkt in einem externen Storage-Array zugegriffen werden.
 

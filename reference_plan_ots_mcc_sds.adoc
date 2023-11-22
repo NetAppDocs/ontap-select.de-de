@@ -16,7 +16,7 @@ summary: Bei der Planung einer ONTAP Select-Implementierung sollten verschiedene
 [role="lead"]
 MetroCluster SDS ist eine Konfigurationsoption beim Erstellen eines ONTAP Select Clusters mit zwei Nodes. Sie ähnelt einer Implementierung von Remote-Standorten/Zweigstellen (ROBO), allerdings kann die Entfernung zwischen den beiden Nodes bis zu 10 km betragen Diese verbesserte Implementierung mit zwei Nodes bietet weitere Anwendungsszenarien. Bei der Vorbereitung der Bereitstellung von MetroCluster SDS sollten die Anforderungen und Einschränkungen bekannt sein.
 
-Vor der Bereitstellung von MetroCluster SDS muss der sicherstellen, dass die folgenden Anforderungen erfüllt sind.
+Stellen Sie vor der Bereitstellung von MetroCluster SDS sicher, dass die folgenden Anforderungen erfüllt sind:
 
 .Lizenzierung
 Jeder Node muss über eine Premium- oder höhere ONTAP Select-Lizenz verfügen.
@@ -26,9 +26,7 @@ MetroCluster SDS kann in denselben VMware ESXi und KVM-Hypervisoren implementier
 
 [NOTE]
 ====
-* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
-* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
-
+Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufgenommen. Zuvor wurde in ONTAP Select 9.10.1 die Unterstützung für die Implementierung eines neuen Clusters auf einem KVM-Hypervisor entfernt, und in ONTAP Select 9.11.1 wurde die Unterstützung für das Management vorhandener KVM-Cluster und -Hosts entfernt, mit Ausnahme des Offline- bzw. Löschens.
 
 ====
 .Netzwerkkonfiguration

@@ -26,6 +26,10 @@ Im Gegensatz zur ONTAP Select-Produktversion mit mehreren Nodes enthält jede ON
 
 Diese Ports werden für die folgenden Services verwendet: Management, Daten und Intercluster LIFs.
 
+.KVM
+ONTAP Select kann als Single-Node-Cluster implementiert werden. Der Hypervisor-Host umfasst einen virtuellen Switch, der Zugriff auf das externe Netzwerk ermöglicht.
+
+.ESXi
 Die Beziehung zwischen diesen Ports und den zugrunde liegenden physischen Adaptern ist in der folgenden Abbildung dargestellt: Ein ONTAP Select Cluster Node auf dem ESX Hypervisor.
 
 *Netzwerkkonfiguration eines Single-Node ONTAP Select-Clusters*

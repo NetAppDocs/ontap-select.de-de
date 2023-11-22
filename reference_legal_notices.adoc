@@ -48,8 +48,7 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 == Open Source
 
-Der Notice-Datei enthält Informationen zu Copyright und Lizenzen anderer Hersteller, die in NetApp Software verwendet werden.
+Die Benachrichtigungsdatei enthält Informationen zu Urheberrechten Dritter und Lizenzen, die in der NetApp-Software verwendet werden.
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2885796["Hinweis für ONTAP Select 9.13.1"^]
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813["Hinweis zu ONTAP Select 9.12.1"^]
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886734["Hinweis für ONTAP Select 9.14.1"^]
 

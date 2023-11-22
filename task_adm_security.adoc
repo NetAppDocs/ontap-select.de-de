@@ -56,11 +56,9 @@ Sie sollten mit den Typen von Zugangsdaten und der Art der Nutzung durch ONTAP S
 
 | Passwort | Geben Sie das Kennwort für den zugeordneten Benutzernamen ein. 
 |===
-. Optional können Sie das Deploy vCenter Plug-in registrieren (installieren).
 . Nachdem der neue Verwaltungsserver hinzugefügt wurde, können Sie optional auf klicken image:icon_kebab.gif["Optionen"] Und wählen Sie eine der folgenden Optionen aus:
 +
 ** Anmeldedaten aktualisieren
-** Als Plug-in registrieren
 ** Verifizieren der Anmeldedaten
 ** Entfernen Sie den Verwaltungsserver
 

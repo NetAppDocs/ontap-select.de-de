@@ -73,4 +73,4 @@ Das Premium XL-Angebot bietet folgende Funktionen:
 
 
 
-NOTE: Der große Instanztyp (mit der Premium-XL-Lizenz) wird nur auf VMware ESXi unterstützt.
+NOTE: Sie können den Typ der großen Instanz (unter Verwendung der Premium-XL-Lizenz) für jede Konfiguration verwenden, jedoch wird er aufgrund von Leistungsproblemen von KVM nicht unterstützt.

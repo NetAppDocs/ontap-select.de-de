@@ -18,9 +18,7 @@ Hier finden Sie Antworten auf häufig gestellte Fragen zu ONTAP Select.
 
 [NOTE]
 ====
-* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
-* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
-
+Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufgenommen. Zuvor wurde in ONTAP Select 9.10.1 die Unterstützung für die Implementierung eines neuen Clusters auf einem KVM-Hypervisor entfernt, und in ONTAP Select 9.11.1 wurde die Unterstützung für das Management vorhandener KVM-Cluster und -Hosts entfernt, mit Ausnahme des Offline- bzw. Löschens.
 
 ====
 
@@ -118,7 +116,11 @@ Software-RAID ist eine Schicht im ONTAP Software Stack. Software RAID bietet meh
 
 Für Software-RAID gelten folgende Anforderungen:
 
-* Unterstützt für ESX und KVM (vor ONTAP Select 9.10.1)
+* Unterstützt für ESX und KVM
++
+** Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufgenommen. Zuvor wurde die Unterstützung für KVM-Hypervisor in ONTAP Select 9.10.1 entfernt.
+
+
 * Größe der unterstützten physischen Festplatten: 200 GB bis 32 TB
 * Unterstützung nur auf das-Konfigurationen
 * Unterstützung durch SSDs oder NVMe
@@ -203,21 +205,6 @@ Bei Multinode-Clustern muss das interne Netzwerk vollständig geöffnet sein (ke
 .Welche vCenter-Rechte müssen durch ONTAP Select bereitgestellt werden, um ONTAP Select Cluster zu erstellen?
 Die Liste der erforderlichen vCenter-Rechte finden Sie hier: link:reference_plan_ots_vcenter.html["VMware vCenter Server"].
 
-.Was ist das vCenter Deploy-Plug-in?
-Die Funktion ONTAP Select Deploy kann in den vCenter Server und in das ONTAP Select Deploy-Plug-in integriert werden. Bitte beachten Sie, dass das Plug-in nicht die ONTAP Select Implementierung ersetzt. ONTAP Select Deploy funktioniert im Hintergrund, und der vCenter Administrator kann einen Großteil der Implementierungsfunktionen von ONTAP Select mit dem Plug-in aufrufen. Einige Operationen zur ONTAP Select-Implementierung sind nur mit CLI verfügbar.
-
-.Wie viele ONTAP Select Implementierungen können ihre Plug-ins bei einem vCenter Server registrieren?
-Nur eine ONTAP Select VM kann sein Plug-in für einen bestimmten vCenter Server registrieren.
-
-.Welchen Vorteil bietet das ONTAP Select Deploy vCenter Plug-in?
-Mithilfe des Plug-ins können vCenter Administratoren und IT-Generalisten ONTAP Select Cluster über die vCenter HTML5 GUI erstellen. Bitte beachten Sie, dass die Flash vCenter GUI nicht unterstützt wird.
-
-Zudem ermöglicht ONTAP Select die Implementierung der vCenter RBAC-Funktionen zur Authentifizierung. Benutzer, die über die vCenter Berechtigung zur Verwendung des ONTAP Select Deploy-Plug-ins verfügen, werden ihr vCenter Konto dem ONTAP Select Deploy-Admin-Benutzer zugeordnet. ONTAP Select Deploy protokolliert die Benutzer-ID jedes Vorgangs. Die folgende Datei kann als grundlegendes Audit-Protokoll verwendet werden:
-
-[listing]
-----
-nginx_access.log
-----
 
 
 == HA und Cluster

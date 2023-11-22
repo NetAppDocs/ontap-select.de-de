@@ -4,7 +4,7 @@ permalink: reference_plan_dep_vmware.html
 keywords: plan, planning, ontap select deploy, vmware requirements 
 summary: Es gibt verschiedene Anforderungen und Einschränkungen der VMware Umgebung, die Sie vor der Installation des Dienstprogramms ONTAP Select Deploy in einer VMware Umgebung in Betracht ziehen sollten. 
 ---
-= VMware Hypervisor-Umgebung
+= Überlegungen zum Hypervisor-Host
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,61 @@ summary: Es gibt verschiedene Anforderungen und Einschränkungen der VMware Umge
 
 
 [role="lead"]
+Es gibt verschiedene Planungsprobleme bezüglich des Hypervisor-Hosts, die Sie in Betracht ziehen sollten.
+
+
+CAUTION: Sie sollten die Konfiguration einer ONTAP Select Virtual Machine nur dann direkt ändern, wenn Sie dazu durch NetApp Support aufgefordert werden. Eine virtuelle Maschine sollte nur über das Dienstprogramm Verwaltung bereitstellen konfiguriert und verändert werden. Wenn Änderungen an einer ONTAP Select Virtual Machine außerhalb des Bereitstellungs-Dienstprogramms ohne Unterstützung durch den NetApp Support vorgenommen werden, kann dies dazu führen, dass die Virtual Machine ausfällt und sie nicht mehr verwendet werden kann.
+
+
+
+== Unabhängig vom Hypervisor
+
+Sowohl ONTAP Select als auch das Dienstprogramm ONTAP Select Deploy Administration sind Hypervisor-unabhängig.
+
+Die folgenden Hypervisoren werden sowohl für ONTAP Select als auch für die ONTAP Select Deploy Administration unterstützt:
+
+* VMware ESXi
+* Kernel-Based Virtual Machine (KVM)
+
+
+
+NOTE: Weitere Details zu den unterstützten Plattformen finden Sie in den Hypervisor-spezifischen Planungsinformationen und den Versionshinweisen.
+
+.Hypervisor für ONTAP Select-Nodes und Administrationstool
+Sowohl das Deploy Administration Utility als auch die ONTAP Select Nodes werden als Virtual Machines ausgeführt. Der für das Deploy-Tool gewählte Hypervisor ist unabhängig vom ausgewählten Hypervisor für die ONTAP Select-Nodes. Sie haben volle Flexibilität beim Paaring der beiden:
+
+* Mit dem Deploy Utility unter VMware ESXi können ONTAP Select Cluster auf VMware ESXi oder KVM erstellt und gemanagt werden
+* Mit dem auf KVM ausgeführten Deploy Utility können ONTAP Select Cluster auf VMware ESXi oder KVM erstellt und gemanagt werden
+
+
+.Eine oder mehrere Instanzen von ONTAP Select Node pro Host
+Jeder ONTAP Select Node wird als dedizierte Virtual Machine ausgeführt. Sie können auf demselben Hypervisor-Host mehrere Nodes erstellen, wobei folgende Einschränkungen gelten:
+
+* Mehrere Nodes aus einem einzelnen ONTAP Select Cluster können nicht auf demselben Host ausgeführt werden. Alle Nodes auf einem bestimmten Host müssen sich von unterschiedlichen ONTAP Select Clustern befinden.
+* Sie müssen externen Speicher verwenden.
+* Wenn Sie Software-RAID verwenden, können Sie nur einen ONTAP Select-Knoten auf dem Host implementieren.
+
+
+.Hypervisor-Konsistenz für die Nodes in einem Cluster
+Alle Hosts innerhalb eines ONTAP Select-Clusters müssen auf derselben Version und Freigabe der Hypervisor-Software ausgeführt werden.
+
+.Anzahl der physischen Ports auf jedem Host
+Sie müssen jeden Host so konfigurieren, dass er einen, zwei oder vier physische Ports verwendet. Die Konfiguration der Netzwerkanschlüsse ist zwar flexibel, Sie sollten jedoch nach Möglichkeit folgende Empfehlungen befolgen:
+
+* Ein Host in einem Single-Node-Cluster sollte über zwei physische Ports verfügen.
+* Jeder Host in einem Cluster mit mehreren Nodes sollte über vier physische Ports verfügen
+
+
+.Integrieren Sie ONTAP Select mit einem hardwarebasierten ONTAP Cluster
+Ein ONTAP Select Node kann einem hardwarebasierten ONTAP Cluster nicht direkt hinzugefügt werden. Sie können jedoch optional eine Cluster Peering-Beziehung zwischen einem ONTAP Select Cluster und einem hardwarebasierten ONTAP Cluster aufbauen.
+
+
+
+== VMware Hypervisor-Umgebung
+
 Es gibt verschiedene Anforderungen und Einschränkungen der VMware Umgebung, die Sie vor der Installation des Dienstprogramms ONTAP Select Deploy in einer VMware Umgebung in Betracht ziehen sollten.
 
-
-
-== Hardwareanforderungen für den ESXi Host-Server
-
+.Hardwareanforderungen für den ESXi Host-Server
 Es bestehen verschiedene Mindestanforderungen an Ressourcen, die der ESXi-Hypervisor-Host erfüllen muss. Sie sollten sicherstellen, dass die Hosts, auf denen ONTAP Select bereitgestellt wird, die folgenden grundlegenden Anforderungen erfüllen:
 
 * ESXi-Server:
@@ -34,10 +83,7 @@ Es bestehen verschiedene Mindestanforderungen an Ressourcen, die der ESXi-Hyperv
 * DHCP aktiviert (kann auch eine statische IP-Adresse zuweisen)
 
 
-
-
-== Netzwerk-Konnektivität
-
+.Netzwerk-Konnektivität
 Sie müssen sicherstellen, dass die Netzwerkschnittstelle für ONTAP Select Deploy Virtual Machine konfiguriert ist und über eine einzige Management-IP-Adresse verfügt. Sie können DHCP verwenden, um eine IP-Adresse dynamisch zuzuweisen oder eine statische IP-Adresse manuell zu konfigurieren.
 
 Je nach Ihren Implementierungsentscheidungen muss die Implementierungs-VM in der Lage sein, eine Verbindung zu dem von ihr verwalteten vCenter Server, ESXi Hypervisor-Hosts und ONTAP Select Nodes herzustellen. Sie müssen Ihre Firewalls konfigurieren, um den erforderlichen Datenverkehr zu ermöglichen.
@@ -51,18 +97,12 @@ Die Implementierung muss auch in der Lage sein, mit dem ONTAP Select-Knoten und 
 * SSL (Port 443)
 
 
-
-
-== Unterstützung für IP Version 4
-
+.Unterstützung für IP Version 4
 ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6) wird nicht unterstützt. Diese Einschränkung wirkt sich auf ONTAP Select aus wie folgt aus:
 
 * Sie müssen der Management-LIF der virtuellen Maschine Bereitstellen eine IPv4-Adresse zuweisen.
 * Deploy kann keine ONTAP Select-Nodes erstellen, die für die Verwendung von IPv6 auf den ONTAP LIFs konfiguriert sind.
 
 
-
-
-== Spracheinschränkungen bei VMware vCenter
-
+.Spracheinschränkungen bei VMware vCenter
 Wenn Sie ONTAP Select Deploy verwenden, um einen Cluster zu erstellen, der auf ESXi mit vCenter auf einem Windows-Server ausgeführt wird, müssen Sie eine englische Sprachversion verwenden. ONTAP Select Deploy unterstützt vCenter auf Windows-Versionen ohne Englisch nicht.

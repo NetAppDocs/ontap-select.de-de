@@ -23,7 +23,7 @@ Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das
 Das ONTAP Select Paket können Sie auf der NetApp Support-Webseite herunterladen.
 
 .Über diese Aufgabe
-Das ONTAP Select Deploy-Verwaltungsdienstprogramm ist als virtuelle Maschine auf der Grundlage des Standards Open Virtualization Format (OVF) verpackt. Die einzelne komprimierte Datei verfügt über das Suffix `ova`.
+Das Dienstprogramm ONTAP Select Deploy Administration ist als virtuelle Maschine (VM) auf Basis des OVF-Standards (Open Virtualization Format) verpackt. Die einzelne komprimierte Datei verfügt über das Suffix `ova`.
 
 .Schritte
 . Greifen Sie über einen Webbrowser auf die NetApp Support-Website zu und klicken Sie auf *Support Quick Links*.
@@ -83,18 +83,18 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 == Stellen Sie die virtuelle Maschine bereit
 
-Sie müssen die ONTAP Select Deploy Virtual Machine mit dem OVF Virtual Machine Image installieren und starten. Im Rahmen der Installation müssen Sie die Netzwerkschnittstelle so konfigurieren, dass DHCP oder eine statische IP-Konfiguration verwendet wird.
+Sie müssen die ONTAP Select Deploy VM mithilfe des OVF VM Image installieren und starten. Im Rahmen der Installation konfigurieren Sie die Netzwerkschnittstelle so, dass DHCP oder eine statische IP-Konfiguration verwendet wird.
 
 .Bevor Sie beginnen
-Sie müssen die Bereitstellung der virtuellen ONTAP Select Deploy-Maschine vorbereiten:
+Für einen ESXi-Hypervisor müssen Sie die Bereitstellung der ONTAP Select Deploy VM vorbereiten:
 
 * Aktivieren Sie die OVF-Funktion in Ihrem Browser, indem Sie das VMware Client Integration Plugin installieren oder eine ähnliche Konfiguration nach Bedarf durchführen
-* DHCP in der VMware-Umgebung aktiviert, wenn Sie der virtuellen Maschine bereitstellen dynamisch eine IP-Adresse zuweisen
+* Aktivieren Sie DHCP in der VMware-Umgebung, wenn Sie der Bereitstellungs-VM dynamisch eine IP-Adresse zuweisen
 
 
-Sie müssen über die Konfigurationsinformationen verfügen, die beim Erstellen der virtuellen Maschine verwendet werden sollen, einschließlich des Namens der virtuellen Maschine, des externen Netzwerks und des Host-Namens. Wenn Sie eine statische Netzwerkkonfiguration definieren, benötigen Sie die folgenden zusätzlichen Informationen:
+Bei ESXi- und KVM-Hypervisoren müssen Sie über die Konfigurationsinformationen verfügen, die beim Erstellen der VM verwendet werden sollen, einschließlich des Namens der VM, des externen Netzwerks und des Hostnamens. Wenn Sie eine statische Netzwerkkonfiguration definieren, benötigen Sie die folgenden zusätzlichen Informationen:
 
-* IP-Adresse der virtuellen Maschine bereitstellen
+* IP-Adresse der bereitzustellenden VM
 * Netzmaske
 * IP-Adresse des Gateways (Router)
 * IP-Adresse des primären DNS-Servers
@@ -103,17 +103,23 @@ Sie müssen über die Konfigurationsinformationen verfügen, die beim Erstellen 
 
 
 .Über diese Aufgabe
-Wenn Sie vSphere verwenden, enthält der Assistent zur Bereitstellung der OVF-Vorlage ein Formular, das alle Informationen zur Bereitstellungskonfiguration einschließlich der Netzwerkkonfiguration enthält. Wenn Sie dieses Formular jedoch nicht verwenden möchten, können Sie das Netzwerk stattdessen über die Konsole der virtuellen Maschine bereitstellen konfigurieren.
+Wenn Sie vSphere verwenden, enthält der Assistent zur Bereitstellung der OVF-Vorlage ein Formular, das alle Informationen zur Bereitstellungskonfiguration einschließlich der Netzwerkkonfiguration enthält. Wenn Sie dieses Formular jedoch nicht verwenden, können Sie stattdessen mithilfe der Konsole der Bereitstellungs-VM das Netzwerk konfigurieren.
 
 .Schritte
+Welche Schritte Sie befolgen, hängt davon ab, ob Sie einen ESXi- oder KVM-Hypervisor verwenden.
+
+[role="tabbed-block"]
+====
+.ESXi
+--
 . Greifen Sie auf den vSphere-Client zu und melden Sie sich an.
 . Navigieren Sie zum entsprechenden Speicherort in der Hierarchie, und wählen Sie *OVF-Vorlage bereitstellen* aus.
 . Wählen Sie die OVA-Datei aus, und schließen Sie den Assistenten zur Bereitstellung der OVF-Vorlage aus. Wählen Sie dabei die für Ihre Umgebung geeigneten Optionen aus.
 +
 Sie müssen das Passwort für das Administratorkonto definieren. Sie müssen dieses Passwort angeben, wenn Sie sich beim Dienstprogramm Deploy anmelden.
 
-. Wählen Sie nach der Bereitstellung der virtuellen Maschine die neue virtuelle Maschine aus, und schalten Sie sie ein, wenn sie nicht bereits basierend auf Ihrer Eingabe im Bereitstellungsassistenten eingeschaltet ist.
-. Bei Bedarf können Sie das Netzwerk bereitstellen über die Virtual Machine-Konsole konfigurieren:
+. Wählen Sie nach der Bereitstellung der VM die neue VM aus, und schalten Sie sie ein, wenn sie aufgrund Ihrer Angaben zum Implementierungsassistenten nicht bereits eingeschaltet ist.
+. Falls erforderlich, können Sie das Bereitstellungsnetzwerk über die VM-Konsole konfigurieren:
 +
 .. Klicken Sie auf die Registerkarte *Konsole*, um auf die Setup-Shell des ESXi-Hosts zuzugreifen und den Einschalungsprozess zu überwachen.
 .. Warten Sie auf die folgende Eingabeaufforderung:
@@ -130,12 +136,65 @@ Geben Sie dem Admin-Benutzer ein Passwort ein:
 +
 DHCP zum Festlegen von Netzwerkinformationen verwenden? [n]:
 
-.. Geben Sie *n* ein, um eine statische IP-Konfiguration zu definieren, oder um DHCP zu verwenden, und drücken Sie *Enter*.
+.. Geben Sie *n* ein, um eine statische IP-Konfiguration zu definieren, oder *y*, um DHCP zu verwenden, und wählen Sie *Enter*.
 .. Wenn Sie eine statische Konfiguration auswählen, geben Sie bei Bedarf alle Informationen zur Netzwerkkonfiguration ein.
 
 
 
 
+--
+.KVM
+--
+. Melden Sie sich bei der CLI auf dem Linux-Server an:
++
+[listing]
+----
+ssh root@<ip_address>
+----
+. Erstellen Sie ein neues Verzeichnis und extrahieren Sie das RAW-VM-Image:
++
+[listing]
+----
+mkdir /home/select_deploy25
+cd /home/select_deploy25
+mv /root/<file_name> .
+tar -xzvf <file_name>
+----
+. Erstellen und starten Sie die KVM-VM mit dem Dienstprogramm „Deploy Administration“:
++
+[listing]
+----
+virt-install --name=select-deploy --vcpus=2 --ram=4096 --os-variant=debian10 --controller=scsi,model=virtio-scsi --disk path=/home/deploy/ONTAPdeploy.raw,device=disk,bus=scsi,format=raw --network "type=bridge,source=ontap-br,model=virtio,virtualport_type=openvswitch" --console=pty --import --noautoconsole
+----
+. Falls erforderlich, können Sie das Bereitstellungsnetzwerk über die VM-Konsole konfigurieren:
++
+.. Stellen Sie eine Verbindung zur VM-Konsole her:
++
+[listing]
+----
+virsh console <vm_name>
+----
+.. Warten Sie auf die folgende Eingabeaufforderung:
++
+[listing]
+----
+Host name :
+----
+.. Geben Sie den Hostnamen ein und wählen Sie *Enter*.
+.. Warten Sie auf die folgende Eingabeaufforderung:
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. Geben Sie *n* ein, um eine statische IP-Konfiguration zu definieren, oder *y*, um DHCP zu verwenden, und wählen Sie *Enter*.
+.. Wenn Sie eine statische Konfiguration auswählen, geben Sie bei Bedarf alle Informationen zur Netzwerkkonfiguration ein.
+
+
+
+
+--
+====
 
 
 == Melden Sie sich bei der Webschnittstelle „Bereitstellen“ an

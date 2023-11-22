@@ -14,7 +14,7 @@ summary: Überprüfen Sie vor der Installation des Deploy Administration Utility
 
 
 [role="lead"]
-Bevor Sie das Deploy Administration Utility in einer VMware-Umgebung installieren, überprüfen Sie die erforderlichen Konfigurationsinformationen und optionalen Informationen zur Netzwerkkonfiguration, um die erfolgreiche Bereitstellung vorzubereiten.
+Überprüfen Sie vor der Installation des Dienstprogramms Deploy Administration in einer Hypervisor-Umgebung die erforderlichen Konfigurationsinformationen und optionalen Netzwerkkonfigurationsinformationen, um die erfolgreiche Bereitstellung vorzubereiten.
 
 
 
@@ -30,10 +30,10 @@ Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTA
 | Name der virtuellen Maschine bereitstellen | Kennung für die virtuelle Maschine. 
 
 
-| Name des ESXi-Hosts | Kennung für den VMware ESXi-Host, auf dem das Deploy-Dienstprogramm installiert ist. 
+| Name des Hypervisor-Hosts | Kennung für den VMware ESXi- oder KVM-Hypervisor-Host, auf dem das Bereitstellungsdienstprogramm installiert ist. 
 
 
-| Name des Datenspeichers | Kennung für den VMware-Datenspeicher, der die Dateien der virtuellen Maschine enthält (ca. 40 GB erforderlich) 
+| Name des Datenspeichers | Kennung für den Hypervisor-Datenspeicher, der die Dateien der virtuellen Maschine enthält (ca. 40 GB erforderlich). 
 
 
 | Netzwerk für die virtuelle Maschine | Kennung für das Netzwerk, in dem die virtuelle Maschine bereitstellen verbunden ist. 

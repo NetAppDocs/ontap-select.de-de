@@ -20,7 +20,7 @@ summary: Über die mit dem ONTAP Select Deploy Administration Utility bereitgest
 
 == Bevor Sie beginnen
 
-Bevor Sie ein ONTAP Select Cluster auf ESXi erstellen, sollten Sie die erforderliche Vorbereitung verstehen.
+Bevor Sie ein ONTAP Select-Cluster auf einem Hypervisor erstellen, sollten Sie die erforderlichen Vorbereitungen kennen.
 
 
 
@@ -57,7 +57,7 @@ Sie müssen das Passwort für das Admin-Benutzerkonto besitzen.
 .Schritte
 . Verwenden Sie in einer Command Shell auf Ihrer lokalen Arbeitsstation das sftp-Dienstprogramm, um die Lizenzdatei auf die virtuelle Maschine bereitstellen hochzuladen.
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -81,9 +81,58 @@ Geben Sie bei der entsprechenden Aufforderung das Kennwort für das Administrato
 
 
 
-== Fügen Sie ESXi-Hypervisor-Hosts hinzu
+== Fügen Sie Hypervisor-Hosts hinzu
 
-Sie müssen jeden Hypervisor-Host registrieren, auf dem ein ONTAP Select-Node ausgeführt wird. In diesem Rahmen authentifiziert das Deploy-Administration-Utility entweder auf dem vCenter-Server, der den Host verwaltet, oder direkt auf dem ESXi-Standalone-Host.
+Sie müssen jeden Hypervisor-Host registrieren, auf dem ein ONTAP Select-Node ausgeführt wird.
+
+[role="tabbed-block"]
+====
+.KVM
+--
+Sie müssen einen Hypervisor-Host registrieren, auf dem der ONTAP Select-Node ausgeführt wird. Im Rahmen dieser Authentifizierung authentifiziert sich das Dienstprogramm Deploy Administration beim KVM-Host.
+
+.Über diese Aufgabe
+Wenn mehr als ein Hypervisor-Host benötigt wird, sollten Sie diesen Vorgang verwenden, um jeden Host hinzuzufügen.
+
+.Schritte
+. Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
+. Registrieren des Hosts:
++
+[source, asciidoc]
+----
+`host register -name <FQDN|IP> -hypervisor-type KVM -username KVM_USERNAME`
+----
++
+Beispielausgabe
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+Geben Sie das Passwort für das Hostkonto an, wenn Sie dazu aufgefordert werden.
+
+. Zeigen Sie den Status des Hosts an und bestätigen Sie, dass er authentifiziert ist:
++
+[source, asciidoc]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+Beispielausgabe
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
+
+
+--
+.ESXi
+--
+In diesem Rahmen authentifiziert das Deploy-Administration-Utility entweder auf dem vCenter-Server, der den Host verwaltet, oder direkt auf dem ESXi-Standalone-Host.
 
 .Über diese Aufgabe
 Bevor Sie einen von vCenter verwalteten Host registrieren, müssen Sie ein Management-Server-Konto für den vCenter-Server hinzufügen. Wenn der Host nicht von vCenter gemanagt wird, können Sie die Hostanmeldeinformationen im Rahmen der Registrierung des Hosts angeben. Verwenden Sie dieses Verfahren, um jeden Host hinzuzufügen.
@@ -95,7 +144,7 @@ Bevor Sie einen von vCenter verwalteten Host registrieren, müssen Sie ein Manag
 `credential add -hostname <FQDN|IP> -type vcenter -username VCENTER_USERNAME`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -108,7 +157,7 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 ** Registrieren eines von vCenter gemanagten Hosts:
 `host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -121,7 +170,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 `host show -name <FQDN|IP> -detailed`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -129,6 +178,8 @@ host show -name 10.234.81.14 -detailed
 ....
 
 
+--
+====
 
 
 == Erstellen und Konfigurieren eines ONTAP Select-Clusters
@@ -148,7 +199,7 @@ Wenn Sie ein ONTAP Select-Cluster erstellen, generiert das Deploy-Dienstprogramm
 `cluster create -name CLUSTERNAME -node-count NODES`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -159,7 +210,7 @@ cluster create -name test-cluster -node-count 1
 `cluster modify -name CLUSTERNAME -mgmt-ip IP_ADDRESS -netmask NETMASK -gateway IP_ADDRESS -dns-servers <FQDN|IP>_LIST -dns-domains DOMAIN_LIST`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -193,7 +244,7 @@ Sie sollten diese Vorgehensweise zum Konfigurieren der einzelnen Knoten verwende
 . Wählen Sie den Knoten aus und führen Sie eine Basiskonfiguration durch:
 `node modify -name NODENAME -cluster-name CLUSTERNAME -host-name <FQDN|IP> -license-serial-number NUMBER -instance-type TYPE -passthrough-disks false`
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -211,7 +262,7 @@ Für den ONTAP Select-Node wird eine Lizenz für Kapazitätsstufen verwendet.
 `host network show -host-name <FQDN|IP> -detailed`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -225,7 +276,7 @@ host network show -host-name 10.234.81.14 -detailed
 Wenn Sie ein Single-Node-Cluster bereitstellen, benötigen Sie kein internes Netzwerk und sollten -internes Netzwerk entfernen.
 
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -237,7 +288,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 `node show -name NODENAME -cluster-name CLUSTERNAME -detailed`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 ....
@@ -264,7 +315,7 @@ Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie die Schri
 `host storage pool show -host-name <FQDN|IP>`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 [listing]
@@ -282,7 +333,7 @@ host storage pool show -host-name 10.234.81.14
 Wenn Sie den Parameter "-Capacity-Limit" angeben, geben Sie den Wert als GB oder TB an.
 
 +
-Beispiel
+Beispielausgabe
 
 +
 [listing]
@@ -295,7 +346,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 `node storage pool show -cluster-name CLUSTERNAME -node-name NODENAME`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 [listing]
@@ -307,7 +358,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 `node storage disk attach -node-name NODENAME -cluster-name CLUSTERNAME -disks LIST_OF_DRIVES`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 [listing]
@@ -319,7 +370,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 `node storage disk show -node-name NODENAME -cluster-name CLUSTERNAME`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 [listing]
@@ -344,7 +395,7 @@ Vor der Bereitstellung eines Multi-Node-Clusters sollten Sie den Netzwerkverbind
 `cluster deploy -name CLUSTERNAME`
 
 +
-Beispiel
+Beispielausgabe
 
 +
 [listing]

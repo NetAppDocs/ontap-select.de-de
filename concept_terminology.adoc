@@ -17,6 +17,7 @@ summary: Wenn Sie mit dem Erkunden von ONTAP Select und der Planung einer Implem
 Wenn Sie mit dem Erkunden von ONTAP Select und der Planung einer Implementierung beginnen, ist es hilfreich, sich zunächst mit den Terminologie und den Schlüsselkonzepten vertraut zu machen.
 
 ONTAP Select Deploy:: ONTAP Select Deploy ist das Administrationsdienstprogramm, das Sie zum Implementieren von ONTAP Select Clustern verwenden. Das Deploy-Dienstprogramm wird auf einer dedizierten virtuellen Linux-Maschine ausgeführt. Sie können über die Web-Benutzeroberfläche, die CLI-Management-Shell und DIE REST-API auf das Deploy-Dienstprogramm zugreifen.
+Kernel-Based Virtual Machine:: Kernel-Based Virtual Machine (KVM) ist eine Virtualisierungsfunktion des Linux-Kernels, die es ermöglicht, als Hypervisor-Plattform zu fungieren. Es wird eine breite Palette von Gast-Betriebssystemen unterstützt.
 Hypervisor-Host oder ONTAP Select-Node:: Ein _Hypervisor-Host_ ist die zentrale Hardware-Plattform, die eine ONTAP Select Virtual Machine hostet. Wenn eine ONTAP Select Virtual Machine auf einem Hypervisor-Host implementiert und aktiv ist, gilt dies als „_ONTAP Select Node_“.
 ONTAP Select Cluster:: Sie können ein ONTAP Select Cluster_ erstellen, das aus einem, zwei, vier, sechs oder acht Nodes besteht. Cluster mit mehreren Nodes enthalten immer ein oder mehrere HA-Paare. Ein Cluster mit vier Nodes besteht beispielsweise aus zwei HA-Paaren. Ein Single Node Cluster bietet keine HA-Funktion.
 Vorbereitung der Hypervisor-Hostumgebung:: Bevor Sie das Deploy Administration Utility zum Implementieren eines ONTAP Select Clusters verwenden, müssen Sie die Hypervisor-Hosts, auf denen ONTAP Select ausgeführt wird, vorbereiten, einschließlich Storage- und Netzwerkumgebungen. Diese Host-Vorkonfiguration wird basierend auf den aktuellen Anforderungen und Einschränkungen außerhalb des ONTAP Select Produkts durchgeführt.
@@ -59,7 +60,7 @@ ONTAP Select vNAS:: Die ONTAP Select vNAS Lösung ermöglicht einem ONTAP Select
 
 In beiden Fällen muss der externe Storage vor der Erstellung eines ONTAP Select Clusters konfiguriert oder die Storage-Kapazität eines vorhandenen Node erweitert werden.
 
-Erneutes Hosting von Nodes:: Wenn Sie einen Cluster implementieren, der externen Storage verwendet, der über die ONTAP Select vNAS Lösung verfügbar ist (entweder VMware vSAN oder ein generisches externes Storage-Array), können die ESXi Virtual Machine, die den ONTAP Select-Node hostet, durch Aktionen verschoben werden, die folgende VMware Funktionen nutzen:
+Node-Rehosting auf der ESXi VM:: Wenn Sie einen Cluster implementieren, der externen Storage verwendet, der über die ONTAP Select vNAS Lösung verfügbar ist (entweder VMware vSAN oder ein generisches externes Storage-Array), können die ESXi Virtual Machine, die den ONTAP Select-Node hostet, durch Aktionen verschoben werden, die folgende VMware Funktionen nutzen:
 +
 --
 * VMotion
@@ -77,6 +78,7 @@ Wenn eine Virtual Machine verschoben wird, aktualisiert das Deploy-Dienstprogram
 
 
 --
+Open vSwitch für KVM:: Open vSwitch (OVS) ist eine Software-Implementierung eines virtuellen Switches, der mehrere Netzwerkprotokolle unterstützt. OVS ist Open Source und gemäß der Apache-Lizenz 2.0 verfügbar.
 Mediatordienst:: Das ONTAP Select Deploy Tool umfasst einen Mediator-Service, der eine Verbindung zu den Nodes in den aktiven Clustern mit zwei Nodes herstellt. Dieser Service überwacht jedes HA-Paar und unterstützt das Managen von Ausfällen.
 
 

@@ -27,7 +27,7 @@ NOTE: Weitere Informationen zur Konfiguration eines vSwitch auf einem Hypervisor
 
 
 
-== Upgrade auf VMXNET3
+== Upgrade auf VMXNET3 (nur ESXi)
 
 Ab ONTAP Select 9.5 mit Deploy 2.10 ist VMXNET3 der Standardnetzwerktreiber, der bei neuen Cluster-Implementierungen auf VMware ESXi enthalten ist. Wenn Sie einen älteren ONTAP Select-Knoten auf Version 9.5 oder höher aktualisieren, wird der Treiber nicht automatisch aktualisiert.
 
@@ -49,7 +49,7 @@ NOTE: Sie können den MTU-Wert für den Cluster je nach Netzwerkdesign manuell f
 
 
 
-== 2-NIC-Host mit Standard-vSwitch
+== Zwei-NIC-Host mit Standard-vSwitch (nur ESXi)
 
 Um die ONTAP Select-Leistung in einer zwei-NIC-Konfiguration zu verbessern, sollten Sie den internen und externen Netzwerkverkehr mit zwei Portgruppen isolieren. Diese Empfehlung gilt für die folgende spezifische Konfiguration:
 
@@ -76,7 +76,7 @@ Siehe link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Abschnitt für
 
 
 
-== Host mit vier Netzwerkkarten und Standard-vSwitch
+== Vier-NIC-Host mit Standard-vSwitch (nur ESXi)
 
 Um die ONTAP Select-Leistung in einer 4-NIC-Konfiguration zu verbessern, sollten Sie den internen und externen Netzwerkverkehr mit vier Portgruppen isolieren. Diese Empfehlung gilt für die folgende spezifische Konfiguration:
 
@@ -123,8 +123,10 @@ Sie müssen sicherstellen, dass Ihre Firewalls richtig konfiguriert sind, damit 
 Im Rahmen einer ONTAP Select-Implementierung gibt es mehrere Teilnehmer oder Einheiten, die den Netzwerkdatenverkehr austauschen. Diese werden eingeführt und dann in der Zusammenfassung der Anforderungen an den Netzwerkverkehr verwendet.
 
 * ONTAP Select Deploy Administration Utility einsetzen
-* VSphere/ESXi entweder ein vSphere-Server oder ein ESXi-Host, je nachdem, wie der Host in Ihrer Cluster-Implementierung gemanagt wird
-* ESXi Hypervisor-Server-Host
+* VSphere (nur ESXi)
+Entweder ein vSphere-Server oder ein ESXi-Host, je nachdem, wie der Host in der Cluster-Bereitstellung gemanagt wird
+* Hypervisor-Server
+ESXi-Hypervisor-Host oder Linux KVM-Host
 * OTS-Knoten ein ONTAP Select-Knoten
 * OTS Cluster in einem ONTAP Select Cluster
 * Admin WS Local Administration Workstation
@@ -133,31 +135,34 @@ Im Rahmen einer ONTAP Select-Implementierung gibt es mehrere Teilnehmer oder Ein
 .Zusammenfassung der Anforderungen an den Netzwerkverkehr
 In der folgenden Tabelle werden die Anforderungen an den Netzwerk-Traffic für eine ONTAP Select-Implementierung beschrieben.
 
-[cols="20,45,35"]
+[cols="20,20,35,25"]
 |===
-| Protokoll/Port | Richtung | Beschreibung 
+| Protokoll/Port | ESXi/KVM | Richtung | Beschreibung 
 
 
-| TLS (443) | Bereitstellung in vCenter Server (gemanagt) oder ESXi (nicht gemanagt) | VMware VIX API 
+| TLS (443) | ESXi | Bereitstellung an vCenter Server (gemanagt) oder ESXi (gemanagt oder nicht gemanagt) | VMware VIX API 
 
 
-| 902 | Bereitstellung in vCenter Server (gemanagt) oder ESXi (nicht gemanagt) | VMware VIX API 
+| 902 | ESXi | Bereitstellung in vCenter Server (gemanagt) oder ESXi (nicht gemanagt) | VMware VIX API 
 
 
-| ICMP | Bereitstellung auf Hypervisor-Server | Ping 
+| ICMP | ESXi oder KVM | Bereitstellung auf Hypervisor-Server | Ping 
 
 
-| ICMP | Bereitstellen auf jedem OTS-Node | Ping 
+| ICMP | ESXi oder KVM | Bereitstellen auf jedem OTS-Node | Ping 
 
 
-| SSH (22) | Admin WS zu jedem OTS-Knoten | Administration 
+| SSH (22) | ESXi oder KVM | Admin WS zu jedem OTS-Knoten | Administration 
 
 
-| TLS (443) | Implementieren auf OTS-Nodes und -Clustern | Greifen Sie auf ONTAP zu 
+| SSH (22) | KVM | Implementierung auf Hypervisor-Server-Nodes | Zugriff auf den Hypervisor-Server 
 
 
-| TLS (443) | Jeder zu implementierende OTS-Node | Greifen Sie Auf Bereitstellung Zu 
+| TLS (443) | ESXi oder KVM | Implementieren auf OTS-Nodes und -Clustern | Greifen Sie auf ONTAP zu 
 
 
-| ISCSI (3260) | Jeder zu implementierende OTS-Node | Mediator/Mailbox-Festplatte 
+| TLS (443) | ESXi oder KVM | Jeder zu implementierende OTS-Node | Zugriff auf Deploy (Capacity-Pools Lizenzierung) 
+
+
+| ISCSI (3260) | ESXi oder KVM | Jeder zu implementierende OTS-Node | Mediator/Mailbox-Festplatte 
 |===

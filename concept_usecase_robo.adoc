@@ -16,7 +16,7 @@ summary: Implementierung von ONTAP Select in Remote-Zweigstellen/Zweigstellen zu
 [role="lead"]
 Implementierung von ONTAP Select in Remote-Zweigstellen/Zweigstellen zur Unterstützung kleinerer Standorte bei gleichzeitiger Aufrechterhaltung der zentralisierten Administration und Kontrolle
 
-In VMware ESXi werden die folgenden ROBO-Konfigurationen unterstützt:
+Die folgenden ROBO-Konfigurationen werden unterstützt:
 
 * Cluster mit zwei Nodes und HA-Funktion
 * Single-Node-Cluster
@@ -31,7 +31,7 @@ NOTE: Da alle VMware vSphere-Lizenzen unterstützt werden, können Sie anstelle 
 
 Ein ONTAP Select Cluster mit zwei Nodes und einem Remote Mediator ist eine attraktive Lösung für kleine Datacenter. In dieser Konfiguration wird die HA-Funktionalität durch ONTAP Select bereitgestellt. Die minimale Netzwerkanforderung für eine ONTAP Select ROBO-Lösung mit zwei Nodes sind vier 1-Gbit-Links. Zudem wird eine einzelne 10-GB-Netzwerkverbindung unterstützt. Die vNAS ONTAP Select Lösung, die auf VSAN ausgeführt wird (einschließlich der VSAN ROBO-Konfiguration mit zwei Nodes), ist eine weitere Option. In dieser Konfiguration wird die HA-Funktionalität durch VSAN bereitgestellt. Schließlich kann ein ONTAP Select-Cluster mit einem Node, der seine Daten an einen zentralen Standort repliziert, eine Reihe robuster Datenmanagement-Tools der Enterprise-Klasse auf einem Standard-Server bieten.
 
-Die folgende Abbildung zeigt eine allgemeine Konfiguration für Remote-Standorte mithilfe von ONTAP Select. Plangesteuerte SnapMirror Beziehungen replizieren die Daten regelmäßig von der Remote-Zweigstelle zu einem einzigen konsolidierten, vorgefertigten Storage-Array, das sich im zentralen Datacenter befindet.
+Die folgende Abbildung zeigt eine gängige Konfiguration für Remote-Standorte mit ONTAP Select auf VM ESXi. Plangesteuerte SnapMirror Beziehungen replizieren die Daten regelmäßig von der Remote-Zweigstelle zu einem einzigen konsolidierten, vorgefertigten Storage-Array, das sich im zentralen Datacenter befindet.
 
 *Geplante Sicherung von Remote-Standorten in Unternehmens-Rechenzentrum*
 

@@ -97,7 +97,7 @@ Die folgenden Schritte hängen davon ab, ob Sie ein Single-Node-Cluster oder ein
 . Klicken Sie auf *Aktualisieren* und bestätigen Sie, dass die Lizenz hinzugefügt wurde.
 . Klicken Sie auf *Weiter*, um einen Hypervisor-Host hinzuzufügen, und klicken Sie dann auf *Hinzufügen*.
 +
-Sie können den ESXi-Host direkt oder über eine Verbindung zu einem vCenter-Server hinzufügen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.
+Sie können den Hypervisor-Host direkt hinzufügen oder eine Verbindung zu einem vCenter-Server herstellen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.
 
 . Klicken Sie auf *Aktualisieren* und bestätigen Sie, dass der *Typ*-Wert für den Host *ESX* lautet.
 +
@@ -146,7 +146,7 @@ TIP: Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen wer
 . Klicken Sie auf *Aktualisieren* und bestätigen Sie, dass die Lizenzen hinzugefügt wurden.
 . Klicken Sie auf *Weiter*, um zwei Hypervisor-Hosts hinzuzufügen, und klicken Sie dann auf *Hinzufügen*.
 +
-Sie können die ESXi-Hosts direkt hinzufügen oder eine Verbindung zu einem vCenter-Server herstellen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.
+Sie können die Hypervisor-Hosts direkt hinzufügen oder eine Verbindung zu einem vCenter-Server herstellen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.
 
 . Klicken Sie auf *Aktualisieren* und bestätigen Sie, dass der *Typ*-Wert für den Host *ESX* lautet.
 +

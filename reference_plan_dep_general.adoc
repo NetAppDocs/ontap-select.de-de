@@ -36,9 +36,88 @@ NOTE: Eine Instanz des Deploy Utility kann bis zu 400 ONTAP Select Nodes oder 10
 
 
 
+== Anforderungen in Bezug auf die KVM-Umgebung
+
+Bevor Sie das Dienstprogramm Deploy Administration in einer KVM-Hypervisor-Umgebung installieren, sollten Sie die grundlegenden Anforderungen überprüfen und die Bereitstellung vorbereiten.
+
+.Anforderungen und Einschränkungen für eine Bereitstellung
+Es gibt mehrere Anforderungen und Einschränkungen, die Sie bei der Installation des ONTAP Select Deploy-Dienstprogramms in einer KVM-Umgebung beachten sollten.
+
+.Hardwareanforderungen für Linux KVM-Host-Server
+Es gibt mehrere Mindestressourcenanforderungen, die Ihr Linux KVM-Hypervisor-Host erfüllen muss. Vergewissern Sie sich, dass die Hosts, auf denen ONTAP Select bereitgestellt ist, die folgenden grundlegenden Anforderungen erfüllen:
+
+* Linux-Server:
++
+** Die Hardware und Software muss 64-Bit sein
+** Der Server muss die gleichen unterstützten Versionen einhalten, die für einen ONTAP Select-Knoten definiert sind
+
+
+* Virtuelle CPUs (2)
+* Virtueller Speicher (4 GB)
+* Speicher (40 GB)
+* „Dynamic Host Configuration Protocol (DHCP) ist aktiviert (Sie können auch eine statische IP-Adresse zuweisen).
+
+
+.Netzwerk-Konnektivität
+Stellen Sie sicher, dass die Netzwerkschnittstelle für die Bereitstellung der virtuellen Maschine konfiguriert ist und eine Verbindung zu den von ihr verwalteten ONTAP Select-Hosts herstellen kann.
+
+.Unterstützung für IP Version 4
+ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6) wird nicht unterstützt. Diese Einschränkung wirkt sich auf ONTAP Select aus wie folgt aus:
+
+* Sie müssen der Management-LIF der bereitzustellenden VM eine IPv4-Adresse zuweisen.
+* Deploy kann keine ONTAP Select-Nodes erstellen, die für die Verwendung von IPv6 auf den ONTAP LIFs konfiguriert sind.
+
+
+
+
+== Erforderliche Konfigurationsinformationen
+
+Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTAP Select Deploy Administration Utility die erforderlichen Konfigurationsinformationen ermitteln.
+
+.Name der bereitzustellenden VM
+Der für die VM zu verwendende Name.
+
+.Name des Linux KVM-Hosts
+Der Linux KVM-Host, auf dem das Deploy-Dienstprogramm installiert ist.
+
+.Name des Speicherpools
+Der Speicherpool, der die VM-Dateien enthält (ca. 40 GB erforderlich).
+
+.Netzwerk für die VM
+Das Netzwerk, mit dem die bereitzustellende VM verbunden ist.
+
+
+
+== Optionale Informationen zu Netzwerkkonfiguration
+
+Die Bereitstellungs-VM wird standardmäßig mithilfe von DHCP konfiguriert. Bei Bedarf können Sie jedoch die Netzwerkschnittstelle für die VM manuell konfigurieren.
+
+.Host-Name
+Der Name des Hosts.
+
+.Host-IP-Adresse
+Die statische IPv4-Adresse.
+
+.Subnetzmaske
+Die Subnetzmaske, die auf dem Netzwerk basiert, in dem die VM ein Teil ist.
+
+.Gateway
+Das Standard-Gateway oder -Router.
+
+.Primärer DNS-Server
+Der primäre DNS-Server.
+
+.Sekundärer DNS-Server
+Der sekundäre DNS-Server.
+
+.Domänen durchsuchen
+Die zu verwendenden Suchdomänen.
+
+
+
 == Authentifizierung mithilfe des Anmeldeinformationsspeichers
 
-Der ONTAP Select Deploy Anmeldeinformationsspeicher ist eine Datenbank mit Kontoinformationen. Bei der Clustererstellung und -Verwaltung erfolgt die Hostauthentifizierung mithilfe der Kontoanmeldeinformationen. Sie sollten wissen, wie der Anmeldeinformationsspeicher bei der Planung einer ONTAP Select-Bereitstellung verwendet wird.
+Der ONTAP Select Deploy-Anmeldeinformationsspeicher ist eine Datenbank mit Kontoinformationen. Bei der Clustererstellung und -Verwaltung erfolgt die Hostauthentifizierung mithilfe der Kontoanmeldeinformationen. Sie sollten wissen, wie der Anmeldeinformationsspeicher bei der Planung einer ONTAP Select-Bereitstellung verwendet wird.
 
 
 NOTE: Die Kontoinformationen werden mithilfe des AES-Verschlüsselungsalgorithmus und des SHA-256-Hashing-Algorithmus sicher in der Datenbank gespeichert.

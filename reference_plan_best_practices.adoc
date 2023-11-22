@@ -30,6 +30,17 @@ Virtuelle ONTAP Select NAS-Implementierungen mit rein Flash-basiertem VSAN oder 
 
 
 
+=== Externer Speicher
+
+Halten Sie sich an die folgenden Empfehlungen:
+
+* Definieren Sie dedizierte Netzwerk-Ports, Bandbreiten und vSwitch Konfigurationen für ONTAP Select-Netzwerke und externen Storage
+* Konfigurieren Sie die Kapazitätsoption, um die Storage-Auslastung zu beschränken (ONTAP Select kann nicht die gesamte Kapazität eines externen Speicherpools nutzen).
+* Überprüfen Sie, ob alle externen Storage Arrays die verfügbaren Redundanz- und HA-Funktionen nutzen, sofern dies möglich ist
+
+
+
+
 === Hypervisor-Core-Hardware
 
 Alle Laufwerke in einem einzigen ONTAP Select Aggregat sollten den gleichen Typ sein. So sollten Sie beispielsweise keine HDD- und SSD-Laufwerke im selben Aggregat kombinieren.
@@ -97,6 +108,12 @@ Das ONTAP Select Cluster mit zwei Knoten sollte sorgfältig auf EMS-Meldungen ü
 
 
 
+=== Latenz zwischen Nodes
+
+Das Netzwerk zwischen den beiden Knoten muss eine mittlere Latenz von 5 ms mit einem zusätzlichen periodischen Jitter von 5 ms unterstützen. Bevor Sie das Cluster bereitstellen, testen Sie das Netzwerk gemäß der im technischen Bericht zur ONTAP Select-Produktarchitektur und zu Best Practices beschriebenen Vorgehensweise.
+
+
+
 === Lastverteilung
 
 Um den Lastenausgleich über die internen und externen ONTAP Select-Netzwerke zu optimieren, verwenden Sie das Weiterleiten auf Basis der ursprünglichen Load-Balancing-Richtlinie für virtuelle Ports.
@@ -112,6 +129,14 @@ Wenn der Datenverkehr mehrere Layer-2-Netzwerke umfasst und die Verwendung von V
 === Konfiguration physischer Switches
 
 VMware empfiehlt STP auf den mit den ESXi-Hosts verbundenen Switch-Ports auf PortFast zu setzen. Wenn STP nicht auf PortFast an den Switch-Ports eingestellt wird, kann sich die ONTAP Select-Fähigkeit auswirken, Uplink-Ausfälle zu tolerieren. Bei Verwendung von LACP sollte der LACP-Timer auf fast (1 Sekunde) eingestellt werden. Die Load-Balancing-Richtlinie sollte auf Route basierend auf IP-Hash auf der Port-Gruppe und Quell- und Ziel-IP-Adresse und TCP/UDP-Port und VLAN auf DER LAG eingestellt werden.
+
+
+
+=== Optionen für virtuelle Switches für KVM
+
+Sie müssen auf jedem der ONTAP Select Hosts einen virtuellen Switch konfigurieren, um das externe Netzwerk und das interne Netzwerk zu unterstützen (nur Cluster mit mehreren Nodes). Bei der Implementierung eines Multi-Node-Clusters sollten Sie die Netzwerkverbindung im internen Clusternetzwerk testen.
+
+Weitere Informationen zum Konfigurieren eines Open vSwitch auf einem Hypervisor-Host finden Sie unter link:https://www.netapp.com/media/13134-tr4613.pdf["ONTAP Select zu KVM-Produktarchitektur und Best Practices"^] Technischer Bericht.
 
 
 
