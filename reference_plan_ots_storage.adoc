@@ -169,9 +169,15 @@ Folgende Mindestgröße ist der für jeden Node in einem Cluster mit mehreren No
 
 Die Mindestzuweisung für eine Implementierung in der Produktion umfasst 2 TB für Benutzerdaten plus ca. 266 GB, die von verschiedenen internen ONTAP Select Prozessen verwendet werden. Dies wird als Overhead angesehen.
 
+[NOTE]
+====
+Jeder Node in einem HA-Paar muss die gleiche Storage-Kapazität aufweisen.
 
-NOTE: Jeder Node in einem HA-Paar muss die gleiche Storage-Kapazität aufweisen.
+Bei der Schätzung der Storage-Menge für ein HA-Paar müssen Sie berücksichtigen, dass alle Aggregate (Root und Daten) gespiegelt sind. So verbraucht jeder Plex des Aggregats dieselbe Menge Storage.
 
+Wenn beispielsweise ein Aggregat mit 2 TB erstellt wird, werden 2 TB für zwei Plex-Instanzen (2 TB für Plex0 und 2 TB für Plex1) bzw. 4 TB für den insgesamt lizenzierten Storage zugewiesen.
+
+====
 
 
 === Storage-Kapazität und mehrere Storage-Pools

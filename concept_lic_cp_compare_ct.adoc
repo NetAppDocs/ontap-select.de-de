@@ -30,5 +30,26 @@ In der folgenden Tabelle werden die beiden von ONTAP Select unterstützten Produ
 | Lizenzdauer | Unbefristet (keine Verlängerung erforderlich) | Festdauer auf Basis des Kaufs (erneuert erforderlich) 
 
 
-| Leasing-Dauer für Daten-Aggregat | Gilt nicht für eine Stunde bis sieben Tage | Seriennummer der Nodes 
+| Leasing-Dauer für Daten-Aggregat | Keine Angabe | Eine Stunde bis sieben Tage 
+
+
+| Seriennummer der Nodes | Neun Ziffern und gleich der Lizenzseriennummer | Zwanzig Stellen, die vom License Manager generiert werden 
+
+
+| Unterstützung | Add-on und zeitlich begrenzt | Enthalten und parallel zur Laufzeit 
+
+
+| Lizenztypen | Standard, Premium, Premium XL | Standard, Premium, Premium XL 
+
+
+| Evaluierungslizenz verfügbar | Ja. | Ja. 
+
+
+| Upgrade von Evaluierung auf Produktion | Ja. | Nein 
+
+
+| Größenanpassung der ONTAP Select Virtual Machine (klein bis mittel, mittel bis groß) | Ja. | Ja. 
+
+
+| Durchsetzung: Lizenz abgelaufen | K. A. | Ja (keine Kulanzzeit) 
 |===
