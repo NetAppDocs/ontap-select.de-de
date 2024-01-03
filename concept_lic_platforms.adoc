@@ -65,12 +65,12 @@ Das Premium-Angebot umfasst folgende Funktionen:
 
 Das Premium XL-Angebot bietet folgende Funktionen:
 
-* Kleiner, mittlerer oder großer Instanztyp
-* Festplattenlaufwerke (HDD) oder Solid State-Laufwerke (SSD)
-* Lokaler Hardware-RAID-Controller oder Software-RAID.
+* Typ kleiner, mittelgroßer oder großer Instanzen
+* HDDs, SSDs oder NVMe-Laufwerke
+* Lokaler Hardware-RAID-Controller oder Software-RAID
 * VNAS
 * MetroCluster SDS
 
 
 
-NOTE: Sie können den Typ der großen Instanz (unter Verwendung der Premium-XL-Lizenz) für jede Konfiguration verwenden, jedoch wird er aufgrund von Leistungsproblemen von KVM nicht unterstützt.
+NOTE: Die Verwendung des Typs der großen Instanz oder von NVMe-Laufwerken in einer SW-RAID-Konfiguration wird von KVM nicht unterstützt.

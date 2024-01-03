@@ -27,7 +27,7 @@ Lizenzen für ONTAP Select Capacity Tiers können nach Bedarf hinzugefügt, bear
 . Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
 . Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitätsstufe*.
 . Klicken Sie optional auf *Filter* und begrenzen Sie die angezeigten Lizenzen.
-. Wählen Sie optional eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"] Zum Verwalten einer vorhandenen Lizenz
+. Um eine vorhandene Lizenz zu ersetzen, wählen Sie eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"], Und wählen Sie *Update*.
 . Um eine neue Lizenz hinzuzufügen, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei auf Ihrer lokalen Workstation aus.
 
 
@@ -42,7 +42,7 @@ Sie können Lizenzen für den ONTAP Select Capacity Pool nach Bedarf hinzufügen
 . Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
 . Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitäts-Pools*.
 . Klicken Sie optional auf *Filter* und begrenzen Sie die angezeigten Lizenzen.
-. Wählen Sie optional eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"] Zum Verwalten einer vorhandenen Lizenz
+. Wählen Sie optional eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"] Um eine vorhandene Lizenz zu verwalten.
 . Um eine neue Lizenz hinzuzufügen oder eine vorhandene Lizenz zu verlängern, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.
 . Um eine Liste der Kapazitäts-Pools anzuzeigen:
 +
