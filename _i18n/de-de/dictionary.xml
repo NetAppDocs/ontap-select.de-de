@@ -3637,4 +3637,8 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">Die Verwendung des Typs der großen Instanz oder von NVMe-Laufwerken in einer SW-RAID-Konfiguration wird von KVM nicht unterstützt.</block>
   <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">Um eine vorhandene Lizenz zu ersetzen, wählen Sie eine Lizenz aus, und klicken Sie auf <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>, Und wählen Sie *Update*.</block>
   <block id="22296b7841252645a75ccd1c4032738e" category="list-text">Wählen Sie optional eine Lizenz aus, und klicken Sie auf <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> Um eine vorhandene Lizenz zu verwalten.</block>
+  <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">Verwaltung von Add-on-Lizenzen</block>
+  <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">Übersicht über die Lizenzverwaltung (nur Cluster-Administratoren)</block>
+  <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">Aktivieren Sie neue Funktionen durch Hinzufügen von Lizenzschlüssel</block>
+  <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">Für das ONTAP Select Produkt werden Add-on-Lizenzen direkt innerhalb von ONTAP angewendet und werden nicht über ONTAP Select Deploy gemanagt. Siehe <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> Und <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
 </blocks>
