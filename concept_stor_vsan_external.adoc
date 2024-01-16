@@ -14,7 +14,7 @@ summary: 'Virtuelle NAS (vNAS) Implementierungen unterstützen ONTAP Select Clus
 
 
 [role="lead"]
-Virtuelle NAS (vNAS) Implementierungen unterstützen ONTAP Select Cluster auf VSAN, einige HCI Produkte, NetApp HCI Technologie und externe Array-Typen von Datastores. Die zugrunde liegende Infrastruktur dieser Konfigurationen bietet Ausfallsicherheit im Datenspeicher.
+Virtual NAS Implementierungen (vNAS) unterstützen ONTAP Select Cluster auf virtuellem SAN (VSAN), einigen HCI Produkten und externen Array-Typen von Datastores. Die zugrunde liegende Infrastruktur dieser Konfigurationen bietet Ausfallsicherheit im Datenspeicher.
 
 Die Mindestanforderung ist, dass die zugrunde liegende Konfiguration von VMware unterstützt und in den jeweiligen VMware HCLs aufgelistet werden sollte.
 
