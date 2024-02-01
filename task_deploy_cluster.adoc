@@ -130,10 +130,6 @@ Es kann bis zu 30 Minuten dauern, bis der Cluster erstellt wurde.
 +
 Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.
 
-+
-
-TIP: Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen werden kann, ist das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht registriert. In diesem Fall können Sie mit dem Passwort _change123_ auf die Managementoberfläche für das ONTAP Select-Cluster zugreifen.
-
 
 
 --
@@ -180,13 +176,19 @@ Die Erstellung des Clusters kann bis zu 45 Minuten dauern.
 +
 Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.
 
-+
-
-TIP: Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen werden kann, ist das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht registriert. In diesem Fall können Sie mit dem Passwort _change123_ auf die Managementoberfläche für das ONTAP Select-Cluster zugreifen.
-
 
 
 --
 ====
 .Nachdem Sie fertig sind
 Vergewissern Sie sich, dass die ONTAP Select AutoSupport-Funktion konfiguriert ist, und sichern Sie dann die Konfigurationsdaten von ONTAP Select Deploy.
+
+[TIP]
+====
+Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen werden kann, wird das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht angewendet. Wenn dies geschieht, können Sie das temporäre Administratorkennwort für das ONTAP Select Cluster mit dem folgenden CLI-Befehl ermitteln:
+
+[listing]
+----
+(ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
+----
+====
