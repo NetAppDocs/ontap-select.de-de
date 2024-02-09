@@ -99,7 +99,6 @@ Schnittstellengruppen werden nicht unterstützt.
 * SVM-Migration
 * Disaster Recovery für Storage VM (SVM DR)
 * SnapLock-Compliance
-* Manipulationssichere Snapshot Kopien
 * VMware HCX
 
 
