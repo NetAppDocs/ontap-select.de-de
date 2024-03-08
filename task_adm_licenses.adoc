@@ -161,6 +161,8 @@ Die ursprünglich jedem Node für die Evaluierungsimplementierung zugewiesenen 2
 
 Im Allgemeinen passiert nichts, wenn eine Lizenz abläuft. Sie können jedoch keine andere Lizenz installieren, da die Nodes der abgelaufenen Lizenz zugeordnet sind. Bis Sie die Lizenz erneuern, sollten Sie _Not_ alles tun, was das Aggregat offline bringen würde, wie zum Beispiel einen Neustart oder Failover-Vorgang. Es wird empfohlen, die Lizenzerneuerung zu beschleunigen.
 
+Weitere Informationen zur Verlängerung von ONTAP Select und Lizenzen finden Sie im Abschnitt Lizenzen, Installation, Upgrades und Rücksetzer im link:https://docs.netapp.com/us-en/ontap-select/reference_faq.html#licenses-installation-upgrades-and-reverts["Häufig gestellte Fragen"].
+
 
 
 == Verwaltung von Add-on-Lizenzen
