@@ -76,7 +76,7 @@ Ja, das Verfahren zur Zurücksetzen für ein ONTAP Select Cluster ist fast ident
 .Erfordert ONTAP MetroCluster SDS mindestens eine Premium-Lizenz?
 Ja.
 
-.Können die IP-Adressen des ONTAP Select Deploy- und ONTAP Select-Cluster- und Node-Managements nach der Installation geändert werden?
+.Kann die ONTAP Select Cluster-Netzwerkkonfiguration nach der Installation geändert werden?
 Änderungen an den folgenden ONTAP Select-Cluster-Eigenschaften werden von ONTAP Select Deploy mithilfe des Clusteraktualisierungsvorgangs erkannt, die über die GUI, CLI oder REST-API verfügbar sind:
 
 * Netzwerkkonfiguration (IP-Adressen, DNS, NTP, Netmask und Gateway)
@@ -89,10 +89,10 @@ Zusätzlich werden folgende ONTAP Select VM Änderungen erkannt:
 * Änderungen an Host-Netzwerkname und Storage-Pool-Namen
 
 
-
-NOTE: Das Ändern der IP-Adresse der ONTAP Select Deploy-VM wird nicht unterstützt.
-
 Ein Upgrade auf ONTAP Select Deploy 2.6 ermöglicht die Unterstützung dieser Änderungen bei allen bereits bereitgestellten ONTAP Select Clustern, die in der ursprünglichen Konfiguration jedoch nicht geändert wurden. Mit anderen Worten: Wenn die oben erwähnten ONTAP Select-Cluster-Eigenschaften mit System Manager oder vCenter geändert wurden, kann das Upgrade auf ONTAP Select Deploy 2.6 diese Inkonsistenzen nicht beheben. Die Änderungen an den ONTAP Select-Eigenschaften müssen zuerst für die Implementierung von ONTAP Select zurückgesetzt werden, um ihre eindeutigen Metadaten zu jeder ONTAP Select VM hinzuzufügen.
+
+.Kann die ONTAP Select Deploy Netzwerkkonfiguration nach der Installation geändert werden?
+Das Ändern der Netzwerkdetails der Bereitstellungsinstanz nach der Ausführung in einer Umgebung wird nicht unterstützt. Weitere Informationen finden Sie im link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["Knowledge Base-Artikel – Ändern der DNS-Konfiguration der ONTAP Deploy-Instanz"^].
 
 .Wie erkennt Deploy, dass ONTAP Select Lizenzen verlängert werden?
 Die Methode ist für alle Lizenzen identisch, obwohl die Einzelheiten davon abhängen, ob es sich um eine Kapazitäts- oder eine Kapazitäts-Pool-Lizenz handelt.
