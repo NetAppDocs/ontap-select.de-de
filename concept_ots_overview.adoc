@@ -97,7 +97,6 @@ Schnittstellengruppen werden nicht unterstützt.
 * ONTAP-Port-Eigenschaften, die die Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, Duplex und Flusskontrolle, ändern, werden nicht unterstützt.
 * Serviceprozessoren
 * SVM-Migration
-* Disaster Recovery für Storage VM (SVM DR)
 * SnapLock-Compliance
 * VMware HCX
 
