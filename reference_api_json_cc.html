@@ -1,0 +1,3375 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head class="at-element-marker">
+  <title>JSON für das Erstellen eines Clusters</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="JSON für das Erstellen eines Clusters" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/de-de/ontap-select/reference_api_json_cc.html" />
+	<meta property="og:description" content="Wenn Sie ein ONTAP Select-Cluster mithilfe der Python-Codebeispiele erstellen oder löschen, müssen Sie eine JSON-Datei als Eingabe für das Skript bereitstell..." />
+  <meta property="og:image" content="https://docs.netapp.com/de-de/ontap-select/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Wenn Sie ein ONTAP Select-Cluster mithilfe der Python-Codebeispiele erstellen oder löschen, müssen Sie eine JSON-Datei als Eingabe für das Skript bereitstell...">
+  <meta name="keywords" content=" rest api, deploy rest api, rest, python script, json, create cluster"><!-- Icons -->
+  <link rel="icon" href="/de-de/ontap-select/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/de-de/ontap-select/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/de-de/ontap-select/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/de-de/ontap-select/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/de-de/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/ontap-select/reference_api_json_cc.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/ontap-select/reference_api_json_cc.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/de-de/ontap-select/js/na-search.js'></script><script src='/de-de/ontap-select/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/de-de/ontap-select/js/custom-dropdown.js'></script>
+  <script src='/de-de/ontap-select/js/FileSaver.min.js'></script>
+  <script src='/de-de/ontap-select/js/jszip-utils.min.js'></script>
+  <script src='/de-de/ontap-select/js/jszip.min.js'></script><script src='/de-de/ontap-select/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/de-de/ontap-select/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/de/index.aspx">
+                <image id="ie-header-logo" src="/de-de/ontap-select/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/de/support-and-training/documentation/">Dokumente</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/de-de/ontap-select/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">Deutsch</span>
+                    <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/de-de/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/ontap-select/reference_api_json_cc.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/de-de/ontap-select/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">NetApp Komplettlösung</span>
+                    <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/de/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">Support</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">Knowledge Base</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/de/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">Training</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/de-de/ontap-select/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/de-de/ontap-select/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">Gesamte Dokumentation</a>
+    </li>
+    
+    
+
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/de-de/ontap-select/">-->
+      ONTAP Select
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors"><div id="version-dropdown-new" class="custom-dropdown" >
+  <div class="custom-dropdown-select unselected" title=" 9.14.1">
+    <label>Version</label>
+    <span translate="no" class="notranslate">9.14.1</span>
+    <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown version invisible" />
+    <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup version" />
+  </div>
+
+  <ul class="custom-dropdown-menu"><li>
+      
+      <a href="https://docs.netapp.com/de-de/ontap-select/reference_api_json_cc.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.14.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/de-de/ontap-select-9131/reference_api_json_cc.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.13.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/de-de/ontap-select-9121/reference_api_json_cc.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.12.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/de-de/ontap-select-9111/reference_api_json_cc.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.11.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/de-de/ontap-select-9101/reference_api_json_cc.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.10.1</span></span>
+      </a>
+                     
+    </li>
+    
+  </ul>
+</div></div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/de-de/ontap-select/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/de-de/ontap-select/search.html" 
+        data-type="widget"
+        data-placeholder="Dokumentation durchsuchen"
+        data-no-results-found="Keine Ergebnisse gefunden für {query}"
+        data-did-you-mean="Suchen Sie nach {suggestion}."
+        data-no-results-found-did-you-mean="Es wurden keine Ergebnisse für {query} gefunden. Meinten Sie {suggestion}?"
+        data-results-found="{hitCount} Ergebnisse gefunden"
+        data-error-message="Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+        data-error-reset="Suche zurücksetzen"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select 9.14.1-Dokumentation"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/de-de/ontap-select/index.html">
+        ONTAP Select 9.14.1-Dokumentation
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Versionshinweise"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Versionshinweise</div>-->
+         Versionshinweise
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Versionshinweise zu ONTAP Select"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_release_notes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/reference_release_notes.html">
+        Versionshinweise zu ONTAP Select
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Was ist neu"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_new_ots.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/reference_new_ots.html">
+        Was ist neu
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konzepte"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Konzepte</div>-->
+         Konzepte
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Produktübersicht"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_ots_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/concept_ots_overview.html">
+        Produktübersicht
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select Deploy"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_ots_deploy.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/concept_ots_deploy.html">
+        ONTAP Select Deploy
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Business-Anwendungsfälle"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Business-Anwendungsfälle</div>-->
+         Business-Anwendungsfälle
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Geschäftsanforderungen und Verwendungsszenarien"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_usecase_overview.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_usecase_overview.html">
+        Geschäftsanforderungen und Verwendungsszenarien
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Remote-Standorte und externe Niederlassungen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_usecase_robo.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_usecase_robo.html">
+        Remote-Standorte und externe Niederlassungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Private Cloud und Datacenter"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_usecase_private_cloud.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_usecase_private_cloud.html">
+        Private Cloud und Datacenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="MetroCluster SDS"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_usecase_mc_sds.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_usecase_mc_sds.html">
+        MetroCluster SDS
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Terminologie"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_terminology.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/concept_terminology.html">
+        Terminologie
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Planen"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Planen</div>-->
+         Planen
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementierungs-Workflow"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_workflow_deploy.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/concept_workflow_deploy.html">
+        Implementierungs-Workflow
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> ONTAP Select</div>-->
+         ONTAP Select
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Anforderungen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_general.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_general.html">
+        Allgemeine Anforderungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Hypervisor und Hardware"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_hardware.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_hardware.html">
+        Hypervisor und Hardware
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage und RAID"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_storage.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_storage.html">
+        Storage und RAID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Externe Speicheranforderungen"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Externe Speicheranforderungen</div>-->
+         Externe Speicheranforderungen
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware ESXi"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_vnas.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/de-de/ontap-select/reference_plan_ots_vnas.html">
+        VMware ESXi
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="KVM"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_kvm.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/de-de/ontap-select/reference_plan_ots_kvm.html">
+        KVM
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerkbetrieb"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_networking.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_networking.html">
+        Netzwerkbetrieb
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster mit zwei Nodes"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_two_node.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_two_node.html">
+        Cluster mit zwei Nodes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Remote-Standorte und externe Niederlassungen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_robo.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_robo.html">
+        Remote-Standorte und externe Niederlassungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="MetroCluster SDS"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_mcc_sds.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_mcc_sds.html">
+        MetroCluster SDS
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware vCenter auf ESXi"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_ots_vcenter.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_ots_vcenter.html">
+        VMware vCenter auf ESXi
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select Deploy"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> ONTAP Select Deploy</div>-->
+         ONTAP Select Deploy
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Anforderungen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_dep_general.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_dep_general.html">
+        Allgemeine Anforderungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware Umgebung zu unterstützen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_dep_vmware.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_plan_dep_vmware.html">
+        VMware Umgebung zu unterstützen
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Best Practices in sich vereint"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_plan_best_practices.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/reference_plan_best_practices.html">
+        Best Practices in sich vereint
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenz"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Lizenz</div>-->
+         Lizenz
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Optionen"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Optionen</div>-->
+         Optionen
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Evaluierungslizenzen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_evaluation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_evaluation.html">
+        Evaluierungslizenzen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Produktionslizenzen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_production.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_production.html">
+        Produktionslizenzen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Plattform-Lizenzangebote"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_platforms.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_platforms.html">
+        Plattform-Lizenzangebote
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenzmodell für Kapazitäts-Pools"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Lizenzmodell für Kapazitäts-Pools</div>-->
+         Lizenzmodell für Kapazitäts-Pools
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Operative Details"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_cp_operation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_cp_operation.html">
+        Operative Details
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Seriennummern der Nodes"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_cp_serial_number.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_cp_serial_number.html">
+        Seriennummern der Nodes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Einschränkungen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_cp_restrictions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_cp_restrictions.html">
+        Einschränkungen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kapazitäts-Pools und Kapazitäts-Tiers"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_cp_compare_ct.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_cp_compare_ct.html">
+        Kapazitäts-Pools und Kapazitäts-Tiers
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Zusammenfassung der Vorteile"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_cp_benefits.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_cp_benefits.html">
+        Zusammenfassung der Vorteile
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kaufen"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Kaufen</div>-->
+         Kaufen
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenzierungs-Workflow"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_lic_workflow.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_lic_workflow.html">
+        Lizenzierungs-Workflow
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kapazitäts-Tiers"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_lic_acquire_ct.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_lic_acquire_ct.html">
+        Kapazitäts-Tiers
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kapazitäts-Pools"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_lic_acquire_cp.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_lic_acquire_cp.html">
+        Kapazitäts-Pools
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Funktionen der ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_lic_ontap_features.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/reference_lic_ontap_features.html">
+        Funktionen der ONTAP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installieren"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Installieren</div>-->
+         Installieren
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Checkliste zur Installationsvorbereitung"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Checkliste zur Installationsvorbereitung</div>-->
+         Checkliste zur Installationsvorbereitung
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Checkliste zur Hostvorbereitung"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_chk_host_prep.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_chk_host_prep.html">
+        Checkliste zur Hostvorbereitung
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bereitstellung der erforderlichen Informationen über das Dienstprogramm"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_chk_deploy_req_info.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_chk_deploy_req_info.html">
+        Bereitstellung der erforderlichen Informationen über das Dienstprogramm
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erforderliche Informationen zu ONTAP Select"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_chk_select_req_info.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_chk_select_req_info.html">
+        Erforderliche Informationen zu ONTAP Select
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NVMe-Host-Konfiguration"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_chk_nvme_configure.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_chk_nvme_configure.html">
+        NVMe-Host-Konfiguration
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installieren Sie ONTAP Select Deploy"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_install_deploy.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_install_deploy.html">
+        Installieren Sie ONTAP Select Deploy
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementieren eines Clusters"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_deploy_cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_deploy_cluster.html">
+        Implementieren eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erster Cluster-Status"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_initial_state.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/reference_initial_state.html">
+        Erster Cluster-Status
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verwaltung"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Verwaltung</div>-->
+         Verwaltung
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_adm_before.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/concept_adm_before.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Upgrade von Nodes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_adm_upgrading_nodes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/concept_adm_upgrading_nodes.html">
+        Upgrade von Nodes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Diagnose und Support"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_adm_support.html">
+        Diagnose und Support
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sicherheit"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_security.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_adm_security.html">
+        Sicherheit
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerk-Konnektivität"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_connectivity.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_adm_connectivity.html">
+        Netzwerk-Konnektivität
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mediatoren"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_mediators.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_adm_mediators.html">
+        Mediatoren
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_clusters.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_adm_clusters.html">
+        Cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Nodes und Hosts"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Nodes und Hosts</div>-->
+         Nodes und Hosts
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VM-Videokonsole"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_video_console.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_adm_video_console.html">
+        VM-Videokonsole
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Größe der Clusterknoten ändern"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_resize.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_adm_resize.html">
+        Größe der Clusterknoten ändern
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tauschen Sie fehlerhafte SW-RAID-Laufwerke aus"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_replace_drives_swraid.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_adm_replace_drives_swraid.html">
+        Tauschen Sie fehlerhafte SW-RAID-Laufwerke aus
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Upgrade auf VMFS6"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_upgrade_vmfs6.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_adm_upgrade_vmfs6.html">
+        Upgrade auf VMFS6
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Lizenzen Zu Haben"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_adm_licenses.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_adm_licenses.html">
+        Lizenzen Zu Haben
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Im Detail"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Im Detail</div>-->
+         Im Detail
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Storage</div>-->
+         Storage
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Konzepte und Eigenschaften"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_stor_concepts_chars.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_stor_concepts_chars.html">
+        Allgemeine Konzepte und Eigenschaften
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Hardware-RAID-Services für lokalen Attached Storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_stor_hwraid_local.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_stor_hwraid_local.html">
+        Hardware-RAID-Services für lokalen Attached Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Software-RAID-Services für lokalen Attached Storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_stor_swraid_local.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_stor_swraid_local.html">
+        Software-RAID-Services für lokalen Attached Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VSAN und externe Array-Konfigurationen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_stor_vsan_external.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_stor_vsan_external.html">
+        VSAN und externe Array-Konfigurationen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erhöhung der Storage-Kapazität"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_stor_capacity_inc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_stor_capacity_inc.html">
+        Erhöhung der Storage-Kapazität
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Support für Storage-Effizienz"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_stor_eff_support.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_stor_eff_support.html">
+        Support für Storage-Effizienz
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerkbetrieb"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Netzwerkbetrieb</div>-->
+         Netzwerkbetrieb
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Allgemeine Konzepte und Eigenschaften"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_nw_concepts_chars.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_nw_concepts_chars.html">
+        Allgemeine Konzepte und Eigenschaften
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Single- und Multi-Node-Konfiguration"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_nw_single_multi_node.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_nw_single_multi_node.html">
+        Single- und Multi-Node-Konfiguration
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Interne und externe Netzwerke"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_nw_internal_external.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_nw_internal_external.html">
+        Interne und externe Netzwerke
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Unterstützte Konfigurationen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_nw_supported_configs.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_nw_supported_configs.html">
+        Unterstützte Konfigurationen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konfiguration von VMware vSphere vSwitch"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_nw_vsphere_vswitch_config.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_nw_vsphere_vswitch_config.html">
+        Konfiguration von VMware vSphere vSwitch
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konfiguration physischer Switches"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_nw_physical_switch_config.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_nw_physical_switch_config.html">
+        Konfiguration physischer Switches
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Trennung von Daten und Management"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_nw_data_mgmt_separation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_nw_data_mgmt_separation.html">
+        Trennung von Daten und Management
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Architektur für Hochverfügbarkeit"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Architektur für Hochverfügbarkeit</div>-->
+         Architektur für Hochverfügbarkeit
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="HA-Konfiguration"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_ha_config.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_ha_config.html">
+        HA-Konfiguration
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Synchrone Replizierung und gespiegelte Aggregate"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_ha_mirroring.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_ha_mirroring.html">
+        Synchrone Replizierung und gespiegelte Aggregate
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Weitere Hochverfügbarkeitsfunktionen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_ha_other.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_ha_other.html">
+        Weitere Hochverfügbarkeitsfunktionen
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Leistung"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Leistung</div>-->
+         Leistung
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Performance-Überblick"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_perf_general.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_perf_general.html">
+        Performance-Überblick
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Performance von ONTAP Select 9.6"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_perf_premium_ha_direct_ssd_96.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_perf_premium_ha_direct_ssd_96.html">
+        Performance von ONTAP Select 9.6
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automatisierung mit REST"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Automatisierung mit REST</div>-->
+         Automatisierung mit REST
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Konzepte"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Konzepte</div>-->
+         Konzepte
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="REST-Web-Services"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_rest.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_rest.html">
+        REST-Web-Services
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Greifen Sie auf die Implementierungs-API zu"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_how_access.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_how_access.html">
+        Greifen Sie auf die Implementierungs-API zu
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementieren der API-Versionierung"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_versions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_versions.html">
+        Implementieren der API-Versionierung
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Basisbetrieb"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_operation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_operation.html">
+        Basisbetrieb
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Anfrage- und Reaktionstransaktion"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_transaction.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_transaction.html">
+        Anfrage- und Reaktionstransaktion
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Asynchrone Verarbeitung"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_async_proc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_async_proc.html">
+        Asynchrone Verarbeitung
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Zugriff über einen Browser"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Zugriff über einen Browser</div>-->
+         Zugriff über einen Browser
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_before_browser.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_before_browser.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Öffnen Sie die Dokumentseite"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_api_access_doc_page.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_api_access_doc_page.html">
+        Öffnen Sie die Dokumentseite
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="API-Aufruf verstehen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_api_understanding_call.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_api_understanding_call.html">
+        API-Aufruf verstehen
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Workflow-Prozesse"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Workflow-Prozesse</div>-->
+         Workflow-Prozesse
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_before_workflows.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_before_workflows.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Workflow 1 Erstellen Sie einen Cluster"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_api_workflow01.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_api_workflow01.html">
+        Workflow 1 Erstellen Sie einen Cluster
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Zugang mit Python"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Zugang mit Python</div>-->
+         Zugang mit Python
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bevor Sie beginnen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_before_python.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_before_python.html">
+        Bevor Sie beginnen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verstehen Sie die Skripte"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_api_understanding_scripts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/concept_api_understanding_scripts.html">
+        Verstehen Sie die Skripte
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Python-Codebeispiele"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Python-Codebeispiele</div>-->
+         Python-Codebeispiele
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erstellen eines Clusters"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_api_script_cc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_api_script_cc.html">
+        Erstellen eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="JSON zum Erstellen eines Clusters"
+      data-li-level="3#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_api_json_cc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_api_json_cc.html">
+        JSON zum Erstellen eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Fügen Sie eine Node-Lizenz hinzu"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_api_script_anl.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_api_script_anl.html">
+        Fügen Sie eine Node-Lizenz hinzu
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Löschen eines Clusters"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_api_script_dc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_api_script_dc.html">
+        Löschen eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Common Support-Modul"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_api_script_common.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_api_script_common.html">
+        Common Support-Modul
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Die Größe der Cluster-Nodes wird geändert"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_api_script_resize.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_api_script_resize.html">
+        Die Größe der Cluster-Nodes wird geändert
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automatisieren mit Ansible"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/concept_automate_ansible.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/de-de/ontap-select/concept_automate_ansible.html">
+        Automatisieren mit Ansible
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verwenden Sie die CLI"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Verwenden Sie die CLI</div>-->
+         Verwenden Sie die CLI
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Melden Sie sich über SSH an"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_signing_in.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_cli_signing_in.html">
+        Melden Sie sich über SSH an
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Implementieren eines Clusters"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_deploy_cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_cli_deploy_cluster.html">
+        Implementieren eines Clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sicherheit"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_security.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_cli_security.html">
+        Sicherheit
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Netzwerk-Konnektivität"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_connectivity.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_cli_connectivity.html">
+        Netzwerk-Konnektivität
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_clusters.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/de-de/ontap-select/task_cli_clusters.html">
+        Cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Nodes und Hosts"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Nodes und Hosts</div>-->
+         Nodes und Hosts
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ESXi auf 6.5 und höher aktualisieren"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_upgrade_esxi65.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_cli_upgrade_esxi65.html">
+        ESXi auf 6.5 und höher aktualisieren
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ändern Sie einen Hostverwaltungsserver"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_host_modify_command.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/reference_host_modify_command.html">
+        Ändern Sie einen Hostverwaltungsserver
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Utility bereitstellen"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/de-de/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/de-de/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Utility bereitstellen</div>-->
+         Utility bereitstellen
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aktualisieren einer Deploy-Instanz"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_upgrade_deploy.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_cli_upgrade_deploy.html">
+        Aktualisieren einer Deploy-Instanz
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Migrieren einer Deploy-Instanz"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_migrate_deploy.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_cli_migrate_deploy.html">
+        Migrieren einer Deploy-Instanz
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Fügen Sie ONTAP Select-Bilder hinzu"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_deploy_image_add.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_cli_deploy_image_add.html">
+        Fügen Sie ONTAP Select-Bilder hinzu
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select-Bilder entfernen"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_deploy_image_remove.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_cli_deploy_image_remove.html">
+        ONTAP Select-Bilder entfernen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Wiederherstellung in einem Cluster mit zwei Nodes"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/task_cli_deploy_recover_two_node.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/de-de/ontap-select/task_cli_deploy_recover_two_node.html">
+        Wiederherstellung in einem Cluster mit zwei Nodes
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Häufig gestellte Fragen"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/reference_faq.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/de-de/ontap-select/reference_faq.html">
+        Häufig gestellte Fragen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Rechtliche Hinweise"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/reference_api_json_cc.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/de-de/ontap-select/legal-notices.html">
+        Rechtliche Hinweise
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/de-de/ontap-select"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/de-de/ontap-select"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/de-de/ontap-select/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> Die deutsche Sprachversion wurde als Serviceleistung für Sie durch maschinelle Übersetzung erstellt. Bei eventuellen Unstimmigkeiten hat die englische Sprachversion Vorrang. </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">JSON für das Erstellen eines Clusters</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2023-02-03 18:27:19 +0000">02/03/2023</time>
+        
+    
+    
+        <span>Beitragende
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/de-de/ontap-select/images/discuss-sm.svg" alt="" class="github-icon" />Änderungen vorschlagen</span>
+        <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/de-de/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/ontap-select.de-de/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/de-de/ontap-select/reference_api_json_cc.html&page-title=JSON für das Erstellen eines Clusters" class="page-nav-contribute-link" role="button">Dokumentationsänderungen anfordern</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/ontap-select/blob/main/reference_api_json_cc.adoc" class="page-nav-contribute-link" role="button">Diese Seite bearbeiten</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >So können Sie beitragen</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>PDFs<img src="/de-de/ontap-select/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/de-de/ontap-select/pdfs/fullsite-sidebar/ONTAP_Select_Dokumentation.pdf" >
+                    <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>PDF dieser Dokumentationssite</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Versionshinweise.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Versionshinweise
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Konzepte.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Konzepte
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Business_Anwendungsfälle.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Business-Anwendungsfälle
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Planen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Planen
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/ONTAP_Select.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            ONTAP Select
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Externe_Speicheranforderungen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Externe Speicheranforderungen
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/ONTAP_Select_Deploy.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            ONTAP Select Deploy
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Lizenz.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Lizenz
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Optionen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Optionen
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Lizenzmodell_für_Kapazitäts_Pools.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Lizenzmodell für Kapazitäts-Pools
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Kaufen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Kaufen
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Installieren.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Installieren
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Checkliste_zur_Installationsvorbereitung.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Checkliste zur Installationsvorbereitung
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Verwaltung.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Verwaltung
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Nodes_und_Hosts.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Nodes und Hosts
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Im_Detail.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Im Detail
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Storage.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Storage
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Netzwerkbetrieb.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Netzwerkbetrieb
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Architektur_für_Hochverfügbarkeit.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Architektur für Hochverfügbarkeit
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Leistung.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Leistung
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Automatisierung_mit_REST.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Automatisierung mit REST
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Konzepte.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Konzepte
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Zugriff_über_einen_Browser.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Zugriff über einen Browser
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Workflow_Prozesse.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Workflow-Prozesse
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Zugang_mit_Python.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Zugang mit Python
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Python_Codebeispiele.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Python-Codebeispiele
+          </a>
+          
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Verwenden_Sie_die_CLI.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Verwenden Sie die CLI
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Nodes_und_Hosts.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Nodes und Hosts
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/de-de/ontap-select/pdfs/sidebar/Utility_bereitstellen.pdf" 
+            
+          >
+            <img src="/de-de/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Utility bereitstellen
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/de-de/ontap-select/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>Sammlung separater PDF-Dokumente<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Wenn Sie ein ONTAP Select-Cluster mithilfe der Python-Codebeispiele erstellen oder löschen, müssen Sie eine JSON-Datei als Eingabe für das Skript bereitstellen. Sie können das entsprechende JSON-Muster basierend auf Ihren Implementierungsplänen kopieren und ändern.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="single-node-cluster-in-esxi">Single-Node-Cluster in ESXi</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "hosts": [
+    {
+      "password": "mypassword1",
+      "name": "host-1234",
+      "type": "ESX",
+      "username": "admin"
+    }
+  ],
+
+  "cluster": {
+    "dns_info": {
+      "domains": ["lab1.company-demo.com", "lab2.company-demo.com",
+        "lab3.company-demo.com", "lab4.company-demo.com"
+        ],
+
+      "dns_ips": ["10.206.80.135", "10.206.80.136"]
+      },
+      "ontap_image_version": "9.7",
+      "gateway": "10.206.80.1",
+      "ip": "10.206.80.115",
+      "name": "mycluster",
+      "ntp_servers": ["10.206.80.183", "10.206.80.142"],
+      "ontap_admin_password": "mypassword2",
+      "netmask": "255.255.254.0"
+  },
+
+  "nodes": [
+    {
+      "serial_number": "3200000nn",
+      "ip": "10.206.80.114",
+      "name": "node-1",
+      "networks": [
+        {
+          "name": "ontap-external",
+          "purpose": "mgmt",
+          "vlan": 1234
+        },
+        {
+          "name": "ontap-external",
+          "purpose": "data",
+          "vlan": null
+        },
+        {
+          "name": "ontap-internal",
+          "purpose": "internal",
+          "vlan": null
+        }
+      ],
+      "host_name": "host-1234",
+      "is_storage_efficiency_enabled": false,
+      "instance_type": "small",
+      "storage": {
+        "disk": [],
+        "pools": [
+          {
+            "name": "storage-pool-1",
+            "capacity": 4802666790125
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="single-node-cluster-in-esxi-über-vcenter">Single-Node-Cluster in ESXi über vCenter</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "hosts": [
+    {
+      "name":"host-1234",
+      "type":"ESX",
+      "mgmt_server":"vcenter-1234"
+    }
+  ],
+
+  "cluster": {
+    "dns_info": {"domains": ["lab1.company-demo.com", "lab2.company-demo.com",
+      "lab3.company-demo.com", "lab4.company-demo.com"
+      ],
+      "dns_ips": ["10.206.80.135","10.206.80.136"]
+  },
+
+  "ontap_image_version":"9.7",
+  "gateway":"10.206.80.1",
+  "ip":"10.206.80.115",
+  "name":"mycluster",
+  "ntp_servers": ["10.206.80.183","10.206.80.142"],
+  "ontap_admin_password":"mypassword2",
+  "netmask":"255.255.254.0"
+  },
+
+  "vcenter": {
+    "password":"mypassword2",
+    "hostname":"vcenter-1234",
+    "username":"selectadmin"
+  },
+
+  "nodes": [
+    {
+      "serial_number": "3200000nn",
+      "ip":"10.206.80.114",
+      "name":"node-1",
+      "networks": [
+        {
+          "name":"ONTAP-Management",
+          "purpose":"mgmt",
+          "vlan":null
+        },
+        {
+          "name": "ONTAP-External",
+          "purpose":"data",
+          "vlan":null
+        },
+        {
+          "name": "ONTAP-Internal",
+          "purpose":"internal",
+          "vlan":null
+        }
+      ],
+
+      "host_name": "host-1234",
+      "is_storage_efficiency_enabled": false,
+      "instance_type": "small",
+      "storage": {
+        "disk":[],
+        "pools": [
+          {
+            "name": "storage-pool-1",
+            "capacity":5685190380748
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="single-node-cluster-auf-kvm">Single-Node-Cluster auf KVM</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="Hinweis">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.</p>
+</li>
+<li>
+<p>Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "hosts": [
+    {
+      "password": "mypassword1",
+      "name":"host-1234",
+      "type":"KVM",
+      "username":"root"
+    }
+  ],
+
+  "cluster": {
+    "dns_info": {
+      "domains": ["lab1.company-demo.com", "lab2.company-demo.com",
+        "lab3.company-demo.com", "lab4.company-demo.com"
+      ],
+
+      "dns_ips": ["10.206.80.135", "10.206.80.136"]
+    },
+
+    "ontap_image_version": "9.7",
+    "gateway":"10.206.80.1",
+    "ip":"10.206.80.115",
+    "name":"CBF4ED97",
+    "ntp_servers": ["10.206.80.183", "10.206.80.142"],
+    "ontap_admin_password": "mypassword2",
+    "netmask":"255.255.254.0"
+  },
+  "nodes": [
+    {
+      "serial_number":"3200000nn",
+      "ip":"10.206.80.115",
+      "name": "node-1",
+      "networks": [
+        {
+          "name": "ontap-external",
+          "purpose": "mgmt",
+          "vlan":1234
+        },
+        {
+          "name": "ontap-external",
+          "purpose": "data",
+          "vlan": null
+        },
+        {
+          "name": "ontap-internal",
+          "purpose": "internal",
+          "vlan": null
+        }
+      ],
+
+      "host_name": "host-1234",
+      "is_storage_efficiency_enabled": false,
+      "instance_type": "small",
+      "storage": {
+        "disk": [],
+        "pools": [
+          {
+            "name": "storage-pool-1",
+            "capacity": 4802666790125
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/de-de/ontap-select/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/de-de/ontap-select/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">Auf dieser seite</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Nutzungsbedingungen</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Datenschutzrichtlinie</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Richtlinie zu Cookies</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie-Einstellungen</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">Feedback zu dieser Seite senden</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/de-de/ontap-select/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/de-de/ontap-select/js/prism.js'></script>
+      <script type="text/javascript" src='/de-de/ontap-select/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/de-de/ontap-select/js/ie-tabbed-blocks.js'></script>
+    <script src='/de-de/ontap-select/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
