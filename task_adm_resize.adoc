@@ -19,6 +19,9 @@ Nach der Bereitstellung eines ONTAP Select Clusters können Sie mithilfe des Dep
 
 NOTE: Sie können die Anpassung der Cluster-Nodes durchführen, wenn Sie das Lizenzmodell für die Kapazitäts-Tiers und das Lizenzmodell für die Kapazitäts-Pools verwenden.
 
+
+NOTE: Die Größenänderung auf den Typ der großen Instanz wird nur auf ESXi unterstützt.
+
 .Bevor Sie beginnen
 Der Cluster muss den Status „Online“ aufweisen.
 

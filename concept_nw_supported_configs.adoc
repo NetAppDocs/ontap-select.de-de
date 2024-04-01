@@ -36,6 +36,9 @@ Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der 
 
 | Cluster mit 4/6/8 Nodes | 2 x 10 GbE | 4 x 10 GbE oder 2x 25 GbE 
 |===
+
+NOTE: Die Konvertierung zwischen einzelnen Link- und mehreren Link-Topologien auf einem laufenden Cluster wird nicht unterstützt, da möglicherweise zwischen verschiedenen NIC-Teaming-Konfigurationen konvertiert werden muss, die für jede Topologie erforderlich sind.
+
 .Netzwerkkonfiguration mit mehreren physischen Switches
 Wenn eine ausreichende Hardware verfügbar ist, empfiehlt NetApp die in der folgenden Abbildung dargestellte Multiswitch-Konfiguration, da zusätzlich Schutz vor physischen Switch-Ausfällen gegeben ist.
 

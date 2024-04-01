@@ -23,15 +23,15 @@ Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das
 Das ONTAP Select Paket können Sie auf der NetApp Support-Webseite herunterladen.
 
 .Über diese Aufgabe
-Das Dienstprogramm ONTAP Select Deploy Administration ist als virtuelle Maschine (VM) auf Basis des OVF-Standards (Open Virtualization Format) verpackt. Die einzelne komprimierte Datei verfügt über das Suffix `ova`.
+Das Dienstprogramm ONTAP Select Deploy Administration ist als virtuelle Maschine (VM) auf Basis des OVF-Standards (Open Virtualization Format) verpackt. Die einzelne komprimierte Datei verfügt über das Suffix `ova`. Die VM stellt die bereitzustellenden Server- und Installations-Images für ONTAP Select Nodes zur Verfügung.
 
 .Schritte
-. Greifen Sie über einen Webbrowser auf die NetApp Support-Website zu und klicken Sie auf *Support Quick Links*.
-. Klicken Sie unter *Top Tasks* auf *Software herunterladen* und melden Sie sich an.
-. Klicken Sie auf *Produkt finden*.
-. Scrollen Sie nach unten und klicken Sie auf *ONTAP Select*.
+. Auf das zugreifen link:https://mysupport.netapp.com/site/["NetApp Support Website"^] Verwenden Sie einen Webbrowser und melden Sie sich an.
+. Wählen Sie aus dem Menü *Downloads*, und wählen Sie dann aus dem Dropdown-Menü *Downloads* aus.
+. Wählen Sie auf der Seite Downloads unter Alle Produkte A-Z den Buchstaben *O* aus.
+. Scrollen Sie nach unten und wählen Sie *ONTAP Select*.
 . Wählen Sie die gewünschte Version des Pakets aus.
-. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA) durch und klicken Sie auf *Akzeptieren und fortfahren*.
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA), und wählen Sie *Accept & Continue* aus.
 . Wählen Sie das entsprechende Paket aus, und laden Sie es herunter, um alle Aufforderungen bei Bedarf zu beantworten.
 
 
@@ -207,7 +207,7 @@ Melden Sie sich an der Web-Benutzeroberfläche an, um zu bestätigen, dass das D
 `\https://<ip_address>/`
 
 . Geben Sie den Administrator-Kontonamen und das Kennwort ein, und melden Sie sich an.
-. Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, überprüfen Sie die Voraussetzungen und klicken Sie zum Fortfahren auf *OK*.
+. Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, überprüfen Sie die Voraussetzungen und wählen Sie *OK*, um fortzufahren.
 . Wenn Sie sich zum ersten Mal anmelden und die Bereitstellung nicht mit dem in vCenter verfügbaren Assistenten installiert haben, geben Sie bei der entsprechenden Aufforderung die folgenden Konfigurationsdaten an:
 +
 ** Neues Kennwort für das Administratorkonto (erforderlich)
