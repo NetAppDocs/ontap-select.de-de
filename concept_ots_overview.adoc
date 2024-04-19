@@ -92,6 +92,7 @@ Jegliche Änderungen am Cluster-IPspace, einschließlich Hinzufügen oder Entfer
 * Der Systemzustand überwacht das herkömmliche System-Monitoring, das bei einer hardwarebasierten ONTAP-Implementierung verwendet wird, bezieht sich auf die zugrunde liegenden Hardwarekomponenten. Aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung sind Zustandsüberwachung nicht aktiv.
 * Interface Groups
 Schnittstellengruppen werden nicht unterstützt.
+* Multi-Tenant Key Manager (MTKM)
 * NIC-Offload-Unterstützung aufgrund der mit ONTAP Select verwendeten virtualisierten Umgebung wird die NIC-Offload-Einrichtung nicht unterstützt.
 * NetApp Storage Encryption-Laufwerke
 * ONTAP-Port-Eigenschaften, die die Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, Duplex und Flusskontrolle, ändern, werden nicht unterstützt.
