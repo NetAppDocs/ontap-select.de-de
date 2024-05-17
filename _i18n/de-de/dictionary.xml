@@ -2737,7 +2737,6 @@
   <block id="0a15f7ba73868a32304fdf52855463c9" category="sidebar">ONTAP Select-Bilder entfernen</block>
   <block id="afc9d68a1be701598b5ef94dc0be2844" category="sidebar">Wiederherstellung in einem Cluster mit zwei Nodes</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">Häufig gestellte Fragen</block>
-  <block id="81884c993fa720d5bc8ac8f0f7c6dbda" category="summary">Die aktuelle Version umfasst keine neuen Funktionen oder Verbesserungen für ONTAP Select.</block>
   <block id="afa5543a0b0f6f0ebaeb44f21a75df52" category="doc">Was ist neu in dieser Version</block>
   <block id="abdc6cb968cabcf935a49935cb3457a8" category="paragraph">Virtuelle ONTAP Select NAS-Implementierungen mit rein Flash-basiertem VSAN oder generischen Flash-Arrays sollten den Best Practices für ONTAP Select mit Direct-Attached Storage (das) anderer SSDs folgen.</block>
   <block id="56d7a71de46feea406be8535cec9562b" category="paragraph">Bei neuen Installationen wird automatisch eine All Flash FAS Persönlichkeit aktiviert, sofern Sie das-Storage mit SSD-Laufwerken und eine Premiumlizenz haben.</block>
@@ -3461,7 +3460,6 @@ ESXi-Hypervisor-Host oder Linux KVM-Host</block>
   <block id="fb8668e0bc658a022bb57683502e41f4" category="paragraph">Stellen Sie vor der Bereitstellung von MetroCluster SDS sicher, dass die folgenden Anforderungen erfüllt sind:</block>
   <block id="790a20028135688e75d10ebcae79b5ee" category="paragraph">Die folgenden ROBO-Konfigurationen werden unterstützt:</block>
   <block id="c11557a633da8e8234fe07d4d53492c4" category="paragraph">Die folgende Abbildung zeigt eine gängige Konfiguration für Remote-Standorte mit ONTAP Select auf VM ESXi. Plangesteuerte SnapMirror Beziehungen replizieren die Daten regelmäßig von der Remote-Zweigstelle zu einem einzigen konsolidierten, vorgefertigten Storage-Array, das sich im zentralen Datacenter befindet.</block>
-  <block id="f8304478cfdeb2db287b6dcf0b36f3a8" category="summary">NetApp ONTAP Select ist eine softwaredefinierte Storage-Appliance, die auf einer Vielzahl von Standard-Hardware-Servern mit VMware ESXi oder KVM (Kernel-Based Virtual Machine) implementiert werden kann. Mit dieser Lösung erhalten Sie die nötige Flexibilität zum Aufbau einer flexiblen und skalierbaren Private-Cloud-Infrastruktur. Diese Website enthält die Dokumentation für ONTAP Select 9.14.1.</block>
   <block id="af001d5d1284580cf117e021e667742a" category="paragraph">Sie können den Hypervisor-Host direkt hinzufügen oder eine Verbindung zu einem vCenter-Server herstellen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.</block>
   <block id="a8e01b7b0fcfbd7a1465f0baad70fa81" category="paragraph">Sie können die Hypervisor-Hosts direkt hinzufügen oder eine Verbindung zu einem vCenter-Server herstellen. Geben Sie je nach Bedarf die entsprechenden Host-Details und Zugangsdaten ein.</block>
   <block id="37531a36b86d252c9aad558326b283d9" category="list-text">Unterstützt für ESX und KVM</block>
@@ -3536,11 +3534,8 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="a743fc9c91bd7ab650676dc7bcff7cbe" category="paragraph">Da sich die Node-Konfiguration geändert hat, sollten Sie eine Cluster-Aktualisierung mit dem Deployment Administration Utility durchführen.</block>
   <block id="2e34b681cc534c1f05dd05873a67719f" category="list-text">Wählen Sie *Bearbeiten* und bestätigen Sie, dass das neue Laufwerk verfügbar ist und wählen Sie es aus.</block>
   <block id="33693ff3a7d631ea880e109dfc69ea97" category="paragraph">Die Benachrichtigungsdatei enthält Informationen zu Urheberrechten Dritter und Lizenzen, die in der NetApp-Software verwendet werden.</block>
-  <block id="88757d212ba8ba228f561f0c84ea9ce0" category="inline-link-macro">Hinweis für ONTAP Select 9.14.1</block>
-  <block id="4de89e4b29dede514156a29be985557a" category="list-text"><block ref="4de89e4b29dede514156a29be985557a" category="inline-link-macro-rx"></block></block>
   <block id="23c8c5fa3da694bf8895e27f3e0fd9dc" category="doc">Konfiguration von VMware vSphere vSwitch auf ESXi</block>
   <block id="f371e1e74365e433f105f30c886225bf" category="inline-link">Versionshinweise zu ONTAP Select 9.14.1</block>
-  <block id="a19e9631749680eaf31525fdfd4b3709" category="paragraph">Sie können auf das zugreifen<block ref="5cd4635ecbaa8e4a8308312c4e05dac2" category="inline-link-rx"></block> So zeigen Sie die Details zur aktuellen Version an.</block>
   <block id="6e0dedd1d494cddc9086f77fa36f54a0" category="paragraph">ONTAP Select kann als Single-Node-Cluster implementiert werden. Der Hypervisor-Host umfasst einen virtuellen Switch, der Zugriff auf das externe Netzwerk ermöglicht.</block>
   <block id="6615bf96d027d0ff485c1b1838661527" category="admonition">Ein Host, auf dem ONTAP Select ausgeführt wird, benötigt lokale physische Laufwerke, wenn ein Hardware-RAID-Controller oder die Software-RAID-Funktion von ONTAP Select verwendet wird. Wenn Sie mithilfe der ONTAP Select vNAS Lösung auf externen Storage zugreifen, werden ein lokaler RAID-Controller und Software-RAID-Funktionen nicht verwendet.</block>
   <block id="1ffe167fe04bdbfbc1d6ba80891f76c8" category="list-text">Wenn die RAID-Gruppengröße die maximale LUN-Größe von 64 TB überschreitet, sollten Sie mehrere LUNs gleicher Größe konfigurieren, die den gesamten verfügbaren Speicher innerhalb der RAID-Gruppe nutzen.</block>
@@ -3596,7 +3591,6 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="a00a440e4e7508545fb84f9e32bb861b" category="paragraph-title">Integrieren Sie ONTAP Select mit einem hardwarebasierten ONTAP Cluster</block>
   <block id="e289810d4028b10554ae6b447fa581ee" category="sidebar">Externe Speicheranforderungen</block>
   <block id="a9e831fb19f71068ebfd5cb9b303ea66" category="sidebar">VMware vCenter auf ESXi</block>
-  <block id="314c09ddbe5ce5a2ebc071a5ba939ef6" category="sidebar">ONTAP Select 9.14.1-Dokumentation</block>
   <block id="e681a3b45989b468533c4b90ee960bf9" category="cell">Keine Angabe</block>
   <block id="7ce9d272dad1050f5d215fea78fec004" category="cell">Eine Stunde bis sieben Tage</block>
   <block id="1106adf8812d775cf27b79c3606184f6" category="cell">Neun Ziffern und gleich der Lizenzseriennummer</block>
@@ -3670,4 +3664,67 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="2183c79114d56889f4a8854299f703a5" category="list-text">Seit April 2024 ist ONTAP Select Deploy 9.13.1 nicht mehr auf der NetApp Support-Website verfügbar. Falls Sie ONTAP Select Deploy 9.13.1 verwenden, sollten Sie so bald wie möglich auf ONTAP Select Deploy 9.14.1P2 aktualisieren. Weitere Informationen finden Sie im <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>.</block>
   <block id="6e1144fb904fc4097d1a90d7908b66cc" category="paragraph">Seit April 2024 ist ONTAP Select Deploy 9.12.1 nicht mehr auf der NetApp Support-Website verfügbar. Falls Sie ONTAP Select Deploy 9.12.1 verwenden, sollten Sie so bald wie möglich auf ONTAP Select Deploy 9.14.1P2 aktualisieren. Weitere Informationen finden Sie im <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>.</block>
   <block id="0eac7bd25176d9e38db43b4181062abe" category="list-text">Multi-Tenant Key Manager (MTKM)</block>
+  <block id="efacb1c7bc46252da0083e1f56cf260c" category="summary">NetApp ONTAP Select ist eine softwaredefinierte Storage-Appliance, die auf einer Vielzahl von Standard-Hardware-Servern mit VMware ESXi oder KVM (Kernel-Based Virtual Machine) implementiert werden kann. Mit dieser Lösung erhalten Sie die nötige Flexibilität zum Aufbau einer flexiblen und skalierbaren Private-Cloud-Infrastruktur. Diese Website enthält die Dokumentation für ONTAP Select 9.15.1.</block>
+  <block id="5dd0f07d9d4788b8a915f8ef9a65981c" category="inline-link-macro">Hinweis für ONTAP Select 9.15.1</block>
+  <block id="4518f9d648d5f38c3a8b2bb401d25c94" category="list-text"><block ref="4518f9d648d5f38c3a8b2bb401d25c94" category="inline-link-macro-rx"></block></block>
+  <block id="3c5bdd4a077d520c4b4870fb15f37d1b" category="summary">Die aktuelle Version enthält mehrere neue Funktionen oder Verbesserungen speziell für ONTAP Select.</block>
+  <block id="f80570d561d36d2a6f83d903ac92764d" category="section-title">ONTAP Select 9.15.1</block>
+  <block id="dd543e83687ed3c39447157a0f0e1822" category="paragraph">ONTAP Select 9.15.1 enthält mehrere neue Funktionen und Verbesserungen.</block>
+  <block id="ff49a1a2875b63e18d60b0284fd713bf" category="list-text">Unterstützung für Erweiterung und Verkleinerung von Clustern</block>
+  <block id="e84b565f766d2b63406ea62dbdd12c66" category="list-text">Ab ONTAP Select 9.15.1 wird die Erweiterung und Verkleinerung von Clustern unterstützt.</block>
+  <block id="d535a23dc4caf42819a2764f917df8d4" category="list-text">Cluster-Erweiterung von Clustern mit sechs Nodes auf Cluster mit acht Nodes</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">Weitere Informationen .</block>
+  <block id="46784c9ba69d72d62e5ff719f2e75e3f" category="paragraph">Mit der Cluster-Erweiterungsfunktion können Sie die Cluster-Größe von einem Cluster mit sechs Nodes auf ein Cluster mit acht Nodes erhöhen. <block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>.</block>
+  <block id="5638b273dc7505c1415d93d081293984" category="list-text">Cluster-Kontraktion von Clustern mit acht Nodes auf sechs Nodes</block>
+  <block id="3fa352640216b35ee8eded7e2c07ca96" category="paragraph">Sie können die Cluster-Größe von einem Cluster mit acht Nodes auf ein Cluster mit sechs Nodes mit der Cluster-Kontraktionsfunktion verringern. <block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">Die Unterstützung für Cluster-Erweiterung und -Verkleinerung ist auf ESX Cluster beschränkt.</block>
+  <block id="e967860b1a40b9dcdb66b252a950a240" category="inline-link">Versionshinweise zu ONTAP Select 9.15.1</block>
+  <block id="5eb820f5a922021204972230d9d4d93d" category="paragraph">Sie können auf das zugreifen<block ref="a879f440894cff34b3d87053560dcd34" category="inline-link-rx"></block> So zeigen Sie die Details zur aktuellen Version an.</block>
+  <block id="e35a91dc5473bf4a53204a2bd1366d7e" category="summary">Ab ONTAP Select 9.15.1 können Sie die Größe eines vorhandenen Clusters von sechs auf acht Nodes erhöhen und die Clustergröße von acht auf sechs Nodes verringern.</block>
+  <block id="c5f80e69da9019e045ae59cca1c9ae22" category="doc">Erweitern oder verkleinern Sie das Cluster</block>
+  <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">Ab ONTAP Select 9.15.1 können Sie die Größe eines vorhandenen Clusters von sechs auf acht Nodes erhöhen und die Clustergröße von acht auf sechs Nodes verringern. Es werden keine anderen Cluster-Erweiterungs- oder -Kontraktionsszenarien unterstützt.</block>
+  <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">Das Verfahren wird über ONTAP Select Deploy über die CLI, API oder Webschnittstelle gestartet.</block>
+  <block id="412c286ae37ff7a40b56dd84c3bf196c" category="section-title">Hardware- und Storage-Anforderungen erfüllen</block>
+  <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">Die Funktionen zur Cluster-Erweiterung und -Verkleinerung sind wie folgt eingeschränkt:</block>
+  <block id="03a645906298706d76817495f4d8708a" category="list-text">Die Unterstützung ist auf auf auf ESX Hypervisor-Hosts erstellte Cluster beschränkt. Die folgenden ESX-Versionen sind mit ONTAP Select 9.15.1 kompatibel:</block>
+  <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
+  <block id="43629b681eab8f23e6624067ec8d1fde" category="list-text">ESXi 8.0U1</block>
+  <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8.0GA</block>
+  <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0U3</block>
+  <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
+  <block id="2b2045e987020e440e1d72497530fdf6" category="list-text">Cluster mit sechs Nodes können nur auf Cluster mit acht Nodes erweitert werden.</block>
+  <block id="39503511d67e0af8ddd6049c24f164f7" category="list-text">Eine Verkleinerung ist nur von Clustern mit acht Nodes auf Cluster mit sechs Nodes möglich.</block>
+  <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">Erweitern Sie das Cluster</block>
+  <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">Mit der Cluster-Erweiterungsfunktion können Sie die Größe eines vorhandenen Clusters von einem Cluster mit sechs Nodes auf ein Cluster mit acht Nodes erhöhen.</block>
+  <block id="679ac2592315c6e7c7320336fcda4a9c" category="paragraph">Zur Vorbereitung der Cluster-Erweiterung werden neue ESX-Hosts zur Bestandsaufnahme hinzugefügt und die Details zu den neuen Nodes zugewiesen. Vor dem Starten der Cluster-Erweiterung überprüft eine Netzwerkprüfung das ausgewählte interne Netzwerk.</block>
+  <block id="7c96df80e019ac7201d76d07cb2c8c3b" category="inline-link-macro">Prüfung der Netzwerkverbindung</block>
+  <block id="4ae4de42a8fcf95f1eb770acae4690f2" category="list-text">Wenn Sie ein Cluster mit mehreren Nodes bereitstellen, sollten Sie mit dem vertraut sein <block ref="db3262d1c88b720b4d17a260091e6a75" category="inline-link-macro-rx"></block>.</block>
+  <block id="30230ebf7e780c11cfcde8274fc17934" category="list-text">Vergewissern Sie sich, dass Sie über die Lizenzdetails für die neuen Nodes verfügen.</block>
+  <block id="70be200347cc17e3939c72792fe71b15" category="list-text">Wählen Sie oben auf der Seite die Registerkarte *Cluster* aus und wählen Sie den gewünschten Cluster aus der Liste aus.</block>
+  <block id="83d473b2e8f1c324b60e13d720cac51a" category="list-text">Wählen Sie auf der Seite Cluster Details das Zahnradsymbol rechts auf der Seite aus und wählen Sie *Cluster erweitern*.</block>
+  <block id="a2679fd7f07d0e73429d2f594d234f4c" category="list-text">Navigieren Sie zum Abschnitt *HA Pair 4*.</block>
+  <block id="a178d91d9200ff6349b3f22118c06cb0" category="list-text">Wählen Sie für das vierte HA-Paar die Konfigurationsdetails für Hochverfügbarkeit (HA-Paar) aus, darunter:</block>
+  <block id="1e4f0991fe8c17eeb30a08a567b6faeb" category="list-text">Instanztyp</block>
+  <block id="a6e676c0f85b36df0562598d228a5630" category="list-text">Node-Namen</block>
+  <block id="c9a8d463f626f4f28398b6c8c018fae3" category="list-text">Zugeordnete Hypervisor-Hosts</block>
+  <block id="60593325d9120c3997c8f9627df1070c" category="list-text">Node-IP-Adressen</block>
+  <block id="2e52445fb8b7773f56a2d476ede7614d" category="list-text">Netzwerkkonfiguration</block>
+  <block id="3efe5ea2c836d42be34a86ff14766d09" category="list-text">Speicherkonfiguration (RAID-Typ und Speicherpools)</block>
+  <block id="b0ef8babe86043b130158076a23be483" category="list-text">Wählen Sie *HA-Paar speichern*, um die Konfigurationsdetails zu speichern.</block>
+  <block id="0feca9c8f9ca7540a5f57c1669c20751" category="list-text">Geben Sie die ONTAP-Anmeldeinformationen ein, und wählen Sie dann *Cluster erweitern*.</block>
+  <block id="740ba937a1a632ef3c9794b633eb57cb" category="list-text">Wählen Sie *Weiter* und führen Sie die Netzwerkvorprüfung durch, indem Sie *Ausführen* auswählen.</block>
+  <block id="9f3d040cc965516d902623e208c24eb4" category="paragraph">Durch die Netzwerkprüfung wird überprüft, ob das für den ONTAP-Cluster-Datenverkehr ausgewählte interne Netzwerk ordnungsgemäß funktioniert.</block>
+  <block id="9e517b46e538766946d13c3518579521" category="list-text">Wählen Sie *Expand Cluster* aus, um den Cluster-Erweiterungsprozess zu starten, und wählen Sie dann im Dialogfeld *OK* aus.</block>
+  <block id="04f49a59719188dc7613a53014ff9739" category="paragraph">Die Erweiterung des Clusters kann bis zu 45 Minuten dauern.</block>
+  <block id="50462e303bd71a5adbc649dc1f1778a5" category="list-text">Überwachen Sie den mehrstufigen Cluster-Erweiterungsprozess, um zu bestätigen, dass das Cluster erfolgreich erweitert wurde.</block>
+  <block id="4f98a584f43949379b32f8cd6c99f91d" category="list-text">Auf der Registerkarte *Ereignisse* finden Sie regelmäßige Aktualisierungen zum Fortschritt des Vorgangs. Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.</block>
+  <block id="e6df350174b5d12142460122061720b4" category="paragraph">Nach der Erweiterung des Clusters sollten Sie die Konfigurationsdaten von ONTAP Select Deploy sichern.</block>
+  <block id="5a9eb2ea7b273c031f127ee246370399" category="section-title">Vertrag mit dem Cluster abschließen</block>
+  <block id="c724f8ae06aec94fe391a5c014d22227" category="paragraph">Mit der Cluster-Kontraktionsfunktion können Sie die Größe eines vorhandenen Clusters von einem Cluster mit acht Nodes auf ein Cluster mit sechs Nodes verringern.</block>
+  <block id="a1350246f96d12c2861aa0111c1d5369" category="paragraph">Das gewünschte HA-Paar von Nodes im Cluster wird ausgewählt, um die Cluster-Kontraktion während des Verfahrens vorzubereiten.</block>
+  <block id="e1f3084dd5c5d44b681a43aa203f948d" category="list-text">Wählen Sie auf der Seite Cluster Details das Zahnradsymbol rechts auf der Seite aus, und wählen Sie dann *Contract Cluster*.</block>
+  <block id="ea8ea8523f4b42addd79a435f0b6ff5c" category="list-text">Wählen Sie die HA-Paar-Konfigurationsdetails für jedes HA-Paar aus, das Sie entfernen möchten, und geben Sie die ONTAP-Anmeldeinformationen ein. Wählen Sie dann *Contract Cluster*.</block>
+  <block id="012deed4bd1d789fa86812367047fe25" category="paragraph">Es kann bis zu 30 Minuten dauern, bis der Cluster komprimiert wurde.</block>
+  <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">Überwachen Sie den mehrstufigen Cluster-Kontraktionsprozess, um zu bestätigen, dass der Cluster erfolgreich abgeschlossen wurde.</block>
+  <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">ONTAP Select 9.15.1-Dokumentation</block>
 </blocks>
