@@ -42,7 +42,7 @@ Die folgenden Features sind bei ONTAP Select enthalten und standardmäßig lizen
 * Disaster Recovery für Storage VM (SVM DR)
 +
 
-NOTE: ONTAP Select 9.12.1 und höher unterstützt jetzt SVM DR als Quelle mit maximal 16 Beziehungen. Die DR-Unterstützung für SVM ist auf die Verwendung der Quell-ONTAP-Version auf Versionen +2, also 9.12.1 auf 9.14.1 beschränkt.
+NOTE: ONTAP Select 9.12.1 und höher unterstützt jetzt SVM DR als Quelle und Ziel mit maximal 16 Beziehungen. Die DR-Unterstützung der SVM ist auf die Verwendung der Quell-ONTAP-Version auf Version +2 beschränkt. Beispielsweise kann die ONTAP Select 9.12.1 Quelle eine Verbindung mit den Ziel-ONTAP-Versionen 9.12.1, 9.13.1 oder 9.14.1 herstellen.
 
 
 
