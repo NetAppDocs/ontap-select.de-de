@@ -34,6 +34,9 @@ Bei Single Node Clustern konfiguriert ONTAP Deploy die ONTAP Select VM so, dass 
 Bei Clustern mit mehreren Nodes konfiguriert ONTAP Deploy jede ONTAP Select VM so, dass sie eine oder zwei Portgruppen für das interne Netzwerk und eine oder zwei Portgruppen für das externe Netzwerk verwenden. Der Cluster- und Node-Managementdatenverkehr kann entweder dieselbe Portgruppe wie der externe Datenverkehr verwenden oder optional eine separate Portgruppe. Der Cluster- und Node-Managementdatenverkehr können dieselbe Portgruppe nicht mit internem Traffic teilen.
 
 
+NOTE: ONTAP Select unterstützt maximal vier vmnics.
+
+
 
 == Standard- oder verteilter vSwitch und vier physische Ports pro Node
 

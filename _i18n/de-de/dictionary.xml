@@ -2274,8 +2274,6 @@
   <block id="db88ef4d05292b05026992fe3ca193af" category="paragraph">ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6) wird nicht unterstützt. Diese Einschränkung wirkt sich auf ONTAP Select aus wie folgt aus:</block>
   <block id="a808fd43c31372cb5ef7ac1ac9224c52" category="list-text">Sie müssen der Management-LIF der virtuellen Maschine Bereitstellen eine IPv4-Adresse zuweisen.</block>
   <block id="b3a288a6973caafe5e4ff191758f8b98" category="list-text">Deploy kann keine ONTAP Select-Nodes erstellen, die für die Verwendung von IPv6 auf den ONTAP LIFs konfiguriert sind.</block>
-  <block id="8d0030231ca098991021200ebed892e9" category="section-title">Spracheinschränkungen bei VMware vCenter</block>
-  <block id="f3723501df4dfade0c26ca5e04290d9e" category="paragraph">Wenn Sie ONTAP Select Deploy verwenden, um einen Cluster zu erstellen, der auf ESXi mit vCenter auf einem Windows-Server ausgeführt wird, müssen Sie eine englische Sprachversion verwenden. ONTAP Select Deploy unterstützt vCenter auf Windows-Versionen ohne Englisch nicht.</block>
   <block id="c17dae9b9d3b729444b86ade708fe369" category="summary">Sie sollten sich auf die Überprüfung und Nutzung der Workflow-Prozesse vorbereiten.</block>
   <block id="356a4d5d9ecf4143d145e008bc71423d" category="doc">Vor Verwendung der API-Workflows</block>
   <block id="0224e614246b594584218c9734c56792" category="paragraph">Die Seite mit der ONTAP Select Online-Dokumentation enthält die Details zu jedem REST-API-Aufruf. Anstatt diese Details hier zu wiederholen, enthält jeder API-Aufruf, der in den Workflow-Samples verwendet wird, nur die Informationen, die Sie benötigen, um den Anruf auf der Dokumentationsseite zu finden. Nach dem Auffinden eines bestimmten API-Aufrufs können Sie die vollständigen Details des Anrufs überprüfen, einschließlich der Eingabeparameter, Ausgabeformate, HTTP-Statuscodes und des Aufruftyps.</block>
@@ -3727,4 +3725,5 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">Überwachen Sie den mehrstufigen Cluster-Kontraktionsprozess, um zu bestätigen, dass der Cluster erfolgreich abgeschlossen wurde.</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">ONTAP Select 9.15.1-Dokumentation</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 und höher unterstützt jetzt SVM DR als Quelle und Ziel mit maximal 16 Beziehungen. Die DR-Unterstützung der SVM ist auf die Verwendung der Quell-ONTAP-Version auf Version +2 beschränkt. Beispielsweise kann die ONTAP Select 9.12.1 Quelle eine Verbindung mit den Ziel-ONTAP-Versionen 9.12.1, 9.13.1 oder 9.14.1 herstellen.</block>
+  <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select unterstützt maximal vier vmnics.</block>
 </blocks>
