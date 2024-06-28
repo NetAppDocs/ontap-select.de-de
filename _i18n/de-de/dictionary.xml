@@ -1220,7 +1220,6 @@
   <block id="82ef718f4ebe0c276814ee3d51e33361" category="list-text">SnapRestore</block>
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">Deduplizierung und Komprimierung</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">ONTAP Mandantenfähigkeit</block>
-  <block id="1716834171e243de0f898a67621b6624" category="list-text">ONTAP S3</block>
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp Volume Encryption (nur in Ländern ohne Beschränkungen)</block>
   <block id="a56a12489213d10b531398efee448f95" category="section-title">ONTAP-Funktionen, die separat lizenziert werden</block>
   <block id="585f4a038bba40a29999437c007446e9" category="paragraph">Sie müssen eine separate Lizenz für jede ONTAP-Funktion erwerben, die standardmäßig nicht aktiviert ist. Dazu gehören:</block>
@@ -3724,4 +3723,7 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 und höher unterstützt jetzt SVM DR als Quelle und Ziel mit maximal 16 Beziehungen. Die DR-Unterstützung der SVM ist auf die Verwendung der Quell-ONTAP-Version auf Version +2 beschränkt. Beispielsweise kann die ONTAP Select 9.12.1 Quelle eine Verbindung mit den Ziel-ONTAP-Versionen 9.12.1, 9.13.1 oder 9.14.1 herstellen.</block>
   <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select unterstützt maximal vier vmnics.</block>
   <block id="28986937787872c11df39e20ca126e8d" category="admonition">ESXi 6.5 GA und ESXi 6.7 GA haben das Ende des Verfügbarkeitsstatus erreicht. Wenn Sie ONTAP Select-Cluster mit diesen Versionen haben, müssen Sie auf die unterstützten Versionen gemäß aktualisieren<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>.</block>
+  <block id="e1a514cdffca7e72189bc1b4d2b14cb1" category="list-text">ONTAP S3 (kostenlos)</block>
+  <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">Master-Lizenzschlüssel für NetApp ONTAP</block>
+  <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
 </blocks>

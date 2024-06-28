@@ -35,7 +35,6 @@ Die folgenden Features sind bei ONTAP Select enthalten und standardmäßig lizen
 * NFS
 * NVMe über TCP –
 * ONTAP Mandantenfähigkeit
-* ONTAP S3
 * SnapMirror
 * SnapRestore
 * SnapVault
@@ -55,6 +54,7 @@ Sie müssen eine separate Lizenz für jede ONTAP-Funktion erwerben, die standard
 * Datenverfügbarkeitsservice
 * FabricPool
 * MetroCluster SDS (ONTAP Select Premium-Lizenzangebot)
+* ONTAP S3 (kostenlos)
 * SnapLock Enterprise (SnapLock-Compliance wird für ONTAP Select nicht unterstützt)
 +
 ** Manipulationssichere Snapshot Kopien
@@ -68,4 +68,5 @@ NOTE: Bei der Nutzung von StorageGRID Webscale benötigen Sie keine FabricPool L
 
 .Verwandte Informationen
 * link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["Vergleich von ONTAP Select und ONTAP 9"]
+* link:https://mysupport.netapp.com/site/systems/master-license-keys["Master-Lizenzschlüssel für NetApp ONTAP"^]
 
