@@ -3730,4 +3730,6 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
   <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1 unterstützt VMware ESXi 8.0.2.</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">Ab ONTAP 9.13.1 wird VMware ESXi 8.0.1 GA (Build 20513097) mit Hardwareversion 4 und höher unterstützt.</block>
+  <block id="066308395ea593f82277b09bef1304dc" category="list-text">Speichern Sie das ursprüngliche Abbild der virtuellen Maschine bereitstellen.</block>
+  <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">Das ursprüngliche Abbild der virtuellen Maschine bereitstellen wird später in diesem Verfahren benötigt, wenn Sie die Konfigurationsdaten vom Original auf der neuen virtuellen Maschine bereitstellen.</block>
 </blocks>

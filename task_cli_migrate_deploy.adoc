@@ -25,7 +25,13 @@ Dieses Verfahren basiert auf der Erstellung einer neuen virtuellen Maschine, die
 Im Rahmen der Migration der virtuellen Maschine müssen Sie ein Backup der Bereitstellungskonfigurationsdaten erstellen. Sie sollten auch ein Backup erstellen, nachdem Sie ein ONTAP Select-Cluster bereitgestellt haben. Die Daten werden in einer einzigen verschlüsselten Datei gespeichert, die Sie auf Ihre lokale Arbeitsstation herunterladen können.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass die Bereitstellung während des Backup-Vorgangs keine anderen Aufgaben ausführt.
+* Stellen Sie sicher, dass die Bereitstellung während des Backup-Vorgangs keine anderen Aufgaben ausführt.
+* Speichern Sie das ursprüngliche Abbild der virtuellen Maschine bereitstellen.
++
+
+CAUTION: Das ursprüngliche Abbild der virtuellen Maschine bereitstellen wird später in diesem Verfahren benötigt, wenn Sie die Konfigurationsdaten vom Original auf der neuen virtuellen Maschine bereitstellen.
+
+
 
 .Über diese Aufgabe
 Die von Ihnen erstellte Sicherungsdatei erfasst alle Konfigurationsdaten von der virtuellen Maschine. Diese Daten beschreiben Aspekte Ihrer Implementierungsumgebung einschließlich der ONTAP Select Cluster.
