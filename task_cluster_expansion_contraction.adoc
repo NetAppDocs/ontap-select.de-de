@@ -20,7 +20,7 @@ Das Verfahren wird über ONTAP Select Deploy über die CLI, API oder Webschnitts
 
 
 
-== Hardware- und Storage-Anforderungen erfüllen
+== Überlegungen zu Hardware und Storage
 
 Die Funktionen zur Cluster-Erweiterung und -Verkleinerung sind wie folgt eingeschränkt:
 
@@ -33,8 +33,12 @@ Die Funktionen zur Cluster-Erweiterung und -Verkleinerung sind wie folgt eingesc
 ** ESXi 7.0
 
 
-* Cluster mit sechs Nodes können nur auf Cluster mit acht Nodes erweitert werden.
-* Eine Verkleinerung ist nur von Clustern mit acht Nodes auf Cluster mit sechs Nodes möglich.
+
+
+Die folgenden Cluster-Erweiterungen und -Kontraktionen werden derzeit nicht unterstützt:
+
+* Erweiterungen von Clustern mit einem, zwei oder vier Nodes auf Cluster mit sechs oder acht Nodes
+* Kontraktionen von Clustern mit sechs oder acht Knoten zu Clustern mit einem, zwei oder vier Knoten.
 
 
 

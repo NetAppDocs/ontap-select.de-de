@@ -29,11 +29,11 @@ Unterstützung für Erweiterung und Verkleinerung von Clustern:: Ab ONTAP Select
 --
 * Cluster-Erweiterung von Clustern mit sechs Nodes auf Cluster mit acht Nodes
 +
-Mit der Cluster-Erweiterungsfunktion können Sie die Cluster-Größe von einem Cluster mit sechs Nodes auf ein Cluster mit acht Nodes erhöhen. link:task_cluster_expansion_contraction.html#expand-the-cluster["Weitere Informationen ."].
+Mit der Cluster-Erweiterungsfunktion können Sie die Cluster-Größe von einem Cluster mit sechs Nodes auf ein Cluster mit acht Nodes erhöhen. Cluster-Erweiterungen von Clustern mit einem, zwei oder vier Nodes auf Cluster mit sechs oder acht Nodes werden derzeit nicht unterstützt. link:task_cluster_expansion_contraction.html#expand-the-cluster["Weitere Informationen ."].
 
 * Cluster-Kontraktion von Clustern mit acht Nodes auf sechs Nodes
 +
-Sie können die Cluster-Größe von einem Cluster mit acht Nodes auf ein Cluster mit sechs Nodes mit der Cluster-Kontraktionsfunktion verringern. link:task_cluster_expansion_contraction.html#contract-the-cluster["Weitere Informationen ."].
+Sie können die Cluster-Größe von einem Cluster mit acht Nodes auf ein Cluster mit sechs Nodes mit der Cluster-Kontraktionsfunktion verringern. Cluster-Kontraktionen von Clustern mit sechs oder acht Nodes zu Clustern mit einem, zwei oder vier Nodes werden derzeit nicht unterstützt. link:task_cluster_expansion_contraction.html#contract-the-cluster["Weitere Informationen ."].
 
 
 
