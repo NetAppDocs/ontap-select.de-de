@@ -4,7 +4,7 @@ permalink: reference_plan_ots_hardware.html
 keywords: plan, planning, vmware, hardware, hardware requirements 
 summary: In Bezug auf die VMware Umgebung müssen Sie verschiedene Hardware-Anforderungen und Planungsprobleme in Betracht ziehen. 
 ---
-= Überlegungen zu Hypervisoren und Hardware von VMware
+= Überlegungen zu ONTAP Select VMware Hypervisor und Hardware
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -42,6 +42,8 @@ ONTAP Select kann auf folgenden Hypervisoren implementiert werden:
 * VMware ESXi 7.0 GA (Build 15843807 oder höher), einschließlich 7.0 U1, U2 und U3C
 * VMware ESXi 8.0 GA (Build 20513097)
 * VMware ESXi 8.0 U1 (Build 21495797)
+* VMware ESXi 8.0 U2
+* VMware ESXi 8.0 U3
 
 
 

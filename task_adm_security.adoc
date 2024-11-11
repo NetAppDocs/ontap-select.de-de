@@ -4,7 +4,7 @@ permalink: task_adm_security.html
 keywords: administer, administering, web, security 
 summary: Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung verschiedene Aufgaben ausführen. 
 ---
-= Sicherheit
+= Sichere ONTAP Select-Implementierung
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_chk_nvme_configure.html
 keywords: ontap select, nvme storage, host preparation 
 summary: Wenn Sie Vorhaben, NVMe-Laufwerke mit Software-RAID zu verwenden, müssen Sie den Host so konfigurieren, dass die Laufwerke erkannt werden. 
 ---
-= Konfigurieren eines Hosts für die Nutzung von NVMe-Laufwerken
+= Konfigurieren Sie einen ONTAP Select-Host für die Verwendung von NVMe-Laufwerken
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

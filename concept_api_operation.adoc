@@ -4,7 +4,7 @@ permalink: concept_api_operation.html
 keywords: rest api, deploy rest api, rest, operation, basic operation 
 summary: IM RUHEZUSTAND werden einheitliche Technologien und Best Practices erstellt, jedoch können die Details jeder API je nach dem verfügbaren Design variieren. Vor der Verwendung der API sollten Sie auf die Details und betrieblichen Merkmale der ONTAP Select Deploy-API achten. 
 ---
-= Grundlegende betriebliche Eigenschaften
+= Grundlegende Betriebsmerkmale der ONTAP Select Deploy API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

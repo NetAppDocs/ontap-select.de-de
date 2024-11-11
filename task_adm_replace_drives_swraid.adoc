@@ -4,7 +4,7 @@ permalink: task_adm_replace_drives_swraid.html
 keywords: administer, administering, web, software raid, replace drive 
 summary: 'Wenn ein Laufwerk mithilfe von Software-RAID ausfällt, verwendet ONTAP Select ein Ersatzlaufwerk (falls eines verfügbar ist) und startet den Neuerstellungsvorgang automatisch. Dies ähnelt der Funktionsweise von ONTAP auf FAS und AFF. Ist jedoch kein Spare-Laufwerk verfügbar, muss ein Laufwerk zum ONTAP Select-Node hinzugefügt werden.' 
 ---
-= Ersetzen Sie ein ausgefallenes Laufwerk bei Verwendung von SW-RAID
+= Ersetzen Sie fehlerhafte Software-RAID-Laufwerke für ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

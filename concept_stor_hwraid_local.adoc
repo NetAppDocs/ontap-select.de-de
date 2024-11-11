@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: Wenn ein Hardware-RAID-Controller verfügbar ist, kann ONTAP Select RAID-Dienste sowohl für die Schreib-Performance als auch für den Schutz vor physischen Laufwerksausfällen auf den Hardware-Controller verschieben. Daher wird der RAID-Schutz für alle Nodes im ONTAP Select-Cluster vom lokal angeschlossenen RAID-Controller bereitgestellt; nicht jedoch über ONTAP Software-RAID. 
 ---
-= Hardware-RAID-Services für lokalen Attached Storage
+= Hardware-RAID-Services für lokal angeschlossenen ONTAP Select Storage
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,6 +24,9 @@ NOTE: ONTAP Select Datenaggregate sind für die Verwendung von RAID 0 konfigurie
 == RAID-Controller-Konfiguration für lokalen angeschlossenen Speicher
 
 Alle lokal angeschlossenen Datenträger, die ONTAP Select mit Backing-Speicherung zur Verfügung stellen, müssen hinter einem RAID-Controller sitzen. Die meisten herkömmlichen Server verfügen über mehrere RAID-Controller-Optionen über verschiedene Preissegmente, jeweils mit unterschiedlichen Funktionen. Ziel ist es, so viele dieser Optionen wie möglich zu unterstützen, sofern sie bestimmte Mindestanforderungen an den Controller erfüllen.
+
+
+NOTE: Virtuelle Laufwerke können nicht von ONTAP Select-VMs getrennt werden, die die Hardware-RAID-Konfiguration verwenden. Das Trennen von Festplatten wird nur für ONTAP Select-VMs unterstützt, die die Software-RAID-Konfiguration verwenden. Weitere Informationen finden Sie unter link:task_adm_replace_drives_swraid.html["Ersetzen Sie ein ausgefallenes Laufwerk in einer ONTAP Select-Software-RAID-Konfiguration"] .
 
 Der RAID-Controller, der die ONTAP Select-Festplatten verwaltet, muss folgende Anforderungen erfüllen:
 

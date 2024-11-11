@@ -4,7 +4,7 @@ permalink: concept_nw_concepts_chars.html
 keywords: ontap select, networking concepts, cluster characteristics 
 summary: Machen Sie sich zunächst mit allgemeinen Netzwerkkonzepten vertraut, die für die ONTAP Select-Umgebung gelten. Informieren Sie sich anschließend über die spezifischen Merkmale und Optionen, die für Single-Node- und Multi-Node-Cluster verfügbar sind. 
 ---
-= Vernetzung: Allgemeine Konzepte und Eigenschaften
+= Netzwerkkonzepte und -Eigenschaften von ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

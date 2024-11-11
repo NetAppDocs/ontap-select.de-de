@@ -4,7 +4,7 @@ permalink: concept_ha_other.html
 keywords: ontap select, ha, high availability, disk heartbeating, heartbeating, mailbox, failover, giveback 
 summary: HA-Festplatten-Heartbeat, HA Mailbox, HA Heartbeating, HA Failover und GiveBack verbessern die Datensicherung. 
 ---
-= WEITERE Details HOCHVERFÜGBARKEIT
+= ONTAP Select HA erleichtert die Datensicherung
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: HA-Festplatten-Heartbeat, HA Mailbox, HA Heartbeating, HA Failover und 
 
 
 [role="lead"]
-HA-Festplatten-Heartbeat, HA Mailbox, HA Heartbeating, HA Failover und GiveBack verbessern die Datensicherung.
+Hochverfügbarkeit (HA) Disk Heartbeating, HA Mailbox, HA Heartbeam, HA Failover und Giveback arbeiten, um die Datensicherung zu verbessern.
 
 
 

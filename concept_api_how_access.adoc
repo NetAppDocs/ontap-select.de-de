@@ -4,7 +4,7 @@ permalink: concept_api_how_access.html
 keywords: rest api, deploy rest api, rest, access, accessing, how to access 
 summary: Aufgrund der inhärenten Flexibilität VON REST-Webservices ist der Zugriff auf die ONTAP Select Deploy API auf verschiedene Weise möglich. 
 ---
-= So erhalten Sie Zugriff auf die Bereitstellungs-API
+= Zugriff auf die ONTAP Select Deploy API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

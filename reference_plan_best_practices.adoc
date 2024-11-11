@@ -4,7 +4,7 @@ permalink: reference_plan_best_practices.html
 keywords: plan, planning, best practices, recommendations 
 summary: Es gibt Best Practices, die Sie als Teil der Planung einer ONTAP Select-Implementierung in Betracht ziehen sollten. 
 ---
-= Zusammenfassung der Best Practices
+= Zusammenfassung der Best Practices für ONTAP Select-Implementierungen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

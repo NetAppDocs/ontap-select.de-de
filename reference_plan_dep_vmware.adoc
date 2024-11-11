@@ -4,7 +4,7 @@ permalink: reference_plan_dep_vmware.html
 keywords: plan, planning, ontap select deploy, vmware requirements 
 summary: Es gibt verschiedene Anforderungen und Einschränkungen der VMware Umgebung, die Sie vor der Installation des Dienstprogramms ONTAP Select Deploy in einer VMware Umgebung in Betracht ziehen sollten. 
 ---
-= Überlegungen zum Hypervisor-Host
+= Überlegungen zu ONTAP Select Deploy-Hypervisor-Hosts
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

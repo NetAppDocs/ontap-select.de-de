@@ -4,7 +4,7 @@ permalink: concept_nw_physical_switch_config.html
 keywords: ontap select, upstream physical switch configuration 
 summary: Details zur physischen Switch-Konfiguration auf Basis von Single Switch- und Multi-Switch-Umgebungen 
 ---
-= Konfiguration physischer Switches
+= Konfiguration der physischen ONTAP Select Switches
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

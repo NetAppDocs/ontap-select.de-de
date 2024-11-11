@@ -4,7 +4,7 @@ permalink: concept_api_versions.html
 keywords: rest api, deploy rest api, rest, version, versioning 
 summary: Der REST API, die in ONTAP Select Deploy enthalten ist, wird eine Versionsnummer zugewiesen. Die API-Versionsnummer ist unabhängig von der Versionsnummer für die Bereitstellung. Sie sollten die API-Version kennen, die in Ihrer Version von Deploy enthalten ist, und wissen, welche Auswirkungen dies auf Ihre Verwendung der API hat. 
 ---
-= Implementieren der API-Versionierung
+= ONTAP Select Deploy API-Versionierung
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

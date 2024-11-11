@@ -4,7 +4,7 @@ permalink: concept_usecase_robo.html
 keywords: ontap select, ROBO, remote office/branch office 
 summary: Implementierung von ONTAP Select in Remote-Zweigstellen/Zweigstellen zur Unterstützung kleinerer Standorte bei gleichzeitiger Aufrechterhaltung der zentralisierten Administration und Kontrolle 
 ---
-= Remote-Standorte und externe Niederlassungen
+= Setzen Sie ONTAP Select in Remote-Zweigstellen ein
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

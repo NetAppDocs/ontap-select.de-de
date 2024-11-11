@@ -4,7 +4,7 @@ permalink: concept_lic_production.html
 keywords: license, licensing, production, purchased, standard, premium, premium xl 
 summary: Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet ist, können Sie die für eine Implementierung in einer Produktionsumgebung erforderlichen Lizenzen erwerben. Es müssen entweder die Kapazitäts-Tiers oder das Lizenzmodell für Kapazitäts-Pools als auch die Storage-Kapazität für jede Implementierung ausgewählt werden. 
 ---
-= Erworbene Lizenzen für Produktionsimplementierungen
+= Von ONTAP Select erworbene Lizenzen für die Implementierung in der Produktion
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

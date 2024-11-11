@@ -4,7 +4,7 @@ permalink: concept_lic_cp_operation.html
 keywords: license, licensing, capacity pools, operation details 
 summary: Das Modell der Kapazitäts-Pools unterscheidet sich vom Modell der Kapazitäts-Tiers. Die Storage-Kapazität wird jedem einzelnen Node nicht mehr bereitgestellt, sondern einem Pool zugewiesen, der von vielen Nodes gemeinsam genutzt wird. Zusätzliche Komponenten und Prozesse wurden erstellt, um das Modell der Kapazitäts-Pools zu unterstützen. 
 ---
-= Operative Details
+= Operative Details des ONTAP Select Kapazitäts-Pools-Lizenzmodells
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

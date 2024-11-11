@@ -4,7 +4,7 @@ permalink: concept_lic_cp_serial_number.html
 keywords: license, licensing, capacity pools, node serial numbers 
 summary: Beim Lizenzmodell für Kapazitätsstufen entspricht die neunstellige Node-Seriennummer der Lizenz, die dem Node zugewiesen wurde. Die Nodes, die das Lizenzierungsmodell für Kapazitäts-Pools verwenden, haben jedoch ein anderes Format. 
 ---
-= Seriennummern der Nodes
+= Seriennummern der Nodes für das ONTAP Select Kapazitäts-Pools Lizenzmodell
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: Sie können eine vorhandene Instanz des Dienstprogramms Deploy Administration mithilfe der Befehlszeilenschnittstelle auf eine neue virtuelle Maschine migrieren. 
 ---
-= Migrieren Sie eine Bereitstellungsinstanz auf eine neue virtuelle Maschine
+= Migrieren einer ONTAP Select Deploy-Instanz zu einer neuen Virtual Machine
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

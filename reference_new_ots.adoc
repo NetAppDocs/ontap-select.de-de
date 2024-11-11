@@ -5,7 +5,7 @@ keywords: new features
 // summary: The current release includes several new features and improvements specific to ONTAP Select. 
 summary: Die aktuelle Version enthält mehrere neue Funktionen oder Verbesserungen speziell für ONTAP Select. 
 ---
-= Was ist neu in dieser Version
+= Neuerungen bei ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -15,7 +15,23 @@ summary: Die aktuelle Version enthält mehrere neue Funktionen oder Verbesserung
 
 
 [role="lead"]
-NetApp aktualisiert regelmäßig den ONTAP Select, um Ihnen neue Funktionen und Verbesserungen zu bieten.
+Erfahren Sie mehr über die neuen Funktionen und Verbesserungen der unterstützten Versionen von ONTAP Select.
+
+
+
+== ONTAP Select 9.16.1
+
+ONTAP Select 9.16.1 enthält mehrere neue Funktionen und Verbesserungen.
+
+Unterstützung für NetApp-Lizenzdateien aktualisiert:: Ab ONTAP Select 9.16.1 wird die Unterstützung für die NetApp-Lizenzdatei (NLF) aktualisiert. Das neue NF-Format umfasst Lizenzen für die Funktionen ARP, ONTAP S3 und S3 SnapMirror. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Weitere Informationen ."].
++
+--
+Für ein neues ONTAP Select 9.16.1 Deploy wird das neue NF-Format automatisch angewendet. Wenn Sie eine vorhandene ONTAP Select-Bereitstellung auf 9.16.1 aktualisieren, wird das neue NF-Format nicht angewendet. Um die Lizenzen der ARP-, ONTAP S3- und S3-SnapMirror-Funktionen zu erhalten, müssen Sie nach dem Upgrade die aktualisierte Lizenzdatei herunterladen. Wenn Sie zu ONTAP Select 9.15.1 oder früher zurückkehren, müssen Sie die vor dem Upgrade vorhandenen Funktionslizenzen neu installieren.
+
+--
+Unterstützung für den autonomen Ransomware-Schutz:: In ONTAP Select 9.16.1 wird die Unterstützung für Autonomous Ransomware Protection (ARP) eingeführt. ONTAP Select 9.16.1 unterstützt nur manuelle Updates für ARP, automatische Updates werden nicht unterstützt. Die ARP-Funktionslizenz ist in der Lizenzdatei für ONTAP Select 9.16.1 enthalten. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Weitere Informationen ."].
+Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.16.1 unterstützt VMware ESXi 8.0 U3.
+
 
 
 

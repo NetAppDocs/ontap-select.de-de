@@ -4,7 +4,7 @@ permalink: concept_api_transaction.html
 keywords: rest api, deploy rest api, rest, transaction, request, response, headers, input, output 
 summary: Jeder API-Aufruf zur Bereitstellung wird als HTTP-Anforderung an die virtuelle Maschine Bereitstellen ausgeführt, die eine entsprechende Antwort auf den Client erzeugt. Dieses Anforderungs-/Antwortpaar wird als API-Transaktion betrachtet. Bevor Sie die Deploy-API verwenden, sollten Sie mit den zur Steuerung einer Anfrage verfügbaren Eingabevariablen und dem Inhalt der Antwortausgabe vertraut sein. 
 ---
-= API-Transaktion bei Anfrage und Reaktion
+= API-Transaktion zur Anforderung und Reaktion für ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

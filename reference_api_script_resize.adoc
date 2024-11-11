@@ -4,7 +4,7 @@ permalink: reference_api_script_resize.html
 keywords: rest api, deploy rest api, rest, python script, resize nodes 
 summary: Mit dem folgenden Skript können Sie die Größe der Nodes in einem ONTAP Select Cluster ändern. 
 ---
-= Skript zur Größenanpassung der Cluster-Nodes
+= Skript zur Größenänderung von ONTAP Select-Clusterknoten
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

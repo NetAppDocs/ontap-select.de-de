@@ -4,7 +4,7 @@ permalink: reference_plan_ots_general.html
 keywords: plan, planning, general requirements 
 summary: Bei der Planung einer ONTAP Select-Implementierung sollten Sie verschiedene allgemeine Anforderungen berücksichtigen. 
 ---
-= Allgemeine Anforderungen und Planungsüberlegungen
+= ONTAP Select-Anforderungen und Planungsüberlegungen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

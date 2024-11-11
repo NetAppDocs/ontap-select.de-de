@@ -14,7 +14,18 @@ summary: Wenn Sie ONTAP Select vor der Kaufentscheidung bewerten möchten, könn
 
 
 [role="lead"]
-Wenn Sie ONTAP Select vor der Kaufentscheidung bewerten möchten, können Sie eine Evaluierungslizenz verwenden. Die Evaluierungslizenz ist im ONTAP Select Deploy-Administrationsprogramm enthalten und wird automatisch auf jeden ONTAP Select-Node im Rahmen der Evaluierungsimplementierung angewendet.
+Sie können ONTAP Select mit einer Evaluierungslizenz oder einer erworbenen Lizenz bereitstellen. Die von Ihnen gewählte Lizenz muss auf jeden Knoten im ONTAP Select-Cluster und damit auf den gesamten Cluster angewendet werden. Wenn Sie ONTAP Select vor der Kaufentscheidung bewerten möchten, können Sie eine Evaluierungslizenz verwenden. Die Evaluierungslizenz ist im ONTAP Select Deploy-Administrationsprogramm enthalten und wird automatisch auf jeden ONTAP Select-Node im Rahmen der Evaluierungsimplementierung angewendet.
+
+Bei der Implementierung und Unterstützung eines Evaluierungsclusters sind verschiedene Aspekte zu berücksichtigen:
+
+* Sie können den Cluster nur zu Evaluierungszwecken verwenden. Sie dürfen in einer Produktionsumgebung keinen Cluster mit einer Evaluierungslizenz verwenden.
+* Beim Konfigurieren der einzelnen Hosts sollten Sie das ONTAP Select Deploy Administration Utility wie folgt verwenden:
++
+** Geben Sie keine Seriennummer an
+** Konfigurieren Sie, um eine Evaluierungslizenz zu verwenden
+
+
+
 
 
 

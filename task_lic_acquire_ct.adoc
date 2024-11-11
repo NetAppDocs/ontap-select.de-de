@@ -4,7 +4,7 @@ permalink: task_lic_acquire_ct.html
 keywords: license, licensing, acquire, capacity tiers 
 summary: Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP Select Node eine Lizenzdatei anfordern. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt. 
 ---
-= Erwerb einer Lizenz für Kapazitätsstufen
+= Erwerben Sie eine ONTAP Select Capacity Tier-Lizenz
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

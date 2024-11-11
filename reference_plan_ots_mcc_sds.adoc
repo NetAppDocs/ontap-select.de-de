@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference_plan_ots_mcc_sds.html 
 keywords: plan, planning, metrocluster, metrocluster sds 
-summary: Bei der Planung einer ONTAP Select-Implementierung sollten verschiedene Anforderungen an MetroCluster-SDS berücksichtigt werden. 
+summary: Bei der Planung einer ONTAP Select-Implementierung sollten Sie verschiedene Anforderungen für MetroCluster SDS berücksichtigen. 
 ---
-= Vorbereitung auf eine MetroCluster-SDS-Implementierung
+= Bereiten Sie sich auf die Implementierung von ONTAP Select MetroCluster SDS vor
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

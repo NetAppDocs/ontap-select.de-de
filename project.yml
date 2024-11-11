@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.15.1
+  - version-number: 9.16.1
     url: "/ontap-select"
+  - version-number: 9.15.1
+    url: "/ontap-select-9151"
   - version-number: 9.14.1
     url: "/ontap-select-9141"
   - version-number: 9.13.1
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
-  - version-number: 9.11.1
-    url: "/ontap-select-9111"
   langs: de-de,us-en,ja-jp,ko-kr,zh-cn,zh-tw,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: ONTAP Select 9.15.1-Dokumentation
+  - title: ONTAP Select 9.16.1-Dokumentation
     url: "/index.html"
   - title: Versionshinweise
     entries:
@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: Konzepte
     entries:
-    - title: Produktübersicht
+    - title: Übersicht über ONTAP Select
       url: "/concept_ots_overview.html"
     - title: ONTAP Select Deploy
       url: "/concept_ots_deploy.html"
@@ -142,25 +142,25 @@ sidebar:
       url: "/concept_adm_upgrading_nodes.html"
     - title: Diagnose und Support
       url: "/task_adm_support.html"
-    - title: Sicherheit
+    - title: Sicheres ONTAP Select
       url: "/task_adm_security.html"
-    - title: Netzwerk-Konnektivität
+    - title: Netzwerk-Konnektivität bestätigen
       url: "/task_adm_connectivity.html"
-    - title: Mediatoren
+    - title: Mediatordienste verwalten
       url: "/task_adm_mediators.html"
     - title: Cluster
       entries:
       - title: ONTAP Select Cluster
         url: "/task_adm_clusters.html"
-      - title: Erweitern oder verkleinern Sie das Cluster
+      - title: Erweitern oder verkleinern Sie ein Cluster
         url: "/task_cluster_expansion_contraction.html"
     - title: Nodes und Hosts
       entries:
-      - title: VM-Videokonsole
+      - title: Zugreifen auf die VM-Videokonsole
         url: "/task_adm_video_console.html"
       - title: Größe der Clusterknoten ändern
         url: "/task_adm_resize.html"
-      - title: Tauschen Sie fehlerhafte SW-RAID-Laufwerke aus
+      - title: Tauschen Sie fehlerhafte Software-RAID-Laufwerke aus
         url: "/task_adm_replace_drives_swraid.html"
       - title: Upgrade auf VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
@@ -278,7 +278,7 @@ sidebar:
       url: "/task_cli_clusters.html"
     - title: Nodes und Hosts
       entries:
-      - title: ESXi auf 6.5 und höher aktualisieren
+      - title: Aktualisieren Sie ESXi auf 6.5 und höher
         url: "/task_cli_upgrade_esxi65.html"
       - title: Ändern Sie einen Hostverwaltungsserver
         url: "/reference_host_modify_command.html"

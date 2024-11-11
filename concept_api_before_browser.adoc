@@ -4,7 +4,7 @@ permalink: concept_api_before_browser.html
 keywords: rest api, deploy rest api, rest, access browser, before you begin 
 summary: Es gibt einige Dinge, die Sie beachten sollten, bevor Sie die Bereitstellung Online-Dokumentation Seite. 
 ---
-= Bevor Sie mit einem Browser auf die API zugreifen
+= Bevor Sie mit einem Browser auf die ONTAP Select Deploy API zugreifen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

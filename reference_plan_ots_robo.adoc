@@ -4,7 +4,7 @@ permalink: reference_plan_ots_robo.html
 keywords: plan, planning, remote and branch office, robo 
 summary: Sie können ONTAP Select in einer Remote-Zweigstelle/in einer Zweigstelle implementieren. Bei der Planung einer ROBO-Implementierung müssen Sie die Konfiguration auswählen, die Ihre Ziele unterstützt. 
 ---
-= Implementierungen in Remote-Standorten und Zweigstellen
+= ONTAP Select Implementierungen in Remote-Zweigstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

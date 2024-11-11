@@ -4,7 +4,7 @@ permalink: concept_nw_vsphere_vswitch_config.html
 keywords: ontap select, standard and distributed vSwitch configurations, vSwitch configuration and load-balancing policies 
 summary: ONTAP Select vSwitch Konfigurations- und Load-Balancing-Richtlinien für Konfigurationen mit zwei und vier Netzwerkkarten 
 ---
-= Konfiguration von VMware vSphere vSwitch auf ESXi
+= Konfiguration von ONTAP Select VMware vSphere vSwitch auf ESXi
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

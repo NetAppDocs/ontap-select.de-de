@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_deploy.html
 keywords: administer, administering, cli, deploy, upgrade deploy 
 summary: Sie können ein vorhandenes Deploy Utility Virtual Machine direkt über die Befehlszeilenschnittstelle aktualisieren. 
 ---
-= Aktualisieren einer Deploy-Instanz
+= Upgrade einer ONTAP Select Deploy Instanz
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

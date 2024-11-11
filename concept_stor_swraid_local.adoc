@@ -4,7 +4,7 @@ permalink: concept_stor_swraid_local.html
 keywords: ontap select, software raid, local attached storage, protection 
 summary: Software-RAID ist eine RAID-Abstraktionsschicht, die im ONTAP Software-Stack implementiert ist. Die Lösung bietet dieselben Funktionen wie die RAID-Ebene in einer herkömmlichen ONTAP Plattform wie FAS. Die RAID-Schicht berechnet für die Laufwerksparität und bietet Schutz vor einzelnen Laufwerksausfällen innerhalb eines ONTAP Select Node. 
 ---
-= Software-RAID-Services für lokalen Attached Storage
+= ONTAP Select Software RAID-Konfigurationsservices für lokal angeschlossenen Speicher
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

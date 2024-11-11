@@ -4,7 +4,7 @@ permalink: task_adm_mediators.html
 keywords: administer, administering, web, mediators 
 summary: Jedes ONTAP Select Cluster mit zwei Nodes wird durch den Mediator Service überwacht, der das Management der HA-Funktion unterstützt, die von den Nodes gemeinsam verwendet wird. 
 ---
-= Verwalten der Dienste des Deploy Mediator
+= Administration der ONTAP Select Deploy Mediator Services
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

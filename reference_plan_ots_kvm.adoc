@@ -4,7 +4,7 @@ permalink: reference_plan_ots_kvm.html
 keywords: plan, planning, vnas, kvm 
 summary: Es gibt mehrere Planungsprobleme im Zusammenhang mit der Verwendung des KVM-Hypervisors, die Sie in Betracht ziehen sollten. 
 ---
-= KVM-Anforderungen
+= ONTAP Select KVM-Anforderungen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -39,5 +39,5 @@ Halten Sie sich an die folgenden Empfehlungen:
 
 * Definieren Sie dedizierte Netzwerk-Ports, Bandbreiten und vSwitch Konfigurationen für ONTAP Select-Netzwerke und externen Storage
 * Konfigurieren Sie die Kapazitätsoption, um die Storage-Auslastung zu beschränken (ONTAP Select kann nicht die gesamte Kapazität eines externen Speicherpools nutzen).
-* Vergewissern Sie sich, dass alle externen Storage Arrays soweit möglich die verfügbaren Redundanz- und Hochverfügbarkeitsfunktionen verwenden
+* Überprüfen Sie, ob alle externen Storage Arrays die verfügbaren Redundanz- und Hochverfügbarkeitsfunktionen nutzen, sofern dies möglich ist
 

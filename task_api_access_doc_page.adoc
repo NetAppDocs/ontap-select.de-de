@@ -4,7 +4,7 @@ permalink: task_api_access_doc_page.html
 keywords: rest api, deploy rest api, rest, deploy documentation, access, accessing 
 summary: Sie müssen auf die Seite ONTAP Select Deploy Online-Dokumentation zugreifen, um die API-Dokumentation anzuzeigen und einen API-Aufruf manuell zu tätigen. 
 ---
-= Rufen Sie die Seite Dokumentation bereitstellen auf
+= Öffnen Sie die Dokumentationsseite ONTAP Select Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
