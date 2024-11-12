@@ -26,10 +26,11 @@ Die Funktionen zur Cluster-Erweiterung und -Verkleinerung sind wie folgt eingesc
 
 * Die Unterstützung ist auf auf auf ESX Hypervisor-Hosts erstellte Cluster beschränkt. Die folgenden ESX-Versionen sind mit ONTAP Select 9.15.1 und höher kompatibel:
 +
-** ESXi 8.0U2
-** ESXi 8.0U1
+** ESXi 8.0 U3
+** ESXi 8.0 U2
+** ESXi 8.0 U1
 ** ESXi 8.0GA
-** ESXi 7.0U3
+** ESXi 7.0 U3
 ** ESXi 7.0
 
 
