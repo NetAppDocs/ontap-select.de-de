@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task_quick_start_for_ovf_template_deployments.html 
+keywords: ontap select, ovf, template, deployment, evaluation, license 
+summary: Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinstanz für ein ONTAP Select Cluster mit einem Node schnell implementieren. 
+---
+= Quick Start Guide für ONTAP Select zur Bereitstellung von OVF-Vorlagen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mithilfe des Schnellstartes für Vorlagenbereitstellungen im Open Virtualization Format (OVF) können Sie eine 90-Tage-Testinstanz eines ONTAP Select-Clusters mit einem einzelnen Node mithilfe einer OVF-Vorlage auf VMware ESXi schnell implementieren.
+
+.Über diese Aufgabe
+* Sie müssen keine Seriennummer oder eine Storage-Kapazitätslizenz von NetApp erhalten.
+* Sie können für Benutzerdaten dieselbe Speichermenge wie eine erworbene Lizenz zuweisen.
+* Sie können den Node nicht von einer Evaluierungslizenz auf eine erworbene Lizenz aktualisieren.
+* Sie können nur ein vCenter-Konto zur Bereitstellung der OVF-Vorlage verwenden. Die direkte Installation auf einem ESXi-Host wird derzeit nicht unterstützt.
+* Sie müssen die OVF-Vorlage (in einer OVA-Datei enthalten) mit dem eigenständigen vSphere-Client oder vSphere-Webclient installieren (die einzige Option für ESXi 6.5 und höher). Sie verwenden nicht das ONTAP Select Deploy-Verwaltungsdienstprogramm.
+
+
+
+
+== Bereiten Sie den ONTAP Select-Cluster-Host vor
+
+Verwenden Sie die folgenden Anforderungen, um den ESXi-Host vorzubereiten, auf dem das ONTAP Select-Cluster bereitgestellt wird. Die Plattformbeschreibung basiert auf einer Standard- oder Small Instance-Konfiguration mit lokalem Direct-Attached Storage (das), der mit dem Dateisystem VMFS-5 oder VMFS-6 formatiert ist.
+
+image:prepare_ESXi_host_requirements.png["Voraussetzungen für die Vorbereitung des ESXi-Hosts"]
+
+Weitere Informationen zu Host-Konfigurationsoptionen finden Sie im link:reference_chk_host_prep.html["Dokumentation zur ONTAP Select Installation"].
+
+
+
+== Implementieren Sie ein ONTAP Select Cluster mit einem Node über eine OVF-Vorlage
+
+Führen Sie die folgenden Schritte auf einem unterstützten 64-Bit-ESXi-Hostserver aus.
+
+.Schritte
+. Gehen Sie zur Seite des NetApp-Evaluationsprodukten-Programms und wählen Sie *ONTAP Select*, um die ONTAP Select-OVF-Vorlage auf Ihre lokale Workstation herunterzuladen.
+. Melden Sie sich beim VMware vSphere Web-Client über ein Konto mit administrativen Privileges an.
+. Wählen Sie den Host mithilfe einer der folgenden Optionen aus:
++
+** Wählen Sie *Datei* > *OVF-Vorlage bereitstellen*.
+** Wählen Sie *Datacenter*. Klicken Sie dann mit der rechten Maustaste und wählen Sie *Deploy OVF Template*.
+
+
+. Wählen Sie die ONTAP Select-Quell-OVA-Datei auf Ihrer lokalen Workstation aus, und wählen Sie dann *Weiter* aus.
+. Überprüfen Sie die Details der OVF-Vorlage, und wählen Sie *Weiter*.
+. Überprüfen Sie die EULA-Details, und wählen Sie *Accept* aus. Wählen Sie dann *Weiter*.
+. Geben Sie den Namen der neuen virtuellen Maschine ein und wählen Sie *Weiter*.
+. Wenn mehr als ein Datastore verfügbar ist, wählen Sie den Datastore aus und wählen Sie *Weiter*.
+. Wählen Sie *Thick Provision Lazy Zeroed* und dann *Next*.
+. Wählen Sie die Daten- und Verwaltungsnetzwerke aus, und wählen Sie dann *Weiter*.
+. Geben Sie auf der Seite *Eigenschaften* alle erforderlichen Werte ein und wählen Sie *Weiter*.
+. Überprüfen Sie die Bereitstellungsdetails, und wählen Sie *nach der Bereitstellung einschalten*.
+. Wählen Sie *Fertig stellen*, um den Bereitstellungsprozess zu starten.
+. Nachdem das ONTAP Select Cluster bereitgestellt wurde, können Sie es über System Manager oder die CLI-Schnittstelle konfigurieren. Sie müssen die Diskette mit der Standardoperation ONTAP *Disk assign* zuweisen.
+
+
+.Verwandte Informationen
+link:http://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^]

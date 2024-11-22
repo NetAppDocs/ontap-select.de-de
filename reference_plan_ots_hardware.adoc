@@ -81,6 +81,9 @@ Zu den unterstützten Mikroprozessoren gehören:
 * Intel Xeon Prozessoren für Server (siehe link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon Prozessoren,window=_blank"] Weitere Informationen)
 
 
+
+NOTE: Advanced Micro Devices (AMD)-Prozessoren werden von ONTAP Select nicht unterstützt.
+
 .Ethernet-Konfiguration
 Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der Cluster-Größe unterstützt.
 

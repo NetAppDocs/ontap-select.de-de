@@ -167,13 +167,6 @@ Wenn Sie ein ONTAP Select-Cluster mithilfe der Python-Codebeispiele erstellen od
 
 == Single-Node-Cluster auf KVM
 
-[NOTE]
-====
-* Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
-* Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
-
-
-====
 [source, json]
 ----
 {

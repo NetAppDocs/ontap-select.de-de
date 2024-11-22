@@ -22,14 +22,6 @@ Der Workflow für die Cluster-Erstellung unterscheidet sich in folgenden Situati
 * Im Cluster werden mehrere Nodes oder Hosts verwendet
 * Das Cluster wird in einer Produktionsumgebung mit einer erworbenen Lizenz implementiert
 * Statt VMware ESXi wird der KVM-Hypervisor verwendet
-+
-[NOTE]
-====
-** Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.
-** Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.
-
-
-====
 
 
 
@@ -413,3 +405,6 @@ Ausgabe::
 
 --
 
+
+.Verwandte Informationen
+link:task_quick_start_for_ovf_template_deployments.html["Quick Start Guide für ONTAP Select zur Bereitstellung von OVF-Vorlagen"]
