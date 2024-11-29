@@ -3752,12 +3752,9 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
   <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3</block>
-  <block id="2541fca0ad59c8199b8bb08b5020de58" category="inline-link-macro">Quick Start Guide für ONTAP Select zur Bereitstellung von OVF-Vorlagen</block>
-  <block id="eccbbc66ee95decf0d7c0595d219c92b" category="paragraph"><block ref="eccbbc66ee95decf0d7c0595d219c92b" category="inline-link-macro-rx"></block></block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">Es gibt verschiedene allgemeine Hardwareanforderungen, die für alle Plattformen gelten, unabhängig vom Instanztyp oder Lizenzangebot des Nodes.</block>
   <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">Advanced Micro Devices (AMD)-Prozessoren werden von ONTAP Select nicht unterstützt.</block>
   <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinstanz für ein ONTAP Select Cluster mit einem Node schnell implementieren.</block>
-  <block id="08aeb5678ae03a8db1f16233a4a16070" category="paragraph">Mithilfe des Schnellstartes für Vorlagenbereitstellungen im Open Virtualization Format (OVF) können Sie eine 90-Tage-Testinstanz eines ONTAP Select-Clusters mit einem einzelnen Node mithilfe einer OVF-Vorlage auf VMware ESXi schnell implementieren.</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">Sie müssen keine Seriennummer oder eine Storage-Kapazitätslizenz von NetApp erhalten.</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">Sie können für Benutzerdaten dieselbe Speichermenge wie eine erworbene Lizenz zuweisen.</block>
   <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">Sie können den Node nicht von einer Evaluierungslizenz auf eine erworbene Lizenz aktualisieren.</block>
@@ -3788,5 +3785,7 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">Wählen Sie *Fertig stellen*, um den Bereitstellungsprozess zu starten.</block>
   <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">Nachdem das ONTAP Select Cluster bereitgestellt wurde, können Sie es über System Manager oder die CLI-Schnittstelle konfigurieren. Sie müssen die Diskette mit der Standardoperation ONTAP *Disk assign* zuweisen.</block>
   <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
-  <block id="fa0d249cd337d58b40ea3c7cc54de247" category="sidebar">Schnellstart für die Bereitstellung von OVF-Vorlagen</block>
+  <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">Implementierung einer 90-Tage-Testinstanz für einen ONTAP Select Cluster</block>
+  <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
+  <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">Implementierung einer 90-Tage-Testinstanz eines Clusters</block>
 </blocks>

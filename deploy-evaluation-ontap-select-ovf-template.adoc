@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task_quick_start_for_ovf_template_deployments.html 
-keywords: ontap select, ovf, template, deployment, evaluation, license 
+permalink: deploy-evaluation-ontap-select-ovf-template.html 
+keywords: ontap, select, ovf, template, deployment, evaluation, license 
 summary: Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinstanz für ein ONTAP Select Cluster mit einem Node schnell implementieren. 
 ---
-= Quick Start Guide für ONTAP Select zur Bereitstellung von OVF-Vorlagen
+= Implementierung einer 90-Tage-Testinstanz für einen ONTAP Select Cluster
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinst
 
 
 [role="lead"]
-Mithilfe des Schnellstartes für Vorlagenbereitstellungen im Open Virtualization Format (OVF) können Sie eine 90-Tage-Testinstanz eines ONTAP Select-Clusters mit einem einzelnen Node mithilfe einer OVF-Vorlage auf VMware ESXi schnell implementieren.
+Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinstanz für ein ONTAP Select Cluster mit einem Node schnell implementieren.
 
 .Über diese Aufgabe
 * Sie müssen keine Seriennummer oder eine Storage-Kapazitätslizenz von NetApp erhalten.

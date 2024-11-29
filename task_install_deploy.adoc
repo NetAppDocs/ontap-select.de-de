@@ -219,5 +219,5 @@ Melden Sie sich an der Web-Benutzeroberfläche an, um zu bestätigen, dass das D
 
 .Verwandte Informationen
 * link:task_cli_signing_in.html["Melden Sie sich an, um die Implementierung über SSH durchzuführen"]
-* link:task_quick_start_for_ovf_template_deployments.html["Quick Start Guide für ONTAP Select zur Bereitstellung von OVF-Vorlagen"]
+* link:deploy-evaluation-ontap-select-ovf-template.html["Implementierung einer 90-Tage-Testinstanz für einen ONTAP Select Cluster"]
 

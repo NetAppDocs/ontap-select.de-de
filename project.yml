@@ -19,7 +19,7 @@ settings:
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
-  langs: de-de,us-en,ja-jp,ko-kr,zh-cn,zh-tw,es-es,fr-fr,it-it
+  langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
   - title: ONTAP Select 9.16.1-Dokumentation
@@ -294,8 +294,8 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: Wiederherstellung in einem Cluster mit zwei Nodes
         url: "/task_cli_deploy_recover_two_node.html"
-  - title: Schnellstart für die Bereitstellung von OVF-Vorlagen
-    url: "/task_quick_start_for_ovf_template_deployments.html"
+  - title: Implementierung einer 90-Tage-Testinstanz eines Clusters
+    url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: Häufig gestellte Fragen
     url: "/reference_faq.html"
   - title: Rechtliche Hinweise
