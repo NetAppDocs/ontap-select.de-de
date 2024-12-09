@@ -72,4 +72,7 @@ Beim Konfigurieren des Clusters stehen verschiedene Optionen zur Verfügung. Daz
 Wenn Sie sich gegen die Installation der Lizenzdateien im Rahmen der Bereitstellung des ONTAP Select-Clusters entschieden haben, müssen Sie die Lizenzdateien erwerben und installieren, bevor der Gnadenzeitraum für Cluster abläuft, die mit einer erworbenen Lizenz ausgeführt werden.
 
 .Gespiegelte Aggregate
-Auf jedem ONTAP Select Node sind durch das Deploy Administration Utility Daten-Spare-Festplatten aus dem nutzbaren Datenspeicherplatz (z. B. Pool0 und Pool1) erstellt. Um Hochverfügbarkeit für Ihre Daten in einem Cluster mit mehreren Knoten zu implementieren, müssen Sie ein gespiegeltes Aggregat unter Verwendung dieser Ersatzteile erstellen.
+Das Deploy Administration Utility erstellt auf jedem ONTAP Select-Node Datensparfestplatten aus dem nutzbaren Speicherplatz (z. B. Pool0 und Pool1). Um Hochverfügbarkeit für Ihre Daten in einem Cluster mit mehreren Knoten zu implementieren, müssen Sie ein gespiegeltes Aggregat unter Verwendung dieser Ersatzteile erstellen.
+
+
+NOTE: High-Availability-Takeover wird nur unterstützt, wenn Datenaggregate als gespiegelte Aggregate konfiguriert sind.
