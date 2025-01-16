@@ -19,7 +19,7 @@ Sie sollten den anfänglichen Status eines Clusters beachten, nachdem es impleme
 Ein ONTAP Select Cluster weist nach dem Erstellen verschiedene Merkmale auf.
 
 
-NOTE: Durch das Einschränken von Rollen und Berechtigungen für das ONTAP-Administratorkonto kann die Fähigkeit von ONTAP Select Deploy zum Verwalten des Clusters eingeschränkt werden. Weitere Informationen finden Sie im KB-Artikel link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["DIE AKTUALISIERUNG DES OTS-Bereitstellungs-Clusters schlägt mit einem Fehler fehl"^].
+NOTE: Durch das Einschränken von Rollen und Berechtigungen für das ONTAP-Administratorkonto kann die Fähigkeit von ONTAP Select Deploy zum Verwalten des Clusters eingeschränkt werden. Weitere Informationen finden Sie im Knowledge Base-Artikel link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["DIE AKTUALISIERUNG DES OTS-Bereitstellungs-Clusters schlägt mit einem Fehler fehl"^].
 
 .LIFs
 Es sind zwei Arten von vom Kunden angegebenen LIFs zugewiesen:
@@ -28,12 +28,19 @@ Es sind zwei Arten von vom Kunden angegebenen LIFs zugewiesen:
 * Node-Management (einer pro Node)
 
 
+
+NOTE: Ein Multi-Node-Cluster verfügt über ein internes Netzwerk mit automatisch erstellten LIFs.
+
 .SVMs
-Zwei administrative SVMs sind aktiv:
+Drei SVMs sind aktiv:
 
-* Standard-SVM
-* Cluster-SVM
+* Admin-SVM
+* Node-SVM
+* System-SVM (Cluster)
 
+
+
+NOTE: Data SVMs werden nicht als Teil der ONTAP Select Cluster-Implementierung erstellt. Sie müssen nach der Bereitstellung vom Clusteradministrator erstellt werden. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/ontap/nfs-config/create-svms-data-access-task.html["Erstellen Sie ein SVM"^].
 
 .Aggregate
 Das Root-Aggregat wird erstellt.
@@ -41,9 +48,7 @@ Das Root-Aggregat wird erstellt.
 .Funktionen
 Alle Funktionen sind lizenziert und verfügbar. Sowohl SnapLock als auch FabricPool erfordern separate Lizenzen.
 
-
-NOTE: Es wurden keine Data SVMs erstellt. Außerdem verfügt das Multi-Node-Cluster über ein internes Netzwerk mit automatisch generierten LIFs.
-
 .Verwandte Informationen
+* link:https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["In einem Cluster enthaltene SVMs-Typen"^]
 * link:reference_lic_ontap_features.html["Standardmäßig sind ONTAP-Funktionen aktiviert"]
 

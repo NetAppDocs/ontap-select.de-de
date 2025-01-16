@@ -262,8 +262,6 @@ sidebar:
         url: "/reference_api_script_common.html"
       - title: Die Größe der Cluster-Nodes wird geändert
         url: "/reference_api_script_resize.html"
-  - title: Automatisieren mit Ansible
-    url: "/concept_automate_ansible.html"
   - title: Verwenden Sie die CLI
     entries:
     - title: Melden Sie sich über SSH an

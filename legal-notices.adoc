@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: legal-notices.html 
-keywords:  
-summary:  
+keywords: copyrights, notices, trademarks, patents, privacy 
+summary: Rechtliche Hinweise ermöglichen den Zugriff auf Copyright-Erklärungen, Marken, Patente und mehr. 
 ---
 = Rechtliche Hinweise
 :hardbreaks:
@@ -48,7 +48,6 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 == Open Source
 
-Die Benachrichtigungsdatei enthält Informationen zu Urheberrechten Dritter und Lizenzen, die in der NetApp-Software verwendet werden.
+In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und Lizenzen von Drittanbietern, die in der NetApp Software verwendet werden.
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3330674["Hinweis für ONTAP Select 9.16.1"^]
-
+https://library.netapp.com/ecm/ecm_download_file/ECMLP3330674["Hinweis für ONTAP Select 9.16.1"^]
