@@ -51,7 +51,7 @@ NOTE: Dem Dienstprogramm „Verwaltung bereitstellen“ ist keine separate Versi
 
 == Darstellung einer typischen Implementierung
 
-Die folgende Abbildung zeigt das ONTAP Select Deploy Administration Utility, das bei der Implementierung und Unterstützung eines ONTAP Select Clusters mit vier Nodes verwendet wird. Das Deploy-Tool und ONTAP Select-Nodes werden als separate Virtual Machines auf dedizierten Hypervisor-Hosts ausgeführt.
+Die folgende Abbildung zeigt das Dienstprogramm NetApp ONTAP Select Deploy für die Implementierung und Unterstützung eines ONTAP Select Clusters mit vier Nodes. Das Deploy-Tool und ONTAP Select-Nodes werden als separate Virtual Machines auf dedizierten Hypervisor-Hosts ausgeführt.
 
 image:ots_architecture.png["Zeigt einen ONTAP Select Cluster mit vier Nodes, der mit dem Dienstprogramm zur Bereitstellung der Administration erstellt wurde."]
 

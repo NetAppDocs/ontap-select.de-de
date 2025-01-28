@@ -4,7 +4,7 @@ permalink: task_adm_licenses.html
 keywords: administer, administering, web, licenses 
 summary: Bei der Administration der ONTAP Select-Lizenzen können Sie mehrere verwandte Aufgaben ausführen. 
 ---
-= ONTAP Select-Lizenzen
+= Management von ONTAP Select Lizenzen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

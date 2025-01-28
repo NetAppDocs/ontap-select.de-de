@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_perf_general.html 
 keywords: ontap select, performance 
-summary: Die Leistung variiert je nach Hardwarekonfiguration. 
+summary: Die Performance eines ONTAP Select Clusters kann je nach Hardwarekonfiguration variieren. 
 ---
 = Übersicht über die Performance von ONTAP Select
 :hardbreaks:
@@ -14,8 +14,6 @@ summary: Die Leistung variiert je nach Hardwarekonfiguration.
 
 
 [role="lead"]
-Die Leistung variiert je nach Hardwarekonfiguration.
-
 Die Performance eines ONTAP Select Clusters kann aufgrund der Eigenschaften der zugrunde liegenden Hardware und der zugrunde liegenden Konfiguration erheblich variieren. Die spezifische Hardwarekonfiguration ist der größte Faktor für die Performance einer bestimmten ONTAP Select Instanz. Im Folgenden sind einige der Faktoren aufgeführt, die die Performance einer bestimmten ONTAP Select-Instanz beeinflussen:
 
 * *Kernfrequenz*. Im Allgemeinen ist eine höhere Frequenz vorzuziehen.

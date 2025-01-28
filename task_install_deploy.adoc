@@ -22,6 +22,9 @@ Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das
 
 Das ONTAP Select Paket können Sie auf der NetApp Support-Webseite herunterladen.
 
+.Bevor Sie beginnen
+https://mysupport.netapp.com/site/user/registration["Sie verfügen über ein registriertes NetApp Support Site Konto"^].
+
 .Über diese Aufgabe
 Das Dienstprogramm ONTAP Select Deploy Administration ist als virtuelle Maschine (VM) auf Basis des OVF-Standards (Open Virtualization Format) verpackt. Die einzelne komprimierte Datei verfügt über das Suffix `ova`. Die VM stellt die bereitzustellenden Server- und Installations-Images für ONTAP Select Nodes zur Verfügung.
 
@@ -118,7 +121,7 @@ Welche Schritte Sie befolgen, hängt davon ab, ob Sie einen ESXi- oder KVM-Hyper
 +
 Sie müssen das Passwort für das Administratorkonto definieren. Sie müssen dieses Passwort angeben, wenn Sie sich beim Dienstprogramm Deploy anmelden.
 
-. Wählen Sie nach der Bereitstellung der VM die neue VM aus, und schalten Sie sie ein, wenn sie aufgrund Ihrer Angaben zum Implementierungsassistenten nicht bereits eingeschaltet ist.
+. Wählen Sie nach Bereitstellung der VM die neue VM aus. Wenn die Software aufgrund Ihrer Angaben zum Implementierungsassistenten noch nicht eingeschaltet ist, schalten Sie sie manuell ein.
 . Falls erforderlich, können Sie das Bereitstellungsnetzwerk über die VM-Konsole konfigurieren:
 +
 .. Klicken Sie auf die Registerkarte *Konsole*, um auf die Setup-Shell des ESXi-Hosts zuzugreifen und den Einschalungsprozess zu überwachen.
@@ -208,7 +211,7 @@ Melden Sie sich an der Web-Benutzeroberfläche an, um zu bestätigen, dass das D
 
 . Geben Sie den Administrator-Kontonamen und das Kennwort ein, und melden Sie sich an.
 . Wenn das Popup-Fenster *Willkommen bei ONTAP Select* angezeigt wird, überprüfen Sie die Voraussetzungen und wählen Sie *OK*, um fortzufahren.
-. Wenn Sie sich zum ersten Mal anmelden und die Bereitstellung nicht mit dem in vCenter verfügbaren Assistenten installiert haben, geben Sie bei der entsprechenden Aufforderung die folgenden Konfigurationsdaten an:
+. Wenn Sie sich zum ersten Mal anmelden und die Bereitstellung nicht mithilfe des Assistenten installiert haben, der mit vCenter verfügbar ist, geben Sie bei der Aufforderung die folgenden Konfigurationsinformationen an:
 +
 ** Neues Kennwort für das Administratorkonto (erforderlich)
 ** AutoSupport (optional)
