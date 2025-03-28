@@ -700,19 +700,12 @@
   <block id="9eb6b36f84e03f93cb360a15fa276ffb" category="doc">ONTAP Select-Lizenzen</block>
   <block id="4d072981d0459a6e8dddc5e65d85a19d" category="paragraph">Lizenzen für ONTAP Select Capacity Tiers können nach Bedarf hinzugefügt, bearbeitet und gelöscht werden.</block>
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.</block>
-  <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitätsstufe*.</block>
-  <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">Klicken Sie optional auf *Filter* und begrenzen Sie die angezeigten Lizenzen.</block>
-  <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">Um eine neue Lizenz hinzuzufügen, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei auf Ihrer lokalen Workstation aus.</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">Sie können Lizenzen für den ONTAP Select Capacity Pool nach Bedarf hinzufügen, bearbeiten und löschen.</block>
-  <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitäts-Pools*.</block>
-  <block id="8e2791365de62e59e56b5d6fcdd0f3e2" category="list-text">Um eine neue Lizenz hinzuzufügen oder eine vorhandene Lizenz zu verlängern, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.</block>
   <block id="d26363bf70cc27dd1ba8f09739b8f116" category="list-text">Um eine Liste der Kapazitäts-Pools anzuzeigen:</block>
-  <block id="b14052b3af7caf15ec0beb76766be24f" category="list-text">Klicken Sie Auf *Zusammenfassung*.</block>
   <block id="e034cc23606a54a163075931f70dbbab" category="list-text">Wählen Sie einen Pool aus, und erweitern Sie ihn, um die aus dem Pool heraus leasen Cluster und Nodes anzuzeigen.</block>
   <block id="8797856e9d86b8ee20026b14229ca29a" category="list-text">Den aktuellen Status der Lizenz finden Sie unter *Lizenzinformationen*.</block>
   <block id="21b26341db1dfa394a993c5d152ccf13" category="list-text">Sie können die Dauer der für den Pool ausgegebenen Leasing-Verträge mit Ablauf des Leasing-Zeitraums ändern.</block>
   <block id="a0d12512fae580ca38325fe122b9f447" category="list-text">So zeigen Sie eine Liste der Cluster an:</block>
-  <block id="8ab91110ae01f9e5c2c34364ebb2da32" category="list-text">Klicken Sie Auf *Details*.</block>
   <block id="31881fb30a812ef998d7f2111d7bcc44" category="list-text">Wählen Sie das Cluster aus und erweitern Sie es, um eine Storage-Auslastung zu sehen.</block>
   <block id="844c5fe8a900e62416848502a4af7fdf" category="paragraph">Jede Lizenz für den aktiven Kapazitätspool ist auf eine bestimmte License Manager-Instanz gesperrt, die in einer Instanz des Deploy Administration Utility enthalten ist. Wenn Sie eine Lizenz für den Kapazitäts-Pool verwenden und die Deploy-Instanz wiederherstellen oder wiederherstellen, ist die ursprüngliche Lizenz ungültig. Sie müssen eine neue Kapazitätslizenzdatei generieren und dann die Lizenz auf die neue Deploy-Instanz installieren.</block>
   <block id="be0411c455172a2eece4547673c61675" category="list-text">Ermitteln Sie alle Kapazitätspool-Lizenzen, die von der ursprünglichen implementierten Instanz verwendet werden.</block>
@@ -723,8 +716,6 @@
   <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">Wenden Sie sich an den NetApp Support und besitzen alle Capacity Pool-Lizenzen für die ursprüngliche Deploy-Instanz Unbounded und Unregistered.</block>
   <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">Erwerben und Herunterladen einer neuen Lizenzdatei für jede der Capacity Pool-Lizenzen.</block>
   <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">Installieren Sie die Lizenzen für den Kapazitäts-Pool auf der neuen Deploy-Instanz:</block>
-  <block id="99683d4e14f8df30b153000825273e2d" category="list-text">Klicken Sie auf *Lizenzen* und dann auf *Kapazitäts-Pool*.</block>
-  <block id="095bb96ffb3551a58960c96316107d76" category="list-text">Klicken Sie auf *Add* und dann auf *Upload License(s)*, um die Lizenzen auszuwählen und hochzuladen.</block>
   <block id="e05566aa3784020545c76d92dcb376ab" category="list-text">Wenn Sie die neue Deploy-Instanz erstellt haben, ohne ein Backup wiederherzustellen, oder Sie ein Backup verwendet haben, das nicht aktuell und aktuell war, müssen Sie die Seriennummer aktualisieren:</block>
   <block id="1c4bd3e7e2bc88b1415fade6249d5a46" category="list-text">Melden Sie sich über das Administratorkonto bei der Befehlszeilenschnittstelle von Deploy Utility an.</block>
   <block id="1de9bd334d99fc24b79e751ee32ab23c" category="list-text">Anzeigen der Seriennummer für einen Knoten, der kürzlich von der ursprünglichen Deploy-Instanz erstellt wurde:</block>
@@ -745,11 +736,7 @@
   <block id="bc882e7be43ec2480a6be229d77c8eaf" category="list-text">Jeder Node muss über genügend Storage verfügen, um die für eine Produktionslizenz erforderlichen Mindestspeicheranforderungen zu unterstützen.</block>
   <block id="b94a9bad5ae121ac9e7cd292197b59e1" category="list-text">Für jeden Node im Evaluation-Cluster müssen Sie Lizenzen für Kapazitätsstufen besitzen.</block>
   <block id="f5d5a8d93d0ff3b80b514c776adc3d06" category="paragraph">Die Durchführung einer Änderung der Cluster-Lizenz für ein Single-Node-Cluster ist von Unterbrechungen geprägt. Dies ist jedoch bei einem Multi-Node-Cluster nicht der Fall, da bei der Konvertierung jeder Node einzeln neu gebootet werden kann, um die Lizenz anzuwenden.</block>
-  <block id="2bb59383631b39d52464741628ce0ca4" category="list-text">Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus.</block>
-  <block id="2b92ba791b5d35e9921e9be06d12553c" category="list-text">Klicken Sie oben auf der Seite Cluster-Details auf *Klicken Sie hier*, um die Cluster-Lizenz zu ändern.</block>
-  <block id="3ec0b37e2f174766469a343ec8265983" category="paragraph">Sie können auch auf *Cluster Details* neben der Evaluierungslizenz klicken.</block>
   <block id="5a3b7bb229a1d7655341b191f93fef35" category="list-text">Wählen Sie für jeden Node eine verfügbare Produktionslizenz aus oder laden Sie bei Bedarf weitere Lizenzen hoch.</block>
-  <block id="36d90e9baa4dfd0dda8eeaac2623f12c" category="list-text">Geben Sie die ONTAP-Anmeldedaten ein und klicken Sie auf *Ändern*.</block>
   <block id="7d7d0d771e408e152fe9f59aa783a245" category="paragraph">Das Lizenz-Upgrade für den Cluster kann mehrere Minuten dauern. Lassen Sie den Vorgang abgeschlossen werden, bevor Sie die Seite verlassen oder andere Änderungen vornehmen.</block>
   <block id="58c19e610497280d55686885113b1e5a" category="paragraph">Die ursprünglich jedem Node für die Evaluierungsimplementierung zugewiesenen 20-stelligen Node-Seriennummern werden durch die neunstelligen Seriennummern der für das Upgrade verwendeten Produktionslizenzen ersetzt.</block>
   <block id="540a1899c1be5ac42092dad9fefe4e2a" category="summary">Virtuelle NAS (vNAS) Implementierungen unterstützen ONTAP Select Cluster auf VSAN, einige HCI Produkte, NetApp HCI Technologie und externe Array-Typen von Datastores. Die zugrunde liegende Infrastruktur dieser Konfigurationen bietet Ausfallsicherheit im Datenspeicher.</block>
@@ -3424,8 +3411,6 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">Typ kleiner, mittelgroßer oder großer Instanzen</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDDs, SSDs oder NVMe-Laufwerke</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">Die Verwendung des Typs der großen Instanz oder von NVMe-Laufwerken in einer SW-RAID-Konfiguration wird von KVM nicht unterstützt.</block>
-  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">Um eine vorhandene Lizenz zu ersetzen, wählen Sie eine Lizenz aus, und klicken Sie auf <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>, Und wählen Sie *Update*.</block>
-  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">Wählen Sie optional eine Lizenz aus, und klicken Sie auf <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> Um eine vorhandene Lizenz zu verwalten.</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">Verwaltung von Add-on-Lizenzen</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">Übersicht über die Lizenzverwaltung (nur Cluster-Administratoren)</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">Aktivieren Sie neue Funktionen durch Hinzufügen von Lizenzschlüssel</block>
@@ -3771,4 +3756,28 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>.</block>
   <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">Wählen Sie nach Bereitstellung der VM die neue VM aus. Wenn die Software aufgrund Ihrer Angaben zum Implementierungsassistenten noch nicht eingeschaltet ist, schalten Sie sie manuell ein.</block>
   <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">Wenn Sie sich zum ersten Mal anmelden und die Bereitstellung nicht mithilfe des Assistenten installiert haben, der mit vCenter verfügbar ist, geben Sie bei der Aufforderung die folgenden Konfigurationsinformationen an:</block>
+  <block id="c2fffdb7e5db1a96deec5901fd1a882b" category="list-text">Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.</block>
+  <block id="7f73b891b6f89493a9a42f78c96dfbde" category="list-text">Wählen Sie *Licenses* und dann *Capacity Tier*.</block>
+  <block id="ac058bee21b19fb7d5683b470b430bce" category="list-text">Wählen Sie optional *Filter* aus und begrenzen Sie die angezeigten Lizenzen.</block>
+  <block id="f76e9a144df7cb5bf308e94a6e908da4" category="list-text">Um eine vorhandene Lizenz <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>zu ersetzen, wählen Sie eine Lizenz aus, wählen Sie , und wählen Sie *Update* aus.</block>
+  <block id="2a312f34de3de288696c20c1e8fdab8c" category="list-text">Um eine neue Lizenz hinzuzufügen, wählen Sie *Hinzufügen* oben auf der Seite und dann *Lizenz(en)* hochladen* und wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.</block>
+  <block id="e138becae13ca9b3317ae72cd807b7ed" category="list-text">Wählen Sie *Lizenzen* aus und wählen Sie *Kapazitätspools* aus.</block>
+  <block id="e4dbf5646ea0f3591d85a89dcc220112" category="list-text">Wählen Sie optional *Filter* und, um die angezeigten Lizenzen zu beschränken.</block>
+  <block id="0238150d48dcbb89f61418a79faf879c" category="list-text">Wählen Sie optional eine Lizenz aus, und <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>verwalten Sie eine vorhandene Lizenz.</block>
+  <block id="f675b264e07a6d56cc74839352166e25" category="list-text">Fügen Sie eine neue Lizenz hinzu oder verlängern Sie eine vorhandene Lizenz:</block>
+  <block id="e1ff67a9ee704536271bf20bae768184" category="open-title">Neue Lizenz hinzufügen</block>
+  <block id="85c89e836071c9255062f2c7b147db6a" category="paragraph">Um eine neue Lizenz hinzuzufügen, wählen Sie *Hinzufügen* oben auf der Seite aus.</block>
+  <block id="bbb047a51418944f835ae59b4e145de5" category="open-title">Bestehende Lizenz erneuern</block>
+  <block id="612b39eeafbac7f4962e5513903d070d" category="paragraph">So verlängern Sie eine vorhandene Lizenz:</block>
+  <block id="6e1121544cd3144bdf088e3fc4c6d58e" category="list-text">Wählen Sie <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> in einer vorhandenen Lizenz aus.</block>
+  <block id="1f20356b85cdefac297216209ca2bcb1" category="list-text">Wählen Sie *Lizenz(en)* hochladen.</block>
+  <block id="7d2e20d8c3e5ebfbdbd81ec85b9c313e" category="list-text">Wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.</block>
+  <block id="3e4b3d97ed721fa6c588b33d67e7327a" category="list-text">Wählen Sie *Zusammenfassung*.</block>
+  <block id="522aeaf73b031c733a2277fe9eadd494" category="list-text">Wählen Sie *Details*.</block>
+  <block id="055dab4754e0e1d62a339ad80dcac225" category="list-text">Wählen Sie *Licenses* und dann *Capacity Pool*.</block>
+  <block id="8ad539dc195e039c5437c07b3d810ad8" category="list-text">Wählen Sie *Hinzufügen* und dann *Lizenz(en)* hochladen, um die Lizenzen auszuwählen und hochzuladen.</block>
+  <block id="1a9274360bc45212a6a014b4c6df1e9c" category="list-text">Wählen Sie oben auf der Seite die Registerkarte *Cluster* aus und wählen Sie den gewünschten Cluster aus.</block>
+  <block id="e951843bb1ba0912165bd527e8312bec" category="list-text">Wählen Sie oben auf der Cluster-Detailseite *Klicken Sie hier*, um die Cluster-Lizenz zu ändern.</block>
+  <block id="17d9cc4f645deac6e5e367f0ef6fd4ee" category="paragraph">Sie können auch *Modify* neben der Evaluierungslizenz im Abschnitt *Cluster Details* auswählen.</block>
+  <block id="380ce7f967546f46005a7cb8b03e358c" category="list-text">Geben Sie die ONTAP-Anmeldeinformationen ein und wählen Sie *Ändern*.</block>
 </blocks>

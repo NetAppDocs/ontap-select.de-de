@@ -24,11 +24,11 @@ Lizenzen für ONTAP Select Capacity Tiers können nach Bedarf hinzugefügt, bear
 
 .Schritte
 . Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-. Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitätsstufe*.
-. Klicken Sie optional auf *Filter* und begrenzen Sie die angezeigten Lizenzen.
-. Um eine vorhandene Lizenz zu ersetzen, wählen Sie eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"], Und wählen Sie *Update*.
-. Um eine neue Lizenz hinzuzufügen, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei auf Ihrer lokalen Workstation aus.
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+. Wählen Sie *Licenses* und dann *Capacity Tier*.
+. Wählen Sie optional *Filter* aus und begrenzen Sie die angezeigten Lizenzen.
+. Um eine vorhandene Lizenz image:icon_kebab.gif["Optionen"]zu ersetzen, wählen Sie eine Lizenz aus, wählen Sie , und wählen Sie *Update* aus.
+. Um eine neue Lizenz hinzuzufügen, wählen Sie *Hinzufügen* oben auf der Seite und dann *Lizenz(en)* hochladen* und wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.
 
 
 
@@ -39,14 +39,33 @@ Sie können Lizenzen für den ONTAP Select Capacity Pool nach Bedarf hinzufügen
 
 .Schritte
 . Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-. Klicken Sie auf *Lizenzen* und klicken Sie auf *Kapazitäts-Pools*.
-. Klicken Sie optional auf *Filter* und begrenzen Sie die angezeigten Lizenzen.
-. Wählen Sie optional eine Lizenz aus, und klicken Sie auf image:icon_kebab.gif["Optionen"] Um eine vorhandene Lizenz zu verwalten.
-. Um eine neue Lizenz hinzuzufügen oder eine vorhandene Lizenz zu verlängern, klicken Sie oben auf der Seite auf *Add* und dann auf *Upload License(s)* und wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+. Wählen Sie *Lizenzen* aus und wählen Sie *Kapazitätspools* aus.
+. Wählen Sie optional *Filter* und, um die angezeigten Lizenzen zu beschränken.
+. Wählen Sie optional eine Lizenz aus, und image:icon_kebab.gif["Optionen"]verwalten Sie eine vorhandene Lizenz.
+. Fügen Sie eine neue Lizenz hinzu oder verlängern Sie eine vorhandene Lizenz:
++
+[role="tabbed-block"]
+====
+.Neue Lizenz hinzufügen
+--
+Um eine neue Lizenz hinzuzufügen, wählen Sie *Hinzufügen* oben auf der Seite aus.
+
+--
+.Bestehende Lizenz erneuern
+--
+So verlängern Sie eine vorhandene Lizenz:
+
+.. Wählen Sie image:icon_kebab.gif["Optionen"] in einer vorhandenen Lizenz aus.
+.. Wählen Sie *Lizenz(en)* hochladen.
+.. Wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.
+
+
+--
+====
 . Um eine Liste der Kapazitäts-Pools anzuzeigen:
 +
-.. Klicken Sie Auf *Zusammenfassung*.
+.. Wählen Sie *Zusammenfassung*.
 .. Wählen Sie einen Pool aus, und erweitern Sie ihn, um die aus dem Pool heraus leasen Cluster und Nodes anzuzeigen.
 .. Den aktuellen Status der Lizenz finden Sie unter *Lizenzinformationen*.
 .. Sie können die Dauer der für den Pool ausgegebenen Leasing-Verträge mit Ablauf des Leasing-Zeitraums ändern.
@@ -54,7 +73,7 @@ Sie können Lizenzen für den ONTAP Select Capacity Pool nach Bedarf hinzufügen
 
 . So zeigen Sie eine Liste der Cluster an:
 +
-.. Klicken Sie Auf *Details*.
+.. Wählen Sie *Details*.
 .. Wählen Sie das Cluster aus und erweitern Sie es, um eine Storage-Auslastung zu sehen.
 
 
@@ -85,9 +104,9 @@ Siehe link:task_lic_acquire_cp.html["Erwerben einer Capacity Pool-Lizenz"] Finde
 . Installieren Sie die Lizenzen für den Kapazitäts-Pool auf der neuen Deploy-Instanz:
 +
 .. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-.. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-.. Klicken Sie auf *Lizenzen* und dann auf *Kapazitäts-Pool*.
-.. Klicken Sie auf *Add* und dann auf *Upload License(s)*, um die Lizenzen auszuwählen und hochzuladen.
+.. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+.. Wählen Sie *Licenses* und dann *Capacity Pool*.
+.. Wählen Sie *Hinzufügen* und dann *Lizenz(en)* hochladen, um die Lizenzen auszuwählen und hochzuladen.
 
 
 . Wenn Sie die neue Deploy-Instanz erstellt haben, ohne ein Backup wiederherzustellen, oder Sie ein Backup verwendet haben, das nicht aktuell und aktuell war, müssen Sie die Seriennummer aktualisieren:
@@ -140,13 +159,13 @@ Die Durchführung einer Änderung der Cluster-Lizenz für ein Single-Node-Cluste
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus.
-. Klicken Sie oben auf der Seite Cluster-Details auf *Klicken Sie hier*, um die Cluster-Lizenz zu ändern.
+. Wählen Sie oben auf der Seite die Registerkarte *Cluster* aus und wählen Sie den gewünschten Cluster aus.
+. Wählen Sie oben auf der Cluster-Detailseite *Klicken Sie hier*, um die Cluster-Lizenz zu ändern.
 +
-Sie können auch auf *Cluster Details* neben der Evaluierungslizenz klicken.
+Sie können auch *Modify* neben der Evaluierungslizenz im Abschnitt *Cluster Details* auswählen.
 
 . Wählen Sie für jeden Node eine verfügbare Produktionslizenz aus oder laden Sie bei Bedarf weitere Lizenzen hoch.
-. Geben Sie die ONTAP-Anmeldedaten ein und klicken Sie auf *Ändern*.
+. Geben Sie die ONTAP-Anmeldeinformationen ein und wählen Sie *Ändern*.
 +
 Das Lizenz-Upgrade für den Cluster kann mehrere Minuten dauern. Lassen Sie den Vorgang abgeschlossen werden, bevor Sie die Seite verlassen oder andere Änderungen vornehmen.
 
