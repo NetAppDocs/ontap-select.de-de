@@ -53,7 +53,7 @@ Mit der folgenden unterstützten NetApp Client Software können Sie eine Verbind
 * Virtual Storage Console für VMware vSphere
 
 
-Um die unterstützten Versionen der Client-Software zu identifizieren, lesen Sie die link:https://mysupport.netapp.com/matrix/["NetApp Interoperabilitäts-Matrix-Tool"^]. Wenn die Client-Software ONTAP 9 unterstützt, wird dieselbe Version auch mit ONTAP Select unterstützt.
+Um die unterstützten Versionen der Client-Software zu identifizieren, lesen Sie die link:https://mysupport.netapp.com/matrix/["Interoperabilitäts-Matrix-Tool"^]. Wenn die Client-Software ONTAP 9 unterstützt, wird dieselbe Version auch mit ONTAP Select unterstützt.
 
 
 NOTE: Für die Nutzung von SnapCenter und den entsprechenden Plug-ins sind serverbasierte Lizenzen erforderlich. Storage-Systemlizenzen für SnapCenter Plug-ins werden derzeit nicht bei ONTAP Select unterstützt.

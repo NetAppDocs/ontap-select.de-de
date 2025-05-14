@@ -18,9 +18,9 @@ Bei der Administration der ONTAP Select-Lizenzen können Sie mehrere verwandte A
 
 
 
-== Management der Lizenzen für die Kapazitätsebene
+== Management der Capacity Tier Lizenzen
 
-Lizenzen für ONTAP Select Capacity Tiers können nach Bedarf hinzugefügt, bearbeitet und gelöscht werden.
+Sie können Lizenzen der ONTAP Select Capacity Tiers nach Bedarf hinzufügen, bearbeiten und löschen.
 
 .Schritte
 . Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.
@@ -35,7 +35,7 @@ Lizenzen für ONTAP Select Capacity Tiers können nach Bedarf hinzugefügt, bear
 
 == Management der Capacity Pool Lizenzen
 
-Sie können Lizenzen für den ONTAP Select Capacity Pool nach Bedarf hinzufügen, bearbeiten und löschen.
+Sie können Lizenzen für ONTAP Select-Kapazitätspools nach Bedarf hinzufügen, bearbeiten und löschen.
 
 .Schritte
 . Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.
@@ -83,25 +83,25 @@ So verlängern Sie eine vorhandene Lizenz:
 
 == Installieren Sie eine Capacity Pool-Lizenz neu
 
-Jede Lizenz für den aktiven Kapazitätspool ist auf eine bestimmte License Manager-Instanz gesperrt, die in einer Instanz des Deploy Administration Utility enthalten ist. Wenn Sie eine Lizenz für den Kapazitäts-Pool verwenden und die Deploy-Instanz wiederherstellen oder wiederherstellen, ist die ursprüngliche Lizenz ungültig. Sie müssen eine neue Kapazitätslizenzdatei generieren und dann die Lizenz auf die neue Deploy-Instanz installieren.
+Jede Lizenz für einen aktiven Kapazitätspool ist an eine bestimmte Instanz von License Manager gebunden, die in einer Instanz des Dienstprogramms Deploy Administration enthalten ist. Wenn Sie eine Capacity Pool-Lizenz verwenden und die bereitzustellende Instanz wiederherstellen oder wiederherstellen, ist die ursprüngliche Lizenz nicht mehr gültig. Sie müssen eine neue Kapazitätslizenzdatei generieren und dann die Lizenz auf die neue Deploy-Instanz installieren.
 
 .Bevor Sie beginnen
-* Ermitteln Sie alle Kapazitätspool-Lizenzen, die von der ursprünglichen implementierten Instanz verwendet werden.
+* Ermitteln Sie alle Kapazitäts-Pool-Lizenzen, die von der ursprünglichen Instanz verwendet werden.
 * Wenn Sie ein Backup beim Erstellen der neuen Deploy-Instanz wiederherstellen, ermitteln Sie, ob das Backup aktuell und aktuell ist.
 * Suchen Sie die ONTAP Select Nodes, die kürzlich von der ursprünglichen Deploy-Instanz erstellt wurden (nur, wenn ein aktuelles Backup der ursprünglichen implementierten Instanz nicht in der neuen Deploy-Instanz wiederhergestellt wird).
 * Stellen Sie die Instanz zum Bereitstellen wieder her
 
 
 .Über diese Aufgabe
-Auf hohem Niveau besteht diese Aufgabe aus drei Teilen. Sie müssen alle von der Deploy-Instanz verwendeten Capacity Pool-Lizenzen neu generieren und installieren. Nachdem alle Lizenzen auf der neuen Deploy-Instanz neu installiert wurden, können Sie bei Bedarf die Seriennummer zurücksetzen. Wenn sich die IP-Adresse für die Bereitstellung geändert hat, müssen Sie jeden ONTAP Select-Knoten, der eine Lizenz für den Kapazitätspools verwendet, aktualisieren.
+Auf hohem Niveau besteht diese Aufgabe aus drei Teilen. Sie müssen alle von der bereitzustellenden Instanz verwendeten Kapazitäts-Pool-Lizenzen neu generieren und installieren. Nachdem alle Lizenzen auf der neuen Deploy-Instanz neu installiert wurden, können Sie bei Bedarf die Seriennummer zurücksetzen. Wenn sich die IP-Adresse für die Bereitstellung geändert hat, müssen Sie schließlich jeden ONTAP Select-Node aktualisieren, der eine Lizenz für Kapazitätspools verwendet.
 
 .Schritte
-. Wenden Sie sich an den NetApp Support und besitzen alle Capacity Pool-Lizenzen für die ursprüngliche Deploy-Instanz Unbounded und Unregistered.
+. Wenden Sie sich an den Support von NetApp, und lassen Sie alle Kapazitäts-Pool-Lizenzen für die ursprüngliche Instanz ungebunden und unregistriert sein.
 . Erwerben und Herunterladen einer neuen Lizenzdatei für jede der Capacity Pool-Lizenzen.
 +
-Siehe link:task_lic_acquire_cp.html["Erwerben einer Capacity Pool-Lizenz"] Finden Sie weitere Informationen.
+Weitere Informationen finden Sie unter link:task_lic_acquire_cp.html["Erwerben einer Capacity Pool-Lizenz"] .
 
-. Installieren Sie die Lizenzen für den Kapazitäts-Pool auf der neuen Deploy-Instanz:
+. Installieren Sie die Capacity Pool-Lizenzen bei der neuen Deploy-Instanz:
 +
 .. Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
 .. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
@@ -124,7 +124,7 @@ Siehe link:task_lic_acquire_cp.html["Erwerben einer Capacity Pool-Lizenz"] Finde
 
 
 
-. Wenn sich die der neuen Deploy-Instanz zugewiesene IP-Adresse von der IP-Adresse der ursprünglichen Deploy-Instanz unterscheidet, müssen Sie die IP-Adresse an jedem ONTAP Select-Knoten aktualisieren, der eine Capacity Pools-Lizenz verwendet:
+. Wenn die der neuen Bereitstellungsinstanz zugewiesene IP-Adresse von der IP-Adresse der ursprünglichen Bereitstellungsinstanz abweicht, müssen Sie die IP-Adresse auf jedem ONTAP Select-Node, der eine Lizenz für Kapazitätspools verwendet, aktualisieren:
 +
 .. Melden Sie sich bei der ONTAP Befehlszeilenschnittstelle des ONTAP Select Node an.
 .. Wechseln Sie in den erweiterten Berechtigungsmodus:
@@ -147,11 +147,11 @@ Siehe link:task_lic_acquire_cp.html["Erwerben einer Capacity Pool-Lizenz"] Finde
 
 == Umwandeln einer Evaluierungslizenz in eine Produktionslizenz
 
-Sie können ein ONTAP Select Evaluation-Cluster mithilfe des Deploy-Administration Utility eine Lizenz für Kapazitätsstufen in der Produktion verwenden.
+Sie können ein ONTAP Select Evaluierungscluster mit dem Deploy Administration Utility aktualisieren, um eine Lizenz für die Kapazitätsebene in der Produktion zu verwenden.
 
 .Bevor Sie beginnen
 * Jeder Node muss über genügend Storage verfügen, um die für eine Produktionslizenz erforderlichen Mindestspeicheranforderungen zu unterstützen.
-* Für jeden Node im Evaluation-Cluster müssen Sie Lizenzen für Kapazitätsstufen besitzen.
+* Für jeden Node im Evaluierungscluster müssen Sie über eine Capacity Tier-Lizenz verfügen.
 
 
 .Über diese Aufgabe

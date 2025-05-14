@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
-keywords: license, licensing, capacity pools, capacity tiers, comparing 
-summary: Es bestehen verschiedene Unterschiede zwischen den Lizenzmodellen für Kapazitäts- und Kapazitäts-Tiers. 
+keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
+summary: Es gibt verschiedene Unterschiede zwischen den Kapazitäts-Pools und den Lizenzmodellen für Kapazitäts-Tiers. 
 ---
-= Vergleichen Sie die ONTAP Select Kapazitäts-Pools und die Lizenzierung von Kapazitäts-Tiers
+= Vergleichen Sie die Lizenzen für ONTAP Select-Kapazitäts-Pools und Kapazitäts-Tiers
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -21,7 +21,7 @@ In der folgenden Tabelle werden die beiden von ONTAP Select unterstützten Produ
 |  | Kapazitäts-Tiers | Kapazitäts-Pools 
 
 
-| Seriennummer der Lizenz | Neun Ziffern von NetApp generiert und einem Node zugewiesen | Neun Stellen werden von NetApp generiert und einem Kapazitäts-Pool zugewiesen 
+| Seriennummer der Lizenz | Neun Ziffern von NetApp generiert und einem Node zugewiesen | Von NetApp generierte neun Stellen, die einem Kapazitäts-Pool zugewiesen sind 
 
 
 | Lizenzsperre | Auf ONTAP Select-Node gesperrt | An License Manager-Instanz gesperrt 

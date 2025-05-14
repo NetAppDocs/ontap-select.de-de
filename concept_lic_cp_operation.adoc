@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_operation.html 
-keywords: license, licensing, capacity pools, operation details 
-summary: Das Modell der Kapazitäts-Pools unterscheidet sich vom Modell der Kapazitäts-Tiers. Die Storage-Kapazität wird jedem einzelnen Node nicht mehr bereitgestellt, sondern einem Pool zugewiesen, der von vielen Nodes gemeinsam genutzt wird. Zusätzliche Komponenten und Prozesse wurden erstellt, um das Modell der Kapazitäts-Pools zu unterstützen. 
+keywords: license, licensing, Capacity Pools, operation details 
+summary: Das Lizenzmodell für Kapazitäts-Pools unterscheidet sich vom Modell für Kapazitäts-Tiers. Die Storage-Kapazität wird jedem einzelnen Node nicht mehr bereitgestellt, sondern einem Pool zugewiesen, der von vielen Nodes gemeinsam genutzt wird. Zur Unterstützung des Kapazitäts-Pools-Modells wurden zusätzliche Komponenten und Prozesse erstellt. 
 ---
 = Operative Details des ONTAP Select Kapazitäts-Pools-Lizenzmodells
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Das Modell der Kapazitäts-Pools unterscheidet sich vom Modell der Kapa
 
 
 [role="lead"]
-Das Modell der Kapazitäts-Pools unterscheidet sich vom Modell der Kapazitäts-Tiers. Die Storage-Kapazität wird jedem einzelnen Node nicht mehr bereitgestellt, sondern einem Pool zugewiesen, der von vielen Nodes gemeinsam genutzt wird. Zusätzliche Komponenten und Prozesse wurden erstellt, um das Modell der Kapazitäts-Pools zu unterstützen.
+Das Lizenzmodell für Kapazitäts-Pools unterscheidet sich vom Modell für Kapazitäts-Tiers. Die Storage-Kapazität wird jedem einzelnen Node nicht mehr bereitgestellt, sondern einem Pool zugewiesen, der von vielen Nodes gemeinsam genutzt wird. Zur Unterstützung des Kapazitäts-Pools-Modells wurden zusätzliche Komponenten und Prozesse erstellt.
 
 
 
@@ -22,8 +22,8 @@ Das Modell der Kapazitäts-Pools unterscheidet sich vom Modell der Kapazitäts-T
 
 Der License Manager wird in jeder Instanz des Dienstprogramms Deploy Administration als separater Prozess ausgeführt. Einige der von LM bereitgestellten Funktionen umfassen:
 
-* Erstellen Sie für jeden Node eine eindeutige 20-stellige Seriennummer, die auf der Seriennummer der Kapazitäts-Pool-Lizenz basiert
-* Erstellen Sie unter Berücksichtigung von Anforderungen der ONTAP Select Nodes Mietverträge für Kapazität aus den gemeinsamen Kapazitäts-Pools
+* Basierend auf der Lizenznummer des Kapazitäts-Pools wird für jeden Node eine eindeutige, zwanzig-stellige Seriennummer generiert
+* Erstellung von Leasingverträgen für Kapazität aus den Pools mit gemeinsam genutzter Kapazität basierend auf Anforderungen der ONTAP Select Nodes
 * Erstellen Sie Informationen zur Pool-Nutzung über die Benutzeroberfläche „Bereitstellen“
 
 
@@ -31,7 +31,7 @@ Der License Manager wird in jeder Instanz des Dienstprogramms Deploy Administrat
 
 == Leasing-Merkmale
 
-Dem Storage, der für jedes Daten-Aggregat auf einem Node mit einer Kapazitäts-Pool-Lizenz zugewiesen ist, muss ein zugehöriger Leasing vorhanden sein. Der Node fordert ein Storage-Leasing an, und wenn die Kapazität verfügbar ist, reagiert der License Manager mit einem Leasing. Jeder Leasingvertrag hat die folgenden expliziten oder impliziten Attribute:
+Dem für jedes Datenaggregat auf einem Node mit einer Lizenz im Kapazitäts-Pool zugewiesenen Storage muss ein Leasing zugewiesen sein. Der Node fordert ein Storage-Leasing an, und wenn die Kapazität verfügbar ist, reagiert der License Manager mit einem Leasing. Jeder Leasingvertrag hat die folgenden expliziten oder impliziten Attribute:
 
 * Lizenzmanager jeder ONTAP Select-Knoten ist einer Lizenz-Manager-Instanz zugeordnet
 * Kapazitäts-Pool jeder ONTAP Select-Node ist einem Kapazitäts-Pool zugeordnet
@@ -43,7 +43,7 @@ Dem Storage, der für jedes Daten-Aggregat auf einem Node mit einer Kapazitäts-
 
 == Lizenzsperre ID
 
-Jede Instanz des License Manager und damit jede entsprechende Deploy Utility-Instanz wird mit einer eindeutigen 128-Bit-Nummer identifiziert. Diese Zahl wird mit der neunstelligen Lizenzseriennummer für den Kapazitätspool kombiniert, um den Pool auf eine bestimmte License Manager-Instanz zu sperren (bei der es sich um eine Bereitstellungsinstanz handelt). Sie müssen beide Werte auf der NetApp Support-Website beim Generieren der NetApp License File (NLF) angeben.
+Jede Instanz des License Manager und damit jede entsprechende Deploy Utility-Instanz wird mit einer eindeutigen 128-Bit-Nummer identifiziert. Diese Nummer wird mit der neunstelligen Lizenz-Seriennummer für den Kapazitätspool kombiniert, um den Pool für eine bestimmte License Manager-Instanz zu sperren (die im Prinzip eine Bereitstellungsinstanz ist). Sie müssen beide Werte auf der NetApp Support-Website beim Generieren der NetApp License File (NLF) angeben.
 
 Sie können die Lizenzsperre-ID für Ihre Deploy-Instanz mithilfe der Web-Benutzeroberfläche auf folgende Weise bestimmen:
 
@@ -55,7 +55,7 @@ Sie können die Lizenzsperre-ID für Ihre Deploy-Instanz mithilfe der Web-Benutz
 
 == Basis-Leasing-Operationen
 
-Ein ONTAP Select Node muss bei jedem Erstellen, erweitern oder Ändern eines Datenaggregats einen gültigen Kapazitätsleast anfordern oder anfordern. Es kann ein Leasing aus einer vorherigen Anfrage verwendet werden, das noch gültig ist, oder bei Bedarf ein neuer Leasing angefordert werden. Der Knoten ONTAP Select zur Ermittlung eines Leasing-Kapazitäts-Pools durchgeführt folgende Schritte:
+Ein ONTAP Select Node muss bei jedem Erstellen, erweitern oder Ändern eines Datenaggregats einen gültigen Kapazitätsleast anfordern oder anfordern. Es kann ein Leasing aus einer vorherigen Anfrage verwendet werden, das noch gültig ist, oder bei Bedarf ein neuer Leasing angefordert werden. Der ONTAP Select Node unternimmt folgende Schritte, um einen Kapazitäts-Pool-Leasing ausfindig zu machen:
 
 . Wenn sich ein vorhandener Leasing auf dem Node befindet, wird er verwendet, solange alle folgenden Fällen zutrifft:
 +
@@ -70,7 +70,7 @@ Ein ONTAP Select Node muss bei jedem Erstellen, erweitern oder Ändern eines Dat
 
 == Rückgabe der Speicherkapazität an einen Kapazitäts-Pool
 
-Die Speicherkapazität wird nach Bedarf aus einem Kapazitäts-Pool zugewiesen. Jede neue Anfrage kann den verfügbaren Speicher im Pool verringern. Die Storage-Kapazität wird in verschiedenen Situationen an den Pool zurückgegeben. Dies umfasst:
+Die Speicherkapazität wird je nach Bedarf aus einem Kapazitäts-Pool zugewiesen, und jede neue Anforderung kann den verfügbaren Speicher im Pool verringern. Die Storage-Kapazität wird in verschiedenen Situationen an den Pool zurückgegeben. Dies umfasst:
 
 * Eine Leasing-Option für ein Datenaggregat läuft ab und wird nicht durch den Node verlängert
 * Das Datenaggregat wird gelöscht

@@ -50,7 +50,7 @@ Für ONTAP Select sind mehrere zusätzliche Softwarepakete erforderlich. Die gen
 
 NOTE: Einige der erforderlichen Pakete sind möglicherweise bereits installiert, wenn Sie während der Installation des Linux-Servers für die Softwareauswahl Virtualized Host gewählt haben. Möglicherweise müssen Sie das openvswitch-Paket vom Quellcode installieren, wie in beschrieben link:https://docs.openvswitch.org/en/latest/intro/install/general/["Öffnen Sie die vSwitch-Dokumentation"^].
 
-Weitere Informationen zu den erforderlichen Paketen und anderen Konfigurationsanforderungen finden Sie im link:https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool"^].
+Weitere Informationen zu den erforderlichen Paketen und anderen Konfigurationsanforderungen finden Sie im link:https://imt.netapp.com/matrix/#welcome["Interoperabilitäts-Matrix-Tool"^].
 
 .Konfiguration der Speicherpools
 Ein ONTAP Select Storage Pool ist ein logischer Daten-Container, der den zugrunde liegenden physischen Storage abstrahiert. Sie müssen die Speicherpools auf den KVM-Hosts verwalten, auf denen ONTAP Select bereitgestellt wird.

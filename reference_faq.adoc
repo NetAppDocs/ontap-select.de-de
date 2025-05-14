@@ -95,20 +95,20 @@ Ein Upgrade auf ONTAP Select Deploy 2.6 ermöglicht die Unterstützung dieser Ä
 Das Ändern der Netzwerkdetails der Bereitstellungsinstanz nach der Ausführung in einer Umgebung wird nicht unterstützt. Weitere Informationen finden Sie im link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["Knowledge Base-Artikel – Ändern der DNS-Konfiguration der ONTAP Deploy-Instanz"^].
 
 .Wie erkennt Deploy, dass ONTAP Select Lizenzen verlängert werden?
-Die Methode ist für alle Lizenzen identisch, obwohl die Einzelheiten davon abhängen, ob es sich um eine Kapazitäts- oder eine Kapazitäts-Pool-Lizenz handelt.
+Die Methode ist für alle Lizenzen gleich, obwohl die Einzelheiten davon abhängen, ob es sich um eine Capacity Tier oder eine Capacity Pool Lizenz handelt.
 
 * ONTAP Select Deploy erkennt, ob Lizenzen und Supportverträge durch den Kauf einer aktualisierten Lizenzdatei von NetApp verlängert werden. Die Lizenzdatei (.NLF) enthält das Kapazitäts-, Start- und Enddatum und wird auf dem generiert link:https://mysupport.netapp.com/site/["NetApp Support Website"^], Und dann auf dem Deployment-Server aktualisiert.
 +
 
-NOTE: Sie können die NLF über die Funktionen *Hinzufügen* und *Update* in den Deploy-Server laden. *Add* fügt dem Server neue Lizenzen hinzu und *Update* aktualisiert vorhandene Dateien mit Informationen wie Kapazität, Knotenlizenz (Standard, Premium, Premium XL), Start- und Enddaten des Supports (Capacity-Tier-Lizenz) oder Start- und Enddaten des Abonnements (Capacity-Pool-Lizenz).
+NOTE: Sie können die NLF über die Funktionen *Hinzufügen* und *Update* in den Deploy-Server laden. *Add* fügt dem Server neue Lizenzen hinzu und *Update* aktualisiert vorhandene Dateien mit Informationen wie Kapazität, Knotenlizenz (Standard, Premium, Premium XL), Start- und Enddaten des Supports (Capacity Tier Lizenz) oder Start- und Enddaten des Abonnements (Capacity Pool Lizenz).
 
 +
 
 CAUTION: Versuchen Sie nicht, die Lizenzdatei zu ändern. Dadurch wird der Sicherheitsschlüssel ungültig und die Lizenz ungültig.
 
-* Eine *Capacity-Tier-Lizenz* ist eine permanente Lizenz pro Node und ist an die Seriennummer des ONTAP Select-Node gebunden. Es wird mit einem separaten Support-Vertrag verkauft. Die Lizenz ist unbefristet, aber der Supportvertrag muss verlängert werden, um auf ONTAP Select Upgrades zugreifen zu können und Unterstützung durch den technischen Support von NetApp zu erhalten. Außerdem ist ein aktueller Supportvertrag erforderlich, um Lizenzparameter wie z. B. Kapazität oder Node-Größe zu ändern.
+* Eine *Capacity Tier Lizenz* ist eine permanente Lizenz pro Node, die an die Seriennummer des ONTAP Select-Knotens gebunden ist. Es wird mit einem separaten Support-Vertrag verkauft. Die Lizenz ist unbefristet, aber der Supportvertrag muss verlängert werden, um auf ONTAP Select Upgrades zugreifen zu können und Unterstützung durch den technischen Support von NetApp zu erhalten. Außerdem ist ein aktueller Supportvertrag erforderlich, um Lizenzparameter wie z. B. Kapazität oder Node-Größe zu ändern.
 +
-Zum Erwerb eines Lizenzaktualisierungen der Kapazitätsstufe, von Parameteränderungen oder der Verlängerung von Support-Verträgen ist im Rahmen der Bestellung die Seriennummer des Node erforderlich. Die Seriennummern der Kapazitäts-Tier-Nodes sind neun Ziffern lang und beginnen mit der Nummer „32“.
+Beim Erwerb eines Lizenzaktualisierungen, einer Parameteränderung oder einer Verlängerung von Support-Verträgen ist die Seriennummer des Node im Rahmen der Bestellung erforderlich. Die Seriennummern der Knoten der Kapazitätsebene sind neun Ziffern lang und beginnen mit der Nummer „32“.
 
 +
 Sobald der Kauf abgeschlossen ist und die Lizenzdatei generiert wurde, wird sie mit der Funktion *Update* auf den Deploy-Server hochgeladen.
@@ -119,7 +119,7 @@ Sobald der Kauf abgeschlossen ist und die Lizenzdatei generiert wurde, wird sie 
 .Wie erkennt Deploy, ob die Nodes über eine Verlängerung der Lizenzen oder einen Supportvertrag verfügen?
 Durch den Kauf, die Generierung und das Hochladen einer aktualisierten Lizenzdatei erkennt Deploy erneuerte Lizenzen und Supportverträge.
 
-Wenn das Enddatum eines Capacity Tier-Supportvertrags verstrichen ist, kann der Node zwar weiter ausgeführt werden, doch können Sie ONTAP Updates nicht herunterladen und installieren oder sich telefonisch an den technischen Support von NetApp wenden, ohne den Supportvertrag zunächst auf den neuesten Stand zu bringen.
+Wenn das Enddatum eines Capacity Tier-Supportvertrags verstrichen ist, kann der Node zwar weiter ausgeführt werden, Sie können jedoch keine ONTAP Updates herunterladen und installieren oder sich an den technischen Support von NetApp wenden, ohne den Supportvertrag vorher auf den neuesten Stand zu bringen.
 
 Wenn ein Kapazitäts-Pool-Abonnement ausfällt, warnt das System Sie zuerst, aber nach 30 Tagen, wenn das System heruntergefahren wird, wird es erst neu gestartet, wenn ein aktualisiertes Abonnement auf dem Bereitstellungs-Server installiert wird.
 

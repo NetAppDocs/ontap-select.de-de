@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task_lic_acquire_ct.html 
-keywords: license, licensing, acquire, capacity tiers 
-summary: Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP Select Node eine Lizenzdatei anfordern. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt. 
+keywords: license, licensing, acquire, Capacity Tiers 
+summary: Bei Nutzung der Capacity-Tiers-Lizenzierung müssen Sie für jeden ONTAP Select Node eine Lizenzdatei beschaffen. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt. 
 ---
-= Erwerben Sie eine ONTAP Select Capacity Tier-Lizenz
+= Erwerben einer ONTAP Select Capacity Tier Lizenz
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP
 
 
 [role="lead"]
-Bei der Lizenzierung der Kapazitätsebenen müssen Sie für jeden ONTAP Select Node eine Lizenzdatei anfordern. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt.
+Bei Nutzung der Capacity-Tiers-Lizenzierung müssen Sie für jeden ONTAP Select Node eine Lizenzdatei beschaffen. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt.
 
 .Bevor Sie beginnen
 Sie müssen dem Node von NetApp die neunstellige Lizenzseriennummer zugewiesen haben. Bevor Sie versuchen, eine Lizenzdatei zu erwerben, sollten Sie mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten.
 
 .Über diese Aufgabe
-Diese Aufgabe muss für jeden ONTAP Select Node durchgeführt werden, der eine Lizenz für Kapazitätsstufen benötigt.
+Sie müssen diese Aufgabe für jeden ONTAP Select Node ausführen, der eine Lizenz für die Kapazitätsschicht benötigt.
 
 .Schritte
 . Greifen Sie über einen Webbrowser auf die ONTAP Select-Lizenzwebsite zu:

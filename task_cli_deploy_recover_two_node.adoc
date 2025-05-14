@@ -41,7 +41,7 @@ Abhängig vom verwendeten Wiederherstellungsverfahren sollten Sie in der Lage se
 Sie müssen die IP-Adresse der ursprünglichen virtuellen Bereitstellungsdienstprogramm kennen, die fehlgeschlagen ist.
 
 .Lizenzierung der Storage-Kapazität
-Sie müssen ermitteln, ob Kapazitäts-Pools oder die Lizenzierung von Kapazitäts-Tiers verwendet werden. Wenn Sie die Kapazitätspools-Lizenzierung verwenden, müssen Sie jede Lizenz für den Kapazitäts-Pool nach der Wiederherstellung oder Wiederherstellung der Deploy-Instanz neu installieren.
+Sie müssen ermitteln, ob Kapazitäts-Pools oder die Lizenzierung der Kapazitäts-Tiers verwendet werden. Wenn Sie die Lizenzierung von Kapazitätspools verwenden, müssen Sie jede Lizenz für den Kapazitätspool neu installieren, nachdem Sie die Instanz wiederhergestellt oder wiederhergestellt haben.
 
 .Entscheidung, welches Wiederherstellungsverfahren verwendet werden soll
 Sie müssen entscheiden, welches Verfahren bei der Wiederherstellung einer Instanz des Dienstprogramms ONTAP Select Deploy verwendet werden soll. Ihre Entscheidung hängt davon ab, ob Sie ein Backup der Konfigurationsdaten aus dem ursprünglichen Dienstprogramm für fehlgeschlagene Bereitstellung haben, das das ONTAP Select-Cluster mit zwei Nodes enthält.
@@ -115,7 +115,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .Nachdem Sie fertig sind
-Wenn Sie die Lizenzierung der Kapazitäts-Pools verwenden, müssen Sie jede Lizenz für einen Kapazitäts-Pool neu installieren. Weitere Informationen finden Sie unter _Neuinstallation einer Capacity Pool Lizenz_.
+Wenn Sie die Lizenzierung von Kapazitätspools verwenden, müssen Sie jede Lizenz für den Kapazitätspool neu installieren. Weitere Informationen finden Sie unter _Neuinstallieren einer Capacity Pool-Lizenz_.
 
 
 
@@ -207,7 +207,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .Nachdem Sie fertig sind
-Wenn Sie die Lizenzierung der Kapazitäts-Pools verwenden, müssen Sie jede Lizenz für einen Kapazitäts-Pool neu installieren. Weitere Informationen finden Sie unter Neu installieren einer Capacity Pool-Lizenz.
+Wenn Sie die Lizenzierung von Kapazitätspools verwenden, müssen Sie jede Lizenz für den Kapazitätspool neu installieren. Weitere Informationen finden Sie unter Neuinstallieren einer Lizenz für den Kapazitätspool.
 
 .Verwandte Informationen
 * link:task_install_deploy.html["Installieren Sie ONTAP Select Deploy"]

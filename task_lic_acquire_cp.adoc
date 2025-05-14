@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task_lic_acquire_cp.html 
-keywords: license, licensing, acquire, capacity pools 
-summary: Sie müssen für jeden von den ONTAP Select-Nodes verwendeten Kapazitäts-Pool eine Lizenzdatei beschaffen. Die Lizenzdatei definiert die Speicherkapazität und den Ablauf des Pools. Sie ist für den License Manager gesperrt, indem sie eine Kombination aus der eindeutigen Lizenzseriennummer, die NetApp zugewiesen hat, und der mit der Deploy-Instanz verknüpften Lizenzsperre-ID verwenden. 
+keywords: license, licensing, acquire, Capacity Pools 
+summary: Für jeden von den ONTAP Select-Nodes verwendeten Kapazitäts-Pool muss eine Lizenzdatei erworben werden. Die Lizenzdatei definiert die Speicherkapazität und den Ablauf des Pools. Sie ist für den License Manager gesperrt, indem sie eine Kombination aus der eindeutigen Lizenzseriennummer, die NetApp zugewiesen hat, und der mit der Deploy-Instanz verknüpften Lizenzsperre-ID verwenden. 
 ---
 = Erwerben Sie eine ONTAP Select Capacity Pool-Lizenz
 :hardbreaks:
@@ -14,18 +14,18 @@ summary: Sie müssen für jeden von den ONTAP Select-Nodes verwendeten Kapazitä
 
 
 [role="lead"]
-Sie müssen für jeden von den ONTAP Select-Nodes verwendeten Kapazitäts-Pool eine Lizenzdatei beschaffen. Die Lizenzdatei definiert die Speicherkapazität und den Ablauf des Pools. Sie ist für den License Manager gesperrt, indem sie eine Kombination aus der eindeutigen Lizenzseriennummer, die NetApp zugewiesen hat, und der mit der Deploy-Instanz verknüpften Lizenzsperre-ID verwenden.
+Für jeden von den ONTAP Select-Nodes verwendeten Kapazitäts-Pool muss eine Lizenzdatei erworben werden. Die Lizenzdatei definiert die Speicherkapazität und den Ablauf des Pools. Sie ist für den License Manager gesperrt, indem sie eine Kombination aus der eindeutigen Lizenzseriennummer, die NetApp zugewiesen hat, und der mit der Deploy-Instanz verknüpften Lizenzsperre-ID verwenden.
 
 .Bevor Sie beginnen
-Sie müssen über die neunstellige Lizenzseriennummer verfügen, die NetApp dem Kapazitäts-Pool zugewiesen hat. Bevor Sie versuchen, eine Lizenzdatei zu erwerben, sollten Sie mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten.
+Dem Kapazitäts-Pool muss die neunstellige Lizenzseriennummer von NetApp zugewiesen werden. Bevor Sie versuchen, eine Lizenzdatei zu erwerben, sollten Sie mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten.
 
 .Über diese Aufgabe
-Sie müssen diese Aufgabe für jeden Kapazitätspool ausführen, der von den ONTAP Select-Nodes verwendet wird.
+Sie müssen diese Aufgabe für jeden von den ONTAP Select-Nodes verwendeten Kapazitätspool ausführen.
 
 .Schritte
 . Greifen Sie über einen Webbrowser auf die NetApp Support-Website zu und melden Sie sich an.
 . Klicken Sie oben auf *Systems* und dann auf *Software-Lizenzen*.
-. Geben Sie die Lizenzseriennummer für den Kapazitätspool ein und klicken Sie auf *Go!*.
+. Geben Sie die Lizenzseriennummer für den Kapazitäts-Pool ein und klicken Sie auf *Go!*.
 . Navigieren Sie auf der Seite Lizenzdetails zur Spalte *Produktdetails*.
 . Klicken Sie in der entsprechenden Zeile auf *NetApp Lizenzdatei erhalten*.
 . Geben Sie die Lizenzsperre-ID für Ihre ONTAP Select-Deploy-Instanz ein, und klicken Sie auf *Submit*.
@@ -34,4 +34,4 @@ Sie müssen diese Aufgabe für jeden Kapazitätspool ausführen, der von den ONT
 
 
 .Nachdem Sie fertig sind
-Sie müssen die Lizenzdatei in das Deploy Administration Utility hochladen, bevor der Kapazitäts-Pool von einem ONTAP Select-Node verwendet werden kann.
+Sie müssen die Lizenzdatei in das Dienstprogramm Deploy Administration hochladen, bevor der Kapazitäts-Pool von einem ONTAP Select-Node verwendet werden kann.

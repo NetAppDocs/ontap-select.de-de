@@ -54,5 +54,4 @@ ONTAP Select 9.8 ist zunächst installiert:: Sie können nicht auf Version 9.7 z
 VMXNET3 ist der Standard-Netzwerktreiber bei neuen Cluster-Implementierungen auf VMware ESXi. Wenn Sie einen vorhandenen ONTAP Select-Knoten aktualisieren, auf dem ONTAP Select 9.4 oder eine frühere Version ausgeführt wird, wird der Netzwerktreiber nicht automatisch aktualisiert. Sie müssen manuell ein Upgrade auf VMXNET3 durchführen. Wenden Sie sich an den NetApp Support, um Hilfe beim Upgrade zu erhalten.
 
 .Verwandte Informationen
-* link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP Upgrade-Übersicht"^]
-
+link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP Upgrade-Übersicht"^]

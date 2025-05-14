@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_lic_platforms.html 
 keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
-summary: Sie können eine Lizenz für eine ONTAP Select Kapazitätsschicht oder den Kapazitäts-Pool auf einer der drei Kapazitätsebenen der Plattform erwerben. Diese Lizenzangebote bestimmen die Funktionen der Hosts, auf denen Sie ONTAP Select implementieren. 
+summary: Sie können eine ONTAP Select Kapazitäts-Tiering- oder Kapazitäts-Pool-Lizenz für eine von drei Plattformkapazitätsstufen erwerben. Diese Lizenzangebote bestimmen die Funktionen der Hosts, auf denen Sie ONTAP Select implementieren. 
 ---
-= Verstehen Sie die Plattform-Lizenzangebote für ONTAP Select
+= Hier finden Sie Informationen zu den Plattformlizenzangeboten für ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Sie können eine Lizenz für eine ONTAP Select Kapazitätsschicht oder 
 
 
 [role="lead"]
-Sie können eine Lizenz für eine ONTAP Select Kapazitätsschicht oder den Kapazitäts-Pool auf einer der drei Kapazitätsebenen der Plattform erwerben. Diese Lizenzangebote bestimmen die Funktionen der Hosts, auf denen Sie ONTAP Select implementieren.
+Sie können eine ONTAP Select Capacity Tier- oder Capacity Pool-Lizenz im Standard-, Premium- oder Premium-XL-Level erwerben. Diese Lizenzangebote bestimmen die Funktionen der Hosts, auf denen Sie ONTAP Select implementieren.
 
 
 
 == Vorteile einer Plattformlizenz
 
-In einem bestimmten Lizenzangebot werden die Funktionen des Hypervisor-Hosts in zwei Bereichen festgelegt und eingeschränkt:
+Ein spezifisches Lizenzangebot definiert und beschränkt die Funktionen des Hypervisor-Hosts in zwei Bereichen:
 
 * Instanztyp (CPU, Arbeitsspeicher)
 * Zusätzliche Funktionen
@@ -53,7 +53,7 @@ Das Standardangebot umfasst folgende Funktionen:
 Das Premium-Angebot umfasst folgende Funktionen:
 
 * Kleiner oder mittlerer Instanztyp
-* Festplattenlaufwerke (HDD) oder Solid State-Laufwerke (SSD)
+* Festplatten (HDD) oder Solid State Drives (SSD)
 * Lokaler Hardware-RAID-Controller oder Software-RAID
 * VNAS
 * MetroCluster SDS
@@ -73,4 +73,112 @@ Das Premium XL-Angebot bietet folgende Funktionen:
 
 
 
-NOTE: Die Verwendung des Typs der großen Instanz oder von NVMe-Laufwerken in einer SW-RAID-Konfiguration wird von KVM nicht unterstützt.
+NOTE: Die Verwendung des Typs der großen Instanz oder von NVMe-Laufwerken in einer SW-RAID-Konfiguration wird auf Kernel-Based Virtual Machine (KVM) nicht unterstützt.
+
+
+
+== Vergleichen Sie den Hardware-Support für Plattform-Lizenzangebote
+
+Die Standard-, Premium- und Premium-XL-Lizenzangebote unterstützen ein breites Spektrum an Hardware und Software. Aktuelle Informationen zu Hardware- und Softwareversionen finden Sie unter link:https://mysupport.netapp.com/matrix/["Interoperabilitäts-Matrix-Tool"^].
+
+[role="tabbed-block"]
+====
+.Kernelement
+--
+[cols="5"30"]
+|===
+
+
+2+| Typ des Kernelements 3+| Beschreibung 
+
+
+2+| Host-Protokolle 3+| NFS, SMB/CIFS, iSCSI und NVMe over TCP 
+
+
+2+| Implementierungsoptionen 3+| Cluster mit einem Node, Cluster mit zwei Nodes (HA-Paar), Cluster mit vier, sechs oder acht Nodes 
+
+
+2+| Unterstützte Kapazität (pro Node) 3+| Bis zu 400 TB Rohdaten (ESXi und KVM) 
+|===
+--
+.Trennt
+--
+[cols="5"30"]
+|===
+
+
+2+| Hardwaretyp 3+| Beschreibung 
+
+
+2+| Instanzgröße | Klein | Mittel | Groß 
+
+
+2+| CPU Familie | Intel Xeon E5-26xx v3 (Haswell) oder höher | Intel Xeon E5-26xx v3 (Haswell) oder höher | Intel Xeon E5-26xx v3 (Haswell) oder höher 
+
+
+2+| ONTAP Select-CPU/Speicher | 4 virtuelle CPUs (vCPUs) / 16 GB RAM | 8 vCPUs/64 GB RAM | 16 vCPUs/128 GB RAM 
+
+
+2+| Mindestanforderungen an Host-CPU/Speicher ^1^ | 6 Cores / 24 GB RAM | 10 Cores / 72 GB RAM | 18 Kerne / 136 GB RAM 
+
+
+2+| Netzwerk (pro Node) 3+| Mindestens zwei 1-GbE-Ports für ein Single-Node-Cluster mindestens vier 1-GbE-Ports für ein Cluster mit zwei Nodes (HA-Paar) mindestens zwei 10-GbE-Ports für ein Cluster mit vier, sechs oder acht Nodes 
+|===
+^1^ geht von zwei Kernen und 8 GB RAM für den Hypervisor aus.
+
+--
+.Storage-Typ
+--
+In der folgenden Tabelle ist der für den angegebenen Speicher erforderliche Mindestlizenztyp aufgeführt. 
+
+[cols="5"30"]
+|===
+
+
+2+| Storage-Typ 3+| Beschreibung 
+
+
+2+| Lizenztyp | Standard | Premium | Pemium XL 
+
+
+2+| Instanzgröße | Klein | Klein und mittel | Klein, mittel und groß 
+
+
+2+| Lokaler das mit Hardware-RAID-Controller | 8 - 60 Laufwerke | 8 - 60 Laufwerke | 8 - 60 Laufwerke 
+
+
+2+| HDD (SAS, NL-SAS, SATA) | Keine Angabe | 4 bis 60 Laufwerke | 4 bis 60 Laufwerke 
+
+
+2+| SSD (SAS) | Keine Angabe | 4 bis 60 Laufwerke (nur SSD) | 4 bis 60 Laufwerke (nur SSD) 
+
+
+2+| Lokaler das mit Software-RAID | Keine Angabe | Keine Angabe | 4–14 Laufwerke (nur NVMe) 
+
+
+2+| Externe Arrays ^1^ 3+| Auf externen Arrays gehostete Datastores werden über FC, FCoE, iSCSI und NFS verbunden (NFS wird bei KVM nicht unterstützt). Diese Datastores sorgen für Hochverfügbarkeit und Ausfallsicherheit. 
+|===
+^1^ die Protokollunterstützung für externe Arrays bezieht sich auf die Konnektivität mit Netzwerk-Storage.
+
+--
+.Software
+--
+[cols="5"30"]
+|===
+
+
+2+| Softwaretyp 3+| Beschreibung 
+
+
+2+| Unterstützung für Hypervisoren (VMware) 3+| VMware vSphere 7.0GA und Updates 1 bis 3C VMware vSphere 8.0GA und Updates 1 bis 3 
+
+
+2+| Unterstützung für Hypervisoren (KVM) 3+| Redhat Enterprise Linux 64-Bit (KVM) 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6 Rocky Linux (KVM) 9 und 8 
+
+
+2+| Managementsoftware 3+| NetApp Active IQ Unified Manager Management Suite ONTAP Select Deploy Utility SnapCenter (optional) 
+|===
+--
+====
+.Verwandte Informationen
+link:concept_lic_production.html["Informieren Sie sich über die Lizenztypen für Kapazitäts-Tiers und Kapazitäts-Pools"].

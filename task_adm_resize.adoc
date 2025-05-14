@@ -17,7 +17,7 @@ summary: Nach der Bereitstellung eines ONTAP Select Clusters können Sie mithilf
 Nach der Bereitstellung eines ONTAP Select Clusters können Sie mithilfe des Deploy Administration Utility den Typ der Hypervisor-Instanz der Nodes aktualisieren.
 
 
-NOTE: Sie können die Anpassung der Cluster-Nodes durchführen, wenn Sie das Lizenzmodell für die Kapazitäts-Tiers und das Lizenzmodell für die Kapazitäts-Pools verwenden.
+NOTE: Sie können die Anpassung der Cluster-Nodes mit dem Lizenzmodell für die Kapazitäts-Tiers und dem Lizenzmodell für Kapazitäts-Pools durchführen.
 
 
 NOTE: Die Größenänderung auf den Typ der großen Instanz wird nur auf ESXi unterstützt.

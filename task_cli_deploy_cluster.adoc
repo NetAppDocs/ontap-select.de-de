@@ -40,7 +40,7 @@ Das Deploy Administration Utility enthält eine einzige Version von ONTAP Select
 
 === Lizenzieren Sie ONTAP Select für eine Produktionsbereitstellung
 
-Bevor Sie ein ONTAP Select Cluster in einer Produktionsumgebung implementieren, müssen Sie eine Storage-Kapazitätslizenz erwerben und die zugehörige Lizenzdatei herunterladen. Sie können den Storage an jedem Node über das Modell _Capacity Tiers_ lizenzieren oder mithilfe des _Capacity Pools_-Modells einen Shared Pool lizenzieren.
+Bevor Sie ein ONTAP Select Cluster in einer Produktionsumgebung implementieren, müssen Sie eine Storage-Kapazitätslizenz erwerben und die zugehörige Lizenzdatei herunterladen. Sie können den Storage an jedem Node mit dem Modell „_Capacity Tiers_“ lizenzieren oder einen gemeinsamen Pool mit dem „_Capacity Pools_“-Modell lizenzieren.
 
 
 
@@ -230,10 +230,10 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 Sie müssen jeden der Nodes im ONTAP Select-Cluster konfigurieren.
 
 .Bevor Sie beginnen
-Sie müssen über die Konfigurationsinformationen für den Node verfügen. Die Lizenzdatei für die Kapazitätsschicht sollte hochgeladen und im Deploy Utility installiert werden.
+Sie müssen über die Konfigurationsinformationen für den Node verfügen. Die Lizenzdatei für die Kapazitätsebene muss über das Dienstprogramm Deploy hochgeladen und installiert werden.
 
 .Über diese Aufgabe
-Sie sollten diese Vorgehensweise zum Konfigurieren der einzelnen Knoten verwenden. Auf den Node in diesem Beispiel wird eine Lizenz für das Kapazitätstier angewendet.
+Sie sollten diese Vorgehensweise zum Konfigurieren der einzelnen Knoten verwenden. In diesem Beispiel wird eine Capacity Tier-Lizenz auf den Node angewendet.
 
 .Schritte
 . Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
@@ -255,7 +255,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.8
 Die RAID-Konfiguration für den Knoten wird mit dem Parameter _Passthrough-Disks_ angezeigt. Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, muss dieser Wert FALSE sein. Wenn Sie Software-RAID verwenden, muss dieser Wert wahr sein.
 
 +
-Für den ONTAP Select-Node wird eine Lizenz für Kapazitätsstufen verwendet.
+Für den ONTAP Select Node wird eine Capacity Tier Lizenz verwendet.
 
 . Zeigen Sie die am Host verfügbare Netzwerkkonfiguration an:
 +

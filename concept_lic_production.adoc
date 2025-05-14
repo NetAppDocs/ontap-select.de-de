@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_lic_production.html 
 keywords: license, licensing, production, purchased, standard, premium, premium xl 
-summary: Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet ist, können Sie die für eine Implementierung in einer Produktionsumgebung erforderlichen Lizenzen erwerben. Es müssen entweder die Kapazitäts-Tiers oder das Lizenzmodell für Kapazitäts-Pools als auch die Storage-Kapazität für jede Implementierung ausgewählt werden. 
+summary: Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet ist, können Sie die für eine Implementierung in einer Produktionsumgebung erforderlichen Lizenzen erwerben. Sie müssen entweder das Lizenzmodell für die Kapazitäts-Tiers oder den Kapazitäts-Pool und die Storage-Kapazität für jede Bereitstellung auswählen. 
 ---
 = Von ONTAP Select erworbene Lizenzen für die Implementierung in der Produktion
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen 
 
 
 [role="lead"]
-Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet ist, können Sie die für eine Implementierung in einer Produktionsumgebung erforderlichen Lizenzen erwerben. Es müssen entweder die Kapazitäts-Tiers oder das Lizenzmodell für Kapazitäts-Pools als auch die Storage-Kapazität für jede Implementierung ausgewählt werden.
+Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet ist, können Sie die für eine Implementierung in einer Produktionsumgebung erforderlichen Lizenzen erwerben. Sie müssen entweder das Lizenzmodell für die Kapazitäts-Tiers oder den Kapazitäts-Pool und die Storage-Kapazität für jede Bereitstellung auswählen.
 
 
 
 == Gemeinsame Lizenzierungsmerkmale
 
-Die Lizenzierungsmodelle _Capacity Tiers_ und _Capacity Pools_ sind in vielerlei Hinsicht sehr unterschiedlich. Die beiden Lizenzmodelle haben jedoch verschiedene gemeinsame Merkmale:
+Die Lizenzierungsmodelle _Capacity Tiers_ und _Capacity Pools_ unterscheiden sich in mehrfacher Hinsicht sehr. Die beiden Lizenzmodelle haben jedoch verschiedene gemeinsame Merkmale:
 
 * Bei der Implementierung von ONTAP Select in einer Produktionsumgebung müssen Sie mindestens eine Lizenz erwerben.
 * Die Speicherkapazität einer Lizenz wird in Schritten von 1 TB zugewiesen.
@@ -35,13 +35,13 @@ Die Lizenzierungsmodelle _Capacity Tiers_ und _Capacity Pools_ sind in vielerlei
 
 
 
-== Lizenzmodell für Kapazitätsstufen
+== Lizenzmodell für Kapazitäts-Tiers
 
-Es gibt verschiedene Merkmale, die auf das Lizenzmodell für Kapazitätsstufen zugeschnitten sind. Hierzu zählen:
+Das Lizenzmodell für Kapazitäts-Tiers zeichnet sich durch verschiedene Merkmale aus, darunter:
 
 * Für jeden ONTAP Select Node müssen Sie eine Lizenz erwerben.
 * Sie können mindestens 1 TB kaufen.
-* Jede Lizenz für Kapazitätsstufen verfügt über eine Storage-Kapazität und ist an einen spezifischen Node gebunden.
+* Jede Capacity-Tier-Lizenz verfügt über eine Speicherkapazität und ist an einen bestimmten Node gebunden.
 * Für jeden ONTAP Select Node wird von NetApp eine neunstellige Lizenzseriennummer generiert.
 * Der einem Node zugewiesene Storage ist unbefristet (keine Verlängerung erforderlich).
 * Die Node-Seriennummer ist neun Ziffern und entspricht der Lizenz-Seriennummer.
@@ -52,15 +52,15 @@ Es gibt verschiedene Merkmale, die auf das Lizenzmodell für Kapazitätsstufen z
 
 == Lizenzmodell für Kapazitäts-Pools
 
-Es gibt verschiedene Merkmale, die nur beim Lizenzmodell für Kapazitäts-Pools gelten:
+Das Kapazitäts-Pools-Lizenzmodell bietet verschiedene Merkmale, darunter:
 
-* Sie müssen eine Lizenz für jeden Pool mit gemeinsam genutzter Kapazität erwerben.
+* Sie müssen für jeden Pool mit gemeinsam genutzter Kapazität eine Lizenz erwerben.
 * Sie können mindestens 2 TB kaufen.
-* Jede Lizenz für den Kapazitäts-Pool verfügt über eine Speicherkapazität und ist für eine bestimmte License Manager-Instanz gesperrt.
+* Jede Capacity Pool-Lizenz verfügt über eine Speicherkapazität und ist an eine bestimmte License Manager-Instanz gebunden.
 * Für jeden Kapazitäts-Pool wird von NetApp eine neunstellige Lizenzseriennummer generiert.
-* Der einem Kapazitäts-Pool zugewiesene Storage ist nur für einen bestimmten Zeitraum gültig, der auf dem Kauf basiert (Erneuerung erforderlich).
-* Die Seriennummer des Knotens ist 20 Ziffern und wird vom License Manager auf Grundlage der Seriennummer der Kapazität-Pool-Lizenz generiert.
-* Jeder Node verpachtet automatisch die Storage-Kapazität seiner lokalen Datenaggregate aus einem gemeinsamen Kapazitäts-Pool.
+* Der einem Kapazitäts-Pool zugewiesene Storage ist nur für einen bestimmten Zeitraum gültig, der auf dem Kauf basiert (Verlängerung erforderlich).
+* Die Seriennummer des Node ist zwanzig Ziffern und wird vom License Manager auf Basis der Lizenznummer des Kapazitäts-Pools generiert.
+* Jeder Node vermietet automatisch Storage-Kapazität für seine lokalen Datenaggregate aus einem Pool gemeinsam genutzter Kapazität.
 
 
-Weitere Informationen zum Lizenzmodell für Kapazitätspools finden Sie im Lizenzmodell _Capacity Pools_.
+Weitere Informationen zum Lizenzierungsmodell für Kapazitätspools finden Sie im „_Capacity Pools“-Lizenzmodell_.

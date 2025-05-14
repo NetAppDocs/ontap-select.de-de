@@ -134,7 +134,7 @@ Zur Trennung der Systemfestplatten vom Root- und Datenaggregate müssen Sie jede
 
 Bei der Planung einer ONTAP Select-Implementierung sollten Sie die Einschränkungen im Zusammenhang mit Storage-Zuweisung und -Nutzung kennen.
 
-Die wichtigsten Storage-Einschränkungen sind im Folgenden dargestellt. Lesen Sie auch die link:https://mysupport.netapp.com/matrix/["NetApp Interoperabilitäts-Matrix-Tool"^] Finden Sie weitere Informationen.
+Die wichtigsten Storage-Einschränkungen sind im Folgenden dargestellt. Weitere Informationen finden Sie imlink:https://mysupport.netapp.com/matrix/["Interoperabilitäts-Matrix-Tool"^].
 
 
 TIP: ONTAP Select setzt verschiedene Einschränkungen im Zusammenhang mit Storage-Zuweisung und -Nutzung durch. Bevor Sie ein ONTAP Select Cluster implementieren oder eine Lizenz erwerben, sollten Sie mit diesen Einschränkungen vertraut sein. Siehe link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["Lizenz"] Weitere Informationen finden Sie in.

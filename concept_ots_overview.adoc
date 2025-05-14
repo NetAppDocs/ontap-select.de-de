@@ -4,7 +4,7 @@ permalink: concept_ots_overview.html
 keywords: overview, software defined storage, sds, typical deployment, ontap 9 
 summary: ONTAP Select ist eine reine Softwareversion von ONTAP, die Sie als Virtual Machine auf einem Hypervisor-Host bereitstellen. Es ergänzt die Produktreihe der gängigen FAS- und AFF ONTAP-Angebote sowie weitere reine Software-Optionen wie Cloud Volumes ONTAP. 
 ---
-= Übersicht über ONTAP Select
+= Erfahren Sie mehr über ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,21 @@ summary: ONTAP Select ist eine reine Softwareversion von ONTAP, die Sie als Virt
 
 
 [role="lead"]
-ONTAP Select ist eine reine Softwareversion von ONTAP, die Sie als virtuelle Maschine auf einem Hypervisor-Host bereitstellen können. Es ergänzt die Produktreihe der gängigen FAS- und AFF ONTAP-Angebote sowie weitere reine Software-Optionen wie Cloud Volumes ONTAP.
+ONTAP Select ist eine reine Softwareversion von ONTAP, die Sie als virtuelle Maschine auf einem Hypervisor-Host bereitstellen können. Es ergänzt die Suite von Mainstream-Angeboten von FAS, AFF und ASA ONTAP sowie von anderen reinen Softwareoptionen wie Cloud Volumes ONTAP.
+
+ONTAP Select konvertiert interne Festplattenlaufwerke, NVMe, SSDs oder HDDs sowie externen Array-Storage in ein flexibles Storage-System, das viele der Vorteile dedizierter ONTAP Storage-Systeme bietet. Sie können ONTAP Select auch auf neuen Servern oder in Ihrer bestehenden Serverinfrastruktur implementieren. ONTAP Select bietet eine einfache Administration und verwendet die gleiche Managementsoftware wie ONTAP-basierte Lösungen, wodurch sich sowohl der betriebliche Overhead als auch die Trainingsanforderungen reduzieren.
+
+ONTAP Select lässt sich mit zwei ergänzenden Lizenzmodellen – Kapazitäts-Tiers und den vollständig flexiblen Kapazitäts-Pools – an Ihre Kapazitätsnutzung anpassen. Beide Lizenzmodelle ermöglichen es Ihnen, die Kapazität schon in Schritten von 1 TB zu erhöhen. Sie können zum Beispiel mit wenigen Terabytes einsteigen und die Kapazität anschließend dynamisch erweitern, wenn der Umfang Ihres Projekts zunimmt. Bei Nutzung von Kapazitäts-Pools können Sie die Kapazität nach Abschluss des Projekts beliebig neu verteilen.
+
+ONTAP Select ist in Cloud Management Frameworks wie z. B. VMware vSphere integriert. Dadurch lassen sich neue Projekte wie Fileservices, Home Directories, Software-Entwicklungsumgebungen und Applikationstests noch schneller implementieren.
+
+Mit der SnapMirror Software verschieben Sie Daten zwischen ONTAP Storage in der Hybrid Cloud. So können Sie Ihre Daten einfach am gewünschten Speicherort abrufen. So können Sie beispielsweise schnell eine Umgebung erstellen, um eine Idee zu beweisen. Später können Sie das Projekt auf eine dedizierte Storage-Plattform verschieben, um es in der Produktion zu implementieren oder im Rahmen von Entwicklungsprozessen in der Cloud einfacher zugänglich zu machen.
 
 
 
 == Softwaredefinierter Storage
 
-Durch die Implementierung und Bereitstellung VON IT-Services über Software können Administratoren Ressourcen in kürzester Zeit und mit einer bisher nicht möglichen Geschwindigkeit und Flexibilität bereitstellen. Wenn moderne Datacenter auf eine softwaredefinierte Infrastrukturarchitektur (SDI) umsteigen, können die wertvollsten IT-Assets von der zugrunde liegenden physischen Infrastruktur getrennt werden. Dies bietet Flexibilität, Skalierbarkeit und Programmierbarkeit.
+Durch die Implementierung und Bereitstellung VON IT-Services über Software können Administratoren Ressourcen in kürzester Zeit und mit einer bisher nicht möglichen Geschwindigkeit und Flexibilität bereitstellen. Da moderne Rechenzentren auf eine SDI-Architektur (Software-Defined Infrastructure) umstellen, können Sie die wertvollsten IT-Ressourcen von der zugrunde liegenden physischen Infrastruktur trennen und so Flexibilität, Skalierbarkeit und Programmierbarkeit bieten.
 
 In einer herkömmlichen Welt, in der Daten über das-Silos (Direct-Attached Storage) fragmentiert sind, werden Datenmobilität und -Management zu immer komplexeren Problemen. Software-Defined Storage (SDS) hat sich zu einem wichtigen Bestandteil der SDI-Landschaft entwickelt, um diese und andere Probleme anzugehen.
 
@@ -71,7 +79,7 @@ Abhängig von der Anzahl der in einem Cluster definierten Nodes bietet ONTAP Sel
 
 === Kapazitätslizenzierung
 
-ONTAP Select führt ein verbrauchsbasiertes Lizenzmodell ein. Wenn Sie ein ONTAP Select Cluster in einer Produktionsumgebung implementieren, müssen Sie eine Lizenz mit Storage-Kapazität für jeden Node oder einen gemeinsamen Kapazitäts-Pool erwerben. Mit dem Deploy-Dienstprogramm müssen Sie die Lizenzdateien anwenden, die die Speicherkapazität für die Cluster-Nodes festlegen.
+ONTAP Select führt ein verbrauchsbasiertes Lizenzmodell ein. Wenn Sie ein ONTAP Select-Cluster in einer Produktionsumgebung implementieren, müssen Sie für jeden Node oder Shared Capacity Pool eine Lizenz mit Storage-Kapazität erwerben. Mit dem Deploy-Dienstprogramm müssen Sie die Lizenzdateien anwenden, die die Speicherkapazität für die Cluster-Nodes festlegen.
 
 
 
@@ -123,4 +131,4 @@ Das Ändern der Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, 
 
 
 .Verwandte Informationen
-link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Standardmäßig sind ONTAP-Funktionen aktiviert"]
+link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Erfahren Sie mehr über die standardmäßig aktivierten ONTAP Funktionen"] link:concept_lic_evaluation.html["Informieren Sie sich über Lizenzoptionen von ONTAP Select"]

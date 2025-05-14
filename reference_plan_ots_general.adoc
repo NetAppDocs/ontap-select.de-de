@@ -151,7 +151,7 @@ Schätzen Sie den benötigten Speicherplatz ein:: Sie sollten ermitteln, wie vie
 
 NOTE: Die ONTAP Select Storage-Kapazität entspricht der zulässigen Gesamtgröße der Festplatten, die an die ONTAP Select Virtual Machine angeschlossen sind.
 
-Lizenzmodell für Produktionsimplementierung:: Für jeden in einer Produktionsumgebung implementierten ONTAP Select Cluster müssen Sie die Kapazitätsebenen oder das Lizenzmodell für Kapazitäts-Pools auswählen. Weitere Informationen finden Sie im Abschnitt _Lizenz_.
+Lizenzmodell für Produktionsimplementierung:: Sie müssen das Lizenzmodell für die Kapazitäts-Tiers oder Kapazitäts-Pools für jeden in einer Produktionsumgebung bereitgestellten ONTAP Select-Cluster auswählen. Weitere Informationen finden Sie im Abschnitt _Lizenz_.
 
 
 

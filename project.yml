@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: Konzepte
     entries:
-    - title: Übersicht über ONTAP Select
+    - title: Erfahren Sie mehr über ONTAP Select
       url: "/concept_ots_overview.html"
     - title: ONTAP Select Deploy
       url: "/concept_ots_deploy.html"
@@ -44,8 +44,8 @@ sidebar:
         url: "/concept_usecase_robo.html"
       - title: Private Cloud und Datacenter
         url: "/concept_usecase_private_cloud.html"
-      - title: MetroCluster SDS
-        url: "/concept_usecase_mc_sds.html"
+      - title: Datensicherung und Effizienz
+        url: "/concept-data-protection-and-efficiency.html"
     - title: Terminologie
       url: "/concept_terminology.html"
   - title: Planen
@@ -102,7 +102,7 @@ sidebar:
         url: "/concept_lic_cp_serial_number.html"
       - title: Einschränkungen
         url: "/concept_lic_cp_restrictions.html"
-      - title: Kapazitäts-Pools und Kapazitäts-Tiers
+      - title: Kapazitäts-Pools statt Kapazitäts-Tiers
         url: "/concept_lic_cp_compare_ct.html"
       - title: Zusammenfassung der Vorteile
         url: "/concept_lic_cp_benefits.html"
