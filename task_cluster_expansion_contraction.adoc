@@ -14,9 +14,24 @@ summary: Ab ONTAP Select 9.15.1 können Sie die Größe eines vorhandenen Cluste
 
 
 [role="lead"]
-Ab ONTAP Select 9.15.1 können Sie die Größe eines vorhandenen Clusters von sechs auf acht Nodes erhöhen und die Clustergröße von acht auf sechs Nodes verringern. Es werden keine anderen Cluster-Erweiterungs- oder -Kontraktionsszenarien unterstützt.
+Ab ONTAP Select 9.15.1 können Sie die Größe eines vorhandenen Clusters von sechs auf acht Nodes erhöhen und die Clustergröße von acht auf sechs Nodes verringern.
 
-Das Verfahren wird über ONTAP Select Deploy über die CLI, API oder Webschnittstelle gestartet.
+Die folgenden Clustererweiterungen und -kontraktionen werden nicht unterstützt:
+
+* Erweiterungen von Clustern mit einem, zwei oder vier Nodes auf Cluster mit sechs oder acht Nodes
+* Kontraktionen von Clustern mit sechs oder acht Knoten zu Clustern mit einem, zwei oder vier Knoten.
+
+
+[NOTE]
+====
+Um die Anzahl der Knoten in einem Cluster auf eine Größe zu ändern, die durch die Erweiterung oder Verkleinerung des Clusters nicht unterstützt wird, müssen Sie die folgenden Aufgaben ausführen:
+
+. Stellen Sie einen neuen Multi-Node-Cluster bereit, indem Sie den link:task_cli_deploy_cluster.html["CLI"] oder die link:task_deploy_cluster.html["Web-Benutzeroberfläche"] wird mit dem Verwaltungsdienstprogramm ONTAP Select Deploy bereitgestellt.
+. Migrieren Sie die Daten gegebenenfalls in den neuen Cluster, indem Sie link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["SnapMirror Replizierung"^] .
+
+
+====
+Sie initiieren die Verfahren zur Clustererweiterung und -kontraktion von ONTAP Select Deploy über die CLI, API oder Weboberfläche.
 
 
 
@@ -36,12 +51,6 @@ Die Funktionen zur Cluster-Erweiterung und -Verkleinerung sind wie folgt eingesc
 
 
 
-Die folgenden Cluster-Erweiterungen und -Kontraktionen werden derzeit nicht unterstützt:
-
-* Erweiterungen von Clustern mit einem, zwei oder vier Nodes auf Cluster mit sechs oder acht Nodes
-* Kontraktionen von Clustern mit sechs oder acht Knoten zu Clustern mit einem, zwei oder vier Knoten.
-
-
 
 
 == Erweitern Sie das Cluster
@@ -52,7 +61,7 @@ Mit der Cluster-Erweiterungsfunktion können Sie die Größe eines vorhandenen C
 Zur Vorbereitung der Cluster-Erweiterung werden neue ESX-Hosts zur Bestandsaufnahme hinzugefügt und die Details zu den neuen Nodes zugewiesen. Vor dem Starten der Cluster-Erweiterung überprüft eine Netzwerkprüfung das ausgewählte interne Netzwerk.
 
 .Bevor Sie beginnen
-* Wenn Sie ein Cluster mit mehreren Nodes bereitstellen, sollten Sie mit dem vertraut sein link:https://docs.netapp.com/us-en/ontap-select/task_adm_connectivity.html["Prüfung der Netzwerkverbindung"].
+* Wenn Sie einen Cluster mit mehreren Knoten bereitstellen, sollten Sie mit der Netzwerkkonnektivitätsprüfung vertraut sein. Sie können die Netzwerkkonnektivitätsprüfung mithilfe des link:task_adm_connectivity.html["Web-Benutzeroberfläche"] oder die link:task_cli_connectivity.html["CLI"] .
 * Vergewissern Sie sich, dass Sie über die Lizenzdetails für die neuen Nodes verfügen.
 
 

@@ -27,7 +27,7 @@ Stellen Sie sicher, dass Ihre Implementierungsumgebung die folgenden Mindestanfo
 * NVMe Geräte gemäß Spezifikation 1.0 oder höher
 
 
-Folgen Sie den link:reference_chk_host_prep.html["Checkliste zur Hostvorbereitung"], Überprüfen Sie die link:reference_chk_deploy_req_info.html["Erforderliche Informationen für die Installation des Dienstprogramms bereitstellen"], Und das link:reference_chk_select_req_info.html["Erforderliche Informationen für die ONTAP Select Installation"] Themen für weitere Informationen.
+Folgen Sie den link:kvm-host-configuration-and-preparation-checklist.html["Checkliste zur Hostvorbereitung"], lesen Sie die link:reference_chk_deploy_req_info.html["Erforderliche Informationen für die Installation des Dienstprogramms bereitstellen"], und die link:reference_chk_select_req_info.html["Erforderliche Informationen für die ONTAP Select Installation"] Themen für weitere Informationen.
 
 .Über diese Aufgabe
 Diese Prozedur ist auf die Durchführung vor dem Erstellen eines neuen ONTAP Select-Clusters ausgelegt. Sie können außerdem das Verfahren zur Konfiguration zusätzlicher NVMe-Laufwerke für ein vorhandenes SW-RAID-NVMe-Cluster ausführen. In diesem Fall müssen Sie nach dem Konfigurieren der Laufwerke sie wie zusätzliche SSD-Laufwerke durch die Implementierung hinzufügen. Der Hauptunterschied liegt darin, dass die Implementierung die NVMe-Laufwerke erkennt und die Nodes neu startet. Beim Hinzufügen von NVMe Laufwerken zu einem vorhandenen Cluster sind folgende Hinweise zum Neustart zu beachten:

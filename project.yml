@@ -121,7 +121,11 @@ sidebar:
     - title: Checkliste zur Installationsvorbereitung
       entries:
       - title: Checkliste zur Hostvorbereitung
-        url: "/reference_chk_host_prep.html"
+        entries:
+        - title: Checkliste für KVM-Hosts
+          url: "/kvm-host-configuration-and-preparation-checklist.html"
+        - title: Checkliste für ESXi-Hosts
+          url: "/esxi-host-configuration-and-preparation-checklist.html"
       - title: Bereitstellung der erforderlichen Informationen über das Dienstprogramm
         url: "/reference_chk_deploy_req_info.html"
       - title: Erforderliche Informationen zu ONTAP Select

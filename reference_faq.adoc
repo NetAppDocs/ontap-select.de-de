@@ -244,7 +244,7 @@ Es gibt mehrere Fragen und Antworten, die sich mit HA-Paaren und Clustern befass
 Im Gegensatz zu Clustern mit vier Nodes, sechs Nodes und acht Nodes, in denen die ONTAP Select VM in erster Linie zum Erstellen des Clusters implementiert wird, ist ein Cluster mit zwei Nodes für das HA-Quorum kontinuierlich auf der ONTAP Select Deploy VM angewiesen. Wenn die ONTAP Select Deploy-VM nicht verfügbar ist, werden die Failover-Services deaktiviert.
 
 .Was ist MetroCluster SDS?
-Bei MetroCluster SDS handelt es sich um eine kostengünstige Option zur synchronen Replizierung, die in der Kategorie der MetroCluster Business Continuity-Lösungen von NetApp fällt. Es ist nur mit ONTAP Select verfügbar, im Gegensatz zu NetApp MetroCluster auf FAS Hybrid Flash, AFF, NetApp Private Storage for Cloud und NetApp FlexArray Technologie.
+Bei MetroCluster SDS handelt es sich um eine kostengünstige Option zur synchronen Replizierung, die in der Kategorie der MetroCluster Business Continuity-Lösungen von NetApp fällt. Es ist nur mit ONTAP Select verfügbar, im Gegensatz zu NetApp MetroCluster , das auf FAS Hybrid Flash, AFF und NetApp Private Storage for Cloud verfügbar ist.
 
 .Inwiefern unterscheidet sich MetroCluster-SDS von NetApp MetroCluster?
 MetroCluster SDS bietet eine synchrone Replizierungslösung und ist unter NetApp MetroCluster Lösungen erhältlich. Die wichtigsten Unterschiede liegen jedoch in den unterstützten Distanzen (~10 km gegenüber 300 km) und der Konnektivität (nur IP-Netzwerke werden unterstützt statt FC und IP).

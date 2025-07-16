@@ -1,0 +1,321 @@
+---
+sidebar: sidebar 
+permalink: kvm-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, kvm, host preparation 
+summary: Bereiten Sie alle KVM-Hypervisor-Hosts vor, auf denen ein ONTAP Select Knoten bereitgestellt wird. Bei der Vorbereitung der Hosts prüfen Sie sorgfältig die Bereitstellungsumgebung, um sicherzustellen, dass die Hosts ordnungsgemäß konfiguriert und für die Bereitstellung eines ONTAP Select Clusters bereit sind. 
+---
+= Checkliste für die KVM-Hostkonfiguration und -vorbereitung für ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bereiten Sie jeden KVM-Hypervisor-Host vor, auf dem ein ONTAP Select Knoten bereitgestellt wird. Bei der Vorbereitung der Hosts prüfen Sie sorgfältig die Bereitstellungsumgebung, um sicherzustellen, dass die Hosts korrekt konfiguriert und für die Bereitstellung eines ONTAP Select Clusters bereit sind.
+
+
+NOTE: Das Verwaltungsprogramm ONTAP Select Deploy führt die erforderliche Netzwerk- und Speicherkonfiguration der Hypervisor-Hosts nicht durch. Sie müssen jeden Host manuell vorbereiten, bevor Sie einen ONTAP Select -Cluster bereitstellen.
+
+
+
+== Schritt 1: Vorbereiten des KVM-Hypervisor-Hosts
+
+Sie müssen jeden der Linux KVM-Server vorbereiten, auf dem ein ONTAP Select Knoten bereitgestellt wird. Sie müssen auch den Server vorbereiten, auf dem das Dienstprogramm ONTAP Select Deploy Administration bereitgestellt wird.
+
+.Schritte
+. Installieren Sie Red Hat Enterprise Linux (RHEL).
++
+Installieren Sie das RHEL-Betriebssystem mithilfe des ISO-Images. Eine Liste der unterstützten RHEL-Versionen finden Sie in derlink:reference_plan_ots_hardware.html#software-compatibility["Informationen zur Softwarekompatibilität für Hypervisoren"]. Konfigurieren Sie das System während der Installation wie folgt:
+
++
+.. Wählen Sie „Standard“ als Sicherheitsrichtlinie aus.
+.. Wählen Sie die Softwareauswahl „Virtualized Host“.
+.. Stellen Sie sicher, dass das Ziel die lokale Startdiskette und nicht eine von ONTAP Select verwendete RAID-LUN ist.
+.. Stellen Sie sicher, dass die Hostverwaltungsschnittstelle nach dem Booten des Systems aktiv ist.
++
+
+NOTE: Sie können die korrekte Netzwerkkonfigurationsdatei unter /etc/sysconfig/Network-scripts bearbeiten und dann die Schnittstelle mit dem aufrufen `ifup` Befehl.
+
+
+
+. Installieren Sie zusätzliche Pakete, die für ONTAP Select erforderlich sind.
++
+Für ONTAP Select sind mehrere zusätzliche Softwarepakete erforderlich. Die genaue Liste der Pakete variiert je nach verwendeter Linux-Version. Überprüfen Sie zunächst, ob das yum-Repository auf Ihrem Server verfügbar ist. Falls sie nicht verfügbar ist, können Sie sie über das  `wget your_repository_location` Befehl.
+
++
+
+NOTE: Einige der erforderlichen Pakete sind möglicherweise bereits installiert, wenn Sie während der Installation des Linux-Servers für die Softwareauswahl Virtualized Host gewählt haben. Möglicherweise müssen Sie das openvswitch-Paket vom Quellcode installieren, wie in beschrieben link:https://docs.openvswitch.org/en/latest/intro/install/general/["Öffnen Sie die vSwitch-Dokumentation"^].
+
++
+Weitere Informationen zu den erforderlichen Paketen und anderen Konfigurationsanforderungen finden Sie im link:https://imt.netapp.com/matrix/#welcome["Interoperabilitäts-Matrix-Tool"^].
+
+. Konfigurieren Sie die Speicherpools.
++
+Ein ONTAP Select Storage Pool ist ein logischer Daten-Container, der den zugrunde liegenden physischen Storage abstrahiert. Sie müssen die Speicherpools auf den KVM-Hosts verwalten, auf denen ONTAP Select bereitgestellt wird.
+
+
+
+
+
+== Schritt 2: Erstellen eines Speicherpools
+
+Erstellen Sie mindestens einen Speicherpool an jedem ONTAP Select Knoten. Wenn Sie Software-RAID anstelle eines lokalen Hardware-RAID verwenden, sind Speicherfestplatten für das Root- und Datenaggregate mit dem Node verbunden. In diesem Fall müssen Sie weiterhin einen Speicherpool für die Systemdaten erstellen.
+
+.Bevor Sie beginnen
+Vergewissern Sie sich, dass Sie sich bei der Linux-CLI auf dem Host anmelden können, auf dem ONTAP Select bereitgestellt wird.
+
+.Über diese Aufgabe
+Das Dienstprogramm ONTAP Select Deploy Administration erwartet, dass der Zielspeicherort für den Speicherpool als angegeben wird `/dev/<pool_name>`, Wo `<pool_name>` Ist ein eindeutiger Poolname auf dem Host.
+
+
+NOTE: Die gesamte Kapazität der LUN wird zugewiesen, wenn ein Speicherpool erstellt wird.
+
+.Schritte
+. Zeigen Sie die lokalen Geräte auf dem Linux-Host an, und wählen Sie die LUN aus, die den Speicherpool enthalten soll:
++
+[source, cli]
+----
+lsblk
+----
++
+Die geeignete LUN ist wahrscheinlich das Gerät mit der größten Speicherkapazität.
+
+. Definieren Sie den Speicherpool auf dem Gerät:
++
+[source, cli]
+----
+virsh pool-define-as <pool_name> logical --source-dev <device_name> --target=/dev/<pool_name>
+----
++
+Beispiel:
+
++
+[listing]
+----
+virsh pool-define-as select_pool logical --source-dev /dev/sdb --target=/dev/select_pool
+----
+. Erstellen des Speicherpools:
++
+[source, cli]
+----
+virsh pool-build <pool_name>
+----
+. Starten Sie den Speicherpool:
++
+[source, cli]
+----
+virsh pool-start <pool_name>
+----
+. Konfigurieren Sie den Speicherpool so, dass er beim Systemstart automatisch gestartet wird:
++
+[source, cli]
+----
+virsh pool-autostart <pool_name>
+----
+. Überprüfen Sie, ob der Speicherpool erstellt wurde:
++
+[source, cli]
+----
+virsh pool-list
+----
+
+
+
+
+== Schritt 3: Optionales Löschen eines Speicherpools
+
+Sie können einen Speicherpool löschen, wenn er nicht mehr benötigt wird.
+
+.Bevor Sie beginnen
+Vergewissern Sie sich, dass Sie sich bei der Linux-CLI anmelden können, in der ONTAP Select bereitgestellt wird.
+
+.Über diese Aufgabe
+Das Dienstprogramm ONTAP Select Deploy Administration erwartet, dass der Zielspeicherort für den Speicherpool als angegeben wird `/dev/<pool_name>`, Wo `<pool_name>` Ist ein eindeutiger Poolname auf dem Host.
+
+.Schritte
+. Überprüfen Sie, ob der Speicherpool definiert ist:
++
+[source, cli]
+----
+virsh pool-list
+----
+. Löschen des Speicherpools:
++
+[source, cli]
+----
+virsh pool-destroy <pool_name>
+----
+. Definition der Konfiguration für den inaktiven Speicherpool aufheben:
++
+[source, cli]
+----
+virsh pool-undefine <pool_nanme>
+----
+. Überprüfen Sie, ob der Speicherpool vom Host entfernt wurde:
++
+[source, cli]
+----
+virsh pool-list
+----
+. Überprüfen Sie, ob alle logischen Volumes für die Speicherpool-Volume-Gruppe gelöscht wurden.
++
+.. Anzeigen der logischen Volumes:
++
+[source, cli]
+----
+lvs
+----
+.. Wenn logische Volumes für den Pool vorhanden sind, löschen Sie diese:
++
+[source, cli]
+----
+lvremove <logical_volume_name>
+----
+
+
+. Überprüfen Sie, ob die Volume-Gruppe gelöscht wurde:
++
+.. Anzeigen der Volume-Gruppen:
++
+[source, cli]
+----
+vgs
+----
+.. Wenn eine Volume-Gruppe für den Pool vorhanden ist, löschen Sie sie:
++
+[source, cli]
+----
+vgremove <volume_group_name>
+----
+
+
+. Überprüfen Sie, ob das physische Volume gelöscht wurde:
++
+.. Physische Volumes anzeigen:
++
+[source, cli]
+----
+pvs
+----
+.. Wenn ein physisches Volume für den Pool vorhanden ist, löschen Sie es:
++
+[source, cli]
+----
+pvremove <physical_volume_name>
+----
+
+
+
+
+
+
+== Schritt 4: Überprüfen der ONTAP Select Clusterkonfiguration
+
+ONTAP Select kann als Cluster mit mehreren Nodes oder als Single-Node-Cluster implementiert werden. In vielen Fällen ist ein Cluster mit mehreren Knoten aufgrund der zusätzlichen Speicherkapazität und Hochverfügbarkeit (HA) vorzuziehen.
+
+Die folgenden Abbildungen veranschaulichen die ONTAP Select Netzwerke, die mit einem Einzelknotencluster und einem Vierknotencluster für einen ESXi-Host verwendet werden.
+
+[role="tabbed-block"]
+====
+.Single-Node-Cluster
+--
+Die folgende Abbildung zeigt einen Single-Node-Cluster. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_01.jpg["Single-Node-Cluster mit einem Netzwerk"]
+
+--
+.Cluster mit vier Knoten
+--
+Die folgende Abbildung zeigt einen Cluster mit vier Knoten und zwei Netzwerken. Das interne Netzwerk ermöglicht die Kommunikation zwischen den Knoten zur Unterstützung der ONTAP-Cluster-Netzwerkdienste. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_02.jpg["Cluster mit vier Nodes für zwei Netzwerke"]
+
+--
+.Single Node innerhalb eines Clusters mit vier Nodes
+--
+Die folgende Abbildung zeigt die typische Netzwerkkonfiguration für eine einzelne ONTAP Select Virtual Machine innerhalb eines Clusters mit vier Nodes. Es gibt zwei separate Netzwerke: ONTAP-intern und ONTAP-extern.
+
+image:CHK_03.jpg["Single Node innerhalb eines Clusters mit vier Nodes"]
+
+--
+====
+
+
+== Schritt 5: Open vSwitch konfigurieren
+
+Verwenden Sie Open vSwitch, um auf jedem KVM-Hostknoten einen softwaredefinierten Switch zu konfigurieren.
+
+.Bevor Sie beginnen
+Vergewissern Sie sich, dass der Netzwerkmanager deaktiviert ist und der native Linux-Netzwerkdienst aktiviert ist.
+
+.Über diese Aufgabe
+ONTAP Select erfordert zwei separate Netzwerke, die beide Port-Bonding nutzen, um HA-Fähigkeiten für die Netzwerke bereitzustellen.
+
+.Schritte
+. Vergewissern Sie sich, dass Open vSwitch auf dem Host aktiv ist:
++
+.. Bestimmen Sie, ob Open vSwitch ausgeführt wird:
++
+[source, cli]
+----
+systemctl status openvswitch
+----
+.. Wenn Open vSwitch nicht ausgeführt wird, starten Sie ihn:
++
+[source, cli]
+----
+systemctl start openvswitch
+----
+
+
+. Zeigt die Konfiguration Open vSwitch an:
++
+[source, cli]
+----
+ovs-vsctl show
+----
++
+Die Konfiguration erscheint leer, wenn Open vSwitch nicht bereits auf dem Host konfiguriert wurde.
+
+. Neue vSwitch-Instanz hinzufügen:
++
+[source, cli]
+----
+ovs-vsctl add-br <bridge_name>
+----
++
+Beispiel:
+
++
+[source, cli]
+----
+ovs-vsctl add-br ontap-br
+----
+. Reduzieren Sie die Netzwerkschnittstellen:
++
+[source, cli]
+----
+ifdown <interface_1>
+ifdown <interface_2>
+----
+. Kombinieren Sie die Links mithilfe des Link Aggregation Control Protocol (LACP):
++
+[source, cli]
+----
+ovs-vsctl add-bond <internal_network> bond-br <interface_1> <interface_2> bond_mode=balance-slb lacp=active other_config:lacp-time=fast
+----
++
+
+NOTE: Sie müssen nur eine Verbindung konfigurieren, wenn es mehr als eine Schnittstelle gibt.
+
+. Einrichten der Netzwerkschnittstellen:
++
+[source, cli]
+----
+ifup <interface_1>
+ifup <interface_2>
+----
+

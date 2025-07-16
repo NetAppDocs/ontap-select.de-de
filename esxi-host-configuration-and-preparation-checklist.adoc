@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: esxi-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, esxi, host preparation 
+summary: Bereiten Sie alle ESXi-Hypervisor-Hosts vor, auf denen ein ONTAP Select Knoten bereitgestellt wird. Bewerten Sie dabei sorgfältig die Bereitstellungsumgebung, um sicherzustellen, dass die Hosts ordnungsgemäß konfiguriert und für die Bereitstellung eines ONTAP Select Clusters bereit sind. 
+---
+= Checkliste für die ESXi-Hostkonfiguration und -vorbereitung für ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bereiten Sie jeden ESXi-Hypervisor-Host vor, auf dem ein ONTAP Select Knoten bereitgestellt wird. Bewerten Sie dabei sorgfältig die Bereitstellungsumgebung, um sicherzustellen, dass die Hosts korrekt konfiguriert und für die Bereitstellung eines ONTAP Select Clusters bereit sind.
+
+
+NOTE: Das Verwaltungsprogramm ONTAP Select Deploy führt die erforderliche Netzwerk- und Speicherkonfiguration der Hypervisor-Hosts nicht durch. Sie müssen jeden Host manuell vorbereiten, bevor Sie einen ONTAP Select -Cluster bereitstellen.
+
+
+
+== Schritt 1: Vorbereiten des ESXi-Hypervisor-Hosts
+
+Überprüfen Sie die Konfiguration für den ESXi-Host und die Firewall-Ports.
+
+.Schritte
+. Stellen Sie sicher, dass jeder ESXi wie folgt konfiguriert ist:
++
+** Einen vorinstallierten und unterstützten Hypervisor
+** Eine VMware vSphere Lizenz
+
+
+. Stellen Sie sicher, dass derselbe vCenter-Server alle Hosts verwalten kann, auf denen ein ONTAP Select Knoten im Cluster bereitgestellt ist.
+. Überprüfen Sie, ob die Firewall-Ports so konfiguriert sind, dass der Zugriff auf vSphere möglich ist. Diese Ports müssen offen sein, um die Verbindung mit seriellen Ports zu den virtuellen ONTAP Select-Maschinen zu unterstützen.
++
+[role="tabbed-block"]
+====
+.Empfehlenswert
+--
+NetApp empfiehlt, die folgenden Firewall-Ports zu öffnen, um den Zugriff auf vSphere zu ermöglichen:
+
+** Ports 7200 bis 7400 (ein- und ausgehender Datenverkehr)
+
+
+--
+.Standard
+--
+VMware ermöglicht standardmäßig den Zugriff auf folgende Ports:
+
+** Port 22 und Ports 1024 – 65535 (eingehender Verkehr)
+** Anschlüsse 0 bis 65535 (ausgehender Datenverkehr)
+
+
+--
+====
++
+Weitere Informationen finden Sie im link:https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html["Broadcom VMware vSphere-Dokumentation"^].
+
+. Machen Sie sich mit den erforderlichen vCenter-Rechten vertraut. Weitere Informationen finden Sie unter link:reference_plan_ots_vcenter.html["VMware vCenter Server"] .
+
+
+
+
+== Schritt 2: Überprüfen der ONTAP Select Clusterkonfiguration
+
+ONTAP Select kann als Cluster mit mehreren Nodes oder als Single-Node-Cluster implementiert werden. In vielen Fällen ist ein Cluster mit mehreren Knoten aufgrund der zusätzlichen Speicherkapazität und Hochverfügbarkeit (HA) vorzuziehen.
+
+Die folgenden Abbildungen veranschaulichen die ONTAP Select Netzwerke, die mit einem Einzelknotencluster und einem Vierknotencluster verwendet werden.
+
+[role="tabbed-block"]
+====
+.Single-Node-Cluster
+--
+Die folgende Abbildung zeigt einen Single-Node-Cluster. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_01.jpg["Single-Node-Cluster mit einem Netzwerk"]
+
+--
+.Cluster mit vier Knoten
+--
+Die folgende Abbildung zeigt einen Cluster mit vier Knoten und zwei Netzwerken. Das interne Netzwerk ermöglicht die Kommunikation zwischen den Knoten zur Unterstützung der ONTAP-Cluster-Netzwerkdienste. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_02.jpg["Cluster mit vier Nodes für zwei Netzwerke"]
+
+--
+.Single Node innerhalb eines Clusters mit vier Nodes
+--
+Die folgende Abbildung zeigt die typische Netzwerkkonfiguration für eine einzelne ONTAP Select Virtual Machine innerhalb eines Clusters mit vier Nodes. Es gibt zwei separate Netzwerke: ONTAP-intern und ONTAP-extern.
+
+image:CHK_03.jpg["Single Node innerhalb eines Clusters mit vier Nodes"]
+
+--
+====
+
+
+== Schritt 3: Open vSwitch konfigurieren
+
+Der vSwitch ist die Hypervisor-Kernkomponente, die zur Unterstützung der Konnektivität der internen und externen Netzwerke verwendet wird. Bei der Konfiguration jedes Hypervisor-vSwitch sollten Sie mehrere Aspekte berücksichtigen.
+
+Die folgenden Schritte beziehen sich auf eine vSwitch-Konfiguration für einen ESXi-Host mit zwei physischen Ports (2 x 10 GB) in einer typischen Netzwerkumgebung.
+
+.Schritte
+. link:concept_nw_vsphere_vswitch_config.html["Konfigurieren Sie einen vSwitch und weisen Sie dem vSwitch beide Ports zu"].
+. link:concept_nw_vsphere_vswitch_config.html["Erstellen Sie ein NIC-Team mit den beiden Ports"].
+. Legen Sie die Lastausgleichsrichtlinie auf „Weiterleiten basierend auf der ursprünglichen virtuellen Port-ID“ fest.
+. Markieren Sie beide Adapter als „aktiv“ oder markieren Sie einen Adapter als „aktiv“ und den anderen als „Standby“.
+. Setzen Sie die Einstellung „Failback“ auf „Ja“.
++
+image:CHK_04.jpg["VSwitch-Eigenschaften)"]
+
+. Konfigurieren Sie den vSwitch zur Verwendung von Jumbo Frames (9000 MTU).
+. Konfigurieren Sie eine Portgruppe auf dem vSwitch für den internen Verkehr (ONTAP-intern):
++
+** Die Portgruppe ist virtuellen ONTAP Select Netzwerkadaptern e0c-e0g zugewiesen, die für das Cluster, HA Interconnect und Datenverkehr zur Spiegelung verwendet werden.
+** Die Portgruppe sollte sich in einem nicht routingfähigen VLAN befinden, da dieses Netzwerk voraussichtlich privat sein wird. Sie sollten das entsprechende VLAN-Tag der Portgruppe hinzufügen, um dies zu berücksichtigen.
+** Die Einstellungen für Load Balancing, Failback und Failover Order der Portgruppe sollten mit dem vSwitch übereinstimmen.
+
+
+. Konfigurieren Sie eine Port-Gruppe auf dem vSwitch für den externen Verkehr (ONTAP-extern):
++
+** Die Port-Gruppe ist virtuellen ONTAP Select Netzwerkadaptern e0a-e0c, die für Daten- und Management-Datenverkehr verwendet werden.
+** Die Portgruppe kann sich auf einem routingfähigen VLAN befinden. Je nach Netzwerkumgebung sollten Sie außerdem ein entsprechendes VLAN-Tag hinzufügen oder die Portgruppe für VLAN-Trunking konfigurieren.
+** Die Einstellungen für Lastausgleich, Failback und Failover-Reihenfolge der Portgruppe sollten mit denen des vSwitch identisch sein.
+
+
+

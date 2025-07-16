@@ -86,7 +86,7 @@ NOTE: Wenn ein Hardware-RAID-Controller vorhanden ist, lesen Sie den link:concep
 
 === KVM-spezifische Anforderungen
 
-Darüber hinaus gibt es spezielle Anforderungen an die Konfiguration von Softwarepaketen. Siehe link:https://docs.netapp.com/us-en/ontap-select/reference_chk_host_prep.html#kvm-hypervisor["Vorbereitung des Linux-Servers"] Finden Sie weitere Informationen.
+Darüber hinaus gibt es spezielle Anforderungen an die Konfiguration von Softwarepaketen. Sehen Sie sich die link:https://docs.netapp.com/us-en/ontap-select/kvm-host-configuration-and-preparation-checklist.html#prepare-linux-server["Vorbereitung des Linux-Servers"] Schritt für weitere Informationen.
 
 Erwartungen der Medien an KVM:: Die verwendeten SSD-Flash-Speichergeräte müssen die folgenden zusätzlichen Anforderungen erfüllen:
 +
