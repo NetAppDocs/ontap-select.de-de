@@ -1,5 +1,5 @@
 ---
-bar: sidebar 
+sidebar: sidebar 
 permalink: reference_chk_deploy_req_info.html 
 keywords: ontap select, deploy, pre-installation, vmware 
 summary: Überprüfen Sie vor der Installation des Deploy Administration Utility in einer VMware-Umgebung die grundlegenden Anforderungen und bereiten Sie die erfolgreiche Bereitstellung vor. 

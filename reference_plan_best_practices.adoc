@@ -74,7 +74,7 @@ ONTAP Select erhält durch Erhöhen der Anzahl von LUNs innerhalb einer RAID-Gru
 NetApp empfiehlt die Verwendung von ESX 6.5 U2 oder höher und eine NVMe-Festplatte für den Datenspeicher, der die Systemfestplatten hostet. Diese Konfiguration bietet die beste Performance für die NVRAM-Partition.
 
 
-NOTE: Bei der Installation auf ESX 6.5 U2 und höher verwendet ONTAP Select den vNVME-Treiber, unabhängig davon, ob sich die Systemfestplatte auf einer SSD oder AUF einer NVME-Festplatte befindet. Dadurch wird die VM-Hardwareebene auf 13 festgelegt, die mit ESX 6.5 und höher kompatibel ist.
+NOTE: Bei der Installation auf ESX 6.5 U2 und höher verwendet ONTAP Select den vNVMEe-Treiber, unabhängig davon, ob sich die Systemfestplatte auf einer SSD oder einer NVMe-Festplatte befindet. Dadurch wird die VM-Hardwareebene auf 13 gesetzt, was mit ESX 6.5 und höher kompatibel ist.
 
 Dedizierte Netzwerk-Ports, Bandbreite und vSwitch Konfigurationen für die ONTAP Select-Netzwerke und externen Storage definieren (VMware vSAN und generischer Storage Array-Datenverkehr bei Verwendung von iSCSI oder NFS).
 

@@ -14,7 +14,7 @@ summary: Ab ONTAP Select 9.15.1 können Sie die Größe eines vorhandenen Cluste
 
 
 [role="lead"]
-Ab ONTAP Select 9.15.1 können Sie die Größe eines vorhandenen Clusters von sechs auf acht Nodes erhöhen und die Clustergröße von acht auf sechs Nodes verringern.
+Sie können die Clustergröße eines bestehenden ONTAP Select Clusters von einem Sechs-Knoten-Cluster auf einen Acht-Knoten-Cluster erhöhen und die Größe von einem Acht-Knoten-Cluster auf einen Sechs-Knoten-Cluster verringern.
 
 Die folgenden Clustererweiterungen und -kontraktionen werden nicht unterstützt:
 
@@ -37,28 +37,45 @@ Sie initiieren die Verfahren zur Clustererweiterung und -kontraktion von ONTAP S
 
 == Überlegungen zu Hardware und Storage
 
-Die Funktionen zur Cluster-Erweiterung und -Verkleinerung sind wie folgt eingeschränkt:
+Die Funktion zur Clustererweiterung und -kontraktion wird auf KVM- und ESXi-Hypervisor-Hosts unterstützt.
 
-* Die Unterstützung ist auf auf auf ESX Hypervisor-Hosts erstellte Cluster beschränkt. Die folgenden ESX-Versionen sind mit ONTAP Select 9.15.1 und höher kompatibel:
-+
-** ESXi 8.0 U3
-** ESXi 8.0 U2
-** ESXi 8.0 U1
-** ESXi 8.0GA
-** ESXi 7.0 U3
-** ESXi 7.0
+[role="tabbed-block"]
+====
+.KVM
+--
+Ab ONTAP Select 9.17.1 wird die Clustererweiterung und -kontraktion auf KVM-Hypervisor-Hosts unterstützt.
+
+Die Clustererweiterung und -kontraktion wird für die folgenden KVM-Hypervisor-Versionen unterstützt:
+
+* Red Hat Enterprise Linux 64-Bit 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 und 8.6
+* Rocky Linux 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6
 
 
+--
+.ESXi
+--
+Ab ONTAP Select 9.15.1 wird die Clustererweiterung und -kontraktion auf ESXi-Hypervisor-Hosts unterstützt.
+
+Die Clustererweiterung und -kontraktion wird für die folgenden ESXi-Hypervisor-Versionen unterstützt:
+
+* ESXi 8.0 U3
+* ESXi 8.0 U2
+* ESXi 8.0 U1
+* ESXi 8.0GA
+* ESXi 7.0 U3
+* ESXi 7.0
 
 
+--
+====
 
 
 == Erweitern Sie das Cluster
 
-Mit der Cluster-Erweiterungsfunktion können Sie die Größe eines vorhandenen Clusters von einem Cluster mit sechs Nodes auf ein Cluster mit acht Nodes erhöhen.
+Verwenden Sie die Cluster-Erweiterungsfunktion, um die Größe eines vorhandenen Clusters von sechs auf acht Knoten zu erhöhen.
 
 .Über diese Aufgabe
-Zur Vorbereitung der Cluster-Erweiterung werden neue ESX-Hosts zur Bestandsaufnahme hinzugefügt und die Details zu den neuen Nodes zugewiesen. Vor dem Starten der Cluster-Erweiterung überprüft eine Netzwerkprüfung das ausgewählte interne Netzwerk.
+Zur Vorbereitung der Clustererweiterung werden neue ESXi- und KVM-Hosts in das Inventar aufgenommen und die Details der neuen Knoten zugewiesen. Vor dem Start der Clustererweiterung wird das ausgewählte interne Netzwerk durch eine Netzwerkvorprüfung überprüft.
 
 .Bevor Sie beginnen
 * Wenn Sie einen Cluster mit mehreren Knoten bereitstellen, sollten Sie mit der Netzwerkkonnektivitätsprüfung vertraut sein. Sie können die Netzwerkkonnektivitätsprüfung mithilfe des link:task_adm_connectivity.html["Web-Benutzeroberfläche"] oder die link:task_cli_connectivity.html["CLI"] .
@@ -70,7 +87,7 @@ Zur Vorbereitung der Cluster-Erweiterung werden neue ESX-Hosts zur Bestandsaufna
 . Wählen Sie oben auf der Seite die Registerkarte *Cluster* aus und wählen Sie den gewünschten Cluster aus der Liste aus.
 . Wählen Sie auf der Seite Cluster Details das Zahnradsymbol rechts auf der Seite aus und wählen Sie *Cluster erweitern*.
 . Navigieren Sie zum Abschnitt *HA Pair 4*.
-. Wählen Sie aus den Konfigurationsdetails für HA-Paare (High Availability, Hochverfügbarkeit) für das vierte HA-Paar, einschließlich:
+. Wählen Sie die folgenden Konfigurationsdetails für Hochverfügbarkeitspaare (HA) für das vierte HA-Paar:
 +
 ** Instanztyp
 ** Node-Namen
@@ -82,7 +99,7 @@ Zur Vorbereitung der Cluster-Erweiterung werden neue ESX-Hosts zur Bestandsaufna
 
 
 . Wählen Sie *HA-Paar speichern*, um die Konfigurationsdetails zu speichern.
-. Geben Sie die ONTAP-Anmeldeinformationen ein, und wählen Sie dann *Cluster erweitern*.
+. Geben Sie die ONTAP -Anmeldeinformationen ein und wählen Sie *Cluster erweitern*.
 . Wählen Sie *Weiter* und führen Sie die Netzwerkvorprüfung durch, indem Sie *Ausführen* auswählen.
 +
 Durch die Netzwerkprüfung wird überprüft, ob das für den ONTAP-Cluster-Datenverkehr ausgewählte interne Netzwerk ordnungsgemäß funktioniert.
@@ -102,7 +119,7 @@ Nach der Erweiterung des Clusters sollten Sie die Konfigurationsdaten von ONTAP 
 
 == Vertrag mit dem Cluster abschließen
 
-Mit der Cluster-Kontraktionsfunktion können Sie die Größe eines vorhandenen Clusters von einem Cluster mit acht Nodes auf ein Cluster mit sechs Nodes verringern.
+Verwenden Sie die Cluster-Kontraktionsfunktion, um die Größe eines vorhandenen Clusters von acht auf sechs Knoten zu verringern.
 
 .Über diese Aufgabe
 Das gewünschte HA-Paar von Nodes im Cluster wird ausgewählt, um die Cluster-Kontraktion während des Verfahrens vorzubereiten.

@@ -37,8 +37,9 @@ Die folgenden ONTAP Funktionen werden von ONTAP Select unterstützt und standard
 * NVMe über TCP –
 * ONTAP Mandantenfähigkeit
 * ONTAP S3
-* SnapMirror
 * S3 SnapMirror
+* SnapMirror
+* SnapMirror Cloud
 * SnapRestore
 * SnapVault
 * Disaster Recovery für Storage VM (SVM DR)

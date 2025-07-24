@@ -73,7 +73,7 @@ Das Premium XL-Angebot bietet folgende Funktionen:
 
 
 
-NOTE: Die Verwendung des Typs der großen Instanz oder von NVMe-Laufwerken in einer SW-RAID-Konfiguration wird auf Kernel-Based Virtual Machine (KVM) nicht unterstützt.
+NOTE: Die Verwendung des großen Instanztyps in einer Software-RAID-Konfiguration wird auf einer Kernel-Based Virtual Machine (KVM) nicht unterstützt.
 
 
 
@@ -170,10 +170,10 @@ In der folgenden Tabelle ist der für den angegebenen Speicher erforderliche Min
 2+| Softwaretyp 3+| Beschreibung 
 
 
-2+| Unterstützung für Hypervisoren (VMware) 3+| VMware vSphere 7.0GA und Updates 1 bis 3C VMware vSphere 8.0GA und Updates 1 bis 3 
+2+| Unterstützung für Hypervisoren (VMware) 3+| VMware vSphere 8.0GA und Updates 1 bis 3 VMware vSphere 7.0GA und Updates 1 bis 3C 
 
 
-2+| Unterstützung für Hypervisoren (KVM) 3+| Redhat Enterprise Linux 64-Bit (KVM) 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6 Rocky Linux (KVM) 9 und 8 
+2+| Unterstützung für Hypervisoren (KVM) 3+| Red Hat Enterprise Linux 64-Bit (KVM) 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 und 8.6 Rocky Linux (KVM) 9.6 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6 
 
 
 2+| Managementsoftware 3+| NetApp Active IQ Unified Manager Management Suite ONTAP Select Deploy Utility SnapCenter (optional) 

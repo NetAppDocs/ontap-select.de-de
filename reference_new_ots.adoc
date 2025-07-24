@@ -19,6 +19,47 @@ Erfahren Sie mehr über die neuen Funktionen und Verbesserungen der unterstützt
 
 
 
+== ONTAP Select 9.17.1
+
+ONTAP Select 9.17.1 enthält mehrere neue Funktionen und Verbesserungen.
+
+Software-RAID-Unterstützung für lokal angeschlossene NVMe-Festplatten auf KVM-Hosts:: ONTAP Select 9.17.1 führt Software-RAID-Unterstützung für lokal angeschlossene ONTAP Select NVMe-Festplatten auf einem Kernel-Based Virtual Machine (KVM)-Hypervisor-Host ein.
++
+--
+Um Software-RAID für lokal angeschlossene NVMe-Festplatten zu verwenden, müssen Sie link:kvm-host-configuration-and-preparation-checklist.html["PCI-Passthrough konfigurieren (DirectPath IO)"] bei der Vorbereitung des KVM-Hosts. Dadurch erhält der KVM-Host direkten Zugriff auf die lokal angeschlossenen NVMe-Festplatten, was für die folgenden Aufgaben erforderlich ist:
+
+* Konfigurieren des KVM-Hosts zur Verwendung von NVMe-Laufwerken
+* Verwenden von Software-RAID nach der Bereitstellung des Clusters
+
+
+link:concept_stor_swraid_local.html["Erfahren Sie mehr über die Software-RAID-Konfigurationsdienste für lokal angeschlossenen Speicher"] .
+
+--
+Unterstützung für Cluster-Erweiterung und -Kontraktion auf KVM-Hosts:: Ab ONTAP Select 9.17.1 wird die Cluster-Erweiterung und -Kontraktion sowohl für Kernel-Based Virtual Machine (KVM) als auch für ESXi-Hypervisor-Hosts unterstützt. Für ONTAP Select 9.16.1 und 9.15.1 wird die Cluster-Erweiterung und -Kontraktion nur für ESXi-Hypervisor-Hosts unterstützt.
++
+--
+Sie können die Funktion zur Cluster-Erweiterung und -Kontraktion auf einem vorhandenen ONTAP Select Cluster verwenden, um die Größe von einem Cluster mit sechs Knoten auf einen Cluster mit acht Knoten zu erhöhen oder die Größe von einem Cluster mit acht Knoten auf einen Cluster mit sechs Knoten zu verringern.
+
+link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
+
+--
+Unterstützung für SnapMirror Cloud:: Ab ONTAP Select 9.17.1 wird SnapMirror Cloud mit ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzierte ONTAP Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
++
+--
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Erfahren Sie mehr über SnapMirror Cloud-Backups auf Objektspeicher"^] .
+
+--
+Aktualisierte NDA-Treiberunterstützung:: Ab ONTAP Select 9.17.1 ersetzt der FreeBSD NDA-Gerätetreiber (NVMe Direct Access) den NVD-Treiber (NVMe Express Disk Driver). Der FreeBSD-Treiber unterstützt Direktzugriffsgeräte durch Implementierung des NVMe-Befehlsprotokolls. Wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren, wird der FreeBSD-Treiber standardmäßig gestartet, wenn Sie die NVMe-Geräte konfigurieren.
++
+--
+Für ONTAP Select 9.16.1 und früher bietet NVD weiterhin Unterstützung für NVMe-Geräte in Ihrer ONTAP Select Bereitstellung.
+
+--
+Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.17.1 wird der KVM-Hypervisor auf Red Hat Enterprise Linux (RHEL) 9.6 und Rocky Linux 9.6 unterstützt.
+
+
+
+
 == ONTAP Select 9.16.1
 
 ONTAP Select 9.16.1 enthält mehrere neue Funktionen und Verbesserungen.
@@ -31,7 +72,7 @@ Für ein neues ONTAP Select 9.16.1 Deploy wird das neue NF-Format automatisch an
 --
 Unterstützung für den autonomen Ransomware-Schutz:: In ONTAP Select 9.16.1 wird die Unterstützung für Autonomous Ransomware Protection (ARP) eingeführt. ONTAP Select 9.16.1 unterstützt nur manuelle Updates für ARP, automatische Updates werden nicht unterstützt. Die ARP-Funktionslizenz ist in der Lizenzdatei für ONTAP Select 9.16.1 enthalten. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Weitere Informationen ."].
 Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.16.1 unterstützt VMware ESXi 8.0 U3.
-Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.16.1 wird der Kernel-basierte Virtual Machine (KVM)-Hypervisor auf Red hat Enterprise Linux (RHEL) 9.5 und Rocky Linux 9.5 unterstützt.
+Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.16.1 wird der KVM-Hypervisor auf RHEL 9.5 und Rocky Linux 9.5 unterstützt.
 
 
 
