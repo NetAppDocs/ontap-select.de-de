@@ -3793,7 +3793,6 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="1b5226a9b144cf3cfc703d8ec6db57ef" category="section-title">Schritt 3: Nach Abschluss</block>
   <block id="f3a5d576716c34a4548a66aa3126c77d" category="sidebar">Checkliste für KVM-Hosts</block>
   <block id="935f419c21e41ca992af1333488fd110" category="sidebar">Checkliste für ESXi-Hosts</block>
-  <block id="e7413dab214cef43694e01b289962db2" category="admonition">Die Verwendung des großen Instanztyps in einer Software-RAID-Konfiguration wird auf einer Kernel-Based Virtual Machine (KVM) nicht unterstützt.</block>
   <block id="891e3168577f6225cc6bf3c35aafa9e2" category="cell">VMware vSphere 8.0GA und Updates 1 bis 3 VMware vSphere 7.0GA und Updates 1 bis 3C</block>
   <block id="1a847c26edb3f3d6892cfa25198b2272" category="cell">Red Hat Enterprise Linux 64-Bit (KVM) 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 und 8.6 Rocky Linux (KVM) 9.6 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6</block>
   <block id="637c87a94a9976e074cd8762dd5e83ec" category="list-text">Service-Datenträger sind die virtuellen Datenträger (VMDKs), die innerhalb der ONTAP Select VM verwendet werden, um verschiedene Elemente wie Clustering, Booten usw. zu bedienen.</block>
@@ -3906,4 +3905,5 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">Geben Sie die ONTAP -Anmeldeinformationen ein und wählen Sie *Cluster erweitern*.</block>
   <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">Verwenden Sie die Cluster-Kontraktionsfunktion, um die Größe eines vorhandenen Clusters von acht auf sechs Knoten zu verringern.</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 Dokumente</block>
+  <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">Die Verwendung des großen Instanztyps wird auf einer Kernel-Based Virtual Machine (KVM) nicht unterstützt.</block>
 </blocks>

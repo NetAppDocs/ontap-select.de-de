@@ -73,7 +73,7 @@ Das Premium XL-Angebot bietet folgende Funktionen:
 
 
 
-NOTE: Die Verwendung des großen Instanztyps in einer Software-RAID-Konfiguration wird auf einer Kernel-Based Virtual Machine (KVM) nicht unterstützt.
+NOTE: Die Verwendung des großen Instanztyps wird auf einer Kernel-Based Virtual Machine (KVM) nicht unterstützt.
 
 
 
