@@ -1500,13 +1500,7 @@
   <block id="71408d9f3d3515fa8a651b1604736a6f" category="list-text">*Laufwerkstyp und Anzahl der Laufwerke in der RAID-Gruppe(n)*.</block>
   <block id="f28d3f9b022a76395cd98dbce7787e03" category="list-text">*Hypervisor-Version und Patch-Level*.</block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">Sie können ein vorhandenes Deploy Utility Virtual Machine direkt über die Befehlszeilenschnittstelle aktualisieren.</block>
-  <block id="a0352e441ba04fb28d070a715c9d2ff2" category="paragraph">Stellen Sie sicher, dass Deploy nicht zur Durchführung anderer Aufgaben während des Upgrades verwendet wird. In den aktuellen Versionshinweisen finden Sie Informationen und Einschränkungen zum Upgrade des Deploy-Dienstprogramms.</block>
-  <block id="eb75a7c0dc84d14c47a84e436b8082cc" category="paragraph">Um mit dem Upgrade-Prozess zu beginnen, müssen Sie die entsprechende Upgrade-Datei für die Implementierung von Virtual Machines von der NetApp Support Site herunterladen. Das Aktualisierungspaket ist als eine einzige komprimierte Datei formatiert.</block>
-  <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">Nach dem Erwerb des Aktualisierungspakets müssen Sie die Datei auf die virtuelle Maschine bereitstellen hochladen.</block>
-  <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">Die Upgrade-Datei muss auf Ihrer lokalen Arbeitsstation verfügbar sein. Sie müssen außerdem das Kennwort für das Administratorbenutzerkonto besitzen.</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">Die Upgrade-Datei wird im Home-Verzeichnis des Admin-Benutzers gespeichert.</block>
-  <block id="baa4f96e18f8e9fced4eec3f5a81a23a" category="paragraph">Nachdem die Upgrade-Datei auf die virtuelle Maschine bereitstellen hochgeladen wurde, können Sie das Upgrade anwenden.</block>
-  <block id="dbb14ca7f13323519486701e4b502763" category="paragraph">Sie müssen wissen, in welchem Verzeichnis die Upgrade-Datei in der virtuellen Maschine Deploy Utility gespeichert wurde. Stellen Sie außerdem sicher, dass die Implementierung während des Upgrades nicht für andere Aufgaben verwendet wird.</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">Führen Sie das Upgrade mithilfe des entsprechenden Verzeichnispfads und Dateinamens durch:</block>
   <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph"><block ref="1299ca75bdbf03e068a6eb77561752df" prefix="" category="inline-code"></block></block>
   <block id="8e18eb8cd4ab44854a5b30a491abc11b" category="summary">Vor der Bereitstellung von ONTAP Select müssen Sie das Hypervisor-Netzwerk korrekt konfigurieren.</block>
@@ -2509,7 +2503,6 @@
   <block id="58af1c2597d085d648724676529071f9" category="paragraph-title">Hypervisor-Plattformen</block>
   <block id="ef85c9b02f4296b633e43a4931df8c2f" category="paragraph-title">Latenz zwischen den Nodes</block>
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">Aktuelle Version von ONTAP Select</block>
-  <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">Informationen zu diesen Aufgaben</block>
   <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">Die Performance eines ONTAP Select Clusters kann aufgrund der Eigenschaften der zugrunde liegenden Hardware und der zugrunde liegenden Konfiguration erheblich variieren. Die spezifische Hardwarekonfiguration ist der größte Faktor für die Performance einer bestimmten ONTAP Select Instanz. Im Folgenden sind einige der Faktoren aufgeführt, die die Performance einer bestimmten ONTAP Select-Instanz beeinflussen:</block>
   <block id="507f8233cb2eb908786a8439f415fee2" category="list-text">Ab ONTAP Select 9.10.1 können Sie kein neues Cluster mehr auf dem KVM-Hypervisor implementieren.</block>
   <block id="93ffd34ce676a00f4a126c465fc48130" category="list-text">Ab ONTAP Select 9.11.1 sind alle Managementfunktionen nicht mehr für vorhandene KVM-Cluster und -Hosts verfügbar, mit Ausnahme der Funktionen zum Offline- und Löschen.</block>
@@ -2638,7 +2631,6 @@
   <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">Performance-Überblick</block>
   <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">Performance von ONTAP Select 9.6</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">Im Allgemeinen passiert nichts, wenn eine Lizenz abläuft. Sie können jedoch keine andere Lizenz installieren, da die Nodes der abgelaufenen Lizenz zugeordnet sind. Bis Sie die Lizenz erneuern, sollten Sie _Not_ alles tun, was das Aggregat offline bringen würde, wie zum Beispiel einen Neustart oder Failover-Vorgang. Es wird empfohlen, die Lizenzerneuerung zu beschleunigen.</block>
-  <block id="92cbe224b663d28b8dd457992abcd653" category="list-text">Verwenden Sie in einer Befehlsshell auf Ihrer lokalen Workstation das Dienstprogramm scp, um die Image-Datei auf die virtuelle Maschine bereitzustellen.</block>
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">Manipulationssichere Snapshot Kopien</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM-Migration</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
@@ -2816,9 +2808,6 @@
   <block id="a576bfb8d18800b15b695bc702167ec1" category="admonition">Sie sollten nur ein ONTAP Select-Image mit einer Version hinzufügen, die vor der Originalversion liegt, die in Ihrer Instanz von Deploy enthalten ist. Das Hinzufügen späterer Versionen von ONTAP Select ohne Aktualisierung von Deploy wird nicht unterstützt.</block>
   <block id="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="paragraph"><block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block></block>
   <block id="298707edb3b539391aec5a5a89670001" category="admonition">Wenn Sie eine ältere Instanz des ONTAP Select Deploy-Verwaltungsdienstprogramms installiert haben, sollten Sie auf die aktuelle Version aktualisieren. Der ONTAP Select Node und die ONTAP Select Deploy Komponente werden unabhängig voneinander aktualisiert. Siehe <block ref="fb380fde33185400cd8ee6587621860d" category="inline-link-macro-rx"></block> Entnehmen.</block>
-  <block id="dded0118bab7e4547129d9826a3a53bf" category="section-title">Upgrade-Paket herunterladen</block>
-  <block id="295a9acceaedaed57f5a69a9e9479d14" category="section-title">Laden Sie das Paket auf die virtuelle Maschine bereitstellen hoch</block>
-  <block id="89a9fa7a63f2114c1852ebceaf021995" category="section-title">Upgrade-Paket anwenden</block>
   <block id="4d0baad02721160fc108f9d6af73fec0" category="doc">Öffnen Sie die ONTAP Select-Videokonsole</block>
   <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">Bestätigen Sie die Netzwerkverbindung zwischen den ONTAP Select Nodes</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">Die erste Cluster-Erstellung kann verwendet werden, um einen ONTAP Select Cluster zu erstellen, der einen Teil oder den gesamten Speicherplatz im ersten Datastore verbraucht. Ein zweiter Schritt besteht darin, einen oder mehrere Kapazitätserweiterungen mithilfe zusätzlicher Datenspeicher durchzuführen, bis die gewünschte Gesamtkapazität erreicht ist. Diese Funktionalität wird im Abschnitt beschrieben <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>.</block>
@@ -2878,7 +2867,6 @@
   <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">Auf das zugreifen <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> Verwenden Sie einen Web-Browser und wählen Sie *Downloads* aus dem Download-Menü.</block>
   <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">Scrollen Sie nach unten und wählen Sie *ONTAP Select Deploy Upgrade* aus.</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA), und wählen Sie *Accept &amp; Continue* aus.</block>
-  <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">Bevor das Upgrade abgeschlossen ist, werden Sie aufgefordert, ein Backup der Konfiguration der virtuellen Maschine bereitstellen zu erstellen. Außerdem sollten Sie den Browser-Cache löschen, damit Sie die neu erstellten Deploy-Seiten anzeigen können.</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">Sie können auf die Videokonsole der virtuellen Hypervisor-Maschine zugreifen, auf der ONTAP Select ausgeführt wird.</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">Entfernen Sie optional das ONTAP Select-Image mit Ihrem Hypervisor-Host.</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">Beispiel für ESXi</block>
@@ -3906,4 +3894,21 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">Verwenden Sie die Cluster-Kontraktionsfunktion, um die Größe eines vorhandenen Clusters von acht auf sechs Knoten zu verringern.</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 Dokumente</block>
   <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">Die Verwendung des großen Instanztyps wird auf einer Kernel-Based Virtual Machine (KVM) nicht unterstützt.</block>
+  <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">Sie können eine vorhandene virtuelle Maschine des ONTAP Select Deploy-Dienstprogramms direkt mithilfe der CLI des ONTAP Select Deploy-Dienstprogramms aktualisieren.</block>
+  <block id="37d4c938e6c31c7ec9166448ac3458f3" category="paragraph">Stellen Sie sicher, dass ONTAP Select Deploy während des Upgrades nicht zum Ausführen anderer Aufgaben verwendet wird.  Informationen und Einschränkungen zum Upgrade des Dienstprogramms ONTAP Select Deploy finden Sie in den aktuellen Versionshinweisen.</block>
+  <block id="a59e9f814fd25c07ec74e51d966be96f" category="paragraph">Sie können ONTAP Select Deploy 9.17.1 von ONTAP Select Deploy 9.16.1 oder 9.15.1 aktualisieren.  Um ein Upgrade von ONTAP Select Deploy 9.14.1 oder früher durchzuführen, lesen Sie die Versionshinweise für Ihre ONTAP Select -Version.</block>
+  <block id="db1b7c6bff7b0da47260c4e758478bf5" category="section-title">Schritt 1: Laden Sie das Paket herunter</block>
+  <block id="c81ba5c62604d6722d8975fb55e13972" category="paragraph">Um den Upgrade-Prozess zu starten, laden Sie die entsprechende ONTAP Select Deploy-Upgradedatei für virtuelle Maschinen von der<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> . Das Upgrade-Paket ist als einzelne komprimierte Datei formatiert.</block>
+  <block id="1bd278b7a759195dc2c65f644c38efc6" category="section-title">Schritt 2: Laden Sie das Paket auf die virtuelle ONTAP Select Deploy-Maschine hoch</block>
+  <block id="58d35d75d5ec4b24d42607d4bf519bb0" category="paragraph">Nachdem Sie das Paket heruntergeladen haben, müssen Sie die Datei auf die virtuelle ONTAP Select Deploy-Maschine hochladen.</block>
+  <block id="f210391b7941f9a4198928bc79fcba09" category="paragraph">Diese Aufgabe beschreibt eine Methode zum Hochladen der Datei auf die virtuelle ONTAP Select Deploy-Maschine.  Möglicherweise gibt es andere Optionen, die für Ihre Umgebung besser geeignet sind.</block>
+  <block id="c99ab6326cfb96cafe5cf69a39bf5e79" category="list-text">Stellen Sie sicher, dass die Upgrade-Datei auf Ihrer lokalen Workstation verfügbar ist.</block>
+  <block id="e2a672c847bad2863e57f277c323553c" category="list-text">Stellen Sie sicher, dass Sie über das Kennwort für das Administrator-Benutzerkonto verfügen.</block>
+  <block id="e60c1aa35e0fea0a6ef96ddaa4b018f8" category="list-text">Verwenden Sie in einer Befehlsshell auf Ihrer lokalen Arbeitsstation den<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> (Secure Copy Protocol)-Dienstprogramm zum Hochladen der Image-Datei auf die virtuelle ONTAP Select Deploy-Maschine.</block>
+  <block id="fc979b5c6d5eef1f824052719f508095" category="section-title">Schritt 3: Anwenden des Upgrade-Pakets</block>
+  <block id="8b24796d99b30623379a77021195b47e" category="paragraph">Nachdem Sie die Upgrade-Datei auf die virtuelle ONTAP Select Deploy-Maschine hochgeladen haben, können Sie das Upgrade anwenden.</block>
+  <block id="91aa908b0f2003054a80626907b7d18a" category="list-text">Überprüfen Sie, in welchem Verzeichnis die Upgrade-Datei auf der virtuellen Maschine des ONTAP Select Deploy-Dienstprogramms abgelegt wurde.</block>
+  <block id="b2fb3f45f259e44e136bed021ae55392" category="list-text">Stellen Sie sicher, dass ONTAP Select Deploy während der Durchführung des Upgrades nicht zum Ausführen anderer Aufgaben verwendet wird.</block>
+  <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">Sign in mit dem Administratorkonto per SSH bei der CLI des ONTAP Select Deploy-Dienstprogramms an.</block>
+  <block id="87a5212e058c62281b89455df9a32603" category="paragraph">Bevor der Upgrade-Vorgang abgeschlossen wird, werden Sie aufgefordert, eine Sicherungskopie der ONTAP Select Deploy-Konfiguration der virtuellen Maschine zu erstellen.  Außerdem sollten Sie den Browser-Cache leeren, damit Sie die neu erstellten ONTAP Select Deploy-Seiten anzeigen können.</block>
 </blocks>
