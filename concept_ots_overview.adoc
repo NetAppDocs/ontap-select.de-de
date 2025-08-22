@@ -127,6 +127,7 @@ Das Ändern der Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, 
 * Serviceprozessoren
 * SVM-Migration
 * SnapLock-Compliance
+* SnapMirror aktive Synchronisierung
 * VMware HCX
 
 
