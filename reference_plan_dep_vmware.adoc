@@ -103,3 +103,24 @@ ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6
 * Sie müssen der Management-LIF der virtuellen Maschine Bereitstellen eine IPv4-Adresse zuweisen.
 * Deploy kann keine ONTAP Select-Nodes erstellen, die für die Verwendung von IPv6 auf den ONTAP LIFs konfiguriert sind.
 
+
+
+
+== Überlegungen zur Bereitstellung von ONTAP Select VMware vCenter-Servern
+
+
+
+=== VMware vSphere-Berechtigungen für ESA
+
+Im Folgenden sind die spezifischen Berechtigungen für die vSphere-Inhaltsbibliothek aufgeführt, die Sie zum Erstellen und Verwalten der vSAN Express Storage Architecture (ESA) in vCenter benötigen:
+
+* Bibliothekselement hinzufügen
+* Lokale Bibliothek erstellen
+* Bibliothekselement löschen
+* Lokale Bibliothek löschen
+* Lesespeicher
+* Dateien aktualisieren
+* Bibliothek aktualisieren
+* Bibliothekselement aktualisieren
+* Lokale Bibliothek aktualisieren
+

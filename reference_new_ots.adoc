@@ -43,11 +43,59 @@ Sie können die Funktion zur Cluster-Erweiterung und -Kontraktion auf einem vorh
 link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
 
 --
-Unterstützung für SnapMirror Cloud:: Ab ONTAP Select 9.17.1 wird SnapMirror Cloud mit ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzierte ONTAP Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
+Verbesserte Unterstützung für Cluster-Erweiterung und -Kontraktion auf ESXi-Hosts:: Ab ONTAP Select 9.17.1 wird die Clustererweiterung und -kontraktion für Cluster mit sechs bis zwölf Knoten auf ESXi-Hosts unterstützt:
 +
 --
+--
+Sie können die Clustergröße für einen vorhandenen ESXi-Cluster in den folgenden Schritten erhöhen:
+
+* Von sechs Knoten auf acht, zehn oder zwölf Knoten
+* Von acht Knoten auf zehn oder zwölf Knoten
+* Von zehn auf zwölf Knoten
+
+
+Sie können die Clustergröße für einen vorhandenen ESXi-Cluster in den folgenden Schritten verringern:
+
+* Von zwölf Knoten auf zehn, acht oder sechs Knoten
+* Von zehn Knoten auf acht oder sechs Knoten
+* Von acht auf sechs Knoten
+
+
+--
+link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
+
+--
+Unterstützung für ONTAP -Funktionen:: Ab ONTAP Select 9.17.1 werden die folgenden lizenzierten ONTAP -Funktionen mit ONTAP Select unterstützt:
++
+--
+* SnapLock Select
++
+Ab ONTAP Select 9.17.1 wird SnapLock Select für neue Bereitstellungen automatisch lizenziert.  Für Upgrades von ONTAP Select 9.16.1 und früher müssen Sie die SnapLock Select-Lizenz von derlink:https://mysupport.netapp.com/site/["NetApp Support Website"^] und wenden Sie es manuell an.
+
+* SnapMirror Cloud
++
+Ab ONTAP Select 9.17.1 wird SnapMirror Cloud mit ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzierte ONTAP Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
+
++
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Erfahren Sie mehr über SnapMirror Cloud-Backups auf Objektspeicher"^] .
 
+
+
+--
+Unterstützung für vSAN ESA auf Clustern mit mehreren Knoten:: Ab ONTAP Select 9.17.1 wird die Unterstützung für vSAN Express Storage Architecture (ESA) erweitert, um Cluster mit mehreren Knoten bereitzustellen.  Diese Erweiterung ermöglicht Ihnen die Bereitstellung von vSAN ESA-Konfigurationen.
++
+--
+vSAN ESA ist eine ESX-spezifische Konfiguration und eine neue Architektur für VMware vSAN, die in vSphere 8 eingeführt wurde. vSAN ESA wurde entwickelt, um verbesserte Effizienz, Skalierbarkeit und Leistung zu bieten, insbesondere bei der Verwendung von NVMe-basierten TLC-Flash-Geräten.
+
+ONTAP Select Deploy und ONTAP Select für ESX unterstützen die Konfiguration eines ONTAP Select Clusters mit einem oder mehreren Knoten, wobei entweder ein vSAN oder ein externer Array-Datenspeichertyp für den Speicherpool verwendet wird.
+
+[NOTE]
+====
+Um Vorgänge in der Inhaltsbibliothek durchzuführen, benötigen Sie Zugriff auf zusätzliche Berechtigungsstufen.  Dies ist für vSAN ESA-Bereitstellungen erforderlich, wenn Sie mit eingeschränkten Rollen arbeiten.
+
+link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["Informationen zum Zugriff auf Berechtigungsstufen für Vorgänge in der Inhaltsbibliothek"^] .
+
+====
 --
 Aktualisierte NDA-Treiberunterstützung:: Ab ONTAP Select 9.17.1 ersetzt der FreeBSD NDA-Gerätetreiber (NVMe Direct Access) den NVD-Treiber (NVMe Express Disk Driver). Der FreeBSD-Treiber unterstützt Direktzugriffsgeräte durch Implementierung des NVMe-Befehlsprotokolls. Wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren, wird der FreeBSD-Treiber standardmäßig gestartet, wenn Sie die NVMe-Geräte konfigurieren.
 +
