@@ -41,7 +41,7 @@ Beim Zugriff auf das Dienstprogramm Administration bereitstellen stehen Ihnen ve
 
 === Grafische Weboberfläche
 
-Sie können über einen modernen Webbrowser auf das Dienstprogramm Bereitstellung zugreifen. Die Web-GUI bietet eine intuitive und einfach zu bedienende Oberfläche, und in den meisten Fällen wird Ihre primäre Oberfläche bei der Verwendung des Dienstprogramms.
+Sie können über einen modernen Webbrowser auf das Bereitstellungsprogramm zugreifen. Die Web-UI bietet eine intuitive und benutzerfreundliche Oberfläche und ist in den meisten Fällen Ihre primäre Schnittstelle bei der Verwendung des Dienstprogramms.
 
 
 

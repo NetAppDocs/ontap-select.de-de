@@ -83,7 +83,7 @@ Nach einer VM-Migration:: Nachdem eine virtuelle Maschine mit ONTAP Select migri
 Sie können eine Cluster-Aktualisierung durchführen, um die Konfigurationsdatenbank bereitstellen über die Webbenutzeroberfläche zu aktualisieren.
 
 
-NOTE: Anstatt die Bereitstellungs-GUI zu verwenden, können Sie einen Cluster mit dem Befehl „Cluster Refresh“ in der CLI-Shell „Deploy“ aktualisieren.
+NOTE: Anstatt die Bereitstellungs-UI zu verwenden, können Sie den Befehl „Cluster aktualisieren“ in der Bereitstellungs-CLI-Shell verwenden, um einen Cluster zu aktualisieren.
 
 Konfiguration des Clusters und der Virtual Machine:: Einige der Konfigurationswerte, die sich ändern und dazu führen können, dass die Implementierungsdatenbank nicht synchronisiert wird, sind:
 +

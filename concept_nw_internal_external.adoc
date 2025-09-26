@@ -61,7 +61,7 @@ network connectivity-check show --run-id X (X is a number)
 ----
 Dieses Tool ist nur für die Fehlerbehebung im internen Netzwerk in einem Multi-Node-Select-Cluster nützlich. Das Tool sollte nicht verwendet werden, um Fehler bei Clustern mit einem Node (einschließlich vNAS Konfigurationen), durch ONTAP, die für ONTAP Select-Konnektivität eingesetzt werden, oder um Probleme mit der Client-seitigen Konnektivität zu beheben.
 
-Der Cluster create Wizard (ein Teil der ONTAP Deploy GUI) umfasst den internen Netzwerkprüfer als optionalen Schritt, der bei der Erstellung von Clustern mit mehreren Nodes verfügbar ist. Angesichts der wichtigen Rolle, die das interne Netzwerk in Clustern mit mehreren Nodes spielt, verbessert dieser Schritt in den Workflow zum Erstellen von Clustern die Erfolgsrate von Clustervorgängen.
+Der Cluster-Erstellungsassistent (Teil der ONTAP Deploy UI) beinhaltet die interne Netzwerkprüfung als optionalen Schritt bei der Erstellung von Multinode-Clustern. Angesichts der wichtigen Rolle des internen Netzwerks in Multinode-Clustern verbessert die Integration dieses Schritts in den Cluster-Erstellungs-Workflow die Erfolgsquote von Cluster-Erstellungsvorgängen.
 
 Ab ONTAP Deploy 2.10 kann die vom internen Netzwerk verwendete MTU-Größe zwischen 7,500 und 9,000 festgelegt werden. Mit dem Network Connectivity Checker kann auch die MTU-Größe zwischen 7,500 und 9,000 getestet werden. Der MTU-Standardwert ist auf den Wert des virtuellen Netzwerk-Switches eingestellt. Dieser Standardwert müsste durch einen kleineren Wert ersetzt werden, wenn ein Netzwerküberlagerung wie VXLAN in der Umgebung vorhanden ist.
 

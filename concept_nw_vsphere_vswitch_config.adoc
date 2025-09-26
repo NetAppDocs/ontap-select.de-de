@@ -66,7 +66,7 @@ Die Reihenfolge der Ports in der Standby-Liste ist wichtig. Die folgende Tabelle
 
 | Standby 3 | Vmnic3 | Vmnic2 | Vmnic1 | Vmnic0 
 |===
-In den folgenden Abbildungen werden die Konfigurationen der externen Netzwerk-Port-Gruppen vom vCenter GUI (ONTAP-External und ONTAP-External 2) dargestellt. Beachten Sie, dass sich die aktiven Adapter von unterschiedlichen Netzwerkkarten unterscheiden. Bei diesem Setup sind vmnic 4 und vmnic 5 Dual-Ports auf demselben physischen NIC, während vmnic 6 und vminc 7 ähnliche Dual-Ports auf einem separaten NIC sind (vnmics 0 bis 3 werden in diesem Beispiel nicht verwendet). Die Reihenfolge der Standby-Adapter stellt ein hierarchisches Failover dar, wobei die Ports aus dem internen Netzwerk zuletzt sind. Die Reihenfolge der internen Ports in der Standby-Liste wird auf ähnliche Weise zwischen den beiden externen Portgruppen ausgetauscht.
+Die folgenden Abbildungen zeigen die Konfigurationen der externen Netzwerk-Portgruppen aus der vCenter-UI (ONTAP-External und ONTAP-External2). Beachten Sie, dass die aktiven Adapter von unterschiedlichen Netzwerkkarten stammen. In diesem Setup sind vmnic 4 und vmnic 5 Dual-Ports auf derselben physischen Netzwerkkarte, während vmnic 6 und vminc 7 ebenfalls Dual-Ports auf einer separaten Netzwerkkarte sind (vnmics 0 bis 3 werden in diesem Beispiel nicht verwendet). Die Reihenfolge der Standby-Adapter ermöglicht ein hierarchisches Failover, wobei die Ports des internen Netzwerks zuletzt kommen. Die Reihenfolge der internen Ports in der Standby-Liste ist zwischen den beiden externen Portgruppen ebenfalls vertauscht.
 
 *Teil 1: ONTAP Select Konfiguration externer Portgruppen*
 
