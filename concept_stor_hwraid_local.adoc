@@ -112,7 +112,7 @@ Alternativ kann man mit der Erstellung eines einzelnen Datastores auf einer einz
 Die erste Cluster-Erstellung kann verwendet werden, um einen ONTAP Select Cluster zu erstellen, der einen Teil oder den gesamten Speicherplatz im ersten Datastore verbraucht. Ein zweiter Schritt besteht darin, einen oder mehrere Kapazitätserweiterungen mithilfe zusätzlicher Datenspeicher durchzuführen, bis die gewünschte Gesamtkapazität erreicht ist. Diese Funktionalität wird im Abschnitt beschrieben link:concept_stor_capacity_inc.html["Erhöhung der Storage-Kapazität"].
 
 
-NOTE: Der Overhead von VMFS ist nicht null (siehe link:https://kb.vmware.com/s/article/1001618["VMware KB 1001618"]) Und der Versuch, den gesamten von einem Datenspeicher gemeldeten Speicherplatz frei zu nutzen, hat zu falschen Fehlern während der Cluster-Erstellung geführt.
+NOTE: Der VMFS-Overhead ist ungleich Null (siehe VMware KB 1001618) und der Versuch, den gesamten von einem Datenspeicher als frei gemeldeten Speicherplatz zu verwenden, hat bei Clustererstellungsvorgängen zu sporadischen Fehlern geführt.
 
 In jedem Datenspeicher bleibt ein Puffer von 2 % ungenutzt. Dieser Speicherplatz benötigt keine Kapazitätslizenz, da er nicht von ONTAP Select verwendet wird. ONTAP Deploy berechnet automatisch die genaue Anzahl der Gigabyte für den Puffer, solange kein Kapazitäts-Cap angegeben ist. Wenn eine Kapazitätsgrenze angegeben ist, wird diese Größe zuerst durchgesetzt. Wenn die Kapazität-Cap-Größe innerhalb der Puffergröße liegt, schlägt das Erstellen des Clusters mit einer Fehlermeldung fehl, in der der korrekte Parameter für die maximale Größe angegeben wird, der als Kapazitäts-Cap verwendet werden kann:
 

@@ -65,23 +65,13 @@ Sie können die Clustergröße für einen vorhandenen ESXi-Cluster in den folgen
 link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
 
 --
-Unterstützung für ONTAP -Funktionen:: Ab ONTAP Select 9.17.1 werden die folgenden lizenzierten ONTAP -Funktionen mit ONTAP Select unterstützt:
+Unterstützung für SnapMirror Cloud:: Ab ONTAP Select 9.17.1 wird SnapMirror Cloud mit ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzierte ONTAP Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
 +
 --
-* SnapLock Select
-+
-Ab ONTAP Select 9.17.1 wird SnapLock Select für neue Bereitstellungen automatisch lizenziert.  Für Upgrades von ONTAP Select 9.16.1 und früher müssen Sie die SnapLock Select-Lizenz von derlink:https://mysupport.netapp.com/site/["NetApp Support Website"^] und wenden Sie es manuell an.
-
-* SnapMirror Cloud
-+
-Ab ONTAP Select 9.17.1 wird SnapMirror Cloud mit ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzierte ONTAP Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
-
-+
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Erfahren Sie mehr über SnapMirror Cloud-Backups auf Objektspeicher"^] .
 
-
-
 --
+Support für SnapLock Select Enterprise:: Ab ONTAP Select 9.17.1 ist SnapLock Select Enterprise (einschließlich manipulationssicherer Snapshot-Sperre) für neue Bereitstellungen automatisch lizenziert.  Für Upgrades von ONTAP Select 9.16.1 und früher müssen Sie die SnapLock Select-Lizenz von derlink:https://mysupport.netapp.com/site/["NetApp Support Website"^] und wenden Sie es manuell an.
 Unterstützung für vSAN ESA auf Clustern mit mehreren Knoten:: Ab ONTAP Select 9.17.1 wird die Unterstützung für vSAN Express Storage Architecture (ESA) erweitert, um Cluster mit mehreren Knoten bereitzustellen.  Diese Erweiterung ermöglicht Ihnen die Bereitstellung von vSAN ESA-Konfigurationen.
 +
 --

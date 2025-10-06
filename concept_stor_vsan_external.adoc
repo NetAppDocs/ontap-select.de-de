@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_stor_vsan_external.html 
 keywords: ontap select, vsan and external array configurations, vnas architecture 
-summary: 'Virtuelle NAS (vNAS) Implementierungen unterstützen ONTAP Select Cluster auf VSAN, einige HCI Produkte, NetApp HCI Technologie und externe Array-Typen von Datastores. Die zugrunde liegende Infrastruktur dieser Konfigurationen bietet Ausfallsicherheit im Datenspeicher.' 
+summary: 'Virtual NAS (vNAS)-Bereitstellungen unterstützen ONTAP Select Cluster auf vSAN, einige HCI-Produkte, NetApp HCI Technologie und externe Array-Typen von Datenspeichern. Die zugrunde liegende Infrastruktur dieser Konfigurationen sorgt für Datenspeicher-Resilienz.' 
 ---
-= ONTAP Select VSAN- und externe Array-Konfigurationen
+= ONTAP Select vSAN und externe Array-Konfigurationen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: 'Virtuelle NAS (vNAS) Implementierungen unterstützen ONTAP Select Clus
 
 
 [role="lead"]
-Virtual NAS Implementierungen (vNAS) unterstützen ONTAP Select Cluster auf virtuellem SAN (VSAN), einigen HCI Produkten und externen Array-Typen von Datastores. Die zugrunde liegende Infrastruktur dieser Konfigurationen bietet Ausfallsicherheit im Datenspeicher.
+Virtual NAS (vNAS)-Bereitstellungen unterstützen ONTAP Select Cluster auf Virtual SAN (vSAN), einige HCI-Produkte und externe Array-Typen von Datenspeichern. Die zugrunde liegende Infrastruktur dieser Konfigurationen sorgt für Datenspeicher-Resilienz.
 
-Die Mindestanforderung ist, dass die zugrunde liegende Konfiguration von VMware unterstützt und in den jeweiligen VMware HCLs aufgelistet werden sollte.
+Die Mindestanforderung besteht darin, dass der von Ihnen verwendete Hypervisor (VMware ESXi oder KVM auf einem unterstützten Linux-Host) die zugrunde liegende Konfiguration unterstützt.  Wenn es sich bei dem Hypervisor um ESXi handelt, sollte er in den entsprechenden VMware-HCLs aufgeführt sein.
 
 
 
@@ -40,9 +40,9 @@ Es gibt zwei große Unterschiede zwischen vNAS und das mit einem RAID-Controller
 
 == VNAS NVRAM
 
-Der ONTAP Select NVRAM ist eine VMDK. Mit anderen Worten emuliert ONTAP Select einen Byte-adressierbaren Speicherplatz (herkömmliches NVRAM) auf einem blockadressierbaren Gerät (VMDK). Die Performance des NVRAM ist jedoch für die gesamte Performance des ONTAP Select Node von entscheidender Bedeutung.
+Der ONTAP Select NVRAM ist ein VMDK. Dies bedeutet, dass ONTAP Select einen byteadressierbaren Speicherplatz (herkömmliches NVRAM) auf einem blockadressierbaren Gerät (VMDK) emuliert. Die Leistung des NVRAM ist jedoch entscheidend für die Gesamtleistung des ONTAP Select Knotens.
 
-Bei das-Setups mit einem Hardware-RAID-Controller fungiert der Hardware-RAID-Controller-Cache als de-facto-NVRAM-Cache, da alle Schreibvorgänge auf der NVRAM-VMDK zum ersten Mal im RAID-Controller-Cache gehostet werden.
+Bei DAS-Setups mit einem Hardware-RAID-Controller fungiert der Cache des Hardware-RAID-Controllers als NVRAM Cache, da alle Schreibvorgänge in die NVRAM VMDK zuerst im Cache des RAID-Controllers gehostet werden.
 
 Bei VNAS-Architekturen konfiguriert ONTAP Deploy die ONTAP Select-Nodes automatisch mit einem Boot-Argument namens Single Instance Data Logging (SIDL). Wenn dieses Boot-Argument vorhanden ist, wird der NVRAM durch ONTAP Select umgangen und die Datenlast direkt auf das Datenaggregat geschrieben. Der NVRAM wird nur verwendet, um die Adresse der vom SCHREIBVORGANG geänderten Blöcke aufzunehmen. Der Vorteil dieser Funktion besteht darin, dass doppelte Schreibvorgänge vermieden werden: Ein Schreibvorgang in NVRAM und ein zweiter Schreibvorgang, wenn der NVRAM entfernt wird. Diese Funktion ist nur für vNAS aktiviert, da lokale Schreibvorgänge in den RAID-Controller-Cache eine unwesentlich zusätzliche Latenz haben.
 
@@ -64,7 +64,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 
 ONTAP Select unterstützt ONTAP Select Cluster mit mehreren Nodes auf Shared Storage. Die Implementierung von ONTAP ermöglicht die Konfiguration mehrerer ONTAP Select Nodes auf demselben ESX Host, solange diese Nodes nicht Teil desselben Clusters sind. Beachten Sie, dass diese Konfiguration nur für VNAS Umgebungen (gemeinsam genutzte Datenspeicher) gültig ist. Mehrere ONTAP Select Instanzen pro Host werden nicht unterstützt, wenn Sie das Storage verwenden, da diese Instanzen mit demselben Hardware-RAID Controller konkurrieren.
 
-ONTAP Deploy stellt sicher, dass bei der anfänglichen Implementierung des VNAS Clusters mit mehreren Nodes nicht mehrere ONTAP Select Instanzen aus demselben Cluster auf demselben Host platziert werden. Die folgende Abbildung zeigt ein Beispiel für eine korrekte Implementierung von zwei Clustern mit vier Nodes, die sich auf zwei Hosts schneiden.
+ONTAP Deploy stellt sicher, dass bei der ersten Bereitstellung des Multinode-VNAS-Clusters nicht mehrere ONTAP Select Instanzen desselben Clusters auf demselben Host platziert werden. Die folgende Abbildung zeigt ein Beispiel für eine korrekte Bereitstellung von zwei Clustern mit vier Knoten, die sich auf zwei Hosts überschneiden.
 
 *Erstbereitstellung von VNAS-Clustern mit mehreren Nodes*
 

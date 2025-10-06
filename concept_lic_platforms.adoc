@@ -20,7 +20,7 @@ Sie können eine ONTAP Select Capacity Tier- oder Capacity Pool-Lizenz im Standa
 
 == Vorteile einer Plattformlizenz
 
-Ein spezifisches Lizenzangebot definiert und beschränkt die Funktionen des Hypervisor-Hosts in zwei Bereichen:
+Ein bestimmtes Lizenzangebot bestimmt die Fähigkeiten des Hypervisor-Hosts in zwei Bereichen:
 
 * Instanztyp (CPU, Arbeitsspeicher)
 * Zusätzliche Funktionen
@@ -28,52 +28,44 @@ Ein spezifisches Lizenzangebot definiert und beschränkt die Funktionen des Hype
 
 Die Lizenzangebote sind in aufsteigender Reihenfolge von Funktionen von Standard bis Premium XL angeordnet. Im Allgemeinen gewährt Ihnen die von Ihnen gewählte Lizenzoption die Fähigkeiten dieser Ebene und aller niedrigeren Ebenen. Der Premium-Level bietet beispielsweise die Fähigkeiten von Premium und Standard.
 
+In der folgenden Tabelle werden die Funktionen der Lizenzangebote Standard, Premium und Premium XL verglichen.
+
+[cols="25,25,25,25,25"]
+|===
+2+| Lizenz unterstützt ... | Standard | Premium | Premium XL 
 
 
-== Plattform-Lizenzangebote
-
-Es stehen drei Plattform-Lizenzangebote zur Verfügung.
+2+| Instanztyp | Nur klein | Klein oder mittel | Klein, mittel oder groß 
 
 
-
-=== Standard
-
-Das Standardangebot umfasst folgende Funktionen:
-
-* Nur kleiner Instanztyp
-* Nur Festplattenlaufwerke (HDD)
-* Nur lokaler Hardware RAID-Controller
-* VNAS
+.2+| Festplattenlaufwerke (HDD) in einem ... | Hardware-RAID-Konfiguration | Ja. | Ja. | Ja. 
 
 
+| vNAS-Konfiguration | Ja. | Ja. | Ja. 
 
 
-=== Premium
-
-Das Premium-Angebot umfasst folgende Funktionen:
-
-* Kleiner oder mittlerer Instanztyp
-* Festplatten (HDD) oder Solid State Drives (SSD)
-* Lokaler Hardware-RAID-Controller oder Software-RAID
-* VNAS
-* MetroCluster SDS
+.3+| Solid-State-Laufwerke (SSD) in einem ... | Hardware-RAID-Konfiguration | Nein | Ja. | Ja. 
 
 
+| Software-RAID-Konfiguration | Nein | Ja. | Ja. 
 
 
-=== Premium XL
-
-Das Premium XL-Angebot bietet folgende Funktionen:
-
-* Kleine, mittlere oder große Instanztypen
-* HDDs, SSDs oder NVMe-Laufwerke
-* Lokaler Hardware-RAID-Controller oder Software-RAID
-* VNAS
-* MetroCluster SDS
+| vNAS-Konfiguration | Ja. | Ja. | Ja. 
 
 
+.3+| NVMe-Laufwerke in einem ... | Hardware-RAID-Konfiguration | Nein | Nein | Ja. 
 
-NOTE: Die Verwendung des großen Instanztyps wird auf einer Kernel-Based Virtual Machine (KVM) nicht unterstützt.
+
+| Software-RAID-Konfiguration | Nein | Nein | Ja. 
+
+
+| vNAS-Konfiguration | Ja. | Ja. | Ja. 
+
+
+2+| MetroCluster SDS | Nein | Ja. | Ja. 
+|===
+
+NOTE: Kernelbasierte virtuelle Maschinen (KVM) unterstützen den großen Instanztyp nicht.
 
 
 
