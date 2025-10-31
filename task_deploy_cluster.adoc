@@ -196,15 +196,15 @@ Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.
 ====
 
 
-== Schritt 3: Nach Abschluss
+== Schritt 3: Schließen Sie die Bereitstellung ab.
 
-Vergewissern Sie sich, dass die ONTAP Select AutoSupport-Funktion konfiguriert ist, und sichern Sie dann die Konfigurationsdaten von ONTAP Select Deploy.
+Nach der Bereitstellung des Clusters überprüfen Sie, ob die ONTAP Select AutoSupport Funktion konfiguriert ist, und dannlink:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten"] Die
 
 [TIP]
 ====
 Wenn der Cluster-Erstellungsvorgang initiiert, aber nicht abgeschlossen werden kann, wird das von Ihnen definierte ONTAP-Administratorpasswort möglicherweise nicht angewendet. Wenn dies geschieht, können Sie das temporäre Administratorkennwort für das ONTAP Select Cluster mit dem folgenden CLI-Befehl ermitteln:
 
-[listing]
+[source, cli]
 ----
 (ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
 ----

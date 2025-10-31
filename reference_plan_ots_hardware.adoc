@@ -23,7 +23,7 @@ In Bezug auf die VMware Umgebung müssen Sie verschiedene Hardware-Anforderungen
 Der Hypervisor, auf dem ONTAP Select ausgeführt wird, muss unter verschiedenen Anforderungen verbunden sein.
 
 
-NOTE: Sie sollten in den aktuellen Versionshinweisen zu Ihrer Version von ONTAP Select alle weiteren bekannten Einschränkungen oder Einschränkungen lesen.
+NOTE: Sie sollten dielink:reference_release_notes.html["Versionshinweise zu ONTAP Select"] für alle weiteren bekannten Einschränkungen oder Beschränkungen.
 
 
 
@@ -52,6 +52,7 @@ ONTAP Select unterstützt die folgenden KVM-Hypervisor-Versionen:
 --
 ONTAP Select unterstützt die folgenden ESXi-Hypervisor-Versionen:
 
+* VMware ESXi 9.0
 * VMware ESXi 8.0 U3
 * VMware ESXi 8.0 U2
 * VMware ESXi 8.0 U1 (Build 21495797)
@@ -80,7 +81,7 @@ Wenn ein ESXi-Hypervisor-Host von einem vCenter-Server gemanagt wird, müssen Si
 Der physische Hypervisor-Host, auf dem ONTAP Select implementiert wird, muss mehrere Hardwareanforderungen erfüllen. Für den Hypervisor-Host kann eine beliebige Plattform gewählt werden, sofern sie die Mindestanforderungen an die Hardware erfüllt. Folgende Anbieter stellen unterstützte Hardware-Plattformen bereit: Cisco, Dell, HP, Fujitsu, Lenovo, Und Supermicro:
 
 
-NOTE: Ab ONTAP Select 9.9.1 werden nur CPU-Modelle unterstützt, die auf Intel Xeon Sandy Bridge oder höher basieren.
+NOTE: Ab ONTAP Select 9.9.1 werden nur noch CPU-Modelle unterstützt, die auf Intel Xeon Sandy Bridge oder neueren Modellen basieren.
 
 Weitere Informationen finden Sie im https://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool,window=_blank"].
 
@@ -110,7 +111,7 @@ Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der 
 | MetroCluster-SDS für Cluster mit zwei Nodes | 4 x 1 GbE oder 1 x 10 GbE | 2 x 10 GbE 
 
 
-| Cluster mit 4/6/8 Nodes | 2 x 10 GbE | 4 x 10 GbE oder 2x 25 GbE 
+| Cluster mit vier, sechs oder acht Knoten | 2 x 10 GbE | 4 x 10 GbE oder 2x 25 GbE 
 |===
 
 

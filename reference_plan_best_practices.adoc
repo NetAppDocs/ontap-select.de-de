@@ -148,9 +148,9 @@ Für eine hohe Verfügbarkeit sollten Sie die folgenden Best Practices berücksi
 
 === Implementieren von Backups
 
-Es empfiehlt sich, ein Backup der Bereitstellungskonfigurationsdaten regelmäßig zu erstellen, auch nach dem Erstellen eines Clusters. Dies ist bei 2-Node-Clustern besonders wichtig, da die Konfigurationsdaten des Mediators im Backup enthalten sind.
+Es empfiehlt sich, die Deploy-Konfigurationsdaten regelmäßig zu sichern, auch nach der Erstellung eines Clusters. Dies ist besonders bei Clustern mit zwei Knoten wichtig, da die Mediator-Konfigurationsdaten in der Sicherung enthalten sind.
 
-Nach dem Erstellen oder Implementieren eines Clusters sollten Sie die ONTAP Select Deploy-Konfigurationsdaten sichern.
+Nach dem Erstellen oder Bereitstellen eines Clusters sollten Sielink:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten"] Die
 
 
 

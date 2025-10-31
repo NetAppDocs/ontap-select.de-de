@@ -239,7 +239,7 @@ NOTE: Software-RAID mit lokalen das-Laufwerken wird mit der Premium-Lizenz (nur 
 
 Software-RAID kann für die Verwendung von NVMe-SSD-Laufwerken konfiguriert werden. Ihre Umgebung muss die folgenden Anforderungen erfüllen:
 
-* ONTAP Select 9.7 oder höher mit einem unterstützten Deployment-Verwaltungsprogramm
+* ONTAP Select mit einem unterstützten Deploy-Verwaltungsprogramm
 * Lizenzangebot für Premium-XL-Plattformen oder eine 90-Tage-Evaluierungslizenz
 * VMware ESXi Version 6.7 oder höher
 * NVMe Geräte gemäß Spezifikation 1.0 oder höher

@@ -18,10 +18,16 @@ Wenn Sie NVMe-Laufwerke mit Software-RAID verwenden möchten, müssen Sie den ES
 
 Verwenden Sie den VMDirectPath I/O-Pass-Through auf den NVMe Geräten und maximieren Sie die Dateneffizienz. Diese Einstellung stellt die Laufwerke der virtuellen ONTAP Select-Maschine zur Verfügung, sodass ONTAP direkten PCI-Zugriff auf das Gerät hat.
 
+
+
+== Schritt 1: Host konfigurieren
+
+Konfigurieren Sie den ESXi- oder KVM-Host so, dass er die Laufwerke erkennt.
+
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Ihre Implementierungsumgebung die folgenden Mindestanforderungen erfüllt:
 
-* Für einen ESX-Host, ONTAP Select 9.7 oder höher mit einem unterstützten Deploy-Verwaltungsprogramm
+* Für einen ESX-Host: ONTAP Select mit einem unterstützten Deploy-Verwaltungsprogramm
 * Für einen KVM-Host: ONTAP Select 9.17.1 mit einem unterstützten Deploy-Administrationsdienstprogramm
 * Lizenzangebot für Premium-XL-Plattformen oder eine 90-Tage-Evaluierungslizenz
 * Auf dem ESXi- oder KVM-Host wird eine unterstützte Hypervisor-Version ausgeführt:
@@ -32,6 +38,7 @@ Stellen Sie sicher, dass Ihre Implementierungsumgebung die folgenden Mindestanfo
 --
 ESXi wird auf den folgenden Hypervisor-Versionen unterstützt:
 
+** VMware ESXi 9.0
 ** VMware ESXi 8.0 U3
 ** VMware ESXi 8.0 U2
 ** VMware ESXi 8.0 U1 (Build 21495797)
@@ -101,7 +108,10 @@ image:nvme_03.png["Starten Sie Diesen Host Neu"]
 
 
 
-.Nachdem Sie fertig sind
+
+
+== Schritt 2: Installieren Sie das ONTAP Select Deploy-Dienstprogramm.
+
 Nachdem die Hosts vorbereitet sind, können Sie das Dienstprogramm ONTAP Select Deploy installieren. Deploy führt Sie durch die Erstellung von ONTAP Select Storage-Clustern auf Ihren neu vorbereiteten Hosts. Dabei erkennt Deploy die für Pass-Through konfigurierten NVMe-Laufwerke und wählt sie automatisch als ONTAP Datenträger aus. Sie können die Standardauswahl bei Bedarf anpassen.
 
 
@@ -111,7 +121,7 @@ Die folgende Beispielausgabe gilt für einen ESXi-Host:
 
 image:nvme_04.png["ONTAP Select Deploy-Cluster"]
 
-Nachdem das Cluster erfolgreich implementiert wurde, können Sie mit ONTAP System Manager den Storage gemäß Best Practices bereitstellen. ONTAP ermöglicht automatisch Flash-optimierte Storage-Effizienzfunktionen zur optimalen Nutzung Ihres NVMe-Storage.
+Nach der erfolgreichen Bereitstellung des Clusters ermöglicht Ihnen ONTAP System Manager die Bereitstellung des Speichers gemäß Best Practices. ONTAP aktiviert automatisch flashoptimierte Speichereffizienzfunktionen, die Ihren NVMe-Speicher optimal nutzen.
 
 image:nvme_05.png["Lokaler Speicher wird vorbereitet"]
 

@@ -29,13 +29,12 @@ Sie können ein 2-Node-Cluster mithilfe einer beliebigen VMware vSphere Lizenz i
 Wenn ein Cluster aus zwei Nodes besteht, ist es nicht möglich, das erforderliche Quorum zu erreichen, wenn ein Knoten ausfällt oder die Kommunikation verliert. Um diese Arten von Split-Brain-Situationen zu beheben, umfasst jede Instanz des Dienstprogramms ONTAP Select Deploy einen Mediator. Dieser Service stellt eine Verbindung zu jedem Node in den aktiven 2-Node-Clustern her, um die HA-Paare zu überwachen und Fehler beim Management zu unterstützen. Beim Mediator-Service werden die HA-Zustandsdaten zu einem dedizierten iSCSI-Ziel, das zu jedem Cluster mit zwei Nodes verbunden ist, erhalten.
 
 
-CAUTION: Wenn Sie über ein oder mehrere aktive Cluster mit zwei Nodes verfügen, muss die ONTAP Select Deploy Virtual Machine, die die Cluster verwaltet, jederzeit ausgeführt werden. Wenn die virtuelle Maschine zum Bereitstellen angehalten wird oder ausfällt, ist der Mediator-Service nicht verfügbar und die HA-Funktion geht bei den Clustern mit zwei Nodes verloren.
+CAUTION: Wenn Sie über einen oder mehrere aktive Zwei-Knoten-Cluster verfügen, muss die virtuelle ONTAP Select Deploy-Maschine, die die Cluster verwaltet, ständig ausgeführt werden. Wenn die virtuelle Maschine ONTAP Select Deploy angehalten wird oder ausfällt, ist der Mediatordienst nicht verfügbar und die HA-Funktionalität für die Zwei-Knoten-Cluster geht verloren.
 
 .Standort des Clusters und des Mediators
-Da die Cluster mit zwei Nodes normalerweise in einer Remote- oder Zweigstelle bereitgestellt werden, können sie sich vom Datacenter des Unternehmens aus fernab befinden und das Deploy Utility bietet administrativen Support. Bei dieser Konfiguration fließt der Managementdatenverkehr zwischen dem Dienstprogramm Deploy und dem Cluster über das WAN. In den Versionshinweisen finden Sie weitere Informationen zu Einschränkungen und Einschränkungen.
+Da die Zwei-Knoten-Cluster typischerweise in einer Außenstelle oder Zweigstelle eingesetzt werden, können sie vom Rechenzentrum des Unternehmens und dem ONTAP Select Deploy-Dienstprogramm, das administrative Unterstützung bietet, getrennt sein.  Bei dieser Konfiguration fließt der Management-Datenverkehr zwischen dem ONTAP Select Deploy-Dienstprogramm und dem Cluster über das WAN. Weitere Informationen zu Einschränkungen und Beschränkungen finden Sie in den Versionshinweisen.
 
-.Sichern Sie die Konfigurationsdaten der Bereitstellung
-Es empfiehlt sich, ein Backup der Bereitstellungskonfigurationsdaten regelmäßig zu erstellen, auch nach dem Erstellen eines Clusters. Dies ist aufgrund der Mediator-Konfigurationsdaten, die im Backup enthalten sind, bei Clustern mit zwei Nodes besonders wichtig.
+. Statische IP-Adresse für ONTAP Select Deploy zugewiesen
 
-.Der Bereitstellung zugewiesene statische IP-Adresse
-Sie müssen dem Dienstprogramm Administration Deploy eine statische IP-Adresse zuweisen. Diese Anforderung gilt für alle Deploy-Instanzen, die ein oder mehrere ONTAP Select Cluster mit zwei Nodes managen.
+
+Sie müssen dem Verwaltungsprogramm ONTAP Select Deploy eine statische IP-Adresse zuweisen.  Diese Anforderung gilt für alle ONTAP Select Deploy-Instanzen, die einen oder mehrere ONTAP Select Zwei-Knoten-Cluster verwalten.

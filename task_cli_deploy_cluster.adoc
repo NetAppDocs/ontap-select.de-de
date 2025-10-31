@@ -480,5 +480,5 @@ cluster show -name <cluster_name>
 ----
 
 
-.Nachdem Sie fertig sind
-Sie sollten die Konfigurationsdaten der ONTAP Select Deploy-Lösung sichern.
+.Wie geht es weiter?
+link:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten."].

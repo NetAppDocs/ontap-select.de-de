@@ -4,7 +4,7 @@ permalink: task_cli_clusters.html
 keywords: administer, administering, cli, clusters 
 summary: Es gibt verschiedene zugehörige Aufgaben, die Sie zum Verwalten eines ONTAP Select Clusters durchführen können. 
 ---
-= ONTAP Select Cluster
+= Verwalten Sie ONTAP Select -Cluster über die Befehlszeile.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,23 +14,71 @@ summary: Es gibt verschiedene zugehörige Aufgaben, die Sie zum Verwalten eines 
 
 
 [role="lead"]
-Es gibt verschiedene zugehörige Aufgaben, die Sie zum Verwalten eines ONTAP Select Clusters durchführen können.
+Es gibt mehrere zusammenhängende Aufgaben, die Sie zur Administration eines ONTAP Select -Clusters mithilfe der CLI durchführen können.
 
 
 
-== Löschen Sie einen ONTAP Select-Cluster
+== Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten.
 
-Sie können ein ONTAP Select Cluster löschen, wenn es nicht mehr mithilfe der Befehlszeilenschnittstelle benötigt wird.
+Sicherung der ONTAP Select Deploy-Konfigurationsdaten, beispielsweise nach der Bereitstellung eines Clusters. Die Daten werden in einer einzigen verschlüsselten Datei gespeichert, die Sie auf Ihre lokale Workstation herunterladen können.
 
-.Über diese Aufgabe
+Die von Ihnen erstellte Sicherungsdatei erfasst alle Konfigurationsdaten. Diese Daten beschreiben Aspekte Ihrer Bereitstellungsumgebung, einschließlich der ONTAP Select Cluster.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass die Bereitstellung während des Backup-Vorgangs keine anderen Aufgaben ausführt.
+
+.Schritte
+. Sign in mit dem Administratorkonto per SSH bei der CLI des ONTAP Select Deploy-Dienstprogramms an.
+. Erstellen Sie eine Sicherungskopie der ONTAP Select Deploy-Konfigurationsdaten, die in einem internen Verzeichnis auf dem ONTAP Select Deploy-Server gespeichert sind:
++
+[source, cli]
+----
+deploy backup create
+----
+. Geben Sie bei Aufforderung ein Passwort für das Backup ein.
++
+Die Sicherungsdatei wird basierend auf dem Passwort verschlüsselt.
+
+. Anzeigen der verfügbaren Backups im System:
++
+[source, cli]
+----
+deploy backup show -detailed
+----
+. Wählen Sie Ihre Sicherungsdatei basierend auf dem Datum im Feld *erstellt* aus und notieren Sie den *Download URL*-Wert.
++
+Sie können über die URL auf die Sicherungsdatei zugreifen.
+
+. Laden Sie die Sicherungsdatei über einen Webbrowser oder ein Dienstprogramm wie Curl mit der URL auf Ihre lokale Workstation herunter.
+
+
+
+
+== Löschen eines ONTAP Select-Clusters
+
+Sie können ein ONTAP Select Cluster löschen, wenn er nicht mehr benötigt wird.
+
+.Bevor Sie beginnen
 Der Cluster muss sich im Offlinezustand befinden.
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der CLI für virtuelle Maschinen bereitstellen an.
-. Anzeigen des Cluster-Status:
-`cluster show -name CLUSTERNAME`
-. Wenn das Cluster nicht offline ist, verschieben Sie es in den Offline-Status:
-`cluster offline -name CLUSTERNAME`
-. Löschen Sie das Cluster nach der Bestätigung, dass sich das Cluster in einem Offline-Status befindet:
-`cluster delete -name CLUSTERNAME`
+. Clusterstatus anzeigen:
++
+[source, cli]
+----
+cluster show -name <cluster_name>
+----
+. Falls der Cluster nicht offline ist, versetzen Sie ihn in den Offline-Zustand:
++
+[source, cli]
+----
+cluster offline -name <cluster_name>
+----
+. Nachdem bestätigt wurde, dass sich der Cluster im Offline-Status befindet, löschen Sie den Cluster:
++
+[source, cli]
+----
+cluster delete -name <cluster_name>
+----
 

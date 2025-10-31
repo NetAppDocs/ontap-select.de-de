@@ -94,6 +94,7 @@ Für ONTAP Select 9.16.1 und früher bietet NVD weiterhin Unterstützung für NV
 
 --
 Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.17.1 wird der KVM-Hypervisor auf Red Hat Enterprise Linux (RHEL) 9.6 und Rocky Linux 9.6 unterstützt.
+Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.17.1 beinhaltet Unterstützung für VMware ESXi 9.0.
 
 
 

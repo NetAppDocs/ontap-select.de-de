@@ -224,8 +224,6 @@ sidebar:
         url: "/concept_api_rest.html"
       - title: Greifen Sie auf die Implementierungs-API zu
         url: "/concept_api_how_access.html"
-      - title: Implementieren der API-Versionierung
-        url: "/concept_api_versions.html"
       - title: Basisbetrieb
         url: "/concept_api_operation.html"
       - title: Anfrage- und Reaktionstransaktion

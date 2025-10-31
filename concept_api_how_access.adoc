@@ -17,6 +17,9 @@ summary: Aufgrund der inhärenten Flexibilität VON REST-Webservices ist der Zug
 Aufgrund der inhärenten Flexibilität VON REST-Webservices ist der Zugriff auf die ONTAP Select Deploy API auf verschiedene Weise möglich.
 
 
+NOTE: Die in ONTAP Select Deploy enthaltene REST-API erhält eine Versionsnummer. Die API-Versionsnummer ist unabhängig von der Deploy-Versionsnummer. Das ONTAP Select 9.17.1 Deploy-Verwaltungsprogramm beinhaltet Version 3 der REST-API.
+
+
 
 == Implementieren Sie die native Benutzeroberfläche von Utility
 

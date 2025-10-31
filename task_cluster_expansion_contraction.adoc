@@ -47,6 +47,7 @@ Ab ONTAP Select 9.15.1 wird die Clustererweiterung und -kontraktion auf ESXi-Hyp
 
 Die Clustererweiterung und -kontraktion wird für die folgenden ESXi-Hypervisor-Versionen unterstützt:
 
+* ESXi 9.0
 * ESXi 8.0 U3
 * ESXi 8.0 U2
 * ESXi 8.0 U1
@@ -131,7 +132,7 @@ Die Erweiterung des Clusters kann bis zu 45 Minuten dauern.
 
 
 .Nachdem Sie fertig sind
-Nach der Erweiterung des Clusters sollten Sie die Konfigurationsdaten von ONTAP Select Deploy sichern.
+link:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten."].
 
 
 

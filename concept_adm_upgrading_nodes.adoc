@@ -43,8 +43,8 @@ Weitere Informationen und erforderliche Verfahren vor dem Upgrade eines ONTAP Se
 
 Sie können einen ONTAP Select Node nicht auf eine Version vor der Version zurücksetzen, auf der er ursprünglich installiert wurde. Beispiel:
 
-ONTAP Select 9.7 ist zunächst installiert:: Sie können den Node auf Version 9.8 aktualisieren und bei Bedarf zurück auf Version 9.7 wechseln.
-ONTAP Select 9.8 ist zunächst installiert:: Sie können nicht auf Version 9.7 zurücksetzen, da diese Version vor der ursprünglich installierten Version liegt.
+ONTAP Select 9.16.1 ist standardmäßig installiert.:: Sie können den Knoten auf Version 9.17.1 aktualisieren und bei Bedarf wieder auf Version 9.16.1 zurücksetzen.
+ONTAP Select 9.17.1 ist standardmäßig installiert.:: Eine Rückkehr zum vorherigen Stand ist nicht möglich, da zuvor keine ältere Version installiert war.
 
 
 
