@@ -278,8 +278,8 @@ sidebar:
       url: "/task_cli_clusters.html"
     - title: Nodes und Hosts
       entries:
-      - title: Aktualisieren Sie ESXi auf 6.5 und höher
-        url: "/task_cli_upgrade_esxi65.html"
+      - title: ESXi-Upgrade
+        url: "/cli-upgrade-esxi.html"
       - title: Ändern Sie einen Hostverwaltungsserver
         url: "/reference_host_modify_command.html"
     - title: Utility bereitstellen

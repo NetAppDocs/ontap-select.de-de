@@ -29,12 +29,12 @@ Bevor Sie ein ONTAP Select-Cluster auf einem Hypervisor erstellen, sollten Sie d
 ====
 .Hardware-RAID
 --
-Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie mindestens einen Datenspeicher (ESX) oder einen link:reference_chk_host_prep.html#create-storage-pool["Speicherpool (KVM)"] an jedem Knoten für die Systemdaten sowie die Root- und Datenaggregate. Sie müssen den Speicherpool als Teil des Konfigurationsens des ONTAP Select-Node anbinden.
+Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie mindestens einen Datenspeicher (ESX) oder einenlink:kvm-host-configuration-and-preparation-checklist.html#step-2-create-a-storage-pool["Speicherpool (KVM)"] an jedem Knoten für die Systemdaten sowie die Wurzel und die Datenaggregate. Sie müssen den Speicherpool im Rahmen der Konfiguration des ONTAP Select Knotens anhängen.
 
 --
 .Software-RAID
 --
-Wenn Sie Software-RAID verwenden, müssen Sie mindestens einen Datenspeicher (ESX) oder einen link:reference_chk_host_prep.html#create-storage-pool["Speicherpool (KVM)"] für die Systemdaten und stellen Sie sicher, dass die SSD-Laufwerke für die Root- und Datenaggregate verfügbar sind. Sie müssen den Speicherpool und die Festplatten als Teil der Konfiguration des ONTAP Select-Node anbinden.
+Wenn Sie Software-RAID verwenden, müssen Sie mindestens einen Datenspeicher (ESX) oder einenlink:kvm-host-configuration-and-preparation-checklist.html#step-2-create-a-storage-pool["Speicherpool (KVM)"] für die Systemdaten und stellen Sie sicher, dass die SSD-Laufwerke für das Stammverzeichnis und die Datenaggregate verfügbar sind. Sie müssen den Speicherpool und die Festplatten im Rahmen der Konfiguration des ONTAP Select Knotens anhängen.
 
 --
 ====

@@ -198,7 +198,7 @@ Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.
 
 == Schritt 3: Schließen Sie die Bereitstellung ab.
 
-Nach der Bereitstellung des Clusters überprüfen Sie, ob die ONTAP Select AutoSupport Funktion konfiguriert ist, und dannlink:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten"] Die
+Nach der Bereitstellung des Clusterslink:https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["Prüfen Sie, ob die ONTAP Select AutoSupport Funktion konfiguriert ist."^] und dannlink:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten"] Die
 
 [TIP]
 ====

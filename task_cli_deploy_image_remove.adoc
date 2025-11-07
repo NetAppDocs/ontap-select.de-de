@@ -26,19 +26,25 @@ CAUTION: Sie sollten keine ONTAP Select-Images entfernen, die von einem Cluster 
 . Melden Sie sich mit SSH beim Deploy Utility CLI mit dem Administrator-Konto (admin) an.
 . Zeigen Sie die von Deploy verwalteten Cluster an und zeichnen Sie die verwendeten ONTAP-Images auf:
 +
-`cluster show`
-
+[source, cli]
+----
+cluster show
+----
 +
 Notieren Sie jeweils die Versionsnummer und die Hypervisor-Plattform.
 
 . Starten Sie die Bash Shell:
 +
-`shell bash`
-
+[source, cli]
+----
+shell bash
+----
 . Alle verfügbaren ONTAP Select-Bilder anzeigen:
 +
-`ls -lh /opt/netapp/images`
-
+[source, cli]
+----
+ls -lh /opt/netapp/images
+----
 . Entfernen Sie optional das ONTAP Select-Image mit Ihrem Hypervisor-Host.
 +
 [role="tabbed-block"]

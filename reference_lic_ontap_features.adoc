@@ -68,6 +68,6 @@ Sie müssen für alle ONTAP -Funktionen, die nicht standardmäßig aktiviert sin
 
 ====
 .Verwandte Informationen
-* link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["Vergleich von ONTAP Select und ONTAP 9"]
+* link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["Vergleich von ONTAP Select und ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["Master-Lizenzschlüssel für NetApp ONTAP"^]
 

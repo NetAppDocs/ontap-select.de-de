@@ -40,16 +40,20 @@ Die von Ihnen erstellte Sicherungsdatei erfasst alle Konfigurationsdaten von der
 . Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
 . Erstellen eines Backups der Bereitstellungskonfigurationsdaten, die in einem internen Verzeichnis auf dem Deploy-Server gespeichert sind:
 +
-`deploy backup create`
-
+[source, cli]
+----
+deploy backup create
+----
 . Geben Sie bei Aufforderung ein Passwort für das Backup ein.
 +
 Die Sicherungsdatei wird basierend auf dem Passwort verschlüsselt.
 
 . Anzeigen der verfügbaren Backups im System:
 +
-`deploy backup show -detailed`
-
+[source, cli]
+----
+deploy backup show -detailed
+----
 . Wählen Sie Ihre Sicherungsdatei basierend auf dem Datum im Feld *erstellt* aus und notieren Sie den *Download URL*-Wert.
 +
 Sie können über die URL auf die Sicherungsdatei zugreifen.
@@ -92,10 +96,7 @@ Sie müssen die Konfigurationsdaten von der ursprünglichen virtuellen Maschine 
 Sie müssen über die Konfigurationsdaten aus einem vorherigen Backup verfügen. Die Daten sind in einer einzigen Datei enthalten und müssen auf Ihrer lokalen Arbeitsstation verfügbar sein.
 
 .Schritte
-. Verwenden Sie in einer Command Shell auf Ihrer lokalen Arbeitsstation das Dienstprogramm sftp, um die Sicherungsdatei auf die virtuelle Maschine bereitstellen hochzuladen.
-+
-Beispiel
-
+. Verwenden Sie in einer Befehlsshell auf Ihrer lokalen Workstation das Dienstprogramm sftp, um die Sicherungsdatei auf die virtuelle Maschine „Deploy“ hochzuladen, wie im folgenden Beispiel gezeigt:
 +
 ....
 sftp admin@10.234.81.101 (provide password when prompted)
@@ -103,12 +104,14 @@ put deploy_backup_20190601162151.tar.gz
 exit
 ....
 . Melden Sie sich in der CLI des Bereitstellungsdienstprogramms mithilfe von SSH mit dem Administratorkonto an.
-. Stellen Sie die Konfigurationsdaten wieder her.
+. Konfigurationsdaten wiederherstellen:
 +
-`deploy backup restore -path PATHNAME -filename FILENAME`
-
+[source, cli]
+----
+deploy backup restore -path <path_name> -filename <file_name>
+----
 +
-Beispiel
+Beispielbefehl
 
 +
 `deploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`

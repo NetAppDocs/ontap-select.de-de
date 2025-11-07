@@ -55,7 +55,7 @@ Diese Aufgabe beschreibt eine Methode zum Hochladen der Datei auf die virtuelle 
 
 
 .Schritte
-. Verwenden Sie in einer Befehlsshell auf Ihrer lokalen Arbeitsstation den `scp` (Secure Copy Protocol)-Dienstprogramm zum Hochladen der Image-Datei auf die virtuelle ONTAP Select Deploy-Maschine.
+. Verwenden Sie in einer Befehlsshell auf Ihrer lokalen Workstation die `scp` (Secure Copy Protocol)-Dienstprogramm zum Hochladen der Image-Datei auf die virtuelle Maschine ONTAP Select Deploy, wie im folgenden Beispiel gezeigt:
 +
 ....
 scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
@@ -80,7 +80,12 @@ Nachdem Sie die Upgrade-Datei auf die virtuelle ONTAP Select Deploy-Maschine hoc
 . Sign in mit dem Administratorkonto per SSH bei der CLI des ONTAP Select Deploy-Dienstprogramms an.
 . Führen Sie das Upgrade mithilfe des entsprechenden Verzeichnispfads und Dateinamens durch:
 +
-`deploy upgrade -package-path FILEPATH`
+[source, cli]
+----
+deploy upgrade -package-path <file_path>
+----
++
+Beispielbefehl:
 
 +
 ....
