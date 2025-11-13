@@ -28,7 +28,7 @@ Ein Cluster mit zwei Nodes und einem Mediator kann zwei Datacenter umfassen. Wei
 
 == Gespiegelte Aggregate
 
-Ein ONTAP Select Cluster besteht aus zwei bis acht Nodes. Jedes HA-Paar enthält zwei Kopien von Benutzerdaten, die synchron über Nodes hinweg über ein IP-Netzwerk gespiegelt werden. Diese Spiegelung ist für Benutzer transparent und Eigentum des Datenaggregats, die automatisch während der Erstellung des Datenaggregats konfiguriert werden.
+Ein ONTAP Select Cluster besteht aus zwei bis zwölf Knoten. Jedes HA-Paar enthält zwei Kopien der Benutzerdaten, die synchron über ein IP-Netzwerk auf die Knoten gespiegelt werden.  Diese Spiegelung ist für den Benutzer transparent und eine Eigenschaft des Datenaggregats, die während des Erstellungsprozesses des Datenaggregats automatisch konfiguriert wird.
 
 Alle Aggregate in einem ONTAP Select Cluster müssen im Falle eines Node Failover zur Datenverfügbarkeit gespiegelt werden, um bei einem Hardwareausfall ein SPOF zu vermeiden. Aggregate in einem ONTAP Select Cluster basieren auf virtuellen Festplatten, die von jedem Node im HA-Paar bereitgestellt werden, und verwenden die folgenden Festplatten:
 

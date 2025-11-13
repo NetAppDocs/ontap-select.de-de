@@ -65,7 +65,7 @@ Networking und Open vSwitch-Konfiguration:: Sie sollten mit den Netzwerkkonzepte
 
 Es gibt verschiedene Planungsprobleme in Bezug auf die Cluster-Größe, die Sie berücksichtigen sollten.
 
-Anzahl Nodes im Cluster:: Ein ONTAP Select Cluster besteht aus einem, zwei, vier, sechs oder acht Nodes. Sie sollten die Größe des Clusters basierend auf den Applikationsanforderungen bestimmen. Wenn beispielsweise eine HA-Funktion für eine Enterprise-Implementierung erforderlich ist, sollte ein Cluster mit mehreren Nodes verwendet werden.
+Anzahl Nodes im Cluster:: Ein ONTAP Select -Cluster besteht aus einem, zwei, vier, sechs, acht, zehn oder zwölf Knoten. Die Clustergröße sollte anhand der Anwendungsanforderungen bestimmt werden. Wenn beispielsweise Hochverfügbarkeit für eine Unternehmensbereitstellung erforderlich ist, empfiehlt sich ein Cluster mit mehreren Knoten.
 Dediziertes vs. Colocation:: Je nach Applikationstyp sollten Sie ermitteln, ob die Implementierung dem dedizierten oder dem gemeinsam genutzten Modell folgt. Beachten Sie, dass das Colocation-Modell aufgrund von Workload-Vielfalt und einer engeren Integration komplexer sein kann.
 
 

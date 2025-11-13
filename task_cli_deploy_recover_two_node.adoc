@@ -5,8 +5,11 @@ keywords: administer, administering, cli, two node cluster, recover, recovering
 summary: Wenn das Dienstprogramm ONTAP Select Deploy aus irgendeinem Grund ausfällt oder aus irgendeinem Grund nicht mehr verfügbar ist, können Sie ONTAP Select-Nodes und -Cluster nicht mehr verwalten. Zudem verlieren alle 2-Node-Cluster die HA-Funktion, da der bei der Bereitstellung enthaltene Mediator-Service nicht verfügbar ist. Wenn ein nicht behebbarer Fehler auftritt, müssen Sie die Deploy Utility-Instanz wiederherstellen, um administrative und HA-Funktionen wiederherzustellen. 
 ---
 = Stellen Sie das Dienstprogramm ONTAP Select Deploy für ein Cluster mit zwei Nodes wieder her
-:hardbreaks:
 :allow-uri-read: 
+:firstname: :hardbreaks:reints
+:author: :hardbreaks:reints
+:authorinitials: :
+:authors: :hardbreaks:reints
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -211,7 +214,7 @@ Mit diesen Befehlen können die ONTAP Select-Knoten die Mailbox-Platten auf der 
 +
 [source, cli]
 ----
-disk show -container-type mediator
+disk show -container-type mediator`
 ----
 . Weisen Sie die Mailbox-Platten den beiden Knoten zu:
 +

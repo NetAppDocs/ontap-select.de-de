@@ -87,7 +87,7 @@ Die Standard-, Premium- und Premium-XL-Lizenzangebote unterstützen ein breites 
 2+| Host-Protokolle 3+| NFS, SMB/CIFS, iSCSI und NVMe over TCP 
 
 
-2+| Implementierungsoptionen 3+| Cluster mit einem Node, Cluster mit zwei Nodes (HA-Paar), Cluster mit vier, sechs oder acht Nodes 
+2+| Implementierungsoptionen 3+| Einzelknoten, Zwei-Knoten-Cluster (HA-Paar), Vier-, Sechs-, Acht-, Zehn- oder Zwölf-Knoten-Cluster 
 
 
 2+| Unterstützte Kapazität (pro Node) 3+| Bis zu 400 TB Rohdaten (ESXi und KVM) 
@@ -114,7 +114,7 @@ Die Standard-, Premium- und Premium-XL-Lizenzangebote unterstützen ein breites 
 2+| Mindestanforderungen an Host-CPU/Speicher ^1^ | 6 Cores / 24 GB RAM | 10 Cores / 72 GB RAM | 18 Kerne / 136 GB RAM 
 
 
-2+| Netzwerk (pro Node) 3+| Mindestens zwei 1-GbE-Ports für ein Single-Node-Cluster mindestens vier 1-GbE-Ports für ein Cluster mit zwei Nodes (HA-Paar) mindestens zwei 10-GbE-Ports für ein Cluster mit vier, sechs oder acht Nodes 
+2+| Netzwerk (pro Node) 3+| Mindestens zwei 1-GbE-Ports für einen Einzelknoten-Cluster. Mindestens vier 1-GbE-Ports für einen Zwei-Knoten-Cluster (HA-Paar). Mindestens zwei 10-GbE-Ports für einen Cluster mit vier, sechs, acht, zehn oder zwölf Knoten. 
 |===
 ^1^ Setzt zwei Kerne und 8 GB RAM für den Hypervisor voraus.
 

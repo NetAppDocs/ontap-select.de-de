@@ -67,7 +67,7 @@ Die ONTAP Select-Netzwerkkonfiguration mit mehreren Knoten besteht aus zwei Netz
 
 Diese stellen ein internes Netzwerk dar, das Cluster- und interne Replizierungsservices sowie ein externes Netzwerk bereitstellt und für die Bereitstellung von Datenzugriffs- und -Managementservices verantwortlich ist. Die vollständige Isolierung des Datenverkehrs innerhalb dieser beiden Netzwerke ist extrem wichtig, damit Sie eine Umgebung erstellen können, die für Cluster-Ausfallsicherheit geeignet ist.
 
-Diese Netzwerke sind in der folgenden Abbildung dargestellt, die ein ONTAP Select Cluster mit vier Nodes zeigt, das auf einer VMware vSphere Plattform ausgeführt wird. Cluster mit sechs oder acht Nodes verfügen über ein ähnliches Netzwerklayout.
+Diese Netzwerke sind in der folgenden Abbildung dargestellt. Sie zeigt einen ONTAP Select Cluster mit vier Knoten, der auf einer VMware vSphere-Plattform ausgeführt wird. Cluster mit sechs, acht, zehn und zwölf Knoten weisen einen ähnlichen Netzwerkaufbau auf.
 
 
 NOTE: Jede ONTAP Select Instanz befindet sich auf einem separaten physischen Server. Der interne und externe Datenverkehr wird über separate Netzwerk-Port-Gruppen isoliert, die jeder virtuellen Netzwerkschnittstelle zugewiesen sind und es den Cluster-Knoten ermöglichen, dieselbe physische Switch-Infrastruktur zu nutzen.
@@ -135,7 +135,7 @@ ONTAP-Ports e0c und e0d werden als Home-Ports für Cluster-Schnittstellen delegi
 
 NOTE: Diesen Schnittstellen können keine statischen IP-Adressen zugewiesen werden, und zusätzliche Cluster-Schnittstellen sollten nicht erstellt werden.
 
-Cluster-Netzwerk-Traffic muss über ein nicht geroutetes Layer-2-Netzwerk mit niedriger Latenz geleitet werden. Aufgrund der Anforderungen an Cluster-Durchsatz und -Latenz sollte sich das ONTAP Select Cluster physisch in der Nähe befinden (z. B. Multipack, einzelnes Datacenter). Es wird nicht unterstützt, Stretch-Cluster-Konfigurationen mit vier, sechs oder acht Nodes durch die Trennung von HA-Nodes über ein WAN oder über große geografische Entfernungen hinweg zu erstellen. Es wird eine erweiterte Konfiguration mit zwei Nodes mit einem Mediator unterstützt.
+Der Netzwerkverkehr des Clusters muss über ein Layer-2-Netzwerk mit geringer Latenz und ohne Routing fließen. Aufgrund der Durchsatz- und Latenzanforderungen des Clusters wird erwartet, dass sich der ONTAP Select Cluster physisch in der Nähe befindet (z. B. Multipack, einzelnes Rechenzentrum).  Der Aufbau von Stretch-Cluster-Konfigurationen mit vier, sechs, acht, zehn oder zwölf Knoten durch die Trennung von HA-Knoten über ein WAN oder über große geografische Entfernungen wird nicht unterstützt. Eine gestreckte Zwei-Knoten-Konfiguration mit einem Mediator wird unterstützt.
 
 Weitere Informationen finden Sie im Abschnitt link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Stretch-Best Practices (MetroCluster-SDS) mit zwei Nodes"].
 

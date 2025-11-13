@@ -14,7 +14,7 @@ summary: ONTAP Select MetroCluster SDS bietet erweiterten Schutz und eine kosten
 
 
 [role="lead"]
-ONTAP Select basiert auf ONTAP Storage-Software und bietet effiziente Storage-Services der Enterprise-Klasse kombiniert mit einer hochverfügbaren Scale-out-Architektur ohne Shared-Ressourcen. Die Lösung kann mit einem, zwei, vier, sechs oder acht Nodes mit bis zu 400 TB Bruttokapazität für NFS, SMB/CIFS und iSCSI verbundenen Storage pro Node implementiert werden. Sie können die native Deduplizierung und Komprimierung nutzen, um Storage-Kosten zu senken und die effektive Kapazität zu steigern. Die Scale-out-Architektur bietet Hochverfügbarkeit und unterbrechungsfreie Datenmobilität für den Lastausgleich oder die Hardwarewartung.
+ONTAP Select basiert auf der ONTAP Speichersoftware und bietet effiziente Enterprise-Speicherdienste mit einer hochverfügbaren Shared-Nothing-Scale-Out-Architektur. Sie können eine Lösung mit einem, zwei, vier, sechs, acht, zehn oder zwölf Knoten mit bis zu 400 TB Rohkapazität für NFS-, SMB/CIFS- und iSCSI-angeschlossenen Speicher pro Knoten bereitstellen. Nutzen Sie native Deduplizierung und Komprimierung, um Ihre Speicherkosten durch Erhöhung der effektiven Kapazität zu senken. Die Scale-Out-Architektur ermöglicht hohe Verfügbarkeit und unterbrechungsfreie Datenmobilität für Lastausgleich oder Hardwarewartung.
 
 
 

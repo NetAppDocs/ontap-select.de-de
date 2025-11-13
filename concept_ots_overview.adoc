@@ -44,7 +44,7 @@ ONTAP Select setzt sich aus zwei Hauptkomponenten an Software zusammen:
 
 === ONTAP Select-Knoten
 
-Ein ONTAP Select Cluster besteht aus einem, zwei, vier, sechs oder acht Nodes. Jeder Cluster Node wird als separate Virtual Machine bereitgestellt und ausgeführt eine speziell entwickelte Version der ONTAP 9 Software.
+Ein ONTAP Select -Cluster besteht aus einem, zwei, vier, sechs, acht, zehn oder zwölf Knoten. Jeder Clusterknoten wird als separate virtuelle Maschine bereitgestellt und führt eine speziell entwickelte Version der ONTAP 9 Software aus.
 
 
 

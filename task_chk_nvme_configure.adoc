@@ -27,8 +27,8 @@ Konfigurieren Sie den ESXi- oder KVM-Host so, dass er die Laufwerke erkennt.
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Ihre Implementierungsumgebung die folgenden Mindestanforderungen erfüllt:
 
-* Für einen ESX-Host: ONTAP Select mit einem unterstützten Deploy-Verwaltungsprogramm
-* Für einen KVM-Host: ONTAP Select 9.17.1 mit einem unterstützten Deploy-Administrationsdienstprogramm
+* Für einen ESX-Host, ONTAP Select 9.7 oder höher mit einem unterstützten Deploy-Verwaltungsprogramm
+* Für einen KVM-Host ist ONTAP Select 9.17.1 oder höher mit einem unterstützten Deploy-Verwaltungsprogramm erforderlich.
 * Lizenzangebot für Premium-XL-Plattformen oder eine 90-Tage-Evaluierungslizenz
 * Auf dem ESXi- oder KVM-Host wird eine unterstützte Hypervisor-Version ausgeführt:
 +
@@ -43,7 +43,6 @@ ESXi wird auf den folgenden Hypervisor-Versionen unterstützt:
 ** VMware ESXi 8.0 U2
 ** VMware ESXi 8.0 U1 (Build 21495797)
 ** VMware ESXi 8.0 GA (Build 20513097)
-** VMware ESXi 7.0 GA (Build 15843807 oder höher), einschließlich 7.0 U1, U2 und U3C
 
 
 --

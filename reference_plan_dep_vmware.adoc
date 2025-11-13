@@ -118,9 +118,11 @@ Im Folgenden sind die spezifischen Berechtigungen für die vSphere-Inhaltsbiblio
 * Lokale Bibliothek erstellen
 * Bibliothekselement löschen
 * Lokale Bibliothek löschen
+* Dateien herunterladen
 * Lesespeicher
 * Dateien aktualisieren
 * Bibliothek aktualisieren
 * Bibliothekselement aktualisieren
 * Lokale Bibliothek aktualisieren
+* Konfigurationseinstellungen anzeigen
 

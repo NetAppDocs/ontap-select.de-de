@@ -23,7 +23,7 @@ Stellen Sie sicher, dass ONTAP Select Deploy während des Upgrades nicht zum Aus
 ====
 Wenn Sie eine ältere Instanz des ONTAP Select Deploy-Verwaltungsdienstprogramms installiert haben, sollten Sie auf die aktuelle Version aktualisieren. Der ONTAP Select Node und die ONTAP Select Deploy Komponente werden unabhängig voneinander aktualisiert. Siehe link:concept_adm_upgrading_nodes.html["Aktualisieren Sie die ONTAP Select-Nodes"^] Entnehmen.
 
-Sie können direkt von ONTAP Select Deploy 9.16.1 oder 9.15.1 auf ONTAP Select Deploy 9.17.1 aktualisieren. Um ein Upgrade von ONTAP Select Deploy 9.14.1 oder früher durchzuführen, lesen Sie die Versionshinweise für Ihre ONTAP Select -Version.
+Sie können direkt von ONTAP Select Deploy 9.17.1 oder 9.16.1 auf ONTAP Select Deploy 9.18.1 aktualisieren.  Um von ONTAP Select Deploy 9.15.1 oder einer früheren Version ein Upgrade durchzuführen, lesen Sie bitte die Versionshinweise für Ihre ONTAP Select Version.
 
 ====
 

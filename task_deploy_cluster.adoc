@@ -98,7 +98,7 @@ Stellen Sie sicher, dass Sie die Deploy-Administration installiert und die Erstk
 Ein ONTAP Select-Cluster mit einem oder mehreren Nodes wird für eine produktive Implementierung erstellt.
 
 .Schritte
-Die folgenden Schritte hängen davon ab, ob Sie ein Single-Node-Cluster oder ein Multi-Node-Cluster erstellen möchten. Ein Cluster mit mehreren Nodes kann zwei, vier, sechs oder acht Nodes umfassen.
+Die auszuführenden Schritte hängen davon ab, ob Sie einen Einzelknoten- oder einen Mehrknoten-Cluster erstellen möchten. Ein Multi-Node-Cluster kann zwei, vier, sechs, acht, zehn oder zwölf Knoten haben.
 
 [role="tabbed-block"]
 ====

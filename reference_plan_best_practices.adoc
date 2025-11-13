@@ -71,10 +71,10 @@ ONTAP Select erhält durch Erhöhen der Anzahl von LUNs innerhalb einer RAID-Gru
 
 === VMware ESXi-Hosts
 
-NetApp empfiehlt die Verwendung von ESX 6.5 U2 oder höher und eine NVMe-Festplatte für den Datenspeicher, der die Systemfestplatten hostet. Diese Konfiguration bietet die beste Performance für die NVRAM-Partition.
+NetApp empfiehlt die Verwendung von ESX 8.0 oder höher und einer NVMe-Festplatte als Datenspeicher für die Systemfestplatten. Diese Konfiguration bietet die beste Leistung für die NVRAM Partition.
 
 
-NOTE: Bei der Installation auf ESX 6.5 U2 und höher verwendet ONTAP Select den vNVMEe-Treiber, unabhängig davon, ob sich die Systemfestplatte auf einer SSD oder einer NVMe-Festplatte befindet. Dadurch wird die VM-Hardwareebene auf 13 gesetzt, was mit ESX 6.5 und höher kompatibel ist.
+NOTE: Bei der Installation auf ESX 8.0 oder höher verwendet ONTAP Select den vNVMEe-Treiber, unabhängig davon, ob sich die Systemfestplatte auf einer SSD oder auf einer NVMe-Festplatte befindet. Dadurch wird die VM-Hardwareebene auf 13 gesetzt, was mit ESX 8.0 und höher kompatibel ist.
 
 Dedizierte Netzwerk-Ports, Bandbreite und vSwitch Konfigurationen für die ONTAP Select-Netzwerke und externen Storage definieren (VMware vSAN und generischer Storage Array-Datenverkehr bei Verwendung von iSCSI oder NFS).
 

@@ -160,7 +160,7 @@ NetApp FAS Systeme verfügen üblicherweise über eine physische NVRAM-PCI-Karte
 
 Herkömmliche Systeme sind in der Regel nicht mit dieser Art von Geräten ausgestattet. Daher wurde die Funktionalität dieser NVRAM-Karte virtualisiert und in eine Partition auf der Boot-Festplatte des ONTAP Select Systems platziert. Aus diesem Grund ist die Platzierung der virtuellen Systemfestplatte der Instanz extrem wichtig. Aus diesem Grund benötigt das Produkt auch einen physischen RAID-Controller mit einem stabilen Cache für lokale Attached Storage-Konfigurationen.
 
-NVRAM wird auf seiner eigenen VMDK platziert. Durch das Aufteilen des NVRAM in einer eigenen VMDK kann die ONTAP Select-VM den vNVMe-Treiber verwenden, um mit seiner NVRAM-VMDK zu kommunizieren. Voraussetzung ist zudem, dass die ONTAP Select VM Hardware-Version 13 verwendet, die mit ESX 6.5 und neueren Versionen kompatibel ist.
+NVRAM befindet sich in einer eigenen VMDK. Durch die Aufteilung des NVRAM in eine eigene VMDK kann die ONTAP Select VM den vNVMe-Treiber zur Kommunikation mit ihrer NVRAM VMDK nutzen. Außerdem wird vorausgesetzt, dass die ONTAP Select VM die Hardwareversion 13 verwendet, die mit ESX 8.0 und höher kompatibel ist.
 
 
 
@@ -184,4 +184,4 @@ NOTE: Obwohl auf der NVRAM-VMDK geänderte Blöcke im lokalen RAID Controller-Ca
 image:ST_13.jpg["Eingehende Schreibvorgänge auf die ONTAP Select VM"]
 
 
-NOTE: Die NVRAM-Partition ist auf einer eigenen VMDK getrennt. Diese VMDK wird mithilfe des vNVME-Treibers verbunden, der in ESX Versionen 6.5 oder höher verfügbar ist. Diese Änderung ist für ONTAP Select Installationen mit Software-RAID am wichtigsten, die keine Vorteile aus dem RAID-Controller-Cache ziehen.
+NOTE: Die NVRAM Partition ist auf einer eigenen VMDK getrennt. Diese VMDK wird über den vNVME-Treiber angebunden, der in ESX-Versionen ab 8.0 verfügbar ist. Diese Änderung ist besonders für ONTAP Select Installationen mit Software-RAID von Bedeutung, da diese nicht vom RAID-Controller-Cache profitieren.

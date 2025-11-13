@@ -16,7 +16,7 @@ summary: Sie müssen die Umgebung vorbereiten, bevor Sie die Python-Beispielskri
 [role="lead"]
 Sie müssen die Umgebung vorbereiten, bevor Sie die Python-Beispielskripte ausführen.
 
-Bevor Sie die Python-Skripte ausführen, müssen Sie sicherstellen, dass die Umgebung ordnungsgemäß konfiguriert ist:
+Bevor Sie die Python-Skripte ausführen, müssen Sie sicherstellen, dass die Umgebung korrekt konfiguriert ist:
 
 * Die jeweils aktuelle Version von Python2 muss installiert sein. Die Beispielcodes wurden mit Python2 getestet. Sie sollten auch auf Python3 übertragbar sein, wurden aber nicht auf Kompatibilität getestet.
 * Die Requests und urllib3-Bibliotheken müssen installiert sein. Sie können je nach Ihrer Umgebung Pip oder ein anderes Python Management Tool verwenden.

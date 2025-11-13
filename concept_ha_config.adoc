@@ -23,7 +23,7 @@ Ein Großteil des SDS-Marktes basiert auf Storage ohne Shared-Ressourcen, Softwa
 
 NOTE: In einem ONTAP Select Cluster ist die Funktion der synchronen Replizierung eine Funktion der HA-Implementierung und kein Ersatz für die asynchronen SnapMirror oder SnapVault Replizierungs-Engines. Die synchrone Replizierung kann nicht unabhängig von der HA verwendet werden.
 
-Es gibt zwei ONTAP Select HA-Implementierungsmodelle: Die Cluster mit mehreren Nodes (vier, sechs oder acht Nodes) und die Cluster mit zwei Nodes. Das herausragende Merkmal eines ONTAP Select-Clusters mit zwei Knoten ist der Einsatz eines externen Mediators zur Lösung von Split-Brain-Szenarien. Die ONTAP Implementierung der VM dient als Standardmediator für alle HA-Paare mit zwei Nodes, die konfiguriert werden.
+Es gibt zwei ONTAP Select HA-Bereitstellungsmodelle: die Multi-Node-Cluster (vier, sechs, acht, zehn oder zwölf Knoten) und die Two-Node-Cluster. Das herausragende Merkmal eines Zwei-Knoten ONTAP Select Clusters ist die Verwendung eines externen Mediator-Dienstes zur Lösung von Split-Brain-Szenarien.  Die ONTAP Deploy VM dient als Standardmediator für alle von ihr konfigurierten Zwei-Knoten-HA-Paare.
 
 Die beiden Architekturen sind in den folgenden Abbildungen dargestellt.
 
@@ -36,7 +36,7 @@ NOTE: Das ONTAP Select Cluster mit zwei Nodes besteht aus einem HA-Paar und eine
 
 *ONTAP Select-Cluster mit vier Nodes mit lokalem Attached Storage*image:DDHA_02.jpg["ONTAP Select-Cluster mit vier Nodes auf lokalen Attached Storage-Systemen"]
 
-* Das ONTAP Select Cluster mit vier Nodes besteht aus zwei HA-Paaren. Cluster mit sechs und acht Nodes bestehen aus drei oder vier HA-Paaren. Innerhalb jedes HA-Paars werden Datenaggregate auf jedem Cluster-Node synchron gespiegelt und bei einem Failover gibt es keinen Datenverlust.
+* Der ONTAP Select Cluster mit vier Knoten besteht aus zwei HA-Paaren. Sechs-, acht-, zehn- und zwölf-Knoten-Cluster bestehen aus jeweils drei, vier, fünf bzw. sechs HA-Paaren. Innerhalb jedes HA-Paares werden die Datenaggregate auf jedem Clusterknoten synchron gespiegelt, sodass im Falle eines Failovers keine Daten verloren gehen.
 * Bei Verwendung von das Storage kann sich nur eine ONTAP Select Instanz auf einem physischen Server befinden. ONTAP Select benötigt ungemeinsamen Zugriff auf den lokalen RAID-Controller des Systems und ist für die Verwaltung der lokal angeschlossenen Festplatten konzipiert, was ohne physische Verbindung zum Storage unmöglich wäre.
 
 

@@ -19,9 +19,37 @@ Erfahren Sie mehr über die neuen Funktionen und Verbesserungen der unterstützt
 
 
 
-== ONTAP Select 9.17.1
+== ONTAP Select 9.18.1
 
-ONTAP Select 9.17.1 enthält mehrere neue Funktionen und Verbesserungen.
+Verbesserte Unterstützung für die Erweiterung und Verkleinerung von Clustern:: Ab ONTAP Select 9.18.1 wird die Erweiterung und Verkleinerung von Clustern zwischen vier- und zwölf-Knoten ONTAP Select Clustern auf ESXi- und KVM-Hypervisor-Hosts unterstützt.
++
+--
+--
+Sie können die Clustergröße eines bestehenden Clusters auf einem ESXi- oder KVM-Host in folgenden Schritten erhöhen:
+
+* Von vier Knoten auf sechs, acht, zehn oder zwölf Knoten
+* Von sechs Knoten auf acht, zehn oder zwölf Knoten
+* Von acht Knoten auf zehn oder zwölf Knoten
+* Von zehn auf zwölf Knoten
+
+
+Sie können die Clustergröße eines bestehenden Clusters auf einem ESXi- oder KVM-Host in folgenden Schritten verringern:
+
+* Von zwölf Knoten auf zehn, acht, sechs oder vier Knoten
+* Von zehn Knoten auf acht, sechs oder vier Knoten
+* Von acht auf sechs oder vier Knoten
+* Von sechs auf vier Knoten
+
+
+--
+link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
+
+--
+
+
+
+
+== ONTAP Select 9.17.1
 
 Software-RAID-Unterstützung für lokal angeschlossene NVMe-Festplatten auf KVM-Hosts:: ONTAP Select 9.17.1 führt Software-RAID-Unterstützung für lokal angeschlossene ONTAP Select NVMe-Festplatten auf einem Kernel-Based Virtual Machine (KVM)-Hypervisor-Host ein.
 +
@@ -43,7 +71,7 @@ Sie können die Funktion zur Cluster-Erweiterung und -Kontraktion auf einem vorh
 link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
 
 --
-Verbesserte Unterstützung für Cluster-Erweiterung und -Kontraktion auf ESXi-Hosts:: Ab ONTAP Select 9.17.1 wird die Clustererweiterung und -kontraktion für Cluster mit sechs bis zwölf Knoten auf ESXi-Hosts unterstützt:
+Verbesserte Unterstützung für Cluster-Erweiterung und -Kontraktion auf ESXi-Hosts:: Ab ONTAP Select 9.17.1 wird die Clustererweiterung und -verkleinerung zwischen Sechs-Knoten- und Zwölf-Knoten-Clustern auf ESXi-Hosts unterstützt:
 +
 --
 --
@@ -101,8 +129,6 @@ Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.17.1 beinhaltet Unte
 
 == ONTAP Select 9.16.1
 
-ONTAP Select 9.16.1 enthält mehrere neue Funktionen und Verbesserungen.
-
 Unterstützung für NetApp-Lizenzdateien aktualisiert:: Ab ONTAP Select 9.16.1 wird die Unterstützung für die NetApp-Lizenzdatei (NLF) aktualisiert. Das neue NF-Format umfasst Lizenzen für die Funktionen ARP, ONTAP S3 und S3 SnapMirror. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Weitere Informationen ."].
 +
 --
@@ -117,8 +143,6 @@ Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.16.1 wird der KV
 
 
 == ONTAP Select 9.15.1
-
-ONTAP Select 9.15.1 enthält mehrere neue Funktionen und Verbesserungen.
 
 Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.15.1 wird der Kernel-basierte Virtual Machine (KVM)-Hypervisor unter RHEL 9.4 und Rocky Linux 9.4 unterstützt.
 Unterstützung für Erweiterung und Verkleinerung von Clustern:: Ab ONTAP Select 9.15.1 wird die Erweiterung und Verkleinerung von Clustern unterstützt.
@@ -144,8 +168,6 @@ NOTE: Die Unterstützung für Cluster-Erweiterung und -Verkleinerung ist auf ESX
 
 == ONTAP Select 9.14.1
 
-ONTAP Select 9.14.1 enthält mehrere neue Funktionen und Verbesserungen.
-
 Unterstützung für KVM-Hypervisor:: Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufgenommen. Zuvor wurde in ONTAP Select 9.10.1 die Unterstützung für die Implementierung eines neuen Clusters auf einem KVM-Hypervisor entfernt, und in ONTAP Select 9.11.1 wurde die Unterstützung für das Management vorhandener KVM-Cluster und -Hosts entfernt, mit Ausnahme des Offline- bzw. Löschens.
 Implementierung des VMware vCenter Plug-ins wird nicht mehr unterstützt:: Ab ONTAP Select 9.14.1 wird das Deploy VMware vCenter Plug-in nicht mehr unterstützt.
 Aktualisierte Unterstützung für ONTAP Select Deploy:: Wenn Sie eine Version von ONTAP Select Deploy 9.14.1 verwenden, die niedriger als 9.14.1P2 ist, sollten Sie so bald wie möglich auf ONTAP Select Deploy 9.14.1P2 aktualisieren. Weitere Informationen finden Sie im link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Versionshinweise zu ONTAP Select 9.14.1"^].
@@ -155,8 +177,6 @@ Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.14.1 umfasst Unterst
 
 
 == ONTAP Select 9.13.1
-
-ONTAP Select 9.13.1 enthält mehrere neue Funktionen und Verbesserungen.
 
 Unterstützung für NVMe over TCP:: Wenn Sie ein Upgrade auf ONTAP Select 9.13.1 durchführen, benötigen Sie die neue Lizenz zur Unterstützung von NVMe over TCP. Diese Lizenz ist automatisch enthalten, wenn Sie ONTAP Select zum ersten Mal ab Version 9.13.1 bereitstellen.
 Aktualisierte Unterstützung von VMware ESXi:: Ab ONTAP 9.13.1 wird VMware ESXi 8.0.1 GA (Build 20513097) mit Hardwareversion 4 und höher unterstützt.
@@ -174,8 +194,6 @@ Seit April 2024 ist ONTAP Select Deploy 9.12.1 nicht mehr auf der NetApp Support
 
 
 == ONTAP Select 9.11.1
-
-ONTAP Select 9.11.1 enthält mehrere neue Funktionen und Verbesserungen.
 
 Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.11.1 bietet Unterstützung für VMware ESXi 7.0 U3C.
 Unterstützung für VMware NSX-T:: ONTAP Select 9.10.1 und neuere Versionen wurden für VMware NSX-T Version 3.1 qualifiziert. Bei Verwendung von NSX-T mit einem ONTAP Select Single-Node-Cluster, das mit einer OVA-Datei und dem ONTAP Select Deploy-Administrationsprogramm bereitgestellt wird, gibt es keine funktionalen Probleme oder Mängel. Wenn Sie jedoch NSX-T mit einem ONTAP Select Cluster mit mehreren Nodes verwenden, sollten Sie die folgende Einschränkung für ONTAP Select 9.11.1 beachten:
@@ -205,8 +223,6 @@ NetApp empfiehlt seinen Kunden nachdrücklich, eine vollständige Datenmigration
 
 == ONTAP Select 9.10.1
 
-ONTAP Select 9.10.1 enthält mehrere neue Funktionen und Verbesserungen.
-
 Unterstützung für VMware NSX-T:: ONTAP Select 9.10.1 ist für VMware NSX-T Version 3.1 qualifiziert. Bei Verwendung von NSX-T mit einem ONTAP Select Single-Node-Cluster, das mit einer OVA-Datei und dem ONTAP Select Deploy-Administrationsprogramm bereitgestellt wird, gibt es keine funktionalen Probleme oder Mängel. Wenn Sie jedoch NSX-T mit einem ONTAP Select Multi-Node-Cluster verwenden, sollten Sie die folgenden Anforderungen und Einschränkungen beachten:
 +
 --
@@ -232,8 +248,6 @@ KVM-Hypervisor wird nicht mehr unterstützt:: Ab ONTAP Select 9.10.1 können Sie
 
 == ONTAP Select 9.9.1
 
-ONTAP Select 9.9.1 enthält mehrere neue Funktionen und Verbesserungen.
-
 Unterstützung für Prozessorfamilien:: Ab ONTAP Select 9.9 werden nur CPU-Modelle von Intel Xeon Sandy Bridge oder höher für ONTAP Select unterstützt.
 Aktualisierte Unterstützung von VMware ESXi:: Die Unterstützung für VMware ESXi wurde mit ONTAP Select 9.9 verbessert. Folgende Versionen werden jetzt unterstützt:
 +
@@ -248,8 +262,6 @@ Aktualisierte Unterstützung von VMware ESXi:: Die Unterstützung für VMware ES
 
 
 == ONTAP Select 9.8
-
-ONTAP Select 9.8 bietet verschiedene neue und geänderte Funktionen.
 
 Hochgeschwindigkeits-Schnittstelle:: Die High-Speed-Schnittstelle bietet eine Option für 25 GbE und 40 Gbit (40 GbE), um die Netzwerkkonnektivität zu verbessern. Um die beste Performance beim Einsatz dieser höheren Geschwindigkeiten zu erreichen, sollten Sie die Best Practices für die Zuordnung von Ports befolgen, wie in der ONTAP Select-Dokumentation beschrieben.
 Aktualisierte Unterstützung von VMware ESXi:: Es gibt zwei Änderungen an ONTAP Select 9.8 in Bezug auf die Unterstützung für VMware ESXi.

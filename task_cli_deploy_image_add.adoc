@@ -32,10 +32,10 @@ Wenn Sie ein ONTAP Select Image zu einer Instanz des Deploy Utility hinzufügen 
 . Rufen Sie die NetApp -Supportseite über einen Webbrowser auf und wählen Sie *Support-Schnelllinks*.
 . Wählen Sie unter *Top-Aufgaben* die Option *Software herunterladen* und melden Sie sich auf der Website an.
 . Wählen Sie *Produkt finden*.
-. Scrollen Sie nach unten und wählen Sie *ONTAP Select*.
+. Scrollen Sie nach unten und klicken Sie auf * ONTAP Select*.
 . Unter *Andere verfügbare Software auswählen* wählen Sie *Upgrade bereitstellen, Knoten-Upgrade, Image installieren*.
 . Wählen Sie die gewünschte Version des Aktualisierungspakets aus.
-. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA) durch und klicken Sie auf *Akzeptieren und fortfahren*.
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA), und wählen Sie *Accept & Continue* aus.
 . Wählen Sie das entsprechende Paket aus, und laden Sie es herunter. Gehen Sie dabei auf alle Eingabeaufforderungen für Ihre Umgebung ein.
 
 
@@ -80,9 +80,8 @@ Sie müssen wissen, in welchem Verzeichnis die Installations-Image-Datei in der 
 .Schritte
 . Melden Sie sich mit SSH beim Deploy Utility CLI mit dem Administrator-Konto (admin) an.
 . Starten Sie die Bash Shell:
-
-
-[listing]
++
+[source, cli]
 ----
 shell bash
 ----

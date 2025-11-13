@@ -14,12 +14,12 @@ summary: Ab ONTAP Select 9.15.1 können Sie die Größe eines bestehenden Cluste
 
 
 [role="lead"]
-Sie können die Clustergröße eines vorhandenen ONTAP Select Clusters für ESXi- und KVM-Hypervisor-Hosts erhöhen.  Bei KVM-Hosts können Sie die Clustergröße von sechs auf acht Knoten erhöhen und von acht auf sechs Knoten verringern.  Bei ESXi-Hosts erhöhen und verringern Sie die Clustergröße in Schritten zwischen sechs und zwölf Knoten.
+Vergrößern oder verkleinern Sie die Clustergröße eines bestehenden ONTAP Select Clusters für ESXi- und KVM-Hypervisor-Hosts.  Bei beiden Hosttypen kann die Clustergröße in Schritten zwischen vier und zwölf Knoten erhöht oder verringert werden.
 
 Die folgenden Clustererweiterungen und -kontraktionen werden für ESXi- und KVM-Hosts nicht unterstützt:
 
-* Erweiterungen von Clustern mit einem, zwei oder vier Nodes auf Cluster mit sechs oder acht Nodes
-* Kontraktionen von Clustern mit sechs oder acht Knoten zu Clustern mit einem, zwei oder vier Knoten.
+* Erweiterungen von Clustern mit einem oder zwei Knoten auf Cluster mit sechs, acht, zehn oder zwölf Knoten.
+* Kontraktionen von Clustern mit sechs, acht, zehn oder zwölf Knoten auf Cluster mit einem oder zwei Knoten.
 
 
 [NOTE]
@@ -52,8 +52,6 @@ Die Clustererweiterung und -kontraktion wird für die folgenden ESXi-Hypervisor-
 * ESXi 8.0 U2
 * ESXi 8.0 U1
 * ESXi 8.0GA
-* ESXi 7.0 U3
-* ESXi 7.0
 
 
 --
@@ -73,26 +71,16 @@ Die Clustererweiterung und -kontraktion wird für die folgenden KVM-Hypervisor-V
 
 == Erweitern Sie das Cluster
 
-Verwenden Sie die Clustererweiterungsfunktion, um die Größe eines vorhandenen ESXi- oder KVM-Clusters zu erhöhen.
+Verwenden Sie die Cluster-Erweiterungsfunktion, um die Größe eines vorhandenen ONTAP Select Clusters zu erhöhen.
 
-[role="tabbed-block"]
-====
-.ESXi
---
-Sie können die Größe eines vorhandenen ESXi-Clusters in den folgenden Schritten erhöhen:
+Sie können die Größe eines bestehenden Clusters auf einem ESXi- oder KVM-Host in folgenden Schritten erhöhen:
 
+* Von vier Knoten auf sechs, acht, zehn oder zwölf Knoten
 * Von sechs Knoten auf acht, zehn oder zwölf Knoten
 * Von acht Knoten auf zehn oder zwölf Knoten
 * Von zehn auf zwölf Knoten
 
 
---
-.KVM
---
-Sie können die Größe eines vorhandenen KVM-Clusters von sechs auf acht Knoten erhöhen.
-
---
-====
 .Über diese Aufgabe
 Zur Vorbereitung der Clustererweiterung werden neue ESXi- und KVM-Hosts in das Inventar aufgenommen und die Details der neuen Knoten zugewiesen. Vor dem Start der Clustererweiterung wird das ausgewählte interne Netzwerk durch eine Netzwerkvorprüfung überprüft.
 
@@ -132,32 +120,22 @@ Die Erweiterung des Clusters kann bis zu 45 Minuten dauern.
 
 
 .Nachdem Sie fertig sind
-link:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten."].
+Nach der Erweiterung des Clusters sollten Sie Folgendes beachten:link:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten"] Die
 
 
 
 == Vertrag mit dem Cluster abschließen
 
-Verwenden Sie die Cluster-Kontraktionsfunktion, um die Größe eines vorhandenen ESXi- oder KVM-Clusters zu verringern.
+Verwenden Sie die Clusterverkleinerungsfunktion, um die Größe eines bestehenden ONTAP Select Clusters zu verringern.
 
-[role="tabbed-block"]
-====
-.ESXi
---
-Sie können die Größe eines vorhandenen ESXi-Clusters in den folgenden Schritten verringern:
+Sie können die Größe eines bestehenden Clusters auf einem ESXi- oder KVM-Host in folgenden Schritten verringern:
 
-* Von zwölf Knoten auf zehn, acht oder sechs Knoten
-* Von zehn Knoten auf acht oder sechs Knoten
-* Von acht auf sechs Knoten
+* Von zwölf Knoten auf zehn, acht, sechs oder vier Knoten
+* Von zehn Knoten auf acht, sechs oder vier Knoten
+* Von acht auf sechs oder vier Knoten
+* Von sechs auf vier Knoten
 
 
---
-.KVM
---
-Sie können die Größe eines vorhandenen Clusters von acht auf sechs Knoten reduzieren.
-
---
-====
 .Über diese Aufgabe
 Das gewünschte HA-Paar von Nodes im Cluster wird ausgewählt, um die Cluster-Kontraktion während des Verfahrens vorzubereiten.
 

@@ -63,7 +63,7 @@ Wenn Sie ein ONTAP Select-Cluster auf dem Hypervisor bereitstellen, können Sie 
 
 Die Umgebung für eine Software-RAID-Bereitstellung muss die folgenden zentralen Anforderungen erfüllen:
 
-* VMware ESXi 7.0 GA (Build 15843807) oder höher
+* VMware ESXi 8.0 GA (Build 20513097) oder höher
 * ONTAP Select Premium-Lizenz oder höher
 * Nur lokale SSD-Laufwerke
 * Trennung von Systemfestplatten vom Root-Laufwerk und Datenaggregaten
@@ -77,7 +77,7 @@ NOTE: Wenn ein Hardware-RAID-Controller vorhanden ist, lesen Sie den link:concep
 
 === ESXi-spezifische Anforderungen
 
-* VMware ESXi 7.0 GA (Build 15843807) oder höher
+* VMware ESXi 8.0 GA (Build 20513097) oder höher
 * VMware VMotion, HA und DRS werden nicht unterstützt
 * Sie können kein Software-RAID mit einem Knoten verwenden, der von ONTAP Select 9.4 oder früher aktualisiert wurde. In diesem Fall müssen Sie einen neuen Node für die Software-RAID-Bereitstellung erstellen.
 
@@ -241,7 +241,7 @@ Software-RAID kann für die Verwendung von NVMe-SSD-Laufwerken konfiguriert werd
 
 * ONTAP Select mit einem unterstützten Deploy-Verwaltungsprogramm
 * Lizenzangebot für Premium-XL-Plattformen oder eine 90-Tage-Evaluierungslizenz
-* VMware ESXi Version 6.7 oder höher
+* VMware ESXi Version 8.0 oder höher
 * NVMe Geräte gemäß Spezifikation 1.0 oder höher
 
 
