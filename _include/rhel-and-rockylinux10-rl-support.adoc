@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+[NOTE]
+====
+Für KVM-Hypervisoren auf RHEL 10.0- und Rocky Linux 10.0-Hosts gibt es Einschränkungen im Software-RAID-Workflow. Weitere Informationen finden Sie in den folgenden Artikeln unserer Wissensdatenbank:
+
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020: ONTAP Select Deploy: Warnmeldung beim Erstellen der Cluster-Hardware unter Verwendung von RHEL 10 und ROCKY 10"^]
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025: ONTAP Select DeployGUI: Speicherpools und Speicherdatenträger werden für SWR auf der Seite zur Clustererstellung auf Hosts mit RHEL10/Rocky 10 nicht angezeigt."^]
+
+
+====

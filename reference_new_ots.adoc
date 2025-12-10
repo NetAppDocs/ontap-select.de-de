@@ -121,7 +121,21 @@ Aktualisierte NDA-Treiberunterstützung:: Ab ONTAP Select 9.17.1 ersetzt der Fre
 Für ONTAP Select 9.16.1 und früher bietet NVD weiterhin Unterstützung für NVMe-Geräte in Ihrer ONTAP Select Bereitstellung.
 
 --
-Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.17.1 wird der KVM-Hypervisor auf Red Hat Enterprise Linux (RHEL) 9.6 und Rocky Linux 9.6 unterstützt.
+Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.17.1 wird der KVM-Hypervisor auf Red Hat Enterprise Linux (RHEL) 10.0 und 9.6 sowie auf Rocky Linux 10.0 und 9.6 unterstützt.
++
+--
+[NOTE]
+====
+Für KVM-Hypervisoren auf RHEL 10.0- und Rocky Linux 10.0-Hosts gibt es Einschränkungen im Software-RAID-Workflow. Weitere Informationen finden Sie in den folgenden Artikeln unserer Wissensdatenbank:
+
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020: ONTAP Select Deploy: Warnmeldung beim Erstellen der Cluster-Hardware unter Verwendung von RHEL 10 und ROCKY 10"^]
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025: ONTAP Select DeployGUI: Speicherpools und Speicherdatenträger werden für SWR auf der Seite zur Clustererstellung auf Hosts mit RHEL10/Rocky 10 nicht angezeigt."^]
+
+
+====
+--
+
+
 Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.17.1 beinhaltet Unterstützung für VMware ESXi 9.0.
 
 

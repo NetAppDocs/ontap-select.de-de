@@ -165,7 +165,17 @@ In der folgenden Tabelle ist der für den angegebenen Speicher erforderliche Min
 2+| Unterstützung für Hypervisoren (VMware) 3+| VMware vSphere 9.0, VMware vSphere 8.0GA und Updates 1 bis 3, VMware vSphere 7.0GA und Updates 1 bis 3C 
 
 
-2+| Unterstützung für Hypervisoren (KVM) 3+| Red Hat Enterprise Linux 64-Bit (KVM) 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 und 8.6 Rocky Linux (KVM) 9.6 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6 
+2+| Unterstützung für Hypervisoren (KVM)  a| 
+Red Hat Enterprise Linux 64-Bit (KVM) 10.0, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 und 8.6
+
+Rocky Linux (KVM) 10.0, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6
+
+*Hinweis*: Für KVM-Hypervisoren auf RHEL 10.0- und Rocky Linux 10.0-Hosts gibt es Einschränkungen im Software-RAID-Workflow. Weitere Informationen finden Sie in den folgenden Artikeln unserer Wissensdatenbank:
+
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020: ONTAP Select Deploy: Warnmeldung beim Erstellen der Cluster-Hardware unter Verwendung von RHEL 10 und ROCKY 10"^]
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025: ONTAP Select DeployGUI: Speicherpools und Speicherdatenträger werden für SWR auf der Seite zur Clustererstellung auf Hosts mit RHEL10/Rocky 10 nicht angezeigt."^]
+
+
 
 
 2+| Managementsoftware 3+| NetApp Active IQ Unified Manager Management Suite ONTAP Select Deploy Utility SnapCenter (optional) 
