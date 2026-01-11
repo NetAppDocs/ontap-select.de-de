@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: deploy-evaluation-ontap-select-ovf-template.html 
 keywords: ontap, select, ovf, template, deployment, evaluation, license 
-summary: Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinstanz für ein ONTAP Select Cluster mit einem Node schnell implementieren. 
+summary: Sie können eine 90-tägige Testversion eines ONTAP Select Clusters mit einem einzelnen Knoten bereitstellen. 
 ---
 = Implementierung einer 90-Tage-Testinstanz für einen ONTAP Select Cluster
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinst
 
 
 [role="lead"]
-Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinstanz für ein ONTAP Select Cluster mit einem Node schnell implementieren.
+Sie können eine 90-tägige Testinstanz eines ONTAP Select-Clusters mit einer Größe von einem einzelnen Knoten bis zu 99 Knoten mithilfe einer OVF-Vorlage auf VMware ESXi bereitstellen. Sie können eine Testlizenz herunterladen, wenn Sie bereits Kunde sind oder ein neuer Kunde. Beispielsweise sind Sie bereits Kunde und möchten eine neue Konfiguration ausprobieren, bevor Sie eine Lizenz erwerben.
 
 .Über diese Aufgabe
 * Sie müssen keine Seriennummer oder eine Storage-Kapazitätslizenz von NetApp erhalten.
@@ -26,7 +26,7 @@ Mit einer OVF-Vorlage auf VMware ESXi lässt sich eine 90-Tage-Testinstanz für 
 
 
 
-== Bereiten Sie den ONTAP Select-Cluster-Host vor
+== Schritt 1: ONTAP Select -Clusterhost vorbereiten
 
 Verwenden Sie die folgenden Anforderungen, um den ESXi-Host vorzubereiten, auf dem das ONTAP Select-Cluster bereitgestellt wird. Die Plattformbeschreibung basiert auf einer Standard- oder Small Instance-Konfiguration mit lokalem Direct-Attached Storage (das), der mit dem Dateisystem VMFS-5 oder VMFS-6 formatiert ist.
 
@@ -36,7 +36,7 @@ Weitere Informationen zu Host-Konfigurationsoptionen finden Sie im link:esxi-hos
 
 
 
-== Implementieren Sie ein ONTAP Select Cluster mit einem Node über eine OVF-Vorlage
+== Schritt 2: Bereitstellung eines ONTAP Select Clusters mit einem einzelnen Knoten mithilfe einer OVF-Vorlage
 
 Führen Sie die folgenden Schritte auf einem unterstützten 64-Bit-ESXi-Hostserver aus.
 
@@ -63,4 +63,6 @@ Führen Sie die folgenden Schritte auf einem unterstützten 64-Bit-ESXi-Hostserv
 
 
 .Verwandte Informationen
-link:http://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool"^]
+* link:concept_lic_evaluation.html["Erfahren Sie mehr über Evaluierungslizenzen für ONTAP Select Bereitstellungen."]
+* link:http://mysupport.netapp.com/matrix["Interoperabilitäts-Matrix-Tool"^]
+

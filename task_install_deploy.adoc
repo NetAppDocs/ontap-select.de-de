@@ -18,9 +18,9 @@ Sie müssen das ONTAP Select Deploy-Administrationsprogramm installieren und das
 
 
 
-== Virtual Machine Image herunterladen
+== Schritt 1: Laden Sie das Image der virtuellen Maschine herunter.
 
-Das ONTAP Select Paket können Sie auf der NetApp Support-Webseite herunterladen.
+Laden Sie das ONTAP Select Paket von der NetApp Supportseite herunter.
 
 .Bevor Sie beginnen
 https://mysupport.netapp.com/site/user/registration["Sie verfügen über ein registriertes NetApp Support Site Konto"^].
@@ -40,9 +40,9 @@ Das Dienstprogramm ONTAP Select Deploy Administration ist als virtuelle Maschine
 
 
 
-== Überprüfen Sie die ONTAP Select Deploy OVA-Signatur
+== Schritt 2: Überprüfen Sie die ONTAP Select Deploy OVA-Signatur.
 
-Überprüfen Sie vor der Installation des Installationspakets die OVA-Signatur (Open Virtualization Appliance) von ONTAP Select.
+Überprüfen Sie die ONTAP Select Open Virtualization Appliance (OVA)-Signatur, bevor Sie das Installationspaket installieren.
 
 .Bevor Sie beginnen
 Überprüfen Sie, ob Ihr System die folgenden Anforderungen erfüllt:
@@ -84,9 +84,9 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 
-== Stellen Sie die virtuelle Maschine bereit
+== Schritt 3: Virtuelle Maschine bereitstellen
 
-Sie müssen die ONTAP Select Deploy VM mithilfe des OVF VM Image installieren und starten. Im Rahmen der Installation konfigurieren Sie die Netzwerkschnittstelle so, dass DHCP oder eine statische IP-Konfiguration verwendet wird.
+Installieren und starten Sie die ONTAP Select Deploy VM mithilfe des OVF VM-Images. Im Rahmen des Installationsprozesses konfigurieren Sie die Netzwerkschnittstelle für die Verwendung von DHCP oder einer statischen IP-Konfiguration.
 
 .Bevor Sie beginnen
 Für einen ESXi-Hypervisor müssen Sie die Bereitstellung der ONTAP Select Deploy VM vorbereiten:
@@ -200,9 +200,9 @@ Use DHCP to set networking information? [n]:
 ====
 
 
-== Melden Sie sich bei der Webschnittstelle „Bereitstellen“ an
+== Schritt 4: Sign in bei der Deploy-Weboberfläche an.
 
-Melden Sie sich an der Web-Benutzeroberfläche an, um zu bestätigen, dass das Dienstprogramm zum Bereitstellen verfügbar ist und die Erstkonfiguration durchführen.
+Sign in, um zu bestätigen, dass das Deploy-Dienstprogramm verfügbar ist, und führen Sie die Erstkonfiguration durch.
 
 .Schritte
 . Rufen Sie im Browser das Dienstprogramm Deploy unter Verwendung der IP-Adresse oder des Domain-Namens auf:

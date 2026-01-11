@@ -64,7 +64,11 @@ Sie können ein ONTAP Select Evaluation Cluster auf eine Produktionslizenz aktua
 
 Siehe link:task_adm_licenses.html["Umwandeln einer Evaluierungslizenz in eine Produktionslizenz"] Finden Sie weitere Informationen.
 
+.Wie geht es weiter?
+* link:access-evaluation-software.html["Greifen Sie auf die ONTAP Select Evaluierungssoftware zu."]
+* link:deploy-evaluation-ontap-select-ovf-template.html["Implementierung einer 90-Tage-Testinstanz für einen ONTAP Select Cluster"]
+
+
 .Verwandte Informationen
 * link:concept_lic_production.html["Erfahren Sie mehr über Lizenzen für Produktionsbereitstellungen"]
-* link:deploy-evaluation-ontap-select-ovf-template.html["Implementierung einer 90-Tage-Testinstanz für einen ONTAP Select Cluster"]
 

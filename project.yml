@@ -294,8 +294,12 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: Wiederherstellung in einem Cluster mit zwei Nodes
         url: "/task_cli_deploy_recover_two_node.html"
-  - title: Implementierung einer 90-Tage-Testinstanz eines Clusters
-    url: "/deploy-evaluation-ontap-select-ovf-template.html"
+  - title: ONTAP Select ausprobieren
+    entries:
+    - title: Zugriffsevaluierungssoftware
+      url: "/access-evaluation-software.html"
+    - title: Implementierung einer 90-Tage-Testinstanz eines Clusters
+      url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: Häufig gestellte Fragen
     url: "/reference_faq.html"
   - title: Rechtliche Hinweise

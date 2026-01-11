@@ -16,7 +16,9 @@ indexpage:
     - title: Erfahren Sie mehr über ONTAP Select
       url: "/concept_ots_overview.html"
     - title: Lizenzierung
-      url: "/concept_lic_production.html"
+      url: "/concept_lic_evaluation.html"
+    - title: ONTAP Select ausprobieren
+      url: "/access-evaluation-software.html"
     - title: Häufig gestellte Fragen
       url: "/reference_faq.html"
   - title: Installation und Management
