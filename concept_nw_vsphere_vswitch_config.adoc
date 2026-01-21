@@ -16,20 +16,20 @@ summary: ONTAP Select vSwitch Konfigurations- und Load-Balancing-Richtlinien fü
 [role="lead"]
 ONTAP Select vSwitch Konfigurations- und Load-Balancing-Richtlinien für Konfigurationen mit zwei und vier Netzwerkkarten
 
-ONTAP Select unterstützt sowohl die Verwendung von Standard- als auch von verteilten vSwitch-Konfigurationen. Verteilte vSwitches unterstützen Link Aggregation Konstrukte (LACP). Die Link-Aggregation ist ein gängiges Netzwerkkonstrukt, das zur Aggregation von Bandbreite über mehrere physische Adapter verwendet wird. LACP ist ein anbieterneutraler Standard und bietet ein offenes Protokoll für Netzwerk-Endpunkte, die Gruppen von physischen Netzwerk-Ports in einem einzigen logischen Channel bündeln. ONTAP Select kann mit Port-Gruppen arbeiten, die als Link Aggregation Group (LAG) konfiguriert sind. Um DIE LAG-Konfiguration zu vermeiden, empfiehlt NetApp jedoch die Nutzung der einzelnen physischen Ports als einfache Uplink (Trunk)-Ports. In diesen Fällen sind die Best Practices für die standardmäßigen und verteilten vSwitches identisch.
+ONTAP Select unterstützt sowohl die Verwendung von Standard- als auch von verteilten vSwitch-Konfigurationen. Verteilte vSwitches unterstützen Link-Aggregation-Konstrukte (LACP). Link-Aggregation ist eine gängige Netzwerkkonstruktion, die verwendet wird, um Bandbreite über mehrere physische Adapter zu bündeln. LACP ist ein herstellerneutraler Standard. Es bietet ein offenes Protokoll für Netzwerkendpunkte, die Gruppen von physischen Netzwerkanschlüssen zu einem einzigen logischen Kanal bündeln. ONTAP Select kann mit Portgruppen arbeiten, die als Link Aggregation Group (LAG) konfiguriert sind. NetApp empfiehlt jedoch, die einzelnen physischen Ports als einfache Uplink-Ports (Trunk-Ports) zu verwenden, um die LAG-Konfiguration zu vermeiden. In diesen Fällen sind die Best Practices für Standard- und verteilte vSwitches identisch.
 
 Dieser Abschnitt beschreibt die vSwitch-Konfiguration und Load-Balancing-Richtlinien, die sowohl für zwei-NIC- als auch für vier-NIC-Konfigurationen verwendet werden sollten.
 
-Beim Konfigurieren der Portgruppen, die von ONTAP Select verwendet werden sollen, sollten folgende Best Practices beachtet werden: Die Load-Balancing-Richtlinie auf der Port-Group-Ebene basiert auf der ursprünglichen virtuellen Port-ID. VMware empfiehlt STP auf den mit den ESXi-Hosts verbundenen Switch-Ports auf PortFast zu setzen.
+Bei der Konfiguration der Portgruppen für ONTAP Select sollten Sie folgende Best Practices beachten: Die Load-Balancing-Richtlinie auf Portgruppenebene ist „Route Based on Originating Virtual Port ID“. VMware empfiehlt, STP an den mit den ESXi-Hosts verbundenen Switch-Ports auf Portfast einzustellen.
 
-Für alle vSwitch-Konfigurationen sind mindestens zwei physische Netzwerkadapter erforderlich, die in einem einzelnen NIC-Team gebündelt sind. ONTAP Select unterstützt einen Single 10-GB-Link für Cluster mit zwei Nodes. Es handelt sich jedoch um eine NetApp Best Practice, um eine Hardware-Redundanz durch NIC-Aggregation sicherzustellen.
+Für alle vSwitch-Konfigurationen werden mindestens zwei physische Netzwerkadapter benötigt, die zu einem einzigen NIC-Team zusammengefasst sind. ONTAP Select unterstützt eine einzelne 10-Gb-Verbindung für Zwei-Knoten-Cluster. NetApp empfiehlt jedoch die Verwendung von NIC-Aggregation, um Hardware-Redundanz zu gewährleisten.
 
 Auf einem vSphere-Server sind NIC-Teams das AggregationserKonstrukt, mit dem mehrere physische Netzwerkadapter zu einem einzelnen logischen Kanal zusammengefasst werden, sodass die Netzwerklast über alle Mitgliedsports hinweg gemeinsam genutzt werden kann. Es ist wichtig zu beachten, dass NIC-Teams ohne Unterstützung durch den physischen Switch erstellt werden können. Load-Balancing- und Failover-Richtlinien können direkt auf ein NIC-Team angewendet werden, das keine Kenntnis der Upstream-Switch-Konfiguration hat. In diesem Fall werden Richtlinien nur für ausgehenden Datenverkehr angewendet.
 
 
-NOTE: Statische Port-Kanäle werden von ONTAP Select nicht unterstützt. LACP-fähige Kanäle werden mit verteilten vSwitches unterstützt, die Verwendung von LACP LAGs kann jedoch zu einer un-gleichmäßigen Lastverteilung über DIE LAG-Mitglieder führen.
+NOTE: Statische Portkanäle werden von ONTAP Select nicht unterstützt. LACP-fähige Kanäle werden von verteilten vSwitches unterstützt, die Verwendung von LACP LAGs kann jedoch zu einer ungleichmäßigen Lastverteilung zwischen den LAG-Mitgliedern führen.
 
-Bei Single Node Clustern konfiguriert ONTAP Deploy die ONTAP Select VM so, dass sie eine Portgruppe für das externe Netzwerk und entweder dieselbe Portgruppe oder optional eine andere Portgruppe für den Cluster- und Node-Managementdatenverkehr verwendet. Bei Single Node-Clustern kann der externen Portgruppe die gewünschte Anzahl an physischen Ports als aktive Adapter hinzugefügt werden.
+Bei Clustern mit einem einzelnen Knoten konfiguriert ONTAP Deploy die ONTAP Select VM so, dass sie eine Portgruppe für das externe Netzwerk und entweder dieselbe Portgruppe oder optional eine andere Portgruppe für den Cluster- und Knotenverwaltungsdatenverkehr verwendet. Bei Clustern mit einem einzelnen Knoten können Sie die gewünschte Anzahl physischer Ports als aktive Adapter zur externen Portgruppe hinzufügen.
 
 Bei Clustern mit mehreren Nodes konfiguriert ONTAP Deploy jede ONTAP Select VM so, dass sie eine oder zwei Portgruppen für das interne Netzwerk und eine oder zwei Portgruppen für das externe Netzwerk verwenden. Der Cluster- und Node-Managementdatenverkehr kann entweder dieselbe Portgruppe wie der externe Datenverkehr verwenden oder optional eine separate Portgruppe. Der Cluster- und Node-Managementdatenverkehr können dieselbe Portgruppe nicht mit internem Traffic teilen.
 
@@ -40,7 +40,7 @@ NOTE: ONTAP Select unterstützt maximal vier vmnics.
 
 == Standard- oder verteilter vSwitch und vier physische Ports pro Node
 
-Jedem Node in einem Cluster mit mehreren Nodes können vier Portgruppen zugewiesen werden. Jede Portgruppe verfügt über einen einzelnen aktiven physischen Port und drei physische Standby-Ports wie in der folgenden Abbildung dargestellt.
+Sie können jedem Knoten in einem Multi-Node-Cluster vier Portgruppen zuweisen. Jede Portgruppe verfügt über einen aktiven physischen Port und drei physische Standby-Ports, wie in der folgenden Abbildung dargestellt.
 
 *VSwitch mit vier physischen Ports pro Node*
 
@@ -108,7 +108,7 @@ Zur Lesbarkeit lauten die Zuweisungen wie folgt:
 
 == Standard- oder verteilter vSwitch und zwei physische Ports pro Node
 
-Beim Einsatz von zwei High-Speed-NICs (25 Gbit) ähnelt die empfohlene Portgruppenkonfiguration konzeptionell der Konfiguration mit vier 10-Gbit-Adaptern. Es sollten vier Portgruppen verwendet werden, auch wenn nur zwei physische Adapter verwendet werden. Die Port-Gruppen-Zuweisungen lauten wie folgt:
+Bei Verwendung von zwei Hochgeschwindigkeits-Netzwerkkarten (25/40 Gbit/s) ist die empfohlene Portgruppenkonfiguration konzeptionell sehr ähnlich der Konfiguration mit vier 10-Gbit/s-Adaptern. Sie sollten vier Portgruppen verwenden, auch wenn Sie nur zwei physische Adapter verwenden. Die Zuordnung der Hafengruppen ist wie folgt:
 
 [cols="5*"]
 |===
@@ -126,7 +126,7 @@ image:DDN_17.jpg["VSwitch mit zwei physischen High-Speed-Ports (25/40 GB) pro No
 
 Beim Einsatz von zwei physischen Ports (10 GB oder weniger) sollten für jede Portgruppe ein aktiver Adapter und ein Standby-Adapter jeweils gegenüber konfiguriert sein. Das interne Netzwerk ist nur für ONTAP Select-Cluster mit mehreren Nodes vorhanden. Für Single-Node-Cluster können beide Adapter in der externen Portgruppe als aktiv konfiguriert werden.
 
-Das folgende Beispiel zeigt die Konfiguration eines vSwitch und der beiden Portgruppen, die für die Abwicklung interner und externer Kommunikationsdienste für ein ONTAP Select-Cluster mit mehreren Knoten verantwortlich sind. Das externe Netzwerk kann VMNIC im Falle eines Netzwerkausfalls das interne Netzwerk verwenden, da die internen Netzwerk-vmnics Teil dieser Port-Gruppe sind und im Standby-Modus konfiguriert wurden. Das Gegenteil ist der Fall für das externe Netzwerk. Das Wechseln der aktiven und Standby vmnics zwischen den beiden Portgruppen ist für die ordnungsgemäße Ausfallsicherung der ONTAP Select VMs während eines Netzwerkausfällen von großer Bedeutung.
+Das folgende Beispiel zeigt die Konfiguration eines vSwitch und der beiden Portgruppen, die für die Abwicklung interner und externer Kommunikationsdienste für einen Multi-Node ONTAP Select Cluster zuständig sind. Das externe Netzwerk kann im Falle eines Netzwerkausfalls die VMNIC des internen Netzwerks nutzen, da die VMNICs des internen Netzwerks Teil dieser Portgruppe sind und im Standby-Modus konfiguriert wurden. Für das externe Netzwerk gilt das Gegenteil. Der abwechselnde Einsatz der aktiven und der Standby-VMNICs zwischen den beiden Portgruppen ist entscheidend für das korrekte Failover der ONTAP Select VMs bei Netzwerkausfällen.
 
 *VSwitch mit zwei physischen Ports (10 GB oder weniger) pro Node*
 
@@ -153,4 +153,4 @@ image:DDN_15.jpg["Konfigurationen für externe Port-Gruppen unter Verwendung ein
 image:DDN_16.jpg["Interne Port-Gruppen-Konfigurationen mit einem verteilten vSwitch mit aktiviertem LACP"]
 
 
-NOTE: Für LACP müssen Sie die Upstream Switch Ports als Port Channel konfigurieren. Bevor Sie dies auf dem verteilten vSwitch aktivieren, stellen Sie sicher, dass ein LACP-fähiger Port-Kanal ordnungsgemäß konfiguriert ist.
+NOTE: LACP erfordert, dass Sie die Upstream-Switch-Ports als Portkanal konfigurieren. Bevor Sie diese Konfiguration auf dem verteilten vSwitch aktivieren, stellen Sie sicher, dass ein LACP-fähiger Portkanal korrekt konfiguriert ist.
