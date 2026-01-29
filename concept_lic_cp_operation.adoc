@@ -33,10 +33,22 @@ Der License Manager wird in jeder Instanz des Dienstprogramms Deploy Administrat
 
 Dem für jedes Datenaggregat auf einem Node mit einer Lizenz im Kapazitäts-Pool zugewiesenen Storage muss ein Leasing zugewiesen sein. Der Node fordert ein Storage-Leasing an, und wenn die Kapazität verfügbar ist, reagiert der License Manager mit einem Leasing. Jeder Leasingvertrag hat die folgenden expliziten oder impliziten Attribute:
 
-* Lizenzmanager jeder ONTAP Select-Knoten ist einer Lizenz-Manager-Instanz zugeordnet
-* Kapazitäts-Pool jeder ONTAP Select-Node ist einem Kapazitäts-Pool zugeordnet
-* Storage-Zuweisung Ein bestimmter Kapazitätswert wird im Leasing zugewiesen
-* Verfallsdatum und -Uhrzeit die Dauer zwischen einer Stunde und sieben Tagen ist abhängig von der Benutzerkonfiguration.
+* Lizenzmanager
++
+Jeder ONTAP Select Node ist einer License Manager Instanz zugeordnet
+
+* Kapazitätspool
++
+Jeder ONTAP Select Node ist einem Capacity Pool zugeordnet
+
+* Speicherzuweisung
++
+Ein bestimmter Kapazitätswert wird im Leasingvertrag zugewiesen
+
+* Ablaufdatum und Uhrzeit
++
+Die Laufzeit der Leases liegt je nach Benutzerkonfiguration zwischen einer Stunde und sieben Tagen.
+
 
 
 
@@ -47,15 +59,20 @@ Jede Instanz des License Manager und damit jede entsprechende Deploy Utility-Ins
 
 Sie können die Lizenzsperre-ID für Ihre Deploy-Instanz mithilfe der Web-Benutzeroberfläche auf folgende Weise bestimmen:
 
-* Seite „erste Schritte“ Diese Seite wird angezeigt, wenn Sie sich zum ersten Mal bei der Bereitstellung anmelden. Sie können die Seite auch anzeigen, indem Sie auf das Dropdown-Feld oben rechts auf der Seite klicken und „erste Schritte“ auswählen. Die LLID wird im Abschnitt Lizenzen hinzufügen angezeigt.
-* Verwaltung Klicken Sie oben auf der Seite auf die Registerkarte *Administration* und dann auf *Systeme* und *Einstellungen*.
+* Erste Schritte-Seite
++
+Deploy zeigt diese Seite an, wenn Sie sich zum ersten Mal anmelden. Sie können auch das Dropdown-Menü oben rechts auf der Seite öffnen und *Getting Started* auswählen, um diese Seite anzuzeigen. Die LLID wird im Abschnitt Add Licenses angezeigt.
+
++
+Wählen Sie die Registerkarte *Administration* oben auf der Seite, dann *Systeme* und *Einstellungen*.
+
 
 
 
 
 == Basis-Leasing-Operationen
 
-Ein ONTAP Select Node muss bei jedem Erstellen, erweitern oder Ändern eines Datenaggregats einen gültigen Kapazitätsleast anfordern oder anfordern. Es kann ein Leasing aus einer vorherigen Anfrage verwendet werden, das noch gültig ist, oder bei Bedarf ein neuer Leasing angefordert werden. Der ONTAP Select Node unternimmt folgende Schritte, um einen Kapazitäts-Pool-Leasing ausfindig zu machen:
+Ein ONTAP Select-Knoten muss jedes Mal, wenn ein Datenaggregat erstellt, erweitert oder geändert wird, eine gültige Kapazitätslizenz finden oder anfordern. Sie können eine aus einer vorherigen Anfrage erhaltene, noch gültige Lizenz verwenden oder bei Bedarf eine neue anfordern. Der ONTAP Select-Knoten führt die folgenden Schritte aus, um eine Capacity Pool-Lizenz zu finden:
 
 . Wenn sich ein vorhandener Leasing auf dem Node befindet, wird er verwendet, solange alle folgenden Fällen zutrifft:
 +

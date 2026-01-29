@@ -22,7 +22,7 @@ Wenn Sie das Lizenzmodell für Kapazitäts-Pools anstelle des Lizenzmodells für
 
 Bei der Nutzung der Capacity-Tiers-Lizenzierung weisen Sie jedem Node eine feste Storage-Kapazität zu. Ungenutzter Speicherplatz kann nicht mit den anderen Nodes gemeinsam genutzt werden und wird effektiv verschwendet. Bei der Lizenzierung der Kapazitäts-Pools verbraucht jeder Node basierend auf der Größe der Datenaggregate nur die Kapazität, die er benötigt.
 
-Da die Kapazität in einem zentralen Pool verankert ist, können sie auch von vielen Nodes in Ihrem Unternehmen verwendet werden.
+Die Kapazität ist in einem zentralen Pool verankert, wo sie von vielen Knoten in Ihrer Organisation gemeinsam genutzt werden kann.
 
 
 

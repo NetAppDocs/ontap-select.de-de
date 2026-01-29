@@ -17,23 +17,26 @@ summary: Bei Nutzung der Capacity-Tiers-Lizenzierung müssen Sie für jeden ONTA
 Bei Nutzung der Capacity-Tiers-Lizenzierung müssen Sie für jeden ONTAP Select Node eine Lizenzdatei beschaffen. Die Lizenzdatei definiert die Speicherkapazität für den Node und ist über die eindeutige neunstellige Seriennummer, die von NetApp zugewiesen wurde, am Node gesperrt.
 
 .Bevor Sie beginnen
-Sie müssen dem Node von NetApp die neunstellige Lizenzseriennummer zugewiesen haben. Bevor Sie versuchen, eine Lizenzdatei zu erwerben, sollten Sie mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten.
+* Sie benötigen die neunstellige Lizenzseriennummer, die dem ONTAP Select Knoten von NetApp zugewiesen wurde.
+* Sie sollten mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten, bevor Sie eine Lizenzdatei erwerben.
+* Sie haben die link:sizing-capacity-tier-license.html["Überlegungen zur Dimensionierung einer Capacity Tiers license"] überprüft.
+
 
 .Über diese Aufgabe
-Sie müssen diese Aufgabe für jeden ONTAP Select Node ausführen, der eine Lizenz für die Kapazitätsschicht benötigt.
+Sie müssen diese Aufgabe für jeden ONTAP Select Node ausführen, der eine Capacity Tiers-Lizenz benötigt.
 
 .Schritte
-. Greifen Sie über einen Webbrowser auf die ONTAP Select-Lizenzwebsite zu:
-+
-`https://register.netapp.com/register/getlicensefile`
-
+. link:https://register.netapp.com/register/getlicensefile["Greifen Sie auf die ONTAP Select Lizenzseite zu"^].
 . Mit Ihren NetApp Anmeldedaten anmelden
 . Wählen Sie auf der Seite *Lizenzgenerator* das gewünschte Lizenzangebot aus dem Dropdown-Feld aus.
-. Füllen Sie die verbleibenden Felder auf derselben Seite aus, einschließlich *Product Serial #*, der Seriennummer für den ONTAP Select-Knoten.
-. Klicken Sie Auf *Absenden*.
+. Füllen Sie die restlichen Felder auf der Seite *License Generator* aus, einschließlich der *Product Serial #*.
++
+Die „Produktseriennummer“ ist die Seriennummer für den ONTAP Select Node.
+
+. Wählen Sie *Senden*.
 . Nachdem die Anforderung validiert wurde, wählen Sie die Liefermethode für die Lizenz aus.
 +
-Sie können entweder auf *Download Lizenz* oder *E-Mail-Lizenz* klicken.
+Sie können entweder *Lizenz herunterladen* oder *Lizenz per E-Mail* auswählen.
 
 . Bestätigen Sie, dass Sie die Lizenzdatei basierend auf Ihrer ausgewählten Bereitstellungsmethode erhalten haben.
 

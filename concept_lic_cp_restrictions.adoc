@@ -20,7 +20,7 @@ Im Folgenden werden die Einschränkungen dargestellt, die bei der Nutzung des Ka
 Alle Nodes in einem einzelnen ONTAP Select Cluster müssen dasselbe Lizenzmodell nutzen, entweder die Kapazitäts-Tiers oder die Kapazitäts-Pools. Sie können die Lizenztypen für die Nodes nicht in einem einzelnen Cluster kombinieren.
 
 .Alle Nodes in einem Cluster verwenden dieselbe Lizenz-Manager-Instanz
-Alle Nodes mit einer Capacity Pool-Lizenz in einem ONTAP Select-Cluster müssen dieselbe License Manager-Instanz verwenden. Da es eine Instanz von License Manager in jeder Deploy-Instanz gibt, enthält diese Einschränkung eine Neuaufstellung der vorhandenen Anforderung, dass alle Nodes in einem Cluster von derselben Deploy-Instanz gemanagt werden müssen.
+Alle Knoten mit einer Capacity Pool-Lizenz in einem ONTAP Select Cluster müssen dieselbe License Manager-Instanz verwenden. Da es in jeder Deploy-Instanz eine License Manager-Instanz gibt, ist diese Einschränkung eine Wiederholung der bestehenden Anforderung, dass dieselbe Deploy-Instanz alle Knoten in einem Cluster verwalten muss.
 
 .Ein Kapazitäts-Pool pro Node
 Jeder Node kann Storage aus genau einem Kapazitäts-Pool leasen. Ein Node kann mindestens zwei Pools nicht verwenden.

@@ -23,7 +23,7 @@ Die Seriennummer eines Node, der die Lizenzierung von Kapazitätspools verwendet
 
 NOTE: Leerzeichen wurden aus Gründen der Klarheit hinzugefügt, sind aber nicht Teil der tatsächlichen Seriennummer.
 
-Jeder Abschnitt der Seriennummer des Node wird in der folgenden Tabelle von links nach rechts beschrieben.
+Die folgende Tabelle beschreibt jeden Abschnitt der Knotenseriennummer von links nach rechts.
 
 [cols="15,85"]
 |===
@@ -39,4 +39,4 @@ Jeder Abschnitt der Seriennummer des Node wird in der folgenden Tabelle von link
 | Nnnnnnnnnnnnnn | Variabler achtstelliger Wert, der vom License Manager für jeden Knoten generiert wird, der den Kapazitäts-Pool verwendet 
 |===
 
-NOTE: Achtung: Beim Eröffnen eines Falls mit NetApp Support, der einen Node umfasst, der eine Kapazitäts-Pool-Lizenz verwendet, können Sie nicht die vollständige zwanzig-stellige Node-Seriennummer angeben. Stattdessen müssen Sie die neunstellige Lizenznummer für den Kapazitäts-Pool angeben. Sie können die Lizenzseriennummer von der Node-Seriennummer wie oben dargestellt ableiten. Überspringen Sie die ersten drei Ziffern der Knotenseriennummer ('999') und extrahieren Sie die nächsten neun Ziffern (ppppppppppppppppppppp).
+CAUTION: Wenn Sie einen Fall beim NetApp Support eröffnen, der einen Knoten mit einer Capacity Pool-Lizenz betrifft, müssen Sie die neunstellige Capacity Pool-Lizenz-Seriennummer angeben. Sie können nicht die vollständige zwanzigstellige Knoten-Seriennummer angeben. Sie können die Lizenz-Seriennummer aus der Knoten-Seriennummer ableiten, indem Sie die ersten drei Ziffern der Knoten-Seriennummer („999“) überspringen und die nächsten neun Ziffern (ppppppppp) extrahieren.

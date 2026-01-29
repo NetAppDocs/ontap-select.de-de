@@ -88,32 +88,42 @@ sidebar:
     entries:
     - title: Optionen
       entries:
-      - title: Evaluierungslizenzen
+      - title: Informieren Sie sich über Evaluierungslizenzen
         url: "/concept_lic_evaluation.html"
       - title: Produktionslizenzen
-        url: "/concept_lic_production.html"
-      - title: Plattform-Lizenzangebote
-        url: "/concept_lic_platforms.html"
-    - title: Lizenzmodell für Kapazitäts-Pools
-      entries:
-      - title: Operative Details
-        url: "/concept_lic_cp_operation.html"
-      - title: Seriennummern der Nodes
-        url: "/concept_lic_cp_serial_number.html"
-      - title: Einschränkungen
-        url: "/concept_lic_cp_restrictions.html"
-      - title: Kapazitäts-Pools statt Kapazitäts-Tiers
-        url: "/concept_lic_cp_compare_ct.html"
-      - title: Zusammenfassung der Vorteile
-        url: "/concept_lic_cp_benefits.html"
-    - title: Kaufen
+        entries:
+        - title: Informieren Sie sich über Produktionslizenzen
+          url: "/concept_lic_production.html"
+        - title: Plattform-Lizenzangebote
+          url: "/concept_lic_platforms.html"
+        - title: Lizenzmodell für Kapazitäts-Pools
+          entries:
+          - title: Operative Details
+            url: "/concept_lic_cp_operation.html"
+          - title: Seriennummern der Nodes
+            url: "/concept_lic_cp_serial_number.html"
+          - title: Einschränkungen
+            url: "/concept_lic_cp_restrictions.html"
+          - title: Zusammenfassung der Vorteile
+            url: "/concept_lic_cp_benefits.html"
+        - title: Kapazitäts-Tiers versus Kapazitätspools
+          url: "/concept_lic_cp_compare_ct.html"
+    - title: Erwerben Sie eine Lizenz
       entries:
       - title: Lizenzierungs-Workflow
         url: "/concept_lic_workflow.html"
       - title: Kapazitäts-Tiers
-        url: "/task_lic_acquire_ct.html"
+        entries:
+        - title: Überlegungen zur Dimensionierung einer Lizenz
+          url: "/sizing-capacity-tier-license.html"
+        - title: Erwerben Sie eine Lizenz
+          url: "/task_lic_acquire_ct.html"
       - title: Kapazitäts-Pools
-        url: "/task_lic_acquire_cp.html"
+        entries:
+        - title: Überlegungen zur Dimensionierung einer Lizenz
+          url: "/sizing-capacity-pool-license.html"
+        - title: Erwerben Sie eine Lizenz
+          url: "/task_lic_acquire_cp.html"
     - title: Funktionen der ONTAP
       url: "/reference_lic_ontap_features.html"
   - title: Installieren

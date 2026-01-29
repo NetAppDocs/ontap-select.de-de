@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
 keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
-summary: Es gibt verschiedene Unterschiede zwischen den Kapazitäts-Pools und den Lizenzmodellen für Kapazitäts-Tiers. 
+summary: Zwischen den Lizenzmodellen Capacity Tiers und Capacity Pools bestehen mehrere Unterschiede. 
 ---
-= Vergleichen Sie die Lizenzen für ONTAP Select-Kapazitäts-Pools und Kapazitäts-Tiers
+= Vergleichen Sie die ONTAP Select Capacity Tiers und Capacity Pools Lizenzierung
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -21,13 +21,13 @@ In der folgenden Tabelle werden die beiden von ONTAP Select unterstützten Produ
 |  | Kapazitäts-Tiers | Kapazitäts-Pools 
 
 
-| Seriennummer der Lizenz | Neun Ziffern von NetApp generiert und einem Node zugewiesen | Von NetApp generierte neun Stellen, die einem Kapazitäts-Pool zugewiesen sind 
+| Seriennummer der Lizenz | NetApp generiert neun Ziffern und weist sie einem Knoten zu | NetApp generiert neun Ziffern und weist sie einem Kapazitätspool zu 
 
 
 | Lizenzsperre | Auf ONTAP Select-Node gesperrt | An License Manager-Instanz gesperrt 
 
 
-| Lizenzdauer | Unbefristet (keine Verlängerung erforderlich) | Festdauer auf Basis des Kaufs (erneuert erforderlich) 
+| Lizenzdauer | Unbefristet (keine Verlängerung erforderlich) | Feste Laufzeit basierend auf dem Kauf (Verlängerung erforderlich) 
 
 
 | Leasing-Dauer für Daten-Aggregat | Keine Angabe | Eine Stunde bis sieben Tage 
@@ -52,4 +52,10 @@ In der folgenden Tabelle werden die beiden von ONTAP Select unterstützten Produ
 
 
 | Durchsetzung: Lizenz abgelaufen | K. A. | Ja (keine Kulanzzeit) 
+
+
+| Mindestlizenz | 1 TiB | 2 TiB 
+
+
+| Maximal verwalteter Speicherplatz | 400 TiB pro Knoten | 400 TiB pro Knoten 
 |===

@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: sizing-capacity-tier-license.html 
+keywords: license, licensing, Capacity Tiers, usable, space 
+summary: Die Capacity-Tiers-Lizenz basiert auf der von jedem Knoten verwalteten Festplattenkapazität und nicht auf der nutzbaren Kapazität des Knotens, HA-Paars oder Clusters. Jede Capacity-Tiers-Lizenz ist einer einzelnen Knotenseriennummer für eine bestimmte Kapazität zugeordnet und erfordert einen zugehörigen Supportvertrag. 
+---
+= Überlegungen zur Dimensionierung einer ONTAP Select Capacity Tiers Lizenz
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die Capacity Tiers-Lizenz basiert auf der von jedem ONTAP Select Knoten verwalteten Festplattenkapazität und nicht auf der nutzbaren Kapazität des Knotens, HA-Paares oder Clusters. Jede Capacity Tiers-Lizenz ist einer einzelnen Knotenseriennummer für eine bestimmte Kapazität zugeordnet und erfordert einen zugehörigen Supportvertrag.
+
+Die lizenzierte Kapazität einer Capacity Tiers-Lizenz wird in vollen TiB angegeben, mit einem Minimum von 1 TiB. Sie berechnen die lizenzierte Kapazität, indem Sie die nutzbare Kapazität mit dem Overhead-Faktor multiplizieren. Der Overhead-Faktor unterscheidet sich zwischen Einzelknoten- und Mehrknotenclustern (HA-Paar-basiert):
+
+* Der Overhead-Faktor für Einzelknoten-Cluster beträgt 1.13
+* Der Overhead-Faktor für Multi-Node-Cluster beträgt 2.67
+
+
+Berechnen Sie die lizenzierte Kapazität auf Basis des nutzbaren Speicherplatzes, um sicherzustellen, dass Sie genug für Ihre Implementierung in der Produktion haben.
+
+[cols="25,30,45"]
+|===
+| Beschreibung | Einzelknoten | HA-Paar 
+
+
+| nutzbare Kapazität | 10 TiB | 5 TiB pro Knoten 10 TiB für HA-Paar 
+
+
+| Lizenzierter Speicherplatz | 12 TiB (10 x 1,13 = 11,3, aufgerundet auf das nächste volle TiB) | Zwei 14 TiB-Lizenzen (5 x 2.67 = 13.35, aufgerundet auf das nächste volle TiB) 
+
+
+| Maximal nutzbarer Speicherplatz pro Knoten *Hinweis*: Der maximal verwaltete Speicherplatz pro Knoten oder HA-Paar beträgt 400 TiB | 353 TiB (400 / 1,13)  a| 
+Pro Knoten in einem HA-Paar:
+
+* 74 TiB [(400 / 2) / 2,67]
+
+
+Pro HA-Paar in einem Multi-Node-Cluster:
+
+* Zwei-Knoten: 148 TiB (2 x 74)
+* Vier-Knoten: 296 TiB (4 x 74)
+* Sechs-Knoten: 444 TiB (6 x 74)
+* Acht-Knoten: 592 TiB (8 x 74)
+
+
+|===
+.Was kommt als Nächstes
+link:task_lic_acquire_ct.html["Erwerben Sie eine Capacity Tier-Lizenz für ONTAP Select"]

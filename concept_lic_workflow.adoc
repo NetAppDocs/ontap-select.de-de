@@ -25,5 +25,12 @@ Lizenzieren der Website:: Sie erhalten eine Capacity Tier- und Capacity Pool-Liz
 
 image:purchased_license_workflow.png["Beschreibt den Prozess für den Kauf und die Installation einer Storage-Lizenz für eine ONTAP Select-Implementierung in der Produktionsumgebung."]
 
+.Wie geht es weiter?
+Erfahren Sie mehr über die Überlegungen zur Dimensionierung einer ONTAP Select Lizenz:
+
+* link:sizing-capacity-tier-license.html["Kapazitäts-Tiers-Lizenz"]
+* link:sizing-capacity-pool-license.html["Capacity Pools Lizenz"]
+
+
 .Verwandte Informationen
-link:task_adm_licenses.html["ONTAP Select-Lizenzen"]
+link:task_adm_licenses.html["Erfahren Sie mehr über die Verwaltung von ONTAP Select Lizenzen"]

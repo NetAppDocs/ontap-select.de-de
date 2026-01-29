@@ -17,21 +17,24 @@ summary: Für jeden von den ONTAP Select-Nodes verwendeten Kapazitäts-Pool muss
 Für jeden von den ONTAP Select-Nodes verwendeten Kapazitäts-Pool muss eine Lizenzdatei erworben werden. Die Lizenzdatei definiert die Speicherkapazität und den Ablauf des Pools. Sie ist für den License Manager gesperrt, indem sie eine Kombination aus der eindeutigen Lizenzseriennummer, die NetApp zugewiesen hat, und der mit der Deploy-Instanz verknüpften Lizenzsperre-ID verwenden.
 
 .Bevor Sie beginnen
-Dem Kapazitäts-Pool muss die neunstellige Lizenzseriennummer von NetApp zugewiesen werden. Bevor Sie versuchen, eine Lizenzdatei zu erwerben, sollten Sie mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten.
+* Sie benötigen die neunstellige Lizenzseriennummer, die dem Kapazitätspool von NetApp zugewiesen wurde.
+* Sie sollten mindestens 24 Stunden nach dem Versanddatum Ihrer Bestellung warten, bevor Sie eine Lizenzdatei erwerben.
+* Sie haben die link:sizing-capacity-pool-license.html["Überlegungen zur Dimensionierung einer Capacity Pools License"] überprüft.
+
 
 .Über diese Aufgabe
 Sie müssen diese Aufgabe für jeden von den ONTAP Select-Nodes verwendeten Kapazitätspool ausführen.
 
 .Schritte
-. Greifen Sie über einen Webbrowser auf die NetApp Support-Website zu und melden Sie sich an.
-. Klicken Sie oben auf *Systems* und dann auf *Software-Lizenzen*.
-. Geben Sie die Lizenzseriennummer für den Kapazitäts-Pool ein und klicken Sie auf *Go!*.
+. Melden Sie sich bei der link:https://mysupport.netapp.com/site/["NetApp Support Website"^] an.
+. Wählen Sie *Systems* > *Software Licenses*.
+. Geben Sie die Lizenz-Seriennummer für den Capacity Pool ein und wählen Sie *Go!*.
 . Navigieren Sie auf der Seite Lizenzdetails zur Spalte *Produktdetails*.
-. Klicken Sie in der entsprechenden Zeile auf *NetApp Lizenzdatei erhalten*.
-. Geben Sie die Lizenzsperre-ID für Ihre ONTAP Select-Deploy-Instanz ein, und klicken Sie auf *Submit*.
-. Wählen Sie die passende Liefermethode aus und klicken Sie auf *Absenden*.
-. Klicken Sie im Bestätigungsfenster auf *OK*.
+. Wählen Sie *Get NetApp License File* in der entsprechenden Zeile aus.
+. Geben Sie die License Lock ID für Ihre ONTAP Select Deploy Instanz ein und wählen Sie *Submit*.
+. Wählen Sie die entsprechende Zustellungsmethode aus und wählen Sie *Absenden*.
+. Wählen Sie im Lieferbestätigungsfenster *OK* aus.
 
 
 .Nachdem Sie fertig sind
-Sie müssen die Lizenzdatei in das Dienstprogramm Deploy Administration hochladen, bevor der Kapazitäts-Pool von einem ONTAP Select-Node verwendet werden kann.
+Sie müssen die Lizenzdatei in das Deploy-Verwaltungsprogramm hochladen, bevor ein ONTAP Select Node den Kapazitätspool nutzen kann.
