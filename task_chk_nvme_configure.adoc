@@ -51,18 +51,9 @@ ESXi wird auf den folgenden Hypervisor-Versionen unterstützt:
 KVM wird auf den folgenden Hypervisor-Versionen unterstützt:
 
 ** Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7, 9.6, 9.5, 9.4, 9.2, 9.1, 9.0, 8.8, 8.7, und 8.6
-** Rocky Linux 10.0, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6
+** Rocky Linux 10.1, 10.0, 9.7, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 und 8.6
 
 
-[NOTE]
-====
-Es gibt Einschränkungen beim Software-RAID-Workflow für KVM-Hypervisoren auf RHEL 10.1 und 10.0 sowie Rocky Linux 10.0 Hosts. Weitere Informationen finden Sie in den folgenden Knowledge Base-Artikeln:
-
-** link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020: ONTAP Select Deploy: Warnmeldung beim Erstellen der Cluster-Hardware unter Verwendung von RHEL 10 und ROCKY 10"^]
-** link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025: ONTAP Select DeployGUI: Speicherpools und Speicherdatenträger werden für SWR auf der Seite zur Clustererstellung auf Hosts mit RHEL10/Rocky 10 nicht angezeigt."^]
-
-
-====
 --
 ====
 * NVMe Geräte gemäß Spezifikation 1.0 oder höher

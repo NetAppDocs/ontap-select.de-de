@@ -25,14 +25,14 @@ CAUTION: Das Deploy Administration Utility ist nicht zum Durchführen von Upgrad
 
 Auf hoher Ebene sollten Sie die folgenden Schritte verwenden, um einen vorhandenen ONTAP Select Node zu aktualisieren.
 
-. Navigieren Sie zu der Download-Seite auf der NetApp Support Site.
+.Schritte
+. Rufen Sie die link:https://mysupport.netapp.com/site/downloads/["NetApp Support Site Downloads"^] Seite auf.
+. Scrollen Sie nach unten und wählen Sie *ONTAP Select Image* aus.
+. Wählen Sie die gewünschte Version des Installationsabbilds aus.
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung (EULA), und wählen Sie *Accept & Continue* aus.
+. Wählen Sie das passende *ONTAP Select Image Upgrade*-Paket aus und laden Sie es herunter. Beantworten Sie alle erforderlichen Eingabeaufforderungen.
 +
-https://mysupport.netapp.com/site/downloads["NetApp Support-Downloads"^]
-
-. Klicken Sie auf *ONTAP Select Knoten-Upgrade*.
-. Wählen Sie das entsprechende Upgrade-Image aus, und laden Sie es herunter, um alle Aufforderungen bei Bedarf zu beantworten.
-+
-Weitere Informationen und erforderliche Verfahren vor dem Upgrade eines ONTAP Select-Knotens sind in den Versionshinweisen zu finden.
+Überprüfen Sie die link:reference_release_notes.html["Versionshinweise"] auf zusätzliche Informationen und alle erforderlichen Verfahren, bevor Sie einen ONTAP Select-Knoten aktualisieren.
 
 . Aktualisieren Sie den ONTAP Select-Knoten mithilfe der standardmäßigen ONTAP-Upgrade-Verfahren für die ONTAP Select-Upgrade-Datei. Informationen zu unterstützten Upgrade-Pfaden finden Sie im link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Unterstützte ONTAP Upgrade-Pfade"^].
 
