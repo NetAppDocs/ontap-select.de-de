@@ -40,9 +40,6 @@ Aktualisierungen der Downloadoptionen für das ONTAP Select-Produkt:: Die Downlo
 
 | ONTAP Select Node-Upgrade | ONTAP Select Image | link:concept_adm_upgrading_nodes.html["ONTAP Select Knoten aktualisieren"] 
 |===
-
-NOTE: Die Änderungen beim Produkt-Download gelten auch für ONTAP Select 9.17.1, 9.16.1, 9.15.1 und 9.14.1.
-
 --
 Verbesserte Unterstützung für die Erweiterung und Verkleinerung von Clustern:: Ab ONTAP Select 9.18.1 wird die Erweiterung und Verkleinerung von Clustern zwischen vier- und zwölf-Knoten ONTAP Select Clustern auf ESXi- und KVM-Hypervisor-Hosts unterstützt.
 +
