@@ -14,7 +14,7 @@ summary: Die Capacity-Tiers-Lizenz basiert auf der von jedem Knoten verwalteten 
 
 
 [role="lead"]
-Die lizenzierte Kapazität für eine Capacity Pool-Lizenz beträgt volle TiB-Beträge, mit einem Minimum von 2 TiB. Sie berechnen die lizenzierte Kapazität, indem Sie die Menge des nutzbaren Speicherplatzes mit dem Overhead-Faktor multiplizieren. Der Overhead-Faktor unterscheidet sich zwischen Einzelknoten- und Mehrknoten- (HA-Paar-basierten) Clustern:
+Die lizenzierte Kapazität für eine Capacity Pool-Lizenz beträgt volle TB, mit einem Minimum von 2 TB. Sie berechnen die lizenzierte Kapazität, indem Sie die Menge des nutzbaren Speicherplatzes mit dem Overhead-Faktor multiplizieren. Der Overhead-Faktor unterscheidet sich zwischen Einzelknoten- und Mehrknoten- (HA-Paar-basierten) Clustern:
 
 * Der Overhead-Faktor für Einzelknoten-Cluster beträgt 1.13
 * Der Overhead-Faktor für Multi-Node-Cluster beträgt 2.67
@@ -27,20 +27,20 @@ Sie müssen die lizenzierte Kapazität auf Basis der nutzbaren Kapazität berech
 | Beschreibung | Einzelknoten | HA-Paar oder Mischung aus HA und Einzelknoten 
 
 
-| nutzbare Kapazität | 20 TiB | 10 TiB pro Einzelknoten-Cluster 20 TiB für HA-Paar 
+| nutzbare Kapazität | 20 TB | 10 TB pro Einzelknoten-Cluster 20 TB für HA-Paar 
 
 
-| Lizenzierter Speicherplatz | 23 TiB (20 x 1,13 = 22,6, aufgerundet auf das nächste volle TiB) | 54 TiB (20 x 2,67 = 53,4, aufgerundet auf das nächste volle TiB) 
+| Lizenzierter Speicherplatz | 23 TB (20 x 1,13 = 22,6, aufgerundet auf das nächste volle TB) | 54 TB (20 x 2,67 = 53,4, auf das nächste volle TB aufrunden) 
 
 
-| Maximal nutzbarer Speicherplatz pro Knoten *Hinweis*: Der maximal verwaltete Speicherplatz pro Knoten oder HA-Paar beträgt 400 TiB | 353 TiB (400 / 1,13)  a| 
+| Maximal nutzbarer Speicherplatz pro Knoten *Hinweis*: Der maximal verwaltete Speicherplatz pro Knoten oder HA-Paar beträgt 400 TB | 353 TB (400 / 1,13)  a| 
 Pro Einzelknotencluster:
 
-74 TiB [(400 / 2) / 2,67]
+74 TB [(400 / 2) / 2,67]
 
 Pro HA-Paar-Cluster:
 
-148 TiB (2 x 74)
+148 TB (2 x 74)
 
 |===
 .Was kommt als Nächstes

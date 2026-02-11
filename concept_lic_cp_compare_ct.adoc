@@ -54,8 +54,8 @@ In der folgenden Tabelle werden die beiden von ONTAP Select unterstützten Produ
 | Durchsetzung: Lizenz abgelaufen | K. A. | Ja (keine Kulanzzeit) 
 
 
-| Mindestlizenz | 1 TiB | 2 TiB 
+| Mindestlizenz | 1 TB | 2 TB 
 
 
-| Maximal verwalteter Speicherplatz | 400 TiB pro Knoten | 400 TiB pro Knoten 
+| Maximal verwalteter Speicherplatz | 400 TB pro Knoten | 400 TB pro Knoten 
 |===

@@ -31,7 +31,7 @@ NOTE: Statische Portkanäle werden von ONTAP Select nicht unterstützt. LACP-fä
 
 Bei Clustern mit einem einzelnen Knoten konfiguriert ONTAP Deploy die ONTAP Select VM so, dass sie eine Portgruppe für das externe Netzwerk und entweder dieselbe Portgruppe oder optional eine andere Portgruppe für den Cluster- und Knotenverwaltungsdatenverkehr verwendet. Bei Clustern mit einem einzelnen Knoten können Sie die gewünschte Anzahl physischer Ports als aktive Adapter zur externen Portgruppe hinzufügen.
 
-Bei Clustern mit mehreren Nodes konfiguriert ONTAP Deploy jede ONTAP Select VM so, dass sie eine oder zwei Portgruppen für das interne Netzwerk und eine oder zwei Portgruppen für das externe Netzwerk verwenden. Der Cluster- und Node-Managementdatenverkehr kann entweder dieselbe Portgruppe wie der externe Datenverkehr verwenden oder optional eine separate Portgruppe. Der Cluster- und Node-Managementdatenverkehr können dieselbe Portgruppe nicht mit internem Traffic teilen.
+Für Multi-Node-Cluster konfiguriert ONTAP Deploy jede ONTAP Select VM so, dass sie eine oder zwei Portgruppen für das interne Netzwerk und separat eine oder zwei Portgruppen für das externe Netzwerk verwendet. Der Cluster- und Knotenverwaltungsdatenverkehr kann entweder dieselbe Portgruppe wie der externe Datenverkehr verwenden oder optional eine separate Portgruppe. Der Cluster- und Knotenverwaltungsdatenverkehr darf nicht dieselbe Portgruppe wie der interne Datenverkehr verwenden.
 
 
 NOTE: ONTAP Select unterstützt maximal vier vmnics.
@@ -40,7 +40,7 @@ NOTE: ONTAP Select unterstützt maximal vier vmnics.
 
 == Standard- oder verteilter vSwitch und vier physische Ports pro Node
 
-Sie können jedem Knoten in einem Multi-Node-Cluster vier Portgruppen zuweisen. Jede Portgruppe verfügt über einen aktiven physischen Port und drei physische Standby-Ports, wie in der folgenden Abbildung dargestellt.
+Sie können jedem Node in einem Multi-Node-Cluster vier Portgruppen zuweisen. Jede Portgruppe verfügt über einen einzelnen aktiven physischen Port und drei physische Standby-Ports, wie in der folgenden Abbildung.
 
 *VSwitch mit vier physischen Ports pro Node*
 
@@ -124,9 +124,9 @@ Bei Verwendung von zwei Hochgeschwindigkeits-Netzwerkkarten (25/40 Gbit/s) ist d
 
 image:DDN_17.jpg["VSwitch mit zwei physischen High-Speed-Ports (25/40 GB) pro Node"]
 
-Beim Einsatz von zwei physischen Ports (10 GB oder weniger) sollten für jede Portgruppe ein aktiver Adapter und ein Standby-Adapter jeweils gegenüber konfiguriert sein. Das interne Netzwerk ist nur für ONTAP Select-Cluster mit mehreren Nodes vorhanden. Für Single-Node-Cluster können beide Adapter in der externen Portgruppe als aktiv konfiguriert werden.
+Bei Verwendung von zwei physischen Ports (10Gb oder weniger) sollte jede Portgruppe über einen aktiven Adapter und einen Standby-Adapter verfügen, die jeweils entgegengesetzt zueinander konfiguriert sind. Das interne Netzwerk ist nur für Multi-Node ONTAP Select Cluster vorhanden. Für Single-Node-Cluster können beide Adapter in der externen Portgruppe als aktiv konfiguriert werden.
 
-Das folgende Beispiel zeigt die Konfiguration eines vSwitch und der beiden Portgruppen, die für die Abwicklung interner und externer Kommunikationsdienste für einen Multi-Node ONTAP Select Cluster zuständig sind. Das externe Netzwerk kann im Falle eines Netzwerkausfalls die VMNIC des internen Netzwerks nutzen, da die VMNICs des internen Netzwerks Teil dieser Portgruppe sind und im Standby-Modus konfiguriert wurden. Für das externe Netzwerk gilt das Gegenteil. Der abwechselnde Einsatz der aktiven und der Standby-VMNICs zwischen den beiden Portgruppen ist entscheidend für das korrekte Failover der ONTAP Select VMs bei Netzwerkausfällen.
+Das folgende Beispiel zeigt die Konfiguration eines vSwitch und der beiden Portgruppen, die für die interne und externe Kommunikation eines Multi-Node-ONTAP Select Clusters zuständig sind. Das externe Netzwerk kann die interne Netzwerk-VMNIC im Falle eines Netzwerkausfalls verwenden, da die internen Netzwerk-VMNICs Teil dieser Portgruppe sind und im Standby-Modus konfiguriert sind. Für das interne Netzwerk gilt das Gegenteil. Das abwechselnde Verwenden der aktiven und Standby-VMNICs zwischen den beiden Portgruppen ist entscheidend für das korrekte Failover der ONTAP Select VMs während Netzwerkausfällen.
 
 *VSwitch mit zwei physischen Ports (10 GB oder weniger) pro Node*
 

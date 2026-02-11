@@ -42,7 +42,7 @@ Alle lokal angeschlossenen Festplatten, die ONTAP Select mit Stützspeicher bere
 NL-SAS- und SATA-Laufwerke erfordern andere Best Practices. Aus Performance-Gründen ist die Mindestanzahl an Festplatten immer noch acht, die RAID-Gruppen-Größe sollte jedoch nicht größer als 12 Laufwerke sein. NetApp empfiehlt auch den Einsatz eines Ersatzes pro RAID-Gruppe, allerdings können globale Spares für alle RAID-Gruppen verwendet werden. Sie können zum Beispiel für alle drei RAID-Gruppen zwei Spares verwenden, wobei jede RAID-Gruppe aus acht bis 12 Laufwerken besteht.
 
 
-NOTE: Das maximale Ausmaß und die Datenspeichergröße älterer ESX Versionen beträgt 64 TB, was sich auf die Anzahl der erforderlichen LUNs zur Unterstützung der gesamten Rohkapazität dieser Laufwerke auswirken kann.
+NOTE: Die maximale Ausdehnung und Datenspeichergröße für ältere ESXi-Releases beträgt 64TB, was sich auf die Anzahl der LUNs auswirken kann, die zur Unterstützung der gesamten Bruttokapazität dieser großen Laufwerke erforderlich sind.
 
 
 
@@ -99,7 +99,7 @@ In zwei Fällen müssen sich Konfigurationen mit einer RAID-Gruppe/einem Single-
 
 == Einschränkungen des Filesystems von VMware vSphere Virtual Machine
 
-Die maximale Größe eines Datenspeichers auf einigen ESX-Versionen ist 64 TB.
+Die maximale Größe eines Datenspeichers beträgt bei einigen Versionen von ESXi 64TB.
 
 Wenn ein Server über mehr als 64 TB Storage verfügt, müssen möglicherweise mehrere LUNs bereitgestellt werden, jeder kleiner als 64 TB. Durch die Erstellung mehrerer RAID-Gruppen zur Verbesserung der RAID-Rebuilds für SATA/NL-SAS-Laufwerke werden auch mehrere LUNs bereitgestellt.
 
@@ -160,7 +160,7 @@ NetApp FAS Systeme verfügen üblicherweise über eine physische NVRAM-PCI-Karte
 
 Herkömmliche Systeme sind in der Regel nicht mit dieser Art von Geräten ausgestattet. Daher wurde die Funktionalität dieser NVRAM-Karte virtualisiert und in eine Partition auf der Boot-Festplatte des ONTAP Select Systems platziert. Aus diesem Grund ist die Platzierung der virtuellen Systemfestplatte der Instanz extrem wichtig. Aus diesem Grund benötigt das Produkt auch einen physischen RAID-Controller mit einem stabilen Cache für lokale Attached Storage-Konfigurationen.
 
-NVRAM befindet sich in einer eigenen VMDK. Durch die Aufteilung des NVRAM in eine eigene VMDK kann die ONTAP Select VM den vNVMe-Treiber zur Kommunikation mit ihrer NVRAM VMDK nutzen. Außerdem wird vorausgesetzt, dass die ONTAP Select VM die Hardwareversion 13 verwendet, die mit ESX 8.0 und höher kompatibel ist.
+NVRAM befindet sich in einer eigenen VMDK. Die Aufteilung des NVRAM in eine eigene VMDK ermöglicht es der ONTAP Select VM, den vNVMe-Treiber zur Kommunikation mit ihrer NVRAM VMDK zu verwenden. Es ist außerdem erforderlich, dass die ONTAP Select VM Hardwareversion 13 verwendet, die mit ESXi 8.0 und höher kompatibel ist.
 
 
 
@@ -184,4 +184,4 @@ NOTE: Obwohl auf der NVRAM-VMDK geänderte Blöcke im lokalen RAID Controller-Ca
 image:ST_13.jpg["Eingehende Schreibvorgänge auf die ONTAP Select VM"]
 
 
-NOTE: Die NVRAM Partition ist auf einer eigenen VMDK getrennt. Diese VMDK wird über den vNVME-Treiber angebunden, der in ESX-Versionen ab 8.0 verfügbar ist. Diese Änderung ist besonders für ONTAP Select Installationen mit Software-RAID von Bedeutung, da diese nicht vom RAID-Controller-Cache profitieren.
+NOTE: Die NVRAM-Partition ist auf einer eigenen VMDK getrennt. Diese VMDK ist mithilfe des vNVME-Treibers eingebunden, der in ESXi-Versionen ab 8.0 verfügbar ist. Diese Änderung ist besonders relevant für ONTAP Select Installationen mit Software-RAID, die nicht vom RAID-Controller-Cache profitieren.

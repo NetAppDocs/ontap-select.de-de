@@ -36,7 +36,7 @@ Innerhalb der Architektur ohne Shared-Ressourcen eines ONTAP Select Clusters kan
 Obwohl die bestehende Methode der Split-Brain-Erkennung und -Vermeidung nicht verwendet werden kann, ist noch eine Methode der Mediation erforderlich, die in die Einschränkungen einer Shared-Nothing-Umgebung passt. ONTAP Select erweitert die bestehende Mailbox-Infrastruktur weiter, sodass sie bei der Netzwerkpartitionierung als Mediationsmethode fungiert. Da Shared Storage nicht verfügbar ist, wird Mediation durch den Zugriff auf die Mailbox-Platten über NAS durchgeführt. Diese Festplatten werden mithilfe des iSCSI-Protokolls über das Cluster verteilt, einschließlich des Mediators in einem Cluster mit zwei Nodes. Daher können intelligente Failover-Entscheidungen über einen Cluster-Node auf Basis des Zugriffs auf diese Festplatten getroffen werden. Wenn ein Knoten außerhalb seines HA-Partners auf die Mailbox-Platten anderer Knoten zugreifen kann, ist er wahrscheinlich up und in einem ordnungsgemäßen Zustand.
 
 
-NOTE: Die Mailbox-Architektur und die festplattenbasierte Heartbeat-Methode zur Lösung von Cluster-Quorum- und Split-Brain-Problemen sind der Grund, warum bei ONTAP Select mit mehreren Nodes vier separate Nodes oder ein Mediator für ein Cluster mit zwei Nodes erforderlich ist.
+NOTE: Die Mailbox-Architektur und die auf Festplatten basierende Heartbeat-Methode zur Behebung von Cluster-Quorum- und Split-Brain-Problemen sind die Gründe, warum die Multi-Node-Variante von ONTAP Select entweder vier separate Knoten oder einen Mediator für ein Zwei-Node-Cluster erfordert.
 
 
 

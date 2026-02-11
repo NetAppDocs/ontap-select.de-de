@@ -113,19 +113,19 @@ Sie können die Clustergröße für einen vorhandenen ESXi-Cluster in den folgen
 link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
 
 --
-Unterstützung für SnapMirror Cloud:: Ab ONTAP Select 9.17.1 wird SnapMirror Cloud mit ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzierte ONTAP Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen vorhandenen ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
+Unterstützung für SnapMirror Cloud:: Ab ONTAP Select 9.17.1 wird SnapMirror Cloud von ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzpflichtige ONTAP-Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen bestehenden ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
 +
 --
-https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Erfahren Sie mehr über SnapMirror Cloud-Backups auf Objektspeicher"^] .
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Erfahren Sie mehr über SnapMirror Cloud-Backups in Objektspeicher"^].
 
 --
-Support für SnapLock Select Enterprise:: Ab ONTAP Select 9.17.1 ist SnapLock Select Enterprise (einschließlich manipulationssicherer Snapshot-Sperre) für neue Bereitstellungen automatisch lizenziert.  Für Upgrades von ONTAP Select 9.16.1 und früher müssen Sie die SnapLock Select-Lizenz von derlink:https://mysupport.netapp.com/site/["NetApp Support Website"^] und wenden Sie es manuell an.
+Unterstützung für SnapLock Select:: Ab ONTAP Select 9.17.1 wird SnapLock Select (einschließlich manipulationssicherer Snapshot-Sperrung) bei neuen Bereitstellungen automatisch lizenziert. Für Upgrades von ONTAP Select 9.16.1 und früher können Sie die SnapLock Select-Lizenz kostenlos von der link:https://mysupport.netapp.com/site/["NetApp Support Website"^] herunterladen und manuell anwenden. Weitere Informationen finden Sie unter link:reference_lic_ontap_features.html#enabled-ontap-features["ONTAP Funktionen werden standardmäßig automatisch aktiviert"].
 Unterstützung für vSAN ESA auf Clustern mit mehreren Knoten:: Ab ONTAP Select 9.17.1 wird die Unterstützung für vSAN Express Storage Architecture (ESA) erweitert, um Cluster mit mehreren Knoten bereitzustellen.  Diese Erweiterung ermöglicht Ihnen die Bereitstellung von vSAN ESA-Konfigurationen.
 +
 --
-vSAN ESA ist eine ESX-spezifische Konfiguration und eine neue Architektur für VMware vSAN, die in vSphere 8 eingeführt wurde. vSAN ESA wurde entwickelt, um verbesserte Effizienz, Skalierbarkeit und Leistung zu bieten, insbesondere bei der Verwendung von NVMe-basierten TLC-Flash-Geräten.
+vSAN ESA ist eine ESXi-spezifische Konfiguration und eine neue Architektur für VMware vSAN, die in vSphere 8 eingeführt wurde. vSAN ESA wurde entwickelt, um eine höhere Effizienz, Skalierbarkeit und Leistung zu bieten, insbesondere bei Verwendung von NVMe-basierten TLC-Flash-Geräten.
 
-ONTAP Select Deploy und ONTAP Select für ESX unterstützen die Konfiguration eines ONTAP Select Clusters mit einem oder mehreren Knoten, wobei entweder ein vSAN oder ein externer Array-Datenspeichertyp für den Speicherpool verwendet wird.
+ONTAP Select Deploy und ONTAP Select for ESXi unterstützen die Konfiguration eines ONTAP Select Single-Node- und Multi-Node-Clusters, wobei entweder ein vSAN oder ein externes Array-Typ von Datastore für seinen Speicherpool verwendet wird.
 
 [NOTE]
 ====
@@ -194,7 +194,7 @@ Sie können die Cluster-Größe von einem Cluster mit acht Nodes auf ein Cluster
 
 
 
-NOTE: Die Unterstützung für Cluster-Erweiterung und -Verkleinerung ist auf ESX Cluster beschränkt.
+NOTE: Die Unterstützung für die Erweiterung und Verkleinerung von Clustern ist auf ESXi-Cluster beschränkt.
 
 
 

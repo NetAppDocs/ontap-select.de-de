@@ -20,7 +20,7 @@ Merkmale interner und externer ONTAP Select Netzwerke
 
 == Internes ONTAP Select Netzwerk
 
-Das interne ONTAP Select-Netzwerk, das nur in der Multi-Node-Variante des Produkts vorhanden ist, ist für die Bereitstellung des ONTAP Select Clusters mit Cluster-Kommunikation, HA Interconnect und synchronen Replizierungsservices verantwortlich. Dieses Netzwerk umfasst die folgenden Ports und Schnittstellen:
+Das interne ONTAP Select Netzwerk, das nur in der Multi-Node-Variante des Produkts vorhanden ist, ist für die Bereitstellung des ONTAP Select Clusters mit Clusterkommunikation, HA-Interconnect und synchronen Replizierungsdiensten verantwortlich. Dieses Netzwerk umfasst die folgenden Ports und Schnittstellen:
 
 * *e0c, e0d.* Hosting von Clusternetzwerk-LIFs
 * *e0e.* Hosting der RSM LIF
@@ -41,7 +41,7 @@ Netzwerkpakete, die das interne Netzwerk durchlaufen, müssen sich in einem dedi
 In jedem Fall wird das VLAN-Tagging für den internen Netzwerk-Datenverkehr außerhalb der ONTAP Select VM durchgeführt.
 
 
-NOTE: Es werden nur ESX Standard und verteilte vSwitches unterstützt. Andere virtuelle Switches oder direkte Konnektivität zwischen ESX Hosts werden nicht unterstützt. Das interne Netzwerk muss vollständig geöffnet sein; NAT oder Firewalls werden nicht unterstützt.
+NOTE: Es werden ausschließlich ESXi Standard und Distributed vSwitches unterstützt. Andere virtuelle Switches oder direkte Verbindungen zwischen ESXi Hosts werden nicht unterstützt. Das interne Netzwerk muss vollständig geöffnet sein; NAT oder Firewalls werden nicht unterstützt.
 
 Innerhalb eines ONTAP Select Clusters werden interner und externer Datenverkehr mithilfe virtueller Layer-2-Netzwerkobjekte, sogenannter Portgruppen, getrennt. Die korrekte Zuordnung dieser Portgruppen zu den vSwitches ist von größter Wichtigkeit, insbesondere für das interne Netzwerk, das für die Bereitstellung von Cluster-, HA-Interconnect- und Mirror-Replikationsdiensten zuständig ist. Unzureichende Netzwerkbandbreite für diese Netzwerkports kann zu Leistungseinbußen führen und sogar die Stabilität des Clusterknotens beeinträchtigen.  Daher ist für Cluster mit vier, sechs, acht, zehn und zwölf Knoten erforderlich, dass das interne ONTAP Select Netzwerk eine 10-Gb-Konnektivität nutzt; 1-Gb-NICs werden nicht unterstützt.  Allerdings können Kompromisse mit dem externen Netzwerk eingegangen werden, da die Begrenzung des Datenflusses an einen ONTAP Select Cluster dessen zuverlässige Funktionsfähigkeit nicht beeinträchtigt.
 
@@ -51,7 +51,7 @@ In einem Cluster mit zwei Nodes können entweder vier 1-Gbit-Ports für den inte
 
 === Interne Netzwerkvalidierung und Fehlerbehebung
 
-Das interne Netzwerk in einem Cluster mit mehreren Nodes kann mithilfe der Funktion zum Prüfung der Netzwerkverbindung validiert werden. Diese Funktion kann über die Bereitstellungs-CLI aufgerufen werden, auf der ausgeführt wird `network connectivity-check start` Befehl.
+Das interne Netzwerk in einem Multi-Node-Cluster kann mithilfe der Netzwerkverbindungsprüfungsfunktion validiert werden. Diese Funktion kann von der Deploy-CLI aus durch Ausführen des  `network connectivity-check start` Befehls aufgerufen werden.
 
 Führen Sie den folgenden Befehl aus, um die Ausgabe des Tests anzuzeigen:
 
@@ -59,9 +59,9 @@ Führen Sie den folgenden Befehl aus, um die Ausgabe des Tests anzuzeigen:
 ----
 network connectivity-check show --run-id X (X is a number)
 ----
-Dieses Tool ist nur für die Fehlerbehebung im internen Netzwerk in einem Multi-Node-Select-Cluster nützlich. Das Tool sollte nicht verwendet werden, um Fehler bei Clustern mit einem Node (einschließlich vNAS Konfigurationen), durch ONTAP, die für ONTAP Select-Konnektivität eingesetzt werden, oder um Probleme mit der Client-seitigen Konnektivität zu beheben.
+Dieses Tool ist ausschließlich zur Fehlerbehebung im internen Netzwerk in einem Multi-Node-Select-Cluster geeignet. Das Tool sollte nicht zur Fehlerbehebung bei Single-Node-Clustern (einschließlich vNAS-Konfigurationen), der ONTAP Deploy zu ONTAP Select-Konnektivität oder Client-seitigen Konnektivitätsproblemen verwendet werden.
 
-Der Cluster-Erstellungsassistent (Teil der ONTAP Deploy UI) beinhaltet die interne Netzwerkprüfung als optionalen Schritt bei der Erstellung von Multinode-Clustern. Angesichts der wichtigen Rolle des internen Netzwerks in Multinode-Clustern verbessert die Integration dieses Schritts in den Cluster-Erstellungs-Workflow die Erfolgsquote von Cluster-Erstellungsvorgängen.
+Der Cluster-Erstellungsassistent (Bestandteil der ONTAP Deploy UI) beinhaltet die Überprüfung des internen Netzwerks als optionalen Schritt während der Erstellung von Multi-Node-Clustern. Angesichts der wichtigen Rolle, die das interne Netzwerk in Multi-Node-Clustern spielt, verbessert die Aufnahme dieses Schritts in den Cluster-Erstellungs-Workflow die Erfolgsrate von Cluster-Erstellungsvorgängen.
 
 Ab ONTAP Deploy 2.10 kann die vom internen Netzwerk verwendete MTU-Größe zwischen 7,500 und 9,000 festgelegt werden. Mit dem Network Connectivity Checker kann auch die MTU-Größe zwischen 7,500 und 9,000 getestet werden. Der MTU-Standardwert ist auf den Wert des virtuellen Netzwerk-Switches eingestellt. Dieser Standardwert müsste durch einen kleineren Wert ersetzt werden, wenn ein Netzwerküberlagerung wie VXLAN in der Umgebung vorhanden ist.
 
@@ -69,7 +69,7 @@ Ab ONTAP Deploy 2.10 kann die vom internen Netzwerk verwendete MTU-Größe zwisc
 
 == Externes ONTAP Select-Netzwerk
 
-Das externe ONTAP Select Netzwerk ist für die gesamte ausgehende Kommunikation durch das Cluster verantwortlich. Daher ist es sowohl auf Single-Node- als auch auf Multinode-Konfigurationen vorhanden. Obwohl dieses Netzwerk nicht über die eng definierten Durchsatzanforderungen des internen Netzwerks verfügt, sollte der Administrator darauf achten, keine Netzwerkengpässe zwischen dem Client und der ONTAP VM zu verursachen, da Performance-Probleme als ONTAP Select-Probleme auftreten können.
+Das ONTAP Select externe Netzwerk ist für die gesamte ausgehende Kommunikation des Clusters zuständig und ist daher sowohl in Einzelknoten- als auch in Mehrknotenkonfigurationen vorhanden. Obwohl dieses Netzwerk nicht die streng definierten Anforderungen an den Durchsatz des internen Netzwerks hat, sollte der Administrator darauf achten, keine Netzwerkengpässe zwischen dem Client und der ONTAP VM zu verursachen, da Leistungsprobleme fälschlicherweise als ONTAP Select Probleme interpretiert werden könnten.
 
 
 NOTE: Ähnlich wie der interne Traffic kann externer Datenverkehr auf der vSwitch-Ebene (VST) und auf der externen Switch-Ebene (EST) markiert werden. Darüber hinaus kann der externe Datenverkehr von der ONTAP Select-VM selbst in einem Prozess namens VGT markiert werden. Siehe Abschnitt link:concept_nw_data_mgmt_separation.html["Trennung des Daten- und Management-Datenverkehrs"] Entnehmen.

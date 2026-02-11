@@ -16,7 +16,7 @@ summary: Die Capacity-Tiers-Lizenz basiert auf der von jedem Knoten verwalteten 
 [role="lead"]
 Die Capacity Tiers-Lizenz basiert auf der von jedem ONTAP Select Knoten verwalteten Festplattenkapazität und nicht auf der nutzbaren Kapazität des Knotens, HA-Paares oder Clusters. Jede Capacity Tiers-Lizenz ist einer einzelnen Knotenseriennummer für eine bestimmte Kapazität zugeordnet und erfordert einen zugehörigen Supportvertrag.
 
-Die lizenzierte Kapazität einer Capacity Tiers-Lizenz wird in vollen TiB angegeben, mit einem Minimum von 1 TiB. Sie berechnen die lizenzierte Kapazität, indem Sie die nutzbare Kapazität mit dem Overhead-Faktor multiplizieren. Der Overhead-Faktor unterscheidet sich zwischen Einzelknoten- und Mehrknotenclustern (HA-Paar-basiert):
+Die lizenzierte Kapazität einer Capacity-Tiers-Lizenz wird in vollen TB angegeben, mit einem Minimum von 1 TB. Sie berechnen die lizenzierte Kapazität, indem Sie die Menge des nutzbaren Speicherplatzes mit dem Overhead-Faktor multiplizieren. Der Overhead-Faktor unterscheidet sich zwischen Einzelknoten- und Mehrknotenclustern (HA-Paar-basiert):
 
 * Der Overhead-Faktor für Einzelknoten-Cluster beträgt 1.13
 * Der Overhead-Faktor für Multi-Node-Cluster beträgt 2.67
@@ -29,24 +29,24 @@ Berechnen Sie die lizenzierte Kapazität auf Basis des nutzbaren Speicherplatzes
 | Beschreibung | Einzelknoten | HA-Paar 
 
 
-| nutzbare Kapazität | 10 TiB | 5 TiB pro Knoten 10 TiB für HA-Paar 
+| nutzbare Kapazität | 10 TB | 5 TB pro Knoten 10 TB für HA-Paar 
 
 
-| Lizenzierter Speicherplatz | 12 TiB (10 x 1,13 = 11,3, aufgerundet auf das nächste volle TiB) | Zwei 14 TiB-Lizenzen (5 x 2.67 = 13.35, aufgerundet auf das nächste volle TiB) 
+| Lizenzierter Speicherplatz | 12 TB (10 x 1.13 = 11.3, auf das nächste volle TB aufrunden) | Zwei 14 TB-Lizenzen (5 x 2,67 = 13,35, aufgerundet auf das nächste volle TB) 
 
 
-| Maximal nutzbarer Speicherplatz pro Knoten *Hinweis*: Der maximal verwaltete Speicherplatz pro Knoten oder HA-Paar beträgt 400 TiB | 353 TiB (400 / 1,13)  a| 
+| Maximal nutzbarer Speicherplatz pro Knoten *Hinweis*: Der maximal verwaltete Speicherplatz pro Knoten oder HA-Paar beträgt 400 TB | 353 TB (400 / 1,13)  a| 
 Pro Knoten in einem HA-Paar:
 
-* 74 TiB [(400 / 2) / 2,67]
+* 74 TB [(400 / 2) / 2,67]
 
 
 Pro HA-Paar in einem Multi-Node-Cluster:
 
-* Zwei-Knoten: 148 TiB (2 x 74)
-* Vier-Knoten: 296 TiB (4 x 74)
-* Sechs-Knoten: 444 TiB (6 x 74)
-* Acht-Knoten: 592 TiB (8 x 74)
+* Zwei-Knoten: 148 TB (2 x 74)
+* Vier-Knoten: 296 TB (4 x 74)
+* Sechs-Node: 444 TB (6 x 74)
+* Acht-Knoten: 592 TB (8 x 74)
 
 
 |===

@@ -71,10 +71,10 @@ ONTAP Select erhält durch Erhöhen der Anzahl von LUNs innerhalb einer RAID-Gru
 
 === VMware ESXi-Hosts
 
-NetApp empfiehlt die Verwendung von ESX 8.0 oder höher und einer NVMe-Festplatte als Datenspeicher für die Systemfestplatten. Diese Konfiguration bietet die beste Leistung für die NVRAM Partition.
+NetApp empfiehlt, ESXi 8.0 oder höher und eine NVMe-Festplatte für den Datenspeicher zu verwenden, der die Systemfestplatten hostet. Diese Konfiguration bietet die beste Leistung für die NVRAM-Partition.
 
 
-NOTE: Bei der Installation auf ESX 8.0 oder höher verwendet ONTAP Select den vNVMEe-Treiber, unabhängig davon, ob sich die Systemfestplatte auf einer SSD oder auf einer NVMe-Festplatte befindet. Dadurch wird die VM-Hardwareebene auf 13 gesetzt, was mit ESX 8.0 und höher kompatibel ist.
+NOTE: Bei der Installation auf ESXi 8.0 oder höher verwendet ONTAP Select den vNVMEe-Treiber, unabhängig davon, ob sich die Systemfestplatte auf einer SSD oder auf einer NVMe-Festplatte befindet. Dadurch wird die VM-Hardwareebene auf 13 festgelegt, was mit ESXi 8.0 und höher kompatibel ist.
 
 Dedizierte Netzwerk-Ports, Bandbreite und vSwitch Konfigurationen für die ONTAP Select-Netzwerke und externen Storage definieren (VMware vSAN und generischer Storage Array-Datenverkehr bei Verwendung von iSCSI oder NFS).
 
@@ -169,7 +169,7 @@ ONTAP Select unterstützt einen einzelnen 10-GB-Link für Cluster mit zwei Nodes
 
 Wenn eine NIC mehrere applikationsspezifische integrierte Schaltkreise (ASICs) besitzt, wählen Sie einen Netzwerkport für jeden ASIC aus, wenn Sie Netzwerk-Konstrukte über NIC-Teaming für interne und externe Netzwerke aufbauen.
 
-NetApp empfiehlt, den LACP-Modus sowohl auf ESX als auch auf den physischen Switches aktiv zu sein. Darüber hinaus sollte der LACP Timer auf fast (1 Sekunde) auf dem physischen Switch, Ports, Port Channel-Schnittstellen und auf den vmnics eingestellt werden.
+NetApp empfiehlt, dass der LACP-Modus sowohl auf dem ESXi als auch auf den physischen Switches aktiv ist. Außerdem sollte der LACP-Timer auf den physischen Switches, Ports, Portkanal-Schnittstellen und auf den VMNICs auf schnell (1 Sekunde) eingestellt werden.
 
 Bei der Verwendung eines verteilten vSwitch mit LACP empfiehlt NetApp, die Load-Balancing-Richtlinie auf der Grundlage von IP-Hash auf der Port-Gruppe, Quell- und Ziel-IP-Adresse, TCP/UDP-Port und VLAN auf DER LAG zu konfigurieren.
 

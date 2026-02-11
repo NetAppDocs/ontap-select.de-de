@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept_nw_single_multi_node.html 
-keywords: ontap select, single node network configuration, multinode network configuration 
-summary: ONTAP Select unterstützt sowohl Single Node- als auch Multi-Node-Netzwerkkonfigurationen. 
+keywords: ontap select, single node network configuration, multi-node network configuration 
+summary: ONTAP Select unterstützt sowohl Einzel-Node- als auch Multi-Node-Netzwerkkonfigurationen. 
 ---
 = ONTAP Select Single- und Multiple-Node-Netzwerkkonfigurationen
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: ONTAP Select unterstützt sowohl Single Node- als auch Multi-Node-Netzw
 
 
 [role="lead"]
-ONTAP Select unterstützt sowohl Single Node- als auch Multi-Node-Netzwerkkonfigurationen.
+ONTAP Select unterstützt sowohl Einzel-Node- als auch Multi-Node-Netzwerkkonfigurationen.
 
 
 
@@ -22,15 +22,15 @@ ONTAP Select unterstützt sowohl Single Node- als auch Multi-Node-Netzwerkkonfig
 
 ONTAP Select-Konfigurationen mit einem Node erfordern kein internes ONTAP Netzwerk, da kein Cluster-, HA- oder Mirror-Datenverkehr vorhanden ist.
 
-Im Gegensatz zur ONTAP Select-Produktversion mit mehreren Nodes enthält jede ONTAP Select VM drei virtuelle Netzwerkadapter, die den ONTAP-Netzwerkports e0a, e0b und e0c präsentiert werden.
+Im Gegensatz zur Multi-Node-Version des ONTAP Select Produkts enthält jede ONTAP Select VM drei virtuelle Netzwerkadapter, die den ONTAP-Netzwerkports e0a, e0b und e0c präsentiert werden.
 
 Diese Ports werden für die folgenden Services verwendet: Management, Daten und Intercluster LIFs.
 
 .KVM
-ONTAP Select kann als Single-Node-Cluster implementiert werden. Der Hypervisor-Host umfasst einen virtuellen Switch, der Zugriff auf das externe Netzwerk ermöglicht.
+Sie können ONTAP Select als Einzelknotencluster bereitstellen. Der Hypervisor-Host enthält einen virtuellen Switch, der den Zugriff auf das externe Netzwerk ermöglicht.
 
 .ESXi
-Die Beziehung zwischen diesen Ports und den zugrunde liegenden physischen Adaptern ist in der folgenden Abbildung dargestellt: Ein ONTAP Select Cluster Node auf dem ESX Hypervisor.
+Die folgende Abbildung zeigt die Beziehung zwischen diesen Ports und den zugrunde liegenden physischen Adaptern. Die Abbildung stellt einen ONTAP Select Cluster-Node auf dem ESXi-Hypervisor dar.
 
 *Netzwerkkonfiguration eines Single-Node ONTAP Select-Clusters*
 
@@ -43,10 +43,10 @@ NOTE: Obwohl zwei Adapter für ein Single Node Cluster ausreichend sind, ist NIC
 
 === LIF-Zuweisung
 
-Wie im Abschnitt zur LIF-Zuweisung mit mehreren Nodes in diesem Dokument erläutert, werden IPspaces von ONTAP Select verwendet, um den Cluster-Netzwerk-Traffic getrennt von Daten- und Management-Datenverkehr zu halten. Die Single-Node-Variante dieser Plattform enthält kein Cluster-Netzwerk. Daher sind im Cluster-IPspace keine Ports vorhanden.
+Wie im Abschnitt zur LIF-Zuweisung für mehrere Knoten in diesem Dokument erläutert, verwendet ONTAP IPspaces, um den Cluster-Netzwerkverkehr von Daten- und Verwaltungsdatenverkehr zu trennen. Die Einzelknotenvariante dieser Plattform enthält kein Cluster-Netzwerk. Daher sind im Cluster-IPspace keine Ports vorhanden.
 
 
-NOTE: LIFs für das Cluster- und Node-Management werden automatisch während des ONTAP Select Cluster-Setups erstellt. Die verbleibenden LIFs können nach der Implementierung erstellt werden.
+NOTE: Cluster- und Knotenverwaltungs-LIFs werden während der Einrichtung des ONTAP Select-Clusters automatisch erstellt. Sie können die restlichen LIFs nach der Bereitstellung erstellen.
 
 
 
@@ -61,20 +61,20 @@ Die ONTAP-Ports e0a, e0b und e0c werden als Ports für LIFs delegiert, die die f
 
 
 
-== Netzwerkkonfiguration mit mehreren Nodes
+== Multi-Node-Netzwerkkonfiguration
 
-Die ONTAP Select-Netzwerkkonfiguration mit mehreren Knoten besteht aus zwei Netzwerken.
+Die Multi-Node ONTAP Select Netzwerk-Konfiguration besteht aus zwei Netzwerken.
 
-Diese stellen ein internes Netzwerk dar, das Cluster- und interne Replizierungsservices sowie ein externes Netzwerk bereitstellt und für die Bereitstellung von Datenzugriffs- und -Managementservices verantwortlich ist. Die vollständige Isolierung des Datenverkehrs innerhalb dieser beiden Netzwerke ist extrem wichtig, damit Sie eine Umgebung erstellen können, die für Cluster-Ausfallsicherheit geeignet ist.
+Es handelt sich um ein internes Netzwerk, das für Cluster- und interne Replikationsdienste zuständig ist, und ein externes Netzwerk, das für Datenzugriffs- und Verwaltungsdienste zuständig ist. Die durchgängige Trennung des Datenverkehrs innerhalb dieser beiden Netzwerke ist für den Aufbau einer Umgebung, die für die Ausfallsicherheit des Clusters geeignet ist, von entscheidender Bedeutung.
 
 Diese Netzwerke sind in der folgenden Abbildung dargestellt. Sie zeigt einen ONTAP Select Cluster mit vier Knoten, der auf einer VMware vSphere-Plattform ausgeführt wird. Cluster mit sechs, acht, zehn und zwölf Knoten weisen einen ähnlichen Netzwerkaufbau auf.
 
 
 NOTE: Jede ONTAP Select Instanz befindet sich auf einem separaten physischen Server. Der interne und externe Datenverkehr wird über separate Netzwerk-Port-Gruppen isoliert, die jeder virtuellen Netzwerkschnittstelle zugewiesen sind und es den Cluster-Knoten ermöglichen, dieselbe physische Switch-Infrastruktur zu nutzen.
 
-*Überblick über die Konfiguration eines ONTAP Select-Cluster-Netzwerks mit mehreren Knoten*
+*Übersicht über eine ONTAP Select Multi-Node-Cluster-Netzwerkkonfiguration*
 
-image:DDN_01.jpg["Überblick über die Konfiguration eines ONTAP Select-Clusternetzwerks mit mehreren Nodes"]
+image:DDN_01.jpg["Übersicht einer ONTAP Select Multi-Node-Cluster-Netzwerkkonfiguration"]
 
 Jede ONTAP Select VM enthält sieben virtuelle Netzwerkadapter, die ONTAP als Satz von sieben Netzwerk-Ports präsentiert werden – e0a bis e0g. Obwohl ONTAP diese Adapter als physische NICs behandelt, handelt es sich tatsächlich um virtuelle NICs, die einer Reihe von physischen Schnittstellen über eine virtualisierte Netzwerkebene zugeordnet werden. Daher sind für jeden Hosting-Server keine sechs physischen Netzwerkports erforderlich.
 
@@ -89,17 +89,16 @@ Diese Ports sind so vorkonfiguriert, dass folgende Dienste zur Verfügung stehen
 * e0f. HA Interconnect
 
 
-Die Ports e0a, e0b und e0g befinden sich im externen Netzwerk. Obwohl die Ports e0c bis e0f mehrere verschiedene Funktionen erfüllen, bilden sie gemeinsam das interne Select-Netzwerk. Bei Entscheidungen zum Netzwerkdesign sollten diese Ports in einem einzigen Layer-2-Netzwerk platziert werden. Es ist nicht erforderlich, diese virtuellen Adapter über verschiedene Netzwerke zu trennen.
+Die Ports e0a, e0b und e0g befinden sich im externen Netzwerk. Obwohl die Ports e0c bis e0f verschiedene Funktionen erfüllen, bilden sie zusammen das interne Select Netzwerk. Bei der Entscheidung zur Netzwerkkonzeption sollten Sie diese Ports in einem einzigen Layer-2-Netzwerk platzieren. Es ist nicht erforderlich, diese virtuellen Adapter auf verschiedene Netzwerke zu verteilen.
 
-Die Beziehung zwischen diesen Ports und den zugrunde liegenden physischen Adaptern wird in der folgenden Abbildung dargestellt. Diese Abbildung zeigt einen ONTAP Select Cluster Node auf dem ESX Hypervisor.
+Die Beziehung zwischen diesen Ports und den zugrunde liegenden physischen Adaptern wird in der folgenden Abbildung veranschaulicht, die einen ONTAP Select Cluster-Node auf dem ESXi-Hypervisor darstellt.
 
-*Netzwerkkonfiguration eines einzelnen Knotens, der Teil eines ONTAP Select-Clusters mit mehreren Nodes ist*
+*Netzwerkkonfiguration eines einzelnen Knotens, der Teil eines Multi-Node ONTAP Select Clusters ist* image:DDN_02.jpg["Netzwerkkonfiguration eines einzelnen Knotens, der Teil eines ONTAP Select Clusters mit mehreren Knoten ist"]
 
-image:DDN_02.jpg["Netzwerkkonfiguration eines einzelnen Nodes, der zu einem ONTAP Select Cluster mit mehreren Nodes gehört"]
+Die Trennung von internem und externem Datenverkehr auf verschiedene physische NICs verhindert unzureichenden Zugriff auf Netzwerkressourcen und führt nicht zu Latenzen im System. Zusätzlich ermöglicht die Aggregation durch NIC-Teaming dem ONTAP Select Cluster-Node, weiterhin auf das Netzwerk zuzugreifen, wenn ein einzelner Netzwerkadapter ausfällt.
 
-Die Trennung des internen und externen Datenverkehrs über verschiedene physische NICs verhindert, dass Latenzen im System eingeführt werden, weil der Zugriff auf Netzwerkressourcen nicht ausreicht. Zusätzlich stellt die Aggregation durch NIC Teaming sicher, dass ein Ausfall eines einzelnen Netzwerkadapters nicht den ONTAP Select-Cluster-Node am Zugriff auf das jeweilige Netzwerk verhindert.
 
-Beachten Sie, dass sowohl das externe Netzwerk als auch die internen Port-Gruppen alle vier NIC-Adapter symmetrisch enthalten. Die aktiven Ports in der externen Netzwerkanschlussgruppe sind die Standby-Ports im internen Netzwerk. Umgekehrt sind die aktiven Ports in der internen Netzwerkanschlussgruppe die Standby-Ports in der externen Netzwerkanschlussgruppe.
+NOTE: Sowohl die externen als auch die internen Netzwerkportgruppen enthalten alle vier NIC-Adapter symmetrisch. Die aktiven Ports in der externen Netzwerkportgruppe sind die Standby-Ports im internen Netzwerk. Umgekehrt sind die aktiven Ports in der internen Netzwerkportgruppe die Standby-Ports in der externen Netzwerkportgruppe.
 
 
 
@@ -124,7 +123,7 @@ Die ONTAP-Ports e0a, e0b und e0g werden als Ports für LIFs delegiert, die die f
 
 
 
-NOTE: LIFs für das Cluster- und Node-Management werden automatisch während des ONTAP Select Cluster-Setups erstellt. Die verbleibenden LIFs können nach der Implementierung erstellt werden.
+NOTE: Cluster- und Knotenverwaltungs-LIFs werden während der Einrichtung des ONTAP Select-Clusters automatisch erstellt. Sie können die restlichen LIFs nach der Bereitstellung erstellen.
 
 
 
@@ -133,14 +132,14 @@ NOTE: LIFs für das Cluster- und Node-Management werden automatisch während des
 ONTAP-Ports e0c und e0d werden als Home-Ports für Cluster-Schnittstellen delegiert. Innerhalb jedes ONTAP Select Cluster Nodes werden während des ONTAP Setups automatisch zwei Cluster-Schnittstellen generiert, wobei die lokalen Link-IP-Adressen (169.254.x.x) verwendet werden.
 
 
-NOTE: Diesen Schnittstellen können keine statischen IP-Adressen zugewiesen werden, und zusätzliche Cluster-Schnittstellen sollten nicht erstellt werden.
+NOTE: Sie können diesen Schnittstellen keine statische IP-Adresse zuweisen, und Sie sollten keine zusätzlichen Cluster-Schnittstellen erstellen.
 
-Der Netzwerkverkehr des Clusters muss über ein Layer-2-Netzwerk mit geringer Latenz und ohne Routing fließen. Aufgrund der Durchsatz- und Latenzanforderungen des Clusters wird erwartet, dass sich der ONTAP Select Cluster physisch in der Nähe befindet (z. B. Multipack, einzelnes Rechenzentrum).  Der Aufbau von Stretch-Cluster-Konfigurationen mit vier, sechs, acht, zehn oder zwölf Knoten durch die Trennung von HA-Knoten über ein WAN oder über große geografische Entfernungen wird nicht unterstützt. Eine gestreckte Zwei-Knoten-Konfiguration mit einem Mediator wird unterstützt.
+Der Cluster-Netzwerkverkehr muss über ein mit niedriger Latenz, nicht geroutetes Layer-2-Netzwerk fließen. Aufgrund der Anforderungen an den Durchsatz und die Latenz des Clusters sollten Sie den ONTAP Select Cluster physisch in der Nähe platzieren (zum Beispiel Multipack, einzelnes Rechenzentrum). Der Aufbau von Stretch-Cluster-Konfigurationen mit vier, sechs, acht, zehn oder zwölf Knoten durch die Trennung der HA-Knoten über ein WAN oder erhebliche geografische Entfernungen wird nicht unterstützt. Eine gestreckte Zwei-Node-Konfiguration mit einem Mediator wird unterstützt.
 
 Weitere Informationen finden Sie im Abschnitt link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Stretch-Best Practices (MetroCluster-SDS) mit zwei Nodes"].
 
 
-NOTE: Um den maximalen Durchsatz für Cluster-Netzwerkverkehr zu gewährleisten, wurde dieser Netzwerk-Port für die Verwendung von Jumbo Frames (7500 bis 9000 MTU) konfiguriert. Vergewissern Sie sich beim ordnungsgemäßen Cluster-Betrieb, dass Jumbo Frames auf allen virtuellen und physischen Switches aktiviert sind, die ONTAP Select Cluster Nodes interne Netzwerkservices bereitstellen.
+NOTE: Um einen maximalen Durchsatz für den Cluster-Netzwerkverkehr zu gewährleisten, ist dieser Netzwerkport für die Verwendung von Jumbo-Frames (7500 bis 9000 MTU) konfiguriert. Für den korrekten Clusterbetrieb vergewissern Sie sich, dass Jumbo-Frames auf allen vorgelagerten virtuellen und physischen Switches aktiviert sind, die interne Netzwerkdienste für ONTAP Select Cluster Nodes bereitstellen.
 
 
 
@@ -149,7 +148,7 @@ NOTE: Um den maximalen Durchsatz für Cluster-Netzwerkverkehr zu gewährleisten,
 Die synchrone Replizierung von Blöcken über HA-Partner-Nodes erfolgt mithilfe einer internen Netzwerkschnittstelle, die sich am Netzwerkport e0e befindet. Diese Funktion läuft automatisch ab und verwendet von ONTAP während der Cluster-Einrichtung konfigurierte Netzwerkschnittstellen. Für den Administrator ist keine Konfiguration erforderlich.
 
 
-NOTE: Port e0e ist von ONTAP für den internen Replizierungsverkehr reserviert. Daher sind in der ONTAP CLI oder im System Manager weder der Port noch das gehostete LIF sichtbar. Diese Schnittstelle ist so konfiguriert, dass sie eine automatisch generierte lokale IP-Adresse verwendet, und die Neuzuweisung einer alternativen IP-Adresse wird nicht unterstützt. Für diesen Netzwerk-Port ist die Verwendung von Jumbo Frames (7500 bis 9000 MTU) erforderlich.
+NOTE: Port e0e ist von ONTAP für internen Replikationsverkehr reserviert. Daher sind weder der Port noch die gehostete LIF in der ONTAP CLI oder im System Manager sichtbar. Diese Schnittstelle ist so konfiguriert, dass sie eine automatisch generierte Link-Local-IP-Adresse verwendet, und Sie können keine alternative IP-Adresse zuweisen. Dieser Netzwerkport erfordert die Verwendung von Jumbo-Frames (7500 bis 9000 MTU).
 
 
 
@@ -166,4 +165,4 @@ Jeder ONTAP Select Node ist mit einem HA Interconnect Port e0f konfiguriert. Die
 DER DATENVERKEHR der HA-Verbindung wird über diesen Netzwerk-Port über eine einzige Netzwerkschnittstelle geleitet, indem RDMA-Frames (Remote Direct Memory Access) innerhalb von Ethernet-Paketen auf einem anderen Speicher zusammengefasst werden.
 
 
-NOTE: Ähnlich wie der RSM-Port (e0e) ist weder der physische Port noch die gehostete Netzwerkschnittstelle für Benutzer über die ONTAP CLI oder über System Manager sichtbar. Daher kann die IP-Adresse dieser Schnittstelle nicht geändert werden, und der Status des Ports kann nicht geändert werden. Für diesen Netzwerk-Port ist die Verwendung von Jumbo Frames (7500 bis 9000 MTU) erforderlich.
+NOTE: Wie beim RSM-Port (e0e) sind weder der physische Port noch die gehostete Netzwerkschnittstelle für Benutzer entweder über die ONTAP CLI oder über den System Manager sichtbar. Daher können Sie die IP-Adresse dieser Schnittstelle nicht ändern und Sie können den Status des Ports nicht ändern. Dieser Netzwerkport erfordert die Verwendung von Jumbo-Frames (7500 bis 9000 MTU).

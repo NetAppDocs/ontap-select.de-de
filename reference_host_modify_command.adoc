@@ -74,6 +74,6 @@ Dieser Parameter steuert das Verhalten langjähriger Befehle. Wenn gesetzt, wird
  a| 
 `-username _username_`
  a| 
-Der Benutzername, der Zugriff auf diesen Host hat. Dies ist nur erforderlich, wenn der Host nicht von einem Management-Server gemanagt wird (d. h. ein von einem vCenter verwalteter ESX Host).
+Der Benutzername, der Zugriff auf diesen Host hat. Dies ist nur erforderlich, wenn der Host nicht von einem Management-Server verwaltet wird (d. h. ein ESXi-Host, der von einem vCenter verwaltet wird).
 
 |===

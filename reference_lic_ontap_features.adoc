@@ -37,6 +37,10 @@ Die folgenden ONTAP Funktionen werden von ONTAP Select unterstützt und standard
 * NVMe über TCP –
 * ONTAP Mandantenfähigkeit
 * ONTAP S3
+* SnapLock Select
++
+SnapLock Select ist die Implementierung von ONTAP SnapLock, die für ONTAP Select entwickelt wurde und SnapLock Enterprise umfasst. Es umfasst nicht SnapLock Compliance. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock-Dokumentation"^].
+
 * S3 SnapMirror
 * SnapMirror
 * SnapMirror Cloud
@@ -44,8 +48,7 @@ Die folgenden ONTAP Funktionen werden von ONTAP Select unterstützt und standard
 * SnapVault
 * Disaster Recovery für Storage VM (SVM DR)
 +
-
-NOTE: ONTAP Select unterstützt SVM DR als Quelle und Ziel mit maximal 16 Beziehungen. Die DR-Unterstützung der SVM ist auf die Verwendung der Quell-ONTAP-Version auf Version +2 beschränkt. Beispielsweise kann die ONTAP Select 9.12.1 Quelle eine Verbindung mit den Ziel-ONTAP-Versionen 9.12.1, 9.13.1 oder 9.14.1 herstellen.
+ONTAP Select unterstützt SVM DR als Quelle und Ziel mit maximal 16 Beziehungen. Die DR-Unterstützung der SVM ist auf die Verwendung der Quell-ONTAP-Version auf Version +2 beschränkt. Beispielsweise kann die ONTAP Select 9.12.1 Quelle eine Verbindung mit den Ziel-ONTAP-Versionen 9.12.1, 9.13.1 oder 9.14.1 herstellen.
 
 
 
@@ -56,17 +59,13 @@ NOTE: ONTAP Select unterstützt SVM DR als Quelle und Ziel mit maximal 16 Bezieh
 Sie müssen für alle ONTAP -Funktionen, die nicht standardmäßig aktiviert sind, eine separate Lizenz erwerben, darunter:
 
 * FabricPool
++
+
+NOTE: Sie brauchen keine FabricPool Lizenz, wenn Sie StorageGRID nutzen.
+
 * MetroCluster SDS (ONTAP Select Premium-Lizenzangebot)
 
 
-[NOTE]
-====
-* Für ONTAP Select 9.16.1 und früher ist SnapLock Select Enterprise (einschließlich manipulationssicherer Snapshot-Sperre) verfügbar über dielink:https://mysupport.netapp.com/site/["NetApp Support Website"^] .
-* SnapLock Compliance wird für ONTAP Select nicht unterstützt.
-* Sie brauchen keine FabricPool Lizenz, wenn Sie StorageGRID nutzen.
-
-
-====
 .Verwandte Informationen
 * link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["Vergleich von ONTAP Select und ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["Master-Lizenzschlüssel für NetApp ONTAP"^]
