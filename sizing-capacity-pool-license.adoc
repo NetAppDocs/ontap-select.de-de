@@ -24,7 +24,7 @@ Sie müssen die lizenzierte Kapazität auf Basis der nutzbaren Kapazität berech
 
 [cols="25,30,45"]
 |===
-| Beschreibung | Einzelknoten | HA-Paar oder Mischung aus HA und Einzelknoten 
+| Beschreibung | Einzelknoten | HA pair oder Mischung aus HA pair und Einzelknoten 
 
 
 | nutzbare Kapazität | 20 TB | 10 TB pro Einzelknoten-Cluster 20 TB für HA-Paar 
@@ -34,13 +34,13 @@ Sie müssen die lizenzierte Kapazität auf Basis der nutzbaren Kapazität berech
 
 
 | Maximal nutzbarer Speicherplatz pro Knoten *Hinweis*: Der maximal verwaltete Speicherplatz pro Knoten oder HA-Paar beträgt 400 TB | 353 TB (400 / 1,13)  a| 
-Pro Einzelknotencluster:
+Pro Einzelknoten in einem Cluster:
 
-74 TB [(400 / 2) / 2,67]
+149 TB (400 / 2,67)
 
-Pro HA-Paar-Cluster:
+Pro HA-Paar in einem Cluster:
 
-148 TB (2 x 74)
+298 TB (2 x 149)
 
 |===
 .Was kommt als Nächstes

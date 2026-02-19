@@ -63,9 +63,7 @@ Sie können die Lizenzsperre-ID für Ihre Deploy-Instanz mithilfe der Web-Benutz
 +
 Deploy zeigt diese Seite an, wenn Sie sich zum ersten Mal anmelden. Sie können auch das Dropdown-Menü oben rechts auf der Seite öffnen und *Getting Started* auswählen, um diese Seite anzuzeigen. Die LLID wird im Abschnitt Add Licenses angezeigt.
 
-+
-Wählen Sie die Registerkarte *Administration* oben auf der Seite, dann *Systeme* und *Einstellungen*.
-
+* Wählen Sie oben auf der Seite die Registerkarte *Administration* und dann *Systeme & AutoSupport* aus.
 
 
 

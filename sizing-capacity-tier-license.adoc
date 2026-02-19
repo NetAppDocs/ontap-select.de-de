@@ -38,15 +38,17 @@ Berechnen Sie die lizenzierte Kapazität auf Basis des nutzbaren Speicherplatzes
 | Maximal nutzbarer Speicherplatz pro Knoten *Hinweis*: Der maximal verwaltete Speicherplatz pro Knoten oder HA-Paar beträgt 400 TB | 353 TB (400 / 1,13)  a| 
 Pro Knoten in einem HA-Paar:
 
-* 74 TB [(400 / 2) / 2,67]
+* 149 TB (400 / 2,67)
 
 
 Pro HA-Paar in einem Multi-Node-Cluster:
 
-* Zwei-Knoten: 148 TB (2 x 74)
-* Vier-Knoten: 296 TB (4 x 74)
-* Sechs-Node: 444 TB (6 x 74)
-* Acht-Knoten: 592 TB (8 x 74)
+* Zwei-Knoten: 298 TB (2 x 149)
+* Vier-Knoten: 596 TB (4 x 149)
+* Sechs-Node: 894 TB (6 x 149)
+* Acht-Knoten: 1.192 TB (8 x 149)
+* Ten-Node: 1,490 TB (10 x 149)
+* Zwölf-Knoten: 1,788 TB (12 x 149)
 
 
 |===
