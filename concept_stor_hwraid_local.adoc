@@ -150,7 +150,7 @@ ONTAP Select unterteilt den zugrunde liegenden angefügten Storage in virtuelle 
 Einem ONTAP Select kann beispielsweise ein Datastore oder eine LUN zugewiesen werden, der 31 TB beträgt (der nach Bereitstellung der VM verbleibende Speicherplatz und die System- und Root-Festplatten werden bereitgestellt). Dann werden vier ~7.75TB virtuelle Datenträger erstellt und dem entsprechenden ONTAP local and mirror Plex zugewiesen.
 
 
-NOTE: Das Hinzufügen von Kapazität zu einer ONTAP Select VM führt wahrscheinlich zu VMDKs unterschiedlicher Größen. Weitere Informationen finden Sie im Abschnitt link:concept_stor_capacity_inc.html["Erhöhung der Storage-Kapazität"]. Im Gegensatz zu FAS Systemen können VMDKs unterschiedlicher Größe im selben Aggregat vorhanden sein. ONTAP Select verwendet einen RAID 0 Stripe über diese VMDKs, der dazu führt, dass die gesamte Speicherplatzkapazität jeder VMDK unabhängig von ihrer Größe voll genutzt wird.
+NOTE: Das Hinzufügen von Kapazität zu einer ONTAP Select VM führt wahrscheinlich zu VMDKs unterschiedlicher Größe. Details dazu finden Sie im Abschnitt link:concept_stor_capacity_inc.html["Erhöhung der Storage-Kapazität"]. Im Gegensatz zu FAS-Systemen können VMDKs unterschiedlicher Größe im selben Aggregat existieren. ONTAP Select verwendet einen RAID 0-Stripe über diese VMDKs, was die vollständige Nutzung des gesamten Speicherplatzes in jeder VMDK unabhängig von ihrer Größe ermöglicht.
 
 
 

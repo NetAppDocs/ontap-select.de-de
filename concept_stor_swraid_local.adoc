@@ -148,7 +148,7 @@ In der ESXi- oder KVM-Shell können Sie den folgenden Befehl eingeben, um die LE
 
 [role="tabbed-block"]
 ====
-.ESX
+.ESXi
 --
 [source, cli]
 ----

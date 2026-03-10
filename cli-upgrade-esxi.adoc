@@ -47,10 +47,11 @@ TIP: Sie sollten ein Upgrade-Verfahren auswählen, das das Dienstprogramm Admini
 +
 Die Durchführung eines ESXi-Upgrades mit dem Deploy-Verwaltungsprogramm ist die allgemeinere und zuverlässigere Option. Es kann jedoch Fälle geben, in denen Deploy nicht verfügbar oder nicht nutzbar ist. Beispielsweise wird ein Upgrade auf ESXi 8.0 mit früheren Versionen von ONTAP Select und dem Deploy-Verwaltungsprogramm nicht unterstützt.
 
-+
-Wenn Sie diese früheren Versionen verwenden und ein Upgrade versuchen, kann die virtuelle ONTAP Select-Maschine in einem Zustand belassen werden, in dem sie nicht gestartet werden kann. In diesem Fall müssen Sie ein Upgrade-Verfahren auswählen, das nicht Bereitstellung verwendet. Siehe link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] Finden Sie weitere Informationen.
 
 
+
+
+Wenn Sie diese älteren Versionen verwenden und ein Upgrade versuchen, kann die ONTAP Select virtuelle Maschine in einen Zustand geraten, in dem sie nicht mehr gestartet werden kann. In diesem Fall müssen Sie ein Upgrade-Verfahren wählen, das Deploy nicht verwendet.
 
 . *Aktualisieren Sie das Deploy-Verwaltungsprogramm*
 +

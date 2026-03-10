@@ -45,7 +45,7 @@ ONTAP Select MetroCluster SDS bietet folgende Vorteile:
 
 image:MCSDS_01.jpg["Private Cloud basierend auf das"]
 
-Weitere Best Practices und andere Anforderungen finden Sie in den Abschnitten link:concept_ha_config.html#two-node-ha-versus-multi-node-ha["Ha mit zwei Nodes im Vergleich mit Multi-Node-Hochverfügbarkeit"] Und link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Stretch-Best Practices (MetroCluster-SDS) mit zwei Nodes"].
+Weitere Best Practices und Anforderungen finden Sie in den Abschnitten link:concept_ha_config.html#two-node-ha-versus-multi-node-ha["Ha mit zwei Nodes im Vergleich mit Multi-Node-Hochverfügbarkeit"] und link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Stretch-Best Practices (MetroCluster-SDS) mit zwei Nodes"].
 
 .Verwandte Informationen
 link:reference_lic_ontap_features.html["ONTAP Select-Unterstützung für ONTAP-Funktionen"]

@@ -136,7 +136,7 @@ VMware empfiehlt STP auf den mit den ESXi-Hosts verbundenen Switch-Ports auf Por
 
 Sie müssen auf jedem der ONTAP Select Hosts einen virtuellen Switch konfigurieren, um das externe Netzwerk und das interne Netzwerk zu unterstützen (nur Cluster mit mehreren Nodes). Bei der Implementierung eines Multi-Node-Clusters sollten Sie die Netzwerkverbindung im internen Clusternetzwerk testen.
 
-Weitere Informationen zum Konfigurieren eines Open vSwitch auf einem Hypervisor-Host finden Sie unter link:https://www.netapp.com/media/13134-tr4613.pdf["ONTAP Select zu KVM-Produktarchitektur und Best Practices"^] Technischer Bericht.
+Weitere Informationen darüber, wie Sie einen Open vSwitch auf einem Hypervisor-Host konfigurieren, finden Sie im link:https://www.netapp.com/media/13134-tr4613.pdf["ONTAP Select zu KVM-Produktarchitektur und Best Practices"^] technischen Bericht.
 
 
 

@@ -34,7 +34,7 @@ Auf hoher Ebene sollten Sie die folgenden Schritte verwenden, um einen vorhanden
 +
 Überprüfen Sie die link:reference_release_notes.html["Versionshinweise"] auf zusätzliche Informationen und alle erforderlichen Verfahren, bevor Sie einen ONTAP Select-Knoten aktualisieren.
 
-. Aktualisieren Sie den ONTAP Select-Knoten mithilfe der standardmäßigen ONTAP-Upgrade-Verfahren für die ONTAP Select-Upgrade-Datei. Informationen zu unterstützten Upgrade-Pfaden finden Sie im link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Unterstützte ONTAP Upgrade-Pfade"^].
+. Aktualisieren Sie den ONTAP Select-Knoten mithilfe der Standard-ONTAP-Aktualisierungsverfahren mit der ONTAP Select Upgrade-Datei. Informationen zu unterstützten Upgrade-Pfaden finden Sie in der link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Unterstützte ONTAP Upgrade-Pfade"^].
 
 
 

@@ -79,7 +79,7 @@ Nach der Implementierung können die ONTAP Select-Nodes zwischen den Hosts migri
 
 NOTE: Anti-Affinitätsregeln erfordern, dass DRS auf dem ESXi-Cluster aktiviert ist.
 
-Im folgenden Beispiel wird gezeigt, wie eine Anti-Affinität-Regel für ONTAP Select VMs erstellt wird. Wenn der ONTAP Select Cluster mehr als ein HA-Paar enthält, müssen alle Nodes im Cluster in dieser Regel enthalten sein.
+Im folgenden Beispiel wird gezeigt, wie eine Anti-Affinitätsregel für die ONTAP Select VMs erstellt wird. Wenn der ONTAP Select Cluster mehr als ein HA-Paar enthält, müssen alle Knoten im Cluster in diese Regel einbezogen werden.
 
 image:ST_15.jpg["VM/Host-Regeln"]
 

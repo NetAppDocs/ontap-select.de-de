@@ -23,7 +23,7 @@ Vor der Bereitstellung von ONTAP Select müssen Sie das Hypervisor-Netzwerk korr
 Sie müssen auf jedem der ONTAP Select Hosts einen virtuellen Switch konfigurieren, um das externe Netzwerk und das interne Netzwerk zu unterstützen (nur Cluster mit mehreren Nodes). Bei der Implementierung eines Multi-Node-Clusters sollten Sie die Netzwerkverbindung im internen Clusternetzwerk testen.
 
 
-NOTE: Weitere Informationen zur Konfiguration eines vSwitch auf einem Hypervisor-Host und zur Funktion der High-Speed-Schnittstelle finden Sie im link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Abschnitt.
+NOTE: Weitere Informationen darüber, wie Sie einen vSwitch auf einem Hypervisor-Host konfigurieren und die Hochgeschwindigkeitsschnittstellenfunktion nutzen, finden Sie im link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Abschnitt.
 
 
 
@@ -72,7 +72,7 @@ In dieser Umgebung sollten Sie den Datenverkehr mithilfe von zwei Portgruppen wi
 * NIC2 ist aktiv
 
 
-Siehe link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Abschnitt für weitere Informationen zu zwei-NIC-Bereitstellungen.
+Weitere Informationen zu Zwei-NIC-Bereitstellungen finden Sie im link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Abschnitt.
 
 
 
@@ -111,7 +111,7 @@ In dieser Umgebung sollten Sie den Datenverkehr mithilfe von vier Portgruppen wi
 * NIC1, NIC2, NIC3 im Standby-Modus
 
 
-Siehe link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Weitere Informationen zu vier-NIC-Bereitstellungen.
+Weitere Informationen zu Bereitstellungen mit vier Netzwerkkarten finden Sie im link:concept_nw_concepts_chars.html["Deep-Dive-Networking"] Abschnitt.
 
 
 

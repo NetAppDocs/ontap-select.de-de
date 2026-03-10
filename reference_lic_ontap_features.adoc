@@ -37,11 +37,11 @@ Die folgenden ONTAP Funktionen werden von ONTAP Select unterstützt und standard
 * NVMe über TCP –
 * ONTAP Mandantenfähigkeit
 * ONTAP S3
+* S3 SnapMirror
 * SnapLock Select
 +
 SnapLock Select ist die Implementierung von ONTAP SnapLock, die für ONTAP Select entwickelt wurde und SnapLock Enterprise umfasst. Es umfasst nicht SnapLock Compliance. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock-Dokumentation"^].
 
-* S3 SnapMirror
 * SnapMirror
 * SnapMirror Cloud
 * SnapRestore

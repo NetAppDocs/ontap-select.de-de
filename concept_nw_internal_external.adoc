@@ -72,7 +72,7 @@ Ab ONTAP Deploy 2.10 kann die vom internen Netzwerk verwendete MTU-Größe zwisc
 Das ONTAP Select externe Netzwerk ist für die gesamte ausgehende Kommunikation des Clusters zuständig und ist daher sowohl in Einzelknoten- als auch in Mehrknotenkonfigurationen vorhanden. Obwohl dieses Netzwerk nicht die streng definierten Anforderungen an den Durchsatz des internen Netzwerks hat, sollte der Administrator darauf achten, keine Netzwerkengpässe zwischen dem Client und der ONTAP VM zu verursachen, da Leistungsprobleme fälschlicherweise als ONTAP Select Probleme interpretiert werden könnten.
 
 
-NOTE: Ähnlich wie der interne Traffic kann externer Datenverkehr auf der vSwitch-Ebene (VST) und auf der externen Switch-Ebene (EST) markiert werden. Darüber hinaus kann der externe Datenverkehr von der ONTAP Select-VM selbst in einem Prozess namens VGT markiert werden. Siehe Abschnitt link:concept_nw_data_mgmt_separation.html["Trennung des Daten- und Management-Datenverkehrs"] Entnehmen.
+NOTE: Ähnlich wie interner Datenverkehr kann auch externer Datenverkehr auf der vSwitch-Schicht (VST) und auf der externen Switch-Schicht (EST) gekennzeichnet werden. Zusätzlich kann der externe Datenverkehr von der ONTAP Select VM selbst in einem als VGT bekannten Prozess gekennzeichnet werden. Weitere Details finden Sie im Abschnitt link:concept_nw_data_mgmt_separation.html["Trennung des Daten- und Management-Datenverkehrs"].
 
 Die folgende Tabelle zeigt die wesentlichen Unterschiede zwischen internen und externen ONTAP Select-Netzwerken.
 

@@ -22,7 +22,7 @@ Vermeiden Sie Datenverlust mit RAID SyncMirror (RSM), gespiegelten Aggregaten un
 
 Das HA-Modell von ONTAP basiert auf dem Konzept von HA-Partnern. ONTAP Select erweitert diese Architektur auf nicht gemeinsam genutzte, herkömmliche Server-Welt durch den Einsatz der RAID SyncMirror-Funktion (RSM) in ONTAP, um Datenblöcke zwischen Cluster-Nodes zu replizieren. Somit werden zwei Kopien von Benutzerdaten, die auf ein HA-Paar verteilt sind, bereitgestellt.
 
-Ein Cluster mit zwei Nodes und einem Mediator kann zwei Datacenter umfassen. Weitere Informationen finden Sie im Abschnitt link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Stretch-Best Practices (MetroCluster-SDS) mit zwei Nodes"].
+Ein Zwei-Node-Cluster mit einem Mediator kann sich über zwei Rechenzentren erstrecken. Weitere Informationen finden Sie im Abschnitt link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Stretch-Best Practices (MetroCluster-SDS) mit zwei Nodes"].
 
 
 

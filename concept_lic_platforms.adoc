@@ -71,7 +71,7 @@ NOTE: Kernelbasierte virtuelle Maschinen (KVM) unterstützen den großen Instanz
 
 == Vergleichen Sie den Hardware-Support für Plattform-Lizenzangebote
 
-Die Standard-, Premium- und Premium-XL-Lizenzen unterstützen eine breite Palette an Hardware und Software. Aktuelle Informationen zu Hardware- und Softwareversionen finden Sie unter link:https://mysupport.netapp.com/matrix/["Interoperabilitäts-Matrix-Tool"^].
+Die Standard-, Premium- und Premium-XL-Lizenzen unterstützen eine breite Palette an Hardware und Software. Aktuelle Informationen zu Hardware- und Softwareversionen finden Sie in der link:https://mysupport.netapp.com/matrix/["Interoperabilitäts-Matrix-Tool"^].
 
 [role="tabbed-block"]
 ====

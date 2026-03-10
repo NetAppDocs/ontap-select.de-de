@@ -33,7 +33,7 @@ Linux-Serververteilung:: Sie sollten Erfahrung mit der spezifischen Linux-Distri
 --
 
 
-Weitere Informationen zur Vorbereitung Ihres Linux-Servers, einschließlich der erforderlichen Konfiguration und Softwarepakete, finden Sie in der Checkliste für die Hostkonfiguration. Beachten Sie die Hypervisor-Anforderungen für die derzeit unterstützten Linux-Distributionen.
+Weitere Informationen zur Vorbereitung Ihres Linux-Servers, einschließlich der erforderlichen Konfiguration und Softwarepakete, finden Sie in der link:kvm-host-configuration-and-preparation-checklist.html["Checkliste für die Hostkonfiguration"]. Beachten Sie die Hypervisor-Anforderungen für die aktuell unterstützten Linux-Distributionen.
 
 Implementierung und Administration von KVM:: Sie sollten mit allgemeinen Virtualisierungskonzepten vertraut sein. Darüber hinaus gibt es mehrere Linux CLI-Befehle, die Sie als Teil der Installation und Verwaltung von ONTAP Select in einer KVM-Umgebung verwenden müssen:
 +
@@ -91,7 +91,7 @@ Unabhängig vom Hypervisor:: ONTAP Select und das ONTAP Select Deploy-Administra
 
 NOTE: Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufgenommen. Zuvor wurde in ONTAP Select 9.10.1 die Unterstützung für die Implementierung eines neuen Clusters auf einem KVM-Hypervisor entfernt, und in ONTAP Select 9.11.1 wurde die Unterstützung für das Management vorhandener KVM-Cluster und -Hosts entfernt, mit Ausnahme des Offline- bzw. Löschens.
 
-Weitere Details zu den unterstützten Plattformen finden Sie in den Hypervisor-spezifischen Planungsinformationen und den Versionshinweisen.
+Beziehen Sie sich auf die hypervisorspezifischen Planungshinweise und link:reference_release_notes.html["Versionshinweise"] für weitere Details zu den unterstützten Plattformen.
 
 Hypervisor für ONTAP Select-Nodes und Administrationstool:: Sowohl das Deploy-Administration-Dienstprogramm als auch die ONTAP Select-Nodes werden als Virtual Machines ausgeführt. Der für das Deploy-Tool gewählte Hypervisor ist unabhängig vom ausgewählten Hypervisor für die ONTAP Select-Nodes. Sie haben volle Flexibilität beim Paaring der beiden:
 +

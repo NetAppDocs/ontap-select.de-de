@@ -32,7 +32,7 @@ Die folgenden Hypervisoren werden sowohl für ONTAP Select als auch für die ONT
 
 
 
-NOTE: Weitere Details zu den unterstützten Plattformen finden Sie in den Hypervisor-spezifischen Planungsinformationen und den Versionshinweisen.
+NOTE: Beziehen Sie sich auf die hypervisorspezifischen Planungshinweise und link:reference_release_notes.html["Versionshinweise"] für weitere Details zu den unterstützten Plattformen.
 
 .Hypervisor für ONTAP Select-Nodes und Administrationstool
 Sowohl das Deploy Administration Utility als auch die ONTAP Select Nodes werden als Virtual Machines ausgeführt. Der für das Deploy-Tool gewählte Hypervisor ist unabhängig vom ausgewählten Hypervisor für die ONTAP Select-Nodes. Sie haben volle Flexibilität beim Paaring der beiden:
