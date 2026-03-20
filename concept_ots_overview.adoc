@@ -20,7 +20,7 @@ ONTAP Select konvertiert interne Festplattenlaufwerke, NVMe, SSDs oder HDDs sowi
 
 ONTAP Select lässt sich mit zwei ergänzenden Lizenzmodellen – Kapazitäts-Tiers und den vollständig flexiblen Kapazitäts-Pools – an Ihre Kapazitätsnutzung anpassen. Beide Lizenzmodelle ermöglichen es Ihnen, die Kapazität schon in Schritten von 1 TB zu erhöhen. Sie können zum Beispiel mit wenigen Terabytes einsteigen und die Kapazität anschließend dynamisch erweitern, wenn der Umfang Ihres Projekts zunimmt. Bei Nutzung von Kapazitäts-Pools können Sie die Kapazität nach Abschluss des Projekts beliebig neu verteilen.
 
-ONTAP Select ist in Cloud Management Frameworks wie z. B. VMware vSphere integriert. Dadurch lassen sich neue Projekte wie Fileservices, Home Directories, Software-Entwicklungsumgebungen und Applikationstests noch schneller implementieren.
+ONTAP Select ist in Cloud-Management-Frameworks wie VMware vSphere und Kernel-based Virtual Machine (KVM) integriert. Dies hilft, die Bereitstellung neuer Projekte wie Dateidienste, Home-Verzeichnisse, Softwareentwicklungsumgebungen und Anwendungstests zu beschleunigen.
 
 Mit der SnapMirror Software verschieben Sie Daten zwischen ONTAP Storage in der Hybrid Cloud. So können Sie Ihre Daten einfach am gewünschten Speicherort abrufen. So können Sie beispielsweise schnell eine Umgebung erstellen, um eine Idee zu beweisen. Später können Sie das Projekt auf eine dedizierte Storage-Plattform verschieben, um es in der Produktion zu implementieren oder im Rahmen von Entwicklungsprozessen in der Cloud einfacher zugänglich zu machen.
 
@@ -132,6 +132,6 @@ Das Ändern der Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, 
 
 
 .Verwandte Informationen
-* link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Erfahren Sie mehr über die standardmäßig aktivierten ONTAP Funktionen"]
+* link:reference_lic_ontap_features.html#enabled-ontap-features["Erfahren Sie mehr über die standardmäßig aktivierten ONTAP Funktionen"]
 * link:concept_lic_evaluation.html["Informieren Sie sich über Lizenzoptionen von ONTAP Select"]
 

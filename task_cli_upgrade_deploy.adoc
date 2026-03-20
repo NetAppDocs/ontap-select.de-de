@@ -16,16 +16,16 @@ summary: Sie können ein vorhandenes Deploy Utility Virtual Machine direkt über
 [role="lead"]
 Aktualisieren Sie eine vorhandene ONTAP Select Deploy Utility-VM direkt mit der ONTAP Select Deploy Utility-CLI.
 
-.Bevor Sie beginnen
-Stellen Sie sicher, dass ONTAP Select Deploy während des Upgrades nicht für andere Aufgaben verwendet wird. Siehe link:reference_release_notes.html["Versionshinweise"] für Informationen und Einschränkungen zum Upgrade des ONTAP Select Deploy Utility.
+Sie können direkt auf ONTAP Select Deploy 9.18.1 von ONTAP Select Deploy 9.17.1 oder 9.16.1 aktualisieren. Um von einer früheren Version, zum Beispiel ONTAP Select Deploy 9.15.1, zu aktualisieren, müssen Sie zuerst auf ONTAP Select Deploy 9.16.1 oder 9.17.1 und dann auf ONTAP Select Deploy 9.18.1 aktualisieren.
 
 [NOTE]
 ====
 Wenn Sie eine ältere Version des ONTAP Select Deploy-Verwaltungsprogramms installiert haben, sollten Sie auf die aktuelle Version aktualisieren. Der ONTAP Select Node und die ONTAP Select Deploy-Komponente werden unabhängig voneinander aktualisiert. Weitere Einzelheiten finden Sie unter link:concept_adm_upgrading_nodes.html["Aktualisieren Sie die ONTAP Select-Nodes"^].
 
-Sie können direkt von ONTAP Select Deploy 9.17.1 oder 9.16.1 auf ONTAP Select Deploy 9.18.1 aktualisieren.  Um von ONTAP Select Deploy 9.15.1 oder einer früheren Version ein Upgrade durchzuführen, lesen Sie bitte die Versionshinweise für Ihre ONTAP Select Version.
-
 ====
+.Bevor Sie beginnen
+Stellen Sie sicher, dass ONTAP Select Deploy während des Upgrades nicht für andere Aufgaben verwendet wird.
+
 
 
 == Schritt 1: Laden Sie das Upgrade-Paket herunter

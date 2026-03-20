@@ -162,13 +162,13 @@ Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.17.1 beinhaltet Unte
 
 == ONTAP Select 9.16.1
 
-Unterstützung für NetApp-Lizenzdateien aktualisiert:: Ab ONTAP Select 9.16.1 wird die Unterstützung für die NetApp-Lizenzdatei (NLF) aktualisiert. Das neue NF-Format umfasst Lizenzen für die Funktionen ARP, ONTAP S3 und S3 SnapMirror. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Weitere Informationen ."].
+Unterstützung für NetApp-Lizenzdateien aktualisiert:: Ab ONTAP Select 9.16.1 ist die Unterstützung für die NetApp License File (NLF) aktualisiert. Das neue NLF-Format umfasst Lizenzen für die ARP-, ONTAP S3- und S3 SnapMirror-Funktionen. link:reference_lic_ontap_features.html#enabled-ontap-features["Weitere Informationen ."].
 +
 --
 Für ein neues ONTAP Select 9.16.1 Deploy wird das neue NF-Format automatisch angewendet. Wenn Sie eine vorhandene ONTAP Select-Bereitstellung auf 9.16.1 aktualisieren, wird das neue NF-Format nicht angewendet. Um die Lizenzen der ARP-, ONTAP S3- und S3-SnapMirror-Funktionen zu erhalten, müssen Sie nach dem Upgrade die aktualisierte Lizenzdatei herunterladen. Wenn Sie zu ONTAP Select 9.15.1 oder früher zurückkehren, müssen Sie die vor dem Upgrade vorhandenen Funktionslizenzen neu installieren.
 
 --
-Unterstützung für den autonomen Ransomware-Schutz:: In ONTAP Select 9.16.1 wird die Unterstützung für Autonomous Ransomware Protection (ARP) eingeführt. ONTAP Select 9.16.1 unterstützt nur manuelle Updates für ARP, automatische Updates werden nicht unterstützt. Die ARP-Funktionslizenz ist in der Lizenzdatei für ONTAP Select 9.16.1 enthalten. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Weitere Informationen ."].
+Unterstützung für den autonomen Ransomware-Schutz:: ONTAP Select 9.16.1 bietet Unterstützung für Autonomous Ransomware Protection (ARP). ONTAP Select 9.16.1 unterstützt nur manuelle Updates für ARP, automatische Updates werden nicht unterstützt. Die ARP-Funktionslizenz ist in der NLF für ONTAP Select 9.16.1 enthalten. link:reference_lic_ontap_features.html#enabled-ontap-features["Weitere Informationen ."].
 Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.16.1 unterstützt VMware ESXi 8.0 U3.
 Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.16.1 wird der KVM-Hypervisor auf RHEL 9.5 und Rocky Linux 9.5 unterstützt.
 
