@@ -14,7 +14,7 @@ summary: Bei der Planung einer ONTAP Select-Implementierung sollten Sie verschie
 
 
 [role="lead"]
-MetroCluster SDS ist eine Konfigurationsoption beim Erstellen eines ONTAP Select Clusters mit zwei Nodes. Sie ähnelt einer Implementierung von Remote-Standorten/Zweigstellen (ROBO), allerdings kann die Entfernung zwischen den beiden Nodes bis zu 10 km betragen Diese verbesserte Implementierung mit zwei Nodes bietet weitere Anwendungsszenarien. Bei der Vorbereitung der Bereitstellung von MetroCluster SDS sollten die Anforderungen und Einschränkungen bekannt sein.
+MetroCluster SDS ist eine Konfigurationsoption beim Erstellen eines Zwei-Node-ONTAP Select Clusters. Es ähnelt einer Remote Office/Branch Office (ROBO) Bereitstellung. Diese erweiterte Zwei-Node-Bereitstellung bietet zusätzliche Anwendungsfallszenarien. Sie sollten sich der Anforderungen und Einschränkungen bewusst sein, wenn Sie die Bereitstellung von MetroCluster SDS vorbereiten.
 
 Stellen Sie vor der Bereitstellung von MetroCluster SDS sicher, dass die folgenden Anforderungen erfüllt sind:
 

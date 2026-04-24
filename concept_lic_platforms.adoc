@@ -44,7 +44,7 @@ In der folgenden Tabelle werden die Funktionen der Lizenzangebote Standard, Prem
 | vNAS-Konfiguration | Ja. | Ja. | Ja. 
 
 
-.3+| Solid-State-Laufwerke (SSD) in einem ... | Hardware-RAID-Konfiguration | Nein | Ja. | Ja. 
+.3+| Solid-State-Drives (SSDs) in einem ... | Hardware-RAID-Konfiguration | Nein | Ja. | Ja. 
 
 
 | Software-RAID-Konfiguration | Nein | Ja. | Ja. 

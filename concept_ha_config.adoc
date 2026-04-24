@@ -63,7 +63,7 @@ Ein aktiv/aktiv-HA-Cluster mit zwei Nodes kann über größere Entfernungen vert
 
 Das 2-Node-Cluster wird als Cluster definiert, für das sich beide Nodes im selben Datacenter innerhalb von 300 m Entfernung befinden. Im Allgemeinen verfügen beide Nodes über Uplinks mit demselben Netzwerk-Switch oder einer Reihe von ISL-Netzwerk-Switches (Interswitch Link).
 
-MetroCluster SDS mit zwei Nodes ist als Cluster definiert, für das Nodes physisch voneinander getrennt sind (unterschiedliche Räume, unterschiedliche Gebäude und verschiedene Datacenter), um mehr als 300 Millionen. Darüber hinaus sind die Uplink-Verbindungen jedes Knotens mit separaten Netzwerk-Switches verbunden. Für MetroCluster SDS ist keine dedizierte Hardware erforderlich. Die Umgebung sollte jedoch die Anforderungen an Latenz (maximal 5 ms für RTT und 5 ms für Jitter, insgesamt 10 ms) und physische Distanz (maximal 10 km) erfüllen.
+Ein Zwei-Node-MetroCluster SDS ist als ein Cluster definiert, dessen Knoten physisch durch mehr als 300 m voneinander getrennt sind (unterschiedliche Räume, unterschiedliche Gebäude und unterschiedliche Rechenzentren). Zusätzlich sind die Uplink-Verbindungen jedes Knotens an separate Netzwerkswitches angeschlossen. Das MetroCluster SDS erfordert keine dedizierte Hardware. Die Umgebung sollte jedoch die Anforderungen an die Latenz erfüllen (maximal 5 ms für RTT und 5 ms für Jitter, insgesamt also 10 ms).
 
 MetroCluster SDS ist eine Premiumfunktion und erfordert eine Premium-Lizenz oder eine Premium-XL-Lizenz. Die Premium-Lizenz unterstützt die Erstellung kleiner und mittlerer VMs sowie von HDD- und SSD-Medien. Darüber hinaus unterstützt die Premium XL Lizenz auch die Erstellung von NVMe-Laufwerken.
 
