@@ -24,8 +24,8 @@ Sie können das Kennwort für das Administratorkonto für virtuelle Maschinen be
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie auf das Figurensymbol oben rechts auf der Seite und wählen Sie *Passwort ändern*.
-. Geben Sie das aktuelle und das neue Passwort wie aufgefordert an und klicken Sie auf *Absenden*.
+. Wählen Sie das Figurensymbol oben rechts auf der Seite aus und wählen Sie dann *Passwort ändern*.
+. Geben Sie das aktuelle und das neue Passwort wie aufgefordert ein und wählen Sie *Absenden*.
 
 
 
@@ -39,9 +39,9 @@ Sie sollten mit den Typen von Zugangsdaten und der Art der Nutzung durch ONTAP S
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-. Klicken Sie auf *Management Server* und dann auf *vCenter hinzufügen*.
-. Geben Sie die folgenden Informationen ein und klicken Sie auf *Hinzufügen*.
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+. Wählen Sie *Verwaltungsserver* > *vCenter hinzufügen*.
+. Geben Sie die folgenden Informationen ein und wählen Sie *Hinzufügen*.
 +
 [cols="30,70"]
 |===
@@ -56,7 +56,7 @@ Sie sollten mit den Typen von Zugangsdaten und der Art der Nutzung durch ONTAP S
 
 | Passwort | Geben Sie das Kennwort für den zugeordneten Benutzernamen ein. 
 |===
-. Nachdem der neue Verwaltungsserver hinzugefügt wurde, können Sie optional auf klicken image:icon_kebab.gif["Optionen"] Und wählen Sie eine der folgenden Optionen aus:
+. Optional können Sie image:icon_kebab.gif["Optionen"] nach dem Hinzufügen des neuen Verwaltungsservers eine der folgenden Optionen auswählen:
 +
 ** Anmeldedaten aktualisieren
 ** Verifizieren der Anmeldedaten
@@ -166,7 +166,7 @@ Sie können sich bei ONTAP Select Deploy mit YubiKey PIV Authentifizierung über
 . Melden Sie sich von Ihrem Gerät aus mit dem YubiKey verbunden an.
 
 
-.Beispielausgabe
+.Beispielausgabe:
 [listing]
 ----
 login as: admin
@@ -194,7 +194,7 @@ Der `ssh-keygen` Der Befehl unterstützt mehrere Public Key-Algorithmen für Aut
 * Die Schlüsselgröße wird mit dem ausgewählt `-b` Option
 
 
-.Beispielausgabe
+.Beispielausgabe:
 [listing]
 ----
 ssh-keygen -t ecdsa -b 521

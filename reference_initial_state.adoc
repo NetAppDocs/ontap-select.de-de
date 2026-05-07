@@ -50,5 +50,5 @@ Alle Funktionen sind lizenziert und verfügbar. Sowohl SnapLock als auch FabricP
 
 .Verwandte Informationen
 * link:https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["In einem Cluster enthaltene SVMs-Typen"^]
-* link:reference_lic_ontap_features.html["Standardmäßig sind ONTAP-Funktionen aktiviert"]
+* link:reference_lic_ontap_features.html["ONTAP Funktionen sind standardmäßig lizenziert"]
 

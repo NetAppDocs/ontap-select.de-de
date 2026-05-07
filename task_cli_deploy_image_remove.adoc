@@ -45,7 +45,7 @@ shell bash
 ----
 ls -lh /opt/netapp/images
 ----
-. Entfernen Sie optional das ONTAP Select-Image mit Ihrem Hypervisor-Host.
+. Optional können Sie das ONTAP Select Image mit Ihrem Hypervisor-Host entfernen.
 +
 [role="tabbed-block"]
 ====

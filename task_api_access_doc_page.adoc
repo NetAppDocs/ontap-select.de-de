@@ -24,7 +24,7 @@ Sie müssen Folgendes haben:
 
 
 .Schritte
-. Geben Sie die URL in Ihren Browser ein und drücken Sie *Enter*:
+. Geben Sie die URL in Ihren Browser ein und wählen Sie *Eingabetaste*:
 +
 `\https://<ip_address>/api/ui`
 

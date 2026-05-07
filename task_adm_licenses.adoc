@@ -26,7 +26,7 @@ Sie können Lizenzen der ONTAP Select Capacity Tiers nach Bedarf hinzufügen, be
 . Melden Sie sich mit dem Administratorkonto beim Deploy Utility über die Webschnittstelle an.
 . Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
 . Wählen Sie *Licenses* und dann *Capacity Tier*.
-. Wählen Sie optional *Filter* aus und begrenzen Sie die angezeigten Lizenzen.
+. Optional können Sie *Filter* auswählen, um die angezeigten Lizenzen einzuschränken.
 . Um eine vorhandene Lizenz image:icon_kebab.gif["Optionen"]zu ersetzen, wählen Sie eine Lizenz aus, wählen Sie , und wählen Sie *Update* aus.
 . Um eine neue Lizenz hinzuzufügen, wählen Sie *Hinzufügen* oben auf der Seite und dann *Lizenz(en)* hochladen* und wählen Sie eine Lizenzdatei von Ihrer lokalen Workstation aus.
 

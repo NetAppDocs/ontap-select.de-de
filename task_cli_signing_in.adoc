@@ -31,5 +31,5 @@ Sie müssen über das aktuelle Kennwort für das Administratorkonto für die Ber
 ** Proxy-URL (optional)
 
 
-. Geben Sie *?* ein, und drücken Sie *Enter*, um eine Liste der verfügbaren Management Shell-Befehle anzuzeigen.
+. Geben Sie *?* ein und drücken Sie die *Eingabetaste*, um eine Liste der verfügbaren Management-Shell-Befehle anzuzeigen.
 

@@ -127,12 +127,12 @@ Sie müssen das Passwort für das Administratorkonto definieren. Sie müssen die
 +
 Hostname:
 
-.. Geben Sie den Hostnamen ein und drücken Sie *Enter*.
+.. Geben Sie den Hostnamen ein und wählen Sie *Enter*.
 .. Warten Sie auf die folgende Eingabeaufforderung:
 +
 Geben Sie dem Admin-Benutzer ein Passwort ein:
 
-.. Geben Sie das Passwort ein und drücken Sie *Enter*.
+.. Geben Sie das Passwort ein und wählen Sie *Enter*.
 .. Warten Sie auf die folgende Eingabeaufforderung:
 +
 DHCP zum Festlegen von Netzwerkinformationen verwenden? [n]:

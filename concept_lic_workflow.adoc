@@ -20,7 +20,7 @@ Der genaue Prozess variiert abhängig davon, ob Sie eine Capacity Tier oder eine
 
 Neunstellige Lizenzseriennummer:: Die Seriennummer gilt entweder für einen Node (Kapazitäts-Tiers) oder einen Storage-Pool (Kapazitäts-Pools).
 Lizenzsperre ID:: Wenn Sie eine Capacity Pool-Lizenz verwenden, müssen Sie über die Lizenz-Lock-ID für Ihre Bereitstellungsinstanz verfügen
-Lizenzieren der Website:: Sie erhalten eine Capacity Tier- und Capacity Pool-Lizenz auf verschiedenen Websites
+Lizenzieren der Website:: Sie erwerben eine Capacity Tier- und eine Capacity Pool-Lizenz auf verschiedenen Websites.
 
 
 image:purchased_license_workflow.png["Beschreibt den Prozess für den Kauf und die Installation einer Storage-Lizenz für eine ONTAP Select-Implementierung in der Produktionsumgebung."]

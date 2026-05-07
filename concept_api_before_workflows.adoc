@@ -24,7 +24,7 @@ Die Seite mit der ONTAP Select Online-Dokumentation enthält die Details zu jede
 
 Für jeden API-Aufruf in einem Workflow sind folgende Informationen enthalten, um den Anruf auf der Dokumentationsseite zu finden:
 
-* Kategorie die API-Aufrufe sind auf der Dokumentationsseite in funktional bezogene Bereiche oder Kategorien unterteilt. Um einen bestimmten API-Aufruf zu finden, blättern Sie zum unteren Seitenrand und klicken Sie auf die entsprechende API-Kategorie.
+* Die API-Aufrufe sind auf der Dokumentationsseite in funktional verwandte Bereiche oder Kategorien unterteilt. Um einen bestimmten API-Aufruf zu finden, scrollen Sie zum Seitenende und wählen Sie die entsprechende API-Kategorie aus.
 * HTTP-Verb das HTTP-Verb identifiziert die Aktion, die für eine Ressource durchgeführt wird. Jeder API-Aufruf wird über ein einziges HTTP-Verb ausgeführt.
 * Pfad der Pfad bestimmt die spezifische Ressource, für die die Aktion im Rahmen der Durchführung eines Anrufs gilt. Der Pfadstring wird an die Core-URL angehängt, um die vollständige URL zur Identifizierung der Ressource zu bilden.
 

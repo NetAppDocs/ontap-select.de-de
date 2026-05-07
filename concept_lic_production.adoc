@@ -64,8 +64,3 @@ Das Kapazitäts-Pools-Lizenzmodell bietet verschiedene Merkmale, darunter:
 * Alle ONTAP Select Knoten in einem Cluster teilen sich die gleiche Lizenzkapazität. Das bedeutet, dass die Lizenz groß genug sein muss, um den allen Knoten im Cluster zugewiesenen Speicher abzudecken.
 * Jeder Node vermietet automatisch Storage-Kapazität für seine lokalen Datenaggregate aus einem Pool gemeinsam genutzter Kapazität.
 
-
-.Wie geht es weiter?
-* link:concept_lic_platforms.html["Hier finden Sie Informationen zu den Plattformlizenzangeboten für ONTAP Select"]
-* link:concept_lic_cp_operation.html["Erfahren Sie mehr über das ONTAP Select Capacity Pools Lizenzmodell"]
-

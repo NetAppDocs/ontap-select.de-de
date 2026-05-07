@@ -23,6 +23,6 @@ Sie müssen auf der Webseite für die Online-Dokumentation von ONTAP Select Depl
 Sie können die Konfigurationsinformationen, die ein ONTAP Select Cluster beschreiben, mit seiner eindeutigen Kennung abrufen. In diesem Beispiel werden alle als kostengünstig klassifizierten Felder zurückgegeben. Als Best Practice sollten Sie jedoch nur die speziellen Felder anfordern, die erforderlich sind.
 
 .Schritte
-. Scrollen Sie auf der Hauptseite nach unten und klicken Sie auf *Cluster*.
-. Klicken Sie auf *GET /Clusters/{Cluster_id}*, um die Details des API-Aufrufs anzuzeigen, der zur Rückgabe von Informationen über ein ONTAP Select-Cluster verwendet wird.
+. Scrollen Sie auf der Hauptseite bis ganz nach unten und wählen Sie *Cluster* aus.
+. Wählen Sie *GET /clusters/{cluster_id}*, um die Details des API-Aufrufs anzuzeigen, der verwendet wurde, um Informationen über einen ONTAP Select Cluster abzurufen.
 

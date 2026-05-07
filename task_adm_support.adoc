@@ -27,9 +27,9 @@ Die Konfigurationsdaten der Implementierung werden von AutoSupport verwendet.
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-. Klicken Sie auf *Einstellungen & AutoSupport* und dann auf image:icon_pencil.gif["Bearbeiten"].
-. Geben Sie die für Ihre Umgebung geeigneten Konfigurationsdaten an und klicken Sie auf *Ändern*.
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+. Wählen Sie *Einstellungen & AutoSupport*, dann image:icon_pencil.gif["Bearbeiten"].
+. Geben Sie die für Ihre Umgebung passenden Konfigurationsdaten ein und wählen Sie *Ändern*.
 +
 Wenn Sie einen Proxyserver verwenden, können Sie die Proxy-URL wie folgt konfigurieren:
 `\http://USERNAME:PASSWORD@<FQDN|IP>:PORT`
@@ -59,9 +59,9 @@ Sie können die Liste der Ereignismeldungen anhand verschiedener Merkmale filter
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-. Klicken Sie auf *Events & Jobs* und dann auf *Events*.
-. Klicken Sie optional auf *Filter* und erstellen Sie einen Filter, um die angezeigten Ereignismeldungen einzuschränken.
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+. Wählen Sie *Events & Jobs* und anschließend *Events*.
+. Optional können Sie *Filter* auswählen und einen Filter erstellen, um die angezeigten Ereignismeldungen einzuschränken.
 
 
 
@@ -75,8 +75,8 @@ AutoSupport ist das primäre Tool zur Fehlerbehebung, das von NetApp zur Unterst
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-. Klicken Sie auf *Einstellungen & AutoSupport* und dann auf image:icon_kebab.gif["Optionen"].
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+. Wählen Sie *Einstellungen & AutoSupport* und anschließend image:icon_kebab.gif["Optionen"].
 . Aktivieren oder deaktivieren Sie die AutoSupport-Funktion nach Bedarf.
 
 
@@ -96,13 +96,13 @@ Sie können die folgenden AutoSupport Pakete unter Anleitung und Anleitung des N
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration*.
-. Klicken Sie auf *Einstellungen & AutoSupport* und dann auf image:icon_kebab.gif["Optionen"].
-. Klicken Sie Auf *Erzeugen*.
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* aus.
+. Wählen Sie *Einstellungen & AutoSupport* und anschließend image:icon_kebab.gif["Optionen"].
+. Wählen Sie *Generieren*.
 . Wählen Sie den Typ aus und geben Sie eine Beschreibung für das Paket ein. Sie können optional eine Fallnummer angeben.
-. Klicken Sie Auf *Erzeugen*.
+. Wählen Sie *Generieren*.
 +
 Jedem AutoSupport-Paket wird eine eindeutige Sequenzkennnummer zugewiesen.
 
-. Wählen Sie optional unter *AutoSupport-Verlauf* das richtige Paket aus und klicken Sie auf das Download-Symbol, um die AutoSupport-Datei auf Ihrer lokalen Arbeitsstation zu speichern.
+. Optional können Sie unter *AutoSupport History* das richtige Paket auswählen und anschließend auf das Download-Symbol klicken, um die AutoSupport-Datei auf Ihrer lokalen Workstation zu speichern.
 

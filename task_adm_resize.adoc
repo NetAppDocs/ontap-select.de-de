@@ -30,9 +30,9 @@ In dieser Aufgabe wird beschrieben, wie die Webbenutzeroberfläche bereitstellen
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus der Liste aus.
-. Klicken Sie auf der Seite Cluster Details auf das Zahnradsymbol rechts auf der Seite und wählen Sie *Instanzgröße* aus.
-. Wählen Sie den *Instanztyp* aus und geben Sie die ONTAP-Zugangsdaten ein, und klicken Sie dann auf *Ändern*.
+. Wählen Sie oben auf der Seite die Registerkarte *Cluster* aus und wählen Sie dann den gewünschten Cluster aus der Liste aus.
+. Auf der Cluster-Detailseite das Zahnradsymbol rechts auf der Seite auswählen und *Instanzgröße ändern* wählen.
+. Wählen Sie den *Instanztyp* aus und geben Sie die ONTAP Zugangsdaten ein, dann wählen Sie *Ändern*.
 
 
 .Nachdem Sie fertig sind

@@ -46,7 +46,7 @@ Führen Sie die folgenden Schritte auf einem unterstützten 64-Bit-ESXi-Hostserv
 . Wählen Sie den Host mithilfe einer der folgenden Optionen aus:
 +
 ** Wählen Sie *Datei* > *OVF-Vorlage bereitstellen*.
-** Wählen Sie *Datacenter*. Klicken Sie dann mit der rechten Maustaste und wählen Sie *Deploy OVF Template*.
+** Wählen Sie *Rechenzentrum* aus. Klicken Sie dann mit der rechten Maustaste und wählen Sie *OVF-Vorlage bereitstellen* aus.
 
 
 . Wählen Sie die ONTAP Select-Quell-OVA-Datei auf Ihrer lokalen Workstation aus, und wählen Sie dann *Weiter* aus.

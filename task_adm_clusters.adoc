@@ -27,15 +27,15 @@ Nach dem Erstellen eines Clusters befindet es sich zunächst im Online-Status.
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus der Liste aus.
-. Klicken Sie Auf image:icon_kebab.gif["Optionen"] Rechts neben dem Cluster und wählen Sie *Offline nehmen*.
+. Wählen Sie oben auf der Seite die Registerkarte *Cluster* aus und wählen Sie den gewünschten Cluster aus der Liste aus.
+. Wählen Sie image:icon_kebab.gif["Optionen"] rechts im Cluster die Option *Offline schalten*.
 +
 Wenn die Offline-Option nicht verfügbar ist, befindet sich das Cluster bereits im Offline-Status.
 
-. Klicken Sie im Popup-Fenster auf *Ja*, um die Anfrage zu bestätigen.
-. Klicken Sie gelegentlich auf *Aktualisieren*, um zu bestätigen, dass das Cluster offline ist.
-. Um das Cluster wieder in den Online-Modus zu versetzen, klicken Sie auf image:icon_kebab.gif["Optionen"] Und wählen Sie *Online mitbringen*.
-. Klicken Sie gelegentlich auf *Aktualisieren*, um zu bestätigen, dass der Cluster online ist.
+. Wählen Sie im Popup-Fenster *Ja*, um die Anfrage zu bestätigen.
+. Wählen Sie gelegentlich *Aktualisieren*, um zu bestätigen, dass der Cluster offline ist.
+. Um den Cluster wieder online zu schalten, wählen Sie image:icon_kebab.gif["Optionen"] und wählen Sie *Online schalten*.
+. Wählen Sie gelegentlich *Aktualisieren*, um zu überprüfen, ob der Cluster online ist.
 
 
 
@@ -49,12 +49,12 @@ Der Cluster muss sich im Offlinezustand befinden.
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus der Liste aus.
-. Klicken Sie Auf image:icon_kebab.gif["Optionen"] Rechts neben dem Cluster und wählen Sie *Löschen*.
+. Wählen Sie oben auf der Seite die Registerkarte *Cluster* aus und wählen Sie den gewünschten Cluster aus der Liste aus.
+. Wählen Sie image:icon_kebab.gif["Optionen"] rechts neben dem Cluster die Option *Löschen* aus.
 +
 Wenn die Option zum Löschen nicht verfügbar ist, befindet sich das Cluster nicht in einem Offline-Zustand.
 
-. Klicken Sie gelegentlich auf *Aktualisieren*, um zu bestätigen, dass das Cluster aus der Liste entfernt wird.
+. Wählen Sie gelegentlich *Aktualisieren*, um zu bestätigen, dass der Cluster aus der Liste entfernt wurde.
 
 
 
@@ -109,10 +109,10 @@ Cluster- und Node-Status:: Ein ONTAP Select Cluster oder Node kann einen Status 
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben links auf der Seite auf die Registerkarte *Cluster* und wählen Sie den gewünschten Cluster aus der Liste aus.
-. Klicken Sie Auf image:icon_kebab.gif["Optionen"] Wählen Sie rechts auf der Seite die Option *Cluster Refresh*.
+. Wählen Sie oben links auf der Seite die Registerkarte *Cluster* aus und wählen Sie den gewünschten Cluster aus der Liste aus.
+. Wählen Sie image:icon_kebab.gif["Optionen"] auf der rechten Seite der Seite aus und wählen Sie *Cluster Refresh*.
 . Geben Sie unter *Cluster Credentials* das ONTAP-Administratorkennwort für den Cluster ein.
-. Klicken Sie Auf *Aktualisieren*.
+. Wählen Sie *Aktualisieren*.
 
 
 .Nachdem Sie fertig sind

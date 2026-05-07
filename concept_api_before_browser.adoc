@@ -28,8 +28,8 @@ Wenn Sie im Rahmen der Durchführung spezifischer Bereitstellungs- oder Verwaltu
 
 Jeder API-Aufruf wird auf der Dokumentationsseite in einem konsistenten Format beschrieben. Der Inhalt umfasst Implementierungsnotizen, Abfrageparameter und HTTP-Statuscodes. Außerdem können Sie wie folgt Details über den JSON anzeigen, der mit den API-Anfragen und Antworten verwendet wird:
 
-* Beispielwert Wenn Sie bei einem API-Aufruf auf „_example Value_“ klicken, wird eine typische JSON-Struktur für den Aufruf angezeigt. Sie können das Beispiel je nach Bedarf ändern und als Eingabe für Ihre Anforderung verwenden.
-* Modell Wenn Sie auf _Model_ klicken, wird eine vollständige Liste der JSON-Parameter mit einer Beschreibung für jeden Parameter angezeigt.
+* Beispielwert: Wenn Sie bei einem API-Aufruf _Beispielwert_ auswählen, wird eine typische JSON-Struktur für den Aufruf angezeigt. Sie können das Beispiel nach Bedarf anpassen und als Eingabe für Ihre Anfrage verwenden.
+* Modell Wenn Sie _Modell_ auswählen, wird eine vollständige Liste der JSON-Parameter mit einer Beschreibung für jeden Parameter angezeigt.
 
 
 

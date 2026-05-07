@@ -33,10 +33,10 @@ NOTE: Es wird empfohlen, vor dem Erstellen eines Clusters mit mehreren Nodes imm
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration* und klicken Sie auf *Network Checker*.
-. Klicken Sie auf *Neuer Lauf starten* und wählen Sie die Hosts und Netzwerke für das HA-Paar aus
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* und anschließend *Network Checker*.
+. Wählen Sie *Neuen Lauf starten* und anschließend die Hosts und Netzwerke für das HA-Paar aus
 +
 Sie können bei Bedarf weitere HA-Paare hinzufügen und konfigurieren.
 
-. Klicken Sie auf *Start*, um den Netzwerkverbindungstest zu starten.
+. Wählen Sie *Start*, um den Netzwerkverbindungstest zu starten.
 

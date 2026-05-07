@@ -144,7 +144,7 @@ NOTE: Ziel des Recovery-Verfahrens ist es, den Cluster mit zwei Nodes in einem o
 . Bereiten Sie eine neue Instanz des ONTAP Select Deploy-Dienstprogramms vor:
 +
 .. Installieren Sie eine neue Virtual Machine für das Deploy Utility.
-.. Stellen Sie optional die Bereitstellungskonfiguration aus einer früheren Sicherung auf der neuen virtuellen Maschine wieder her.
+.. Optional können Sie die Deploy-Konfiguration aus einer vorherigen Sicherung auf der neuen virtuellen Maschine wiederherstellen.
 +
 Wenn Sie ein vorheriges Backup wiederherstellen, enthält die neue Deploy-Instanz nicht das Cluster mit zwei Nodes. Weitere Informationen zu den Installations- und Wiederherstellungsverfahren finden Sie im Abschnitt „Verwandte Informationen“.
 

@@ -63,7 +63,7 @@ Sie müssen das Passwort für das Admin-Benutzerkonto besitzen.
 .Schritte
 . Verwenden Sie in einer Command Shell auf Ihrer lokalen Arbeitsstation das sftp-Dienstprogramm, um die Lizenzdatei auf die virtuelle Maschine bereitstellen hochzuladen.
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -113,7 +113,7 @@ Wenn mehr als ein Hypervisor-Host benötigt wird, verwenden Sie dieses Verfahren
 host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]
@@ -130,7 +130,7 @@ Geben Sie das Passwort für das Hostkonto an, wenn Sie dazu aufgefordert werden.
 host show -name <FQDN|IP> -detailed
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]
@@ -156,7 +156,7 @@ Bevor Sie einen von vCenter verwalteten Host registrieren, müssen Sie ein Manag
 credential add -hostname <FQDN|IP> -type vcenter -username <vcenter_username>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -177,7 +177,7 @@ host register -name <FQDN|IP> -hypervisor-type ESX -username <esx_username>
 host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -192,7 +192,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 host show -name <FQDN|IP> -detailed
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -223,7 +223,7 @@ Wenn Sie ein ONTAP Select-Cluster erstellen, generiert das Deploy-Dienstprogramm
 cluster create -name <cluster_name> -node-count <count>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -236,7 +236,7 @@ cluster create -name test-cluster -node-count 1
 cluster modify -name <cluster_name> -mgmt-ip <IP_address> -netmask <netmask> -gateway <IP_address> -dns-servers <FQDN|IP>_LIST -dns-domains <domain_list>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -280,7 +280,7 @@ node show -cluster-name <cluster_name>
 node modify -name <node_name> -cluster-name <cluster_name> -host-name <FQDN|IP> -license-serial-number <number> -instance-type TYPE -passthrough-disks false
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -300,7 +300,7 @@ Für den ONTAP Select Node wird eine Capacity Tier Lizenz verwendet.
 host network show -host-name <FQDN|IP> -detailed
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -329,7 +329,7 @@ node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -manageme
 Wenn Sie einen Einzelknotencluster bereitstellen, benötigen Sie kein internes Netzwerk und sollten „-internal-network“ entfernen.
 
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -343,7 +343,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 node show -name <node_name> -cluster-name <cluster_name> -detailed
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 ....
@@ -372,7 +372,7 @@ Wenn Sie einen lokalen Hardware-RAID-Controller verwenden, müssen Sie die Schri
 host storage pool show -host-name <FQDN|IP>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]
@@ -392,7 +392,7 @@ node storage pool attach -name <pool_name> -cluster-name <cluster_name> -node-na
 Wenn Sie den Parameter „-capacity-limit“ einschließen, geben Sie den Wert als GB oder TB an.
 
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]
@@ -407,7 +407,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 node storage pool show -cluster-name <cluster_name> -node-name <node_name>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]
@@ -421,7 +421,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 node storage disk attach -node-name <node_name> -cluster-name <cluster_name> -disks <list_of_drives>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]
@@ -435,7 +435,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 node storage disk show -node-name <node_name> -cluster-name <cluster_name>`
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]
@@ -462,7 +462,7 @@ Führen Sie den Netzwerkkonnektivitätsprüfer mit dem link:task_adm_connectivit
 cluster deploy -name <cluster_name>
 ----
 +
-Beispielausgabe
+Beispielausgabe:
 
 +
 [listing]

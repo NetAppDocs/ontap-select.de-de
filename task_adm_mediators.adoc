@@ -27,6 +27,6 @@ Sie können die Konfiguration jedes Mediators anzeigen, einschließlich des aktu
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der Webbenutzeroberfläche des Deploy Utility an.
-. Klicken Sie oben auf der Seite auf die Registerkarte *Administration* und klicken Sie auf *Mediatoren*.
-. Klicken Sie optional auf *Filter*, um die Ansicht der Cluster mit zwei Nodes anzupassen, die vom Mediator-Service überwacht werden.
+. Wählen Sie oben auf der Seite die Registerkarte *Administration* und anschließend *Mediators*.
+. Optional können Sie *Filter* auswählen, um Ihre Ansicht der von der Mediator-Service überwachten Zwei-Knoten-Cluster anzupassen.
 
