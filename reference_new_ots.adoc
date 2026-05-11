@@ -127,12 +127,7 @@ Sie können die Clustergröße für einen vorhandenen ESXi-Cluster in den folgen
 link:task_cluster_expansion_contraction.html["Erfahren Sie mehr über Cluster-Erweiterung und -Kontraktion sowie die unterstützten KVM- und ESXi-Hypervisor-Versionen"] .
 
 --
-Unterstützung für SnapMirror cloud:: Ab ONTAP Select 9.17.1 wird SnapMirror Cloud mit ONTAP Select unterstützt. SnapMirror Cloud ist eine lizenzierte ONTAP Funktion, die standardmäßig aktiviert ist, wenn Sie einen ONTAP Select 9.17.1 Cluster bereitstellen oder einen bestehenden ONTAP Select Cluster auf Version 9.17.1 aktualisieren.
-+
---
-https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Erfahren Sie mehr über SnapMirror Cloud-Backups in Objektspeicher"^].
-
---
+Unterstützung für SnapMirror cloud:: Ab ONTAP Select 9.17.1 wird SnapMirror cloud mit ONTAP Select unterstützt. SnapMirror cloud ist standardmäßig nicht für ONTAP Select lizenziert. Wenn Sie einen ONTAP Select 9.17.1-Cluster bereitstellen oder einen bestehenden ONTAP Select Cluster auf Version 9.17.1 aktualisieren, müssen Sie eine SnapMirror cloud-Lizenz anfordern. Weitere Informationen finden Sie unter link:reference_lic_ontap_features.html#other-ontap-features["ONTAP-Funktionen, die separat lizenziert werden"].
 Unterstützung für SnapLock Select:: Ab ONTAP Select 9.17.1 wird SnapLock Select (einschließlich manipulationssicherer Snapshot-Sperrung) bei neuen Bereitstellungen automatisch lizenziert. Für Upgrades von ONTAP Select 9.16.1 und früher können Sie die SnapLock Select-Lizenz kostenlos von der link:https://mysupport.netapp.com/site/["NetApp Support Website"^] herunterladen und manuell anwenden. Weitere Informationen finden Sie unter link:reference_lic_ontap_features.html#licensed-ontap-features["ONTAP Funktionen sind standardmäßig lizenziert"].
 Unterstützung für vSAN ESA auf Clustern mit mehreren Knoten:: Ab ONTAP Select 9.17.1 wird die Unterstützung für vSAN Express Storage Architecture (ESA) erweitert, um Cluster mit mehreren Knoten bereitzustellen.  Diese Erweiterung ermöglicht Ihnen die Bereitstellung von vSAN ESA-Konfigurationen.
 +
