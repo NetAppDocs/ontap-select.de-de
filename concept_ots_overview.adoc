@@ -137,7 +137,6 @@ Schnittstellengruppen werden nicht unterstützt.
 Aufgrund der virtualisierten Umgebung, die mit ONTAP Select verwendet wird, wird die NIC-Offload-Einrichtung nicht unterstützt.
 
 * NetApp Storage Encryption-Laufwerke
-* Onboard Key Manager
 * ONTAP-Port-Eigenschaften
 +
 Das Ändern der Eigenschaften der ONTAP-Ports, einschließlich Geschwindigkeit, Duplex und Flusssteuerung, wird nicht unterstützt.

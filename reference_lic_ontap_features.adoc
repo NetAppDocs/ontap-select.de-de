@@ -30,7 +30,7 @@ Die folgenden ONTAP Funktionen werden von ONTAP Select unterstützt und standard
 * Deduplizierung und Komprimierung
 * Externes Schlüsselmanagement mittels des Key Management Interoperability Protocol (KMIP)
 +
-Die externe Schlüsselverwaltung ist die einzige von ONTAP Select unterstützte Schlüsselverwaltung. Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Aktivierung und Konfiguration der externen Schlüsselverwaltung"^].
+Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Aktivierung und Konfiguration der externen Schlüsselverwaltung"^].
 
 * FlexCache
 +

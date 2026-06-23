@@ -21,10 +21,10 @@ Erfahren Sie mehr über die neuen Funktionen und Verbesserungen der unterstützt
 
 == ONTAP Select 9.19.1
 
-Unterstützung für externes Schlüsselmanagement (KMIP):: Ab ONTAP Select 9.19.1 unterstützt ONTAP Select die externe Schlüsselverwaltung mithilfe des Key Management Interoperability Protocol (KMIP). Sie können die externe Schlüsselverwaltung nach der Bereitstellung eines ONTAP Select 9.19.1-Clusters oder nach dem Upgrade eines bestehenden Clusters auf ONTAP Select 9.19.1 aktivieren. Die externe Schlüsselverwaltung ist die einzige von ONTAP Select 9.19.1 unterstützte Schlüsselverwaltung. Weitere Informationen finden Sie unter link:reference_lic_ontap_features.html#licensed-ontap-features["ONTAP Funktionen sind standardmäßig lizenziert"].
+Unterstützung für externes Schlüsselmanagement (KMIP):: Ab ONTAP Select 9.19.1 unterstützt ONTAP Select die externe Schlüsselverwaltung mithilfe des Key Management Interoperability Protocol (KMIP). Sie können die externe Schlüsselverwaltung nach der Bereitstellung eines ONTAP Select 9.19.1-Clusters oder nach dem Upgrade eines bestehenden Clusters auf ONTAP Select 9.19.1 aktivieren. Weitere Informationen finden sich unter link:reference_lic_ontap_features.html#licensed-ontap-features["ONTAP Funktionen sind standardmäßig lizenziert"].
 +
 --
-ONTAP Select unterstützt weder Cloud Key Manager noch den ONTAP Onboard Key Manager.
+ONTAP Select unterstützt keine Cloud Key Manager.
 
 --
 Unterstützung für Advanced Micro Devices (AMD) Prozessoren:: Ab ONTAP Select 9.19.1 unterstützt ONTAP Select AMD-Prozessoren auf Kernel-basierten virtuellen Maschinen (KVM) und ESXi-Hypervisor-Hosts. Weitere Informationen finden Sie unter link:reference_plan_ots_hardware.html["VMware-Hypervisor und Hardwareüberlegungen"].
