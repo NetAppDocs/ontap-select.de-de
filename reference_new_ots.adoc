@@ -138,9 +138,9 @@ ONTAP Select Deploy und ONTAP Select for ESXi unterstützen die Konfiguration ei
 
 [NOTE]
 ====
-Um Vorgänge in der Inhaltsbibliothek durchzuführen, benötigen Sie Zugriff auf zusätzliche Berechtigungsstufen.  Dies ist für vSAN ESA-Bereitstellungen erforderlich, wenn Sie mit eingeschränkten Rollen arbeiten.
+Für die Durchführung von Vorgängen in der Inhaltsbibliothek benötigen Sie Zugriff auf zusätzliche Berechtigungsstufen. Dieser Zugriff ist für vSAN ESA-Bereitstellungen erforderlich, wenn Sie mit eingeschränkten Rollen arbeiten.
 
-link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["Informationen zum Zugriff auf Berechtigungsstufen für Vorgänge in der Inhaltsbibliothek"^] .
+link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["Informationen zum Zugriff auf Berechtigungsstufen für Vorgänge in der Content Library"].
 
 ====
 --

@@ -125,8 +125,8 @@ NOTE: Die Kontoinformationen werden mithilfe des AES-Verschlüsselungsalgorithmu
 .Arten von Anmeldeinformationen
 Folgende Typen von Anmeldeinformationen werden unterstützt:
 
-* Host wird zur Authentifizierung eines Hypervisor-Hosts bei der Bereitstellung eines ONTAP Select-Knotens direkt in VMware ESXi verwendet
-* VCenter wird zur Authentifizierung eines vCenter-Servers im Rahmen der Bereitstellung eines ONTAP Select-Knotens bei ESXi verwendet, wenn der Host von VMware vCenter gemanagt wird
+* *Host*: Wird zur Authentifizierung eines Hypervisor-Hosts im Rahmen der direkten Bereitstellung eines ONTAP Select Knotens auf VMware ESXi verwendet.
+* *vCenter*: Wird zur Authentifizierung eines vCenter Servers im Rahmen der Bereitstellung eines ONTAP Select Knotens auf ESXi verwendet, wenn der Host von VMware vCenter verwaltet wird.
 
 
 .Datenzugriff
