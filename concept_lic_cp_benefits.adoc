@@ -18,6 +18,7 @@ Wenn Sie das Lizenzmodell für Kapazitäts-Pools anstelle des Lizenzmodells für
 
 
 
+[[more-efficient-use-of-storage-capacity]]
 == Effizientere Nutzung der Storage-Kapazität
 
 Bei der Nutzung der Capacity-Tiers-Lizenzierung weisen Sie jedem Node eine feste Storage-Kapazität zu. Ungenutzter Speicherplatz kann nicht mit den anderen Nodes gemeinsam genutzt werden und wird effektiv verschwendet. Bei der Lizenzierung der Kapazitäts-Pools verbraucht jeder Node basierend auf der Größe der Datenaggregate nur die Kapazität, die er benötigt.
@@ -26,12 +27,14 @@ Die Kapazität ist in einem zentralen Pool verankert, wo sie von vielen Knoten i
 
 
 
+[[significantly-reduced-administrative-overhead-resulting-in-lower-cost]]
 == Erheblich geringerer administrativer Aufwand und damit niedrigere Kosten
 
 Wenn Sie Capacity Tier-Lizenzen verwenden, müssen Sie für jeden Node eine Lizenz beziehen und installieren. Bei der Nutzung von Kapazitäts-Pools gibt es eine Lizenz für jeden gemeinsam genutzten Pool. Dies reduziert den administrativen Overhead erheblich und senkt die Kosten.
 
 
 
+[[improved-usage-metrics]]
 == Verbesserte Nutzungsmetriken
 
 Die Web-Benutzeroberfläche „Bereitstellen“ bietet erweiterte Nutzungsinformationen für die Kapazitätspools. Es lässt sich schnell bestimmen, wie viel Storage verwendet und in einem Kapazitäts-Pool verfügbar ist, welche Nodes Storage aus einem Pool verwenden und von welchen Pools ein Cluster Kapazität zuweist.

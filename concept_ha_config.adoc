@@ -42,6 +42,7 @@ NOTE: Das ONTAP Select Cluster mit zwei Nodes besteht aus einem HA-Paar und eine
 
 
 
+[[two-node-ha-versus-multi-node-ha]]
 == Ha mit zwei Nodes im Vergleich mit Multi-Node-Hochverfügbarkeit
 
 Im Gegensatz zu FAS-Arrays kommunizieren ONTAP Select-Knoten in einem HA-Paar ausschließlich über das IP-Netzwerk. Das bedeutet, dass das IP-Netzwerk ein Single Point of Failure (SPOF) ist und der Schutz vor Netzwerkpartitionen und Split-Brain-Szenarien ein wichtiger Aspekt des Designs wird. Der Multi-Node-Cluster kann den Ausfall einzelner Knoten verkraften, da das Cluster-Quorum von den drei oder mehr verbleibenden Knoten gebildet werden kann. Der Zwei-Node-Cluster ist auf den Mediator-Dienst angewiesen, der von der ONTAP Deploy VM gehostet wird, um das gleiche Ergebnis zu erzielen.
@@ -57,6 +58,7 @@ Eine Verwaltungsmaßnahme ist erforderlich, wenn der ursprüngliche Mediatorstan
 
 
 
+[[two-node-ha-versus-two-node-stretched-ha-metrocluster-sds]]
 == MetroCluster-SDS (Stretch HA) mit zwei Nodes im Vergleich zu einer HA-Lösung
 
 Ein aktiv/aktiv-HA-Cluster mit zwei Nodes kann über größere Entfernungen verteilt und jeden Node in einem anderen Datacenter platziert werden. Die einzige Unterscheidung zwischen einem Cluster mit zwei Nodes und einem Stretched Cluster mit zwei Nodes (auch als MetroCluster SDS bezeichnet) stellt die Entfernung der Netzwerkkonnektivität zwischen den Nodes dar.

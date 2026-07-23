@@ -23,6 +23,8 @@ TIP: Das können Sie auch link:https://docs.netapp.com/us-en/ontap-select/task_c
 
 
 
+[[step-1-prepare-for-the-deployment]]
+[[prepare-for-deploy]]
 == Schritt 1: Bereiten Sie die Bereitstellung vor
 
 Bereiten Sie die Bereitstellung vor, um sicherzustellen, dass sie erfolgreich ist.
@@ -87,6 +89,8 @@ Wenn Sie einen Cluster mit mehreren Knoten einsetzen, sollten Sie mit dem Netzwe
 
 
 
+[[step-2-create-a-single-node-or-multi-node-cluster]]
+[[create-single-or-multi-node-cluster]]
 == Schritt 2: Erstellen eines Einzelknoten- oder Mehrknotenclusters
 
 Sie können ein ONTAP Select Cluster mit einem Node oder mehreren Nodes über die Web-Benutzeroberfläche von ONTAP Select Deploy bereitstellen.
@@ -196,6 +200,7 @@ Die Seite wird in regelmäßigen Abständen automatisch aktualisiert.
 ====
 
 
+[[step-3-complete-the-deployment]]
 == Schritt 3: Schließen Sie die Bereitstellung ab.
 
 Nach der Bereitstellung des Clusterslink:https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["Prüfen Sie, ob die ONTAP Select AutoSupport Funktion konfiguriert ist."^] und dannlink:task_cli_clusters.html["Sichern Sie die ONTAP Select Deploy-Konfigurationsdaten"] Die

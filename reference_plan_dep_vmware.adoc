@@ -21,6 +21,7 @@ CAUTION: Sie sollten die Konfiguration einer ONTAP Select Virtual Machine nur da
 
 
 
+[[hypervisor-independent]]
 == Unabhängig vom Hypervisor
 
 Sowohl ONTAP Select als auch das Dienstprogramm ONTAP Select Deploy Administration sind Hypervisor-unabhängig.
@@ -64,6 +65,7 @@ Ein ONTAP Select Node kann einem hardwarebasierten ONTAP Cluster nicht direkt hi
 
 
 
+[[vmware-hypervisor-environment]]
 == VMware Hypervisor-Umgebung
 
 Es gibt verschiedene Anforderungen und Einschränkungen der VMware Umgebung, die Sie vor der Installation des Dienstprogramms ONTAP Select Deploy in einer VMware Umgebung in Betracht ziehen sollten.
@@ -106,6 +108,7 @@ ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6
 
 
 
+[[vmware-vcenter-server-considerations]]
 == VMware vCenter Server-Überlegungen
 
 .VMware vSphere-Berechtigungen für ESA

@@ -18,6 +18,7 @@ Im Rahmen der Administration von ONTAP Select können Sie verschiedene ähnliche
 
 
 
+[[configure-the-deploy-system]]
 == Konfigurieren Sie das bereitzustellende System
 
 Sie sollten die grundlegenden Systemkonfigurationsparameter festlegen, die die Funktionsweise des Dienstprogramms „Bereitstellen“ beeinflussen.
@@ -42,6 +43,7 @@ Beispiel
 
 
 
+[[display-the-ontap-select-deploy-event-messages]]
 == Zeigen Sie die Ereignismeldungen von ONTAP Select Deploy an
 
 Das Dienstprogramm ONTAP Select Deploy enthält eine Einrichtung zur Ereignisprotokollierung, die Informationen über die Aktivität des Systems bereitstellt. Sie sollten den Inhalt des Ereignisprotokolls anzeigen, um eventuelle Probleme zu beheben oder wenn Sie dazu vom Support geleitet werden.
@@ -66,6 +68,7 @@ Sie können die Liste der Ereignismeldungen anhand verschiedener Merkmale filter
 
 
 
+[[enable-autosupport]]
 == Aktivieren Sie AutoSupport
 
 Sie können die AutoSupport-Funktion bei Bedarf aktivieren und deaktivieren.
@@ -82,6 +85,7 @@ AutoSupport ist das primäre Tool zur Fehlerbehebung, das von NetApp zur Unterst
 
 
 
+[[generate-and-download-an-autosupport-package]]
 == Erstellen und Herunterladen eines AutoSupport-Pakets
 
 Mit ONTAP Select kann ein AutoSupport-Paket generiert werden. Sie sollten ein Paket generieren, um Probleme zu debuggen oder wenn Sie dazu durch den Support geleitet werden.

@@ -18,6 +18,7 @@ Vor der Bereitstellung von ONTAP Select müssen Sie das Hypervisor-Netzwerk korr
 
 
 
+[[virtual-switch-options]]
 == Optionen für virtuelle Switches
 
 Sie müssen auf jedem der ONTAP Select Hosts einen virtuellen Switch konfigurieren, um das externe Netzwerk und das interne Netzwerk zu unterstützen (nur Cluster mit mehreren Nodes). Bei der Implementierung eines Multi-Node-Clusters sollten Sie die Netzwerkverbindung im internen Clusternetzwerk testen.
@@ -27,12 +28,14 @@ NOTE: Weitere Informationen darüber, wie Sie einen vSwitch auf einem Hypervisor
 
 
 
+[[upgrade-to-vmxnet3-esxi-only]]
 == Upgrade auf VMXNET3 (nur ESXi)
 
 Ab ONTAP Select 9.5 mit Deploy 2.10 ist VMXNET3 der Standardnetzwerktreiber, der bei neuen Cluster-Implementierungen auf VMware ESXi enthalten ist. Wenn Sie einen älteren ONTAP Select-Knoten auf Version 9.5 oder höher aktualisieren, wird der Treiber nicht automatisch aktualisiert.
 
 
 
+[[cluster-mtu]]
 == Cluster-MTU
 
 Die ONTAP Select-Nodes in einem Cluster mit mehreren Nodes werden über ein separates internes Netzwerk verbunden. Die MTU-Größe für dieses Netzwerk beträgt normalerweise 9000. Allerdings ist diese MTU-Größe für das Netzwerk, das die ONTAP Select-Nodes miteinander verbindet, zu groß. Für kleinere Frames kann die MTU-Größe, die von ONTAP Select im internen Netzwerk verwendet wird, im Bereich von 7500-9000 Byte liegen.
@@ -49,6 +52,7 @@ NOTE: Sie können den MTU-Wert für den Cluster je nach Netzwerkdesign manuell f
 
 
 
+[[two-nic-host-with-standard-vswitch-esxi-only]]
 == Zwei-NIC-Host mit Standard-vSwitch (nur ESXi)
 
 Um die ONTAP Select-Leistung in einer zwei-NIC-Konfiguration zu verbessern, sollten Sie den internen und externen Netzwerkverkehr mit zwei Portgruppen isolieren. Diese Empfehlung gilt für die folgende spezifische Konfiguration:
@@ -76,6 +80,7 @@ Weitere Informationen zu Zwei-NIC-Bereitstellungen finden Sie im link:concept_nw
 
 
 
+[[four-nic-host-with-standard-vswitch-esxi-only]]
 == Vier-NIC-Host mit Standard-vSwitch (nur ESXi)
 
 Um die ONTAP Select-Leistung in einer 4-NIC-Konfiguration zu verbessern, sollten Sie den internen und externen Netzwerkverkehr mit vier Portgruppen isolieren. Diese Empfehlung gilt für die folgende spezifische Konfiguration:
@@ -115,6 +120,7 @@ Weitere Informationen zu Bereitstellungen mit vier Netzwerkkarten finden Sie im 
 
 
 
+[[network-traffic-requirements]]
 == Anforderungen an den Netzwerkverkehr
 
 Sie müssen sicherstellen, dass Ihre Firewalls richtig konfiguriert sind, damit der Netzwerk-Traffic zwischen den verschiedenen Teilnehmern in einer ONTAP Select-Bereitstellungsumgebung fließen kann.

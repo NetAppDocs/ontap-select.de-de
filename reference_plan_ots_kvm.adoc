@@ -18,6 +18,7 @@ Sie können ONTAP Select auf dem KVM-Hypervisor mit einem externen Speicher-Arra
 
 
 
+[[basic-requirements-and-restrictions]]
 == Grundvoraussetzungen und Einschränkungen
 
 Wenn Sie ein externes Array für die ONTAP Select-Speicherpools verwenden, gelten die folgenden Konfigurationsbeschränkungen:
@@ -33,6 +34,7 @@ CAUTION: Die angegebene Speicherkapazität muss innerhalb der zulässigen Speich
 
 
 
+[[best-practices]]
 == Best Practices in sich vereint
 
 Sie sollten diese bewährten Vorgehensweisen befolgen:

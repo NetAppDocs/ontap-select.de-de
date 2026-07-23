@@ -21,12 +21,14 @@ NOTE: Außerdem benötigen Sie den vollständig qualifizierten Domänennamen ode
 
 
 
+[[administrative-privileges]]
 == Administratorrechte
 
 Im Folgenden werden die minimalen administrativen Berechtigungen aufgeführt, die zum Erstellen und Managen eines ONTAP Select Clusters erforderlich sind.
 
 
 
+[[datastore]]
 === Datenspeicher
 
 * Weisen Sie Speicherplatz zu
@@ -38,6 +40,7 @@ Im Folgenden werden die minimalen administrativen Berechtigungen aufgeführt, di
 
 
 
+[[host]]
 === Host
 
 Konfiguration::
@@ -61,6 +64,7 @@ Lokaler Betrieb::
 
 
 
+[[network]]
 === Netzwerk
 
 * Netzwerk zuweisen
@@ -68,6 +72,7 @@ Lokaler Betrieb::
 
 
 
+[[virtual-machine]]
 === Virtual Machine
 
 Konfiguration:: Alle Berechtigungen in der Kategorie.
@@ -78,6 +83,7 @@ Bereitstellung:: Alle Berechtigungen in der Kategorie.
 
 
 
+[[vapp]]
 === VApp
 
 Alle Berechtigungen in der Kategorie.

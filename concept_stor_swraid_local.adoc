@@ -42,6 +42,7 @@ Unabhängig von den Hardware-RAID-Konfigurationen bietet ONTAP Select auch Softw
 ====
 
 
+[[software-raid-configuration-for-local-attached-storage]]
 == Software-RAID-Konfiguration für lokalen angeschlossenen Speicher
 
 Bei der Verwendung von Software-RAID ist das Fehlen eines Hardware-RAID-Controllers ideal, aber wenn ein System über einen vorhandenen RAID-Controller verfügt, muss es die folgenden Anforderungen erfüllen:
@@ -59,6 +60,7 @@ NOTE: Administratoren müssen nachverfolgen, welche Laufwerke von der ONTAP Sele
 
 
 
+[[ontap-select-virtual-and-physical-disks]]
 == Virtuelle und physische ONTAP Select-Festplatten
 
 Bei Konfigurationen mit Hardware-RAID-Controllern wird die Redundanz physischer Festplatten durch den RAID-Controller gegeben. ONTAP Select wird mit einer oder mehreren VMDKs präsentiert, von denen der ONTAP Administrator Datenaggregate konfigurieren kann. Diese VMDKs werden im RAID 0-Format verteilt, da ONTAP Software RAID aufgrund der Ausfallsicherheit auf Hardware-Ebene redundant, ineffizient und ineffektiv ist. Darüber hinaus befinden sich die für Systemfestplatten verwendeten VMDKs im selben Datenspeicher wie die VMDKs, die zum Speichern von Benutzerdaten verwendet werden.
@@ -98,6 +100,7 @@ Bei Single-Node-Clustern werden alle Datenpartitionen zur Speicherung lokaler (a
 
 
 
+[[passthrough-directpath-io-devices-vs-raw-device-maps-rdms]]
 == Passthrough-Geräte (DirectPath IO) und RAW Device Maps (RDMs)
 
 ESXi- und KVM-Hypervisoren unterstützen NVMe-Festplatten nicht als Raw Device Maps (RDMs). Damit ONTAP Select die direkte Kontrolle über NVMe-Festplatten übernehmen kann, müssen diese Laufwerke in ESXi oder KVM als Passthrough-Geräte konfiguriert werden. Wenn ein NVMe-Gerät als Passthrough-Gerät konfiguriert wird, erfordert dies Unterstützung durch das Server-BIOS und möglicherweise einen Neustart des Hosts. Zusätzlich gibt es Beschränkungen für die Anzahl der Passthrough-Geräte, die pro Host zugewiesen werden können, was je nach Plattform variieren kann. ONTAP Deploy beschränkt dies jedoch auf 14 NVMe-Geräte pro ONTAP Select Node. Das bedeutet, dass die NVMe-Konfiguration eine sehr hohe IOPS-Dichte (IOPS/TB) auf Kosten der Gesamtkapazität bietet. Alternativ empfiehlt sich für eine leistungsstarke Konfiguration mit größerer Speicherkapazität eine große ONTAP Select VM, eine INTEL Optane-Karte für die Systemfestplatte und eine angemessene Anzahl von SSD-Laufwerken für die Datenspeicherung.
@@ -109,6 +112,7 @@ Es besteht ein weiterer Unterschied zwischen Passthrough-Geräten und RDMs. RDMs
 
 
 
+[[physical-and-virtual-disk-provisioning]]
 == Bereitstellung physischer und virtueller Festplatten
 
 Um eine effizientere Benutzererfahrung zu ermöglichen, stellt ONTAP Deployment automatisch die (virtuellen) Systemfestplatten vom angegebenen Datenspeicher (physische Systemfestplatte) bereit und wird an die ONTAP Select VM angeschlossen. Dieser Vorgang läuft automatisch während der Ersteinrichtung ab, sodass die ONTAP Select VM gebootet werden kann. Die RDMs werden partitioniert und das Root-Aggregat wird automatisch erstellt. Wenn der ONTAP Select Node Teil eines HA-Paars ist, werden die Datenpartitionen automatisch einem lokalen Storage-Pool und einem gespiegelten Storage-Pool zugewiesen. Diese Zuweisung erfolgt automatisch sowohl bei der Cluster-Erstellung als auch beim Storage-Hinzufügen.
@@ -124,6 +128,7 @@ Beim Erweitern der Kapazität einer ONTAP Select VM mithilfe von Software-RAID m
 
 
 
+[[match-an-ontap-select-disk-to-the-corresponding-esxi-or-kvm-disk]]
 == Ordnen Sie eine ONTAP Select Festplatte der entsprechenden ESXi- oder KVM-Festplatte zu
 
 ONTAP Select-Festplatten werden in der Regel als NET x.y. bezeichnet Sie können die Festplatten-UUID mit dem folgenden ONTAP-Befehl abrufen:
@@ -165,6 +170,7 @@ cat /sys/block/<block_device_id>/device/wwid
 ====
 
 
+[[multiple-drive-failures-when-using-software-raid]]
 == Beim Einsatz von Software-RAID treten mehrere Laufwerksausfälle auf
 
 Es ist möglich, dass ein System eine Situation vorfindet, in der sich mehrere Laufwerke gleichzeitig in einem ausgefallenen Zustand befinden. Das Verhalten des Systems hängt vom aggregierten RAID-Schutz und der Anzahl der ausgefallenen Laufwerke ab.
@@ -244,6 +250,7 @@ Die Ausgabe des letzten Befehls sollte leer sein.
 ====
 
 
+[[virtualized-nvram]]
 == Virtualisierter NVRAM
 
 NetApp FAS Systeme verfügen üblicherweise über eine physische NVRAM PCI-Karte. Bei dieser Karte handelt es sich um eine hochperformante Karte mit nichtflüchtigem Flash-Speicher, die die Schreib-Performance erheblich steigert. Dies erfolgt durch die Gewährung von ONTAP, dass eingehende Schreibvorgänge sofort bestätigt werden können. Zudem kann die Verschiebung geänderter Datenblöcke in einem Prozess, der als Auslagerung bezeichnet wird, auf langsamere Storage-Medien geplant werden.

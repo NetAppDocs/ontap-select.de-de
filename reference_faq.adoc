@@ -23,6 +23,7 @@ Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufge
 ====
 
 
+[[general]]
 == Allgemein
 
 Es gibt einige allgemeine Fragen und Antworten.
@@ -55,6 +56,7 @@ Kontakt link:mailto:ng-ses-ontap-select@netapp.com["ng-ses-ontap-select@netapp.c
 
 
 
+[[licenses-installation-upgrades-and-reverts]]
 == Lizenzen, Installation, Upgrades und Rückkehr
 
 Es gibt mehrere Fragen und Antworten zu Lizenzen, Installation, Upgrades und Rücksetzen.
@@ -125,6 +127,7 @@ Wenn ein Kapazitäts-Pool-Abonnement ausfällt, warnt das System Sie zuerst, abe
 
 
 
+[[storage]]
 == Storage
 
 Es gibt mehrere Fragen und Antworten im Zusammenhang mit Storage.
@@ -216,6 +219,7 @@ Auf jedem Host, der an der Live-Migration teilnimmt, müssen Sie Open-Source-Kom
 
 
 
+[[vcenter]]
 == VCenter
 
 Es gibt mehrere Fragen und Antworten, die sich mit VMware vCenter befassen.
@@ -239,6 +243,7 @@ Die Liste der erforderlichen vCenter-Rechte finden Sie hier: link:reference_plan
 
 
 
+[[ha-and-clusters]]
 == HA und Cluster
 
 Es gibt mehrere Fragen und Antworten, die sich mit HA-Paaren und Clustern befassen.
@@ -300,6 +305,7 @@ Eine Trennung des HA Traffic auf einer separaten physischen Infrastruktur kann d
 
 
 
+[[mediator-service]]
 == Mediatordienst
 
 Es gibt mehrere Fragen und Antworten, die sich mit dem Mediatordienst befassen.

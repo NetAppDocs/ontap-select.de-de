@@ -18,12 +18,14 @@ Es gibt einige Dinge, die Sie beachten sollten, bevor Sie die Bereitstellung Onl
 
 
 
+[[deployment-plan]]
 == Implementierungsplan
 
 Wenn Sie im Rahmen der Durchführung spezifischer Bereitstellungs- oder Verwaltungsaufgaben API-Aufrufe ausgeben möchten, sollten Sie die Erstellung eines Bereitstellungsplans in Betracht ziehen. Diese Pläne können formell oder informell sein und im Allgemeinen Ihre Ziele und die zu verwendenden API-Aufrufe enthalten. Weitere Informationen finden Sie unter Workflow-Prozesse mithilfe der REST-API implementieren.
 
 
 
+[[json-examples-and-parameter-definitions]]
 == JSON-Beispiele und Parameterdefinitionen
 
 Jeder API-Aufruf wird auf der Dokumentationsseite in einem konsistenten Format beschrieben. Der Inhalt umfasst Implementierungsnotizen, Abfrageparameter und HTTP-Statuscodes. Außerdem können Sie wie folgt Details über den JSON anzeigen, der mit den API-Anfragen und Antworten verwendet wird:
@@ -34,6 +36,7 @@ Jeder API-Aufruf wird auf der Dokumentationsseite in einem konsistenten Format b
 
 
 
+[[caution-when-issuing-api-calls]]
 == Vorsicht beim Ausgeben von API-Aufrufen
 
 Alle API-Vorgänge, die Sie mithilfe der Dokumentationsseite „Bereitstellen“ ausführen, sind Live-Vorgänge. Sie sollten darauf achten, dass Sie Konfigurationen oder andere Daten nicht versehentlich erstellen, aktualisieren oder löschen.

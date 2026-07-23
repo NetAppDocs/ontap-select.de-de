@@ -18,42 +18,49 @@ ONTAP Select ist für verschiedene Applikationstypen geeignet, die auf der inhä
 
 
 
+[[deployment]]
 == Einsatz
 
 Im allgemeinen können Sie ONTAP Select auf zwei Arten in Bezug auf die Workloads auf den Hypervisor-Hostservern implementieren.
 
 
 
+[[dedicated-deployment]]
 === Dedizierte Implementierung
 
 Bei dem dedizierten Implementierungsmodell wird eine einzige Instanz von ONTAP Select auf dem Host-Server ausgeführt. Weitere bedeutende Verarbeitungsvorgänge werden auf demselben Hypervisor-Host ausgeführt.
 
 
 
+[[collocated-deployment]]
 === Colocation-Implementierung
 
 Bei dem gemeinsam genutzten Implementierungsmodell verwendet ONTAP Select den Host auch für andere Workloads. Insbesondere gibt es zusätzliche Virtual Machines, auf denen jeweils typische Computing-Applikationen ausgeführt werden. Diese Computing-Workloads sind lokal für das ONTAP Select Cluster. Dieses Modell unterstützt spezielle Applikations- und Implementierungsanforderungen. Wie beim dedizierten Implementierungsmodell muss jede ONTAP Select Virtual Machine auf einem separaten und dedizierten Hypervisor-Host ausgeführt werden.
 
 
 
+[[storage]]
 == Storage
 
 Je nach Ihren Geschäftsanforderungen kann ONTAP Select als primärer oder sekundärer Storage genutzt werden.
 
 
 
+[[primary-storage]]
 === Primärspeicher
 
 In einigen Fällen können Sie ONTAP Select als primäre Storage-Plattform implementieren. Diese Implementierungen variieren und hängen von den Workload-Eigenschaften der Applikationen sowie Ihren Geschäftszielen ab.
 
 
 
+[[disaster-recovery-and-secondary-storage]]
 === Disaster Recovery und Sekundärspeicher
 
 Mit ONTAP Select können Sie zusätzlichen Storage implementieren, der Ihre primären Storage-Funktionen erweitert. Der zusätzliche Storage kann zur Unterstützung der Disaster-Recovery-Maßnahmen und der Backup-Pläne Ihres Unternehmens eingesetzt werden.
 
 
 
+[[development-and-testing]]
 == Entwicklung und Tests
 
 Bei der Implementierung verschiedener Applikationen in Ihrem Unternehmen können Sie ONTAP Select als integralen Bestandteil des gesamten Prozesses für Applikationsentwicklung und -Tests einsetzen. Beispielsweise benötigen Sie unter Umständen temporären Speicher, um Test-ein- oder -Ausgabedaten zu halten. Die Länge dieser Implementierungsarten kann je nach den Anwendungseigenschaften und -Anforderungen variieren.

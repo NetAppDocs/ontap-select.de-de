@@ -18,6 +18,7 @@ In Bezug auf die VMware Umgebung müssen Sie verschiedene Hardware-Anforderungen
 
 
 
+[[hypervisor-requirements]]
 == Hypervisor-Anforderungen
 
 Der Hypervisor, auf dem ONTAP Select ausgeführt wird, muss unter verschiedenen Anforderungen verbunden sein.
@@ -27,12 +28,14 @@ NOTE: Sie sollten dielink:reference_release_notes.html["Versionshinweise zu ONTA
 
 
 
+[[vmware-licensing]]
 === VMware Lizenzierung
 
 Um ein ONTAP Select Cluster zu implementieren, muss Ihr Unternehmen über eine gültige VMware vSphere Lizenz für die Hypervisor-Hosts verfügen, auf denen ONTAP Select ausgeführt wird. Sie sollten die für Ihre Implementierung geeigneten Lizenzen verwenden.
 
 
 
+[[software-compatibility]]
 === Softwarekompatibilität
 
 Sie können ONTAP Select auf KVM- und ESXi-Hypervisoren bereitstellen.
@@ -69,12 +72,14 @@ NOTE: ESXi 7.0 GA hat das Ende des Verfügbarkeitsstatus erreicht.  Wenn Sie ONT
 ====
 
 
+[[vmware-vcenter-and-standalone-esxi-hosts]]
 === VMware vCenter und Standalone-ESXi-Hosts
 
 Wenn ein ESXi-Hypervisor-Host von einem vCenter-Server gemanagt wird, müssen Sie den Host mithilfe der vCenter-Anmeldedaten im Deploy-Administration-Utility registrieren. Sie können den Host nicht als eigenständigen Host mit den ESXi-Anmeldeinformationen registrieren.
 
 
 
+[[core-hardware-requirements]]
 == Wichtige Hardwareanforderungen
 
 Der physische Hypervisor-Host, auf dem ONTAP Select implementiert wird, muss mehrere Hardwareanforderungen erfüllen. Für den Hypervisor-Host kann eine beliebige Plattform gewählt werden, sofern sie die Mindestanforderungen an die Hardware erfüllt. Folgende Anbieter stellen unterstützte Hardware-Plattformen bereit: Cisco, Dell, HP, Fujitsu, Lenovo, Und Supermicro:
@@ -85,6 +90,7 @@ Weitere Informationen finden Sie in der  https://mysupport.netapp.com/matrix["In
 
 
 
+[[basic-hardware-requirements]]
 === Grundlegende Hardwareanforderungen
 
 Es gibt verschiedene allgemeine Hardwareanforderungen, die für alle Plattformen gelten, unabhängig vom Instanztyp oder Lizenzangebot des Nodes.
@@ -112,6 +118,7 @@ Es werden verschiedene unterstützte Ethernet-Konfigurationen basierend auf der 
 |===
 
 
+[[additional-hardware-requirements-based-on-the-instance-type]]
 === Weitere Hardwareanforderungen basierend auf dem Instanztyp
 
 Auf der Grundlage des Node-Instanztyps bestehen weitere Hardwareanforderungen.

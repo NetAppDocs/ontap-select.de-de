@@ -18,6 +18,7 @@ Wenn Sie ONTAP Select auf VMware ESXi ausführen, können Sie die ESXi-Software 
 
 
 
+[[prepare-to-upgrade-vmware-esxi]]
 == Bereiten Sie das Upgrade von VMware ESXi vor.
 
 Bereiten Sie das für Ihre Umgebung geeignete Upgrade-Verfahren vor und wählen Sie es aus, bevor Sie die ESXi-Software auf den Hypervisoren aktualisieren, die einen ONTAP Select -Cluster hosten.
@@ -64,6 +65,7 @@ Wenn Sie ein Upgrade-Verfahren auswählen, bei dem das Deploy-Utility verwendet 
 
 
 
+[[upgrade-a-single-node-cluster-using-deploy]]
 == Upgrade eines Single-Node-Clusters mit Implementierung
 
 Sie können das Deploy Administration Utility im Rahmen des Verfahrens zum Upgrade des VMware ESXi-Hypervisors verwenden, der ein ONTAP Select Single-Node-Cluster hostet.
@@ -101,6 +103,7 @@ Sie sollten einen Cluster-Aktualisierungsvorgang mit dem Deploy Administration U
 
 
 
+[[upgrade-a-multi-node-cluster-using-deploy]]
 == Upgrade eines Multi-Node-Clusters mit Implementierung
 
 Sie können das Deploy Administration Utility im Rahmen des Verfahrens zum Upgrade der VMware ESXi Hypervisoren verwenden, die ein ONTAP Select Multi-Node-Cluster hosten.
@@ -155,6 +158,7 @@ Sie müssen für jeden im ONTAP Select Cluster verwendeten Host das Upgrade durc
 
 
 
+[[upgrade-a-single-node-cluster-without-deploy]]
 == Upgrade für ein Single-Node-Cluster ohne Implementierung
 
 Sie können einen VMware ESXi Hypervisor, der ein ONTAP Select Single-Node Cluster hostet, ohne mithilfe des Deploy-Administration Utility aktualisieren.
@@ -191,6 +195,7 @@ Sie sollten einen Cluster-Aktualisierungsvorgang mit dem Deploy Administration U
 
 
 
+[[upgrade-a-multi-node-cluster-without-deploy]]
 == Upgrade eines Multi-Node-Clusters ohne Implementierung
 
 Die VMware ESXi Hypervisoren, die ein ONTAP Select Multi-Node Cluster hosten, können ohne mithilfe des Deploy Administration Utility aktualisiert werden.

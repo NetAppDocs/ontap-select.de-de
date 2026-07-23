@@ -18,6 +18,7 @@ summary: Über die mit dem ONTAP Select Deploy Administration Utility bereitgest
 
 
 
+[[step-1-prepare-for-the-deployment]]
 == Schritt 1: Bereiten Sie die Bereitstellung vor
 
 Bevor Sie ein ONTAP Select-Cluster auf einem Hypervisor erstellen, sollten Sie die erforderlichen Vorbereitungen kennen.
@@ -50,6 +51,7 @@ Bevor Sie ein ONTAP Select Cluster in einer Produktionsumgebung implementieren, 
 
 
 
+[[step-2-upload-and-register-a-license-file]]
 == Schritt 2: Hochladen und Registrieren einer Lizenzdatei
 
 Nachdem Sie eine Lizenzdatei mit Speicherkapazität erworben haben, müssen Sie die Datei mit der Lizenz auf die virtuelle Maschine bereitstellen und registrieren.
@@ -91,6 +93,7 @@ license show
 
 
 
+[[step-3-add-hypervisor-hosts]]
 == Schritt 3: Hypervisor-Hosts hinzufügen
 
 Sie müssen jeden Hypervisor-Host registrieren, auf dem ein ONTAP Select-Node ausgeführt wird.
@@ -204,6 +207,7 @@ host show -name 10.234.81.14 -detailed
 ====
 
 
+[[step-4-create-and-configure-an-ontap-select-cluster]]
 == Schritt 4: Erstellen und Konfigurieren eines ONTAP Select Clusters
 
 Sie müssen den ONTAP Select-Cluster erstellen und dann konfigurieren. Nach der Konfiguration des Clusters können Sie die einzelnen Nodes konfigurieren.
@@ -253,6 +257,7 @@ cluster show -name <cluster_name> -detailed
 
 
 
+[[step-5-configure-an-ontap-select-node]]
 == Schritt 5: Konfigurieren eines ONTAP Select Knotens
 
 Sie müssen jeden der Nodes im ONTAP Select-Cluster konfigurieren.
@@ -353,6 +358,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
+[[step-6-attach-storage-to-the-ontap-select-nodes]]
 == Schritt 6: Speicher an die ONTAP Select Knoten anhängen
 
 Konfigurieren Sie den von jedem Knoten im ONTAP Select Cluster verwendeten Speicher. Jedem Node muss immer mindestens ein Storage-Pool zugewiesen werden. Bei der Verwendung von Software-RAID muss jedem Knoten auch mindestens ein Laufwerk zugewiesen werden.
@@ -446,6 +452,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
+[[step-7-deploy-an-ontap-select-cluster]]
 == Schritt 7: Bereitstellen eines ONTAP Select Clusters
 
 Nachdem das Cluster und die Nodes konfiguriert wurden, können Sie das Cluster implementieren.

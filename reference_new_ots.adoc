@@ -19,6 +19,7 @@ Erfahren Sie mehr über die neuen Funktionen und Verbesserungen der unterstützt
 
 
 
+[[ontap-select-9-19-1]]
 == ONTAP Select 9.19.1
 
 Unterstützung für externes Schlüsselmanagement (KMIP):: Ab ONTAP Select 9.19.1 unterstützt ONTAP Select die externe Schlüsselverwaltung mithilfe des Key Management Interoperability Protocol (KMIP). Sie können die externe Schlüsselverwaltung nach der Bereitstellung eines ONTAP Select 9.19.1-Clusters oder nach dem Upgrade eines bestehenden Clusters auf ONTAP Select 9.19.1 aktivieren. Weitere Informationen finden sich unter link:reference_lic_ontap_features.html#licensed-ontap-features["ONTAP Funktionen sind standardmäßig lizenziert"].
@@ -32,6 +33,7 @@ Unterstützung für Advanced Micro Devices (AMD) Prozessoren:: Ab ONTAP Select 9
 
 
 
+[[ontap-select-9-18-1]]
 == ONTAP Select 9.18.1
 
 Aktualisierungen der Downloadoptionen für das ONTAP Select-Produkt:: Die Downloadoptionen für das Produkt ONTAP Select auf der NetApp Support Site ändern sich mit der Veröffentlichung von ONTAP Select 9.18.1 zu *ONTAP Select Deploy* und *ONTAP Select Image*. Diese beiden neuen Produkt-Downloadoptionen ersetzen die bisherigen vier Optionen, wie in der folgenden Tabelle dargestellt:
@@ -83,6 +85,7 @@ Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.18.1 wird der KV
 
 
 
+[[ontap-select-9-17-1]]
 == ONTAP Select 9.17.1
 
 Software-RAID-Unterstützung für lokal angeschlossene NVMe-Festplatten auf KVM-Hosts:: ONTAP Select 9.17.1 führt die Software-RAID-Unterstützung für ONTAP Select lokal angeschlossene NVMe-Festplatten auf einem KVM-Hypervisor-Host ein.
@@ -168,6 +171,7 @@ Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.17.1 beinhaltet Unte
 
 
 
+[[ontap-select-9-16-1]]
 == ONTAP Select 9.16.1
 
 Unterstützung für NetApp-Lizenzdateien aktualisiert:: Ab ONTAP Select 9.16.1 ist die Unterstützung für die NetApp License File (NLF) aktualisiert. Das neue NLF-Format umfasst Lizenzen für die ARP-, ONTAP S3- und S3 SnapMirror-Funktionen. link:reference_lic_ontap_features.html#licensed-ontap-features["Weitere Informationen ."].
@@ -183,6 +187,7 @@ Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.16.1 wird der KV
 
 
 
+[[ontap-select-9-15-1]]
 == ONTAP Select 9.15.1
 
 Aktualisierte KVM-Hypervisor-Unterstützung:: Ab ONTAP Select 9.15.1 wird der Kernel-basierte Virtual Machine (KVM)-Hypervisor unter RHEL 9.4 und Rocky Linux 9.4 unterstützt.
@@ -207,6 +212,7 @@ NOTE: Die Unterstützung für die Erweiterung und Verkleinerung von Clustern ist
 
 
 
+[[ontap-select-9-14-1]]
 == ONTAP Select 9.14.1
 
 Unterstützung für KVM-Hypervisor:: Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufgenommen. Zuvor wurde in ONTAP Select 9.10.1 die Unterstützung für die Implementierung eines neuen Clusters auf einem KVM-Hypervisor entfernt, und in ONTAP Select 9.11.1 wurde die Unterstützung für das Management vorhandener KVM-Cluster und -Hosts entfernt, mit Ausnahme des Offline- bzw. Löschens.
@@ -217,6 +223,7 @@ Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.14.1 umfasst Unterst
 
 
 
+[[ontap-select-9-13-1]]
 == ONTAP Select 9.13.1
 
 Unterstützung für NVMe over TCP:: Wenn Sie ein Upgrade auf ONTAP Select 9.13.1 durchführen, benötigen Sie die neue Lizenz zur Unterstützung von NVMe over TCP. Diese Lizenz ist automatisch enthalten, wenn Sie ONTAP Select zum ersten Mal ab Version 9.13.1 bereitstellen.
@@ -226,6 +233,7 @@ Aktualisierte Unterstützung für ONTAP Select Deploy:: Ab April 2024 ist ONTAP 
 
 
 
+[[ontap-select-9-12-1]]
 == ONTAP Select 9.12.1
 
 ONTAP Select 9.12.1 profitiert von den meisten neuen Entwicklungen in der aktuellen Version des zentralen ONTAP Produkts. Es enthält keine neuen Funktionen oder Verbesserungen speziell für ONTAP Select.
@@ -234,6 +242,7 @@ Seit April 2024 ist ONTAP Select Deploy 9.12.1 nicht mehr auf der NetApp Support
 
 
 
+[[ontap-select-9-11-1]]
 == ONTAP Select 9.11.1
 
 Verbesserte Unterstützung von VMware ESXi:: ONTAP Select 9.11.1 bietet Unterstützung für VMware ESXi 7.0 U3C.
@@ -262,6 +271,7 @@ NetApp empfiehlt dringend, dass Kunden eine vollständige Datenmigration von ONT
 
 
 
+[[ontap-select-9-10-1]]
 == ONTAP Select 9.10.1
 
 Unterstützung für VMware NSX-T:: ONTAP Select 9.10.1 ist für VMware NSX-T Version 3.1 qualifiziert. Bei Verwendung von NSX-T mit einem ONTAP Select Single-Node-Cluster, das mit einer OVA-Datei und dem ONTAP Select Deploy-Administrationsprogramm bereitgestellt wird, gibt es keine funktionalen Probleme oder Mängel. Wenn Sie jedoch NSX-T mit einem ONTAP Select Multi-Node-Cluster verwenden, sollten Sie die folgenden Anforderungen und Einschränkungen beachten:
@@ -287,6 +297,7 @@ KVM-Hypervisor wird nicht mehr unterstützt:: Ab ONTAP Select 9.10.1 können Sie
 
 
 
+[[ontap-select-9-9-1]]
 == ONTAP Select 9.9.1
 
 Unterstützung für Prozessorfamilien:: Ab ONTAP Select 9.9 werden nur CPU-Modelle von Intel Xeon Sandy Bridge oder höher für ONTAP Select unterstützt.
@@ -302,6 +313,7 @@ Aktualisierte Unterstützung von VMware ESXi:: Die Unterstützung für VMware ES
 
 
 
+[[ontap-select-9-8]]
 == ONTAP Select 9.8
 
 Hochgeschwindigkeits-Schnittstelle:: Die High-Speed-Schnittstelle bietet eine Option für 25 GbE und 40 Gbit (40 GbE), um die Netzwerkkonnektivität zu verbessern. Um die beste Performance beim Einsatz dieser höheren Geschwindigkeiten zu erreichen, sollten Sie die Best Practices für die Zuordnung von Ports befolgen, wie in der ONTAP Select-Dokumentation beschrieben.

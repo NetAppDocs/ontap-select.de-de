@@ -18,6 +18,7 @@ ONTAP Select unterstützt sowohl Einzel-Node- als auch Multi-Node-Netzwerkkonfig
 
 
 
+[[single-node-network-configuration]]
 == Konfiguration eines Single Node-Netzwerks
 
 ONTAP Select-Konfigurationen mit einem Node erfordern kein internes ONTAP Netzwerk, da kein Cluster-, HA- oder Mirror-Datenverkehr vorhanden ist.
@@ -41,6 +42,7 @@ NOTE: Obwohl zwei Adapter für ein Single Node Cluster ausreichend sind, ist NIC
 
 
 
+[[lif-assignment]]
 === LIF-Zuweisung
 
 Wie im Abschnitt zur LIF-Zuweisung für mehrere Knoten in diesem Dokument erläutert, verwendet ONTAP IPspaces, um den Cluster-Netzwerkverkehr von Daten- und Verwaltungsdatenverkehr zu trennen. Die Einzelknotenvariante dieser Plattform enthält kein Cluster-Netzwerk. Daher sind im Cluster-IPspace keine Ports vorhanden.
@@ -50,6 +52,7 @@ NOTE: Cluster- und Knotenverwaltungs-LIFs werden während der Einrichtung des ON
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0c]]
 === Management und logische Datenschnittstellen (e0a, e0b und e0c)
 
 Die ONTAP-Ports e0a, e0b und e0c werden als Ports für LIFs delegiert, die die folgenden Arten von Datenverkehr tragen:
@@ -61,6 +64,7 @@ Die ONTAP-Ports e0a, e0b und e0c werden als Ports für LIFs delegiert, die die f
 
 
 
+[[multi-node-network-configuration]]
 == Multi-Node-Netzwerkkonfiguration
 
 Die Multi-Node ONTAP Select Netzwerk-Konfiguration besteht aus zwei Netzwerken.
@@ -102,6 +106,7 @@ NOTE: Sowohl die externen als auch die internen Netzwerkportgruppen enthalten al
 
 
 
+[[lif-assignment]]
 === LIF-Zuweisung
 
 Mit der Einführung von IPspaces sind ONTAP-Port-Rollen veraltet. Wie bei FAS Arrays enthalten ONTAP Select Cluster sowohl einen standardmäßigen IPspace als auch einen IP-Speicherplatz für Cluster. Indem die Netzwerk-Ports e0a, e0b und e0g in den Standard-IPspace und die Ports e0c und e0d in den Cluster IPspace platziert werden, wurden diese Ports im Wesentlichen von dem Hosting von LIFs abgemauert, die nicht gehören. Die verbleibenden Ports im ONTAP Select-Cluster werden durch die automatische Zuweisung von Schnittstellen verbraucht, die interne Services bereitstellen. Sie sind nicht ausgesetzt durch die ONTAP Shell, wie dies bei den RSM und HA Interconnect Schnittstellen der Fall ist.
@@ -113,6 +118,7 @@ Die Netzwerk-Ports und LIFs sind in den folgenden Abschnitten detailliert erläu
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0g]]
 === Management und logische Datenschnittstellen (e0a, e0b und e0g)
 
 Die ONTAP-Ports e0a, e0b und e0g werden als Ports für LIFs delegiert, die die folgenden Arten von Datenverkehr tragen:
@@ -127,6 +133,7 @@ NOTE: Cluster- und Knotenverwaltungs-LIFs werden während der Einrichtung des ON
 
 
 
+[[cluster-network-lifs-e0c-e0d]]
 === Cluster-Netzwerk-LIFs (e0c, e0d)
 
 ONTAP-Ports e0c und e0d werden als Home-Ports für Cluster-Schnittstellen delegiert. Innerhalb jedes ONTAP Select Cluster Nodes werden während des ONTAP Setups automatisch zwei Cluster-Schnittstellen generiert, wobei die lokalen Link-IP-Adressen (169.254.x.x) verwendet werden.
@@ -143,6 +150,7 @@ NOTE: Um einen maximalen Durchsatz für den Cluster-Netzwerkverkehr zu gewährle
 
 
 
+[[raid-syncmirror-traffic-e0e]]
 === RAID-SyncMirror-Verkehr (e0e)
 
 Die synchrone Replizierung von Blöcken über HA-Partner-Nodes erfolgt mithilfe einer internen Netzwerkschnittstelle, die sich am Netzwerkport e0e befindet. Diese Funktion läuft automatisch ab und verwendet von ONTAP während der Cluster-Einrichtung konfigurierte Netzwerkschnittstellen. Für den Administrator ist keine Konfiguration erforderlich.
@@ -152,6 +160,7 @@ NOTE: Port e0e ist von ONTAP für internen Replikationsverkehr reserviert. Daher
 
 
 
+[[ha-interconnect-e0f]]
 === HA Interconnect (e0f)
 
 NetApp FAS Arrays verwenden spezielle Hardware, um Informationen zwischen HA-Paaren in einem ONTAP Cluster weiterzuleiten. In softwaredefinierten Umgebungen ist diese Ausstattung jedoch in der Regel nicht verfügbar (z. B. InfiniBand- oder iWARP-Geräte), sodass eine alternative Lösung erforderlich ist. Es wurden zwar mehrere Möglichkeiten berücksichtigt, aber für den Interconnect-Transport mussten ONTAP-Anforderungen diese Funktionalität in der Software emuliert werden. Infolgedessen wurde der HA Interconnect (traditionell durch Hardware bereitgestellt) in einem ONTAP Select Cluster mithilfe von Ethernet als Transportmechanismus konzipiert.

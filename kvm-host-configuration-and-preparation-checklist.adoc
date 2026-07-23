@@ -21,6 +21,8 @@ NOTE: Das Verwaltungsprogramm ONTAP Select Deploy führt die erforderliche Netzw
 
 
 
+[[step-1-prepare-the-kvm-hypervisor-host]]
+[[prepare-linux-server]]
 == Schritt 1: Vorbereiten des KVM-Hypervisor-Hosts
 
 Sie müssen jeden der Linux KVM-Server vorbereiten, auf dem ein ONTAP Select Knoten bereitgestellt wird. Sie müssen auch den Server vorbereiten, auf dem das Dienstprogramm ONTAP Select Deploy Administration bereitgestellt wird.
@@ -72,6 +74,7 @@ Ein ONTAP Select Storage Pool ist ein logischer Daten-Container, der den zugrund
 
 
 
+[[step-2-create-a-storage-pool]]
 == Schritt 2: Erstellen eines Speicherpools
 
 Erstellen Sie mindestens einen Speicherpool an jedem ONTAP Select Knoten. Wenn Sie Software-RAID anstelle eines lokalen Hardware-RAID verwenden, sind Speicherfestplatten für das Root- und Datenaggregate mit dem Node verbunden. In diesem Fall müssen Sie weiterhin einen Speicherpool für die Systemdaten erstellen.
@@ -137,6 +140,7 @@ virsh pool-list
 
 
 
+[[step-3-optionally-delete-a-storage-pool]]
 == Schritt 3: Optionales Löschen eines Speicherpools
 
 Sie können einen Speicherpool löschen, wenn er nicht mehr benötigt wird.
@@ -224,6 +228,7 @@ pvremove <physical_volume_name>
 
 
 
+[[step-4-review-the-ontap-select-cluster-configuration]]
 == Schritt 4: Überprüfen der ONTAP Select Clusterkonfiguration
 
 ONTAP Select kann als Cluster mit mehreren Nodes oder als Single-Node-Cluster implementiert werden. In vielen Fällen ist ein Cluster mit mehreren Knoten aufgrund der zusätzlichen Speicherkapazität und Hochverfügbarkeit (HA) vorzuziehen.
@@ -256,6 +261,7 @@ image:CHK_03.jpg["Single Node innerhalb eines Clusters mit vier Nodes"]
 ====
 
 
+[[step-5-configure-open-vswitch]]
 == Schritt 5: Open vSwitch konfigurieren
 
 Verwenden Sie Open vSwitch, um auf jedem KVM-Hostknoten einen softwaredefinierten Switch zu konfigurieren.

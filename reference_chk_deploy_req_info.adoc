@@ -18,6 +18,7 @@ summary: Überprüfen Sie vor der Installation des Deploy Administration Utility
 
 
 
+[[required-configuration-information]]
 == Erforderliche Konfigurationsinformationen
 
 Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTAP Select Deploy Administration Utility die erforderlichen Konfigurationsinformationen ermitteln.
@@ -40,6 +41,7 @@ Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTA
 |===
 
 
+[[optional-network-configuration-information]]
 == Optionale Informationen zu Netzwerkkonfiguration
 
 Die virtuelle Maschine bereitstellen wird standardmäßig mit DHCP konfiguriert. Bei Bedarf können Sie jedoch die Netzwerkschnittstelle für die virtuelle Maschine manuell konfigurieren.

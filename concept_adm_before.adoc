@@ -29,6 +29,7 @@ Für die Bereitstellung gibt es verschiedene Verfahren (z. B. Ändern des Admini
 
 
 
+[[administer-ontap-select]]
 == Verwaltung von ONTAP Select
 
 Zur Unterstützung der ONTAP Select stehen zahlreiche verschiedene administrative Verfahren zur Verfügung. Darüber hinaus gibt es Verfahren speziell für das Deploy Administration Utility. Die wichtigsten dieser Verfahren sind nachfolgend aufgeführt. Im Allgemeinen verwenden alle die Webbenutzeroberfläche Bereitstellen.
@@ -38,6 +39,7 @@ NOTE: Das können Sie auch link:https://docs.netapp.com/us-en/ontap-select/task_
 
 
 
+[[perform-additional-ontap-configuration]]
 == Zusätzliche ONTAP-Konfiguration durchführen
 
 Nachdem ein ONTAP Select Cluster implementiert wurde, können Sie den Cluster wie ein hardwarebasiertes ONTAP System konfigurieren und managen. Sie können beispielsweise ONTAP System Manager oder die ONTAP CLI verwenden, um den ONTAP Select Cluster zu konfigurieren.

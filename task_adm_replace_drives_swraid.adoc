@@ -21,6 +21,7 @@ NOTE: Sowohl das Entfernen des ausgefallenen Laufwerks als auch das Hinzufügen 
 
 
 
+[[identify-the-failed-drive]]
 == Identifizieren Sie das ausgefallene Laufwerk
 
 Wenn ein Laufwerk ausfällt, müssen Sie die ONTAP-CLI verwenden, um die ausgefallene Festplatte zu identifizieren.
@@ -87,6 +88,7 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 ====
 
 
+[[remove-the-failed-drive]]
 == Entfernen Sie das ausgefallene Laufwerk
 
 Entfernen Sie die Festplatte, nachdem Sie das ausgefallene Laufwerk identifiziert haben.
@@ -212,6 +214,7 @@ image:ST_26.jpg["Warnung"]
 ====
 
 
+[[add-the-new-spare-drive]]
 == Fügen Sie das neue Ersatzlaufwerk hinzu
 
 Nachdem Sie das ausgefallene Laufwerk entfernt haben, fügen Sie die Ersatzfestplatte hinzu.

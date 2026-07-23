@@ -18,6 +18,7 @@ ONTAP Select Deploy ist ein Administration Utility, bei dem ONTAP Select Cluster
 
 
 
+[[core-functionality]]
 == Kernfunktionen
 
 Das Deploy Administration Utility führt die folgenden Kernfunktionen aus:
@@ -33,18 +34,21 @@ Das Deploy Administration Utility führt die folgenden Kernfunktionen aus:
 
 
 
+[[ways-you-can-access-the-deploy-utility]]
 == Wie Sie auf das Deploy Utility zugreifen können
 
 Beim Zugriff auf das Dienstprogramm Administration bereitstellen stehen Ihnen verschiedene Optionen zur Verfügung. Alle externen Schnittstellen sind funktional gleichwertig. Wählen Sie die Zugriffsoption aus, die Ihren spezifischen Implementierungszielen und -Anforderungen am besten entspricht. In allen Fällen müssen Sie sich mit dem Administratorkonto mit einem gültigen Passwort anmelden.
 
 
 
+[[web-graphical-user-interface]]
 === Grafische Weboberfläche
 
 Sie können über einen modernen Webbrowser auf das Bereitstellungsprogramm zugreifen. Die Web-UI bietet eine intuitive und benutzerfreundliche Oberfläche und ist in den meisten Fällen Ihre primäre Schnittstelle bei der Verwendung des Dienstprogramms.
 
 
 
+[[command-line-interface]]
 === Befehlszeilenschnittstelle
 
 Über die Management-Shell steht eine textbasierte Befehlszeilenschnittstelle zur Verfügung. Sie haben folgende Möglichkeiten, auf die CLI-Management-Shell zuzugreifen:
@@ -57,6 +61,7 @@ In der Regel verwenden Sie die Virtual Machine-Konsole als Teil der Installation
 
 
 
+[[rest-web-services-api]]
 === REST-Web-Services-API
 
 Die REST-Webservices-API, die externen Clients zugänglich ist, bietet eine weitere Option, wenn Sie eine Verbindung zum Deploy-Dienstprogramm herstellen. Sie können über jede gängige Programmiersprache oder ein Tool, das REST-Webservices unterstützt, auf die API zugreifen. Beliebte Optionen sind:
@@ -70,6 +75,7 @@ Die Verwendung einer Programmiersprache oder Skriptsprache bietet die Möglichke
 
 
 
+[[ontap-select-online-documentation-web-page]]
 === Webseite zur ONTAP Select Online-Dokumentation
 
 Die Online-Dokumentations-Webseite im Deploy-Dienstprogramm ist eine alternative Möglichkeit, auf DIE REST-Webservices-API zuzugreifen. Anstatt jedoch eine Programmiersprache zu verwenden, greifen Sie über die Seite mithilfe eines Browsers auf die Management-API zu. Die folgenden Features werden bereitgestellt:

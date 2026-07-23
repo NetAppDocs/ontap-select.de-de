@@ -18,6 +18,7 @@ Einige der API-Aufrufe für die Bereitstellung, insbesondere solche, die eine Re
 
 
 
+[[asynchronous-requests-described-using-job-object]]
 == Asynchrone Anforderungen, die mit Job Object beschrieben werden
 
 Nach einem API-Aufruf, der asynchron ausgeführt wird, weist der HTTP-Antwortcode 202 darauf hin, dass die Anforderung erfolgreich validiert und akzeptiert, aber noch nicht abgeschlossen wurde. Die Anforderung wird als Hintergrundaufgabe verarbeitet, die nach der ersten HTTP-Antwort auf den Client weiter ausgeführt wird. Die Antwort umfasst das Job-Objekt, das die Anfrage einschließlich der eindeutigen Kennung anverankert.
@@ -27,6 +28,7 @@ NOTE: Mithilfe der Seite ONTAP Select Deploy Online-Dokumentation können Sie er
 
 
 
+[[query-the-job-object-associated-with-an-api-request]]
 == Abfrage des Job-Objekts, das einer API-Anforderung zugeordnet ist
 
 Das in der HTTP-Antwort zurückgegebene Job-Objekt enthält mehrere Eigenschaften. Sie können die Statuseigenschaft abfragen, um festzustellen, ob die Anfrage erfolgreich abgeschlossen wurde. Ein Job-Objekt kann einen der folgenden Status haben:
@@ -55,6 +57,7 @@ TIP: Sie sollten immer Long Polling verwenden, um die Arbeitslast auf der virtue
 
 
 
+[[general-procedure-for-issuing-an-asynchronous-request]]
 == Allgemeines Verfahren für die Ausgabe einer asynchronen Anfrage
 
 Sie können den folgenden grundlegenden Vorgang verwenden, um einen asynchronen API-Aufruf abzuschließen:

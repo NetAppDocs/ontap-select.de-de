@@ -18,6 +18,7 @@ Mit den Python-Beispielskripten können Sie mehrere verschiedene Aufgaben ausfü
 
 
 
+[[common-design-characteristics]]
 == Gemeinsame Designeigenschaften
 
 Die Skripte wurden mit folgenden gemeinsamen Merkmalen entworfen:
@@ -30,6 +31,7 @@ Die Skripte wurden mit folgenden gemeinsamen Merkmalen entworfen:
 
 
 
+[[create-a-cluster]]
 == Erstellen eines Clusters
 
 Sie können mithilfe des Skripts Cluster.py einen ONTAP Select Cluster erstellen. Auf der Grundlage der CLI-Parameter und der Inhalte der JSON-Eingabedatei können Sie das Skript in Ihre Bereitstellungsumgebung wie folgt ändern:
@@ -49,6 +51,7 @@ Die CLI-Eingabeparameter für das Skript umfassen:
 
 
 
+[[add-a-node-license]]
 == Fügen Sie eine Node-Lizenz hinzu
 
 Wenn Sie sich für die Bereitstellung eines Produktionsclusters entscheiden, müssen Sie für jeden Knoten eine Lizenz hinzufügen, indem Sie das Skript _add_license.py_ verwenden. Sie können die Lizenz vor oder nach dem Implementieren des Clusters hinzufügen.
@@ -64,6 +67,7 @@ Die CLI-Eingabeparameter für das Skript umfassen:
 
 
 
+[[delete-a-cluster]]
 == Löschen eines Clusters
 
 Sie können einen vorhandenen ONTAP Select-Cluster mithilfe des Skripts _delete_Cluster.py_ löschen.

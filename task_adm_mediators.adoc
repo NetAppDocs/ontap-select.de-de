@@ -18,6 +18,7 @@ Jedes ONTAP Select Cluster mit zwei Nodes wird durch den Mediator Service überw
 
 
 
+[[view-the-status-of-the-mediator-service]]
 == Den Status des Mediatordienstes anzeigen
 
 Sie können den Status des Mediator-Service in Bezug auf jedes der zwei-Node-Cluster anzeigen, die beim ONTAP Select Deploy-Tool definiert wurden.

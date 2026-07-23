@@ -18,12 +18,14 @@ Jeder API-Aufruf zur Bereitstellung wird als HTTP-Anforderung an die virtuelle M
 
 
 
+[[input-variables-controlling-an-api-request]]
 == Eingabevariablen, die eine API-Anforderung steuern
 
 Sie können steuern, wie ein API-Aufruf über in der HTTP-Anforderung festgelegte Parameter verarbeitet wird.
 
 
 
+[[request-headers]]
 === Anfragekopfzeilen
 
 In der HTTP-Anfrage müssen mehrere Header enthalten sein, darunter:
@@ -35,6 +37,7 @@ In der HTTP-Anfrage müssen mehrere Header enthalten sein, darunter:
 
 
 
+[[request-body]]
 === Text anfordern
 
 Der Inhalt der Anfraentext variiert je nach Anruf. Der HTTP-Request-Text besteht aus einem der folgenden Elemente:
@@ -45,6 +48,7 @@ Der Inhalt der Anfraentext variiert je nach Anruf. Der HTTP-Request-Text besteht
 
 
 
+[[filter-objects]]
 === Objekte filtern
 
 Wenn Sie einen API-Aufruf ausgeben, der GET verwendet, können Sie die zurückgegebenen Objekte anhand eines beliebigen Attributs einschränken oder filtern. Sie können beispielsweise einen genauen Wert angeben, der übereinstimmt:
@@ -85,6 +89,7 @@ Sie können auch einen Satz von Objekten zurückgeben, basierend darauf, ob ein 
 
 
 
+[[selecting-object-fields]]
 === Auswählen von Objektfeldern
 
 Standardmäßig gibt die Ausgabe eines API-Aufrufs mithilfe VON GET nur die Attribute zurück, die das Objekt oder die Objekte eindeutig identifizieren. Dieser minimale Feldsatz dient als Schlüssel für jedes Objekt und variiert je nach Objekttyp. Sie können zusätzliche Objekteigenschaften mithilfe des Abfrageparameters Felder wie folgt auswählen:
@@ -99,6 +104,7 @@ TIP: Als Best Practice sollten Sie immer die gewünschten Felder identifizieren.
 
 
 
+[[sort-objects-in-the-output-set]]
 === Objekte im Ausgabesatz sortieren
 
 Die Datensätze in einer Ressourcensammlung werden in der vom Objekt definierten Standardreihenfolge zurückgegeben. Sie können die Reihenfolge mit dem Abfrageparameter order_by mit dem Feldnamen und der Sortierrichtung wie folgt ändern:
@@ -111,6 +117,7 @@ Wenn Sie mehrere Parameter eingeben, müssen Sie die Felder mit einem Komma tren
 
 
 
+[[pagination]]
 === Paginierung
 
 Wenn Sie einen API-Aufruf über GET ausgeben, um auf eine Sammlung von Objekten desselben Typs zuzugreifen, werden alle übereinstimmenden Objekte standardmäßig zurückgegeben. Bei Bedarf können Sie die Anzahl der zurückgegebenen Datensätze mithilfe des Abfrageparameters max_Records mit der Anforderung begrenzen. Beispiel:
@@ -123,12 +130,14 @@ Sie können mehrere Anfragen zur Seite über die Ereignisse (oder jeden Objektty
 
 
 
+[[interpret-an-api-response]]
 == Eine API-Antwort interpretieren
 
 Jede API-Anfrage generiert eine Antwort an den Client. Sie können die Antwort überprüfen, um festzustellen, ob sie erfolgreich war, und weitere Daten nach Bedarf abrufen.
 
 
 
+[[http-status-code]]
 === HTTP-Statuscode
 
 Im Folgenden werden die von der REST-API „Bereitstellen“ verwendeten HTTP-Statuscodes beschrieben.
@@ -169,6 +178,7 @@ Im Folgenden werden die von der REST-API „Bereitstellen“ verwendeten HTTP-St
 |===
 
 
+[[response-headers]]
 === Antwortkopfzeilen
 
 In der vom Deploy-Server erzeugten HTTP-Antwort sind mehrere Header enthalten, darunter:
@@ -179,6 +189,7 @@ In der vom Deploy-Server erzeugten HTTP-Antwort sind mehrere Header enthalten, d
 
 
 
+[[response-body]]
 === Antwortkörper
 
 Der Inhalt der mit einer API-Anfrage verknüpften Antwort ist je nach Objekt, Verarbeitungstyp und Erfolg oder Misserfolg der Anforderung unterschiedlich. Der Antwortkörper wird in JSON gerendert.

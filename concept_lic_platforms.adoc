@@ -18,6 +18,7 @@ Sie können eine ONTAP Select Capacity Tier- oder Capacity Pool-Lizenz im Standa
 
 
 
+[[what-a-platform-license-offering-provides]]
 == Vorteile einer Plattformlizenz
 
 Ein bestimmtes Lizenzangebot bestimmt die Fähigkeiten des Hypervisor-Hosts in zwei Bereichen:
@@ -69,6 +70,7 @@ NOTE: Kernelbasierte virtuelle Maschinen (KVM) unterstützen den großen Instanz
 
 
 
+[[compare-hardware-support-for-platform-license-offerings]]
 == Vergleichen Sie den Hardware-Support für Plattform-Lizenzangebote
 
 Die Standard-, Premium- und Premium-XL-Lizenzen unterstützen eine breite Palette an Hardware und Software. Aktuelle Informationen zu Hardware- und Softwareversionen finden Sie in der link:https://mysupport.netapp.com/matrix/["Interoperabilitäts-Matrix-Tool"^].

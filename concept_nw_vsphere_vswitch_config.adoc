@@ -38,6 +38,7 @@ NOTE: ONTAP Select unterstützt maximal vier vmnics.
 
 
 
+[[standard-or-distributed-vswitch-and-four-physical-ports-per-node]]
 == Standard- oder verteilter vSwitch und vier physische Ports pro Node
 
 Sie können jedem Node in einem Multi-Node-Cluster vier Portgruppen zuweisen. Jede Portgruppe verfügt über einen einzelnen aktiven physischen Port und drei physische Standby-Ports, wie in der folgenden Abbildung.
@@ -106,6 +107,7 @@ Zur Lesbarkeit lauten die Zuweisungen wie folgt:
 |===
 
 
+[[standard-or-distributed-vswitch-and-two-physical-ports-per-node]]
 == Standard- oder verteilter vSwitch und zwei physische Ports pro Node
 
 Bei Verwendung von zwei Hochgeschwindigkeits-Netzwerkkarten (25/40 Gbit/s) ist die empfohlene Portgruppenkonfiguration konzeptionell sehr ähnlich der Konfiguration mit vier 10-Gbit/s-Adaptern. Sie sollten vier Portgruppen verwenden, auch wenn Sie nur zwei physische Adapter verwenden. Die Zuordnung der Hafengruppen ist wie folgt:
@@ -134,6 +136,7 @@ image:DDN_13.jpg["VSwitch mit zwei physischen Ports pro Node"]
 
 
 
+[[distributed-vswitch-with-lacp]]
 == Verteilter vSwitch mit LACP
 
 Wenn Sie verteilte vSwitches in Ihrer Konfiguration verwenden, kann LACP verwendet werden (obwohl es keine Best Practice ist), um die Netzwerkkonfiguration zu vereinfachen. Die einzige unterstützte LACP-Konfiguration erfordert, dass alle vmnics in einem einzigen VERZÖGERUNG sind. Der physische Uplink-Switch muss eine MTU-Größe zwischen 7,500 und 9,000 auf allen Ports im Kanal unterstützen. Interne und externe ONTAP Select-Netzwerke sollten auf Port-Gruppen-Ebene isoliert werden. Das interne Netzwerk sollte ein nicht routingbares (isoliertes) VLAN verwenden. Das externe Netzwerk kann entweder VST, EST oder VGT verwenden.

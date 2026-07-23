@@ -18,6 +18,7 @@ Nachdem Sie festgestellt haben, dass ONTAP Select für Ihr Unternehmen geeignet 
 
 
 
+[[common-licensing-characteristics]]
 == Gemeinsame Lizenzierungsmerkmale
 
 Die Lizenzmodelle _Capacity Pools_ und _Capacity Tiers_ sind in vielerlei Hinsicht sehr unterschiedlich. Allerdings weisen die beiden Lizenzmodelle mehrere gemeinsame Merkmale auf, darunter:
@@ -33,6 +34,7 @@ Die Lizenzmodelle _Capacity Pools_ und _Capacity Tiers_ sind in vielerlei Hinsic
 
 
 
+[[capacity-tiers-licensing-model]]
 == Lizenzmodell für Kapazitäts-Tiers
 
 Das Lizenzmodell für Kapazitäts-Tiers zeichnet sich durch verschiedene Merkmale aus, darunter:
@@ -50,6 +52,7 @@ Das Lizenzmodell für Kapazitäts-Tiers zeichnet sich durch verschiedene Merkmal
 
 
 
+[[capacity-pools-licensing-model]]
 == Lizenzmodell für Kapazitäts-Pools
 
 Das Kapazitäts-Pools-Lizenzmodell bietet verschiedene Merkmale, darunter:
