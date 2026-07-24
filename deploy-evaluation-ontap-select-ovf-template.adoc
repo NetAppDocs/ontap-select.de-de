@@ -19,7 +19,6 @@ Sie können eine 90-tägige Testinstanz eines ONTAP Select-Clusters mit einer Gr
 .Über diese Aufgabe
 * Sie müssen keine Seriennummer oder eine Storage-Kapazitätslizenz von NetApp erhalten.
 * Sie können für Benutzerdaten dieselbe Speichermenge wie eine erworbene Lizenz zuweisen.
-* Sie können den Node nicht von einer Evaluierungslizenz auf eine erworbene Lizenz aktualisieren.
 * Sie können nur ein vCenter-Konto zur Bereitstellung der OVF-Vorlage verwenden. Die direkte Installation auf einem ESXi-Host wird derzeit nicht unterstützt.
 * Sie müssen die OVF-Vorlage (in einer OVA-Datei enthalten) mit dem vSphere-Standalone-Client oder dem vSphere-Webclient installieren (die einzige Option für ESXi 8.0 und höher). Sie verwenden nicht das Verwaltungsdienstprogramm ONTAP Select Deploy.
 
