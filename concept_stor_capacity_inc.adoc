@@ -4,7 +4,7 @@ permalink: concept_stor_capacity_inc.html
 keywords: ontap select, deploy, increase storage 
 summary: Mit ONTAP Deployment können Sie für jeden Node in einem ONTAP Select Cluster zusätzlichen Storage hinzufügen und lizenzieren. 
 ---
-= Erhöhen Sie die ONTAP Select Storage-Kapazität
+= Überlegungen zur Erhöhung der Speicherkapazität von ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

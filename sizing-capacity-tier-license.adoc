@@ -4,7 +4,7 @@ permalink: sizing-capacity-tier-license.html
 keywords: license, licensing, Capacity Tiers, usable, space 
 summary: Die Capacity-Tiers-Lizenz basiert auf der von jedem Knoten verwalteten Festplattenkapazität und nicht auf der nutzbaren Kapazität des Knotens, HA-Paars oder Clusters. Jede Capacity-Tiers-Lizenz ist einer einzelnen Knotenseriennummer für eine bestimmte Kapazität zugeordnet und erfordert einen zugehörigen Supportvertrag. 
 ---
-= Überlegungen zur Dimensionierung einer ONTAP Select Capacity Tiers Lizenz
+= Lizenzgröße für Capacity Tiers ONTAP Select bestimmen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

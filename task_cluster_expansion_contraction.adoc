@@ -4,7 +4,7 @@ permalink: task_cluster_expansion_contraction.html
 keywords: cluster, expand, expansion, contract, contraction, six, eight, node deployment workflow, workflow, deployment steps 
 summary: Ab ONTAP Select 9.15.1 können Sie die Größe eines bestehenden Clusters erhöhen oder verringern. 
 ---
-= Erweitern oder verkleinern Sie einen ONTAP Select Cluster auf einem ESXi- oder KVM-Host.
+= Ein ONTAP Select Cluster auf ESXi oder KVM Hosts erweitern oder verkleinern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

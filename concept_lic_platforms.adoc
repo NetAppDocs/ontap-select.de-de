@@ -4,7 +4,7 @@ permalink: concept_lic_platforms.html
 keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
 summary: Sie können eine ONTAP Select Kapazitäts-Tiering- oder Kapazitäts-Pool-Lizenz für eine von drei Plattformkapazitätsstufen erwerben. Diese Lizenzangebote bestimmen die Funktionen der Hosts, auf denen Sie ONTAP Select implementieren. 
 ---
-= Hier finden Sie Informationen zu den Plattformlizenzangeboten für ONTAP Select
+= Plattformlizenzangebote für ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

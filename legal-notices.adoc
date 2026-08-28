@@ -4,7 +4,7 @@ permalink: legal-notices.html
 keywords: copyrights, notices, trademarks, patents, privacy 
 summary: Rechtliche Hinweise ermöglichen den Zugriff auf Copyright-Erklärungen, Marken, Patente und mehr. 
 ---
-= Rechtliche Hinweise
+= Rechtliche Hinweise für ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
