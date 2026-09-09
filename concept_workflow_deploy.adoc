@@ -16,4 +16,28 @@ summary: Es gibt einen Workflow-Prozess, mit dem Sie ein ONTAP Select Cluster im
 [role="lead"]
 Mit dem folgenden Workflow können Sie ein ONTAP Select Cluster implementieren und verwalten.
 
-image:deploy_workflow2.png["Beschreibt den gesamten Workflow, der zur Implementierung eines ONTAP Select Clusters erforderlich ist"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] link:reference_plan_ots_general.html["Die Implementierung planen und die Umgebung vorbereiten"]
+[role="quick-margin-para"]
+Die Planungsanforderungen für Ihre ONTAP Select Nodes, den Speicher, das Netzwerk und die Hypervisor-Umgebung sollten überprüft werden. Eine frühzeitige Vorbereitung der Umgebung trägt dazu bei, Implementierungsprobleme zu vermeiden.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] link:task_install_deploy.html["Das ONTAP Select Deploy Verwaltungsprogramm installieren"]
+[role="quick-margin-para"]
+Das Dienstprogramm, das zur Bereitstellung und Verwaltung von ONTAP Select Clustern verwendet wird, installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"] link:concept_lic_workflow.html["Die für eine Implementierung in der Produktion erforderlichen Lizenzen erwerben"]
+[role="quick-margin-para"]
+Die für Ihre Implementierung in der Produktion benötigten Lizenzen können erworben und angewendet werden. Es besteht die Wahl zwischen den Lizenzmodellen Capacity Tiers und Capacity Pools.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]Ein ONTAP Select Cluster wird mit dem ONTAP Select Deploy Administrationstool implementiert.
+[role="quick-margin-para"]
+Mit dem Dienstprogramm Deploy wird Ihr ONTAP Select Cluster erstellt:
+
+[role="quick-margin-list"]
+* link:task_deploy_cluster.html["Bereitstellung über die Web-Benutzeroberfläche"]
+* link:task_cli_deploy_cluster.html["Bereitstellung über die Befehlszeile"]
+* link:reference_api_workflow.html["Bereitstellung über die REST API"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"] link:concept_adm_before.html["Die Verwaltung des ONTAP Select Clusters erfolgt mit den Standard-NetApp-Verwaltungstools und Schnittstellen."]
+[role="quick-margin-para"]
+Die Verwaltung des ONTAP Select Clusters erfolgt mit denselben Management-Tools und Schnittstellen wie bei anderen ONTAP Clustern.

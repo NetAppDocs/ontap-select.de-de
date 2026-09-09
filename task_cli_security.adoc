@@ -14,13 +14,7 @@ summary: Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung v
 
 
 [role="lead"]
-Sie können im Rahmen der Sicherung einer ONTAP Select-Bereitstellung verschiedene Aufgaben ausführen.
-
-
-
-= Ändern Sie das Administratorkennwort für die Bereitstellung
-
-Sie können das Kennwort für das Administratorkonto für virtuelle Maschinen bereitstellen über die Befehlszeilenschnittstelle ändern.
+Eine ONTAP Select Implementierung kann abgesichert werden, indem bei Bedarf das Kennwort für das Administrator-Konto der Deploy-virtuellen Maschine über die Befehlszeile geändert wird.
 
 .Schritte
 . Melden Sie sich über das Administratorkonto bei der CLI des Bereitstellungsdienstprogramms an.
