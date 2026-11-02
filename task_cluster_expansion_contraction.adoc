@@ -48,6 +48,7 @@ Ab ONTAP Select 9.15.1 wird die Clustererweiterung und -kontraktion auf ESXi-Hyp
 
 Die Clustererweiterung und -kontraktion wird für die folgenden ESXi-Hypervisor-Versionen unterstützt:
 
+* ESXi 9.1
 * ESXi 9.0
 * ESXi 8.0 U3
 * ESXi 8.0 U2

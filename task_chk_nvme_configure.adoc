@@ -39,6 +39,7 @@ Stellen Sie sicher, dass Ihre Implementierungsumgebung die folgenden Mindestanfo
 --
 ESXi wird auf den folgenden Hypervisor-Versionen unterstützt:
 
+** VMware ESXi 9.1
 ** VMware ESXi 9.0
 ** VMware ESXi 8.0 U3
 ** VMware ESXi 8.0 U2

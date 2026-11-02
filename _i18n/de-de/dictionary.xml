@@ -2499,7 +2499,6 @@ ESXi-Hypervisor-Host oder Linux KVM-Host</block>
   <block id="d8ca36c2c2dd21202d873bdf26e7ec79" category="cell">Kennung für den Hypervisor-Datenspeicher, der die Dateien der virtuellen Maschine enthält (ca. 40 GB erforderlich).</block>
   <block id="a295d719442375039396c1ff541e8a8f" category="paragraph">Für einen ESXi-Hypervisor müssen Sie die Bereitstellung der ONTAP Select Deploy VM vorbereiten:</block>
   <block id="171890587c5a7811013eb0e4f687968f" category="list-text">Aktivieren Sie DHCP in der VMware-Umgebung, wenn Sie der Bereitstellungs-VM dynamisch eine IP-Adresse zuweisen</block>
-  <block id="4ecc6637981131c676cdedcda970a661" category="paragraph">Bei ESXi- und KVM-Hypervisoren müssen Sie über die Konfigurationsinformationen verfügen, die beim Erstellen der VM verwendet werden sollen, einschließlich des Namens der VM, des externen Netzwerks und des Hostnamens. Wenn Sie eine statische Netzwerkkonfiguration definieren, benötigen Sie die folgenden zusätzlichen Informationen:</block>
   <block id="d98fb3ce51b49ee9b9e8ea2645524f08" category="list-text">IP-Adresse der bereitzustellenden VM</block>
   <block id="30e58d6b4fce06c690ff3897ae040f55" category="paragraph">Wenn Sie vSphere verwenden, enthält der Assistent zur Bereitstellung der OVF-Vorlage ein Formular, das alle Informationen zur Bereitstellungskonfiguration einschließlich der Netzwerkkonfiguration enthält. Wenn Sie dieses Formular jedoch nicht verwenden, können Sie stattdessen mithilfe der Konsole der Bereitstellungs-VM das Netzwerk konfigurieren.</block>
   <block id="922bafb0938c68773e29242e2675f0b9" category="paragraph">Welche Schritte Sie befolgen, hängt davon ab, ob Sie einen ESXi- oder KVM-Hypervisor verwenden.</block>
@@ -2943,13 +2942,10 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="e629ab9880aae245163ce498ab9e1389" category="cell">Klein und mittel</block>
   <block id="a09a88160dc1591cac42ba911581e599" category="cell">Klein, mittel und groß</block>
   <block id="93c34d5f173f74aeed0b64401f2a6edc" category="cell">Lokaler das mit Hardware-RAID-Controller</block>
-  <block id="2feb1874507e2463194f3c757efe6209" category="cell">8 - 60 Laufwerke</block>
   <block id="7742d08808786c4493a46e06b5648ff9" category="cell">HDD (SAS, NL-SAS, SATA)</block>
   <block id="fea45fcfeb873048ff2e2be995d8cb77" category="cell">4 bis 60 Laufwerke</block>
   <block id="bb878052f3499d534f13d06526b7d885" category="cell">SSD (SAS)</block>
-  <block id="25a5b17224d1f38c386742ec7cbc343b" category="cell">4 bis 60 Laufwerke (nur SSD)</block>
   <block id="d8e31ece33b3b9fb9373e996815932a7" category="cell">Lokaler das mit Software-RAID</block>
-  <block id="a64e775634e2bf5c5e3f63f149af2601" category="cell">4–14 Laufwerke (nur NVMe)</block>
   <block id="518c7a2538245dd75c6daac2212b8316" category="cell">Externe Arrays ^1^</block>
   <block id="8731210144d2e5094fb4001b893115d2" category="cell">Auf externen Arrays gehostete Datastores werden über FC, FCoE, iSCSI und NFS verbunden (NFS wird bei KVM nicht unterstützt). Diese Datastores sorgen für Hochverfügbarkeit und Ausfallsicherheit.</block>
   <block id="563a5726768d43a126f11bc13b3361dd" category="paragraph">^1^ die Protokollunterstützung für externe Arrays bezieht sich auf die Konnektivität mit Netzwerk-Storage.</block>
@@ -3272,7 +3268,6 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="a72643a79ec8e9d1d5c61ff835cabbeb" category="list-text">ONTAP Select 9.16.1 ist standardmäßig installiert.</block>
   <block id="588a4431a3d49dda029dcc4161fc2be3" category="list-text">Sie können den Knoten auf Version 9.17.1 aktualisieren und bei Bedarf wieder auf Version 9.16.1 zurücksetzen.</block>
   <block id="c762418e7ca866adad88c4350fc20ef0" category="list-text">ONTAP Select 9.17.1 ist standardmäßig installiert.</block>
-  <block id="7b5019dce3bb835acb62c31388f47aef" category="cell">VMware vSphere 9.0, VMware vSphere 8.0GA und Updates 1 bis 3, VMware vSphere 7.0GA und Updates 1 bis 3C</block>
   <block id="709b51c435c268c165dc26b6de6a856e" category="list-text">Das Deploy-Verwaltungsprogramm enthält nur eine einzige Version von ONTAP Select. Die enthaltene Version ist die zum Zeitpunkt der Veröffentlichung aktuellste. Mit der Funktion zur Installation von ONTAP Select -Images können Sie Ihrer Instanz des Deploy-Dienstprogramms frühere Versionen von ONTAP Select hinzufügen, die dann bei der Bereitstellung eines ONTAP Select Clusters verwendet werden können. Sehen<block ref="9252191d0d6c29910ebabc98ee426eb0" category="inline-link-macro-rx"></block> .</block>
   <block id="d4859de543e918748cbd58f23dedb243" category="list-text">ONTAP Select 9.17.1 beinhaltet Unterstützung für VMware ESXi 9.0.</block>
   <block id="bc70eaa4fe619d482b08c680b31e9639" category="paragraph">Es empfiehlt sich, die Deploy-Konfigurationsdaten regelmäßig zu sichern, auch nach der Erstellung eines Clusters. Dies ist besonders bei Clustern mit zwei Knoten wichtig, da die Mediator-Konfigurationsdaten in der Sicherung enthalten sind.</block>
@@ -4035,4 +4030,14 @@ Storage-Aggregat show-spare-Disks</block>
   <block id="cdf955804034c3c67f90a9fa2b26792d" category="paragraph">Sie haben die <block ref="1a659edfd1511c28d59e934c80be869d" category="inline-link-macro-rx"></block> überprüft.</block>
   <block id="e16c906ba61aeeafbcb69e14b4357d15" category="sidebar">Skript zum Erstellen eines Clusters</block>
   <block id="9a2f5932020cd5f8335afc3f02118937" category="sidebar">ONTAP Community</block>
+  <block id="50ae596e882ccedcefde5c47743d7203" category="cell">8 – 60 Laufwerke</block>
+  <block id="70d9e3c68d42d6ec42ab792e06c44357" category="cell">NVMe</block>
+  <block id="09c766d054990e91a8bd7172378ef91f" category="cell">4 – 14 Laufwerke</block>
+  <block id="4afe31410695c2d966b3cab63555adc2" category="cell">4 – 14 Laufwerke (nur NVMe)</block>
+  <block id="a993152ace9c48fc9ffe20e1239c701e" category="cell">VMware vSphere 9.1, 9.0 VMware vSphere 8.0GA und Updates 1 bis 3</block>
+  <block id="d6a844c0eee1b2460b68d5e1674ce3ee" category="list-text">ONTAP Select 9.19.1 unterstützt VMware ESXi 9.1.</block>
+  <block id="7fad4e1ab4f0475552986341e454b657" category="list-text">VMware ESXi 9.1</block>
+  <block id="e95da606b42156a1d47560476c9088a5" category="list-text">ESXi 9.1</block>
+  <block id="05297b8670c42857ef0d5c0e4996e75c" category="paragraph">Sie benötigen die Konfigurationsinformationen, die bei der Erstellung der VM verwendet werden, einschließlich des VM-Namens, des externen Netzwerks und des Hostnamens. Bei der Definition einer statischen Netzwerkkonfiguration benötigen Sie zusätzlich folgende Informationen:</block>
+  <block id="9db175ef7b9ec37a8ebe335363d8fbe5" category="paragraph">Für KVM-Hypervisoren benötigen Sie die Konfigurationsinformationen, die beim Erstellen der VM verwendet werden sollen, einschließlich des VM-Namens, des externen Netzwerks und des Hostnamens. Bei der Definition einer statischen Netzwerkkonfiguration benötigen Sie die folgenden zusätzlichen Informationen:</block>
 </blocks>
