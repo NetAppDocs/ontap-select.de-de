@@ -19,6 +19,9 @@ Wenn Sie NVMe-Laufwerke mit Software-RAID verwenden möchten, müssen Sie den ES
 Verwenden Sie den VMDirectPath I/O-Pass-Through auf den NVMe Geräten und maximieren Sie die Dateneffizienz. Diese Einstellung stellt die Laufwerke der virtuellen ONTAP Select-Maschine zur Verfügung, sodass ONTAP direkten PCI-Zugriff auf das Gerät hat.
 
 
+NOTE: ONTAP Select unterstützt NVMe-Laufwerke als SCSI-Festplatten auf Hyper-V-Hosts. ONTAP Select unterstützt NVMe-Laufwerke auf Hyper-V-Hosts nicht als Discrete Device Assignments (Passthrough-Geräte).
+
+
 
 [[step-1-configure-the-host]]
 == Schritt 1: Host konfigurieren

@@ -65,9 +65,13 @@ In der folgenden Tabelle werden die Funktionen der Lizenzangebote Standard, Prem
 
 2+| MetroCluster SDS | Nein | Ja. | Ja. 
 |===
+[NOTE]
+====
+Microsoft Hyper-V unterstützt kleine, mittlere und große Instanztypen.
 
-NOTE: Kernelbasierte virtuelle Maschinen (KVM) unterstützen den großen Instanztyp nicht.
+Kernelbasierte virtuelle Maschinen (KVM) unterstützen den großen Instanztyp nicht.
 
+====
 
 
 [[compare-hardware-support-for-platform-license-offerings]]
@@ -92,7 +96,7 @@ Die Standard-, Premium- und Premium-XL-Lizenzen unterstützen eine breite Palett
 2+| Implementierungsoptionen 3+| Einzelknoten, Zwei-Knoten-Cluster (HA-Paar), Vier-, Sechs-, Acht-, Zehn- oder Zwölf-Knoten-Cluster 
 
 
-2+| Unterstützte Kapazität (pro Node) 3+| Bis zu 400 TB Rohdaten (ESXi und KVM) 
+2+| Unterstützte Kapazität (pro Node) 3+| Bis zu 400 TB Rohdaten (ESXi, Hyper-V und KVM) 
 |===
 --
 .Trennt
@@ -165,7 +169,7 @@ In der folgenden Tabelle ist der für den angegebenen Speicher erforderliche Min
 2+| Lokaler das mit Software-RAID | Keine Angabe | Anwendbar | 4 – 14 Laufwerke (nur NVMe) 
 
 
-2+| Externe Arrays ^1^ 3+| Auf externen Arrays gehostete Datastores werden über FC, FCoE, iSCSI und NFS verbunden (NFS wird bei KVM nicht unterstützt). Diese Datastores sorgen für Hochverfügbarkeit und Ausfallsicherheit. 
+2+| Externe Arrays ^1^ 3+| Auf externen Arrays gehostete Datenspeicher sind über FC, FCoE und iSCSI für ESXi, Hyper-V und KVM sowie über NFS für ESXi angebunden. NFS wird für KVM und Hyper-V nicht unterstützt. Diese Datenspeicher gewährleisten hohe Verfügbarkeit und Ausfallsicherheit. 
 |===
 ^1^ die Protokollunterstützung für externe Arrays bezieht sich auf die Konnektivität mit Netzwerk-Storage.
 
@@ -180,6 +184,9 @@ In der folgenden Tabelle ist der für den angegebenen Speicher erforderliche Min
 
 
 2+| Unterstützung für Hypervisoren (VMware) 3+| VMware vSphere 9.1, 9.0 VMware vSphere 8.0GA und Updates 1 bis 3 
+
+
+2+| Hypervisor-Unterstützung (Hyper-V) 3+| Windows Server 2025 und 2022 
 
 
 2+| Unterstützung für Hypervisoren (KVM)  a| 

@@ -28,23 +28,23 @@ Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTA
 | Erforderliche Informationen | Beschreibung 
 
 
-| Name der virtuellen Maschine bereitstellen | Kennung für die virtuelle Maschine. 
+| Name der virtuellen Maschine (VM) Deploy | Kennung für die VM. 
 
 
-| Name des Hypervisor-Hosts | Kennung für den VMware ESXi- oder KVM-Hypervisor-Host, auf dem das Bereitstellungsdienstprogramm installiert ist. 
+| Name des Hypervisor-Hosts | Kennung für den VMware ESXi-, Hyper-V- oder KVM-Hypervisor-Host, auf dem das Deploy Dienstprogramm installiert ist. 
 
 
-| Name des Datenspeichers | Kennung für den Hypervisor-Datenspeicher, der die Dateien der virtuellen Maschine enthält (ca. 40 GB erforderlich). 
+| Name des Storage-Speicherorts | Kennung für den Datenspeicher (ESXi) oder Storage Pool (Hyper-V oder KVM), der die VM-Dateien enthält (ca. 40 GB sind erforderlich). 
 
 
-| Netzwerk für die virtuelle Maschine | Kennung für das Netzwerk, in dem die virtuelle Maschine bereitstellen verbunden ist. 
+| Netzwerk für die VM | Kennung für das Netzwerk, mit dem die Deploy VM verbunden ist. 
 |===
 
 
 [[optional-network-configuration-information]]
 == Optionale Informationen zu Netzwerkkonfiguration
 
-Die virtuelle Maschine bereitstellen wird standardmäßig mit DHCP konfiguriert. Bei Bedarf können Sie jedoch die Netzwerkschnittstelle für die virtuelle Maschine manuell konfigurieren.
+Die Deploy VM ist standardmäßig per DHCP konfiguriert. Bei Bedarf können Sie die Netzwerkschnittstelle der VM jedoch manuell konfigurieren.
 
 [cols="35,65"]
 |===
@@ -57,7 +57,7 @@ Die virtuelle Maschine bereitstellen wird standardmäßig mit DHCP konfiguriert.
 | Host-IP-Adresse | Statische IPv4-Adresse des Hostcomputers. 
 
 
-| Subnetzmaske | Subnetzwerk-Maske, basierend auf dem Netzwerk ist die virtuelle Maschine ein Teil von. 
+| Subnetzmaske | Subnetzmaske, basierend auf dem Netzwerk, zu dem die VM gehört. 
 
 
 | Gateway | Standard-Gateway oder -Router. 

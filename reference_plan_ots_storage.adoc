@@ -17,7 +17,7 @@ summary: Es gibt verschiedene Planungsprobleme im Zusammenhang mit ONTAP Select 
 Es gibt verschiedene Planungsprobleme im Zusammenhang mit ONTAP Select Host Storage, die Sie in Betracht ziehen sollten.
 
 
-NOTE: Informationen zur Unterstützung externer Speichermedien werden für ESXi- und KVM-Hosts beschrieben. Weitere Informationen finden Sie unter link:reference_plan_ots_vnas.html["VMware ESXi-Anforderungen"] und link:reference_plan_ots_kvm.html["KVM-Anforderungen"].
+NOTE: Informationen zur Storage Unterstützung für ESXi-, Hyper-V- und KVM-Hosts sind aufgeführt. Weitere Informationen enthalten link:reference_plan_ots_vnas.html["Anforderungen an externen Speicher für VMware ESXi"], link:plan-ots-hyper-v.html["Hyper-V Speicheranforderungen"] und link:reference_plan_ots_kvm.html["Anforderungen an externen KVM-Speicher"].
 
 
 

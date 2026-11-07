@@ -18,6 +18,64 @@ Bei der Planung einer ONTAP Select-Implementierung sollten Sie einige allgemeine
 
 
 
+[[required-windows-knowledge-and-skills-for-hyper-v]]
+== Erforderliche Windows-Kenntnisse und -Fähigkeiten für Hyper-V
+
+Windows Server mit dem Hyper-V Hypervisor ist eine komplexe Umgebung. Bevor Sie ONTAP Select auf Hyper-V einsetzen, müssen Sie über die erforderlichen Kenntnisse und Fähigkeiten verfügen.
+
+Das ONTAP Select Deploy Verwaltungstool erstellt und managt die virtuelle Maschine (VM) ONTAP Select. Für die Vorbereitung des von Deploy verwalteten Windows Hosts und zur Bestätigung, dass der Host die ONTAP Select Anforderungen erfüllt, benötigen Sie die folgenden Kenntnisse.
+
+Windows Server Administration:: Sie sollten Erfahrung mit der Windows Server-Version für Ihr ONTAP Select Deployment haben. Insbesondere sollten Sie die folgenden Aufgaben ausführen können:
++
+--
+* Windows Server installieren und aktualisieren
+* Ermittlung der installierten Windows Server-Version und Bestätigung, dass diese unterstützt wird
+* Installation und Aktivierung von Serverrollen und optionalen Funktionen, einschließlich der Hyper-V-Rolle
+* Konfigurieren Sie das System mithilfe der CLI
+* Die CPU und der Arbeitsspeicher des Hosts sind so zu dimensionieren, dass nach dem Deployment eines ONTAP Select Knotens weiterhin Kapazität für den Host verfügbar bleibt.
+
+
+Weitere Informationen zur Vorbereitung Ihres Windows Servers, einschließlich der erforderlichen Konfiguration und Softwarepakete, finden Sie in link:hyper-v-host-configuration-and-preparation-checklist.html["Checkliste für die Hostkonfiguration"].
+
+--
+Hyper-V Konzepte und Verwaltung:: Sie sollten mit allgemeinen Virtualisierungskonzepten sowie mit der Hyper-V-Plattform vertraut sein. Insbesondere sollten Sie Folgendes verstehen:
++
+--
+* Wie die Aktivierung der Hyper-V-Rolle das Netzwerk und den Storage auf dem Host verändert
+* Wie Hyper-V einer VM Storage bereitstellt, einschließlich des Unterschieds zwischen einer virtuellen Festplatte und einer physischen Festplatte, die an eine VM durchgereicht wird
+* Anzeigen der Konfiguration und des Status einer VM und ihrer Ressourcen
+
+
+
+NOTE: Das Dienstprogramm Deploy für die Administration erstellt und managt die ONTAP Select VM. Eine Neukonfiguration, ein Checkpoint, eine Migration oder eine Löschung der VM mit Hyper-V Manager, Failover Cluster Manager oder PowerShell ist zu vermeiden.
+
+--
+Netzwerk- und virtuelle Switch-Konfiguration:: Sie sollten mit Netzwerkkonzepten und der Konfiguration von Netzwerkswitches vertraut sein. Darüber hinaus sollten Sie in der Lage sein, die folgenden Aufgaben auf dem Hyper-V Host auszuführen:
++
+--
+* Planung und Erstellung externer virtueller Switches sowie Verständnis dafür, wie jeder virtuelle Switch an einen physischen Netzwerkadapter gebunden ist
+* Der Verbindungsstatus, die Geschwindigkeit und die IP-Konfiguration der Host-Netzwerkadapter sind zu überprüfen
+* Konsistente Konfiguration des VLAN-Tagging auf dem Host und im physischen Netzwerk
+* Konfiguration von Jumbo-Frames auf einem physischen Netzwerkadapter und Bestimmung der resultierenden Maximum Transmission Unit (MTU)
+
+
+Das Deploy Verwaltungsprogramm nutzt die virtuellen Switches, die auf dem Host bereits vorhanden sind, sodass Sie das Layout der virtuellen Switches vor dem Deployment planen müssen. Ein Zwei-Node-Cluster erfordert beispielsweise ein internes Netzwerk mit einer MTU von 7500 bis 9000 Byte.
+
+--
+Speicherverwaltung:: Sie sollten in der Lage sein, Datenträger und Volumes auf Windows Server zu managen. Insbesondere sollten Sie die folgenden Aufgaben durchführen können:
++
+--
+* NTFS- oder ReFS-Volumes erstellen, deren Größe festlegen und Laufwerksbuchstaben zuweisen
+* Identifizierung von Medientyp, Storage-Transportprotokoll (Bustyp) und Kapazität einer physischen Festplatte
+* Unterscheidung zwischen einem Rohdatenträger und einer Festplatte, die partitioniert ist oder bereits ein Volume enthält
+* Initialisierung eines Rohdatenträgers zur Verwendung im System
+
+
+--
+
+
+
+
 [[required-linux-knowledge-and-skills-for-kvm]]
 == Erforderliche Linux Kenntnisse und Fähigkeiten für KVM
 
@@ -34,7 +92,7 @@ Linux-Serververteilung:: Sie sollten Erfahrung mit der spezifischen Linux-Distri
 --
 
 
-Weitere Informationen zur Vorbereitung Ihres Linux-Servers, einschließlich der erforderlichen Konfiguration und Softwarepakete, finden Sie in der link:kvm-host-configuration-and-preparation-checklist.html["Checkliste für die Hostkonfiguration"]. Beachten Sie die Hypervisor-Anforderungen für die aktuell unterstützten Linux-Distributionen.
+Weitere Informationen zur Vorbereitung Ihres Linux-Servers, einschließlich der erforderlichen Konfiguration und Softwarepakete, finden Sie in der link:kvm-host-configuration-and-preparation-checklist.html["Checkliste für die Hostkonfiguration"].
 
 Implementierung und Administration von KVM:: Sie sollten mit allgemeinen Virtualisierungskonzepten vertraut sein. Darüber hinaus gibt es mehrere Linux CLI-Befehle, die Sie als Teil der Installation und Verwaltung von ONTAP Select in einer KVM-Umgebung verwenden müssen:
 +
@@ -79,32 +137,39 @@ Dediziertes vs. Colocation:: Je nach Applikationstyp sollten Sie ermitteln, ob d
 Es gibt verschiedene Planungsprobleme bezüglich des Hypervisor-Hosts, die Sie in Betracht ziehen sollten.
 
 
-CAUTION: Sie sollten die Konfiguration einer ONTAP Select Virtual Machine nur dann direkt ändern, wenn Sie dazu durch NetApp Support aufgefordert werden. Eine virtuelle Maschine sollte nur über das Dienstprogramm Verwaltung bereitstellen konfiguriert und verändert werden. Wenn Änderungen an einer ONTAP Select Virtual Machine außerhalb des Bereitstellungs-Dienstprogramms ohne Unterstützung durch den NetApp Support vorgenommen werden, kann dies dazu führen, dass die Virtual Machine ausfällt und sie nicht mehr verwendet werden kann.
+CAUTION: Sie sollten die Konfiguration einer ONTAP Select VM nicht direkt ändern, es sei denn, Sie werden vom NetApp Support dazu angewiesen. Eine VM sollte nur über das Deploy Verwaltungsprogramm konfiguriert und geändert werden. Änderungen an einer ONTAP Select VM außerhalb des Deploy Verwaltungsprogramms ohne Unterstützung durch den NetApp Support können dazu führen, dass die VM ausfällt und unbrauchbar wird.
 
 Unabhängig vom Hypervisor:: ONTAP Select und das ONTAP Select Deploy-Administrationsprogramm sind unabhängig vom Hypervisor. Die folgenden Hypervisoren werden für beide unterstützt.
 +
 --
-* VMware ESXi
+* Microsoft Hyper-V
++
+
+NOTE: Ab ONTAP Select 9.20.1 wird der Microsoft Hyper-V Hypervisor unterstützt.
+
 * Kernel-Based Virtual Machine (KVM)
-
-
---
-
-
++
 
 NOTE: Ab ONTAP Select 9.14.1 wurde die Unterstützung für KVM-Hypervisor wieder aufgenommen. Zuvor wurde in ONTAP Select 9.10.1 die Unterstützung für die Implementierung eines neuen Clusters auf einem KVM-Hypervisor entfernt, und in ONTAP Select 9.11.1 wurde die Unterstützung für das Management vorhandener KVM-Cluster und -Hosts entfernt, mit Ausnahme des Offline- bzw. Löschens.
 
+* VMware ESXi
+
+
+--
+
+
 Beziehen Sie sich auf die hypervisorspezifischen Planungshinweise und link:reference_release_notes.html["Versionshinweise"] für weitere Details zu den unterstützten Plattformen.
 
-Hypervisor für ONTAP Select-Nodes und Administrationstool:: Sowohl das Deploy-Administration-Dienstprogramm als auch die ONTAP Select-Nodes werden als Virtual Machines ausgeführt. Der für das Deploy-Tool gewählte Hypervisor ist unabhängig vom ausgewählten Hypervisor für die ONTAP Select-Nodes. Sie haben volle Flexibilität beim Paaring der beiden:
+Hypervisor für ONTAP Select-Nodes und Administrationstool:: Sowohl das Deploy Dienstprogramm für die Administration als auch ONTAP Select Knoten werden als VMs ausgeführt. Der Hypervisor, den Sie für das Deploy Dienstprogramm auswählen, ist unabhängig von dem Hypervisor, den Sie für die ONTAP Select Knoten auswählen. Bei der Kombination der beiden Komponenten haben Sie volle Flexibilität:
 +
 --
-* Mit dem Deploy Utility unter VMware ESXi können ONTAP Select Cluster auf VMware ESXi oder KVM erstellt und gemanagt werden
-* Mit dem auf KVM ausgeführten Deploy Utility können ONTAP Select Cluster auf VMware ESXi oder KVM erstellt und gemanagt werden
+* Das auf VMware ESXi ausgeführte Deploy utility kann ONTAP Select Cluster auf VMware ESXi, Hyper-V oder KVM erstellen und managen.
+* Das auf Hyper-V ausgeführte Deploy Dienstprogramm kann ONTAP Select Cluster auf VMware ESXi, Hyper-V oder KVM erstellen und managen.
+* Das auf KVM ausgeführte Deploy-Dienstprogramm kann ONTAP Select Cluster auf VMware ESXi, Hyper-V oder KVM erstellen und managen.
 
 
 --
-Eine oder mehrere Instanzen von ONTAP Select Node pro Host:: Jeder ONTAP Select Node wird als dedizierte Virtual Machine ausgeführt. Sie können auf demselben Hypervisor-Host mehrere Nodes erstellen, wobei folgende Einschränkungen gelten:
+Eine oder mehrere Instanzen von ONTAP Select Node pro Host:: Jeder ONTAP Select Knoten wird als dedizierte VM ausgeführt. Sie können mehrere Knoten auf demselben Hypervisor-Host erstellen, wobei folgende Einschränkungen gelten:
 +
 --
 * Mehrere Nodes aus einem einzelnen ONTAP Select Cluster können nicht auf demselben Host ausgeführt werden. Alle Nodes auf einem bestimmten Host müssen sich von unterschiedlichen ONTAP Select Clustern befinden.
@@ -153,7 +218,7 @@ Schätzen Sie den benötigten Speicherplatz ein:: Sie sollten ermitteln, wie vie
 
 
 
-NOTE: Die ONTAP Select Storage-Kapazität entspricht der zulässigen Gesamtgröße der Festplatten, die an die ONTAP Select Virtual Machine angeschlossen sind.
+NOTE: Die Storage Kapazität von ONTAP Select entspricht der insgesamt zulässigen Größe der an die ONTAP Select VM angeschlossenen Datenfestplatten.
 
 Lizenzmodell für Produktionsimplementierung:: Sie müssen das Lizenzmodell für die Kapazitäts-Tiers oder Kapazitäts-Pools für jeden in einer Produktionsumgebung bereitgestellten ONTAP Select-Cluster auswählen. Weitere Informationen finden Sie im Abschnitt _Lizenz_.
 
@@ -163,17 +228,17 @@ Lizenzmodell für Produktionsimplementierung:: Sie müssen das Lizenzmodell für
 [[authentication-using-the-credential-store]]
 == Authentifizierung mithilfe des Anmeldeinformationsspeichers
 
-Der ONTAP Select Deploy-Anmeldeinformationsspeicher ist eine Datenbank mit Kontoinformationen. Bei der Clustererstellung und -Verwaltung erfolgt die Hostauthentifizierung mithilfe der Kontoanmeldeinformationen. Sie sollten wissen, wie der Anmeldeinformationsspeicher bei der Planung einer ONTAP Select-Bereitstellung verwendet wird.
+Der ONTAP Select Deploy Anmeldeinformationsspeicher ist eine Datenbank mit Kontoinformationen. Deploy verwendet die Anmeldeinformationen, um im Rahmen der Clustererstellung und des Cluster-Managements die Host-Authentifizierung durchzuführen. Für die Planung eines ONTAP Select Deployment ist es wichtig zu wissen, wie der Anmeldeinformationsspeicher verwendet wird.
 
 
-NOTE: Die Kontoinformationen werden mithilfe des Verschlüsselungsalgorithmus Advanced Encryption Standard (AES) und des Hashalgorithmus SHA-256 sicher in der Datenbank gespeichert.
+NOTE: Die Kontoinformationen werden sicher in der Datenbank gespeichert, wobei der Verschlüsselungsalgorithmus Advanced Encryption Standard (AES) und der Hashing-Algorithmus SHA-256 verwendet werden.
 
 Arten von Anmeldeinformationen:: Folgende Typen von Anmeldeinformationen werden unterstützt:
 +
 --
 * Host
 +
-Die *Host*-Anmeldeinformationen werden zur Authentifizierung eines Hypervisor-Hosts im Rahmen der Bereitstellung eines ONTAP Select-Knotens direkt bei ESXi oder KVM verwendet.
+Die *host*-Anmeldedaten werden verwendet, um einen Hypervisor-Host beim Deployment eines ONTAP Select Node direkt auf ESXi, Hyper-V oder KVM zu authentifizieren.
 
 * VCenter
 +

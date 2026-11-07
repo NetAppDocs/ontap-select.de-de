@@ -139,7 +139,7 @@ image:DDN_13.jpg["VSwitch mit zwei physischen Ports pro Node"]
 [[distributed-vswitch-with-lacp]]
 == Verteilter vSwitch mit LACP
 
-Wenn Sie verteilte vSwitches in Ihrer Konfiguration verwenden, kann LACP verwendet werden (obwohl es keine Best Practice ist), um die Netzwerkkonfiguration zu vereinfachen. Die einzige unterstützte LACP-Konfiguration erfordert, dass alle vmnics in einem einzigen VERZÖGERUNG sind. Der physische Uplink-Switch muss eine MTU-Größe zwischen 7,500 und 9,000 auf allen Ports im Kanal unterstützen. Interne und externe ONTAP Select-Netzwerke sollten auf Port-Gruppen-Ebene isoliert werden. Das interne Netzwerk sollte ein nicht routingbares (isoliertes) VLAN verwenden. Das externe Netzwerk kann entweder VST, EST oder VGT verwenden.
+Bei Verwendung verteilter vSwitches in Ihrer Konfiguration kann LACP, obwohl dies keine Best Practice ist, zur Vereinfachung der Netzwerkkonfiguration eingesetzt werden. Die einzige unterstützte LACP-Konfiguration erfordert, dass sich alle VMNICs in einer einzigen LAG befinden. Der physische Uplink-Switch muss auf allen Ports im Channel eine MTU-Größe (Maximum Transmission Unit) zwischen 7.500 und 9.000 unterstützen. Die internen und externen ONTAP Select Netzwerke sollten auf Portgruppenebene isoliert werden. Das interne Netzwerk sollte ein nicht routbares (isoliertes) VLAN verwenden. Das externe Netzwerk kann entweder VST, EST oder VGT verwenden.
 
 Die folgenden Beispiele zeigen die verteilte vSwitch-Konfiguration mit LACP.
 

@@ -38,7 +38,7 @@ Sie initiieren die Verfahren zur Clustererweiterung und -kontraktion von ONTAP S
 [[hardware-and-storage-considerations]]
 == Überlegungen zu Hardware und Storage
 
-Die Funktion zur Clustererweiterung und -kontraktion wird auf den folgenden KVM- und ESXi-Hypervisor-Hosts unterstützt.
+Die Funktion zur Cluster-Erweiterung und -Verkleinerung wird auf den folgenden ESXi- und KVM-Hypervisor-Hosts unterstützt.
 
 [role="tabbed-block"]
 ====

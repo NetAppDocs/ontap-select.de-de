@@ -38,7 +38,7 @@ Ab ONTAP Select 9.5 mit Deploy 2.10 ist VMXNET3 der Standardnetzwerktreiber, der
 [[cluster-mtu]]
 == Cluster-MTU
 
-Die ONTAP Select-Nodes in einem Cluster mit mehreren Nodes werden über ein separates internes Netzwerk verbunden. Die MTU-Größe für dieses Netzwerk beträgt normalerweise 9000. Allerdings ist diese MTU-Größe für das Netzwerk, das die ONTAP Select-Nodes miteinander verbindet, zu groß. Für kleinere Frames kann die MTU-Größe, die von ONTAP Select im internen Netzwerk verwendet wird, im Bereich von 7500-9000 Byte liegen.
+In einem Cluster mit mehreren Nodes werden die ONTAP Select Knoten über ein separates internes Netzwerk verbunden. Die Maximum Transmission Unit (MTU) dieses Netzwerks beträgt üblicherweise 9000 Byte. In manchen Fällen ist diese MTU jedoch zu groß für das Netzwerk, das die ONTAP Select Knoten verbindet. Um kleinere Frames zu unterstützen, kann die von ONTAP Select im internen Netzwerk verwendete MTU im Bereich von 7500 bis 9000 Byte liegen.
 
 Die MTU-Größe wird im Abschnitt „Cluster-Details“ der Seite für die Cluster-Erstellung angezeigt. Der Wert wird durch das Dienstprogramm „Deploy Administration“ wie folgt bestimmt:
 
@@ -123,19 +123,35 @@ Weitere Informationen zu Bereitstellungen mit vier Netzwerkkarten finden Sie im 
 [[network-traffic-requirements]]
 == Anforderungen an den Netzwerkverkehr
 
-Sie müssen sicherstellen, dass Ihre Firewalls richtig konfiguriert sind, damit der Netzwerk-Traffic zwischen den verschiedenen Teilnehmern in einer ONTAP Select-Bereitstellungsumgebung fließen kann.
+Sie müssen sicherstellen, dass Ihre Firewalls korrekt konfiguriert sind, damit der Netzwerkverkehr zwischen den verschiedenen Beteiligten in einer ONTAP Select Deployment-Umgebung fließen kann.
 
 .Teilnehmer
 Im Rahmen einer ONTAP Select-Implementierung gibt es mehrere Teilnehmer oder Einheiten, die den Netzwerkdatenverkehr austauschen. Diese werden eingeführt und dann in der Zusammenfassung der Anforderungen an den Netzwerkverkehr verwendet.
 
-* ONTAP Select Deploy Administration Utility einsetzen
-* VSphere (nur ESXi)
-Entweder ein vSphere-Server oder ein ESXi-Host, je nachdem, wie der Host in der Cluster-Bereitstellung gemanagt wird
+* Implementieren
++
+ONTAP Select Deploy Administration Utility
+
+* vSphere (nur ESXi)
++
+Entweder ein vSphere Server oder ein ESXi-Host, je nachdem, wie der Host in Ihrem Cluster-Deployment gemanagt wird
+
 * Hypervisor-Server
-ESXi-Hypervisor-Host oder Linux KVM-Host
-* OTS-Knoten ein ONTAP Select-Knoten
-* OTS Cluster in einem ONTAP Select Cluster
-* Admin WS Local Administration Workstation
++
+ESXi Hypervisor-Host, Microsoft Hyper-V Host oder Linux KVM Host
+
+* ONTAP Select-Knoten
++
+Ein ONTAP Select Knoten
+
+* ONTAP Select Cluster
++
+Ein ONTAP Select Cluster
+
+* Admin-WS
++
+Lokaler Verwaltungsarbeitsplatz
+
 
 
 .Zusammenfassung der Anforderungen an den Netzwerkverkehr
@@ -143,7 +159,25 @@ In der folgenden Tabelle werden die Anforderungen an den Netzwerk-Traffic für e
 
 [cols="20,20,35,25"]
 |===
-| Protokoll/Port | ESXi/KVM | Richtung | Beschreibung 
+| Protokoll/Port | ESXi / Hyper-V / KVM | Richtung | Beschreibung 
+
+
+| ICMP | ESXi, Hyper-V oder KVM | Bereitstellung auf Hypervisor-Server | Ping 
+
+
+| ICMP | ESXi, Hyper-V oder KVM | Bereitstellung auf jedem ONTAP Select Node | Ping 
+
+
+| SSH (22) | ESXi, Hyper-V oder KVM | Admin WS zu jedem ONTAP Select Knoten | Administration 
+
+
+| SSH (22) | KVM | Implementierung auf Hypervisor-Server-Nodes | Zugriff auf den Hypervisor-Server 
+
+
+| TLS (443) | ESXi, Hyper-V oder KVM | Bereitstellung auf ONTAP Select Knoten und Clustern | Greifen Sie auf ONTAP zu 
+
+
+| TLS (443) | ESXi, Hyper-V oder KVM | Jeder ONTAP Select Knoten für Deploy | Zugriff auf Deploy (Capacity-Pools Lizenzierung) 
 
 
 | TLS (443) | ESXi | Bereitstellung an vCenter Server (gemanagt) oder ESXi (gemanagt oder nicht gemanagt) | VMware VIX API 
@@ -152,23 +186,8 @@ In der folgenden Tabelle werden die Anforderungen an den Netzwerk-Traffic für e
 | 902 | ESXi | Bereitstellung in vCenter Server (gemanagt) oder ESXi (nicht gemanagt) | VMware VIX API 
 
 
-| ICMP | ESXi oder KVM | Bereitstellung auf Hypervisor-Server | Ping 
+| ISCSI (3260) | ESXi, Hyper-V oder KVM | Jeder ONTAP Select Knoten für Deploy | Mediator/Mailbox-Festplatte 
 
 
-| ICMP | ESXi oder KVM | Bereitstellen auf jedem OTS-Node | Ping 
-
-
-| SSH (22) | ESXi oder KVM | Admin WS zu jedem OTS-Knoten | Administration 
-
-
-| SSH (22) | KVM | Implementierung auf Hypervisor-Server-Nodes | Zugriff auf den Hypervisor-Server 
-
-
-| TLS (443) | ESXi oder KVM | Implementieren auf OTS-Nodes und -Clustern | Greifen Sie auf ONTAP zu 
-
-
-| TLS (443) | ESXi oder KVM | Jeder zu implementierende OTS-Node | Zugriff auf Deploy (Capacity-Pools Lizenzierung) 
-
-
-| ISCSI (3260) | ESXi oder KVM | Jeder zu implementierende OTS-Node | Mediator/Mailbox-Festplatte 
+| WinRM HTTPS (5986) | Hyper-V | Implementierung auf Hypervisor-Server-Nodes | Zugriff auf den Hypervisor-Server 
 |===

@@ -20,7 +20,7 @@ Sie können eine 90-tägige Testinstanz eines ONTAP Select-Clusters mit einer Gr
 * Sie müssen keine Seriennummer oder eine Storage-Kapazitätslizenz von NetApp erhalten.
 * Sie können für Benutzerdaten dieselbe Speichermenge wie eine erworbene Lizenz zuweisen.
 * Sie können nur ein vCenter-Konto zur Bereitstellung der OVF-Vorlage verwenden. Die direkte Installation auf einem ESXi-Host wird derzeit nicht unterstützt.
-* Sie müssen die OVF-Vorlage (in einer OVA-Datei enthalten) mit dem vSphere-Standalone-Client oder dem vSphere-Webclient installieren (die einzige Option für ESXi 8.0 und höher). Sie verwenden nicht das Verwaltungsdienstprogramm ONTAP Select Deploy.
+* Sie müssen die OVF-Vorlage (in einer OVA-Datei enthalten) mithilfe des vSphere Standalone-Clients oder des vSphere Webclients installieren (die einzige Option für ESXi 8.0 und höher). Sie verwenden das Verwaltungsprogramm ONTAP Select Deploy nicht.
 
 
 
@@ -47,7 +47,7 @@ Führen Sie die folgenden Schritte auf einem unterstützten 64-Bit-ESXi-Hostserv
 . Wählen Sie den Host mithilfe einer der folgenden Optionen aus:
 +
 ** Wählen Sie *Datei* > *OVF-Vorlage bereitstellen*.
-** Wählen Sie *Rechenzentrum* aus. Klicken Sie dann mit der rechten Maustaste und wählen Sie *OVF-Vorlage bereitstellen* aus.
+** Wählen Sie *Rechenzentrum* aus. Klicken Sie dann mit der rechten Maustaste und wählen Sie *Deploy OVF Template* aus.
 
 
 . Wählen Sie die ONTAP Select-Quell-OVA-Datei auf Ihrer lokalen Workstation aus, und wählen Sie dann *Weiter* aus.

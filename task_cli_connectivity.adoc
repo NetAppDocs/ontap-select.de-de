@@ -24,8 +24,14 @@ Jedes Mal, wenn Sie einen Test starten, wird eine neue Prozessdurchlauf im Hinte
 
 Der Test verfügt über zwei Modi, die den Betrieb steuern:
 
-* Quick This Mode führt einen grundlegenden unterbrechungsfreien Test durch. ES wird ein PING-Test durchgeführt, zusammen mit einem Test der MTU-Größe des Netzwerks und des vSwitch.
-* Erweitert dieser Modus führt einen umfassenderen Test über alle redundanten Netzwerkpfade durch. Wenn Sie dies auf einem aktiven ONTAP Select Cluster ausführen, kann die Performance des Clusters beeinträchtigt werden.
+* Schnell
++
+Dieser Modus führt einen grundlegenden, unterbrechungsfreien Test durch. Dabei werden ein PING-Test sowie die Netzwerk-MTU (Maximum Transmission Unit) und der vSwitch getestet.
+
+* Erweitert
++
+Dieser Modus führt einen umfassenderen Test aller redundanten Netzwerkpfade durch. Wenn Sie dies auf einem aktiven ONTAP Select Cluster ausführen, kann die Performance des Clusters beeinträchtigt werden.
+
 
 
 

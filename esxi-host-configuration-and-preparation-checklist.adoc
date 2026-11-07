@@ -14,7 +14,7 @@ summary: Bereiten Sie alle ESXi-Hypervisor-Hosts vor, auf denen ein ONTAP Select
 
 
 [role="lead"]
-Bereiten Sie jeden ESXi-Hypervisor-Host vor, auf dem ein ONTAP Select Knoten bereitgestellt wird. Bewerten Sie dabei sorgfältig die Bereitstellungsumgebung, um sicherzustellen, dass die Hosts korrekt konfiguriert und für die Bereitstellung eines ONTAP Select Clusters bereit sind.
+Jeder ESXi-Hypervisor-Host, auf dem ein ONTAP Select Knoten eingesetzt wird, muss vorbereitet werden. Es ist sicherzustellen, dass die Hosts korrekt konfiguriert und bereit sind, das Deployment eines ONTAP Select Clusters zu unterstützen.
 
 
 NOTE: Das Verwaltungsprogramm ONTAP Select Deploy führt die erforderliche Netzwerk- und Speicherkonfiguration der Hypervisor-Hosts nicht durch. Sie müssen jeden Host manuell vorbereiten, bevor Sie einen ONTAP Select -Cluster bereitstellen.

@@ -27,9 +27,6 @@ Im Gegensatz zur Multi-Node-Version des ONTAP Select Produkts enthält jede ONTA
 
 Diese Ports werden für die folgenden Services verwendet: Management, Daten und Intercluster LIFs.
 
-.KVM
-Sie können ONTAP Select als Einzelknotencluster bereitstellen. Der Hypervisor-Host enthält einen virtuellen Switch, der den Zugriff auf das externe Netzwerk ermöglicht.
-
 .ESXi
 Die folgende Abbildung zeigt die Beziehung zwischen diesen Ports und den zugrunde liegenden physischen Adaptern. Die Abbildung stellt einen ONTAP Select Cluster-Node auf dem ESXi-Hypervisor dar.
 
@@ -39,6 +36,9 @@ image:DDN_03.jpg["Netzwerkkonfiguration eines Single-Node ONTAP Select Clusters"
 
 
 NOTE: Obwohl zwei Adapter für ein Single Node Cluster ausreichend sind, ist NIC-Teaming weiterhin erforderlich.
+
+.Hyper-V und KVM
+Sie können ONTAP Select als Einzelknotencluster bereitstellen. Der Hypervisor-Host enthält einen virtuellen Switch, der den Zugriff auf das externe Netzwerk ermöglicht.
 
 
 
@@ -146,7 +146,7 @@ Der Cluster-Netzwerkverkehr muss über ein mit niedriger Latenz, nicht geroutete
 Weitere Einzelheiten finden Sie im Abschnitt link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Stretch-Best Practices (MetroCluster-SDS) mit zwei Nodes"].
 
 
-NOTE: Um einen maximalen Durchsatz für den Cluster-Netzwerkverkehr zu gewährleisten, ist dieser Netzwerkport für die Verwendung von Jumbo-Frames (7500 bis 9000 MTU) konfiguriert. Für den korrekten Clusterbetrieb vergewissern Sie sich, dass Jumbo-Frames auf allen vorgelagerten virtuellen und physischen Switches aktiviert sind, die interne Netzwerkdienste für ONTAP Select Cluster Nodes bereitstellen.
+NOTE: Um einen maximalen Durchsatz für den Cluster-Netzwerkverkehr zu gewährleisten, ist dieser Netzwerkport für die Verwendung von Jumbo-Frames mit einer maximalen Übertragungseinheit (MTU) von 7500 bis 9000 Byte konfiguriert. Für den korrekten Clusterbetrieb ist zu überprüfen, dass Jumbo-Frames auf allen vorgelagerten virtuellen und physischen Switches aktiviert sind, die interne Services für ONTAP Select Clusterknoten bereitstellen.
 
 
 

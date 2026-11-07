@@ -14,7 +14,7 @@ summary: Bereiten Sie alle KVM-Hypervisor-Hosts vor, auf denen ein ONTAP Select 
 
 
 [role="lead"]
-Bereiten Sie jeden KVM-Hypervisor-Host vor, auf dem ein ONTAP Select Knoten bereitgestellt wird. Bei der Vorbereitung der Hosts prüfen Sie sorgfältig die Bereitstellungsumgebung, um sicherzustellen, dass die Hosts korrekt konfiguriert und für die Bereitstellung eines ONTAP Select Clusters bereit sind.
+Jeder KVM-Hypervisor-Host, auf dem ein ONTAP Select Knoten eingesetzt wird, muss vorbereitet sein. Die Hosts müssen korrekt konfiguriert und bereit sein, das Deployment eines ONTAP Select Clusters zu unterstützen.
 
 
 NOTE: Das Verwaltungsprogramm ONTAP Select Deploy führt die erforderliche Netzwerk- und Speicherkonfiguration der Hypervisor-Hosts nicht durch. Sie müssen jeden Host manuell vorbereiten, bevor Sie einen ONTAP Select -Cluster bereitstellen.

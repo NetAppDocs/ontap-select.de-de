@@ -89,4 +89,4 @@ Bereitstellung:: Alle Berechtigungen in der Kategorie.
 Alle Berechtigungen in der Kategorie.
 
 .Verwandte Informationen
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["Erfahren Sie mehr über VMware vSphere-Berechtigungen für vSAN ESA in vCenter"]
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["Erfahren Sie mehr über VMware vSphere-Berechtigungen für vSAN ESA in vCenter"]

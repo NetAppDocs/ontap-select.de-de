@@ -22,5 +22,5 @@ Sie müssen eventuell auf die Virtual Machine-Konsole zugreifen, um ein Problem 
 .Schritte
 . Greifen Sie auf den vSphere-Client zu und melden Sie sich an.
 . Navigieren Sie zum entsprechenden Speicherort in der Hierarchie, um die virtuelle ONTAP Select-Maschine zu finden.
-. Klicken Sie mit der rechten Maustaste auf die virtuelle Maschine und wählen Sie *Konsole öffnen*.
+. Per Rechtsklick auf die virtuelle Maschine kann *Open Console* ausgewählt werden.
 

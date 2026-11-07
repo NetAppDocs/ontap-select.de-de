@@ -65,7 +65,7 @@ Dieses Tool ist ausschließlich zur Fehlerbehebung im internen Netzwerk in einem
 
 Der Cluster-Erstellungsassistent (Bestandteil der ONTAP Deploy UI) beinhaltet die Überprüfung des internen Netzwerks als optionalen Schritt während der Erstellung von Multi-Node-Clustern. Angesichts der wichtigen Rolle, die das interne Netzwerk in Multi-Node-Clustern spielt, verbessert die Aufnahme dieses Schritts in den Cluster-Erstellungs-Workflow die Erfolgsrate von Cluster-Erstellungsvorgängen.
 
-Ab ONTAP Deploy 2.10 kann die vom internen Netzwerk verwendete MTU-Größe zwischen 7,500 und 9,000 festgelegt werden. Mit dem Network Connectivity Checker kann auch die MTU-Größe zwischen 7,500 und 9,000 getestet werden. Der MTU-Standardwert ist auf den Wert des virtuellen Netzwerk-Switches eingestellt. Dieser Standardwert müsste durch einen kleineren Wert ersetzt werden, wenn ein Netzwerküberlagerung wie VXLAN in der Umgebung vorhanden ist.
+Ab ONTAP Deploy 2.10 kann die Größe der Maximum Transmission Unit (MTU), die vom internen Netzwerk verwendet wird, auf einen Wert zwischen 7.500 und 9.000 eingestellt werden. Der Netzwerkverbindungsprüfer kann auch verwendet werden, um die MTU-Größe zwischen 7.500 und 9.000 zu testen. Der Standardwert für die MTU ist auf den Wert des virtuellen Netzwerk-Switch festgelegt. Wenn ein Netzwerk-Overlay wie VXLAN in der Umgebung vorhanden ist, muss dieser Standardwert durch einen kleineren Wert ersetzt werden.
 
 
 

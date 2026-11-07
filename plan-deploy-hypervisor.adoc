@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: plan-deploy-hypervisor.html 
+keywords: plan, planning, ontap select deploy, vmware requirements 
+summary: Es gibt verschiedene Anforderungen und Einschränkungen der VMware Umgebung, die Sie vor der Installation des Dienstprogramms ONTAP Select Deploy in einer VMware Umgebung in Betracht ziehen sollten. 
+---
+= Überlegungen zu ONTAP Select Deploy-Hypervisor-Hosts
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es gibt verschiedene Planungsprobleme bezüglich des Hypervisor-Hosts, die Sie in Betracht ziehen sollten.
+
+
+CAUTION: Sie sollten die Konfiguration einer ONTAP Select virtuellen Maschine (VM) nicht direkt ändern, es sei denn, Sie werden vom NetApp Support dazu aufgefordert. Eine VM sollte nur über das Deploy Administrationsprogramm konfiguriert und geändert werden. Änderungen an einer ONTAP Select VM außerhalb des Deploy Programms ohne Unterstützung durch den NetApp Support können zum Ausfall der VM führen und sie unbrauchbar machen.
+
+
+
+[[hypervisor-independent]]
+== Unabhängig vom Hypervisor
+
+Sowohl ONTAP Select als auch das Dienstprogramm ONTAP Select Deploy Administration sind Hypervisor-unabhängig.
+
+Die folgenden Hypervisoren werden sowohl für ONTAP Select als auch für die ONTAP Select Deploy Administration unterstützt:
+
+* VMware ESXi
+* Microsoft Hyper-V
+* Kernel-Based Virtual Machine (KVM)
+
+
+
+NOTE: Beziehen Sie sich auf die hypervisorspezifischen Planungshinweise und link:reference_release_notes.html["Versionshinweise"] für weitere Details zu den unterstützten Plattformen.
+
+.Hypervisor für ONTAP Select-Nodes und Administrationstool
+Sowohl das Deploy-Verwaltungsprogramm als auch die ONTAP Select-Knoten werden als VMs ausgeführt. Der Hypervisor, den Sie für das Deploy-Verwaltungsprogramm auswählen, ist unabhängig von dem Hypervisor, den Sie für die ONTAP Select-Knoten auswählen. Bei der Kombination der beiden besteht vollständige Flexibilität:
+
+* Das auf VMware ESXi ausgeführte Deploy utility kann ONTAP Select Cluster auf VMware ESXi, Hyper-V oder KVM erstellen und managen.
+* Das auf Hyper-V ausgeführte Deploy Dienstprogramm kann ONTAP Select Cluster auf VMware ESXi, Hyper-V oder KVM erstellen und managen.
+* Das auf KVM ausgeführte Deploy-Dienstprogramm kann ONTAP Select Cluster auf VMware ESXi, Hyper-V oder KVM erstellen und managen.
+
+
+.Eine oder mehrere Instanzen von ONTAP Select Node pro Host
+Jeder ONTAP Select Knoten wird als dedizierte VM ausgeführt. Sie können mehrere Knoten auf demselben Hypervisor-Host erstellen, wobei folgende Einschränkungen gelten:
+
+* Mehrere Nodes aus einem einzelnen ONTAP Select Cluster können nicht auf demselben Host ausgeführt werden. Alle Nodes auf einem bestimmten Host müssen sich von unterschiedlichen ONTAP Select Clustern befinden.
+* Sie müssen externen Speicher verwenden.
+* Wenn Sie Software-RAID verwenden, können Sie nur einen ONTAP Select-Knoten auf dem Host implementieren.
+
+
+.Hypervisor-Konsistenz für die Nodes in einem Cluster
+Alle Hosts innerhalb eines ONTAP Select-Clusters müssen auf derselben Version und Freigabe der Hypervisor-Software ausgeführt werden.
+
+.Anzahl der physischen Ports auf jedem Host
+Sie müssen jeden Host so konfigurieren, dass er einen, zwei oder vier physische Ports verwendet. Die Konfiguration der Netzwerkanschlüsse ist zwar flexibel, Sie sollten jedoch nach Möglichkeit folgende Empfehlungen befolgen:
+
+* Ein Host in einem Single-Node-Cluster sollte über zwei physische Ports verfügen.
+* Jeder Host in einem Cluster mit mehreren Nodes sollte über vier physische Ports verfügen
+
+
+.Integrieren Sie ONTAP Select mit einem hardwarebasierten ONTAP Cluster
+Ein ONTAP Select Node kann einem hardwarebasierten ONTAP Cluster nicht direkt hinzugefügt werden. Sie können jedoch optional eine Cluster Peering-Beziehung zwischen einem ONTAP Select Cluster und einem hardwarebasierten ONTAP Cluster aufbauen.
+
+
+
+[[hypervisor-environment]]
+== Hypervisor-Umgebung
+
+Bevor Sie das Deploy Verwaltungsprogramm in einer Hypervisor-Umgebung installieren, sollten Sie die grundlegenden Anforderungen überprüfen und das Deployment vorbereiten.
+
+[role="tabbed-block"]
+====
+.ESXi
+--
+Es gibt verschiedene Anforderungen und Einschränkungen der VMware Umgebung, die Sie vor der Installation des Dienstprogramms ONTAP Select Deploy in einer VMware Umgebung in Betracht ziehen sollten.
+
+.Hardwareanforderungen
+Es ist zu überprüfen, dass die ESXi Hypervisor Hosts, auf denen ONTAP Select bereitgestellt wird, die folgenden grundlegenden Anforderungen erfüllen:
+
+* ESXi-Server:
++
+** Hardware und Software müssen 64-Bit sein
+** Muss die für einen ONTAP Select-Node definierten Versionen einhalten
+
+
+* Virtuelle CPUs (2)
+* Virtueller Speicher (4 GB)
+* Speicher (40 GB)
+* Dynamic Host Configuration Protocol (DHCP) aktiviert (es kann auch eine statische IP-Adresse zugewiesen werden)
+
+
+.Netzwerk-Konnektivität
+Zu prüfen ist, ob die Netzwerkschnittstelle der ONTAP Select Deploy VM konfiguriert ist und über eine einzige Management-IP-Adresse verfügt. DHCP kann verwendet werden, um dynamisch eine IP-Adresse zuzuweisen, oder eine statische IP-Adresse kann manuell konfiguriert werden.
+
+Je nach Ihren Implementierungsentscheidungen muss die Implementierungs-VM in der Lage sein, eine Verbindung zu dem von ihr verwalteten vCenter Server, ESXi Hypervisor-Hosts und ONTAP Select Nodes herzustellen. Sie müssen Ihre Firewalls konfigurieren, um den erforderlichen Datenverkehr zu ermöglichen.
+
+Deploy nutzt die VMware VIX API zur Kommunikation mit dem vCenter Server und den ESXi Hosts. Zunächst wird eine Verbindung über SOAP über SSL auf TCP Port 443 hergestellt. Danach wird eine Verbindung über SSL auf Port 902 geöffnet. Zusätzlich sendet Deploy PING Befehle, um zu überprüfen, ob ein ESXi Host unter der angegebenen IP Adresse vorhanden ist.
+
+Darüber hinaus muss Deploy in der Lage sein, mit den ONTAP Select Knoten- und Clusterverwaltungs-IP-Adressen über die folgenden Protokolle zu kommunizieren:
+
+* PING-Befehl (ICMP)
+* SSH (Port 22)
+* SSL (Port 443)
+
+
+.Unterstützung für IP Version 4
+ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6) wird nicht unterstützt. Diese Einschränkung wirkt sich auf ONTAP Select aus wie folgt aus:
+
+* Sie müssen der Management-LIF der bereitzustellenden VM eine IPv4-Adresse zuweisen.
+* Deploy kann keine ONTAP Select-Nodes erstellen, die für die Verwendung von IPv6 auf den ONTAP LIFs konfiguriert sind.
+
+
+--
+.Hyper-V
+--
+Es gibt mehrere spezifische Anforderungen und Einschränkungen für die Hyper-V-Umgebung, die Sie vor der Installation des Dienstprogramms ONTAP Select Deploy in einer Hyper-V-Umgebung berücksichtigen sollten.
+
+.Hardwareanforderungen
+Zu prüfen ist, ob die Windows Hyper-V-Hypervisor-Hosts, auf denen ONTAP Select bereitgestellt wird, die folgenden grundlegenden Anforderungen erfüllen:
+
+* Windows Server:
++
+** Die Hardware und Software muss 64-Bit sein
+** Der Server muss die gleichen unterstützten Versionen einhalten, die für einen ONTAP Select-Knoten definiert sind
+
+
+* Virtuelle CPUs (2)
+* Virtueller Speicher (4 GB)
+* Speicher (40 GB)
+* Das Dynamic Host Configuration Protocol (DHCP) ist aktiviert (Sie können auch eine statische IP-Adresse zuweisen)
+
+
+.Netzwerk-Konnektivität
+Es ist zu überprüfen, ob die Netzwerkschnittstelle der virtuellen Maschine Deploy konfiguriert ist und eine Verbindung zu den ONTAP Select Hosts herstellen kann, die sie verwaltet.
+
+.Unterstützung für IP Version 4
+ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6) wird nicht unterstützt. Diese Einschränkung wirkt sich auf ONTAP Select aus wie folgt aus:
+
+* Sie müssen der Management-LIF der bereitzustellenden VM eine IPv4-Adresse zuweisen.
+* Deploy kann keine ONTAP Select-Nodes erstellen, die für die Verwendung von IPv6 auf den ONTAP LIFs konfiguriert sind.
+
+
+.Erforderliche Konfigurationsinformationen
+Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTAP Select Deploy Administration Utility die erforderlichen Konfigurationsinformationen ermitteln.
+
+[cols="1,2"]
+|===
+| Konfiguration | Beschreibung 
+
+
+| Name der bereitzustellenden VM | Der für die VM zu verwendende Name. 
+
+
+| Name des Hosts | Der Windows Hyper-V Hypervisor-Host, auf dem das Dienstprogramm Deploy installiert ist. 
+
+
+| Name des Speicherpools | Der Speicherpool, der die VM-Dateien enthält (ca. 40 GB erforderlich). 
+
+
+| Netzwerk für die VM | Das Netzwerk, mit dem die bereitzustellende VM verbunden ist. 
+|===
+--
+.KVM
+--
+Es gibt mehrere Anforderungen und Einschränkungen, die speziell für die Hypervisor-Umgebung gelten und die Sie vor der Installation des ONTAP Select Deploy Dienstprogramms in einer KVM-Umgebung berücksichtigen sollten.
+
+.Hardwareanforderungen
+Zu prüfen ist, ob die Linux KVM Hypervisor Hosts, auf denen ONTAP Select bereitgestellt ist, die folgenden grundlegenden Anforderungen erfüllen:
+
+* Linux-Server:
++
+** Die Hardware und Software muss 64-Bit sein
+** Der Server muss die gleichen unterstützten Versionen einhalten, die für einen ONTAP Select-Knoten definiert sind
+
+
+* Virtuelle CPUs (2)
+* Virtueller Speicher (4 GB)
+* Speicher (40 GB)
+* Das Dynamic Host Configuration Protocol (DHCP) ist aktiviert (Sie können auch eine statische IP-Adresse zuweisen)
+
+
+.Netzwerk-Konnektivität
+Es ist zu überprüfen, ob die Netzwerkschnittstelle der virtuellen Maschine Deploy konfiguriert ist und eine Verbindung zu den ONTAP Select Hosts herstellen kann, die sie verwaltet.
+
+.Unterstützung für IP Version 4
+ONTAP Select Deploy unterstützt nur IP Version 4 (IPv4). Die IP-Version 6 (IPv6) wird nicht unterstützt. Diese Einschränkung wirkt sich auf ONTAP Select aus wie folgt aus:
+
+* Sie müssen der Management-LIF der bereitzustellenden VM eine IPv4-Adresse zuweisen.
+* Deploy kann keine ONTAP Select-Nodes erstellen, die für die Verwendung von IPv6 auf den ONTAP LIFs konfiguriert sind.
+
+
+.Erforderliche Konfigurationsinformationen
+Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTAP Select Deploy Administration Utility die erforderlichen Konfigurationsinformationen ermitteln.
+
+[cols="1,2"]
+|===
+| Konfiguration | Beschreibung 
+
+
+| Name der bereitzustellenden VM | Der für die VM zu verwendende Name. 
+
+
+| Name des Hosts | Der Linux KVM-Hypervisor-Host, auf dem das Dienstprogramm Deploy installiert ist. 
+
+
+| Name des Speicherpools | Der Speicherpool, der die VM-Dateien enthält (ca. 40 GB erforderlich). 
+
+
+| Netzwerk für die VM | Das Netzwerk, mit dem die bereitzustellende VM verbunden ist. 
+|===
+--
+====
+
+
+[[vmware-vcenter-server-considerations]]
+== VMware vCenter Server-Überlegungen
+
+.VMware vSphere-Berechtigungen für ESA
+Zum Erstellen und Verwalten der vSAN Express Storage Architecture (ESA) in vCenter benötigen Sie die folgenden vSphere Content Library-Berechtigungen:
+
+
+NOTE: Um auf die Berechtigungen der Inhaltsbibliothek zugreifen zu können, muss Ihnen ein Administrator Zugriff auf die globalen Berechtigungen im vCenter Server gewähren.
+
+* Bibliothekselement hinzufügen
+* Lokale Bibliothek erstellen
+* Bibliothekselement löschen
+* Lokale Bibliothek löschen
+* Dateien herunterladen
+* Lesespeicher
+* Dateien aktualisieren
+* Bibliothek aktualisieren
+* Bibliothekselement aktualisieren
+* Lokale Bibliothek aktualisieren
+* Konfigurationseinstellungen anzeigen
+

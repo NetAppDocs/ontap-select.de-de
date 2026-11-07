@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: plan-ots-hyper-v.html 
+keywords: plan, planning, vnas, hyper-v 
+summary: Im Zusammenhang mit der Verwendung des Hyper-V Hypervisors sind mehrere Planungsaspekte zu berücksichtigen. 
+---
+= Hyper-V Storage-Anforderungen für ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn ONTAP Select auf einem Hyper-V-Hypervisor konfiguriert wird, speichert ONTAP Select die virtuelle Maschine (VM) und die virtuellen Festplatten auf einem lokalen Volume auf dem Hyper-V-Host.
+
+
+
+[[basic-requirements-and-restrictions]]
+== Grundvoraussetzungen und Einschränkungen
+
+Für ONTAP Select Storage Pools auf einem Hyper-V Host gelten die folgenden Konfigurationsanforderungen und Einschränkungen:
+
+* Der Storage Pool muss ein NTFS- oder ReFS-Volume mit einem zugewiesenen Laufwerksbuchstaben sein. Das Deploy Dienstprogramm identifiziert den Storage Pool anhand seines Laufwerksbuchstabens.
+* Cluster Shared Volumes werden als Storage Pools nicht unterstützt.
+* Netzwerkdateifreigaben und entfernte UNC-Pfade, wie z. B. SMB 3.0, werden als Storage Pools nicht unterstützt.
+* ONTAP Select identifiziert kein Volume, das nur über einen Ordnerpfad eingebunden ist, da dem Volume kein Laufwerksbuchstabe zugewiesen ist.
+* ONTAP Select kann eine LUN auf einem externen Storage Array über FC, FCoE oder iSCSI verwenden, wenn der Hyper-V Host die LUN als NTFS oder ReFS formatiert und ihr einen Laufwerksbuchstaben zuweist. ONTAP Select behandelt ein solches Volume als lokalen Host Storage. Das mit ESXi verwendete ONTAP Select vNAS Modell gilt nicht für Hyper-V.
+* Eine virtuelle Festplatte in Storage Spaces kann einen Storage Pool enthalten, wenn sie mit NTFS oder ReFS formatiert und ihr ein Laufwerksbuchstabe zugewiesen ist. Software RAID kann jedoch keine physischen Festplatten verwenden, die Mitglieder eines Storage Spaces Pools sind.
+* Eine Hyper-V Konfiguration erkennt Thin Provisioning Storage nicht. ONTAP Select verwendet die von Windows für das Volume gemeldete Kapazität.
+
+
+
+
+[[best-practices]]
+== Best Practices in sich vereint
+
+Sie sollten diese bewährten Vorgehensweisen befolgen:
+
+* Zu den Anforderungen für die ONTAP Select Netzwerke gehören dedizierte Netzwerkadapter, Bandbreite und virtuelle Switch-Konfigurationen. Externer Storage Datenverkehr wie iSCSI sollte auf separaten Adaptern verbleiben.
+* Das Storage-Pool-Volume ist ONTAP Select zuzuordnen. Dasselbe Volume darf weder eine weitere Hyper-V-VM noch eine Windows-Workload enthalten, und das Windows-Boot-Volume darf nicht als Storage-Pool verwendet werden.
+* Die Größe des Volume sollte so gewählt sein, dass ONTAP Select nicht die gesamte Kapazität belegt.
+* Die Konfiguration von Windows MPIO für externe Storage Arrays sollte so erfolgen, dass LUNs über redundante Pfade bereitgestellt werden.
+

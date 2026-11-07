@@ -1,0 +1,249 @@
+---
+sidebar: sidebar 
+permalink: hyper-v-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, hyper-v, host preparation 
+summary: Die Vorbereitung jedes Hyper-V-Hypervisor-Hosts, auf dem ein ONTAP Select Knoten eingesetzt wird. Bei der Vorbereitung ist die Deployment-Umgebung sorgfältig zu prüfen, um sicherzustellen, dass die Hosts ordnungsgemäß konfiguriert sind und das Deployment eines ONTAP Select Clusters unterstützen können. 
+---
+= Vorbereitung eines Hyper-V-Hosts für ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Für jeden Hyper-V-Hypervisor-Host, auf dem ein ONTAP Select Knoten eingesetzt wird, ist eine Vorbereitung erforderlich. Die Hosts müssen korrekt konfiguriert und für das Deployment eines ONTAP Select Clusters bereit sein.
+
+
+NOTE: Das Verwaltungsprogramm ONTAP Select Deploy führt die erforderliche Netzwerk- und Speicherkonfiguration der Hypervisor-Hosts nicht durch. Sie müssen jeden Host manuell vorbereiten, bevor Sie einen ONTAP Select -Cluster bereitstellen.
+
+
+
+[[step-1-prepare-the-hyper-v-hypervisor-host]]
+[[prepare-hyper-v-server]]
+== Schritt 1: Den Hyper-V-Hypervisor-Host vorbereiten
+
+Die Vorbereitung ist für jeden Windows Hyper-V-Server erforderlich, auf dem ein ONTAP Select Node eingesetzt wird.
+
+.Über diese Aufgabe
+Weitere Informationen zur Durchführung dieser Schritte enthält die Windows-Dokumentation.
+
+.Schritte
+. Die Installation einer unterstützten Windows Server-Version und die Aktivierung der Hyper-V-Rolle erfolgen mit dem Server-Manager, dem Windows Admin Center oder PowerShell.
+. Windows ist auf dem lokalen Boot-Datenträger zu installieren. Windows darf nicht auf einem Datenträger installiert werden, den Sie ONTAP Select zuweisen möchten.
+. Es ist zu überprüfen, ob die Konfiguration die folgenden Anforderungen erfüllt:
++
+** Die Windows Server-Version ist als unterstützt aufgeführt. Das Deploy Dienstprogramm liest den Produktnamen während der Hostregistrierung und meldet eine nicht unterstützte Version.
+** Die Hyper-V-Rolle ist aktiviert. Das Dienstprogramm Deploy überprüft dies während der Hostregistrierung, und die Registrierung schlägt fehl, wenn die Rolle nicht aktiviert ist.
+** Die CPU und der Arbeitsspeicher des Hosts sind für Windows Server ausgelegt. Die Deploy utility reserviert beim Dimensionieren eines Knotens 2 CPU-Kerne und 8 GB Arbeitsspeicher für den Host.
+
+
+
+
+
+
+[[step-2-provide-remote-management-access-for-deploy]]
+== Schritt 2: Bereitstellung des Remote-Administrationszugriffs für Deploy
+
+Das Deploy Dienstprogramm managt den Host über Windows Remote Management (WinRM) mithilfe von HTTPS und der PowerShell-Remoting-Konfiguration. Erforderlich ist die Konfiguration des WinRM-HTTPS-Listeners, des zugehörigen Zertifikats und der Firewall-Regel.
+
+.Schritte
+. WinRM HTTP aktivieren:
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+. Überprüfung der WinRM-Konfiguration:
++
+[source, cli]
+----
+winrm enumerate winrm/config/listener
+----
+. Erstellung einer Firewall-Regel für eingehende Verbindungen, die Netzwerkverbindungen über HTTPS-Port 5986 akzeptiert:
++
+[source, cli]
+----
+New-NetFirewallRule -DisplayName "WinRM HTTPS" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 5986
+----
+. Konfiguration des zugehörigen Zertifikats:
++
+[role="tabbed-block"]
+====
+.Ein Zertifikat ist verfügbar
+--
+Wenn Sie bereits ein gültiges Zertifikat im lokalen Zertifikatsspeicher des Rechners besitzen:
+
+.. Konfiguration des Powershell-Remoting für das Zertifikat:
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+.. Konfiguration von WinRM für die Remote-Administration:
++
+[source, cli]
+----
+winrm quickconfig -q
+----
+.. Überprüfung der Konfiguration des WinRM HTTPS-Listeners:
++
+[source, cli]
+----
+winrm e winrm/config/listener
+----
+
+
+--
+.Ein Zertifikat ist nicht verfügbar
+--
+.. Generierung des selbstsignierten Zertifikats:
++
+[source, cli]
+----
+$cert = New-SelfSignedCertificate -DnsName $env:COMPUTERNAME -CertStoreLocation Cert:\LocalMachine\My
+----
+.. Bindung des Zertifikats an den WinRM-Listener:
++
+[source, cli]
+----
+New-WSManInstance -ResourceURI winrm/config/Listener -SelectorSet @{Transport='HTTPS';Address='*'} -ValueSet @{CertificateThumbprint=$cert.Thumbprint}
+----
+
+
+--
+====
+. Die Konfiguration der Gruppenrichtlinie erfolgt über *Computerkonfiguration* > *Administrative Vorlagen* > *Windows-Komponenten* > *Windows-Remoteverwaltung (WinRM)* > *WinRM-Dienst*.
+. Es ist zu überprüfen, ob die Konfiguration die folgenden Anforderungen erfüllt:
++
+** Die virtuelle Maschine (VM) von Deploy kann den WinRM HTTPS-Listener über TCP-Port 5986 erreichen. Das Deploy Dienstprogramm verwendet weder HTTP noch TCP-Port 5985.
+** Es liegt ein selbstsigniertes Zertifikat vor. Das Deploy Dienstprogramm überprüft das Zertifikat nicht anhand einer Zertifizierungsstelle.
+** Das Konto, mit dem der Host registriert wurde, verfügt über Administratorrechte auf dem Host. Das Deploy Dienstprogramm authentifiziert sich mit Kerberos. Wenn das Deploy Dienstprogramm Kerberos nicht verwenden kann, greift es auf NTLM zurück.
+** Sie haben den Hyper-V-Host unter einem eindeutigen Namen registriert, der auf TCP-Port 5986 antwortet. Das Dienstprogramm Deploy ruft das Zertifikat anhand des registrierten Namens ab.
++
+
+NOTE: Das Deploy Dienstprogramm speichert das Zertifikat und überprüft es bei jeder späteren Verbindung. Wenn das Zertifikat ersetzt wird, schlagen Verbindungen zum Host fehl, und Sie müssen den Host aus dem Deploy Dienstprogramm löschen und erneut registrieren.
+
+
+
+
+
+
+
+[[step-3-prepare-the-host-storage]]
+== Schritt 3: Host-Storage vorbereiten
+
+Ein Storage Pool auf einem Hyper-V-Host ist ein lokales Volume, das die ONTAP Select VM und ihre virtuellen Festplatten enthält.
+
+.Schritte
+. Die Erstellung eines lokalen Volumes erfolgt mithilfe der Datenträgerverwaltung, des Server-Managers oder des Windows Admin Center. Weitere Informationen enthält die Microsoft-Dokumentation.
+. Für jeden ONTAP Select Knoten wird mindestens ein Storage-Pool benötigt. Weitere Informationen enthält die Microsoft-Dokumentation.
++
+[NOTE]
+====
+** Es ist erforderlich, einen Storage Pool zu erstellen, wenn Sie Software-RAID verwenden.
+** Zum Entfernen eines Storage Pool löschen Sie zunächst den ONTAP Select Cluster oder Node, der den Storage Pool verwendet, und löschen anschließend das Volume mit den Standard-Windows-Tools.
+
+
+====
+. Voraussetzung ist, dass das Volume als NTFS oder ReFS formatiert ist und dass ihm ein Laufwerksbuchstabe zugewiesen ist. Das Deploy utility identifiziert den Storage Pool anhand seines Laufwerksbuchstabens.
++
+[NOTE]
+====
+** Das Dienstprogramm Deploy reserviert zwei Prozent des Volumens als Overhead und kann maximal 64 TB aus einem einzelnen Storage-Pool zuweisen.
+** Cluster Shared Volumes und SMB 3.0-Dateifreigaben können nicht als ONTAP Select Storage-Pools verwendet werden.
+** ONTAP Select kann ein Volume, das nur über einen Ordnerpfad eingebunden ist, nicht identifizieren, da es keinen Laufwerksbuchstaben hat.
+
+
+====
+. Bei Verwendung von Software-RAID müssen Sie physische Festplatten für ONTAP Select reservieren. PCI Passthrough wird unter Hyper-V nicht unterstützt, daher werden die Festplatten der VM als durchgeschleifte physische Festplatten bereitgestellt. Die physischen Festplatten müssen folgende Anforderungen erfüllen:
++
+** Es handelt sich um SSD- oder NVMe-Laufwerke mit jeweils mindestens 200 GB Storage.
+** Es handelt sich um Raw Disks ohne Partitionen, Volumes und Laufwerksbuchstaben.
+** Die Datenträger sind keine Mitglieder eines Storage Spaces Pools.
+** Die Festplatten bleiben online. Das Dienstprogramm Deploy nimmt jede Festplatte offline, wenn es sie an die VM anbindet.
+
+
+. Ein Einzelknoten-Cluster benötigt mindestens drei Festplatten für Software-RAID und vier oder fünf Festplatten für Software-RAID-DP. Ein Zwei-Node-Cluster benötigt sechs Festplatten für Software-RAID oder zehn Festplatten für Software-RAID-DP. ONTAP Select unterstützt maximal 60 durchgeschleifte Festplatten pro Knoten.
++
+Vor der Registrierung des Hosts ist sicherzustellen, dass die reservierten Datenträger geeignet sind:
+
++
+[source, cli]
+----
+Get-PhysicalDisk | Select-Object FriendlyName, MediaType, BusType, Size
+----
++
+
+NOTE: Die Datenträger, die in der  `Get-StoragePool`Ausgabe als Mitglieder eines Storage Spaces Pool angezeigt werden, werden durch das Deploy Dienstprogramm ausgeschlossen und sind für Software RAID nicht verfügbar.
+
+
+
+
+
+[[step-4-review-the-ontap-select-cluster-configuration]]
+== Schritt 4: Überprüfen der ONTAP Select Clusterkonfiguration
+
+Sie können ONTAP Select entweder als Zwei-Node-Cluster oder Vier-Node-Cluster oder als Single-Node-Cluster einsetzen. In vielen Fällen ist ein Multi-Node-Cluster aufgrund der zusätzlichen Storage-Kapazität und der HA-Fähigkeit vorzuziehen.
+
+Die folgenden Abbildungen veranschaulichen die ONTAP Select Netzwerke, die mit einem Einzelknotencluster und einem Vierknotencluster für einen ESXi-Host verwendet werden.
+
+[role="tabbed-block"]
+====
+.Single-Node-Cluster
+--
+Die folgende Abbildung zeigt einen Single-Node-Cluster. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_01.jpg["Single-Node-Cluster mit einem Netzwerk"]
+
+--
+.Cluster mit vier Knoten
+--
+Die folgende Abbildung zeigt einen Cluster mit vier Knoten und zwei Netzwerken. Das interne Netzwerk ermöglicht die Kommunikation zwischen den Knoten zur Unterstützung der ONTAP-Cluster-Netzwerkdienste. Das externe Netzwerk führt Client-, Management- und Cluster-übergreifenden Replizierungsdatenverkehr (SnapMirror/SnapVault) durch.
+
+image:CHK_02.jpg["Cluster mit vier Nodes für zwei Netzwerke"]
+
+--
+.Single Node innerhalb eines Clusters mit vier Nodes
+--
+Die folgende Abbildung veranschaulicht die typische Netzwerkkonfiguration einer einzelnen ONTAP Select VM in einem Cluster mit vier Knoten. Es gibt zwei separate Netzwerke: ONTAP-intern und ONTAP-extern.
+
+image:CHK_03.jpg["Single Node innerhalb eines Clusters mit vier Nodes"]
+
+--
+====
+
+
+[[step-5-prepare-the-networks]]
+== Schritt 5: Vorbereiten der Netzwerke
+
+ONTAP Select Deploy stellt über virtuelle Hyper-V-Switches eine Verbindung zum physischen Netzwerk her. Sie müssen die virtuellen Switches erstellen, bevor Sie den Host registrieren.
+
+.Über diese Aufgabe
+Weitere Informationen zur Durchführung dieser Schritte enthält die Windows-Dokumentation.
+
+.Schritte
+. Die Erstellung der Switches erfolgt mit dem Virtual Switch Manager in Hyper-V Manager, Windows Admin Center oder PowerShell.
++
+Für jeden von ONTAP Select verwendeten physischen Adapter ist ein externer virtueller Switch erforderlich. Ein Single-Node-Cluster benötigt mindestens einen Adapter, ein Zwei-Node-Cluster mindestens zwei Adapter.
+
+. Die Einstellung der Jumbo-Frames erfolgt in den erweiterten Eigenschaften des physischen Adapters.
+. Die Zuordnung eines physischen Adapters zu jedem virtuellen Switch ist erforderlich.
++
+
+NOTE: NIC teaming und Switch Embedded Teaming werden nicht unterstützt.
+
+. Zu überprüfen ist, ob jede Uplink-Verbindung `up` besteht.
++
+
+NOTE: Ein externer virtueller Switch, dessen Uplink  `down`, wird als nicht verfügbar gemeldet.
+
+. Die VLAN-Kennzeichnung wird am physischen Switch-Port oder am Adapter des Management-Betriebssystems konfiguriert. Das Deploy Dienstprogramm liest das aktuell verwendete VLAN aus, weist jedoch kein VLAN zu.
+. Das interne Netzwerk eines Zwei-Node-Clusters benötigt eine maximale Übertragungseinheit (MTU) von 7500 bis 9000 Byte. Für den Adapter, der das interne Netzwerk führt, ist die Aktivierung von Jumbo-Frames erforderlich.
++
+
+NOTE: Windows Server meldet die Größe des Jumbo-Frames einschließlich des Ethernet-Headers, sodass ein auf 9014 Byte eingestellter Adapter eine MTU von 9000 Byte bereitstellt. So interpretiert das Deploy Dienstprogramm den MTU-Wert für die Adaptereinstellung. Wenn ein virtueller Switch gemeinsam mit dem Verwaltungsbetriebssystem verwendet wird, begrenzt die IP-MTU des entsprechenden Host-Adapters ebenfalls die MTU, die das Deploy Dienstprogramm meldet.
+
+

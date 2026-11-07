@@ -100,8 +100,8 @@ Bei Single-Node-Clustern werden alle Datenpartitionen zur Speicherung lokaler (a
 
 
 
-[[passthrough-directpath-io-devices-vs-raw-device-maps-rdms]]
-== Passthrough-Geräte (DirectPath IO) und RAW Device Maps (RDMs)
+[[passthrough-directpath-io-devices-versus-raw-device-maps-rdms]]
+== Passthrough- (DirectPath IO)-Geräte versus Raw Device Maps (RDMs)
 
 ESXi- und KVM-Hypervisoren unterstützen NVMe-Festplatten nicht als Raw Device Maps (RDMs). Damit ONTAP Select die direkte Kontrolle über NVMe-Festplatten übernehmen kann, müssen diese Laufwerke in ESXi oder KVM als Passthrough-Geräte konfiguriert werden. Wenn ein NVMe-Gerät als Passthrough-Gerät konfiguriert wird, erfordert dies Unterstützung durch das Server-BIOS und möglicherweise einen Neustart des Hosts. Zusätzlich gibt es Beschränkungen für die Anzahl der Passthrough-Geräte, die pro Host zugewiesen werden können, was je nach Plattform variieren kann. ONTAP Deploy beschränkt dies jedoch auf 14 NVMe-Geräte pro ONTAP Select Node. Das bedeutet, dass die NVMe-Konfiguration eine sehr hohe IOPS-Dichte (IOPS/TB) auf Kosten der Gesamtkapazität bietet. Alternativ empfiehlt sich für eine leistungsstarke Konfiguration mit größerer Speicherkapazität eine große ONTAP Select VM, eine INTEL Optane-Karte für die Systemfestplatte und eine angemessene Anzahl von SSD-Laufwerken für die Datenspeicherung.
 
@@ -109,6 +109,9 @@ ESXi- und KVM-Hypervisoren unterstützen NVMe-Festplatten nicht als Raw Device M
 NOTE: Wenn Sie alle Vorteile der NVMe-Performance nutzen möchten, sollten Sie sich die Größe einer großen ONTAP Select VM genauer betrachten.
 
 Es besteht ein weiterer Unterschied zwischen Passthrough-Geräten und RDMs. RDMs können einer laufenden VM zugeordnet werden. Passthrough-Geräte erfordern einen VM-Neustart. Das bedeutet, dass jeder NVMe-Laufwerksaustausch oder jede Kapazitätserweiterung (Laufwerkserweiterung) einen ONTAP Select VM-Neustart erfordert. Der Laufwerksaustausch und die Kapazitätserweiterung (Laufwerkserweiterung) werden durch einen Workflow in ONTAP Deploy gesteuert. ONTAP Deploy verwaltet den ONTAP Select Neustart für Single-Node-Cluster und das Failover/Failback für HA-Paare. Beachten Sie jedoch den Unterschied zwischen der Arbeit mit SSD-Datenlaufwerken (kein ONTAP Select Neustart/Failover erforderlich) und der Arbeit mit NVMe-Datenlaufwerken (ONTAP Select Neustart/Failover erforderlich).
+
+
+NOTE: ONTAP Select unterstützt NVMe-Laufwerke als SCSI-Festplatten auf Hyper-V-Hypervisoren. ONTAP Select unterstützt NVMe-Laufwerke nicht als Discrete Device Assignments (Passthrough-Geräte) auf Hyper-V-Hypervisoren.
 
 
 
@@ -128,8 +131,8 @@ Beim Erweitern der Kapazität einer ONTAP Select VM mithilfe von Software-RAID m
 
 
 
-[[match-an-ontap-select-disk-to-the-corresponding-esxi-or-kvm-disk]]
-== Ordnen Sie eine ONTAP Select Festplatte der entsprechenden ESXi- oder KVM-Festplatte zu
+[[match-an-ontap-select-disk-to-the-corresponding-esxi-hyper-v-or-kvm-disk]]
+== Zuordnung einer ONTAP Select Festplatte zur entsprechenden ESXi-, Hyper-V- oder KVM-Festplatte
 
 ONTAP Select-Festplatten werden in der Regel als NET x.y. bezeichnet Sie können die Festplatten-UUID mit dem folgenden ONTAP-Befehl abrufen:
 
@@ -149,7 +152,7 @@ Plex: -This UID can be matched with the device UID displayed in the ‘storage d
 ----
 image:ST_21.jpg["Zuordnung einer ONTAP Select Disk zur entsprechenden ESXi-Disk"]
 
-In der ESXi- oder KVM-Shell können Sie den folgenden Befehl eingeben, um die LED für eine bestimmte physische Festplatte (identifiziert durch ihre naa.unique-id) blinken zu lassen.
+In der ESXi-, Hyper-V- oder KVM-Shell können Sie den folgenden Befehl eingeben, um die LED für eine bestimmte physische Festplatte (identifiziert durch ihre naa.unique-id) blinken zu lassen.
 
 [role="tabbed-block"]
 ====
@@ -158,6 +161,13 @@ In der ESXi- oder KVM-Shell können Sie den folgenden Befehl eingeben, um die LE
 [source, cli]
 ----
 esxcli storage core device set -d <naa_id> -l=locator -L=<seconds>
+----
+--
+.Hyper-V
+--
+[source, cli]
+----
+Enable-PhysicalDiskIdentification -UniqueId <unique_id>
 ----
 --
 .KVM
