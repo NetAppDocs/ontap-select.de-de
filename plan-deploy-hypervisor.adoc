@@ -166,7 +166,7 @@ Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTA
 --
 .KVM
 --
-Es gibt mehrere Anforderungen und Einschränkungen, die speziell für die Hypervisor-Umgebung gelten und die Sie vor der Installation des ONTAP Select Deploy Dienstprogramms in einer KVM-Umgebung berücksichtigen sollten.
+Es gibt mehrere spezifische Anforderungen und Einschränkungen für die KVM-Hypervisor-Umgebung, die Sie vor der Installation des ONTAP Select Deploy Dienstprogramms in einer KVM-Umgebung berücksichtigen sollten.
 
 .Hardwareanforderungen
 Zu prüfen ist, ob die Linux KVM Hypervisor Hosts, auf denen ONTAP Select bereitgestellt ist, die folgenden grundlegenden Anforderungen erfüllen:
@@ -216,10 +216,10 @@ Im Rahmen Ihrer Bereitstellungsplanung sollten Sie vor der Installation des ONTA
 ====
 
 
+[[vmware-vsphere-privileges-for-esa]]
 [[vmware-vcenter-server-considerations]]
-== VMware vCenter Server-Überlegungen
+== VMware vSphere-Berechtigungen für ESA
 
-.VMware vSphere-Berechtigungen für ESA
 Zum Erstellen und Verwalten der vSAN Express Storage Architecture (ESA) in vCenter benötigen Sie die folgenden vSphere Content Library-Berechtigungen:
 
 

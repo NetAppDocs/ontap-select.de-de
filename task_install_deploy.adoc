@@ -103,10 +103,7 @@ Die Erstellung der virtuellen Maschine ONTAP Select Deploy erfolgt auf Ihrem Hyp
 --
 Die ONTAP Select Deploy VM wird mithilfe des OVF VM Image auf einem ESXi Host installiert und gestartet. Im Rahmen der Installation wird die Netzwerkschnittstelle für die Verwendung von DHCP oder einer statischen IP Konfiguration konfiguriert.
 
---
-====
-.ESXi
---
+.Bevor Sie beginnen
 Für einen ESXi-Hypervisor müssen Sie die Bereitstellung der ONTAP Select Deploy VM vorbereiten:
 
 * Aktivieren Sie die OVF-Funktion in Ihrem Browser, indem Sie das VMware Client Integration Plugin installieren oder eine ähnliche Konfiguration nach Bedarf durchführen
@@ -123,22 +120,6 @@ Sie benötigen die Konfigurationsinformationen, die bei der Erstellung der VM ve
 * DNS-Suchdomänen
 
 
---
-.KVM
---
-Für KVM-Hypervisoren benötigen Sie die Konfigurationsinformationen, die beim Erstellen der VM verwendet werden sollen, einschließlich des VM-Namens, des externen Netzwerks und des Hostnamens. Bei der Definition einer statischen Netzwerkkonfiguration benötigen Sie die folgenden zusätzlichen Informationen:
-
-* IP-Adresse der bereitzustellenden VM
-* Netzmaske
-* IP-Adresse des Gateways (Router)
-* IP-Adresse des primären DNS-Servers
-* IP-Adresse des zweiten DNS-Servers
-* DNS-Suchdomänen
-
-
---
-[]
-====
 .Über diese Aufgabe
 Wenn Sie vSphere verwenden, enthält der Assistent zur Bereitstellung der OVF-Vorlage ein Formular, das alle Informationen zur Bereitstellungskonfiguration einschließlich der Netzwerkkonfiguration enthält. Wenn Sie dieses Formular jedoch nicht verwenden, können Sie stattdessen mithilfe der Konsole der Bereitstellungs-VM das Netzwerk konfigurieren.
 
@@ -174,7 +155,7 @@ DHCP zum Festlegen von Netzwerkinformationen verwenden? [n]:
 
 
 --
-
+.Hyper-V
 --
 Die Installation und der Start der ONTAP Select Deploy VM auf einem Hyper-V-Host erfolgen mithilfe des Assistenten für neue virtuelle Maschinen.
 
@@ -283,7 +264,7 @@ Use DHCP to set networking information? [n]:
 
 
 --
-
+.KVM
 --
 Die ONTAP Select Deploy VM wird auf einem KVM Host mithilfe des OVF VM Image installiert und gestartet. Im Rahmen der Installation wird die Netzwerkschnittstelle für die Verwendung von DHCP oder einer statischen IP Konfiguration konfiguriert.
 
@@ -346,8 +327,6 @@ Use DHCP to set networking information? [n]:
 
 
 
-
---
 
 --
 ====
