@@ -16,13 +16,21 @@ summary: Die Capacity-Tiers-Lizenz basiert auf der von jedem Knoten verwalteten 
 [role="lead"]
 Die Capacity Tiers-Lizenz basiert auf der von jedem ONTAP Select Knoten verwalteten Festplattenkapazität und nicht auf der nutzbaren Kapazität des Knotens, HA-Paares oder Clusters. Jede Capacity Tiers-Lizenz ist einer einzelnen Knotenseriennummer für eine bestimmte Kapazität zugeordnet und erfordert einen zugehörigen Supportvertrag.
 
+Bevor Sie die Lizenzgröße für Capacity Tiers festlegen, sollten Sie die folgenden Punkte berücksichtigen:
+
+* Sowohl in Hardware RAID (VMDKs) als auch in Software RAID Konfigurationen (NVMe oder SSDs) wird der Lizenzverbrauch anhand der Datenfestplatten oder Datenpartitionen berechnet, die Datenaggregaten zugewiesen sind.
+* ONTAP Select schließt RAID-DP Paritätsdatenträger und -partitionen vom Lizenzverbrauch aus. Sie sind nur für die einem Aggregat hinzugefügten Datenpartitionen und -datenträger lizenziert, sodass der RAID-DP Parität-Overhead keine zusätzliche Lizenzkapazität verbraucht.
+* Die Standby-Laufwerkskapazität ist nicht in der nutzbaren Kapazität des Aggregats enthalten und verbraucht keine Lizenzkapazität.
+* Paritätsplatten dienen ausschließlich dem Datenschutz. Sie bieten keinen nutzbaren Storage für Volumes und Daten und werden nicht als nutzbare Kapazität gezählt.
+
+
 Die lizenzierte Kapazität einer Capacity Tiers-Lizenz wird in vollen Terabyte (TB) angegeben, mit einem Minimum von 1 TB. Die lizenzierte Kapazität wird berechnet, indem die nutzbare Kapazität mit dem Overhead-Faktor multipliziert wird. Der Overhead-Faktor schätzt die ONTAP Select Software-Overhead-Kapazität, die von der nutzbaren Kapazität abgezogen wird, und dient zur Bestimmung der ONTAP Select Kapazität für NVMe, SSD, HDD oder virtuelle Laufwerke. Der Overhead-Faktor unterscheidet sich zwischen Einzelknoten- und Mehrknoten-Clustern (basierend auf HA-Paaren).
 
 * Der Overhead-Faktor für Einzelknoten-Cluster beträgt 1.13
 * Der Overhead-Faktor für Multi-Node-Cluster beträgt 2.67
 
 
-Sie müssen die lizenzierte Kapazität anhand des nutzbaren Speicherplatzes berechnen, um sicherzustellen, dass diese für Ihre Bereitstellung ausreicht. Beispielsweise benötigen Sie 10 TB nutzbare Kapazität für ein HA-Paar (5 TB pro Knoten):
+Sie müssen die lizenzierte Kapazität anhand des nutzbaren Speicherplatzes berechnen, um sicherzustellen, dass Sie über genügend Kapazität für ein Deployment verfügen. Beispielsweise benötigen Sie 10 TB nutzbare Kapazität für ein HA-Paar (5 TB pro Knoten):
 
 * Bei einem HA-Paar werden die Daten zur Redundanz zwischen beiden Knoten dupliziert, sodass für 10 TB nutzbare Daten in einem HA-Paar 10 TB pro Knoten erforderlich sind, falls einer der Knoten offline geht.
 * Der Faktor 2,67 verdoppelt die Kapazität jedes Knotens und addiert die für den Betrieb von ONTAP Select benötigte Overhead-Kapazität (0,67).

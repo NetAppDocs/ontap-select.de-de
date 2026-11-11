@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: sizing-capacity-pool-license.html 
-keywords: license, licensing, Capacity Tiers, usable, space 
-summary: Die Capacity-Tiers-Lizenz basiert auf der von jedem Knoten verwalteten Festplattenkapazität und nicht auf der nutzbaren Kapazität des Knotens, HA-Paars oder Clusters. Jede Capacity-Tiers-Lizenz ist einer einzelnen Knotenseriennummer für eine bestimmte Kapazität zugeordnet und erfordert einen zugehörigen Supportvertrag. 
+keywords: license, licensing, Capacity Pools, usable, space 
+summary: Die Capacity Pools Lizenz basiert auf der von jedem Knoten verwalteten zugrunde liegenden Festplattenkapazität und nicht auf der nutzbaren Kapazität des Knotens, des HA-Paars oder des Clusters. Jede Capacity Pools Lizenz ist einer einzelnen Knotenseriennummer für eine bestimmte Kapazität zugeordnet und erfordert einen zugehörigen Supportvertrag. 
 ---
 = Kapazitätspool-Lizenzgröße für ONTAP Select bestimmen
 :hardbreaks:
@@ -14,13 +14,23 @@ summary: Die Capacity-Tiers-Lizenz basiert auf der von jedem Knoten verwalteten 
 
 
 [role="lead"]
+Die Berechnung der ONTAP Select Capacity Pool Lizenzgröße erfolgt auf Basis des nutzbaren Speicherplatzes und des Overheads der Clusterkonfiguration, um eine ausreichende lizenzierte Kapazität für ein Deployment sicherzustellen.
+
+Bevor Sie die Lizenzgröße für Capacity Pools festlegen, sollten Sie folgende Punkte beachten:
+
+* Sowohl in Hardware RAID (VMDKs) als auch in Software RAID Konfigurationen (NVMe oder SSDs) wird der Lizenzverbrauch anhand der Datenfestplatten oder Datenpartitionen berechnet, die Datenaggregaten zugewiesen sind.
+* ONTAP Select schließt RAID-DP Paritätsdatenträger und -partitionen vom Lizenzverbrauch aus. Sie sind nur für die einem Aggregat hinzugefügten Datenpartitionen und -datenträger lizenziert, sodass der RAID-DP Parität-Overhead keine zusätzliche Lizenzkapazität verbraucht.
+* Die Standby-Laufwerkskapazität ist nicht in der nutzbaren Kapazität des Aggregats enthalten und verbraucht keine Lizenzkapazität.
+* Paritätsplatten dienen ausschließlich dem Datenschutz. Sie bieten keinen nutzbaren Storage für Volumes und Daten und werden nicht als nutzbare Kapazität gezählt.
+
+
 Die lizenzierte Kapazität einer Capacity Pool-Lizenz wird in vollen TB angegeben, mit einem Minimum von 2 TB. Die lizenzierte Kapazität wird berechnet, indem die nutzbare Kapazität mit dem Overhead-Faktor multipliziert wird. Der Overhead-Faktor schätzt die ONTAP Select Software-Overhead-Kapazität, die von der nutzbaren Kapazität abgezogen wird, und dient zur Bestimmung der ONTAP Select Kapazität für NVMe, SSD, HDD oder virtuelle Laufwerke. Der Overhead-Faktor unterscheidet sich zwischen Single-Node- und Multi-Node-Clustern (HA-Paar-basiert):
 
 * Der Overhead-Faktor für Einzelknoten-Cluster beträgt 1.13
 * Der Overhead-Faktor für Multi-Node-Cluster beträgt 2.67
 
 
-Sie müssen die lizenzierte Kapazität anhand der nutzbaren Kapazität berechnen, um sicherzustellen, dass diese für Ihre Bereitstellung ausreicht. Beispielsweise werden 20 TB nutzbare Kapazität für ein HA-Paar benötigt (10 TB pro Knoten):
+Die lizenzierte Kapazität wird anhand des nutzbaren Speicherplatzes berechnet, damit für ein Deployment ausreichend Kapazität zur Verfügung steht. Beispielsweise werden 20 TB nutzbare Kapazität für ein HA-Paar (10 TB pro Knoten) benötigt:
 
 * Bei einem HA-Paar werden die Daten zur Redundanz zwischen beiden Knoten dupliziert, sodass für 20 TB nutzbare Daten in einem HA-Paar 20 TB pro Knoten erforderlich sind, falls einer der Knoten offline geht.
 * Der Faktor 2,67 verdoppelt die Kapazität jedes Knotens und addiert die für den Betrieb von ONTAP Select benötigte Overhead-Kapazität (0,67).
